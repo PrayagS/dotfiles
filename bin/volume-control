@@ -1,0 +1,34 @@
+#!/bin/bash
+
+function get_volume {
+    amixer -D pulse get Master | grep '%' | head -n 1 | cut -d '[' -f 2 | cut -d '%' -f 1
+}
+
+function is_mute {
+    amixer -D pulse get Master | grep '%' | grep -oE '[^ ]+$' | grep off > /dev/null
+}
+
+case $1 in
+    up)
+	# Set the volume on (if it was muted)
+	amixer -D pulse set Master on > /dev/null
+	# Up the volume (+ 5%)
+	amixer -D pulse sset Master 5%+ > /dev/null
+	get_volume > /tmp/xobpipe
+	;;
+    down)
+	amixer -D pulse set Master on > /dev/null
+	amixer -D pulse sset Master 5%- > /dev/null
+	get_volume > /tmp/xobpipe
+	;;
+    mute)
+    # Toggle mute
+	if is_mute ; then
+	    amixer -D pulse set Master 1+ toggle > /dev/null
+		get_volume > /tmp/xobpipe
+	else
+	    amixer -D pulse set Master 1+ toggle > /dev/null
+		echo 0 > /tmp/xobpipe
+        fi
+	;;
+esac

@@ -1,0 +1,13 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.dotfiles: ''
+    ~/bin: bin
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

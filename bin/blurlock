@@ -1,0 +1,36 @@
+#!/bin/bash
+# /usr/bin/blurlock
+
+# take screenshot
+import -window root /tmp/screenshot.png
+
+# blur it
+convert /tmp/screenshot.png -blur 0x5 /tmp/screenshotblur.png
+rm /tmp/screenshot.png
+
+# lock the screen
+# i3lock -i /tmp/screenshotblur.png
+
+fg_color=00cc00ff
+wrong_color=f82a11aa
+highlight_color=39393999
+verif_color=fefefe66
+
+date_now=$(date +'%b, %d')
+	i3lock -n --force-clock -i /tmp/screenshotblur.png \
+	--indpos="w/2:h/2+60" --timepos="w/2:h/2-100" --datepos="w/2:h/2-30" --greeterpos="w/2:h/2" \
+	--insidevercolor=$verif_color --insidewrongcolor=$wrong_color --insidecolor=fefefe00 \
+	--ringvercolor=$verif_color --ringwrongcolor=$wrong_color --ringcolor=$fg_color \
+	--keyhlcolor=$highlight_color --bshlcolor=$highlight_color --separatorcolor=00000000 \
+	--datecolor=$fg_color --timecolor=$fg_color --greetercolor=$fg_color \
+	--timestr="%H" --timesize=70 \
+	--datestr="%M" --datesize=70 \
+	--greetertext="$date_now" --greetersize=25\
+	--line-uses-inside --radius 50 --ring-width 2 --indicator \
+	--veriftext=""  --wrongtext="" --noinputtext="" \
+	--clock --date-font="Abel" --time-font="Abel" --pass-media-keys
+
+# sleep 1 adds a small delay to prevent possible race conditions with suspend
+sleep 1
+
+exit 0

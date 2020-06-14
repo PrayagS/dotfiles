@@ -1,0 +1,9 @@
+#!/bin/bash
+
+REPO_DIR=$(pwd)
+REPO_NAME=${REPO_DIR##*/}
+LOLCOMMITS_DIR=~/.lolcommits
+
+lolcommits --enable
+mkdir -p $LOLCOMMITS_DIR/$REPO_NAME
+cp $LOLCOMMITS_DIR/config.yml $LOLCOMMITS_DIR/$REPO_NAME/config.yml 
