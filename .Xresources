@@ -1,0 +1,13 @@
+Xft.dpi: 120
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+!! Transparency (0-1):
+st.alpha: 0.8
+
+!! Set a default font and font size as below:
+st.font: Jetbrains Mono-14:antialias=true:autohint=true;

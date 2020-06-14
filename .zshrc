@@ -1,0 +1,169 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+# export TERM="xterm-256color"
+export ZSH="/home/prayag_s/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+
+POWERLEVEL9K_MODE='nerdfont-complete'
+
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(battery context dir vcs)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator history)
+# POWERLEVEL9K_CONTEXT_BACKGROUND=082
+# POWERLEVEL9K_HISTORY_FOREGROUND=082
+# POWERLEVEL9K_HISTORY_BACKGROUND=000
+# POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=000
+# POWERLEVEL9K_BATTERY_CHARGING=082
+# POWERLEVEL9K_TIME_FORMAT="\UF43A %D{%H:%M  \UF133  %d.%m.%y}"
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time time)
+# POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(archlinux git zsh-syntax-highlighting zsh-autosuggestions)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+
+[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
+
+# Git completion
+zstyle ':completion:*:*:git:*' script ~/.oh-my-zsh/plugins/git/git-completion.bash
+fpath=(~/.oh-my-zsh/plugins/git $fpath)
+
+# fasd
+eval "$(fasd --init auto)"
+
+# Powerlevel10k config
+source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+# zsh-autosuggestions key bindings
+bindkey '\e ' autosuggest-accept
+bindkey '^ ' autosuggest-execute
+
+# fzf history search bindings
+source /usr/share/fzf/key-bindings.zsh
+
+# source /home/prayag_s/.config/broot/launcher/bash/br
+
+# Tab complete into hidden files
+_comp_options+=(globdots)
+
+# vi mode config
+# bindkey -v
+# export KEYTIMEOUT=1
+
+# Change cursor shape for different vi modes.
+# function zle-keymap-select {
+#   if [[ ${KEYMAP} == vicmd ]] ||
+#      [[ $1 = 'block' ]]; then
+#     echo -ne '\e[1 q'
+#   elif [[ ${KEYMAP} == main ]] ||
+#        [[ ${KEYMAP} == viins ]] ||
+#        [[ ${KEYMAP} = '' ]] ||
+#        [[ $1 = 'beam' ]]; then
+#     echo -ne '\e[5 q'
+#   fi
+# }
+# zle -N zle-keymap-select
+# zle-line-init() {
+#     zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+#     echo -ne "\e[5 q"
+# }
+# zle -N zle-line-init
+# echo -ne '\e[5 q' # Use beam shape cursor on startup.
+# preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+
+# ci"
+# autoload -U select-quoted
+# zle -N select-quoted
+# for m in visual viopp; do
+#   for c in {a,i}{\',\",\`}; do
+#     bindkey -M $m $c select-quoted
+#   done
+# done
+
+# ci{, ci(, di{ etc..
+# autoload -U select-bracketed
+# zle -N select-bracketed
+# for m in visual viopp; do
+#   for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+#     bindkey -M $m $c select-bracketed
+#   done
+# done
+
+# Use vim keys in tab complete menu:
+# bindkey -M menuselect 'h' vi-backward-char
+# bindkey -M menuselect 'k' vi-up-line-or-history
+# bindkey -M menuselect 'l' vi-forward-char
+# bindkey -M menuselect 'j' vi-down-line-or-history
+# bindkey -v '^?' backward-delete-char
