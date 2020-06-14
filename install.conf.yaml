@@ -7,7 +7,14 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/bin: bin
+    ~/bin: 
+    ~/.xinitrc: .xinitrc
+    ~/.profile: .profile
+    ~/.Xresources: .Xresources
+    ~/.zshrc: .zshrc
+    ~/.p10k.zsh: .p10k.zsh
+    ~/.zsh_history: .zsh_history
+    ~/.zsh_hist_backup.db: .zsh_hist_backup.db
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
