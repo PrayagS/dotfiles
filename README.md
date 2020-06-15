@@ -15,7 +15,7 @@ Welcome to my dotfiles! Huge credits to folks over at [r/unixporn](https://www.r
 ## TODO
 
 - [ ] Add oh-my-zsh (probably as a submodule).
-- [ ] Write a script to setup LaTeX environment. Notes [here](notes/Reinstalling LaTeX.md).
+- [ ] Write a script to setup LaTeX environment. Notes [here](notes/Reinstalling%20LaTeX.md).
 - [ ] Use [this](https://github.com/sobolevn/dotbot-pip) or just shell commands to install pip stuff
 - [ ] Use [this](https://github.com/oxson/dotbot-yay) or just shell commands paired with the pacmanity [gist](https://gist.github.com/PrayagS/4a2f5dcb9b09be0bd6649c6a194560ac) to install packages.
 - [ ] Use [this](https://github.com/alexcormier/dotbot-rust) or shell commands to install rust packages.
