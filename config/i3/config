@@ -1,14 +1,14 @@
 #
 #
-#  $$\  $$$$$$\  
-#  \__|$$ ___$$\ 
+#  $$\  $$$$$$\
+#  \__|$$ ___$$\
 #  $$\ \_/   $$ |
-#  $$ |  $$$$$ / 
-#  $$ |  \___$$\ 
+#  $$ |  $$$$$ /
+#  $$ |  \___$$\
 #  $$ |$$\   $$ |
 #  $$ |\$$$$$$  |
-#  \__| \______/ 
-#                
+#  \__| \______/
+#
 #
 
 # #---Basic Definitions---# #
@@ -61,8 +61,8 @@ bindsym $mod+l			    focus right
 bindsym $mod+Shift+l		move right 30
 
 # #---Workspace Bindings---# #
-bindsym $mod+o			              exec --no-startup-id i3open.py	
-bindsym $mod+Ctrl+o		            exec --no-startup-id i3open.py move	
+bindsym $mod+o			              exec --no-startup-id i3open.py
+bindsym $mod+Ctrl+o		            exec --no-startup-id i3open.py move
 bindsym $mod+comma		            workspace prev
 bindsym $mod+Shift+comma	        exec --no-startup-id i3-ws.py prev move
 bindsym $mod+period		            workspace next
@@ -75,7 +75,7 @@ bindsym $mod+Shift+XF86Forward    move container to workspace next
 bindsym $mod+semicolon	          workspace next
 
 # switch to workspace
-bindsym $mod+1		workspace number 1   
+bindsym $mod+1		workspace number 1
 bindsym $mod+2		workspace number 2
 bindsym $mod+3		workspace number 3
 bindsym $mod+4		workspace number 4
@@ -84,10 +84,10 @@ bindsym $mod+6		workspace number 6
 bindsym $mod+7		workspace number 7
 bindsym $mod+8		workspace number 8
 bindsym $mod+9		workspace number 9
-bindsym $mod+0		workspace number 10 
+bindsym $mod+0		workspace number 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1	move container to workspace number 1 
+bindsym $mod+Shift+1	move container to workspace number 1
 bindsym $mod+Shift+2	move container to workspace number 2
 bindsym $mod+Shift+3	move container to workspace number 3
 bindsym $mod+Shift+4	move container to workspace number 4
@@ -107,6 +107,7 @@ for_window [title="Default - Wine desktop"] floating enable
 for_window [class="Com.github.parnold-x.nasc"] floating enable 640 480
 for_window [class="Qalculate-gtk"] floating enable 600 400
 for_window [class="Yad" title="yad-calendar"] floating enable
+for_window [class="St" title="weather-popup"] floating enable
 
 # Set wal colors from Xresources
 # Make it clear when failed using red - otherwise set i3 colors with wal from xresources
@@ -129,4 +130,4 @@ exec --no-startup-id i3-startup-layout
 
 # exec_always --no-startup-id i3wsr --config .config/i3wsr/config.toml
 exec_always --no-startup-id autotiling
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
