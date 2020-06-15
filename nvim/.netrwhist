@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/usr/lib/systemd/system'
+let g:netrw_dirhist_1='/home/prayag_s/.config/sxiv/exec'
+let g:netrw_dirhist_0='/home/prayag_s/.config/spotify/Users/prayag527-user'
+let g:netrw_dirhist_9='/media/DATA/Study/Winter_2020/ADC/Project/files'
+let g:netrw_dirhist_8='/home/prayag_s/.config/sxhkd'
+let g:netrw_dirhist_7='/etc'
+let g:netrw_dirhist_6='/home/prayag_s/test'
+let g:netrw_dirhist_5='/home/prayag_s'
+let g:netrw_dirhist_4='/home/prayag_s/test'
+let g:netrw_dirhist_3='/home/prayag_s/.config/ranger/plugins'

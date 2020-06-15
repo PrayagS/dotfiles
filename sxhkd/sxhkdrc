@@ -1,0 +1,49 @@
+# Basic binds
+super + Return
+	$TERMINAL
+super + shift + Return
+	tabbed -r 2 $TERMINAL -w ''	
+super + r
+	rofi -show drun -modi drun,window
+super + i
+	$TERMINAL -e htop
+super + w
+	$BROWSER --profile-directory="Default"
+super + s
+	$BROWSER --profile-directory="Profile 1"
+super + shift + n
+	$BROWSER --incognito
+super + f
+	$TERMINAL -e ranger
+super + p
+	code
+super + shift + w
+	/home/prayag_s/.config/rofi/websearch.sh
+super + shift + s
+	flameshot gui
+super + c
+    GTK_THEME=Qogir-manjaro-light com.github.parnold-x.nasc        
+super + shift + c
+    qalculate-gtk       
+super + d
+	discord 
+super + shift + ctrl + s
+    ocr
+
+# Et cetera...
+super + shift + x
+	/home/prayag_s/.config/rofi/scripts_powermenu.sh
+super + Escape
+    xset s activate    	
+XF86AudioMute
+	volume-control mute
+XF86Audio{Raise,Lower}Volume
+	volume-control {up,down}
+XF86Audio{Prev,Next}
+	playerctl --player=playerctld {previous,next}
+XF86AudioPlay
+	playerctl --player=playerctld play-pause
+XF86MonBrightnessDown
+	xbacklight -dec 5
+XF86MonBrightnessUp
+	xbacklight -inc 5

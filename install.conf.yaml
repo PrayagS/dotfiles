@@ -13,8 +13,23 @@
     ~/.Xresources: .Xresources
     ~/.zshrc: .zshrc
     ~/.p10k.zsh: .p10k.zsh
-    ~/.zsh_history: .zsh_history
     ~/.zsh_hist_backup.db: .zsh_hist_backup.db
+    ~/.config/Dharkael: Dharkael
+    ~/.config/dunst: dunst
+    ~/.config/espanso: espanso
+    ~/.config/glava: glava
+    ~/.config/i3: i3
+    ~/.config/lutris: lutris
+    ~/.config/nvim: nvim
+    ~/.config/polybar: polybar
+    ~/.config/qBittorrent: qBittorrent
+    ~/.config/ranger: ranger
+    ~/.config/rofi: rofi
+    ~/.config/spicetify: spicetify
+    ~/.config/sxhkd: sxhkd
+    ~/.config/sxiv: sxiv
+    ~/.config/zathura: zathura
+    ~/.config/compton.conf: compton.conf
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

@@ -1,0 +1,17 @@
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1
+map i recolor
+map w adjust_window width
+set selection-clipboard clipboard
+set statusbar-basename true
+set adjust-open width
+set synctex true
+set highlight-transparency 0.1
+map j navigate next
+map k navigate previous
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map J scroll down
+map K scroll up
