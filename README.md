@@ -1,5 +1,3 @@
-# WIP
-
 # Let the ricing begin!
 
 Welcome to my dotfiles! Huge credits to folks over at [r/unixporn](https://www.reddit.com/r/unixporn/). Not quite an original rice but bits and pieces joined together from different places.
@@ -14,3 +12,10 @@ Welcome to my dotfiles! Huge credits to folks over at [r/unixporn](https://www.r
 - Launcher - [rofi](https://github.com/davatorium/rofi). For those who find dmenu ancient
 - Others - [dunst](https://dunst-project.org/) for notifications, [sxhkd](https://github.com/baskerville/sxhkd) for keyboard hotkeys and [compton](https://github.com/tryone144/compton) (tryone's fork) for transparency effects.
 
+## TODO
+
+- [ ] Add oh-my-zsh (probably as a submodule).
+- [ ] Use [this](https://github.com/sobolevn/dotbot-pip) or just shell commands to install pip stuff
+- [ ] Use [this](https://github.com/oxson/dotbot-yay) or just shell commands paired with the pacmanity [gist](https://gist.github.com/PrayagS/4a2f5dcb9b09be0bd6649c6a194560ac) to install packages.
+- [ ] Use [this](https://github.com/alexcormier/dotbot-rust) or shell commands to install rust packages.
+- [ ] Setup CI with [Travis](https://travis-ci.com/getting_started) or [GitHub Actions](https://github.com/features/actions) to test the install script.
