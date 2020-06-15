@@ -12,17 +12,19 @@ Download the install script from [TUG](https://www.tug.org/texlive/acquire-netin
 
 # Installing additional LaTeX packages using `tlmgr`
 
-- Install ones required by the vsCode LaTeX Workshop extension
+- Install ones required by the Visual Studio Code extension [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop).
   - `tlmgr install chktex`
   - `tlmgr install latexmk`
-  - `tlmgr install latexindent`. This one's a bit tricky as it has external perl dependencies. Its usually solved by installing texlive-most package from Arch but that duplicates files on your system (since it again reinstalls the same LaTeX packages you installed beforehand) and a lot of the times, those packages aren't up to date. The solution is to install the perl dependencies yourself.
-    - Install [cpanm](https://metacpan.org/pod/App::cpanminus#Installing-to-system-perl)
-    - Install the following packages in order (usually installing the first two does the trick)
-      - `cpanm Log::Log4perl`
-      - `cpanm Log::Dispatch`
-      - `cpanm YAML::Tiny`
-      - `cpanm File::HomeDir`
-      - `cpanm Unicode::GCString`
+  - `tlmgr install latexindent`
+
+    This one's a bit tricky as it has external perl dependencies. Its usually solved by installing texlive-most package from Arch but that duplicates files on your system (since it again reinstalls the same LaTeX packages you installed beforehand) and a lot of the times, those packages aren't up to date. The solution is to install the perl dependencies yourself.
+      - Install [cpanm](https://metacpan.org/pod/App::cpanminus#Installing-to-system-perl)
+      - Install the following packages in order (usually installing the first two does the trick)
+        - `cpanm Log::Log4perl`
+        - `cpanm Log::Dispatch`
+        - `cpanm YAML::Tiny`
+        - `cpanm File::HomeDir`
+        - `cpanm Unicode::GCString`
 - Install others which were used to compile my previous docs
   - `tlmgr install cleveref`
   - `tlmgr install relsize`
