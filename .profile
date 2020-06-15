@@ -43,3 +43,6 @@ xss-lock -n /usr/lib/xsecurelock/dimmer -l -- lock.sh &
 
 # NetworkManager applet
 nm-applet &
+
+# Optimus Manager Qt (tray applet for optimus manager)
+optimus-manager-qt &
