@@ -1,0 +1,11 @@
+game:
+  arch: win32
+  exe: /home/prayag_s/Games/osu!/drive_c/users/prayag_s/Local Settings/Application
+    Data/osu!/osu!.exe
+  prefix: ~/Games/osu!
+system:
+  env:
+    LD_PRELOAD: /usr/lib/libgamemodeauto.so
+  resolution: 1920x1080
+wine:
+  version: system

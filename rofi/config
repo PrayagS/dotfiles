@@ -1,0 +1,7 @@
+rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
+rofi.lines: 8
+rofi.width: 25
+rofi.hide-scrollbar: true
+rofi.display-drun: Run
+rofi.display-window: Swap to
+rofi.font: Inconsolata 18
