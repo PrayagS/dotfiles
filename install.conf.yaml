@@ -8,6 +8,7 @@
 - link:
     ~/.dotfiles: ''
     ~/bin:
+    ~/.local/share/fonts: fonts
     ~/.xinitrc: .xinitrc
     ~/.profile: .profile
     ~/.Xresources: .Xresources
@@ -33,5 +34,4 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [cp -a fonts/. $HOME/.local/share/fonts, Copy fonts]
   - [fc-cache -rf, Update font list]
