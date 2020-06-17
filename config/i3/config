@@ -15,10 +15,11 @@
 for_window [class="^.*"] border pixel 2
 gaps inner 3
 gaps outer 1
-gaps top 30
-gaps bottom 30
+gaps top 28
+gaps bottom 28
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
+floating_modifier $mod
 
 # #---Dropdown Windows---# #
 # General dropdown window traits. The order can matter.
@@ -26,10 +27,6 @@ for_window [instance="dropdown_*"] floating enable
 for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
 for_window [instance="dropdown_*"] scratchpad show
-for_window [instance="dropdown_tmuxdd"] resize set 625 450
-for_window [instance="dropdown_dropdowncalc"] resize set 800 300
-for_window [instance="dropdown_tmuxdd"] border pixel 3
-for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
 
 bindsym $mod+q          [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
