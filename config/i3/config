@@ -15,8 +15,8 @@
 for_window [class="^.*"] border pixel 2
 gaps inner 3
 gaps outer 1
-gaps top 28
-gaps bottom 28
+gaps top 26
+gaps bottom 26
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 floating_modifier $mod
