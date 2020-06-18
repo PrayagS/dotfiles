@@ -1,5 +1,5 @@
 [global]
-    # font = "Fantasque Sans Mono 12"
+    font = "TerminessTTF Nerd Font 12"
     markup = yes
     format = "<b>%s</b>\n%b"
     sort = yes
@@ -23,7 +23,7 @@
     # separator_color = "#585858"
     startup_notification = false
     notification_height = 0
-    frame_width = 4
+    frame_width = 2
 
 [shortcuts]
     close = ctrl+space
@@ -41,4 +41,4 @@
     timeout = 0
 
 [fullscreen_pushback]
-    fullscreen = pushback	
+    fullscreen = pushback

@@ -8,30 +8,29 @@ source "${HOME}/.cache/wal/colors.sh"
 
 
 reload_dunst() {
-    font="Jetbrains Mono 12"
-    geometry="x50+0+40"
+    font="TerminessTTF Nerd Font 12"
+    geometry="1908x50+6+35"
     pkill dunst
     dunst -config ~/.config/dunst/dunstrc \
         -geom "${geometry}" \
         -fn "${font}" \
-        -lb "${color0:-#F0F0F0}" \
-        -nb "${color0:-#F0F0F0}" \
-        -cb "${color0:-#F0F0F0}" \
-        -lf "${color15:=#000000}" \
-        -bf "${color15:=#000000}" \
-        -cf "${color15:=#000000}" \
-        -nf "${color15:=#000000}" \
-        -lfr "${color2:=#000000}" \
-        -nfr "${color2:=#000000}" \
-        -cfr "${color2:=#000000}" &
+        -lb "${background:-#F0F0F0}" \
+        -nb "${background:-#F0F0F0}" \
+        -cb "${background:-#F0F0F0}" \
+        -lf "${foreground:=#000000}" \
+        -bf "${foreground:=#000000}" \
+        -cf "${foreground:=#000000}" \
+        -nf "${foreground:=#000000}" \
+        -lfr "${color13:=#000000}" \
+        -nfr "${color13:=#000000}" \
+        -cfr "${color13:=#000000}" &
 }
 
 main() {
     reload_dunst &
     tail -f /tmp/xobpipe | xob &
     spicetify update &
-    /home/prayag_s/dev/wal-discord/wal-discord && beautifuldiscord --css $HOME/.cache/wal-discord/style.css   
+    /home/prayag_s/dev/wal-discord/wal-discord && beautifuldiscord --css $HOME/.cache/wal-discord/style.css
 }
 
 main
-
