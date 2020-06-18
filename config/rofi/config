@@ -1,7 +1,7 @@
 rofi.theme: ~/.cache/wal/colors-rofi-light.rasi
 rofi.lines: 8
-rofi.width: 20
+rofi.width: 26
 rofi.hide-scrollbar: true
 rofi.display-drun: Run
 rofi.display-window: Swap to
-rofi.font: Inconsolata 16
+rofi.font: Iosevka 16
