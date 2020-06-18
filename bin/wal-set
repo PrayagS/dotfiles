@@ -8,7 +8,7 @@ source "${HOME}/.cache/wal/colors.sh"
 
 
 reload_dunst() {
-    font="TerminessTTF Nerd Font 12"
+    font="Iosevka 12"
     geometry="1908x50+6+35"
     pkill dunst
     dunst -config ~/.config/dunst/dunstrc \
