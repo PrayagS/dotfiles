@@ -11,6 +11,7 @@
     ~/.local/share/fonts: fonts
     ~/.xinitrc: .xinitrc
     ~/.profile: .profile
+    ~/.aliases: .aliases
     ~/.Xresources: .Xresources
     ~/.zshrc: .zshrc
     ~/.p10k.zsh: .p10k.zsh
