@@ -20,8 +20,8 @@ echo "$0" | grep "zsh$" >/dev/null && [ -f ~/.zshrc ] && source "~/.zshrc"
 # Caps Lock => Escape
 setxkbmap -option caps:escape &
 
-# Start compton
-compton -b &
+# Start picom (the compositor)
+picom --experimental-backends -b &
 
 # Set wallpaper and wal theme
 wal -i ~/Pictures/Wallpapers -o "wal-set"
