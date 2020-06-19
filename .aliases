@@ -1,15 +1,19 @@
 # Shorthand aliases
 alias ssctl="sudo systemctl"
-alias tlmgr="sudo tlmgr --gui"
-alias diff="colordiff"
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dev/dotfiles/ --work-tree=$HOME'
+alias tlmgr="sudo tlmgr"
 alias cat="bat"
 alias airshare="sudo airshare"
+alias mkdir="mkdir -pv"
+alias ls="exa"
+alias la="exa -glah --git --color-scale"
+alias ll="exa -glh --git --color-scale"
+alias l="exa -lh --git --color-scale"
 
 # Launch aliases
 alias nvidia-settings="optirun -b none nvidia-settings -c :8"
-alias filebot="java -jar /home/prayag_s/Downloads/filebot/FileBot.jar"
-alias nvim="nvim -u $XDG_CONFIG_HOME/nvim/init.nvim"
+alias filebot="java -jar /home/prayag_s/Downloads/misc-stuff/filebot/FileBot.jar"
+alias vi="nvim -u $XDG_CONFIG_HOME/nvim/init.nvim"
+alias sxiv="sxiv -a"
 
 # Pacman aliases
 alias pacrmcache="sudo pacman -Scc"
