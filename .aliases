@@ -1,4 +1,5 @@
 # Shorthand aliases
+alias sudo="sudo "
 alias ssctl="sudo systemctl"
 alias tlmgr="sudo tlmgr"
 alias cat="bat"
@@ -12,7 +13,7 @@ alias l="exa -lh --git --color-scale"
 # Launch aliases
 alias nvidia-settings="optirun -b none nvidia-settings -c :8"
 alias filebot="java -jar /home/prayag_s/Downloads/misc-stuff/filebot/FileBot.jar"
-alias vi="nvim -u $XDG_CONFIG_HOME/nvim/init.nvim"
+alias nvim="nvim -u $XDG_CONFIG_HOME/nvim/init.nvim"
 alias sxiv="sxiv -a"
 
 # Pacman aliases
