@@ -114,17 +114,22 @@ set_from_resource $fg           i3wm.color15 #ff0000
 set_from_resource $fg-alt       i3wm.color2 #ff0000
 set_from_resource $hl           i3wm.color13 #ff0000
 
+# Different properties that can be customized
+# border (for the title bars)
+# background (title bars)
+# text (title bars)
+# indicator (shows which direction new tile will spawn)
+# child_border (the border around the tile)
+
 # class                 border      backgr. text indicator      child_border
 client.focused          $fg-alt     $bg     $hl  $fg-alt        $hl
 client.focused_inactive $fg-alt     $bg     $fg  $fg-alt        $fg-alt
 client.unfocused        $fg-alt     $bg     $fg  $fg-alt        $fg-alt
 client.urgent           $fg-alt     $bg     $fg  $fg-alt        $fg-alt
 client.placeholder      $fg-alt     $bg     $fg  $fg-alt        $fg-alt
-
 client.background       $bg
 
 exec --no-startup-id i3-startup-layout
-
 # exec_always --no-startup-id i3wsr --config .config/i3wsr/config.toml
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
