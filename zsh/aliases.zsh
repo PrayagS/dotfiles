@@ -35,3 +35,4 @@ alias stopdb="sudo systemctl stop postgresql.service"
 
 # Misc
 alias findkeyname="xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'"
+alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
