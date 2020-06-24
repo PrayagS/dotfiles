@@ -27,7 +27,6 @@ Just add the following lines in your autostart. I prefer adding them in my `.zpr
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
-# NOTE: If you are launching the dbus interface in
-# your autostart, it is required that the above lines
-# go below the dbus-launch call.
+# NOTE: If you are launching the dbus interface in your autostart, 
+# it is required that the above lines go below the dbus-launch call.
 ```
