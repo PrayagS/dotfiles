@@ -106,12 +106,12 @@ setopt share_history
 # Performance optimization
 setopt HIST_FCNTL_LOCK
 
-autoload up-line-or-beginning-search; zle -N up-line-or-beginning-search
-autoload down-line-or-beginning-search; zle -N down-line-or-beginning-search
-
+# Disabling in favor of zsh-autosuggestions
 # fuzzy find history: start to type
-bindkey '^k' up-line-or-beginning-search
-bindkey '^j' down-line-or-beginning-search
+# autoload up-line-or-beginning-search; zle -N up-line-or-beginning-search
+# autoload down-line-or-beginning-search; zle -N down-line-or-beginning-search
+# bindkey '^k' up-line-or-beginning-search
+# bindkey '^j' down-line-or-beginning-search
 
 #
 # Vi key bindings
@@ -237,3 +237,6 @@ source ~/.config/zsh/ohmyzsh/plugins/transfer/transfer.plugin.zsh
 
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/.config/zsh/plugins/copy-pasta/copy-pasta.plugin.zsh
+source ~/.config/zsh/plugins/gitignore/gitignore.plugin.zsh
+source ~/.config/zsh/plugins/history-search-multi-word/history-search-multi-word.plugin.zsh
