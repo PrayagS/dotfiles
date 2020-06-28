@@ -10,9 +10,9 @@
     ~/bin:
     ~/.local/share/fonts: fonts
     ~/.xinitrc: .xinitrc
+    ~/.Xresources: .Xresources
     ~/.zprofile: .zprofile
     ~/.profile: .profile
-    ~/.Xresources: .Xresources
     ~/.zshrc: .zshrc
     ~/.config/zsh: zsh
     ~/.config/Dharkael: config/Dharkael
