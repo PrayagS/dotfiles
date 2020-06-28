@@ -21,9 +21,6 @@ export TERMINAL="st"
 export BROWSER="google-chrome-stable"
 export LOLCOMMITS_DEVICE=/dev/video0
 
-# Source zshrc
-echo "$0" | grep "zsh$" >/dev/null && [ -f ~/.zshrc ] && source "~/.zshrc"
-
 # Caps Lock => Escape
 setxkbmap -option caps:escape &
 
