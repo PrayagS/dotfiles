@@ -11,3 +11,15 @@
 [submodule "zsh/plugins/fast-syntax-highlighting"]
 	path = zsh/plugins/fast-syntax-highlighting
 	url = git@github.com:zdharma/fast-syntax-highlighting.git
+[submodule "zsh/plugins/copy-pasta"]
+	path = zsh/plugins/copy-pasta
+	url = git@github.com:ChrisPenner/copy-pasta.git
+[submodule "zsh/plugins/gitignore"]
+	path = zsh/plugins/gitignore
+	url = git@github.com:voronkovich/gitignore.plugin.zsh.git
+[submodule "zsh/plugins/hacker-quotes"]
+	path = zsh/plugins/hacker-quotes
+	url = git@github.com:oldratlee/hacker-quotes.git
+[submodule "zsh/plugins/history-search-multi-word"]
+	path = zsh/plugins/history-search-multi-word
+	url = git@github.com:zdharma/history-search-multi-word.git
