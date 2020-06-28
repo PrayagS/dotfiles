@@ -5,3 +5,9 @@
 [submodule "zsh/ohmyzsh"]
 	path = zsh/ohmyzsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
+[submodule "zsh/plugins/zsh-autosuggestions"]
+	path = zsh/plugins/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "zsh/plugins/fast-syntax-highlighting"]
+	path = zsh/plugins/fast-syntax-highlighting
+	url = git@github.com:zdharma/fast-syntax-highlighting.git

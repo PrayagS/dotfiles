@@ -218,3 +218,22 @@ ZSH_THEME_RUBY_PROMPT_PREFIX="("
 ZSH_THEME_RUBY_PROMPT_SUFFIX=")"
 
 source ~/.config/zsh/ohmyzsh/lib/git.zsh
+
+#
+# Plugins
+#
+
+export ZSH="$HOME/.config/zsh/ohmyzsh"
+
+source ~/.config/zsh/ohmyzsh/plugins/archlinux/archlinux.plugin.zsh
+source ~/.config/zsh/ohmyzsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh
+source ~/.config/zsh/ohmyzsh/plugins/command-not-found/command-not-found.plugin.zsh
+source ~/.config/zsh/ohmyzsh/plugins/copyfile/copyfile.plugin.zsh
+source ~/.config/zsh/ohmyzsh/plugins/copydir/copydir.plugin.zsh
+source ~/.config/zsh/ohmyzsh/plugins/extract/extract.plugin.zsh
+source ~/.config/zsh/ohmyzsh/plugins/git/git.plugin.zsh
+source ~/.config/zsh/ohmyzsh/plugins/magic-enter/magic-enter.plugin.zsh
+source ~/.config/zsh/ohmyzsh/plugins/transfer/transfer.plugin.zsh
+
+source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
