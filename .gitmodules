@@ -23,3 +23,9 @@
 [submodule "zsh/plugins/history-search-multi-word"]
 	path = zsh/plugins/history-search-multi-word
 	url = git@github.com:zdharma/history-search-multi-word.git
+[submodule "zsh/themes/spaceship-prompt"]
+	path = zsh/themes/spaceship-prompt
+	url = git@github.com:denysdovhan/spaceship-prompt.git
+[submodule "zsh/themes/powerlevel10k"]
+	path = zsh/themes/powerlevel10k
+	url = git@github.com:romkatv/powerlevel10k.git
