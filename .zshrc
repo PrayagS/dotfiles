@@ -240,3 +240,10 @@ source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.p
 source ~/.config/zsh/plugins/copy-pasta/copy-pasta.plugin.zsh
 source ~/.config/zsh/plugins/gitignore/gitignore.plugin.zsh
 source ~/.config/zsh/plugins/history-search-multi-word/history-search-multi-word.plugin.zsh
+
+
+#
+# Theme
+#
+
+source ~/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
