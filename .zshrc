@@ -247,3 +247,4 @@ source ~/.config/zsh/plugins/history-search-multi-word/history-search-multi-word
 #
 
 source ~/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/zsh/themes/.p10k.zsh
