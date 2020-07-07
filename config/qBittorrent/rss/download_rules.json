@@ -1,2 +1,21 @@
 {
+    "Enen no Shouboutai S2": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "http://www.horriblesubs.info/rss.php?res=1080"
+        ],
+        "assignedCategory": "Anime",
+        "createSubfolder": null,
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "03 Jul 2020 20:28:39 +0000",
+        "mustContain": "Enen no Shouboutai S2",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "",
+        "smartFilter": false,
+        "useRegex": false
+    }
 }
