@@ -232,7 +232,6 @@ source ~/.config/zsh/ohmyzsh/plugins/copyfile/copyfile.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/copydir/copydir.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/extract/extract.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/git/git.plugin.zsh
-source ~/.config/zsh/ohmyzsh/plugins/magic-enter/magic-enter.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/transfer/transfer.plugin.zsh
 
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
