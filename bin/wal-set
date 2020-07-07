@@ -30,7 +30,6 @@ main() {
     reload_dunst &
     tail -f /tmp/xobpipe | xob &
     spicetify update &
-    /home/prayag_s/dev/wal-discord/wal-discord && beautifuldiscord --css $HOME/.cache/wal-discord/style.css
 }
 
 main
