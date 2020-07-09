@@ -43,8 +43,8 @@ zmodload zsh/zprof
 _comp_options+=(globdots)
 
 # See zshoptions(1) for detailed description of each option
-setopt menu_complete
-unsetopt auto_menu
+unsetopt menu_complete
+setopt auto_menu
 setopt complete_in_word
 setopt always_to_end
 
@@ -219,6 +219,12 @@ ZSH_THEME_RUBY_PROMPT_SUFFIX=")"
 
 source ~/.config/zsh/ohmyzsh/lib/git.zsh
 
+# Aliases
+source ~/.config/zsh/aliases.zsh
+
+# fasd
+eval "$(fasd --init auto)"
+
 #
 # Plugins
 #
@@ -239,7 +245,7 @@ source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.p
 source ~/.config/zsh/plugins/copy-pasta/copy-pasta.plugin.zsh
 source ~/.config/zsh/plugins/gitignore/gitignore.plugin.zsh
 source ~/.config/zsh/plugins/history-search-multi-word/history-search-multi-word.plugin.zsh
-
+source ~/.config/zsh/plugins/fzf-fasd/fzf-fasd.plugin.zsh
 
 #
 # Theme
