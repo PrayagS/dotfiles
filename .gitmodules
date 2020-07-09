@@ -23,3 +23,6 @@
 [submodule "zsh/themes/powerlevel10k"]
 	path = zsh/themes/powerlevel10k
 	url = git@github.com:romkatv/powerlevel10k.git
+[submodule "zsh/plugins/fzf-fasd"]
+	path = zsh/plugins/fzf-fasd
+	url = git@github.com:wookayin/fzf-fasd.git
