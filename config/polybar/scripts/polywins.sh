@@ -16,7 +16,7 @@ inactive_underline_color="#F1EF7D"
 separator="·"
 show="window_class" # options: window_title, window_class, window_classname
 char_limit=20 # useful with window_title
-max_windows="15" # maximum number of displayed windows
+max_windows="3" # maximum number of displayed windows
 char_case="normal" # options: normal, upper, lower
 add_spaces="true"
 resize_increment=30
@@ -154,4 +154,8 @@ window_list=$(wmctrl -lx | awk -vORS="" -vOFS="" \
 
 	END{ if (hidden_windows>0) { print separator" +"hidden_windows }}')
 
-echo "$window_list"
+if [[ -z "$window_list" ]]; then
+    echo "NOTHING"
+else
+    echo "$window_list"
+fi
