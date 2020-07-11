@@ -47,6 +47,7 @@ unsetopt menu_complete
 setopt auto_menu
 setopt complete_in_word
 setopt always_to_end
+setopt correct
 
 # Enable completion menu
 zstyle ':completion:*:*:*:*:*' menu select
@@ -253,3 +254,4 @@ source ~/.config/zsh/plugins/fzf-fasd/fzf-fasd.plugin.zsh
 
 source ~/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.config/zsh/themes/.p10k.zsh
+
