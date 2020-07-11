@@ -1,0 +1,13 @@
+[user]
+	email = prayag.s@ahduni.edu.in
+	name = PrayagS
+[color]
+	ui = true
+[url "git@github.com:"]
+	insteadOf = ssh:
+[url "https://github.com/"]
+    insteadOf = https:
+[status] 
+    submoduleSummary = true
+[help]
+	autocorrect = 1
