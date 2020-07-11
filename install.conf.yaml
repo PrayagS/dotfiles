@@ -14,6 +14,7 @@
     ~/.zprofile: .zprofile
     ~/.profile: .profile
     ~/.zshrc: .zshrc
+    ~/.gitconfig: git/.gitconfig
     ~/.config/zsh: zsh
     ~/.config/Dharkael: config/Dharkael
     ~/.config/dunst: config/dunst
