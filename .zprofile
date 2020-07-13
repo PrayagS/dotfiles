@@ -19,7 +19,7 @@ export EDITOR="nvim"
 export PAGER="less"
 export TERMINAL="st"
 export BROWSER="google-chrome-stable"
-export LOLCOMMITS_DEVICE=/dev/video0
+export LOLCOMMITS_DEVICE=/dev/video1
 
 # Caps Lock => Escape
 setxkbmap -option caps:escape &
