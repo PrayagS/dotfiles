@@ -33,7 +33,7 @@ zmodload -i zsh/complist
 } &!
 
 # TODO: Remove this when done profiling
-zmodload zsh/zprof
+# zmodload zsh/zprof
 
 #
 # Completion settings
@@ -242,6 +242,9 @@ source ~/.config/zsh/ohmyzsh/plugins/git/git.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/transfer/transfer.plugin.zsh
 
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^ ' autosuggest-execute
+bindkey '\e ' autosuggest-accept
+
 source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ~/.config/zsh/plugins/copy-pasta/copy-pasta.plugin.zsh
 source ~/.config/zsh/plugins/gitignore/gitignore.plugin.zsh
@@ -254,4 +257,3 @@ source ~/.config/zsh/plugins/fzf-fasd/fzf-fasd.plugin.zsh
 
 source ~/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.config/zsh/themes/.p10k.zsh
-
