@@ -6,7 +6,7 @@
 [url "git@github.com:"]
 	insteadOf = ssh:
 [url "https://github.com/"]
-    insteadOf = https:
+    insteadOf = nossh:
 [status] 
     submoduleSummary = true
 [help]
