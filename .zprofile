@@ -12,6 +12,7 @@ export PATH=/usr/local/texlive/2020/bin/x86_64-linux:$PATH
 export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.npm-global/bin:$PATH
 
 # Defaults
 export QT_QPA_PLATFORMTHEME="qt5ct"
@@ -19,7 +20,7 @@ export EDITOR="nvim"
 export PAGER="less"
 export TERMINAL="st"
 export BROWSER="google-chrome-stable"
-export LOLCOMMITS_DEVICE=/dev/video1
+export LOLCOMMITS_DEVICE=/dev/video0
 
 # Caps Lock => Escape
 setxkbmap -option caps:escape &
