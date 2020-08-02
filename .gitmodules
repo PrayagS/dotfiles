@@ -26,3 +26,9 @@
 [submodule "zsh/plugins/fzf-fasd"]
 	path = zsh/plugins/fzf-fasd
 	url = git@github.com:wookayin/fzf-fasd.git
+[submodule "zsh/plugins/forgit"]
+	path = zsh/plugins/forgit
+	url = git@github.com:wfxr/forgit.git
+[submodule "zsh/plugins/git-it-on.zsh"]
+	path = zsh/plugins/git-it-on.zsh
+	url = git@github.com:peterhurford/git-it-on.zsh.git
