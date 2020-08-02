@@ -13,7 +13,6 @@ alias l="exa -lh --git --color-scale"
 # Launch aliases
 alias nvidia-settings="optirun -b none nvidia-settings -c :8"
 alias filebot="java -jar /home/prayag_s/Downloads/misc-stuff/filebot/FileBot.jar"
-alias nvim="nvim -u $XDG_CONFIG_HOME/nvim/init.nvim"
 alias sxiv="sxiv -a"
 
 # Pacman aliases
