@@ -233,7 +233,6 @@ eval "$(fasd --init auto)"
 export ZSH="$HOME/.config/zsh/ohmyzsh"
 
 source ~/.config/zsh/ohmyzsh/plugins/archlinux/archlinux.plugin.zsh
-source ~/.config/zsh/ohmyzsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/command-not-found/command-not-found.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/copyfile/copyfile.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/copydir/copydir.plugin.zsh
@@ -250,7 +249,8 @@ source ~/.config/zsh/plugins/copy-pasta/copy-pasta.plugin.zsh
 source ~/.config/zsh/plugins/gitignore/gitignore.plugin.zsh
 source ~/.config/zsh/plugins/history-search-multi-word/history-search-multi-word.plugin.zsh
 source ~/.config/zsh/plugins/fzf-fasd/fzf-fasd.plugin.zsh
-
+source ~/.config/zsh/plugins/forgit/forgit.plugin.zsh
+source ~/.config/zsh/plugins/git-it-on.zsh/git-it-on.plugin.zsh
 #
 # Theme
 #
