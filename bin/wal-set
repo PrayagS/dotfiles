@@ -27,6 +27,7 @@ reload_dunst() {
 }
 
 main() {
+    ~/.config/polybar/launch.sh
     reload_dunst &
     tail -f /tmp/xobpipe | xob &
     spicetify update &
