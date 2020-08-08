@@ -234,8 +234,6 @@ export ZSH="$HOME/.config/zsh/ohmyzsh"
 
 source ~/.config/zsh/ohmyzsh/plugins/archlinux/archlinux.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/command-not-found/command-not-found.plugin.zsh
-source ~/.config/zsh/ohmyzsh/plugins/copyfile/copyfile.plugin.zsh
-source ~/.config/zsh/ohmyzsh/plugins/copydir/copydir.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/extract/extract.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/git/git.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/transfer/transfer.plugin.zsh
