@@ -5,6 +5,7 @@ map i recolor
 map w adjust_window width
 set selection-clipboard clipboard
 set statusbar-basename true
+set window-title-home-tilde true
 set adjust-open width
 set synctex true
 set highlight-transparency 0.1
