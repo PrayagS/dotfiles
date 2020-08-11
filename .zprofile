@@ -21,6 +21,13 @@ export PAGER="less"
 export TERMINAL="st"
 export BROWSER="google-chrome-stable"
 export LOLCOMMITS_DEVICE=/dev/video0
+export FORGIT_FZF_DEFAULT_OPTS="
+--exact
+--border
+--cycle
+--reverse
+--height '80%'
+"
 
 # Caps Lock => Escape
 setxkbmap -option caps:escape &
