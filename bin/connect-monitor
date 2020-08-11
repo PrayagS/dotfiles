@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Connect external monitor to left
+xrandr --output eDP-1-1 --primary --mode 1920x1080 --output HDMI-0 --mode 1280x1024 --left-of eDP-1-1
+
+# Set same wall for both screens
+wal -i ~/Pictures/Wallpapers -o wal-set
+
+# Restart picom if it got killed during the connection
+if ! pgrep "picom" > /dev/null
+then
+    picom --experimental-backends -b
+fi
