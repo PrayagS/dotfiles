@@ -129,6 +129,8 @@ bindkey -a 'gg' beginning-of-buffer-or-history
 bindkey -a 'G' end-of-buffer-or-history
 bindkey -a 'j' vi-down-line-or-history
 bindkey -a 'k' vi-up-line-or-history
+bindkey '^[[1;5C' vi-forward-word
+bindkey '^[[1;5D' vi-backward-word
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
@@ -179,6 +181,12 @@ function vbe-sudo-command-line() {
 }
 zle -N vbe-sudo-command-line
 bindkey "\es" vbe-sudo-command-line
+
+# mkcd
+function mkcd() {
+    dir="$*";
+    mkdir -p "$dir" && cd "$dir";
+}
 
 # Do not overwrite existing files with > and >>.
 # Use >! and >>! to bypass
