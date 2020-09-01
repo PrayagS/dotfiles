@@ -2,14 +2,15 @@
     "Enen no Shouboutai S2": {
         "addPaused": null,
         "affectedFeeds": [
-            "https://nyaa.si/?page=rss&u=HorribleSubs"
+            "https://nyaa.si/?page=rss&u=HorribleSubs",
+            "https://www.tokyotosho.info/rss.php?terms=HorribleSubs+1080p&type=0&searchName=true&size_min=&size_max=&username=hs"
         ],
         "assignedCategory": "Anime",
         "createSubfolder": null,
         "enabled": true,
         "episodeFilter": "",
         "ignoreDays": 0,
-        "lastMatch": "07 Aug 2020 18:02:24 +0000",
+        "lastMatch": "14 Aug 2020 18:03:57 +0000",
         "mustContain": "Enen no Shouboutai S2",
         "mustNotContain": "",
         "previouslyMatchedEpisodes": [
@@ -21,14 +22,15 @@
     "Kanojo, Okarishimasu": {
         "addPaused": null,
         "affectedFeeds": [
-            "https://nyaa.si/?page=rss&u=HorribleSubs"
+            "https://nyaa.si/?page=rss&u=HorribleSubs",
+            "https://www.tokyotosho.info/rss.php?terms=HorribleSubs+1080p&type=0&searchName=true&size_min=&size_max=&username=hs"
         ],
         "assignedCategory": "Anime",
         "createSubfolder": null,
         "enabled": true,
         "episodeFilter": "",
         "ignoreDays": 0,
-        "lastMatch": "07 Aug 2020 18:37:10 +0000",
+        "lastMatch": "14 Aug 2020 18:37:36 +0000",
         "mustContain": "Kanojo, Okarishimasu",
         "mustNotContain": "",
         "previouslyMatchedEpisodes": [
@@ -40,14 +42,15 @@
     "Re Zero kara Hajimeru Isekai Seikatsu": {
         "addPaused": null,
         "affectedFeeds": [
-            "https://nyaa.si/?page=rss&u=HorribleSubs"
+            "https://nyaa.si/?page=rss&u=HorribleSubs",
+            "https://www.tokyotosho.info/rss.php?terms=HorribleSubs+1080p&type=0&searchName=true&size_min=&size_max=&username=hs"
         ],
         "assignedCategory": "Anime",
         "createSubfolder": null,
         "enabled": true,
         "episodeFilter": "",
         "ignoreDays": 0,
-        "lastMatch": "",
+        "lastMatch": "19 Aug 2020 14:37:40 +0000",
         "mustContain": "Re Zero kara Hajimeru Isekai Seikatsu",
         "mustNotContain": "",
         "previouslyMatchedEpisodes": [
@@ -59,14 +62,15 @@
     "The God of High School": {
         "addPaused": null,
         "affectedFeeds": [
-            "https://nyaa.si/?page=rss&u=HorribleSubs"
+            "https://nyaa.si/?page=rss&u=HorribleSubs",
+            "https://www.tokyotosho.info/rss.php?terms=HorribleSubs+1080p&type=0&searchName=true&size_min=&size_max=&username=hs"
         ],
         "assignedCategory": "Anime",
         "createSubfolder": null,
         "enabled": true,
         "episodeFilter": "",
         "ignoreDays": 0,
-        "lastMatch": "10 Aug 2020 14:35:33 +0000",
+        "lastMatch": "10 Aug 2020 14:37:12 +0000",
         "mustContain": "The God of High School",
         "mustNotContain": "",
         "previouslyMatchedEpisodes": [
