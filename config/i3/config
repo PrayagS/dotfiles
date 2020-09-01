@@ -89,7 +89,7 @@ workspace 2 output eDP-1-1
 workspace 3 output eDP-1-1
 workspace 4 output eDP-1-1
 workspace 5 output eDP-1-1
-workspace 6 output HDMI-0
+workspace 6 output eDP-1-1
 workspace 7 output HDMI-0
 workspace 8 output HDMI-0
 workspace 9 output HDMI-0
@@ -142,6 +142,5 @@ client.placeholder      $fg-alt     $bg     $fg  $fg-alt        $fg-alt
 client.background       $bg
 
 exec --no-startup-id i3-startup-layout
-# exec_always --no-startup-id i3wsr --config .config/i3wsr/config.toml
-exec_always --no-startup-id autotiling
+# exec_always --no-startup-id autotiling
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
