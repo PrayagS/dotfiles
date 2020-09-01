@@ -255,7 +255,18 @@ source ~/.config/zsh/plugins/copy-pasta/copy-pasta.plugin.zsh
 source ~/.config/zsh/plugins/gitignore/gitignore.plugin.zsh
 source ~/.config/zsh/plugins/history-search-multi-word/history-search-multi-word.plugin.zsh
 source ~/.config/zsh/plugins/fzf-fasd/fzf-fasd.plugin.zsh
+
+export forgit_log=fglo
+export forgit_diff=fgd
+export forgit_add=fga
+export forgit_reset_head=fgrh
+export forgit_ignore=fgi
+export forgit_restore=fgcf
+export forgit_clean=fgclean
+export forgit_stash_show=fgss
+export forgit_cherry_pick=fgcp
 source ~/.config/zsh/plugins/forgit/forgit.plugin.zsh
+
 source ~/.config/zsh/plugins/git-it-on.zsh/git-it-on.plugin.zsh
 #
 # Theme

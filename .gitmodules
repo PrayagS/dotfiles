@@ -29,3 +29,6 @@
 [submodule "zsh/plugins/git-it-on.zsh"]
 	path = zsh/plugins/git-it-on.zsh
 	url = git@github.com:peterhurford/git-it-on.zsh.git
+[submodule "zsh/plugins/forgit"]
+	path = zsh/plugins/forgit
+	url = git@github.com:wfxr/forgit.git
