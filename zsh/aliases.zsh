@@ -9,11 +9,13 @@ alias ls="exa"
 alias la="exa -glah --git --color-scale"
 alias ll="exa -glh --git --color-scale"
 alias l="exa -lh --git --color-scale"
+alias tcpdump="sudo tcpdump"
 
 # Launch aliases
 alias nvidia-settings="optirun -b none nvidia-settings -c :8"
 alias filebot="java -jar /home/prayag_s/Downloads/misc-stuff/filebot/FileBot.jar"
 alias sxiv="sxiv -a"
+alias emu8086="WINEPREFIX=~/Games/osu\! wine Games/osu\!/drive_c/emu8086/emu8086.exe & disown && exit"
 
 # Pacman aliases
 alias pacrmcache="sudo pacman -Scc"
