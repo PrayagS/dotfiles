@@ -34,7 +34,7 @@ bindsym $mod+Shift+q    [con_id="__focused__" instance="^(?!dropdown_).*$"] exec
 
 bindsym $mod+Shift+space 	  floating toggle
 bindsym $mod+t			        split toggle
-bindsym $mod+Shift+t		    sticky toggle
+bindsym $mod+Shift+t		    layout toggle
 bindsym $mod+Shift+f		    fullscreen toggle
 
 bindsym $mod+Shift+y		exec --no-startup-id i3resize left
