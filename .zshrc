@@ -268,6 +268,8 @@ export forgit_cherry_pick=fgcp
 source ~/.config/zsh/plugins/forgit/forgit.plugin.zsh
 
 source ~/.config/zsh/plugins/git-it-on.zsh/git-it-on.plugin.zsh
+source <(echo "$(navi widget zsh)")
+
 #
 # Theme
 #
