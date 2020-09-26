@@ -2,7 +2,7 @@
 super + Return
 	$TERMINAL
 super + shift + Return
-	tabbed -r 2 $TERMINAL -w ''	
+	tabbed -r 2 $TERMINAL -w ''
 super + r
 	rofi -show drun -modi drun,window
 super + i
@@ -22,19 +22,21 @@ super + shift + w
 super + shift + s
 	flameshot gui
 super + c
-    GTK_THEME=Qogir-manjaro-light com.github.parnold-x.nasc        
+    GTK_THEME=Qogir-manjaro-light com.github.parnold-x.nasc
 super + shift + c
-    qalculate-gtk       
+    qalculate-gtk
 super + d
-	discord 
+	discord
 super + shift + ctrl + s
     ocr
+super + b; 1
+    $TERMINAL -e open_book_or_course CSE330
 
 # Et cetera...
 super + shift + x
 	/home/prayag_s/.config/rofi/scripts_powermenu.sh
 super + Escape
-    xset s activate    	
+    xset s activate
 XF86AudioMute
 	volume-control mute
 XF86Audio{Raise,Lower}Volume
