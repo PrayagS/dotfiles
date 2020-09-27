@@ -141,6 +141,9 @@ client.urgent           $fg-alt     $bg     $fg  $fg-alt        $fg-alt
 client.placeholder      $fg-alt     $bg     $fg  $fg-alt        $fg-alt
 client.background       $bg
 
+# font
+font pango:JetBrainsMono Nerd Font, Regular 9
+
 exec --no-startup-id i3-startup-layout
 # exec_always --no-startup-id autotiling
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
