@@ -32,6 +32,12 @@ export FORGIT_FZF_DEFAULT_OPTS="
 # Caps Lock => Escape
 setxkbmap -option caps:escape &
 
+# Start ibus for multiple kb inputs
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3
+
 # Start picom (the compositor)
 picom --experimental-backends -b &
 
