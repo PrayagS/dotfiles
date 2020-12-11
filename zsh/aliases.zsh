@@ -5,6 +5,8 @@ alias tlmgr="sudo tlmgr"
 alias cat="bat"
 alias airshare="sudo airshare"
 alias mkdir="mkdir -pv"
+alias mv="mv -iv"
+alias cp="cp -irv"
 alias ls="exa"
 alias la="exa -glah --git --color-scale"
 alias ll="exa -glh --git --color-scale"
@@ -23,7 +25,7 @@ alias yeet="yay -Rsn"
 alias fixmirrors="sudo pacman-mirrors --fasttrack && sudo pacman -Syyu"
 
 # Plex
-alias plexstart="sudo systemctl start plexmediaserver.service && /opt/google/chrome/google-chrome -a http://localhost:32400/web/index.html"
+alias plexstart="sudo systemctl start plexmediaserver.service && /opt/google/chrome/google-chrome --profile-directory="Default" -a http://localhost:32400/web/index.html"
 alias plexstop="sudo systemctl stop plexmediaserver.service"
 
 # VPN
