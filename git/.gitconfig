@@ -2,12 +2,22 @@
 	email = prayag.s@ahduni.edu.in
 	name = PrayagS
 [color]
-	ui = true
+	ui     = auto
+	status = auto
+	diff   = auto
+	branch = auto
+	interative = auto
+[branch]
+	sort = -committerdate
+[push]
+	default = current
+[grep]
+	lineNumber = true
 [url "git@github.com:"]
 	insteadOf = ssh:
 [url "https://github.com/"]
-    insteadOf = nossh:
-[status] 
-    submoduleSummary = true
+	insteadOf = nossh:
+[status]
+	submoduleSummary = true
 [help]
 	autocorrect = 1
