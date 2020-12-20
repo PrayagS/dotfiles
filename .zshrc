@@ -45,6 +45,10 @@ _comp_options+=(globdots)
 # See zshoptions(1) for detailed description of each option
 unsetopt menu_complete
 setopt auto_menu
+setopt auto_param_slash
+setopt auto_remove_slash
+setopt mark_dirs
+setopt list_types list_packed
 setopt complete_in_word
 setopt always_to_end
 setopt correct
@@ -68,7 +72,7 @@ zstyle ':completion:*:history-words' list false
 zstyle ':completion:*:history-words' menu yes
 
 # Enable completion while killing processes
-zstyle ':completion:*:*:*:*:processes' command 'ps -u $LOGNAME -o pid,user,command -w'
+zstyle ':completion:*:*:*:*:processes' command 'ps -u $USER -o pid,%cpu,%mem,cputime,command -w'
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;36=0=01'
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:*:kill:*' force-list always
@@ -99,6 +103,8 @@ setopt append_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+setopt inc_append_history
 setopt hist_save_no_dups
 setopt hist_ignore_space
 setopt hist_verify
