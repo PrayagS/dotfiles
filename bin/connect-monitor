@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Connect external monitor to left
-xrandr --output eDP-1-1 --primary --mode 1920x1080 --output HDMI-0 --mode 1280x1024 --left-of eDP-1-1
+xrandr --output eDP-1-1 --primary --mode 1920x1080 --output HDMI-0 --mode 1920x1080 --left-of eDP-1-1
+nvidia-settings -a CurrentMetaMode="HDMI-0: 1920x1080+0+0 { ViewPortIn=1920x1080, ViewPortOut=1820x1022+50+29 }"
 
 # Set same wall for both screens
 wal -i ~/Pictures/Wallpapers -o wal-set
