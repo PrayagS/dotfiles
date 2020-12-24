@@ -10,6 +10,8 @@ set smartcase
 set nohlsearch
 
 " Indentation
+set autoindent
+set smartindent
 set expandtab
 set smarttab
 set tabstop=4
