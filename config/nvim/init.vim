@@ -1,7 +1,9 @@
 " Basics
 filetype plugin indent on
 syntax on
-set number relativenumber
+set number
+set showmatch
+set colorcolumn=80
 
 " Search
 set incsearch
@@ -23,6 +25,7 @@ set nobackup
 set noswapfile
 set wrap
 set linebreak
+set breakindent
 set clipboard=unnamedplus
 
 " Splits
