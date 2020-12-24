@@ -16,7 +16,6 @@ for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
         bar=${bar##*/}
         bar=${bar%%.*}
         if [[ "$bar" == "tray" ]]; then
-            echo "HERE"
             MONITOR=$TRAY_OUTPUT polybar --reload "$bar" -c /home/"$USER"/.config/polybar/config.ini &
         else
             MONITOR=$m polybar --reload "$bar" -c /home/"$USER"/.config/polybar/config.ini &
