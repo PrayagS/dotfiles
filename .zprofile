@@ -48,7 +48,7 @@ wal -i ~/Pictures/Wallpapers -o "wal-set"
 sxhkd &
 
 # Start redshift
-redshift -l 23.022505:72.571365 &
+redshift &
 
 # Change trackpad defaults
 natural-scroll-and-tap

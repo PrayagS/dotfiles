@@ -27,6 +27,7 @@
     ~/.config/qBittorrent: config/qBittorrent
     ~/.config/ranger: config/ranger
     ~/.config/rofi: config/rofi
+    ~/.config/redshift: config/redshift
     ~/.config/spicetify: config/spicetify
     ~/.config/sxhkd: config/sxhkd
     ~/.config/sxiv: config/sxiv
