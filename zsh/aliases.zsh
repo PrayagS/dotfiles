@@ -12,6 +12,7 @@ alias la="exa -glah --git --color-scale"
 alias ll="exa -glh --git --color-scale"
 alias l="exa -lh --git --color-scale"
 alias tcpdump="sudo tcpdump"
+alias k="kubectl"
 
 # Launch aliases
 alias filebot="java -jar /home/prayag_s/Downloads/misc-stuff/filebot/FileBot.jar"
