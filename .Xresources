@@ -7,7 +7,7 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 !! Transparency (0-1):
-st.alpha: 0.8
+!! st.alpha: 0.75
 
 !! Set a default font and font size as below:
-st.font: Iosevka Term-12:antialias=true:autohint=true;
+!! st.font: Iosevka Term-12:antialias=true:autohint=true;
