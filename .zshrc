@@ -7,6 +7,12 @@
 #  ╚══════╝╚══════╝╚═╝  ╚═╝
 #
 
+
+function blastoff(){
+    echo "🚀"
+}
+starship_precmd_user_func="blastoff"
+
 # Initialize completion
 autoload -Uz compinit
 _comp_path="$HOME/.zcompdump"
@@ -173,6 +179,24 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
+# ci", ci', ci`, di", etc
+autoload -U select-quoted
+zle -N select-quoted
+for m in visual viopp; do
+  for c in {a,i}{\',\",\`}; do
+    bindkey -M $m $c select-quoted
+  done
+done
+
+# ci{, ci(, ci<, di{, etc
+autoload -U select-bracketed
+zle -N select-bracketed
+for m in visual viopp; do
+  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+    bindkey -M $m $c select-bracketed
+  done
+done
+
 # Enable comments in the shell
 setopt interactive_comments
 
@@ -232,13 +256,75 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""               # Text to display if the branch is c
 ZSH_THEME_RUBY_PROMPT_PREFIX="("
 ZSH_THEME_RUBY_PROMPT_SUFFIX=")"
 
-source ~/.config/zsh/ohmyzsh/lib/git.zsh
+# source ~/.config/zsh/ohmyzsh/lib/git.zsh
 
 # Aliases
 source ~/.config/zsh/aliases.zsh
 
+# nnn config
+source ~/.config/nnn/nnn.zsh
+
+n ()
+{
+    # Block nesting of nnn in subshells
+    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+        echo "nnn is already running"
+        return
+    fi
+
+    # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # To cd on quit only on ^G, remove the "export" as in:
+        NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    # export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+    # stty start undef
+    # stty stop undef
+    # stty lwrap undef
+    # stty lnext undef
+
+    nnn -e "$@"
+
+    if [ -f "$NNN_TMPFILE" ]; then
+            . "$NNN_TMPFILE"
+            rm -f "$NNN_TMPFILE" > /dev/null
+    fi
+}
+
+alias N='sudo -E n -e'
+
 # fasd
-eval "$(fasd --init auto)"
+# eval "$(fasd --init auto)"
+eval "$(zoxide init zsh)"
+
+# lazygit
+lg()
+{
+    export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+    lazygit "$@"
+
+    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+            rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+    fi
+}
+
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
+kind-setup() {
+    kind create cluster
+    VERSION=$(curl https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/stable.txt)
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/${VERSION}/deploy/static/provider/kind/deploy.yaml
+    kubectl wait --namespace ingress-nginx \
+        --for=condition=ready pod \
+        --selector=app.kubernetes.io/component=controller \
+        --timeout=90s
+}
 
 #
 # Plugins
@@ -254,9 +340,11 @@ source ~/.config/zsh/ohmyzsh/plugins/transfer/transfer.plugin.zsh
 
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-execute
-bindkey '\e ' autosuggest-accept
+bindkey '^[[1;6C' autosuggest-accept
 
 source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+export FAST_HIGHLIGHT[ointeractive_comments]=0
+
 source ~/.config/zsh/plugins/copy-pasta/copy-pasta.plugin.zsh
 source ~/.config/zsh/plugins/gitignore/gitignore.plugin.zsh
 source ~/.config/zsh/plugins/history-search-multi-word/history-search-multi-word.plugin.zsh
@@ -282,3 +370,9 @@ source <(echo "$(navi widget zsh)")
 
 source ~/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.config/zsh/themes/.p10k.zsh
+
+# eval "$(starship init zsh)"
+\cat ~/.cache/wal/sequences
+
+# complete -C '/usr/local/bin/aws_completer' aws
+# [[ ~/bin/kubectl ]] && source <(kubectl completion zsh)
