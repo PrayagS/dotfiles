@@ -17,3 +17,4 @@ map d scroll half-down
 map D toggle_page_mode
 map J scroll down
 map K scroll up
+map f toggle_page_mode
