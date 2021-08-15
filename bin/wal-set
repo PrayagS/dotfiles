@@ -8,29 +8,16 @@ source "${HOME}/.cache/wal/colors.sh"
 
 
 reload_dunst() {
-    font="Iosevka 11"
-    geometry="1908x50+6+35"
-    pkill dunst
-    dunst -config ~/.config/dunst/dunstrc \
-        -geom "${geometry}" \
-        -fn "${font}" \
-        -lb "${background:-#F0F0F0}" \
-        -nb "${background:-#F0F0F0}" \
-        -cb "${background:-#F0F0F0}" \
-        -lf "${foreground:=#000000}" \
-        -bf "${foreground:=#000000}" \
-        -cf "${foreground:=#000000}" \
-        -nf "${foreground:=#000000}" \
-        -lfr "${color13:=#000000}" \
-        -nfr "${color13:=#000000}" \
-        -cfr "${color13:=#000000}" &
+    if [ -e ~/.config/dunst/wal.sh ]; then
+        ~/.config/dunst/wal.sh
+    fi
 }
 
 main() {
-    ~/.config/polybar/launch.sh
-    reload_dunst &
-    tail -f /tmp/xobpipe | xob &
-    spicetify update &
+    # ~/.config/polybar/launch.sh
+    reload_dunst
+    # tail -f /tmp/xobpipe | xob &
+    # spicetify update &
 }
 
 main

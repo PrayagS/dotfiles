@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Switch off the external monitor 
+# Switch off the external monitor
 xrandr --output HDMI-0 --off
 
 # Set wall for the laptop
-wal -i ~/Pictures/Wallpapers -o wal-set
+# wal -i ~/Pictures/Wallpapers --recursive -o wal-set
 
 # Restart picom if it got killed during the process
 if ! pgrep "picom" > /dev/null

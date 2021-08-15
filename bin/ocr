@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Siddharth Dushantha 2020
-# 
+#
 # https://github.com/sdushantha/bin
 #
 
@@ -36,9 +36,9 @@ STATUS=$?
 # Do the magic (∩^o^)⊃━☆ﾟ.*･｡ﾟ
 # Notice how I have removing the extension .txt from the file path. This is
 # because tesseract adds .txt to the given file path anyways. So if we were to
-# specify /tmp/ocr.txt as the file path, tesseract would out the text to 
+# specify /tmp/ocr.txt as the file path, tesseract would out the text to
 # /tmp/ocr.txt.txt
-tesseract "$IMAGE_FILE" "${TEXT_FILE//\.txt/}"
+tesseract -l jpn "$IMAGE_FILE" "${TEXT_FILE//\.txt/}"
 
 # Check if the text was detected by checking number
 # of lines in the file
@@ -55,7 +55,7 @@ xclip -selection clip < "$TEXT_FILE"
 notify-send "ocr" "$(cat $TEXT_FILE)"
 
 # Clean up
-# "Always leave the area better than you found it" 
+# "Always leave the area better than you found it"
 #                       - My first grade teacher
 rm "$TEXT_FILE"
 rm "$IMAGE_FILE"
