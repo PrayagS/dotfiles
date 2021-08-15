@@ -2,3 +2,5 @@ config/espanso/user/personal-info.yml
 config/ranger/__pycache__/
 config/ranger/plugins/__pycache__/
 fonts/.uuid
+config/nvim/plugged/
+config/nvim/.netrwhist
