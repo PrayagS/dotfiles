@@ -1,36 +1,34 @@
-# Basic binds
+#light Basic binds
 super + Return
 	$TERMINAL
-super + shift + Return
-	tabbed -r 2 $TERMINAL -w ''
 super + r
 	rofi -show drun -modi drun,window
+super + shift + r
+    $TERMINAL --class=sway-launcher -e sway-launcher-desktop
 super + i
 	$TERMINAL -e htop
 super + w
 	$BROWSER --profile-directory="Default"
 super + s
 	$BROWSER --profile-directory="Profile 1"
+super + shift + w
+	$BROWSER --profile-directory="Profile 4"
 super + shift + n
 	$BROWSER --incognito
 super + f
 	$TERMINAL -e ranger
 super + p
 	code
-super + shift + w
-	/home/prayag_s/.config/rofi/websearch.sh
 super + shift + s
 	flameshot gui
 super + c
     GTK_THEME=Qogir-manjaro-light com.github.parnold-x.nasc
-super + shift + c
-    qalculate-gtk
-super + d
-	discord
 super + shift + ctrl + s
     ocr
-super + b; 1
-    $TERMINAL -e open_book_or_course CSE330
+super + space
+    bolt --rofi-search
+super + slash
+    flash_window
 
 # Et cetera...
 super + shift + x
