@@ -2,10 +2,10 @@
 
 # Connect external monitor to left
 xrandr --output eDP-1-1 --primary --mode 1920x1080 --output HDMI-0 --mode 1920x1080 --left-of eDP-1-1
-nvidia-settings -a CurrentMetaMode="HDMI-0: 1920x1080+0+0 { ViewPortIn=1920x1080, ViewPortOut=1820x1022+50+29 }"
+nvidia-settings -a CurrentMetaMode="HDMI-0: 1920x1080+0+0 { ViewPortIn=1920x1080, ViewPortOut=1800x1020+60+30 }"
 
 # Set same wall for both screens
-wal -i ~/Pictures/Wallpapers -o wal-set
+wal -w -o wal-set
 
 # Restart picom if it got killed during the connection
 if ! pgrep "picom" > /dev/null
