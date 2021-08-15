@@ -1,23 +1,44 @@
 [user]
 	email = prayag.s@ahduni.edu.in
 	name = PrayagS
+    signingKey = BDB1B4DD5E0F077A
+
+[core]
+    editor = $EDITOR --cmd 'set colorcolumn=72'
+
+[github]
+    user = PrayagS
+
+[init]
+    defaultBranch = main
+
+[commit]
+    gpgSign = true
+
 [color]
 	ui     = auto
 	status = auto
 	diff   = auto
 	branch = auto
 	interative = auto
+
 [branch]
 	sort = -committerdate
+
 [push]
 	default = current
+
 [grep]
 	lineNumber = true
+
 [url "git@github.com:"]
 	insteadOf = ssh:
+
 [url "https://github.com/"]
 	insteadOf = nossh:
+
 [status]
 	submoduleSummary = true
+
 [help]
-	autocorrect = 1
+	autocorrect = 10
