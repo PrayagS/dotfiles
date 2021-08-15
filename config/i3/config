@@ -12,11 +12,11 @@
 #
 
 # #---Basic Definitions---# #
-for_window [class="^.*"] border pixel 2
-gaps inner 3
+for_window [class="^.*"] border pixel 0
+gaps inner 5
 gaps outer 1
-gaps top 26
-gaps bottom 26
+gaps top 24
+gaps bottom 24
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 floating_modifier $mod
@@ -28,6 +28,12 @@ for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
 for_window [instance="dropdown_*"] scratchpad show
 for_window [instance="dropdown_*"] move position center
+for_window [instance="^sway-launcher$"] floating enable
+for_window [instance="^sway-launcher$"] sticky enable
+for_window [instance="^sway-launcher$"] resize set 30 ppt 60 ppt
+for_window [instance="^sway-launcher$"] border pixel 10
+
+focus_on_window_activation focus
 
 bindsym $mod+q          [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q    [con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
@@ -44,7 +50,6 @@ bindsym $mod+Shift+o		exec --no-startup-id i3resize right
 
 bindsym $mod+g			    gaps inner current plus 1
 bindsym $mod+Shift+g		gaps inner current minus 1
-bindsym $mod+Shift+d		gaps inner current set 3; gaps outer current set 1
 bindsym $mod+z			    gaps outer current plus 1
 bindsym $mod+Shift+z		gaps outer current minus 1
 
@@ -65,11 +70,7 @@ bindsym $mod+Shift+comma	        exec --no-startup-id i3-ws.py prev move
 bindsym $mod+period		            workspace next
 bindsym $mod+Shift+period	        exec --no-startup-id i3-ws.py next move
 bindsym $mod+Tab		              workspace back_and_forth
-bindsym $mod+Right		            workspace next_on_output
-bindsym $mod+Shift+XF86Back	      move container to workspace prev
-bindsym $mod+Left	                workspace prev_on_output
-bindsym $mod+Shift+XF86Forward    move container to workspace next
-bindsym $mod+semicolon	          workspace next
+bindsym $mod+semicolon	          exec --no-startup-id layout_manager.sh
 
 # switch to workspace
 bindsym $mod+1		workspace number 1
@@ -95,6 +96,11 @@ workspace 8 output HDMI-0
 workspace 9 output HDMI-0
 workspace 10 output HDMI-0
 
+for_window [ workspace="7" ] floating enable
+for_window [ workspace="8" ] floating enable
+for_window [ workspace="9" ] floating enable
+for_window [ workspace="10" ] floating enable
+
 # move focused container to workspace
 bindsym $mod+Shift+1	move container to workspace number 1
 bindsym $mod+Shift+2	move container to workspace number 2
@@ -109,6 +115,10 @@ bindsym $mod+Shift+0	move container to workspace number 10
 
 # #---Function Buttons---# #
 bindsym $mod+F2		restart
+
+# Multi monitor
+bindsym $mod+Shift+a move container to output left
+bindsym $mod+Shift+d move container to output right
 
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
@@ -144,6 +154,7 @@ client.background       $bg
 # font
 font pango:JetBrainsMono Nerd Font, Regular 9
 
-exec --no-startup-id i3-startup-layout
+# exec --no-startup-id i3-startup-layout
 # exec_always --no-startup-id autotiling
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id nm-applet & disown
+exec --no-startup-id $HOME/.config/polybar/launch.sh
