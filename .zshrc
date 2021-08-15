@@ -262,7 +262,7 @@ ZSH_THEME_RUBY_PROMPT_SUFFIX=")"
 source ~/.config/zsh/aliases.zsh
 
 # nnn config
-source ~/.config/nnn/nnn.zsh
+# source ~/.config/nnn/nnn.zsh
 
 n ()
 {
