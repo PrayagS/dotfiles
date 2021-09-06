@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+screens=("${(@f)$(xrandr -q | grep -w connected | awk -F'[ +]' '{print $1}')}")
+
+if [ "$#screens" = "1" ]; then
+    echo "display.primary: eDP-1" | xrdb -merge
+    echo "display.secondary: eDP-1" | xrdb -merge
+else
+    echo "display.primary: eDP-1-1" | xrdb -merge
+    echo "display.secondary: HDMI-0" | xrdb -merge
+    xrandr --output eDP-1-1 --primary --mode 1920x1080 --output HDMI-0 --mode 1920x1080 --left-of eDP-1-1
+    nvidia-settings -a CurrentMetaMode="HDMI-0: 1920x1080+0+0 {ViewPortIn=1920x1080, ViewPortOut=1800x1020+60+30}"
+fi
+
