@@ -52,9 +52,15 @@ setopt list_types list_packed
 setopt complete_in_word
 setopt always_to_end
 setopt correct
+setopt extendedglob
+
 
 # Enable completion menu
 zstyle ':completion:*:*:*:*:*' menu select
+
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' rehash true
+zstyle ':completion:*:descriptions' format '%U%F{cyan}%d%f%u'
 
 # Enable LSCOLORS in completion menu
 zstyle ':completion:*' list-colors ''
@@ -83,6 +89,7 @@ zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*:manuals.(^1*)' insert-sections true
 
 # Use cache
+zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' cache-path $ZSH_CACHE_DIR
 
@@ -368,5 +375,6 @@ source ~/.config/zsh/themes/.p10k.zsh
 # eval "$(starship init zsh)"
 \cat ~/.cache/wal/sequences
 
-# complete -C '/usr/local/bin/aws_completer' aws
-# [[ ~/bin/kubectl ]] && source <(kubectl completion zsh)
+# Completions
+[[ ~/bin/kubectl ]] && source <(kubectl completion zsh)
+
