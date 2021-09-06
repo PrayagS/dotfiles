@@ -1,12 +1,13 @@
 # Shorthand aliases
 alias sudo="sudo "
+alias N='sudo -E n -e'
 alias ssctl="sudo systemctl"
 alias tlmgr="sudo tlmgr"
 alias cat="bat"
 alias airshare="sudo airshare"
 alias mkdir="mkdir -pv"
-alias mv="mv -iv"
-alias cp="cp -irv"
+alias mv="mv -i"
+alias cp="cp -ir"
 alias ls="exa"
 alias la="exa -glah --git --color-scale"
 alias ll="exa -glh --git --color-scale"
