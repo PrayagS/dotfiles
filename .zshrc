@@ -219,6 +219,11 @@ function mkcd() {
     mkdir -p "$dir" && cd "$dir";
 }
 
+# Redraw shell on resize
+TRAPWINCH() {
+    zle &&  zle -R
+}
+
 # Do not overwrite existing files with > and >>.
 # Use >! and >>! to bypass
 unsetopt CLOBBER
