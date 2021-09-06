@@ -4,3 +4,5 @@ config/ranger/plugins/__pycache__/
 fonts/.uuid
 config/nvim/plugged/
 config/nvim/.netrwhist
+config/spicetify/CustomApps
+config/spicetify/Extracted
