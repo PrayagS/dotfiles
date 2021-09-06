@@ -13,7 +13,9 @@ xsecurelock_method(){
    export XSECURELOCK_SHOW_DATETIME=1
    export XSECURELOCK_SHOW_HOSTNAME=2
    export XSECURELOCK_SHOW_USERNAME=1
-   export XSECURELOCK_LIST_VIDEOS_COMMAND='cat ~/.cache/wal/wal'
+   # export XSECURELOCK_LIST_VIDEOS_COMMAND='cat ~/.cache/wal/wal'
+   export XSECURELOCK_LIST_VIDEOS_COMMAND='find ~/Pictures/Wallpapers -type f'
+   export XSECURELOCK_IMAGE_DURATION_SECONDS=inf
    export XSECURELOCK_SAVER=saver_mpv
    xsecurelock
 }
