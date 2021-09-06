@@ -37,17 +37,22 @@ sxhkd &
 # Start redshift
 redshift &
 
-# Change trackpad defaults
-natural-scroll-and-tap
-
 # Start power manager to manage suspend and sleep
 xfce4-power-manager &
-
-# NetworkManager applet
-nm-applet &
 
 # Optimus Manager Qt (tray applet for optimus manager)
 optimus-manager-qt &
 
+# Pulseaudio systray
+pasystray --include-monitors &
+
 # Generate index for bolt
 bolt --generate --watch &
+
+# reload dunst
+xrdb -merge ~/.Xresources
+~/.config/dunst/wal.sh
+
+# Change trackpad defaults
+natural-scroll-and-tap
+
