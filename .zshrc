@@ -7,12 +7,6 @@
 #  ╚══════╝╚══════╝╚═╝  ╚═╝
 #
 
-
-function blastoff(){
-    echo "🚀"
-}
-starship_precmd_user_func="blastoff"
-
 # Initialize completion
 autoload -Uz compinit
 _comp_path="$HOME/.zcompdump"
@@ -337,6 +331,7 @@ source ~/.config/zsh/ohmyzsh/plugins/command-not-found/command-not-found.plugin.
 source ~/.config/zsh/ohmyzsh/plugins/extract/extract.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/git/git.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/transfer/transfer.plugin.zsh
+source ~/.config/zsh/ohmyzsh/plugins/zoxide/zoxide.plugin.zsh
 
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-execute
@@ -348,7 +343,6 @@ export FAST_HIGHLIGHT[ointeractive_comments]=0
 source ~/.config/zsh/plugins/copy-pasta/copy-pasta.plugin.zsh
 source ~/.config/zsh/plugins/gitignore/gitignore.plugin.zsh
 source ~/.config/zsh/plugins/history-search-multi-word/history-search-multi-word.plugin.zsh
-source ~/.config/zsh/plugins/fzf-fasd/fzf-fasd.plugin.zsh
 
 export forgit_log=fglo
 export forgit_diff=fgd
