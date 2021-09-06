@@ -32,4 +32,3 @@
 [submodule "zsh/plugins/zoxide"]
 	path = zsh/plugins/zoxide
 	url = git@github.com:ajeetdsouza/zoxide.git
-
