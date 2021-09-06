@@ -51,6 +51,9 @@ nnoremap tl :tabnext<CR>
 nnoremap tw :tabclose<CR>
 nnoremap tn :tabnew<CR>
 
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
 " Colors
 " set termguicolors
 
@@ -84,6 +87,8 @@ Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'lambdalisue/suda.vim'
 Plug 'dylanaraps/wal.vim'
 call plug#end()
+
+call yankstack#setup()
 
 colorscheme wal
 
