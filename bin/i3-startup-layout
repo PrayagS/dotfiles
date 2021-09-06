@@ -1,5 +1,0 @@
-#!/bin/sh
-
-i3-msg 'workspace 5; exec spotify --force-device-scale-factor=1.15'
-sleep 3
-i3-msg 'workspace 6; exec discord'

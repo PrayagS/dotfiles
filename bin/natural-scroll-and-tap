@@ -9,7 +9,6 @@ natural_scrolling_id=`xinput list-props $id | \
                       | cut -d'(' -f2 | cut -d')' -f1`
 
 # Set the property to true
-echo $id
 xinput --set-prop $id $natural_scrolling_id 1
 
 # Get id for tap to click
