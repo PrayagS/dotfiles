@@ -115,7 +115,8 @@ function toggleDark(setDark) {
 }
 
 /* Init with current system light/dark mode */
-let systemDark = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--system_is_dark'))==1
+// let systemDark = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--system_is_dark'))==1
+let systemDark = 1
 toggleDark(systemDark)
 
 waitForElement([".main-topBar-indicators"], (queries) => {
@@ -154,7 +155,7 @@ async function songchange() {
     // warning popup
     if (Spicetify.PlaybackControl.featureVersion < "1.1.57")
         Spicetify.showNotification("Your version of Spotify (" + Spicetify.PlaybackControl.featureVersion + ") is un-supported")
-    
+
     let album_uri = Spicetify.Player.data.track.metadata.album_uri
     let bgImage = Spicetify.Player.data.track.metadata.image_url
     if (bgImage === undefined) {
@@ -171,7 +172,7 @@ async function songchange() {
         recent_date.setMonth(recent_date.getMonth() - 6)
         album_date = album_date.toLocaleString('default', album_date>recent_date ? { year: 'numeric', month: 'short' } : { year: 'numeric' })
         album_link = "<a title=\""+Spicetify.Player.data.track.metadata.album_title+"\" href=\""+album_uri+"\" data-uri=\""+album_uri+"\" data-interaction-target=\"album-name\" class=\"tl-cell__content\">"+Spicetify.Player.data.track.metadata.album_title+"</a>"
-        
+
         if (nearArtistSpan!==null)
             nearArtistSpan.innerHTML = album_link + " — " + album_date
         else
