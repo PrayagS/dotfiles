@@ -19,6 +19,9 @@ ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3
 # Path
 export PATH=$HOME/bin:$PATH
 
+# Setup display
+setup-display
+
 # Start picom (the compositor)
 picom --experimental-backends -b &
 
