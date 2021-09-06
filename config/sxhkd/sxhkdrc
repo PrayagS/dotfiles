@@ -12,17 +12,17 @@ super + w
 super + s
 	$BROWSER --profile-directory="Profile 1"
 super + shift + w
-	$BROWSER --profile-directory="Profile 4"
+	$BROWSER --profile-directory="Profile 2"
 super + shift + n
 	$BROWSER --incognito
 super + f
-	$TERMINAL -e ranger
+	$TERMINAL -e n
 super + p
 	code
 super + shift + s
 	flameshot gui
 super + c
-    GTK_THEME=Qogir-manjaro-light com.github.parnold-x.nasc
+    GTK_THEME=Qogir-manjaro-light com.github.parnold_x.nasc
 super + shift + ctrl + s
     ocr
 super + space
@@ -43,7 +43,7 @@ XF86Audio{Prev,Next}
 	playerctl --player=playerctld {previous,next}
 XF86AudioPlay
 	playerctl --player=playerctld play-pause
-XF86MonBrightnessDown
-	xbacklight -dec 5
-XF86MonBrightnessUp
-	xbacklight -inc 5
+# XF86MonBrightnessDown
+# 	xbacklight -dec 5
+# XF86MonBrightnessUp
+# 	xbacklight -inc 5
