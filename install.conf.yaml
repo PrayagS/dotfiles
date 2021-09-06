@@ -13,6 +13,7 @@
     ~/.Xresources: .Xresources
     ~/.zprofile: .zprofile
     ~/.profile: .profile
+    ~/.zshenv: .zshenv
     ~/.zshrc: .zshrc
     ~/.gitconfig: git/.gitconfig
     ~/.config/zsh: zsh
