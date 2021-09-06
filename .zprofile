@@ -18,27 +18,6 @@ ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3
 
 # Path
 export PATH=$HOME/bin:$PATH
-export PATH=/usr/local/texlive/2020/bin/x86_64-linux:$PATH
-export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/.npm-global/bin:$PATH
-export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:$HOME/.krew/bin"
-
-export QT_QPA_PLATFORMTHEME="qt5ct"
-export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
-export EDITOR="nvim"
-export PAGER="less"
-export TERMINAL="alacritty"
-export BROWSER="google-chrome-stable"
-export LOLCOMMITS_DEVICE=/dev/video0
-export FORGIT_FZF_DEFAULT_OPTS="
---exact
---border
---cycle
---reverse
---height '80%'
-"
 
 # Start picom (the compositor)
 picom --experimental-backends -b &
