@@ -100,10 +100,10 @@ workspace 8 output $secondary
 workspace 9 output $secondary
 workspace 10 output $secondary
 
-for_window [ workspace="7" ] floating enable
-for_window [ workspace="8" ] floating enable
-for_window [ workspace="9" ] floating enable
-for_window [ workspace="10" ] floating enable
+for_window [ workspace="7" ]  floating enable, resize set 1913 1040, move position 3 px 35 px
+for_window [ workspace="8" ]  floating enable, resize set 1913 1040, move position 3 px 35 px
+for_window [ workspace="9" ]  floating enable, resize set 1913 1040, move position 3 px 35 px
+for_window [ workspace="10" ] floating enable, resize set 1913 1040, move position 3 px 35 px
 
 # move focused container to workspace
 bindsym $mod+Shift+1	move container to workspace number 1
@@ -127,7 +127,7 @@ bindsym $mod+Shift+d move container to output right
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
 for_window [title="Default - Wine desktop"] floating enable
-for_window [class="Com.github.parnold_x.nasc"] floating enable 640 480
+for_window [class="Com.github.parnold_x.nasc"] floating enable, resize set 640 480
 for_window [class="Qalculate-gtk"] floating enable 600 400
 for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="St" title="weather-popup"] floating enable
@@ -156,9 +156,11 @@ client.placeholder      $fg-alt     $bg     $fg  $fg-alt        $fg-alt
 client.background       $bg
 
 # font
-font pango:JetBrainsMono Nerd Font, Regular 9
+font pango:Iosevka Aile, Regular 9
 
 # exec --no-startup-id i3-startup-layout
 # exec_always --no-startup-id autotiling
-exec --no-startup-id nm-applet & disown
+# exec --no-startup-id nm-applet & disown
 exec --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id caffeine -a & disown
+exec --no-startup-id $HOME/.config/dunst/wal.sh
