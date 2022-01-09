@@ -5,6 +5,7 @@
 
 [core]
     editor = $EDITOR --cmd 'set colorcolumn=72'
+    preloadindex = true
 
 [github]
     user = PrayagS
@@ -16,11 +17,10 @@
     gpgSign = true
 
 [color]
-	ui     = auto
-	status = auto
-	diff   = auto
-	branch = auto
-	interative = auto
+    ui     = true
+    diff   = true
+    interative = true
+    status = true
 
 [branch]
 	sort = -committerdate
