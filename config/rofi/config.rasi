@@ -3,7 +3,8 @@ configuration {
 	lines: 10;
 	font: "Iosevka 16";
 	hide-scrollbar: true;
-	theme: "~/.cache/wal/colors-rofi-light.rasi";
 	display-window: "Swap to";
 	display-drun: "Run";
 }
+
+@theme "~/.cache/wal/colors-rofi-light.rasi"
