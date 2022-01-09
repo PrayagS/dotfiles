@@ -39,6 +39,9 @@ set breakindent
 " Splits
 set splitbelow splitright
 
+" Remap leader
+let mapleader = "["
+
 " Remap splits navigation to just CTRL + hjkl
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -86,9 +89,15 @@ Plug 'itchyny/lightline.vim'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'lambdalisue/suda.vim'
 Plug 'dylanaraps/wal.vim'
+Plug 'mcchrish/nnn.vim'
 call plug#end()
 
 call yankstack#setup()
+
+" nnn
+let $NNN_PLUG="z:autojump;d:dragdrop;c:fzcd;f:fzopen;p:preview-tabbed;"
+let $NNN_TRASH="1"
+let $NNN_OPTS="adexDHU"
 
 colorscheme wal
 
