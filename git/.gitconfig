@@ -1,7 +1,7 @@
 [user]
-	email = prayag.s@ahduni.edu.in
+	email = prayagsavsani@gmail.com
 	name = PrayagS
-    signingKey = F6F31C32CF85286D
+    signingKey = 594301D8AE7C85C8
 
 [core]
     editor = $EDITOR --cmd 'set colorcolumn=72'
