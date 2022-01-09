@@ -23,7 +23,8 @@ case $chosen in
         lock.sh
         ;;
     $suspend)
-        lock.sh && systemctl suspend
+        # lock.sh && systemctl suspend
+        systemctl suspend
         ;;
     $log_out)
         i3-msg exit
