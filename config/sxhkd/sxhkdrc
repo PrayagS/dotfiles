@@ -23,18 +23,24 @@ super + shift + s
 	flameshot gui
 super + c
     GTK_THEME=Qogir-manjaro-light com.github.parnold_x.nasc
-super + shift + ctrl + s
-    ocr
+super + shift + ctrl + s ; {1,2}
+    ocr {eng,jpn}
 super + space
     bolt --rofi-search
+# super + slash
+#     flash_window
 super + slash
-    flash_window
+    dunstctl close
+super + shift + slash
+    dunstctl history-pop
 
 # Et cetera...
 super + shift + x
 	/home/prayag_s/.config/rofi/scripts_powermenu.sh
 super + Escape
     xset s activate
+super + shift + Escape
+    xset dpms force suspend
 XF86AudioMute
 	volume-control mute
 XF86Audio{Raise,Lower}Volume
