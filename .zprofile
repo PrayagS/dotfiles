@@ -20,16 +20,16 @@ ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3
 export PATH=$HOME/bin:$PATH
 
 # Setup display
-setup-display
-
-# Start picom (the compositor)
-picom --experimental-backends -b &
-
-# Set wallpaper and wal theme
-wal -i ~/Pictures/Wallpapers --recursive -o "wal-set"
+autorandr --change --skip-options="crtc","transform"
 
 # Setup lock on suspend and lid close
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- lock.sh &
+
+# Change trackpad defaults
+natural-scroll-and-tap
+
+# Start picom (the compositor)
+picom --experimental-backends -b &
 
 # Start hotkey daemon
 sxhkd &
@@ -37,8 +37,11 @@ sxhkd &
 # Start redshift
 redshift &
 
+# Set wallpaper and wal theme
+wal -i ~/Pictures/Wallpapers --recursive
+
 # Start power manager to manage suspend and sleep
-xfce4-power-manager &
+# xfce4-power-manager &
 
 # Optimus Manager Qt (tray applet for optimus manager)
 optimus-manager-qt &
@@ -46,13 +49,11 @@ optimus-manager-qt &
 # Pulseaudio systray
 pasystray --include-monitors &
 
+# NetworkManager applet
+nm-applet &
+
 # Generate index for bolt
 bolt --generate --watch &
 
-# reload dunst
-xrdb -merge ~/.Xresources
-~/.config/dunst/wal.sh
-
-# Change trackpad defaults
-natural-scroll-and-tap
-
+# Dunst
+# $HOME/.config/dunst/wal.sh
