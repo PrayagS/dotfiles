@@ -8,18 +8,12 @@
 [submodule "zsh/plugins/zsh-autosuggestions"]
 	path = zsh/plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
-[submodule "zsh/plugins/fast-syntax-highlighting"]
-	path = zsh/plugins/fast-syntax-highlighting
-	url = git@github.com:zdharma/fast-syntax-highlighting.git
 [submodule "zsh/plugins/copy-pasta"]
 	path = zsh/plugins/copy-pasta
 	url = git@github.com:ChrisPenner/copy-pasta.git
 [submodule "zsh/plugins/gitignore"]
 	path = zsh/plugins/gitignore
 	url = git@github.com:voronkovich/gitignore.plugin.zsh.git
-[submodule "zsh/plugins/history-search-multi-word"]
-	path = zsh/plugins/history-search-multi-word
-	url = git@github.com:zdharma/history-search-multi-word.git
 [submodule "zsh/themes/powerlevel10k"]
 	path = zsh/themes/powerlevel10k
 	url = git@github.com:romkatv/powerlevel10k.git
