@@ -9,8 +9,9 @@ n ()
 
     # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
     # To cd on quit only on ^G, remove the "export" as in:
-        NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    # NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
     # export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    export NNN_TMPFILE="$HOME/.config/nnn/.lastd"
 
     STUDY_PATH="/mnt/DATA/Study/Monsoon_2021"
 
@@ -20,14 +21,13 @@ n ()
     NNN_PLUG="z:autojump;d:dragdrop;c:fzcd;f:fzopen;p:preview-tabbed;"
     export NNN_PLUG
 
-    export NNN_FCOLORS='000000000000000000000000'
-
-    export NNN_OPTS="adexDHU"
+    export NNN_OPTS="aAdexDHU"
+    export NNN_TRASH="1"
     nnn "$@"
 
     if [ -f "$NNN_TMPFILE" ]; then
-            . "$NNN_TMPFILE"
-            rm -f "$NNN_TMPFILE" > /dev/null
+        . "$NNN_TMPFILE"
+        rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
 
