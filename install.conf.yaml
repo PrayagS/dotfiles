@@ -30,6 +30,7 @@
     ~/.config/sxiv: config/sxiv
     ~/.config/zathura: config/zathura
     ~/.config/picom.conf: config/picom.conf
+    ~/.tmux.conf: config/tmux/tmux.conf
 
 - shell:
   - [git submodule update --init --recursive --remote, Installing submodules]
