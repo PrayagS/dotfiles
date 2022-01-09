@@ -4,6 +4,7 @@ alias N='sudo -E n -e'
 alias ssctl="sudo systemctl"
 alias tlmgr="sudo tlmgr"
 alias cat="bat"
+alias yat="bat -l yaml --theme zenburn"
 alias airshare="sudo airshare"
 alias mkdir="mkdir -pv"
 alias mv="mv -i"
