@@ -29,6 +29,7 @@
     ~/.config/sxhkd: config/sxhkd
     ~/.config/sxiv: config/sxiv
     ~/.config/zathura: config/zathura
+    ~/.config/alacritty: config/alacritty
     ~/.config/picom.conf: config/picom.conf
     ~/.tmux.conf: config/tmux/tmux.conf
 
