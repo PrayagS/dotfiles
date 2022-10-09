@@ -16,6 +16,8 @@
     ~/.zshenv: .zshenv
     ~/.zshrc: .zshrc
     ~/.gitconfig: git/.gitconfig
+    # ~/.zshenv: .zshenv
+    # ~/.zshrc: .zshrc
     # ~/.gitconfig: git/.gitconfig
     ~/.config/zsh: zsh
     ~/.config/dunst: config/dunst
