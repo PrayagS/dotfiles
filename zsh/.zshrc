@@ -1,4 +1,4 @@
-#
+# GG
 #  ███████╗███████╗██╗  ██╗
 #  ╚══███╔╝██╔════╝██║  ██║
 #    ███╔╝ ███████╗███████║
@@ -23,6 +23,9 @@ unset _comp_path
 # automatically load bash completion functions
 autoload -U +X bashcompinit && bashcompinit
 zmodload -i zsh/complist
+
+# Source fzf-tab
+source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 
 # Compile the completion dump in background to increase startup speed.
 {
@@ -54,13 +57,16 @@ setopt always_to_end
 setopt correct
 setopt extendedglob
 
+setopt aliases
+
 
 # Enable completion menu
 zstyle ':completion:*:*:*:*:*' menu select
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' rehash true
-zstyle ':completion:*:descriptions' format '%U%F{cyan}%d%f%u'
+# zstyle ':completion:*:descriptions' format '%U%F{cyan}%d%f%u'
+zstyle ':completion:*:descriptions' format '[%d]'
 
 # Enable LSCOLORS in completion menu
 zstyle ':completion:*' list-colors ''
@@ -79,10 +85,22 @@ zstyle ':completion:*:history-words' menu yes
 
 # Enable completion while killing processes
 zstyle ':completion:*:*:*:*:processes' command 'ps -u $USER -o pid,%cpu,%mem,cputime,command -w'
+zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview '[[ $group == "[process ID]" ]] && ps --pid=$word -o cmd --no-headers -w -w'
+zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;36=0=01'
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:*:kill:*' force-list always
 zstyle ':completion:*:*:kill:*' insert-ids single
+
+# systemd
+zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
+
+# envars
+zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*' \
+	fzf-preview 'echo ${(P)word}'
+
+# file preview
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
 
 # Man pages completion
 zstyle ':completion:*:manuals' separate-sections true
@@ -92,6 +110,14 @@ zstyle ':completion:*:manuals.(^1*)' insert-sections true
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' cache-path $ZSH_CACHE_DIR
+
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+export LESSOPEN='|~/bin/lessfilter %s'
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
+
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
 
 #
 # History settings
@@ -132,7 +158,9 @@ setopt HIST_FCNTL_LOCK
 #
 
 bindkey -v
-export KEYTIMEOUT=1
+bindkey -M viins 'jj' vi-cmd-mode
+export KEYTIMEOUT=20
+
 
 bindkey -a 'u' undo
 bindkey -a '^R' redo
@@ -144,6 +172,7 @@ bindkey -a 'j' vi-down-line-or-history
 bindkey -a 'k' vi-up-line-or-history
 bindkey '^[[1;5C' vi-forward-word
 bindkey '^[[1;5D' vi-backward-word
+
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
@@ -333,16 +362,23 @@ n ()
 
 export ZSH="$HOME/.config/zsh/ohmyzsh"
 
-source ~/.config/zsh/ohmyzsh/plugins/archlinux/archlinux.plugin.zsh
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
+# source ~/.config/zsh/ohmyzsh/plugins/archlinux/archlinux.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/command-not-found/command-not-found.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/extract/extract.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/git/git.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/transfer/transfer.plugin.zsh
 source ~/.config/zsh/ohmyzsh/plugins/zoxide/zoxide.plugin.zsh
+source ~/.config/zsh/ohmyzsh/plugins/globalias/globalias.plugin.zsh
+export GLOBALIAS_FILTER_VALUES=(l mkdir cat cp mv ls)
 
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '^ ' autosuggest-execute
-bindkey '^[[1;6C' autosuggest-accept
+bindkey '^[' autosuggest-execute
+bindkey '^[[1;3C' autosuggest-accept
 
 source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 export FAST_HIGHLIGHT[ointeractive_comments]=0
@@ -351,15 +387,6 @@ source ~/.config/zsh/plugins/copy-pasta/copy-pasta.plugin.zsh
 source ~/.config/zsh/plugins/gitignore/gitignore.plugin.zsh
 source ~/.config/zsh/plugins/history-search-multi-word/history-search-multi-word.plugin.zsh
 
-export forgit_log=fglo
-export forgit_diff=fgd
-export forgit_add=fga
-export forgit_reset_head=fgrh
-export forgit_ignore=fgi
-export forgit_restore=fgcf
-export forgit_clean=fgclean
-export forgit_stash_show=fgss
-export forgit_cherry_pick=fgcp
 source ~/.config/zsh/plugins/forgit/forgit.plugin.zsh
 
 source ~/.config/zsh/plugins/git-it-on.zsh/git-it-on.plugin.zsh
@@ -373,8 +400,12 @@ source ~/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.config/zsh/themes/.p10k.zsh
 
 # eval "$(starship init zsh)"
-\cat ~/.cache/wal/sequences
+# \cat ~/.cache/wal/sequences
 
 # Completions
-[[ ~/bin/kubectl ]] && source <(kubectl completion zsh)
+source <(kubectl completion zsh)
+export KUBECONFIG=$HOME/.kube/config
+
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
 

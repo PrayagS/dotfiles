@@ -8,12 +8,14 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.krew/bin"
+export PATH="$PATH:$HOME/Library/Python/3.8/bin"
+export PATH="$PATH:/opt/homebrew/bin"
 
 # Golang env vars
 export GOPATH="$HOME/dev/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOBIN"
-export GOOS="linux"
+export GOOS="darwin"
 export GOARCH="amd64"
 export GO111MODULE="on"
 
@@ -32,4 +34,12 @@ export FORGIT_FZF_DEFAULT_OPTS="
 --reverse
 --height '80%'
 "
-
+export K9SCONFIG="$HOME/.config/k9s"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export ANDROID_HOME="$XDG_DATA_HOME/android"
+export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
+export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
+export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export MINIKUBE_HOME="$XDG_DATA_HOME/minikube"
