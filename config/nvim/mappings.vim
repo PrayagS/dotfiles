@@ -10,6 +10,10 @@ nnoremap tl :tabnext<CR>
 nnoremap tw :tabclose<CR>
 nnoremap tn :tabnew<CR>
 
+if exists('g:vscode')
+    nnoremap tn :Tabnew<CR>
+endif
+
 " Best keybindings ever; Source: ThePrimeagen
 nnoremap Y y$
 nnoremap <leader>y "+y
