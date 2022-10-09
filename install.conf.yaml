@@ -16,11 +16,13 @@
     ~/.zshenv: .zshenv
     ~/.zshrc: .zshrc
     ~/.gitconfig: git/.gitconfig
+    # ~/.gitconfig: git/.gitconfig
     ~/.config/zsh: zsh
     ~/.config/dunst: config/dunst
     ~/.config/espanso: config/espanso
     ~/.config/glava: config/glava
     ~/.config/i3: config/i3
+    ~/.config/git: git
     ~/.config/nvim: config/nvim
     ~/.config/polybar: config/polybar
     ~/.config/rofi: config/rofi
