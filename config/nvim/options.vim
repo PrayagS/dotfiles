@@ -3,7 +3,7 @@ set nocompatible
 set hidden
 filetype plugin indent on
 syntax on
-set number
+set number relativenumber
 set backspace=indent,eol,start
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
@@ -12,7 +12,7 @@ set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set autochdir
 set colorcolumn=80
-set cursorline
+" set cursorline
 set nobackup
 set noswapfile
 set textwidth=80

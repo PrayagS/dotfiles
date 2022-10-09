@@ -32,3 +32,6 @@
 [submodule "zsh/plugins/history-search-multi-word"]
 	path = zsh/plugins/history-search-multi-word
 	url = git@github.com:zdharma-continuum/history-search-multi-word.git
+[submodule "zsh/plugins/fzf-tab"]
+	path = zsh/plugins/fzf-tab
+	url = git@github.com:Aloxaf/fzf-tab.git

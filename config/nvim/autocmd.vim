@@ -18,5 +18,5 @@ augroup gitsetup
         autocmd FileType gitcommit
                 \  hi def link gitcommitOverflow Error
                 \| autocmd CursorMoved,CursorMovedI *
-                        \  let &l:textwidth = line('.') == 1 ? 50 : 72
+                        \  let &l:textwidth = line('.') == 1 ? 72 : 72
 augroup end
