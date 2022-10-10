@@ -1,3 +1,6 @@
+# ZDOTDIR
+export ZDOTDIR=${ZDOTDIR:-~/.config/zsh}
+
 # Path
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH

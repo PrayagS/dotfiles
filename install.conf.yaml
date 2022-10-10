@@ -6,37 +6,34 @@
 - clean: ['~', '~/.config']
 
 - link:
-    ~/.dotfiles: ''
-    ~/bin:
-    ~/.local/share/fonts: fonts
-    ~/.xinitrc: .xinitrc
-    ~/.Xresources: .Xresources
-    ~/.zprofile: .zprofile
-    ~/.profile: .profile
+    # ~/.dotfiles: ''
+    # ~/bin:
+    # ~/.local/share/fonts: fonts
+    # ~/.xinitrc: .xinitrc
+    # ~/.Xresources: .Xresources
+    # ~/.zprofile: .zprofile
+    # ~/.profile: .profile
     ~/.zshenv: .zshenv
-    ~/.zshrc: .zshrc
-    ~/.gitconfig: git/.gitconfig
-    # ~/.zshenv: .zshenv
     # ~/.zshrc: .zshrc
     # ~/.gitconfig: git/.gitconfig
     ~/.config/zsh: zsh
-    ~/.config/dunst: config/dunst
-    ~/.config/espanso: config/espanso
-    ~/.config/glava: config/glava
-    ~/.config/i3: config/i3
     ~/.config/git: git
+    # ~/.config/dunst: config/dunst
+    # ~/.config/espanso: config/espanso
+    # ~/.config/glava: config/glava
+    # ~/.config/i3: config/i3
     ~/.config/nvim: config/nvim
-    ~/.config/polybar: config/polybar
-    ~/.config/rofi: config/rofi
-    ~/.config/redshift: config/redshift
-    ~/.config/spicetify: config/spicetify
-    ~/.config/sxhkd: config/sxhkd
-    ~/.config/sxiv: config/sxiv
-    ~/.config/zathura: config/zathura
+    # ~/.config/polybar: config/polybar
+    # ~/.config/rofi: config/rofi
+    # ~/.config/redshift: config/redshift
+    # ~/.config/spicetify: config/spicetify
+    # ~/.config/sxhkd: config/sxhkd
+    # ~/.config/sxiv: config/sxiv
+    # ~/.config/zathura: config/zathura
     ~/.config/alacritty: config/alacritty
-    ~/.config/picom.conf: config/picom.conf
+    # ~/.config/picom.conf: config/picom.conf
     ~/.tmux.conf: config/tmux/tmux.conf
 
 - shell:
-  - [git submodule update --init --recursive --remote, Installing submodules]
-  - [fc-cache -rf, Update font list]
+  - [git submodule update --init --recursive --remote --force, Installing submodules]
+  # - [fc-cache -rf, Update font list]
