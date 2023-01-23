@@ -1,0 +1,1 @@
+{"title":"Fn -> Meh (shift + alt + ctrl)","rules":[{"description":"Fn -> Meh (shift + alt + ctrl)","manipulators":[{"type":"basic","from":{"key_code":"fn","consumer_key_code":""},"to":[{"repeat":false,"modifiers":["left_control","left_alt","left_shift"]}]}]}]}

@@ -1,0 +1,1 @@
+{"title":"Right option -> Fn","rules":[{"description":"Right option -> Fn","manipulators":[{"type":"basic","from":{"key_code":"right_alt"},"to":[{"repeat":false,"key_code":"fn","lazy":true}]}]}]}

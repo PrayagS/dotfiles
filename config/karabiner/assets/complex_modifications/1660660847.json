@@ -1,0 +1,1 @@
+{"title":"Ctrl Key -> Hyper-Shift","rules":[{"description":"Ctrl Key → Hyper Key (⌃⌥⇧⌘)","manipulators":[{"from":{"key_code":"left_control"},"to":[{"repeat":false,"modifiers":["left_gui","left_control","left_alt"]}],"type":"basic"}]}]}
