@@ -24,6 +24,9 @@ unset _comp_path
 autoload -U +X bashcompinit && bashcompinit
 zmodload -i zsh/complist
 
+# AWS CLI autocomplete
+source /usr/local/bin/aws_zsh_completer.sh
+
 # Source fzf-tab
 source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 
