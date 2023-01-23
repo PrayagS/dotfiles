@@ -46,3 +46,11 @@ export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export MINIKUBE_HOME="$XDG_DATA_HOME/minikube"
+
+# Start skhd
+#if pgrep -x "skhd" >/dev/null
+#then
+#else
+#    skhd -c ~/.config/skhd/skhdrc -P -V
+#    echo "skhd started"
+#fi
