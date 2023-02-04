@@ -176,8 +176,12 @@ zinit light zdharma-continuum/zui
 zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]' lucid
 zinit light zdharma-continuum/zinit-crasis
 
+# Make sure atuin is installed before loading its zsh plugin
+zinit from"gh-r" binary lman for \
+    sbin"**/atuin" ellie/atuin
+
 zinit ice wait"5" lucid \
     from"gh" pick"atuin.plugin.zsh" \
     atinit"export ATUIN_NOBIND='true'" \
     atload"bindkey '^[e' _atuin_search_widget"
-zinit light ellie/atuin
+zinit snippet https://github.com/ellie/atuin/blob/main/atuin.plugin.zsh
