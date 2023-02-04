@@ -141,9 +141,9 @@ zinit lucid light-mode wait"0c" for \
     trigger-load"!x" \
         OMZP::extract
 
-# Load shell commands once compinit has been executed
+# Install shell programs once compinit has been executed
 zinit ice wait"0c" lucid
-zinit snippet "${ZSH_HOME}/commands.zsh"
+zinit snippet "${ZSH_HOME}/programs.zsh"
 
 # Set of plugins to load on demand
 zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)bd*]} ]]' lucid
