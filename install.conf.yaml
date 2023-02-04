@@ -34,7 +34,15 @@
     ~/.config/karabiner: config/karabiner
     # ~/.config/picom.conf: config/picom.conf
     ~/.tmux.conf: config/tmux/tmux.conf
+    ~/.config/tmux: config/tmux
+    ~/.config/atuin: config/atuin
+    ~/.config/bat: config/bat
+    ~/.config/kitty: config/kitty
+    ~/.config/lazygit: config/lazygit
+    ~/.config/skhd: config/skhd
+    ~/.config/yabai: config/yabai
+    ~/.config/aws/config: config/aws/config
 
 - shell:
-  - [git submodule update --init --recursive --remote --force, Installing submodules]
+  # - [git submodule update --init --recursive --remote --force, Installing submodules]
   # - [fc-cache -rf, Update font list]
