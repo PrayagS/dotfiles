@@ -68,18 +68,21 @@ PS1="READY >"
 zinit ice wait"!" lucid atload"source ${ZSH_HOME}/themes/.p10k.zsh; _p9k_precmd" nocd
 zinit light romkatv/powerlevel10k
 
+# Make sure zoxide is installed before loading its zsh plugin
+zinit from"gh-r" binary lman for \
+    sbin"**/zoxide" ajeetdsouza/zoxide
+
 # First set of plugins
 zinit lucid light-mode wait"0a" for \
         OMZL::git.zsh \
         OMZL::clipboard.zsh \
         OMZP::git \
         hlissner/zsh-autopair \
+        https://github.com/ajeetdsouza/zoxide/blob/main/zoxide.plugin.zsh \
     atload'export GLOBALIAS_FILTER_VALUES=("l" "ls" "less")' \
         OMZP::globalias \
     atload'alias -g cdg="cd-gitroot"' \
         mollifier/cd-gitroot \
-    from"gh" pick"zoxide.plugin.zsh" \
-        ajeetdsouza/zoxide \
     compile'lib/*f*~*.zwc' \
     blockf \
     atload"
