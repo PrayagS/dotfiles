@@ -74,6 +74,8 @@ zinit lucid light-mode wait"0a" for \
         OMZL::clipboard.zsh \
         OMZP::git \
         hlissner/zsh-autopair \
+    atload'export GLOBALIAS_FILTER_VALUES=("l" "ls" "less")' \
+        OMZP::globalias \
     atload'alias -g cdg="cd-gitroot"' \
         mollifier/cd-gitroot \
     from"gh" pick"zoxide.plugin.zsh" \
@@ -84,8 +86,6 @@ zinit lucid light-mode wait"0a" for \
       zstyle ':fzf-tab:*' fzf-pad 250
       zstyle ':fzf-tab:*' fzf-flags --preview-window=right,70%,cycle" \
         Aloxaf/fzf-tab \
-    atload'export GLOBALIAS_FILTER_VALUES=("l" "ls" "less")' \
-        OMZP::globalias \
     atload'export LESSOPEN="|${ZSH_HOME}/lessfilter %s"' \
         Freed-Wu/fzf-tab-source
 
