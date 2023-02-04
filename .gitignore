@@ -23,3 +23,6 @@ config/lazygit/**
 
 # tmux
 config/tmux/plugins
+
+# spicetify
+config/spicetify/Extracted
