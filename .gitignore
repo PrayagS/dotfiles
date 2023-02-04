@@ -5,4 +5,13 @@
 # zsh trash
 zsh/.zsh_sessions
 zsh/.zcompdump
+
+# zsh history
 zsh/.zsh_history
+zsh/.directory_history
+
+# zsh generated contents
+zsh/zinit/**
+!zsh/zinit/.gitkeep
+zsh/custom/**
+!zsh/custom/.gitkeep
