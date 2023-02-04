@@ -30,4 +30,14 @@ customCommands:
         valueFormat: '{{ .remote }} {{ .branch }}'
         labelFormat: '{{ .remote | bold | cyan }}/{{ .branch | cyan }}'
     command: "git pull {{ index .PromptResponses 0 }}"
-
+  - key: 'f'
+    command: "git difftool -y {{.SelectedLocalCommit.Sha}} -- {{.SelectedCommitFile.Name}}"
+    context: 'commitFiles'
+    description: 'Compare (difftool) with local copy'
+  - key: "v"
+    prompts:
+      - type: 'input'
+        title: 'PR id:'
+    command: "gh pr checkout {{index .PromptResponses 0}}"
+    context: "localBranches"
+    loadingText: "checking out PR"
