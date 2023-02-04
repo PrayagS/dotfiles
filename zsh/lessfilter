@@ -1,0 +1,19 @@
+#! /usr/bin/env sh
+mime=$(file -bL --mime-type "$1")
+category=${mime%%/*}
+kind=${mime##*/}
+if [ -d "$1" ]; then
+	exa -a1 --color=always --color-scale --group-directories-first "$1"
+elif [ "$category" = text ]; then
+	bat "$1"
+elif [ "$kind" = pdf ]; then
+	if [ "$(command -v pdftotext)" ] && [ "$(command -v sed)" ]; then
+		pdftotext -q "$1" - | sed "s/\f/$(hr ─)\n/"
+	fi
+elif [ "$category" = image ]; then
+	if [ "$(command -v chafa)" ]; then
+		chafa -f symbols "$1"
+	fi
+else
+	lesspipe.sh "$1" | bat
+fi

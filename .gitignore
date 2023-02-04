@@ -15,3 +15,4 @@ zsh/zinit/**
 !zsh/zinit/.gitkeep
 zsh/custom/**
 !zsh/custom/.gitkeep
+zsh/**.zwc
