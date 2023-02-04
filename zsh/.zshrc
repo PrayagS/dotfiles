@@ -155,7 +155,7 @@ zinit light ChrisPenner/copy-pasta
 zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)gitit*]} ]]' lucid
 zinit light peterhurford/git-it-on.zsh
 
-zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)docker*]} ]]' lucid as"completion"
+zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)docker*]} ]]' lucid as"completion" atload'export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker'
 zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
 
 zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)go*]} ]]' lucid as"completion"
