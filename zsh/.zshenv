@@ -35,15 +35,21 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
 --cycle"
-export K9SCONFIG="$HOME/.config/k9s"
+
+# Being a XDG Ninja
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export ANDROID_HOME="$XDG_DATA_HOME/android"
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export MINIKUBE_HOME="$XDG_DATA_HOME/minikube"
+export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
+export REDISCLI_HISTFILE="$XDG_DATA_HOME/redis/rediscli_history"
+export SQLITE_HISTORY="$XDG_CACHE_HOME/sqlite_history"
 
 # Start skhd
 #if pgrep -x "skhd" >/dev/null
