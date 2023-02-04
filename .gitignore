@@ -16,3 +16,10 @@ zsh/zinit/**
 zsh/custom/**
 !zsh/custom/.gitkeep
 zsh/**.zwc
+
+# lazygit
+config/lazygit/**
+!config/lazygit/config.yml
+
+# tmux
+config/tmux/plugins
