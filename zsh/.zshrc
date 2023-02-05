@@ -129,6 +129,7 @@ zinit lucid light-mode wait"0b" for \
 
 # Third set of plugins
 zinit lucid light-mode wait"0c" for \
+    atload"zicdreplay" \
         voronkovich/gitignore.plugin.zsh \
     atload"source <(kubectl completion zsh)" \
         OMZP::kubectl \
