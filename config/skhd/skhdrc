@@ -105,29 +105,29 @@ lcmd - 8 : yabai -m space --focus 8 || yabai -m space --create && yabai -m space
 lcmd - 9 : yabai -m space --focus 9 || yabai -m space --create && yabai -m space --focus 9
 lcmd - 0 : yabai -m space --focus 10 || yabai -m space --create && yabai -m space --focus 10
 
-# move windows to spaces
-shift + lalt - 1 : yabai -m window --space 1
-shift + lalt - 2 : yabai -m window --space 2
-shift + lalt - 3 : yabai -m window --space 3
-shift + lalt - 4 : yabai -m window --space 4
-shift + lalt - 5 : yabai -m window --space 5
-shift + lalt - 6 : yabai -m window --space 6
-shift + lalt - 7 : yabai -m window --space 7
-shift + lalt - 8 : yabai -m window --space 8
-shift + lalt - 9 : yabai -m window --space 9
-shift + lalt - 0 : yabai -m window --space 10
+# move windows to space
+lalt - 1 : yabai -m window --space 1
+lalt - 2 : yabai -m window --space 2
+lalt - 3 : yabai -m window --space 3
+lalt - 4 : yabai -m window --space 4
+lalt - 5 : yabai -m window --space 5
+lalt - 6 : yabai -m window --space 6
+lalt - 7 : yabai -m window --space 7
+lalt - 8 : yabai -m window --space 8
+lalt - 9 : yabai -m window --space 9
+lalt - 0 : yabai -m window --space 10
 
-# move windows to spaces
-meh - 1 : yabai -m window --space 1; yabai -m space --focus 1
-meh - 2 : yabai -m window --space 2; yabai -m space --focus 2
-meh - 3 : yabai -m window --space 3; yabai -m space --focus 3
-meh - 4 : yabai -m window --space 4; yabai -m space --focus 4
-meh - 5 : yabai -m window --space 5; yabai -m space --focus 5
-meh - 6 : yabai -m window --space 6; yabai -m space --focus 6
-meh - 7 : yabai -m window --space 7; yabai -m space --focus 7
-meh - 8 : yabai -m window --space 8; yabai -m space --focus 8
-meh - 9 : yabai -m window --space 9; yabai -m space --focus 9
-meh - 0 : yabai -m window --space 10; yabai -m space --focus 10
+# move windows to space and focus the space
+shift + lalt - 1 : yabai -m window --space 1; yabai -m space --focus 1
+shift + lalt - 2 : yabai -m window --space 2; yabai -m space --focus 2
+shift + lalt - 3 : yabai -m window --space 3; yabai -m space --focus 3
+shift + lalt - 4 : yabai -m window --space 4; yabai -m space --focus 4
+shift + lalt - 5 : yabai -m window --space 5; yabai -m space --focus 5
+shift + lalt - 6 : yabai -m window --space 6; yabai -m space --focus 6
+shift + lalt - 7 : yabai -m window --space 7; yabai -m space --focus 7
+shift + lalt - 8 : yabai -m window --space 8; yabai -m space --focus 8
+shift + lalt - 9 : yabai -m window --space 9; yabai -m space --focus 9
+shift + lalt - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
 # focus recent space
 lcmd - tab : yabai -m space --focus recent
@@ -162,6 +162,12 @@ meh + cmd - h : yabai-stack west
 meh + cmd - l : yabai-stack east
 meh + cmd - j : yabai-stack south
 meh + cmd - k : yabai-stack north
+
+# warp window
+lalt + cmd - h : yabai -m window --warp west
+lalt + cmd - l : yabai -m window --warp east
+lalt + cmd - j : yabai -m window --warp south
+lalt + cmd - k : yabai -m window --warp north
 
 # balance size of windows
 # shift + lalt - =
