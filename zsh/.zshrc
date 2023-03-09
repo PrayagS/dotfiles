@@ -50,9 +50,9 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-as-monitor \
     zdharma-continuum/zinit-annex-bin-gem-node \
     zdharma-continuum/zinit-annex-binary-symlink \
-    zdharma-continuum/zinit-annex-link-man
+    zdharma-continuum/zinit-annex-link-man \
+    zdharma-continuum/zinit-annex-rust
     # zdharma-continuum/zinit-annex-patch-dl \
-    # zdharma-continuum/zinit-annex-rust \
 
 ### End of Zinit's installer chunk
 
@@ -135,7 +135,9 @@ zinit lucid light-mode wait"0c" for \
         OMZP::kubectl \
     atload"export GIT_AUTO_FETCH_INTERVAL=7200" \
         OMZP::git-auto-fetch \
-    atload"export SHOW_AWS_PROMPT=false" \
+    atload"
+      export SHOW_AWS_PROMPT=false
+      complete -C '/opt/homebrew/bin/aws_completer' aws" \
         OMZP::aws \
     atload"export ZSH_ALIAS_FINDER_AUTOMATIC=true" \
         OMZP::alias-finder \
