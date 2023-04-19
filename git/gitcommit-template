@@ -1,0 +1,35 @@
+
+
+
+## Remember to follow: https://www.conventionalcommits.org/en/v1.0.0/#summary
+#
+# <type>[optional scope]: <description>
+
+# [optional body]
+
+# [optional footer(s)]
+
+## Types
+# feat, fix, build, chore, ci, docs, refactor, perf, test
+
+## Examples
+## Commit message with description and breaking change footer
+# feat: allow provided config object to extend other configs
+#
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+
+## Commit message with ! to draw attention to breaking change
+# refactor!: drop support for Node 6
+
+## Commit message with scope
+# feat(lang): add polish language
+
+## Commit message with multi-paragraph body and multiple footers
+# fix: correct minor typos in code
+#
+# see the issue for details
+#
+# on typos fixed.
+#
+# Reviewed-by: Z
+# Refs #133
