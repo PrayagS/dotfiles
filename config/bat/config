@@ -11,7 +11,7 @@
 --italic-text=always
 
 # Style
---style=changes,numbers
+--style=changes
 --color=always
 
 # Uncomment the following line to disable automatic paging:

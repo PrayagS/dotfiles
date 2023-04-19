@@ -13,6 +13,7 @@ export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.krew/bin"
 export PATH="$PATH:$HOME/Library/Python/3.8/bin"
 export PATH="$PATH:/opt/homebrew/bin"
+export PATH="$PATH:$HOME/.config/zsh/zinit/polaris/bin"
 
 # Golang env vars
 export GOPATH="$HOME/dev/go"
@@ -26,7 +27,9 @@ export GO111MODULE="on"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
 export EDITOR="nvim"
-export PAGER="less"
+# export PAGER="less"
+export PAGER="moar"
+export MOAR="-statusbar=bold -style=catppuccin-mocha"
 export TERMINAL="alacritty"
 export BROWSER="google-chrome-stable"
 export LOLCOMMITS_DEVICE=/dev/video0
@@ -50,6 +53,7 @@ export MINIKUBE_HOME="$XDG_DATA_HOME/minikube"
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export REDISCLI_HISTFILE="$XDG_DATA_HOME/redis/rediscli_history"
 export SQLITE_HISTORY="$XDG_CACHE_HOME/sqlite_history"
+export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
 
 # Start skhd
 #if pgrep -x "skhd" >/dev/null
