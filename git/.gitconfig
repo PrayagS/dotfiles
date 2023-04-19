@@ -1,0 +1,176 @@
+[user]
+    name = PrayagS
+
+[includeIf "gitdir:~/work/"]
+    path = ~/work/.gitconfig
+
+[includeIf "gitdir:~/dev/"]
+    path = ~/dev/.gitconfig
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
+[alias]
+    stat = !git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")
+    files = !git diff --name-only $(git merge-base HEAD \"$REVIEW_BASE\")
+    review = !nvim -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
+    reviewone = !nvim -p +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
+
+[core]
+    ; editor = $EDITOR --cmd 'set colorcolumn=51,73 textwidth=72'
+    editor = $EDITOR
+    preloadindex = true
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only --features=villsau-interactive
+
+[delta]
+    navigate = true
+    features = villsau
+
+[delta "villsau"]
+    syntax-theme = Catppuccin
+    # author: https://github.com/torarnv
+    dark = true
+    hyperlinks = true
+    file-style = omit
+    # file-added-label = [+]
+    # file-copied-label = [C]
+    # file-modified-label = [M]
+    # file-removed-label = [-]
+    # file-renamed-label = [R]
+    # file-decoration-style = "#f5e0dc" ul
+    # file-style = "#1e1e2e" bold "#f5e0dc"
+    hunk-header-decoration-style = "#f5e0dc" box
+    # hunk-header-decoration-style = omit
+    hunk-header-file-style = magenta
+    hunk-header-line-number-style = magenta
+    hunk-header-style = file line-number syntax
+    line-numbers = false
+    # line-numbers-left-style = black
+    # line-numbers-minus-style = "#B10036"
+    # line-numbers-plus-style = "#03a4ff"
+    line-numbers-minus-style = bold red
+    line-numbers-plus-style = bold green
+    # line-numbers-right-style = black
+    line-numbers-zero-style = "#999999"
+    # line-numbers = true
+    line-numbers-left-format = "{nm:>1}┊"
+    line-numbers-left-style = red
+    # line-numbers-minus-style = red italic black
+    # line-numbers-plus-style = green italic black
+    line-numbers-right-format = "{np:>1}┊"
+    line-numbers-right-style = green
+    # line-numbers-zero-style = "#545474" italic
+    minus-emph-style = bold red 52
+    minus-empty-line-marker-style = normal "#3f0001"
+    minus-non-emph-style = dim red
+    minus-style = bold red
+    plus-emph-style = bold green 22
+    plus-empty-line-marker-style = normal "#002800"
+    plus-non-emph-style = dim green
+    plus-style = bold green
+    # syntax-theme = OneHalfDark
+    whitespace-error-style = reverse red
+    zero-style = dim syntax
+
+[delta "villsau-lg"]
+    # author: https://github.com/torarnv
+    syntax-theme = Catppuccin
+    dark = true
+    file-style = omit
+    hunk-header-decoration-style = "#f5e0dc" box
+    hunk-header-file-style = magenta
+    hunk-header-line-number-style = magenta
+    hunk-header-style = file line-number syntax
+    line-numbers = false
+    line-numbers-minus-style = bold red
+    line-numbers-plus-style = bold green
+    line-numbers-zero-style = "#999999"
+    line-numbers-left-format = "{nm:>1}┊"
+    line-numbers-left-style = red
+    line-numbers-right-format = "{np:>1}┊"
+    line-numbers-right-style = green
+    minus-emph-style = bold red 52
+    minus-empty-line-marker-style = normal "#3f0001"
+    minus-non-emph-style = dim red
+    minus-style = bold red
+    plus-emph-style = bold green 22
+    plus-empty-line-marker-style = normal "#002800"
+    plus-non-emph-style = dim green
+    plus-style = bold green
+    whitespace-error-style = reverse red
+    zero-style = dim syntax
+
+[delta "villsau-interactive"]
+    # author: https://github.com/torarnv
+    dark = true
+    file-style = omit
+    keep-plus-minus-markers = false
+    hunk-header-decoration-style = "#f5e0dc" box
+    hunk-header-file-style = magenta
+    hunk-header-line-number-style = magenta
+    hunk-header-style = file line-number syntax
+    line-numbers = false
+    line-numbers-minus-style = bold red
+    line-numbers-plus-style = bold green
+    line-numbers-zero-style = "#999999"
+    line-numbers-left-format = "{nm:>1}┊"
+    line-numbers-left-style = red
+    line-numbers-right-format = "{np:>1}┊"
+    line-numbers-right-style = green
+    whitespace-error-style = reverse red
+    zero-style = dim syntax
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[commit]
+    template=~/.config/git/gitcommit-template
+
+[github]
+    user = PrayagS
+
+[init]
+    defaultBranch = main
+
+[commit]
+    gpgSign = true
+    signOff = true
+
+[gpg]
+    program = gpg
+
+[color]
+    ui     = true
+    diff   = true
+    interative = true
+    status = true
+
+[branch]
+    sort = -committerdate
+
+[push]
+    default = current
+
+[grep]
+    lineNumber = true
+
+[status]
+    submoduleSummary = true
+
+[help]
+    autocorrect = 10
+
+[pretty]
+    lc  =  format:%C(auto)%h%C(reset) %C(white)-%C(reset) %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(white)⤷%C(reset) %s %C(248)- %aN <%aE>%C(reset)%n
+    lt  =  format:%C(auto)%h%C(reset) %C(white)-%C(reset) %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(white)⤷%C(reset) %s %C(248)- %aN <%aE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
+    lf  =  format:%C(auto)%h%C(reset)%C(auto)%d%C(reset)   %C(italic 239)[P: %p] [T: %t]%C(reset)%n%C(white)Author:%C(reset)%C(248) %aN <%aE>%C(reset)%n        %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%n%C(white)Commit:%C(reset)%C(248) %cN <%cE>%C(reset)   %C(italic 239)[GPG: %G?% GK]%C(reset)%n        %C(italic blue)%cd%C(reset) %C(italic cyan)(%cr)%C(reset)%w(0,4,4)%n%n%C(bold)%s%C(reset)%n%n%-b%n%n%-N%n
+    rlc =  format:%C(auto)%h%C(reset) %C(white)-%C(reset) %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(white)⤷%C(reset) %s %C(248)- %aN <%aE>%C(reset)%n %C(white)⤷%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset) %gs %C(248)- %gN <%gE>%C(reset)%n
+    rlt =  format:%C(auto)%h%C(reset) %C(white)-%C(reset) %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(white)⤷%C(reset) %s %C(248)- %aN <%aE>%C(reset)%n %C(white)⤷%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset) %gs %C(248)- %gN <%gE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
+    rlf =  format:%C(auto)%h%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset)%C(auto)%d%C(reset)   %C(italic 239)[P: %p] [T: %t]%C(reset)%n%C(white)Author:%C(reset)   %aN %C(248)<%aE>%C(reset)%n          %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%n%C(white)Commit:%C(reset)   %cN %C(248)<%cE>%C(reset)   %C(italic 239)[GPG: %G?% GK]%C(reset)%n          %C(italic blue)%cd%C(reset) %C(italic cyan)(%cr)%C(reset)%n%C(white)Reflog:%C(reset)   %gN %C(248)<%gE>%C(reset)%n          %C(italic)%gs%C(reset)%w(0,4,4)%n%n%C(bold)%s%C(reset)%n%n%-b%n%n%-N%n
+
