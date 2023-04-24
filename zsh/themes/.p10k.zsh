@@ -115,7 +115,7 @@
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
-  typeset -g POWERLEVEL9K_MODE=nerdfont-complete
+  typeset -g POWERLEVEL9K_MODE=nerdfont-v3
   # When set to `moderate`, some icons will have an extra space after them. This is meant to avoid
   # icon overlap when using non-monospace fonts. When set to `none`, spaces are not added.
   typeset -g POWERLEVEL9K_ICON_PADDING=moderate
@@ -1172,7 +1172,9 @@
   typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=039
   typeset -g POWERLEVEL9K_KUBECONTEXT_PROD_FOREGROUND=001
   typeset -g POWERLEVEL9K_KUBECONTEXT_STAGE_FOREGROUND=002
-  # typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_KUBECONTEXT_PROD_VISUAL_IDENTIFIER_EXPANSION='󱃾 '
+  typeset -g POWERLEVEL9K_KUBECONTEXT_STAGE_VISUAL_IDENTIFIER_EXPANSION='󱃾 '
+  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='󱃾 '
 
   # Use POWERLEVEL9K_KUBECONTEXT_CONTENT_EXPANSION to specify the content displayed by kubecontext
   # segment. Parameter expansions are very flexible and fast, too. See reference:
