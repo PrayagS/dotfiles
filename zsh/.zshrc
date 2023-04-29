@@ -121,11 +121,12 @@ zinit lucid light-mode wait"0b" for \
       export FAST_HIGHLIGHT_STYLES[global-alias]=fg=green,bold
       zle_highlight=('paste:none')" \
     nocompletions \
-        zdharma-continuum/fast-syntax-highlighting \
-    atclone"gdircolors -b LS_COLORS > clrs.zsh" \
-    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
-    atload"zstyle ':completion:*' list-colors '${(s.:.)LS_COLORS}'" \
-        trapd00r/LS_COLORS
+        zdharma-continuum/fast-syntax-highlighting
+    # Disabling LS_COLORS since it's causing problems while sourcing zshrc
+    # atclone"gdircolors -b LS_COLORS >| clrs.zsh" \
+    # atpull'%atclone' pick"clrs.zsh" nocompile'!' \
+    # atload"zstyle ':completion:*' list-colors '${(s.:.)LS_COLORS}'" \
+    #     trapd00r/LS_COLORS
 
 # Third set of plugins
 zinit lucid light-mode wait"0c" for \
