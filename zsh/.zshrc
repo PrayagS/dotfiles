@@ -96,16 +96,11 @@ zinit lucid light-mode wait"0a" for \
 zinit lucid light-mode wait"0b" for \
         OMZP::command-not-found \
         ael-code/zsh-colored-man-pages \
-    from"gh" pick"per-directory-history.plugin.zsh" \
-    atload'
-      export HISTORY_BASE="${ZSH_HOME}/.directory_history"
-      export HISTORY_START_WITH_GLOBAL=true' \
-        jimhester/per-directory-history \
     atinit"zstyle :history-search-multi-word page-size 10" \
         zdharma-continuum/history-search-multi-word \
     atinit'
       ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50
-      ZSH_AUTOSUGGEST_STRATEGY=(dir_history history completion)
+      ZSH_AUTOSUGGEST_STRATEGY=(history completion)
       ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c100,)"' \
     atload"
       _zsh_autosuggest_start
@@ -122,6 +117,11 @@ zinit lucid light-mode wait"0b" for \
       zle_highlight=('paste:none')" \
     nocompletions \
         zdharma-continuum/fast-syntax-highlighting
+    # from"gh" pick"per-directory-history.plugin.zsh" \
+    # atload'
+    #   export HISTORY_BASE="${ZSH_HOME}/.directory_history"
+    #   export HISTORY_START_WITH_GLOBAL=true' \
+    #     jimhester/per-directory-history \
     # Disabling LS_COLORS since it's causing problems while sourcing zshrc
     # atclone"gdircolors -b LS_COLORS >| clrs.zsh" \
     # atpull'%atclone' pick"clrs.zsh" nocompile'!' \

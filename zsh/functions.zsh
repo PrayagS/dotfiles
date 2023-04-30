@@ -61,16 +61,16 @@ n ()
     fi
 }
 
-_zsh_autosuggest_strategy_dir_history(){ # Avoid Zinit picking this up as a completion
-    emulate -L zsh
-    if $_per_directory_history_is_global && [[ -r "$_per_directory_history_path" ]]; then
-        setopt EXTENDED_GLOB
-        local prefix="${1//(#m)[\\*?[\]<>()|^~#]/\\$MATCH}"
-        local pattern="$prefix*"
-        if [[ -n $ZSH_AUTOSUGGEST_HISTORY_IGNORE ]]; then
-        pattern="($pattern)~($ZSH_AUTOSUGGEST_HISTORY_IGNORE)"
-        fi
-        [[ "${dir_history[(r)$pattern]}" != "$prefix" ]] && \
-        typeset -g suggestion="${dir_history[(r)$pattern]}"
-    fi
-}
+# _zsh_autosuggest_strategy_dir_history(){ # Avoid Zinit picking this up as a completion
+#     emulate -L zsh
+#     if $_per_directory_history_is_global && [[ -r "$_per_directory_history_path" ]]; then
+#         setopt EXTENDED_GLOB
+#         local prefix="${1//(#m)[\\*?[\]<>()|^~#]/\\$MATCH}"
+#         local pattern="$prefix*"
+#         if [[ -n $ZSH_AUTOSUGGEST_HISTORY_IGNORE ]]; then
+#         pattern="($pattern)~($ZSH_AUTOSUGGEST_HISTORY_IGNORE)"
+#         fi
+#         [[ "${dir_history[(r)$pattern]}" != "$prefix" ]] && \
+#         typeset -g suggestion="${dir_history[(r)$pattern]}"
+#     fi
+# }
