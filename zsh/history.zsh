@@ -31,3 +31,11 @@ setopt HIST_FCNTL_LOCK
 
 zstyle ":history-search-multi-word" page-size "20"
 zstyle ":plugin:history-search-multi-word" active "standout"
+
+up-line-or-history-reread() {
+        [[ -z $BUFFER ]] && fc -R $HISTFILE
+        zle up-line-or-history
+}
+zle -N up-line-or-history-reread
+bindkey '^[[A' up-line-or-history-reread
+
