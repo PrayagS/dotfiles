@@ -79,7 +79,7 @@ zinit lucid light-mode wait"0a" for \
         OMZP::git \
         hlissner/zsh-autopair \
         https://github.com/ajeetdsouza/zoxide/blob/main/zoxide.plugin.zsh \
-    atload'export GLOBALIAS_FILTER_VALUES=("l" "ls" "less")' \
+    atload'export GLOBALIAS_FILTER_VALUES=("l" "ls" "less" "z")' \
         OMZP::globalias \
     atload'alias -g cdg="cd-gitroot"' \
         mollifier/cd-gitroot \
@@ -140,10 +140,10 @@ zinit lucid light-mode wait"0c" for \
       export SHOW_AWS_PROMPT=false
       complete -C '/opt/homebrew/bin/aws_completer' aws" \
         OMZP::aws \
-    atload"export ZSH_ALIAS_FINDER_AUTOMATIC=true" \
-        OMZP::alias-finder \
     trigger-load"!x" \
         OMZP::extract
+    # atload"export ZSH_ALIAS_FINDER_AUTOMATIC=true" \
+    #     OMZP::alias-finder \
 
 # Install shell programs once compinit has been executed
 zinit ice wait"0c" lucid
@@ -182,10 +182,13 @@ zinit light zdharma-continuum/zinit-crasis
 
 # Make sure atuin is installed before loading its zsh plugin
 zinit from"gh-r" binary lman for \
-    sbin"**/atuin" ellie/atuin
+    sbin"**/atuin" atuinsh/atuin
 
 zinit ice wait"5" lucid \
     from"gh" pick"atuin.plugin.zsh" \
     atinit"export ATUIN_NOBIND='true'" \
     atload"bindkey '^[e' _atuin_search_widget"
-zinit snippet https://github.com/ellie/atuin/blob/main/atuin.plugin.zsh
+zinit snippet https://github.com/atuinsh/atuin/blob/main/atuin.plugin.zsh
+
+# pyenv virtualenv
+eval "$(pyenv virtualenv-init -)"
