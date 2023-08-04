@@ -7,7 +7,6 @@ cli_auto_prompt = on-partial
 [profile prod]
 region = ap-southeast-1
 output = json
-cli_pager = bat -l yaml --theme DarkNeon
 cli_auto_prompt = on-partial
 
 [profile zdev]
