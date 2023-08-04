@@ -12,6 +12,8 @@ bindkey -a 'j' vi-down-line-or-history
 bindkey -a 'k' vi-up-line-or-history
 bindkey '^[[1;5C' vi-forward-word
 bindkey '^[[1;5D' vi-backward-word
+bindkey -a '$' vi-beginning-of-line
+bindkey -a '^' vi-end-of-line
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
