@@ -63,8 +63,8 @@ yabai -m rule --add label="About This Mac" app="System Information" title="About
 yabai -m rule --add label="Bartended" app="Bartended" title=".*" manage=off layer=above
 # yabai -m rule --add label="Kitty blur" app="kitty" border=on
 
-# yabai -m signal --add app="Cron" event="window_created" \
-    # action="CRON_WINDOW_ID=$(yabai -m query --windows | jq '.[] | select(.app == "Cron") | .id') | yabai -m window $CRON_WINDOW_ID --ratio abs:0.66 | yabai -m window $CRON_WINDOW_ID --swap west"
+yabai -m signal --add app="Cron" event="window_focused" \
+    action="CRON_WINDOW_ID=$(yabai -m query --windows | jq '.[] | select(.app == "Cron") | .id') | yabai -m window $CRON_WINDOW_ID --ratio abs:0.63 | yabai -m window $CRON_WINDOW_ID --swap west"
 
 yabai -m rule --add app="Arc" space=^1
 yabai -m rule --add app="Spotify" space=^2
