@@ -167,15 +167,15 @@ endif
 " indent blankline
 if !exists('g:vscode')
     lua << EOF
-    vim.opt.list = true
-    vim.opt.listchars:append("space:⋅")
+    -- vim.opt.list = true
+    -- vim.opt.listchars:append("space:⋅")
 
-    require("indent_blankline").setup {
-        show_end_of_line = true,
-        space_char_blankline = " ",
-        -- show_current_context = true,
-        -- show_current_context_start = true,
-    }
+    -- require("ibl").setup {
+    --     show_end_of_line = true,
+    --     space_char_blankline = " ",
+    --     -- show_current_context = true,
+    --     -- show_current_context_start = true,
+    -- }
 EOF
 endif
 
@@ -261,64 +261,64 @@ endif
 if !exists('g:vscode')
 lua << EOF
     -- each of these are documented in `:help nvim-tree.OPTION_NAME`
-    require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
-      disable_netrw = true,
-      hijack_netrw = true,
-      view = {
-        width = 30,
-        height = 30,
-        side = "left",
-        mappings = {
-          custom_only = false,
-          list = {
-            -- user mappings go here
-          },
-        },
-      },
-      update_focused_file = {
-        enable = true,
-        update_cwd = false,
-        ignore_list = {},
-      },
-      diagnostics = {
-        enable = true,
-        show_on_dirs = true,
-        icons = {
-          hint = "",
-          info = "",
-          warning = "",
-          error = "",
-        },
-      },
-      filters = {
-        dotfiles = false,
-        custom = {},
-        exclude = {},
-      },
-      git = {
-        enable = true,
-        ignore = false,
-        timeout = 400,
-      },
-      actions = {
-        change_dir = {
-          enable = false,
-          global = false,
-        },
-        open_file = {
-          quit_on_open = false,
-          resize_window = false,
-          window_picker = {
-            enable = true,
-            chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-            exclude = {
-              filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
-              buftype = { "nofile", "terminal", "help" },
-            },
-          },
-        },
-      },
-    } -- END_DEFAULT_OPTS
+    -- require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
+    --   disable_netrw = true,
+    --   hijack_netrw = true,
+    --   view = {
+    --     width = 30,
+    --     height = 30,
+    --     side = "left",
+    --     mappings = {
+    --       custom_only = false,
+    --       list = {
+    --         -- user mappings go here
+    --       },
+    --     },
+    --   },
+    --   update_focused_file = {
+    --     enable = true,
+    --     update_cwd = false,
+    --     ignore_list = {},
+    --   },
+    --   diagnostics = {
+    --     enable = true,
+    --     show_on_dirs = true,
+    --     icons = {
+    --       hint = "",
+    --       info = "",
+    --       warning = "",
+    --       error = "",
+    --     },
+    --   },
+    --   filters = {
+    --     dotfiles = false,
+    --     custom = {},
+    --     exclude = {},
+    --   },
+    --   git = {
+    --     enable = true,
+    --     ignore = false,
+    --     timeout = 400,
+    --   },
+    --   actions = {
+    --     change_dir = {
+    --       enable = false,
+    --       global = false,
+    --     },
+    --     open_file = {
+    --       quit_on_open = false,
+    --       resize_window = false,
+    --       window_picker = {
+    --         enable = true,
+    --         chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+    --         exclude = {
+    --           filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+    --           buftype = { "nofile", "terminal", "help" },
+    --         },
+    --       },
+    --     },
+    --   },
+    -- } -- END_DEFAULT_OPTS
 EOF
 endif
 
