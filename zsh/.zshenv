@@ -24,6 +24,7 @@ export GOARCH="amd64"
 export GO111MODULE="on"
 
 # Defaults
+export KUBECONFIG="$HOME/.kubeconfig"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
 export EDITOR="nvim"

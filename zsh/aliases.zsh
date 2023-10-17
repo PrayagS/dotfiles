@@ -1,5 +1,5 @@
 # Shorthands
-alias -g sudo="sudo "
+alias -g sudo="sudo -B"
 alias -g N='sudo -E n -e'
 alias -g ssctl="sudo systemctl"
 alias -g tlmgr="sudo tlmgr"

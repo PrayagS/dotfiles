@@ -63,18 +63,16 @@ yabai -m rule --add label="About This Mac" app="System Information" title="About
 yabai -m rule --add label="Bartended" app="Bartended" title=".*" manage=off layer=above
 # yabai -m rule --add label="Kitty blur" app="kitty" border=on
 
-yabai -m signal --add app="Cron" event="window_created" \
-    action="CRON_WINDOW_ID=$(yabai -m query --windows | jq '.[] | select(.app == "Cron") | .id') | yabai -m window $CRON_WINDOW_ID --ratio abs:0.66 | yabai -m window $CRON_WINDOW_ID --swap west"
+# yabai -m signal --add app="Cron" event="window_created" \
+    # action="CRON_WINDOW_ID=$(yabai -m query --windows | jq '.[] | select(.app == "Cron") | .id') | yabai -m window $CRON_WINDOW_ID --ratio abs:0.66 | yabai -m window $CRON_WINDOW_ID --swap west"
 
-yabai -m rule --add app="(Cron|Todoist)" space=^1 manage=on
+yabai -m rule --add app="Arc" space=^1
 yabai -m rule --add app="Spotify" space=^2
-yabai -m rule --add app="Arc" space=^3
-yabai -m rule --add app="Slack" space=^5
-yabai -m rule --add app="kitty" space=^6
-yabai -m rule --add app="Code" space=^7
-yabai -m rule --add app="Obsidian" space=^9
-yabai -m rule --add app="Rize" space=^11
-yabai -m rule --add app="Rize" subrole="AXDialog" sticky=on
-yabai -m rule --add app="Discord" space=^12
+yabai -m rule --add app="Slack" space=^4
+yabai -m rule --add app="kitty" space=^5
+yabai -m rule --add app="Code" space=^6
+yabai -m rule --add app="Obsidian" space=^8
+yabai -m rule --add app="(Cron|Todoist)" space=^9 manage=on
+yabai -m rule --add app="Discord" space=^10
 
 echo "yabai configuration loaded.."
