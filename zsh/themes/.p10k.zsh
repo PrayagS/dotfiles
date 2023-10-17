@@ -52,7 +52,7 @@
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
     ram
-    battery
+    # battery
     # vpn_ip                # virtual private network indicator
     # load                  # CPU load
     # disk_usage            # disk usage
