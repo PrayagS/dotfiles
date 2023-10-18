@@ -14,6 +14,7 @@
     # ~/.zprofile: .zprofile
     # ~/.profile: .profile
     ~/.zshenv: .zshenv
+    ~/.hushlogin: macos/.hushlogin
     # ~/.zshrc: .zshrc
     # ~/.gitconfig: git/.gitconfig
     ~/.config/zsh: zsh
