@@ -2,7 +2,7 @@
 	"__webextOptionsSync": "Refined GitHub",
 	"actionUrl": "",
 	"customCSS": "",
-	"personalToken": "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",
+	"personalToken": "<github-pat>",
 	"logging": false,
 	"logHTTP": false,
 	"feature:action-pr-link": true,
