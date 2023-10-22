@@ -10,8 +10,6 @@ tap "koekeishiya/formulae"
 tap "noahgorstein/tap"
 tap "rcmdnk/file"
 tap "rhyeal/aws-rotate-iam-keys", "https://github.com/rhyeal/aws-rotate-iam-keys"
-# Get stuff done with container-native workflows for Kubernetes
-brew "argo"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Curl like simplicity to access AWS resources
@@ -126,6 +124,8 @@ brew "tree"
 brew "ttyd"
 # Syntax-aware linter for prose
 brew "vale"
+# Modern watch command
+brew "viddy"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # Internet file retriever
@@ -178,6 +178,8 @@ cask "lunar"
 cask "mullvad-browser"
 # VPN client
 cask "mullvadvpn-beta"
+# Calculator and converter application
+cask "numi"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Home media player
@@ -198,10 +200,14 @@ cask "there"
 cask "todoist"
 # Open-source code editor
 cask "visual-studio-code"
+# Adaptive brightness for displays
+cask "vivid"
 # Multimedia player
 cask "vlc"
 # Network protocol analyzer
 cask "wireshark"
+# Multiplayer code editor
+cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
