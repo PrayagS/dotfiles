@@ -22,6 +22,10 @@ brew "bitwarden-cli"
 brew "black"
 # Versatile and fast Unicode/ASCII/ANSI graphics renderer
 brew "chafa"
+# Pager program similar to more
+brew "less"
+# Hacker News in your terminal
+brew "circumflex"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
 # Console Matrix
@@ -42,6 +46,8 @@ brew "docker-credential-helper"
 brew "docker-credential-helper-ecr"
 # Simple command-line tool for creating clusters on Amazon EKS
 brew "eksctl"
+# Validate EPUB files, version 2.0 and later
+brew "epubcheck"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # Highest-quality GIF encoder based on pngquant
@@ -80,8 +86,6 @@ brew "jsonnet"
 brew "kind"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
-# Pager program similar to more
-brew "less"
 # Input filter for the pager less
 brew "lesspipe"
 # Terminal file manager
@@ -146,6 +150,8 @@ cask "arc"
 cask "authy"
 # Menu bar icon organizer
 cask "bartender"
+# E-books management software
+cask "calibre"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
 # Calendar for professionals and teams
@@ -168,8 +174,12 @@ cask "google-chrome-beta"
 cask "itsycal"
 # Jellyfin desktop client
 cask "jellyfin-media-player"
+# Open-source screen recorder built with web technology
+cask "kap"
 # Keyboard customizer
 cask "karabiner-elements"
+# Interface for reading and syncing eBooks
+cask "kindle"
 # GPU-based terminal emulator
 cask "kitty"
 # Adaptive brightness for external displays
@@ -188,6 +198,8 @@ cask "plex"
 cask "raycast"
 # Tool to reverse the direction of scrolling
 cask "scroll-reverser"
+# Tool for sending personal documents to Kindles from Macs
+cask "send-to-kindle"
 # Screenshot measurement and annotation tool
 cask "shottr"
 # Team communication and collaboration software
@@ -198,6 +210,8 @@ cask "spotify"
 cask "there"
 # To-do list
 cask "todoist"
+# Web browser focusing on security
+cask "tor-browser"
 # Open-source code editor
 cask "visual-studio-code"
 # Adaptive brightness for displays

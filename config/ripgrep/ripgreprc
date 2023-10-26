@@ -1,0 +1,12 @@
+--binary
+--column
+--follow
+--heading
+--hidden
+--line-number
+--max-columns=80
+--max-columns-preview
+--pretty
+--smart-case
+--text
+--trim
