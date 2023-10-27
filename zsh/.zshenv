@@ -1,24 +1,9 @@
 # ZDOTDIR
 export ZDOTDIR=${ZDOTDIR:-~/.config/zsh}
 
-# Path
-export PATH=$HOME/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
-export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
-export PATH=/usr/local/texlive/2021/texmf-dist/scripts:$PATH
-export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/.npm-global/bin:$PATH
-export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:$HOME/.krew/bin"
-export PATH="$PATH:$HOME/Library/Python/3.8/bin"
-export PATH="$PATH:/opt/homebrew/bin"
-export PATH="$PATH:$HOME/.config/zsh/zinit/polaris/bin"
-
 # Golang env vars
 export GOPATH="$HOME/dev/go"
 export GOBIN="$GOPATH/bin"
-export PATH="$PATH:$GOBIN"
 export GOOS="darwin"
 export GOARCH="amd64"
 export GO111MODULE="on"
