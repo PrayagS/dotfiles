@@ -194,6 +194,8 @@ cask "numi"
 cask "obsidian"
 # Home media player
 cask "plex"
+# Archive manager for data compression and backups
+cask "rar"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Tool to reverse the direction of scrolling

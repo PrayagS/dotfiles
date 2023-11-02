@@ -131,6 +131,7 @@ shift + lalt - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
 # focus recent space
 lcmd - tab : yabai -m space --focus recent
+lalt - tab : yabai -m display --focus recent
 lcmd + shift - tab : yabai -m window --focus recent
 
 # focus window
@@ -170,7 +171,7 @@ lalt + cmd - j : yabai -m window --warp south
 lalt + cmd - k : yabai -m window --warp north
 
 # balance size of windows
-# shift + lalt - =
+# shift + lalt - display
 shift + lalt - 0x18 : yabai -m space --balance
 
 # rotate tree
@@ -206,6 +207,8 @@ lalt - 0x2B : yabai -m space --focus prev
 lalt - 0x2F : yabai -m space --focus next
 lalt + shift - 0x2B : yabai -m window --space prev; yabai -m space --focus prev
 lalt + shift - 0x2F : yabai -m window --space next; yabai -m space --focus next
+lalt + lcmd - 0x2B : yabai -m window --display prev; yabai -m display --focus prev
+lalt + lcmd - 0x2F : yabai -m window --display next; yabai -m display --focus next
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
 # shift + lcmd - n : yabai -m space --create && \
