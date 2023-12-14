@@ -118,8 +118,8 @@ brew "skaffold"
 brew "slides"
 # Version control system designed to be a better CVS
 brew "subversion"
-# Simplified and community-driven man pages
-brew "tldr"
+# Very fast implementation of tldr in Rust
+brew "tealdeer"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -229,6 +229,8 @@ cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "Endel", id: 1346247457
 mas "Gifski", id: 1351639930
+mas "Grila", id: 6444335028
+mas "Posture Pal", id: 1590316152
 mas "Shareful", id: 1522267256
 mas "UTC Time", id: 1538245904
 vscode "13xforever.language-x86-64-assembly"
@@ -290,6 +292,7 @@ vscode "L13RARY.l13-diff"
 vscode "lehni.vscode-fix-checksums"
 vscode "mammothb.scilab"
 vscode "MaoSantaella.night-wolf"
+vscode "mechatroner.rainbow-csv"
 vscode "merko.merko-green-theme"
 vscode "metaseed.metago"
 vscode "metaseed.MetaJump"

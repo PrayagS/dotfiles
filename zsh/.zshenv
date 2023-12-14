@@ -31,7 +31,7 @@ export HOMEBREW_BUNDLE_FILE_GLOBAL="$HOME/dev/dotfiles/macos/Brewfile"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
-export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+export LESSHISTFILE="$XDG_DATA_HOME/less/history"
 export ANDROID_HOME="$XDG_DATA_HOME/android"
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
@@ -42,6 +42,7 @@ export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export REDISCLI_HISTFILE="$XDG_DATA_HOME/redis/rediscli_history"
 export SQLITE_HISTORY="$XDG_CACHE_HOME/sqlite_history"
 export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
+export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql_history"
 
 # Start skhd
 #if pgrep -x "skhd" >/dev/null
