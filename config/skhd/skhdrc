@@ -94,16 +94,26 @@ hyper - n : "/Applications/Firefox.app/Contents/MacOS/firefox" --private-window
 hyper - p : code
 
 # focus spaces
-lcmd - 1 : yabai -m space --focus 1 || yabai -m space --create && yabai -m space --focus 1
-lcmd - 2 : yabai -m space --focus 2 || yabai -m space --create && yabai -m space --focus 2
-lcmd - 3 : yabai -m space --focus 3 || yabai -m space --create && yabai -m space --focus 3
-lcmd - 4 : yabai -m space --focus 4 || yabai -m space --create && yabai -m space --focus 4
-lcmd - 5 : yabai -m space --focus 5 || yabai -m space --create && yabai -m space --focus 5
-lcmd - 6 : yabai -m space --focus 6 || yabai -m space --create && yabai -m space --focus 6
-lcmd - 7 : yabai -m space --focus 7 || yabai -m space --create && yabai -m space --focus 7
-lcmd - 8 : yabai -m space --focus 8 || yabai -m space --create && yabai -m space --focus 8
-lcmd - 9 : yabai -m space --focus 9 || yabai -m space --create && yabai -m space --focus 9
-lcmd - 0 : yabai -m space --focus 10 || yabai -m space --create && yabai -m space --focus 10
+# lcmd - 1 : yabai -m space --focus 1 || yabai -m space --create && yabai -m space --focus 1
+# lcmd - 2 : yabai -m space --focus 2 || yabai -m space --create && yabai -m space --focus 2
+# lcmd - 3 : yabai -m space --focus 3 || yabai -m space --create && yabai -m space --focus 3
+# lcmd - 4 : yabai -m space --focus 4 || yabai -m space --create && yabai -m space --focus 4
+# lcmd - 5 : yabai -m space --focus 5 || yabai -m space --create && yabai -m space --focus 5
+# lcmd - 6 : yabai -m space --focus 6 || yabai -m space --create && yabai -m space --focus 6
+# lcmd - 7 : yabai -m space --focus 7 || yabai -m space --create && yabai -m space --focus 7
+# lcmd - 8 : yabai -m space --focus 8 || yabai -m space --create && yabai -m space --focus 8
+# lcmd - 9 : yabai -m space --focus 9 || yabai -m space --create && yabai -m space --focus 9
+# lcmd - 0 : yabai -m space --focus 10 || yabai -m space --create && yabai -m space --focus 10
+lcmd - 1 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[0]')
+lcmd - 2 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[1]')
+lcmd - 3 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[2]')
+lcmd - 4 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[3]')
+lcmd - 5 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[4]')
+lcmd - 6 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[5]')
+lcmd - 7 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[6]')
+lcmd - 8 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[7]')
+lcmd - 9 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[8]')
+lcmd - 0 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[9]')
 
 # move windows to space
 lalt - 1 : yabai -m window --space 1
