@@ -104,16 +104,16 @@ hyper - p : code
 # lcmd - 8 : yabai -m space --focus 8 || yabai -m space --create && yabai -m space --focus 8
 # lcmd - 9 : yabai -m space --focus 9 || yabai -m space --create && yabai -m space --focus 9
 # lcmd - 0 : yabai -m space --focus 10 || yabai -m space --create && yabai -m space --focus 10
-lcmd - 1 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[0]')
-lcmd - 2 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[1]')
-lcmd - 3 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[2]')
-lcmd - 4 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[3]')
-lcmd - 5 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[4]')
-lcmd - 6 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[5]')
-lcmd - 7 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[6]')
-lcmd - 8 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[7]')
-lcmd - 9 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[8]')
-lcmd - 0 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[9]')
+lcmd - 1 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[0]'); skhd -k "ctrl - 1"
+lcmd - 2 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[1]'); skhd -k "ctrl - 2"
+lcmd - 3 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[2]'); skhd -k "ctrl - 3"
+lcmd - 4 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[3]'); skhd -k "ctrl - 4"
+lcmd - 5 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[4]'); skhd -k "ctrl - 5"
+lcmd - 6 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[5]'); skhd -k "ctrl - 6"
+lcmd - 7 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[6]'); skhd -k "ctrl - 7"
+lcmd - 8 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[7]'); skhd -k "ctrl - 8"
+lcmd - 9 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[8]'); skhd -k "ctrl - 9"
+lcmd - 0 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[9]'); skhd -k "ctrl - 0"
 
 # move windows to space
 lalt - 1 : yabai -m window --space 1
@@ -213,10 +213,10 @@ lalt - o : yabai -m space --create; yabai -m space --focus last
 lalt + shift - o : yabai -m space --create; yabai -m window --space last; yabai -m space --focus last
 # lalt - ,
 # lalt - 0x2B : yabai -m space --focus prev
-lalt - 0x2B : ~/.config/yabai/space_cycle_prev.sh
+lalt - 0x2B : ~/.config/yabai/space_cycle_prev.sh; skhd -k "ctrl - ,"
 # lalt - .
 # lalt - 0x2F : yabai -m space --focus next
-lalt - 0x2F : ~/.config/yabai/space_cycle_next.sh
+lalt - 0x2F : ~/.config/yabai/space_cycle_next.sh; skhd -k "ctrl - ."
 lalt + shift - 0x2B : yabai -m window --space prev; yabai -m space --focus prev
 lalt + shift - 0x2F : yabai -m window --space next; yabai -m space --focus next
 lalt + lcmd - 0x2B : yabai -m window --display prev; yabai -m display --focus prev
