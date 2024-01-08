@@ -104,16 +104,16 @@ hyper - p : code
 # lcmd - 8 : yabai -m space --focus 8 || yabai -m space --create && yabai -m space --focus 8
 # lcmd - 9 : yabai -m space --focus 9 || yabai -m space --create && yabai -m space --focus 9
 # lcmd - 0 : yabai -m space --focus 10 || yabai -m space --create && yabai -m space --focus 10
-lcmd - 1 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[0]'); skhd -k "ctrl - 1"
-lcmd - 2 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[1]'); skhd -k "ctrl - 2"
-lcmd - 3 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[2]'); skhd -k "ctrl - 3"
-lcmd - 4 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[3]'); skhd -k "ctrl - 4"
-lcmd - 5 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[4]'); skhd -k "ctrl - 5"
-lcmd - 6 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[5]'); skhd -k "ctrl - 6"
-lcmd - 7 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[6]'); skhd -k "ctrl - 7"
-lcmd - 8 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[7]'); skhd -k "ctrl - 8"
-lcmd - 9 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[8]'); skhd -k "ctrl - 9"
-lcmd - 0 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[9]'); skhd -k "ctrl - 0"
+lcmd - 1 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[0]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 1"; fi
+lcmd - 2 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[1]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 2"; fi
+lcmd - 3 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[2]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 3"; fi
+lcmd - 4 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[3]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 4"; fi
+lcmd - 5 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[4]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 5"; fi
+lcmd - 6 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[5]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 6"; fi
+lcmd - 7 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[6]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 7"; fi
+lcmd - 8 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[7]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 8"; fi
+lcmd - 9 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[8]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 9"; fi
+lcmd - 0 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[9]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 0"; fi
 
 # move windows to space
 lalt - 1 : yabai -m window --space 1
