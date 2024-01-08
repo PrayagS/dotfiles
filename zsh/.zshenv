@@ -44,10 +44,10 @@ export SQLITE_HISTORY="$XDG_CACHE_HOME/sqlite_history"
 export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
 export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql_history"
 
-# Start skhd
-#if pgrep -x "skhd" >/dev/null
-#then
-#else
-#    skhd -c ~/.config/skhd/skhdrc -P -V
-#    echo "skhd started"
-#fi
+# Start skhd/yabai
+# if pgrep -x "yabai" >/dev/null
+# then
+# else
+#    yabai
+#    echo "yabai started"
+# fi

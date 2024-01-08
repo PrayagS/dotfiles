@@ -10,6 +10,7 @@ tap "koekeishiya/formulae"
 tap "noahgorstein/tap"
 tap "rcmdnk/file"
 tap "rhyeal/aws-rotate-iam-keys", "https://github.com/rhyeal/aws-rotate-iam-keys"
+tap "robusta-dev/krr"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Curl like simplicity to access AWS resources
@@ -38,6 +39,8 @@ brew "coreutils"
 brew "difftastic"
 # Pack, ship and run any application as a lightweight container
 brew "docker", link: false
+# Docker CLI plugin for extended build capabilities with BuildKit
+brew "docker-buildx"
 # Isolated development environments using Docker
 brew "docker-compose"
 # Platform keystore credential helper for Docker
@@ -62,8 +65,12 @@ brew "pinentry"
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Go implementation of configuration language for defining JSON data
+brew "go-jsonnet"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# Post-modern modal text editor
+brew "helix"
 # Kubernetes package manager
 brew "helm"
 # Instant coding answers via the command-line
@@ -80,8 +87,8 @@ brew "imagemagick"
 brew "isort"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Domain specific configuration language for defining JSON data
-brew "jsonnet"
+# Package manager for Jsonnet
+brew "jsonnet-bundler"
 # Run local Kubernetes cluster in Docker
 brew "kind"
 # Kubernetes command-line interface
@@ -120,6 +127,8 @@ brew "slides"
 brew "subversion"
 # Very fast implementation of tldr in Rust
 brew "tealdeer"
+# User interface to the TELNET protocol
+brew "telnet"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -142,6 +151,12 @@ brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 # a TUI playground to experiment and play with jq
 brew "noahgorstein/tap/jqp"
+# Kubernetes Resource Recommender by Robusta
+brew "robusta-dev/krr/krr"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
+# Command-line interface for 1Password
+cask "1password-cli"
 # Application uninstaller
 cask "appcleaner"
 # Chromium based browser
@@ -184,6 +199,8 @@ cask "kindle"
 cask "kitty"
 # Adaptive brightness for external displays
 cask "lunar"
+# Sandbox construction video game
+cask "minecraft"
 # Web browser focused on privacy and on minimizing tracking and fingerprinting
 cask "mullvad-browser"
 # VPN client
@@ -230,6 +247,7 @@ mas "Amphetamine", id: 937984704
 mas "Endel", id: 1346247457
 mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
+mas "Numbers", id: 409203825
 mas "Posture Pal", id: 1590316152
 mas "Shareful", id: 1522267256
 mas "UTC Time", id: 1538245904
