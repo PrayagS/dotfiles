@@ -107,6 +107,8 @@ brew "neovim"
 brew "nmap"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
+# 7-Zip (high compression file archiver) implementation
+brew "p7zip"
 # Convert PDFs to images
 brew "pdf2image"
 # Tool for managing OCI containers and pods
