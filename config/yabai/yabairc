@@ -64,8 +64,8 @@ yabai -m rule --add label="Bartended" app="Bartended" title=".*" manage=off laye
 yabai -m rule --add label="Gitify" app="Gitify" title=".*" manage=off layer=above sticky=on
 # yabai -m rule --add label="Kitty blur" app="kitty" border=on
 
-yabai -m signal --add app="Cron" event="window_focused" \
-    action="CRON_WINDOW_ID=$(yabai -m query --windows | jq '.[] | select(.app == "Cron") | .id') | yabai -m window $CRON_WINDOW_ID --ratio abs:0.63 | yabai -m window $CRON_WINDOW_ID --swap west"
+yabai -m signal --add app="Notion Calendar" event="window_focused" \
+    action="CRON_WINDOW_ID=$(yabai -m query --windows | jq '.[] | select(.app == "Notion Calendar") | .id') | yabai -m window $CRON_WINDOW_ID --ratio abs:0.63 | yabai -m window $CRON_WINDOW_ID --swap west"
 # Clean up empty spaces with no windows on them.
 yabai -m signal --add event=space_changed action="sh ~/.config/yabai/clean_empty_spaces.sh"
 
@@ -75,7 +75,7 @@ yabai -m rule --add app="Slack" space=^4
 yabai -m rule --add app="kitty" space=^5
 yabai -m rule --add app="Code" space=^6
 yabai -m rule --add app="Obsidian" space=^8
-yabai -m rule --add app="(Cron|Todoist)" space=^9 manage=on
+yabai -m rule --add app="(Notion Calendar|Todoist|Structured)" space=^9 manage=on
 yabai -m rule --add app="Discord" space=^10
 
 echo "yabai configuration loaded.."
