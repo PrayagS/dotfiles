@@ -214,9 +214,11 @@ lalt + shift - o : yabai -m space --create; yabai -m window --space last; yabai 
 # lalt - ,
 # lalt - 0x2B : yabai -m space --focus prev
 lalt - 0x2B : ~/.config/yabai/space_cycle_prev.sh; skhd -k "ctrl - ,"
+lalt + lctrl - 0x2B : ~/.config/yabai/create_space.sh left; skhd -k "ctrl - ,"
 # lalt - .
 # lalt - 0x2F : yabai -m space --focus next
 lalt - 0x2F : ~/.config/yabai/space_cycle_next.sh; skhd -k "ctrl - ."
+lalt + lctrl - 0x2F : ~/.config/yabai/create_space.sh right; skhd -k "ctrl - ."
 lalt + shift - 0x2B : yabai -m window --space prev; yabai -m space --focus prev
 lalt + shift - 0x2F : yabai -m window --space next; yabai -m space --focus next
 lalt + lcmd - 0x2B : yabai -m window --display prev; yabai -m display --focus prev
