@@ -18,7 +18,17 @@ zinit from"gh-r" binary lman for \
     sbin"**/moar* -> moar" walles/moar \
     sbin"**/lazygit" atload'alias -g lg=lazygit' jesseduffield/lazygit \
     sbin'**/gh' atclone'./**/gh completion --shell zsh > _gh' atpull'%atclone' cli/cli \
-    sbin'pint* -> pint' cloudflare/pint
+    sbin'pint* -> pint' cloudflare/pint \
+    sbin'**/circumflex* -> circumflex' bensadeh/circumflex \
+    sbin"jq* -> jq" jqlang/jq \
+    sbin"**/jqp* -> jqp" noahgorstein/jqp \
+    sbin"**/nvim" neovim/neovim \
+    sbin"**/viddy -> viddy" sachaos/viddy \
+    sbin"**/yazi -> yazi" sxyazi/yazi \
+    sbin"**/dust -> dust" bootandy/dust \
+    sbin"**/duf -> duf" muesli/duf \
+    sbin"**/mcfly -> mcfly" cantino/mcfly \
+    sbin"**/procs -> procs" dalance/procs
     # sbin'**/helm' atclone'./**/helm completion zsh > _helm' atpull'%atclone' helm/helm
 
 

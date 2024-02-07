@@ -145,9 +145,9 @@ zinit lucid light-mode wait"0c" for \
     # atload"export ZSH_ALIAS_FINDER_AUTOMATIC=true" \
     #     OMZP::alias-finder \
 
-# Install shell programs once compinit has been executed
+# Install shell tools once compinit has been executed
 zinit ice wait"0c" lucid
-zinit snippet "${ZSH_HOME}/programs.zsh"
+zinit snippet "${ZSH_HOME}/tools.zsh"
 
 # Set of plugins to load on demand
 zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)bd*]} ]]' lucid
