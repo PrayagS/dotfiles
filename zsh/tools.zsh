@@ -58,3 +58,19 @@ zinit for \
     id-as'rust-csvlens' \
     cargo'!csvlens' \
   zdharma-continuum/null
+
+zinit for \
+    light-mode \
+    lucid \
+    as'null' \
+    id-as'magika' \
+    pip'magika <- !magika -> magika' \
+  @zdharma-continuum/null
+
+zinit for \
+    light-mode \
+    lucid \
+    as'null' \
+    id-as'uv' \
+    pip'uv' \
+  @zdharma-continuum/null
