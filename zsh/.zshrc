@@ -168,8 +168,8 @@ zinit snippet https://github.com/zsh-users/zsh-completions/blob/master/src/_gola
 zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)http*]} ]]' lucid as"completion"
 zinit snippet https://github.com/zsh-users/zsh-completions/blob/master/src/_httpie
 
-zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)rg*]} ]]' lucid as"completion"
-zinit snippet https://github.com/BurntSushi/ripgrep/blob/master/complete/_rg
+zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)rg*]} ]]' lucid as"completion" atload"rg --generate complete-zsh >| ${ZSH_HOME}/custom/_rg"
+zinit snippet "${ZSH_HOME}/custom/_rg"
 
 zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)helm*]} ]]' lucid as"completion" atload"helm completion zsh >| ${ZSH_HOME}/custom/_helm"
 zinit snippet "${ZSH_HOME}/custom/_helm"
