@@ -8,6 +8,7 @@ tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "noahgorstein/tap"
+tap "pyroscope-io/brew"
 tap "rcmdnk/file"
 tap "rhyeal/aws-rotate-iam-keys", "https://github.com/rhyeal/aws-rotate-iam-keys"
 tap "robusta-dev/krr"
@@ -25,18 +26,10 @@ brew "black"
 brew "chafa"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
-# Pack, ship and run any application as a lightweight container
-brew "docker", link: false
-# Docker CLI plugin for extended build capabilities with BuildKit
-brew "docker-buildx"
-# Isolated development environments using Docker
-brew "docker-compose"
-# Platform keystore credential helper for Docker
-brew "docker-credential-helper"
-# Docker Credential Helper for Amazon ECR
-brew "docker-credential-helper-ecr"
 # Simple command-line tool for creating clusters on Amazon EKS
 brew "eksctl"
 # Validate EPUB files, version 2.0 and later
@@ -103,8 +96,12 @@ brew "promtail"
 brew "pyenv"
 # Pyenv plugin to manage virtualenv
 brew "pyenv-virtualenv"
+# Implementation of Python 3 in Python
+brew "pypy3.10"
 # Persistent key-value database, with built-in net interface
 brew "redis"
+# Extremely fast Python linter, written in Rust
+brew "ruff"
 # Easy and Repeatable Kubernetes Development
 brew "skaffold"
 # Terminal based presentation tool
@@ -133,6 +130,8 @@ brew "artginzburg/tap/sudo-touchid"
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
+# Open source continuous profiling software
+brew "pyroscope-io/brew/profilecli"
 # Kubernetes Resource Recommender by Robusta
 brew "robusta-dev/krr/krr"
 # Password manager that keeps all passwords secure behind one password
@@ -145,7 +144,7 @@ cask "appcleaner"
 cask "arc"
 # Two-factor authentication software
 cask "authy"
-# Menu bar icon organizer
+# Menu bar icon organiser
 cask "bartender"
 # E-books management software
 cask "calibre"
@@ -157,8 +156,6 @@ cask "cursor"
 cask "discord"
 # Voice and text chat software
 cask "discord-canary"
-# App to build and share containerized applications and microservices
-cask "docker"
 # Web browser
 cask "firefox-beta"
 # Screenshot software
@@ -173,7 +170,7 @@ cask "itsycal"
 cask "jellyfin-media-player"
 # Open-source screen recorder built with web technology
 cask "kap"
-# Keyboard customizer
+# Keyboard customiser
 cask "karabiner-elements"
 # Interface for reading and syncing eBooks
 cask "kindle"
@@ -195,8 +192,14 @@ cask "notion-calendar"
 cask "numi"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Home media player
 cask "plex"
+# Browse, manage, inspect containers and images
+cask "podman-desktop"
+# Kubernetes and container management on the desktop
+cask "rancher"
 # Archive manager for data compression and backups
 cask "rar"
 # Control your tools with a few keystrokes

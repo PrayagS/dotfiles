@@ -124,13 +124,15 @@
     zero-style = dim syntax
 
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
 
 [diff]
     colorMoved = default
+    algorithm = histogram
 
 [commit]
     template=~/.config/git/gitcommit-template
+    verbose = true
 
 [github]
     user = PrayagS
