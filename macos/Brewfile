@@ -1,5 +1,4 @@
 tap "artginzburg/tap"
-tap "bensadeh/circumflex"
 tap "buo/cask-upgrade"
 tap "homebrew/aliases"
 tap "homebrew/bundle"
@@ -7,11 +6,8 @@ tap "homebrew/cask-versions"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
-tap "noahgorstein/tap"
 tap "pyroscope-io/brew"
 tap "rcmdnk/file"
-tap "rhyeal/aws-rotate-iam-keys", "https://github.com/rhyeal/aws-rotate-iam-keys"
-tap "robusta-dev/krr"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Curl like simplicity to access AWS resources
@@ -30,8 +26,14 @@ brew "clang-format"
 brew "colima"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
-# Simple command-line tool for creating clusters on Amazon EKS
-brew "eksctl"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Docker CLI plugin for extended build capabilities with BuildKit
+brew "docker-buildx"
+# Isolated development environments using Docker
+brew "docker-compose"
+# Platform keystore credential helper for Docker
+brew "docker-credential-helper"
 # Validate EPUB files, version 2.0 and later
 brew "epubcheck"
 # Collection of GNU find, xargs, and locate
@@ -68,12 +70,16 @@ brew "jsonnet-bundler"
 brew "kind"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
+# Template-free customization of Kubernetes YAML manifests
+brew "kustomize"
 # Pager program similar to more
 brew "less"
 # Input filter for the pager less
 brew "lesspipe"
 # Terminal file manager
 brew "lf"
+# Command-line utility to interact with linkerd
+brew "linkerd"
 # Mac App Store command-line interface
 brew "mas"
 # Open source relational database management system
@@ -86,8 +92,6 @@ brew "nnn"
 brew "p7zip"
 # Convert PDFs to images
 brew "pdf2image"
-# Tool for managing OCI containers and pods
-brew "podman"
 # Object-relational database system
 brew "postgresql@14"
 # Log agent for Loki
@@ -112,6 +116,8 @@ brew "subversion"
 brew "tealdeer"
 # User interface to the TELNET protocol
 brew "telnet"
+# Terraform version manager inspired by rbenv
+brew "tfenv"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -132,24 +138,18 @@ brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 # Open source continuous profiling software
 brew "pyroscope-io/brew/profilecli"
-# Kubernetes Resource Recommender by Robusta
-brew "robusta-dev/krr/krr"
-# Password manager that keeps all passwords secure behind one password
-cask "1password"
+# Password manager
+cask "1password-beta"
 # Command-line interface for 1Password
 cask "1password-cli"
 # Application uninstaller
 cask "appcleaner"
 # Chromium based browser
 cask "arc"
-# Two-factor authentication software
-cask "authy"
 # Menu bar icon organiser
 cask "bartender"
 # E-books management software
 cask "calibre"
-# Free app that makes your Internet safer
-cask "cloudflare-warp"
 # Write, edit, and chat about your code with AI
 cask "cursor"
 # Voice and text chat software
@@ -164,8 +164,6 @@ cask "flameshot"
 cask "gitify"
 # Web browser
 cask "google-chrome-beta"
-# Menu bar calendar
-cask "itsycal"
 # Jellyfin desktop client
 cask "jellyfin-media-player"
 # Open-source screen recorder built with web technology
@@ -196,10 +194,6 @@ cask "obsidian"
 cask "orbstack"
 # Home media player
 cask "plex"
-# Browse, manage, inspect containers and images
-cask "podman-desktop"
-# Kubernetes and container management on the desktop
-cask "rancher"
 # Archive manager for data compression and backups
 cask "rar"
 # Control your tools with a few keystrokes
@@ -222,8 +216,6 @@ cask "todoist"
 cask "tor-browser"
 # Open-source code editor
 cask "visual-studio-code"
-# Adaptive brightness for displays
-cask "vivid"
 # Multimedia player
 cask "vlc"
 # Network protocol analyzer
@@ -238,7 +230,6 @@ mas "Endel", id: 1346247457
 mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
 mas "Numbers", id: 409203825
-mas "Posture Pal", id: 1590316152
 mas "Shareful", id: 1522267256
 mas "Structured", id: 1499198946
 mas "UTC Time", id: 1538245904

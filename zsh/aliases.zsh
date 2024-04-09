@@ -50,3 +50,7 @@ alias -g rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/
 # Work
 alias -g prod-sgp="export AWS_PROFILE=prod AWS_REGION=ap-southeast-1;kubectl ctx prod-sgp"
 alias -g stage-ore="export AWS_PROFILE=stage AWS_REGION=us-west-2;kubectl ctx stage-ore"
+ssm() {
+    instance_id=$(kubectl describe node "$1" | grep "alpha.eksctl.io/instance-id" | awk -F '=' '{ print $2 }')
+    aws ssm start-session --target "$instance_id"
+}
