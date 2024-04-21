@@ -160,7 +160,7 @@ cask "discord-canary"
 cask "firefox-beta"
 # Screenshot software
 cask "flameshot"
-# App that shows GitHub notifications on the desktop
+# GitHub Notifications on your menu bar
 cask "gitify"
 # Web browser
 cask "google-chrome-beta"
@@ -231,7 +231,6 @@ mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
 mas "Numbers", id: 409203825
 mas "Shareful", id: 1522267256
-mas "Structured", id: 1499198946
 mas "UTC Time", id: 1538245904
 vscode "13xforever.language-x86-64-assembly"
 vscode "766b.go-outliner"
