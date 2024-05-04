@@ -104,6 +104,8 @@ brew "pyenv-virtualenv"
 brew "pypy3.10"
 # Persistent key-value database, with built-in net interface
 brew "redis"
+# Diff filter highlighting which line parts have changed
+brew "riff"
 # Extremely fast Python linter, written in Rust
 brew "ruff"
 # Easy and Repeatable Kubernetes Development
