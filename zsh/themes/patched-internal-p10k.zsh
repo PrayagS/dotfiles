@@ -2303,7 +2303,11 @@ _p9k_vpn_ip_render() {
   for _p9k__prompt_side _p9k__line_index _p9k__segment_index in $_p9k__vpn_ip_segments; do
     local _p9k__prompt=
     for ip in $_p9k__vpn_ip_ips; do
-      _p9k_prompt_segment prompt_vpn_ip "cyan" "$_p9k_color1" 'VPN_ICON' 0 '' $ip
+      if [[ $ip == "172.16.0.2" ]]; then
+        _p9k_prompt_segment prompt_vpn_ip "cyan" "darkorange" 'VPN_ICON' 0 '' $ip
+      else
+        _p9k_prompt_segment prompt_vpn_ip "cyan" "034" 'VPN_ICON' 0 '' $ip
+      fi
     done
     typeset -g _p9k__vpn_ip_$_p9k__prompt_side$_p9k__segment_index=$_p9k__prompt
   done

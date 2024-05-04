@@ -1414,7 +1414,7 @@
 
   ########################[ vpn_ip: virtual private network indicator ]#########################
   # VPN IP color.
-  typeset -g POWERLEVEL9K_VPN_IP_FOREGROUND=004
+#   typeset -g POWERLEVEL9K_VPN_IP_FOREGROUND=
   # When on VPN, show just an icon without the IP address.
   # Tip: To display the private IP address when on VPN, remove the next line.
   # typeset -g POWERLEVEL9K_VPN_IP_CONTENT_EXPANSION=
