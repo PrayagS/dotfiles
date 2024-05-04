@@ -37,6 +37,7 @@
     vcs
     # =========================[ Line #2 ]=========================
     newline                 # \n
+    vpn_ip
     kubecontext
     aws
     prompt_char             # prompt symbol
@@ -99,7 +100,7 @@
     gcloud                  # google cloud cli account and project (https://cloud.google.com/)
     google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
     # context                 # user@hostname
-    nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
+    # nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
     ranger                  # ranger shell (https://github.com/ranger/ranger)
     nnn                     # nnn shell (https://github.com/jarun/nnn)
     vim_shell               # vim shell indicator (:sh)
@@ -1413,10 +1414,10 @@
 
   ########################[ vpn_ip: virtual private network indicator ]#########################
   # VPN IP color.
-  typeset -g POWERLEVEL9K_VPN_IP_FOREGROUND=81
+  typeset -g POWERLEVEL9K_VPN_IP_FOREGROUND=004
   # When on VPN, show just an icon without the IP address.
   # Tip: To display the private IP address when on VPN, remove the next line.
-  typeset -g POWERLEVEL9K_VPN_IP_CONTENT_EXPANSION=
+  # typeset -g POWERLEVEL9K_VPN_IP_CONTENT_EXPANSION=
   # Regular expression for the VPN network interface. Run `ifconfig` or `ip -4 a show` while on VPN
   # to see the name of the interface.
   typeset -g POWERLEVEL9K_VPN_IP_INTERFACE='(gpd|wg|(.*tun))[0-9]*'

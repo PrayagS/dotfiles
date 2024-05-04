@@ -66,6 +66,8 @@ brew "imagemagick"
 brew "isort"
 # Package manager for Jsonnet
 brew "jsonnet-bundler"
+# VPN kill switch for macOS
+brew "killswitch"
 # Run local Kubernetes cluster in Docker
 brew "kind"
 # Kubernetes command-line interface
@@ -222,6 +224,8 @@ cask "visual-studio-code"
 cask "vlc"
 # Network protocol analyzer
 cask "wireshark"
+# View output from scripts in the menu bar
+cask "xbar"
 # Multiplayer code editor
 cask "zed"
 # Video communication and virtual meeting platform
