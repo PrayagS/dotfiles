@@ -77,5 +77,6 @@ yabai -m rule --add app="Code" space=^6
 yabai -m rule --add app="Obsidian" space=^8
 yabai -m rule --add app="(Notion Calendar|Todoist)" space=^9 manage=on
 yabai -m rule --add app="Discord" space=^10
+yabai -m rule --apply
 
 echo "yabai configuration loaded.."
