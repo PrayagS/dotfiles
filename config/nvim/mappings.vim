@@ -15,26 +15,32 @@ if exists('g:vscode')
 endif
 
 " Best keybindings ever; Source: ThePrimeagen
-nnoremap Y y$
-nnoremap <leader>y "+y
-vnoremap <leader>y "+y
-nmap <leader>Y "+Y
-xnoremap <leader>p "_dP
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
-nnoremap n nzzzv
-nnoremap N Nzzzv
+" nnoremap Y y$
+" nnoremap <leader>y "+y
+" vnoremap <leader>y "+y
+" nmap <leader>Y "+Y
+" xnoremap <leader>p "_dP
+" nnoremap <leader>d "_d
+" vnoremap <leader>d "_d
+" nnoremap n nzzzv
+" nnoremap N Nzzzv
 inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-nnoremap <leader>j :m .+1<CR>==
-nnoremap <leader>k :m .-2<CR>==
+" vnoremap J :m '>+1<CR>gv=gv
+" vnoremap K :m '<-2<CR>gv=gv
+" nnoremap <leader>j :m .+1<CR>==
+" nnoremap <leader>k :m .-2<CR>==
 
 nmap <leader>P <Plug>yankstack_substitute_older_paste
 nnoremap <leader>f <cmd>Files<cr>
 nnoremap <leader>F <cmd>GFiles<cr>
 nmap s <Plug>Lightspeed_s
 nmap S <Plug>Lightspeed_S
+
+# Disable arrow keys
+map <Up> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+map <Down> <Nop>

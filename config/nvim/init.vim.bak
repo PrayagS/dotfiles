@@ -97,8 +97,11 @@ call yankstack#setup()
 
 
 lua << EOF
+require('nvim-autopairs').setup({
+  enable_check_bracket_line = false,
+  ignored_next_char = "[%w%.]" -- will ignore alphanumeric and `.` symbol
+})
 require('lightspeed').setup{}
-require('nvim-autopairs').setup{}
 require('Comment').setup()
 EOF
 
