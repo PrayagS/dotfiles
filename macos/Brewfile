@@ -1,5 +1,6 @@
 tap "artginzburg/tap"
 tap "buo/cask-upgrade"
+tap "felixkratz/formulae"
 tap "homebrew/aliases"
 tap "homebrew/bundle"
 tap "homebrew/cask-versions"
@@ -66,6 +67,8 @@ brew "imagemagick"
 brew "isort"
 # Package manager for Jsonnet
 brew "jsonnet-bundler"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "k9s"
 # VPN kill switch for macOS
 brew "killswitch"
 # Run local Kubernetes cluster in Docker
@@ -136,6 +139,10 @@ brew "watch"
 brew "wget"
 # Permanent TouchID support for sudo
 brew "artginzburg/tap/sudo-touchid"
+# A window border system for macOS
+brew "felixkratz/formulae/borders"
+# Custom macOS statusbar with shell plugin, interaction and graph support
+brew "felixkratz/formulae/sketchybar"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
@@ -304,6 +311,7 @@ vscode "metaseed.metaword"
 vscode "miguelsolorio.fluent-icons"
 vscode "monokai.theme-monokai-pro-vscode"
 vscode "ms-azuretools.vscode-docker"
+vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
 vscode "ms-python.black-formatter"
 vscode "ms-python.debugpy"
 vscode "ms-python.isort"
@@ -333,6 +341,7 @@ vscode "pkief.material-icon-theme"
 vscode "proxzima.sweetdracula"
 vscode "quicktype.quicktype"
 vscode "redhat.java"
+vscode "redhat.vscode-yaml"
 vscode "ritwickdey.liveserver"
 vscode "robbowen.synthwave-vscode"
 vscode "rokoroku.vscode-theme-darcula"

@@ -42,6 +42,7 @@
     ~/.config/lazygit: config/lazygit
     ~/.config/skhd: config/skhd
     ~/.config/yabai: config/yabai
+    ~/.config/borders: config/borders
     ~/.config/ripgrep: config/ripgrep
     ~/.config/aws/config: config/aws/config
 

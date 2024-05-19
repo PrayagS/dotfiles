@@ -13,3 +13,6 @@ cli_auto_prompt = on-partial
 region = ap-south-1
 output = json
 cli_pager = bat -l yaml --theme DarkNeon
+[default]
+profile = prod
+region = ap-southeast-1

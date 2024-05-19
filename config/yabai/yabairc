@@ -80,3 +80,4 @@ yabai -m rule --add app="Discord" space=^10
 yabai -m rule --apply
 
 echo "yabai configuration loaded.."
+borders &
