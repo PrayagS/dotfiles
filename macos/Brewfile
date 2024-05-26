@@ -51,20 +51,22 @@ brew "pinentry"
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Go implementation of configuration language for defining JSON data
-brew "go-jsonnet"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # Post-modern modal text editor
 brew "helix"
 # Kubernetes package manager
 brew "helm"
+# HTTP load generator, ApacheBench (ab) replacement
+brew "hey"
 # Improved top (interactive process viewer)
 brew "htop"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Sort Python imports automatically
 brew "isort"
+# Domain specific configuration language for defining JSON data
+brew "jsonnet"
 # Package manager for Jsonnet
 brew "jsonnet-bundler"
 # Kubernetes CLI To Manage Your Clusters In Style!
@@ -119,6 +121,8 @@ brew "skaffold"
 brew "slides"
 # Version control system designed to be a better CVS
 brew "subversion"
+# Flexible, reusable and concise configuration for Kubernetes using Jsonnet
+brew "tanka"
 # Very fast implementation of tldr in Rust
 brew "tealdeer"
 # User interface to the TELNET protocol
@@ -229,6 +233,8 @@ cask "tor-browser"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
 # Network protocol analyzer
 cask "wireshark"
 # View output from scripts in the menu bar
@@ -285,6 +291,7 @@ vscode "github.github-vscode-theme"
 vscode "github.remotehub"
 vscode "github.vscode-pull-request-github"
 vscode "golang.go"
+vscode "grafana.vscode-jsonnet"
 vscode "gruntfuggly.todo-tree"
 vscode "guyskk.language-cython"
 vscode "hashicorp.terraform"
