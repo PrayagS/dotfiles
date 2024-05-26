@@ -21,6 +21,7 @@
     editor = $EDITOR
     preloadindex = true
     pager = delta
+    hooksPath = /opt/global-pre-commit-hooks-security/hooks
 
 [interactive]
     diffFilter = delta --color-only --features=villsau-interactive
