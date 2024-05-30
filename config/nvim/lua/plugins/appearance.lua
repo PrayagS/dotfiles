@@ -1,59 +1,78 @@
 return {
-    -- the colorscheme should be available when starting Neovim
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        priority = 1000, -- make sure to load this before all the other start plugins
+    },
     {
         "catppuccin/nvim",
         name = "catppuccin",
-        lazy = false, -- make sure we load this during startup if it is your main colorscheme
-        priority = 1000, -- make sure to load this before all the other start plugins
-        config = function()
-          -- load the colorscheme here
-          vim.cmd([[colorscheme catppuccin]])
+        -- lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        -- priority = 1000, -- make sure to load this before all the other start plugins
+    },
+    "projekt0n/github-nvim-theme",
+    "rebelot/kanagawa.nvim",
+    "folke/tokyonight.nvim",
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+          vim.o.timeout = true
+          vim.o.timeoutlen = 100
         end,
         opts = {
-            flavour = "mocha", -- latte, frappe, macchiato, mocha
-            transparent_background = true, -- disables setting the background color.
-            show_end_of_buffer = true, -- shows the '~' characters after the end of buffers
-            term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
-            dim_inactive = {
-                enabled = true, -- dims the background color of inactive window
-                shade = "dark",
-                percentage = 0.15, -- percentage of the shade to apply to the inactive window
+            layout = {
+                spacing = 2, -- spacing between columns
+                align = "center", -- align columns left, center or right
             },
-            integrations = {
-                aerial = true,
-                alpha = true,
-                cmp = true,
-                dashboard = true,
-                flash = true,
-                gitsigns = true,
-                headlines = true,
-                illuminate = true,
-                indent_blankline = { enabled = true },
-                leap = true,
-                lsp_trouble = true,
-                mason = true,
-                markdown = true,
-                mini = true,
-                native_lsp = {
-                enabled = true,
-                underlines = {
-                    errors = { "undercurl" },
-                    hints = { "undercurl" },
-                    warnings = { "undercurl" },
-                    information = { "undercurl" },
-                },
-                },
-                navic = { enabled = true, custom_bg = "lualine" },
-                neotest = true,
-                neotree = true,
-                noice = true,
-                notify = true,
-                semantic_tokens = true,
-                telescope = true,
-                treesitter = true,
-                treesitter_context = true,
-                which_key = true,
+            triggers_blacklist = {
+                -- list of mode / prefixes that should never be hooked by WhichKey
+                -- this is mostly relevant for keymaps that start with a native binding
+                i = { "j", "k" },
+                v = { "j", "k" },
+                -- n = { ">", "<" },
             },
         },
-    }
+    },
+    {
+        "roobert/surround-ui.nvim",
+        dependencies = {
+          "kylechui/nvim-surround",
+          "folke/which-key.nvim",
+        },
+    },
+    "nvim-tree/nvim-web-devicons",
+    {
+        "akinsho/bufferline.nvim",
+        version = "*",
+        dependencies = "nvim-tree/nvim-web-devicons",
+    },
+    "lukas-reineke/indent-blankline.nvim",
+    "folke/zen-mode.nvim",
+    "kevinhwang91/nvim-hlslens",
+    "kevinhwang91/nvim-bqf",
+    "m4xshen/smartcolumn.nvim",
+    {
+        "code-biscuits/nvim-biscuits",
+        keys = {
+            {
+                "<leader>bb",
+                function()
+                    require("nvim-biscuits").BufferAttach()
+                end,
+                mode = "n",
+                desc = "Enable Biscuits",
+            },
+        },
+    },
+    "karb94/neoscroll.nvim",
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+    {
+        "smjonas/live-command.nvim",
+        name = "live-command",
+    },
 }
