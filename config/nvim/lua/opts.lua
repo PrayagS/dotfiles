@@ -52,3 +52,5 @@ opt.list = true
 
 local space = "·"
 opt.listchars:append { tab = "│─", multispace = space, lead = space, trail = space, nbsp = space }
+
+opt.showmode = false
