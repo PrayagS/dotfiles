@@ -36,10 +36,7 @@ return {
         },
     },
     {
-        "roobert/surround-ui.nvim",
         dependencies = {
-          "kylechui/nvim-surround",
-          "folke/which-key.nvim",
         },
     },
     "nvim-tree/nvim-web-devicons",
