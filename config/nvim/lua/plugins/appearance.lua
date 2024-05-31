@@ -124,7 +124,7 @@ return {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         opts = {},
-        event =  { "BufReadPost", "BufNewFile", "BufWritePre" },
+        event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     },
     {
         "folke/zen-mode.nvim",

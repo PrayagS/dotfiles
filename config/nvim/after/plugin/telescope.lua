@@ -34,7 +34,6 @@ require("telescope").setup({
     },
 })
 require("telescope").load_extension("live_grep_args")
-require("telescope").load_extension("yank_history")
 require("telescope").load_extension("frecency")
 
 local builtin = require('telescope.builtin')
