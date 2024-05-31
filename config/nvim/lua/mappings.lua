@@ -15,12 +15,12 @@ set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 set("n", "J", "mzJ`z")
 
 -- Keep cursor at the middle when scrolling buffers
-set("n", "<C-d>", "<C-d>zz")
-set("n", "<C-u>", "<C-u>zz")
+-- set("n", "<C-d>", "<C-d>zz")
+-- set("n", "<C-u>", "<C-u>zz")
 
 -- Keep cursor at the middle when searching
-set("n", "n", "nzzzv")
-set("n", "N", "Nzzzv")
+-- set("n", "n", "nzzzv")
+-- set("n", "N", "Nzzzv")
 
 -- Copy whole line
 set("n", "Y", "y$")
@@ -36,19 +36,19 @@ set({"n", "v"}, "<leader>y", [["+y]])
 set("n", "<leader>Y", [["+Y]])
 
 -- Keep cursor at the middle when browsing lists
-set("n", "<C-k>", "<cmd>cnext<CR>zz")
-set("n", "<C-j>", "<cmd>cprev<CR>zz")
-set("n", "<leader>k", "<cmd>lnext<CR>zz")
-set("n", "<leader>j", "<cmd>lprev<CR>zz")
+-- set("n", "<C-k>", "<cmd>cnext<CR>zz")
+-- set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- set("n", "<leader>k", "<cmd>lnext<CR>zz")
+-- set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Q toggles mode to ex mode
 set("n", "Q", "<nop>")
 
 -- better up/down
-set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-set({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- set({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 -- Move to windows using the <ctrl> hjkl keys
 set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })

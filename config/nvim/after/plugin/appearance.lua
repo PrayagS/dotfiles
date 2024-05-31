@@ -105,7 +105,6 @@ require("nvim-biscuits").setup({
     trim_by_words = true,
 })
 
-require('neoscroll').setup()
 
 require('lualine').setup({
     options = {

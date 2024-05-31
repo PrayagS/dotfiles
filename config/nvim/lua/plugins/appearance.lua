@@ -63,7 +63,16 @@ return {
             },
         },
     },
-    "karb94/neoscroll.nvim",
+    {
+        'declancm/cinnamon.nvim',
+        config = function()
+            require('cinnamon').setup({
+                extra_keymaps = true,
+                extended_keymaps = true,
+                hide_cursor = true,
+            })
+        end,
+    },
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
