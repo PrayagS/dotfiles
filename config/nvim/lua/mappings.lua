@@ -76,3 +76,8 @@ set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 -- better indenting
 set("v", "<", "<gv")
 set("v", ">", ">gv")
+
+set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
