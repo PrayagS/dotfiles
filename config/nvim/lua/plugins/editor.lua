@@ -83,13 +83,17 @@ return {
             "SudaRead",
         },
     },
-    -- {
-    --     "m4xshen/hardtime.nvim",
-    --     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    --     opts = {
-    --         max_count = 5,
-    --         allow_different_key = true,
-    --         restriction_mode = "hint",
-    --     }
-    -- },
+    {
+        "m4xshen/hardtime.nvim",
+        dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+        opts = {
+            max_count = 5,
+            allow_different_key = true,
+            restriction_mode = "hint",
+            resetting_keys = {
+                [">"] = {},
+                ["<"] = {},
+            },
+        }
+    },
 }
