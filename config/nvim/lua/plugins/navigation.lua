@@ -43,5 +43,17 @@ return {
         priority = 1000,
         opts = {},
     },
-    -- { "tpope/vim-repeat", event = "VeryLazy" },
+    {
+        "famiu/bufdelete.nvim",
+        keys = {
+            {
+                "<leader>bd",
+                function()
+                    require("bufdelete").bufdelete()
+                end,
+                mode = "n",
+                desc = "Delete buffer",
+            },
+        },
+    },
 }
