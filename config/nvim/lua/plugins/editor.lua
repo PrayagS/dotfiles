@@ -35,8 +35,15 @@ return {
         config = function()
             require("yanky").setup()
             local set = vim.keymap.set
-            set({"n","x"}, "p", "<Plug>(YankyPutAfter)")
-            set({"n","x"}, "P", "<Plug>(YankyPutBefore)")
+
+            -- Separate keymaps for normal and visual mode to restore
+            -- original behavior of p and P in visual mode.
+            set({"n"}, "p", "<Plug>(YankyPutAfter)")
+            set({"n"}, "P", "<Plug>(YankyPutBefore)")
+
+            set({"x"}, "P", "<Plug>(YankyPutAfter)")
+            set({"x"}, "p", "<Plug>(YankyPutBefore)")
+
             set({"n","x"}, "gp", "<Plug>(YankyGPutAfter)")
             set({"n","x"}, "gP", "<Plug>(YankyGPutBefore)")
 
