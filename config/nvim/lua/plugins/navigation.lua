@@ -2,15 +2,16 @@ return {
     {
         "ggandor/leap.nvim",
         lazy = false,
-        dependencies = {
-            "tpope/vim-repeat",
-        },
         opts = {},
         config = function()
             vim.keymap.set("n",        "s", "<Plug>(leap)")
             vim.keymap.set("n",        "S", "<Plug>(leap-from-window)")
             vim.keymap.set({"x", "o"}, "s", "<Plug>(leap-forward)")
             vim.keymap.set({"x", "o"}, "S", "<Plug>(leap-backward)")
+
+            require("leap.user").set_repeat_keys("<enter>", "<backspace", {
+                relative_directions = true,
+            })
         end,
     },
     {
