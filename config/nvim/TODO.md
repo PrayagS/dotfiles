@@ -1,10 +1,8 @@
-- Use `opts` instead of one liner require statements.
+- ~~Use `opts` instead of one liner require statements.~~
+- Configure diagnostics.
 - Figure out a way to preserve cursor position in the autocmd for cleaning whitespace/trailing empty lines.
-- Configure repeatable leap motions.
-  - https://github.com/tpope/vim-repeat/issues/92#issuecomment-1826910664
-  - https://github.com/ggandor/leap.nvim/issues/214
-  - https://github.com/search?q=%22vim.fn%5B%27repeat%23set%27%5D%22+language%3ALua&type=code&l=Lua
-- LSP
+- ~~Configure repeatable leap motions.~~ [Commit](https://github.com/PrayagS/dotfiles/commit/45f104000034ef84b29b0d26a7c45ae92414e03f)
+- ~~LSP~~
 - https://github.com/rockerBOO/awesome-neovim#editing-support
 - smjonas/inc-rename.nvim
 - folke/trouble.nvim
@@ -13,11 +11,12 @@
 - mrjones2014/smart-splits.nvim
 - utilyre/barbecue.nvim
 - Bekaboo/dropbar.nvim
-- j-hui/fidget.nvim
+- ~~j-hui/fidget.nvim~~
 - ray-x/lsp_signature.nvim
 - Wansmer/treesj
 - cshuaimin/ssr.nvim
 - ggandor/leap-spooky.nvim // rasulomaroff/telepath.nvim // folke/flash.nvim
+- nvim-telescope/telescope-ui-select.nvim
 - folke/todo-comments.nvim
 - pwntester/octo.nvim
 - epwalsh/obsidian.nvim
