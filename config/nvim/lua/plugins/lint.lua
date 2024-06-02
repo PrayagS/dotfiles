@@ -5,6 +5,7 @@ return {
         local lint = require("lint")
         lint.linters_by_ft = {
             yaml = { "yamllint" },
+            go = { "golangcilint" },
         }
 
         local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })

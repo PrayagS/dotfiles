@@ -5,7 +5,7 @@ export ZDOTDIR=${ZDOTDIR:-~/.config/zsh}
 export GOPATH="$HOME/dev/go"
 export GOBIN="$GOPATH/bin"
 export GOOS="darwin"
-export GOARCH="amd64"
+export GOARCH="arm64"
 export GO111MODULE="on"
 
 # Defaults
