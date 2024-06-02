@@ -2,6 +2,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
+        -- lazy = false,
         event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
         cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
         opts = {
@@ -25,6 +26,9 @@ return {
             indent = { enable = true },
             incremental_selection = { enable = true },
         },
+        config = function(_, opts)
+            require("nvim-treesitter.configs").setup(opts)
+        end,
     },
     {
         "nvim-treesitter/nvim-treesitter-context",
