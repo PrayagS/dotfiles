@@ -52,6 +52,8 @@ brew "pinentry"
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Go implementation of configuration language for defining JSON data
+brew "go-jsonnet"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # Post-modern modal text editor
@@ -66,8 +68,6 @@ brew "htop"
 brew "imagemagick"
 # Sort Python imports automatically
 brew "isort"
-# Domain specific configuration language for defining JSON data
-brew "jsonnet"
 # Package manager for Jsonnet
 brew "jsonnet-bundler"
 # Kubernetes CLI To Manage Your Clusters In Style!

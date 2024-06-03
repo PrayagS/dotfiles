@@ -27,12 +27,15 @@ set("n", "Y", "y$")
 
 -- Delete/Replace but don't overwrite the register with the deleted/replaced text
 -- set("x", "<leader>p", [["_dP]])
-set({"n", "v"}, "d", [["_d]])
-set({"n", "v"}, "c", [["_c]])
-set({"n", "v"}, "x", [["_x]])
+set({ "n", "v" }, "d", [["_d]])
+set({ "n", "v" }, "c", [["_c]])
+set({ "n", "v" }, "x", [["_x]])
+-- keymaps for cut since delete doesn't behave like cut given the above keymaps
+set({ "n", "v" }, "m", "d", { noremap = true })
+set({ "n", "v" }, "M", "D", { noremap = true })
 
 -- Copy to the plus register
-set({"n", "v"}, "<leader>y", [["+y]])
+set({ "n", "v" }, "<leader>y", [["+y]])
 set("n", "<leader>Y", [["+Y]])
 
 -- Keep cursor at the middle when browsing lists
