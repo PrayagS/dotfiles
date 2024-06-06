@@ -78,6 +78,7 @@ zinit lucid light-mode wait"0a" for \
         OMZL::clipboard.zsh \
         OMZP::git \
         hlissner/zsh-autopair \
+        https://github.com/wez/wezterm/blob/main/assets/shell-integration/wezterm.sh \
         https://github.com/ajeetdsouza/zoxide/blob/main/zoxide.plugin.zsh \
     atload'export GLOBALIAS_FILTER_VALUES=("l" "ls" "less" "z")' \
         OMZP::globalias \

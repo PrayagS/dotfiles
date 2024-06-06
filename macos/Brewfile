@@ -10,6 +10,10 @@ tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "pyroscope-io/brew"
 tap "rcmdnk/file"
+# GitOps Continuous Delivery for Kubernetes
+brew "argocd"
+# Argo CD plugin to retrieve secrets from Secret Management tools
+brew "argocd-vault-plugin"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Curl like simplicity to access AWS resources
@@ -138,10 +142,14 @@ brew "tree"
 brew "ttyd"
 # Syntax-aware linter for prose
 brew "vale"
+# Secures, stores, and tightly controls access to secrets
+brew "vault"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # Internet file retriever
 brew "wget"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
+brew "zellij"
 # Permanent TouchID support for sudo
 brew "artginzburg/tap/sudo-touchid"
 # EC2 Instance Selector is a tool to filter EC2 instance types based on resource criteria

@@ -38,12 +38,12 @@
     ~/.config/tmux: config/tmux
     ~/.config/atuin: config/atuin
     ~/.config/bat: config/bat
-    ~/.config/kitty: config/kitty
     ~/.config/lazygit: config/lazygit
     ~/.config/skhd: config/skhd
     ~/.config/yabai: config/yabai
     ~/.config/borders: config/borders
     ~/.config/ripgrep: config/ripgrep
+    ~/.config/wezterm: config/wezterm
     ~/.config/aws/config: config/aws/config
 
 - shell:
