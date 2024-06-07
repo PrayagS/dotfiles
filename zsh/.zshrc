@@ -77,8 +77,6 @@ zinit from"gh-r" binary lman for \
 zinit lucid light-mode wait"0a" for \
         OMZL::git.zsh \
         OMZL::clipboard.zsh \
-        OMZP::git \
-        hlissner/zsh-autopair \
         https://github.com/wez/wezterm/blob/main/assets/shell-integration/wezterm.sh \
         https://github.com/ajeetdsouza/zoxide/blob/main/zoxide.plugin.zsh \
     atload'export GLOBALIAS_FILTER_VALUES=("l" "ls" "less" "z")' \
@@ -93,6 +91,7 @@ zinit lucid light-mode wait"0a" for \
         Aloxaf/fzf-tab \
     atload'export LESSOPEN="|${ZSH_HOME}/lessfilter %s"' \
         Freed-Wu/fzf-tab-source
+        # OMZP::git \
 
 # Second set of plugins
 zinit lucid light-mode wait"0b" for \
@@ -131,24 +130,37 @@ zinit lucid light-mode wait"0b" for \
     #     trapd00r/LS_COLORS
 
 # Third set of plugins
-zinit lucid light-mode wait"0c" for \
-    atload"zicdreplay" \
-        voronkovich/gitignore.plugin.zsh \
-    atload"source <(kubectl completion zsh)" \
-        OMZP::kubectl \
-    atload"export GIT_AUTO_FETCH_INTERVAL=7200" \
-        OMZP::git-auto-fetch \
-    atload"
-      export SHOW_AWS_PROMPT=false
-      complete -C '/opt/homebrew/bin/aws_completer' aws" \
-        OMZP::aws \
-    trigger-load"!x" \
-        OMZP::extract
+# zinit lucid light-mode wait"0c" for \
+    # atload"source <(kubectl completion zsh)" \
+    #     OMZP::kubectl \
+    # atload"export GIT_AUTO_FETCH_INTERVAL=7200" \
+    #     OMZP::git-auto-fetch \
     # atload"export ZSH_ALIAS_FINDER_AUTOMATIC=true" \
     #     OMZP::alias-finder \
 
+zinit lucid light-mode wait"2" for \
+    hlissner/zsh-autopair \
+    trigger-load"!x" \
+        OMZP::extract \
+    atload"zicdreplay" \
+        voronkovich/gitignore.plugin.zsh \
+    atload"
+      export SHOW_AWS_PROMPT=false
+      complete -C '/opt/homebrew/bin/aws_completer' aws" \
+        OMZP::aws
+
+# Make sure atuin is installed before loading its zsh plugin
+zinit ice wait"5" from"gh-r" binary lman for \
+    sbin"**/atuin" atuinsh/atuin
+
+zinit ice wait"5" lucid \
+    from"gh" pick"atuin.plugin.zsh" \
+    atinit"export ATUIN_NOBIND='true'" \
+    atload"bindkey '^[e' _atuin_search_widget"
+zinit snippet https://github.com/atuinsh/atuin/blob/main/atuin.plugin.zsh
+
 # Install shell tools once compinit has been executed
-zinit ice wait"0c" lucid
+zinit ice wait"30" lucid
 zinit snippet "${ZSH_HOME}/tools.zsh"
 
 # Set of plugins to load on demand
@@ -182,15 +194,5 @@ zinit light zdharma-continuum/zui
 zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]' lucid
 zinit light zdharma-continuum/zinit-crasis
 
-# Make sure atuin is installed before loading its zsh plugin
-zinit from"gh-r" binary lman for \
-    sbin"**/atuin" atuinsh/atuin
-
-zinit ice wait"5" lucid \
-    from"gh" pick"atuin.plugin.zsh" \
-    atinit"export ATUIN_NOBIND='true'" \
-    atload"bindkey '^[e' _atuin_search_widget"
-zinit snippet https://github.com/atuinsh/atuin/blob/main/atuin.plugin.zsh
-
 # pyenv virtualenv
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv virtualenv-init -)"
