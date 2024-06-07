@@ -21,7 +21,7 @@ config.color_scheme = "Everforest Dark (Gogh)"
 
 config.adjust_window_size_when_changing_font_size = false
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.8
 config.macos_window_background_blur = 30
 config.window_frame = {
 	font = wezterm.font("Iosevka Aile"),
@@ -40,7 +40,8 @@ config.audible_bell = "SystemBeep"
 config.automatically_reload_config = true
 config.cursor_blink_rate = 500
 
-config.font = wezterm.font("Iosevka Term")
+-- config.font = wezterm.font("Iosevka Term")
+config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
 config.font_size = 15.0
 
 config.front_end = "WebGpu"
