@@ -87,6 +87,8 @@ zinit lucid light-mode wait"0a" for \
     blockf \
     atload"
       zstyle ':fzf-tab:*' fzf-pad 250
+      zstyle ':fzf-tab:*' continuous-trigger ']'
+      zstyle ':fzf-tab:*' switch-group 'ctrl-h' 'ctrl-l'
       zstyle ':fzf-tab:*' fzf-flags --preview-window=right,70%,cycle" \
         Aloxaf/fzf-tab \
     atload'export LESSOPEN="|${ZSH_HOME}/lessfilter %s"' \
