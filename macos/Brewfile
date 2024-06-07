@@ -148,8 +148,6 @@ brew "vault"
 brew "watch"
 # Internet file retriever
 brew "wget"
-# Pluggable terminal workspace, with terminal multiplexer as the base feature
-brew "zellij"
 # Permanent TouchID support for sudo
 brew "artginzburg/tap/sudo-touchid"
 # EC2 Instance Selector is a tool to filter EC2 instance types based on resource criteria

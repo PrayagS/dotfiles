@@ -7,7 +7,6 @@
 
 zinit from"gh-r" binary lman for \
     sbin"**/fzf" junegunn/fzf \
-    sbin"**/exa" ogham/exa \
     sbin"**/fd"  @sharkdp/fd \
     sbin"**/bat" @sharkdp/bat \
     sbin"**/glow" charmbracelet/glow \
@@ -50,6 +49,14 @@ zinit for \
     rustup \
     sbin="bin/*" \
     wait=1 \
+  zdharma-continuum/null
+
+zinit for \
+    light-mode \
+    lucid \
+    wait='[[ -v CARGO_HOME && -v RUSTUP_HOME ]]' \
+    id-as'rust-eza' \
+    cargo'!eza' \
   zdharma-continuum/null
 
 zinit for \
