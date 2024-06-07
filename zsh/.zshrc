@@ -30,6 +30,7 @@ ZINIT[SNIPPETS_DIR]=$ZINIT[HOME_DIR]/snippets
 ZINIT[ZCOMPDUMP_PATH]=$ZINIT[HOME_DIR]/zcompdump
 ZINIT[PLUGINS_DIR]=$ZINIT[HOME_DIR]/plugins
 ZPFX=$ZINIT[HOME_DIR]/polaris
+ZINIT[NO_ALIASES]=1
 
 ### Added by Zinit's installer
 if [[ ! -f ${ZINIT[HOME_DIR]}/zinit.git/zinit.zsh ]]; then
