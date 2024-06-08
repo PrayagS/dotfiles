@@ -7,21 +7,37 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
+-- config.color_scheme = "Catppuccin Mocha"
+-- config.color_scheme = "Everforest Dark (Gogh)"
+-- config.color_scheme = "Monokai Pro Ristretto (Gogh)"
 config.color_scheme = "GruvboxDarkHard"
-config.color_scheme = "Catch Me If You Can (terminal.sexy)"
-config.color_scheme = "Catppuccin Mocha"
-config.color_scheme = "Dracula (Official)"
-config.color_scheme = "Monokai Pro Ristretto (Gogh)"
-config.color_scheme = "Sonokai (Gogh)"
-config.color_scheme = "terafox"
-config.color_scheme = "Gruvbox light, soft (base16)"
-config.color_scheme = "Gruvbox dark, hard (base16)"
-config.color_scheme = "rose-pine"
-config.color_scheme = "Everforest Dark (Gogh)"
+
+local colors = wezterm.color.get_builtin_schemes()[config.color_scheme]
+-- colors.background = "#1A1826" -- slightly darker background for catppuccin
+-- wezterm.log_info(colors)
+config.colors = {
+	split = colors.foreground,
+	tab_bar = {
+		background = colors.background,
+		active_tab = {
+			bg_color = colors.background,
+			fg_color = colors.foreground,
+		},
+		inactive_tab = {
+			bg_color = colors.selection_bg,
+			fg_color = colors.foreground,
+		},
+		inactive_tab_hover = {
+			bg_color = colors.brights[8], -- lighter than colors.foreground
+			fg_color = colors.background,
+		},
+	},
+}
+-- config.force_reverse_video_cursor = true
 
 config.adjust_window_size_when_changing_font_size = false
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.93
 config.macos_window_background_blur = 30
 config.window_frame = {
 	font = wezterm.font("Iosevka Aile"),
@@ -181,7 +197,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 			title = string.gsub(url.file_path, "/Users/prayagmatic/", "~/")
 		end
 	end
-	return title
+	return string.format(" %s ", title)
 end)
 
 -- and finally, return the configuration to wezterm
