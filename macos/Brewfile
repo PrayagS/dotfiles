@@ -46,8 +46,6 @@ brew "epubcheck"
 brew "findutils"
 # Highest-quality GIF encoder based on pngquant
 brew "gifski"
-# Syntax-highlighting pager for git and diff output
-brew "git-delta"
 # Audit git repos for secrets
 brew "gitleaks"
 # Passphrase entry dialog utilizing the Assuan protocol

@@ -28,7 +28,8 @@ zinit from"gh-r" binary lman for \
     sbin"**/duf -> duf" muesli/duf \
     sbin"**/mcfly -> mcfly" cantino/mcfly \
     sbin"**/procs -> procs" dalance/procs \
-    sbin"promtool" prometheus/prometheus
+    sbin"promtool" prometheus/prometheus \
+    sbin"**/delta -> delta" dandavison/delta
     # sbin'**/helm' atclone'./**/helm completion zsh > _helm' atpull'%atclone' helm/helm
 
 
