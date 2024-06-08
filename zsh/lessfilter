@@ -3,7 +3,7 @@ mime=$(file -bL --mime-type "$1")
 category=${mime%%/*}
 kind=${mime##*/}
 if [ -d "$1" ]; then
-	eza -la --color=always --color-scale=size --icons=always --group-directories-first --git --no-time --no-permissions --no-user "$1"
+	eza -la --color=always --color-scale=size --color-scale-mode=fixed --icons=always --group-directories-first --git --no-time --no-permissions --no-user "$1"
 elif [ "$category" = text ]; then
 	bat "$1"
 elif [ "$kind" = pdf ]; then
