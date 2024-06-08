@@ -69,6 +69,19 @@ PS1="READY >"
 zinit ice wait"!" lucid atload"source ${ZSH_HOME}/themes/.p10k.zsh; _p9k_precmd" nocd
 zinit light romkatv/powerlevel10k
 
+# Set fzf options
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+    --color=bg:#1b1b1b
+    --color=preview-bg:#1b1b1b
+    --color=gutter:#1b1b1b
+    --color=pointer:#f9f5d7,marker:#f9f5d7
+    --color=info:#ebdbb2,spinner:#f9f5d7
+    --color=query:#ebdbb2,prompt:#ebdbb2
+    --color=border:#ebdbb2
+    --border="rounded" --prompt="> "
+    --marker="" --pointer="->" --layout="reverse"
+'
+
 # Make sure zoxide is installed before loading its zsh plugin
 zinit from"gh-r" binary lman for \
     sbin"**/zoxide" ajeetdsouza/zoxide
