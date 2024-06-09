@@ -3,14 +3,31 @@ return {
 		"sainnhe/gruvbox-material",
 		lazy = false,
 		priority = 1000,
-		config = function()
+		init = function()
 			vim.g.gruvbox_material_background = "hard"
 			vim.g.gruvbox_material_enable_bold = 1
 			vim.g.gruvbox_material_transparent_background = 1
 			vim.g.gruvbox_material_ui_contrast = "high"
 			vim.g.gruvbox_material_diagnostic_virtual_text = "highlighted"
-		end,
-		init = function()
+
+			--  Override highlight groups
+			vim.api.nvim_create_autocmd("ColorScheme", {
+				group = vim.api.nvim_create_augroup("custom_highlights_gruvboxmaterial", {}),
+				pattern = "gruvbox-material",
+				callback = function()
+					local config = vim.fn["gruvbox_material#get_configuration"]()
+					local palette = vim.fn["gruvbox_material#get_palette"](
+						config.background,
+						config.foreground,
+						config.colors_override
+					)
+					local set_hl = vim.fn["gruvbox_material#highlight"]
+
+					set_hl("IblScope", palette.green, palette.none)
+					-- set_hl("IncSearch", palette.none, palette.bg_visual_red)
+				end,
+			})
+
 			vim.cmd.colorscheme("gruvbox-material")
 		end,
 	},
