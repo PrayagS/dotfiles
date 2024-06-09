@@ -35,10 +35,10 @@ opt.virtualedit = "block" -- Allow cursor to move where there is no text in visu
 
 -- Find
 opt.wildmode = [[longest,list,full]]
-opt.path:append '**'
+opt.path:append("**")
 
 -- Avoid copying line numbers when using mouse
-opt.mouse:append 'a'
+opt.mouse:append("a")
 
 opt.autowrite = true -- Enable auto write
 opt.completeopt = "menu,menuone,noselect"
@@ -51,6 +51,8 @@ opt.undofile = true
 opt.list = true
 
 local space = "·"
-opt.listchars:append { tab = "│─", multispace = space, lead = space, trail = space, nbsp = space }
+opt.listchars:append({ tab = "│─", multispace = space, lead = space, trail = space, nbsp = space })
 
 opt.showmode = false
+opt.updatetime = 1000
+opt.laststatus = 3
