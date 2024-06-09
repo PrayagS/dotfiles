@@ -73,6 +73,7 @@ zinit light romkatv/powerlevel10k
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
     --color=bg:#1b1b1b
     --color=preview-bg:#1b1b1b
+    --color=hl+:#fb4934
     --color=gutter:#1b1b1b
     --color=pointer:#f9f5d7,marker:#f9f5d7
     --color=info:#ebdbb2,spinner:#f9f5d7

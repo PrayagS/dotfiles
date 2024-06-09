@@ -5,9 +5,6 @@
 - fidget.nvim
 - hedyhli/outline.nvim
 - https://github.com/hedyhli/outline.nvim#related-plugins
-- shortcuts/no-neck-pain.nvim // sindrets/winshift.nvim // nvim-focus/focus.nvim // anuvyklack/windows.nvim
-- mrjones2014/smart-splits.nvim
-- wezterm stuff
 - configure diagnostics support in UI plugins like bufferline.
 - utilyre/barbecue.nvim
 - Bekaboo/dropbar.nvim
