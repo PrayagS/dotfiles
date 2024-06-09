@@ -6,7 +6,23 @@ return {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			{ "j-hui/fidget.nvim", opts = {} },
+			{
+				"j-hui/fidget.nvim",
+				opts = {
+					progress = {
+						display = {
+							done_ttl = 30,
+						},
+					},
+					notification = {
+						window = {
+							x_padding = 2,
+							y_padding = 1,
+							border = "single",
+						},
+					},
+				},
+			},
 			{ "smjonas/inc-rename.nvim", opts = {} },
 		},
 		config = function()

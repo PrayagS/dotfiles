@@ -2,7 +2,6 @@
 - https://github.com/rockerBOO/awesome-neovim#editing-support
 - https://github.com/rockerBOO/awesome-neovim#lsp
 - folke/trouble.nvim
-- fidget.nvim
 - hedyhli/outline.nvim
 - https://github.com/hedyhli/outline.nvim#related-plugins
 - configure diagnostics support in UI plugins like bufferline.
@@ -17,6 +16,7 @@
 - folke/todo-comments.nvim
 - pwntester/octo.nvim
 - epwalsh/obsidian.nvim
+- ~~fidget.nvim~~
 - ~~Set keymaps for gitsigns actions.~~
 - ~~Use `opts` instead of one liner require statements.~~
 - ~~Figure out a way to preserve cursor position in the autocmd for cleaning whitespace/trailing empty lines.~~ [Commit](https://github.com/PrayagS/dotfiles/commit/3e1e94c220f675fc0f9b2bf070a6d3828fbbf174)
