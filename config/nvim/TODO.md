@@ -1,16 +1,18 @@
 - ~~Use `opts` instead of one liner require statements.~~
 - Configure diagnostics.
+- Set keymaps for gitsigns actions.
 - ~~Figure out a way to preserve cursor position in the autocmd for cleaning whitespace/trailing empty lines.~~ [Commit](https://github.com/PrayagS/dotfiles/commit/3e1e94c220f675fc0f9b2bf070a6d3828fbbf174)
 - ~~Configure repeatable leap motions.~~ [Commit](https://github.com/PrayagS/dotfiles/commit/45f104000034ef84b29b0d26a7c45ae92414e03f)
 - ~~LSP~~
 - https://github.com/rockerBOO/awesome-neovim#editing-support
 - https://github.com/rockerBOO/awesome-neovim#lsp
-- Set `version` for all plugins.
 - folke/trouble.nvim
 - hedyhli/outline.nvim
 - https://github.com/hedyhli/outline.nvim#related-plugins
 - shortcuts/no-neck-pain.nvim // sindrets/winshift.nvim // nvim-focus/focus.nvim // anuvyklack/windows.nvim
 - mrjones2014/smart-splits.nvim
+- wezterm stuff
+- configure diagnostics support in UI plugins like bufferline.
 - utilyre/barbecue.nvim
 - Bekaboo/dropbar.nvim
 - ray-x/lsp_signature.nvim
