@@ -56,3 +56,4 @@ opt.listchars:append({ tab = "│─", multispace = space, lead = space, trail =
 opt.showmode = false
 opt.updatetime = 1000
 opt.laststatus = 3
+opt.signcolumn = "auto:9"
