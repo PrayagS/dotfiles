@@ -170,6 +170,26 @@ config.keys = {
 		mods = "SUPER | CTRL",
 		action = act.ActivatePaneDirection("Left"),
 	},
+	{
+		key = "l",
+		mods = "SHIFT | SUPER | CTRL",
+		action = act.AdjustPaneSize({ "Right", 5 }),
+	},
+	{
+		key = "k",
+		mods = "SHIFT | SUPER | CTRL",
+		action = act.AdjustPaneSize({ "Up", 5 }),
+	},
+	{
+		key = "j",
+		mods = "SHIFT | SUPER | CTRL",
+		action = act.AdjustPaneSize({ "Down", 5 }),
+	},
+	{
+		key = "h",
+		mods = "SHIFT | SUPER | CTRL",
+		action = act.AdjustPaneSize({ "Left", 5 }),
+	},
 	{ key = "k", mods = "SUPER | SHIFT", action = act.ScrollToPrompt(-1) },
 	{ key = "j", mods = "SUPER | SHIFT", action = act.ScrollToPrompt(1) },
 	{
@@ -180,6 +200,10 @@ config.keys = {
 	{ key = "P", mods = "CTRL", action = act.DisableDefaultAssignment },
 	{ key = "P", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
 	{ key = "p", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
+	{ key = "h", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
+	{ key = "j", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
+	{ key = "k", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
+	{ key = "l", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
 }
 
 -- Lua ftw
