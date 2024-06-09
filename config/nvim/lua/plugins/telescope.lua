@@ -16,6 +16,10 @@ return {
 				dynamic_preview_title = true,
 				selection_caret = " ",
 				multi_icon = " ",
+				layout_config = {
+					prompt_position = "top",
+				},
+				sorting_strategy = "ascending",
 			},
 			pickers = {
 				grep_string = {
