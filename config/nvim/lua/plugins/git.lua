@@ -7,6 +7,61 @@ return {
 			current_line_blame_formatter_opts = {
 				relative_time = true,
 			},
+			on_attach = function(bufnr)
+				-- TODO: Telescope keymaps for gitsigns. Refer get_actions() /
+				-- get_hunks()
+				vim.api.nvim_buf_set_keymap(bufnr, "n", "]h", '<cmd>lua require("gitsigns").nav_hunk("next")<CR>', {})
+				vim.api.nvim_buf_set_keymap(bufnr, "n", "[h", '<cmd>lua require("gitsigns").nav_hunk("prev")<CR>', {})
+				vim.api.nvim_buf_set_keymap(
+					bufnr,
+					"n",
+					"<leader>gS",
+					'<cmd>lua require("gitsigns").stage_buffer()<CR>',
+					{}
+				)
+				vim.api.nvim_buf_set_keymap(
+					bufnr,
+					"n",
+					"<leader>gs",
+					'<cmd>lua require("gitsigns").stage_hunk()<CR>',
+					{}
+				)
+				vim.api.nvim_buf_set_keymap(
+					bufnr,
+					"v",
+					"<leader>gs",
+					'<cmd>lua require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") })<CR>',
+					{}
+				)
+				vim.api.nvim_buf_set_keymap(
+					bufnr,
+					"n",
+					"<leader>gR",
+					'<cmd>lua require("gitsigns").reset_buffer()<CR>',
+					{}
+				)
+				vim.api.nvim_buf_set_keymap(
+					bufnr,
+					"n",
+					"<leader>gr",
+					'<cmd>lua require("gitsigns").reset_hunk()<CR>',
+					{}
+				)
+				vim.api.nvim_buf_set_keymap(
+					bufnr,
+					"v",
+					"<leader>gr",
+					'<cmd>lua require("gitsigns").reset_hunk({ vim.fn.line("."), vim.fn.line("v") })<CR>',
+					{}
+				)
+				vim.api.nvim_buf_set_keymap(
+					bufnr,
+					"n",
+					"<leader>gp",
+					'<cmd>lua require("gitsigns").preview_hunk_inline()<CR>',
+					{}
+				)
+			end,
 		},
 	},
 	{
@@ -14,25 +69,25 @@ return {
 		opts = {},
 		keys = {
 			{
-				"<leader>gL",
+				"<leader>ghL",
 				"<cmd>lua require('gitlinker').link({ action = require('gitlinker.actions').system })<cr>",
 				mode = { "n", "v" },
 				desc = "GitLink!",
 			},
 			{
-				"<leader>gB",
+				"<leader>ghB",
 				"<cmd>lua require('gitlinker').link({ router_type = 'blame', action = require('gitlinker.actions').system })<cr>",
 				mode = { "n", "v" },
 				desc = "GitLink! blame",
 			},
 			{
-				"<leader>gD",
+				"<leader>ghD",
 				"<cmd>lua require('gitlinker').link({ router_type = 'default_branch', action = require('gitlinker.actions').system })<cr>",
 				mode = { "n", "v" },
 				desc = "GitLink! default_branch",
 			},
 			{
-				"<leader>gC",
+				"<leader>ghC",
 				"<cmd>lua require('gitlinker').link({ router_type = 'current_branch', action = require('gitlinker.actions').system })<cr>",
 				mode = { "n", "v" },
 				desc = "GitLink! current_branch",
