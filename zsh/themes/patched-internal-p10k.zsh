@@ -2304,7 +2304,7 @@ _p9k_vpn_ip_render() {
     local _p9k__prompt=
     for ip in $_p9k__vpn_ip_ips; do
       if [[ $ip == "172.16.0.2" ]]; then
-        _p9k_prompt_segment prompt_vpn_ip "cyan" "darkorange" 'VPN_ICON' 0 '' $ip
+        _p9k_prompt_segment prompt_vpn_ip "cyan" "#fb4934" 'VPN_ICON' 0 '' $ip
       else
         _p9k_prompt_segment prompt_vpn_ip "cyan" "034" 'VPN_ICON' 0 '' $ip
       fi

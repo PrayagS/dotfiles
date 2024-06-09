@@ -193,9 +193,9 @@
 
   ################################[ prompt_char: prompt symbol ]################################
   # Green prompt symbol if the last command succeeded.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=76
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND="#b8bb26"
   # Red prompt symbol if the last command failed.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=196
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND="fb4934"
   # Default prompt symbol.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
   # Prompt symbol in command vi mode.
@@ -212,7 +212,7 @@
 
   ##################################[ dir: current directory ]##################################
   # Default current directory color.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=011
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND="#fabd2f"
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
@@ -366,10 +366,10 @@
     if (( $1 )); then
       # Styling for up-to-date Git status.
       local       meta='%f'     # default foreground
-      local      clean='%76F'   # green foreground
-      local   modified='%178F'  # yellow foreground
-      local  untracked='%39F'   # blue foreground
-      local conflicted='%196F'  # red foreground
+      local      clean='%F{#b8bb26}'   # green foreground
+      local   modified='%F{#fabd2f}'  # yellow foreground
+      local  untracked='%F{#83a598}'   # blue foreground
+      local conflicted='%F{#fb4934}'  # red foreground
     else
       # Styling for incomplete and stale Git status.
       local       meta='%244F'  # grey foreground
@@ -743,7 +743,7 @@
 
   ######################################[ ram: free RAM ]#######################################
   # RAM color.
-  typeset -g POWERLEVEL9K_RAM_FOREGROUND=66
+  typeset -g POWERLEVEL9K_RAM_FOREGROUND="#b8bb26"
   # Custom icon.
   # typeset -g POWERLEVEL9K_RAM_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
@@ -1171,8 +1171,8 @@
       '*stage*' STAGE    # to match your needs. Customize them as needed.
       '*'       DEFAULT)
   typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=039
-  typeset -g POWERLEVEL9K_KUBECONTEXT_PROD_FOREGROUND=001
-  typeset -g POWERLEVEL9K_KUBECONTEXT_STAGE_FOREGROUND=002
+  typeset -g POWERLEVEL9K_KUBECONTEXT_PROD_FOREGROUND="#fb4934"
+  typeset -g POWERLEVEL9K_KUBECONTEXT_STAGE_FOREGROUND="#b8bb26"
   typeset -g POWERLEVEL9K_KUBECONTEXT_PROD_VISUAL_IDENTIFIER_EXPANSION='󱃾 '
   typeset -g POWERLEVEL9K_KUBECONTEXT_STAGE_VISUAL_IDENTIFIER_EXPANSION='󱃾 '
   typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='󱃾 '
@@ -1291,9 +1291,9 @@
       '*prod*'   PROD    # These values are examples that are unlikely
       '*stage*'  STAGE   # to match your needs. Customize them as needed.
       '*'       DEFAULT)
-  typeset -g POWERLEVEL9K_AWS_DEFAULT_FOREGROUND=208
-  typeset -g POWERLEVEL9K_AWS_PROD_FOREGROUND=001
-  typeset -g POWERLEVEL9K_AWS_STAGE_FOREGROUND=002
+  typeset -g POWERLEVEL9K_AWS_DEFAULT_FOREGROUND="#b8bb26"
+  typeset -g POWERLEVEL9K_AWS_PROD_FOREGROUND="#fb4934"
+  typeset -g POWERLEVEL9K_AWS_STAGE_FOREGROUND="#b8bb26"
   # typeset -g POWERLEVEL9K_AWS_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   #[ aws_eb_env: aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/) ]#

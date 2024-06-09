@@ -112,7 +112,12 @@ zinit lucid light-mode wait"0a" for \
 zinit lucid light-mode wait"0b" for \
         OMZP::command-not-found \
         ael-code/zsh-colored-man-pages \
-    atinit"zstyle :history-search-multi-word page-size 10" \
+    atinit"
+        zstyle :history-search-multi-word page-size 20
+        zstyle :history-search-multi-word highlight-color 'fg=#b8bb26,bold'
+        zstyle :plugin:history-search-multi-word active 'bg=#504945'
+        zstyle :plugin:history-search-multi-word clear-on-cancel 'yes'
+      " \
         zdharma-continuum/history-search-multi-word \
     atinit'
       ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50
