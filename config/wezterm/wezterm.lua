@@ -177,6 +177,9 @@ config.keys = {
 		mods = "SUPER | CTRL",
 		action = act.EmitEvent("trigger-vim-with-scrollback"),
 	},
+	{ key = "P", mods = "CTRL", action = act.DisableDefaultAssignment },
+	{ key = "P", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
+	{ key = "p", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
 }
 
 -- Lua ftw
