@@ -270,4 +270,14 @@ return {
 	{
 		"xiyaowong/transparent.nvim",
 	},
+	{
+		"tris203/precognition.nvim",
+		event = "VeryLazy",
+		opts = {
+			startVisible = true,
+		},
+		config = function()
+			vim.api.nvim_set_keymap("n", "<leader>?", '<cmd>lua require("precognition").peek()<CR>', {})
+		end,
+	},
 }
