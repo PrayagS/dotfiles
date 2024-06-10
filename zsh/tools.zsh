@@ -5,7 +5,7 @@
 #      sbin"**/fzf"       junegunn/fzf \
 #      sbin"**/exa"       ogham/exa
 
-zinit from"gh-r" binary lman for \
+zinit from"gh-r" lman for \
     sbin"**/fzf" junegunn/fzf \
     sbin"**/fd"  @sharkdp/fd \
     sbin"**/bat" @sharkdp/bat \
@@ -33,7 +33,7 @@ zinit from"gh-r" binary lman for \
     # sbin'**/helm' atclone'./**/helm completion zsh > _helm' atpull'%atclone' helm/helm
 
 
-zinit from"gh" binary as"null" for \
+zinit from"gh" as"null" for \
     sbin"bin/*" tj/git-extras \
     sbin"**/git-now" iwata/git-now \
     sbin"**/xdg-ninja.sh" b3nj5m1n/xdg-ninja
