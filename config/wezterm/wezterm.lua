@@ -74,6 +74,7 @@ config.scrollback_lines = 50000
 -- Source: https://wezfurlong.org/wezterm/config/lua/wezterm/on.html#example-opening-whole-scrollback-in-vim
 local io = require("io")
 local os = require("os")
+local act = wezterm.action
 
 wezterm.on("trigger-vim-with-scrollback", function(window, pane)
 	-- Retrieve the text from the pane
@@ -104,8 +105,13 @@ wezterm.on("trigger-vim-with-scrollback", function(window, pane)
 	os.remove(name)
 end)
 
-local act = wezterm.action
-config.keys = {}
+config.keys = {
+	{
+		key = "e",
+		mods = "SUPER | CTRL",
+		action = act.EmitEvent("trigger-vim-with-scrollback"),
+	},
+}
 
 for i = 1, 9 do
 	table.insert(config.keys, {
