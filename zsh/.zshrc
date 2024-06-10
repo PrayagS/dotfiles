@@ -169,8 +169,8 @@ zinit lucid light-mode wait"2" for \
         OMZP::aws
 
 # Make sure atuin is installed before loading its zsh plugin
-zinit ice wait"5" from"gh-r" binary lman for \
-    sbin"**/atuin" atuinsh/atuin
+zinit ice sbin"**/atuin" from"gh-r" bpick"*.gz" lman
+zinit light atuinsh/atuin
 
 zinit ice wait"5" lucid \
     from"gh" pick"atuin.plugin.zsh" \
