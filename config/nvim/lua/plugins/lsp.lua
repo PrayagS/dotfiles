@@ -149,6 +149,24 @@ return {
 					end,
 				},
 			})
+
+			-- configure diagnostics
+			vim.diagnostic.config({
+				update_in_insert = true,
+				severity_sort = true,
+				float = {
+					source = "always",
+					border = "rounded",
+				},
+				signs = {
+					text = {
+						[vim.diagnostic.severity.ERROR] = " ",
+						[vim.diagnostic.severity.WARN] = " ",
+						[vim.diagnostic.severity.HINT] = " ",
+						[vim.diagnostic.severity.INFO] = " ",
+					},
+				},
+			})
 		end,
 	},
 	{
