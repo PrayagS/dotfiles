@@ -32,7 +32,7 @@ return {
 				max_name_length = 50,
 				show_buffer_close_icons = false,
 				show_close_icon = false,
-				always_show_bufferline = true,
+				always_show_bufferline = false,
 				separator_style = "thick",
 				offsets = {
 					{
@@ -129,6 +129,7 @@ return {
 				extra_keymaps = true,
 				extended_keymaps = true,
 				hide_cursor = true,
+				default_delay = 4,
 			})
 		end,
 	},
