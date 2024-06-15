@@ -58,25 +58,18 @@ return {
 	},
 	{
 		"chrisgrieser/nvim-spider",
-		opts = {
-			consistentOperatorPending = false,
-		},
-		keys = {
-			{
-				"w",
-				"<cmd>lua require('spider').motion('w')<CR>",
-				mode = { "n", "o", "x" },
-			},
-			{
-				"e",
-				"<cmd>lua require('spider').motion('e')<CR>",
-				mode = { "n", "o", "x" },
-			},
-			{
-				"b",
-				"<cmd>lua require('spider').motion('b')<CR>",
-				mode = { "n", "o", "x" },
-			},
-		},
+		lazy = false,
+		init = function()
+			require("spider").setup({
+				consistentOperatorPending = true,
+			})
+
+			vim.keymap.set({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
+			vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
+			vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
+
+			-- See: https://github.com/chrisgrieser/nvim-spider#operator-pending-mode-the-case-of-cw
+			vim.keymap.set("n", "cw", "ce", { remap = true })
+		end,
 	},
 }
