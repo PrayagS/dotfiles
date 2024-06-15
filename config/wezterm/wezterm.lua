@@ -63,6 +63,7 @@ config.font_size = 15.0
 config.front_end = "WebGpu"
 
 config.show_new_tab_button_in_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = true
 
 config.ui_key_cap_rendering = "UnixLong"
 
