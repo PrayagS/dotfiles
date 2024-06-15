@@ -23,5 +23,4 @@ multiplexer when needed.
 ## Dotfiles showcase (must watch)
 - https://youtu.be/ZZ5LpwO-An4
 - https://youtu.be/dQw4w9WgXcQ
-- https://youtu.be/tDacjrSCeq4
 - https://youtu.be/KTf5j9LDObk
