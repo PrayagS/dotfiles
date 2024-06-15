@@ -69,14 +69,15 @@ yabai -m signal --add app="Notion Calendar" event="window_focused" \
 # Clean up empty spaces with no windows on them.
 yabai -m signal --add event=space_changed action="sh ~/.config/yabai/clean_empty_spaces.sh"
 
-yabai -m rule --add app="Arc" space=^1
-yabai -m rule --add app="Spotify" space=^2
+yabai -m rule --add app="WezTerm" space=^1
+# 2 and 3 is for firefox
 yabai -m rule --add app="Slack" space=^4
-yabai -m rule --add app="WezTerm" space=^5
-yabai -m rule --add app="Code" space=^6
-yabai -m rule --add app="Obsidian" space=^8
-yabai -m rule --add app="(Notion Calendar|Todoist)" space=^9 manage=on
-yabai -m rule --add app="Discord" space=^10
+yabai -m rule --add app="Arc" space=^5
+yabai -m rule --add app="Spotify" space=^6
+# yabai -m rule --add app="Code" space=^6
+yabai -m rule --add app="Obsidian" space=^7
+yabai -m rule --add app="(Notion Calendar|Todoist)" space=^8 manage=on
+yabai -m rule --add app="Discord" space=^9
 yabai -m rule --apply
 
 echo "yabai configuration loaded.."
