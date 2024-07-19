@@ -287,4 +287,18 @@ return {
 			vim.api.nvim_set_keymap("n", "<leader>?", '<cmd>lua require("precognition").peek()<CR>', {})
 		end,
 	},
+	{
+		"chrisgrieser/nvim-rip-substitute",
+		cmd = "RipSubstitute",
+		keys = {
+			{
+				"<leader>fs",
+				function()
+					require("rip-substitute").sub()
+				end,
+				mode = { "n", "x" },
+				desc = "rip substitute",
+			},
+		},
+	},
 }
