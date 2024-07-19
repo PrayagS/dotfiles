@@ -211,6 +211,7 @@ config.keys = {
 	{ key = "j", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
 	{ key = "k", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
 	{ key = "l", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
+	{ key = "p", mods = "SUPER | CTRL", action = act.ShowLauncher },
 }
 
 -- Lua ftw
