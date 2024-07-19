@@ -39,13 +39,27 @@ return {
 	-- TODO: Configure switching sessions smoothly when changing branches from
 	-- inside nvim.
 	-- Issue with lazy: https://github.com/rmagatti/auto-session/issues/223
+	-- {
+	-- 	"rmagatti/auto-session",
+	-- 	opts = {
+	-- 		auto_save_enabled = true,
+	-- 		auto_restore_enabled = true,
+	-- 		auto_session_use_git_branch = true,
+	-- 		-- log_level = "debug",
+	-- 	},
+	-- },
 	{
-		"rmagatti/auto-session",
-		opts = {
-			auto_save_enabled = true,
-			auto_restore_enabled = true,
-			auto_session_use_git_branch = true,
-		},
+		"olimorris/persisted.nvim",
+		lazy = false,
+		config = function()
+			require("persisted").setup({
+				use_git_branch = true,
+				autoload = true,
+				on_autoload_no_session = function()
+					return
+				end,
+			})
+		end,
 	},
 	{
 		"nvim-lua/plenary.nvim",
