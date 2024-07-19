@@ -11,13 +11,6 @@ return {
 				spacing = 2, -- spacing between columns
 				align = "center", -- align columns left, center or right
 			},
-			triggers_blacklist = {
-				-- list of mode / prefixes that should never be hooked by WhichKey
-				-- this is mostly relevant for keymaps that start with a native binding
-				i = { "j", "k" },
-				v = { "j", "k" },
-				-- n = { ">", "<" },
-			},
 		},
 	},
 	{
@@ -124,12 +117,25 @@ return {
 	},
 	{
 		"declancm/cinnamon.nvim",
+		version = false,
 		config = function()
 			require("cinnamon").setup({
-				extra_keymaps = true,
-				extended_keymaps = true,
-				hide_cursor = true,
-				default_delay = 4,
+				keymaps = {
+					basic = true,
+					extra = true,
+				},
+				options = {
+					delay = 2,
+					max_delta = {
+						time = 100,
+					},
+					mode = "window",
+				},
+				-- DEPRECATED
+				-- extra_keymaps = true,
+				-- extended_keymaps = true,
+				-- hide_cursor = true,
+				-- default_delay = 4,
 			})
 		end,
 	},
