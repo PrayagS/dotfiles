@@ -8,6 +8,9 @@ return {
 			vim.keymap.set("n", "S", "<Plug>(leap-from-window)")
 			vim.keymap.set({ "x", "o" }, "s", "<Plug>(leap-forward)")
 			vim.keymap.set({ "x", "o" }, "S", "<Plug>(leap-backward)")
+			vim.keymap.set({ "n", "o" }, "gs", function()
+				require("leap.remote").action()
+			end)
 
 			require("leap.user").set_repeat_keys("<enter>", "<backspace", {
 				relative_directions = true,
