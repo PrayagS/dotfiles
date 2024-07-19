@@ -123,4 +123,13 @@ return {
 			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
 		},
 	},
+	{
+		"pwntester/octo.nvim",
+		cmd = {
+			"Octo",
+		},
+		opts = {
+			enable_builtin = true,
+		},
+	},
 }
