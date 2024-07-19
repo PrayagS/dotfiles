@@ -82,16 +82,51 @@ return {
 			"SudaRead",
 		},
 	},
+	-- {
+	--     "m4xshen/hardtime.nvim",
+	--     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+	--     opts = {
+	--         max_count = 5,
+	--         allow_different_key = true,
+	--         restriction_mode = "hint",
+	--         resetting_keys = {
+	--             [">"] = {},
+	--             ["<"] = {},
+	--         },
+	--     },
+	-- },
 	{
-		"m4xshen/hardtime.nvim",
-		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+		"max397574/better-escape.nvim",
+		event = "VeryLazy",
 		opts = {
-			max_count = 5,
-			allow_different_key = true,
-			restriction_mode = "hint",
-			resetting_keys = {
-				[">"] = {},
-				["<"] = {},
+			timeout = vim.o.timeoutlen,
+			mappings = {
+				i = {
+					j = {
+						-- These can all also be functions
+						k = "<Esc>",
+					},
+				},
+				c = {
+					j = {
+						k = "<Esc>",
+					},
+				},
+				t = {
+					j = {
+						k = "<Esc>",
+					},
+				},
+				v = {
+					j = {
+						k = "<Esc>",
+					},
+				},
+				s = {
+					j = {
+						k = "<Esc>",
+					},
+				},
 			},
 		},
 	},
