@@ -39,8 +39,8 @@ significantly.
 - cshuaimin/ssr.nvim
 - ggandor/leap-spooky.nvim // rasulomaroff/telepath.nvim // folke/flash.nvim
 - nvim-telescope/telescope-ui-select.nvim
-- folke/todo-comments.nvim
 - Explore treesitter text objects or text objects in general
+- ~~folke/todo-comments.nvim~~
 - ~~pwntester/octo.nvim~~
 - ~~fidget.nvim~~
 - ~~Set keymaps for gitsigns actions.~~
