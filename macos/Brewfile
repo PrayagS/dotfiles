@@ -8,6 +8,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
+tap "localsend/localsend"
 tap "pyroscope-io/brew"
 tap "rcmdnk/file"
 # GitOps Continuous Delivery for Kubernetes
@@ -32,6 +33,8 @@ brew "clang-format"
 brew "colima"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# Securely send things from one computer to another
+brew "croc"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
 # Docker CLI plugin for extended build capabilities with BuildKit
@@ -42,6 +45,8 @@ brew "docker-compose"
 brew "docker-credential-helper"
 # Validate EPUB files, version 2.0 and later
 brew "epubcheck"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # Highest-quality GIF encoder based on pngquant
@@ -146,6 +151,8 @@ brew "vault"
 brew "watch"
 # Internet file retriever
 brew "wget"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
+brew "zellij"
 # Permanent TouchID support for sudo
 brew "artginzburg/tap/sudo-touchid"
 # EC2 Instance Selector is a tool to filter EC2 instance types based on resource criteria
@@ -160,14 +167,16 @@ brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 # Open source continuous profiling software
 brew "pyroscope-io/brew/profilecli"
-# Password manager
-cask "1password-beta"
 # Command-line interface for 1Password
 cask "1password-cli"
+# Password manager
+cask "1password@beta"
 # Application uninstaller
 cask "appcleaner"
 # Chromium based browser
 cask "arc"
+# Open-source KVM software
+cask "barrier"
 # Menu bar icon organiser
 cask "bartender"
 # E-books management software
@@ -175,15 +184,15 @@ cask "calibre"
 # Voice and text chat software
 cask "discord"
 # Voice and text chat software
-cask "discord-canary"
+cask "discord@canary"
 # Web browser
-cask "firefox-beta"
+cask "firefox@beta"
 # Screenshot software
 cask "flameshot"
 # GitHub Notifications on your menu bar
 cask "gitify"
 # Web browser
-cask "google-chrome-beta"
+cask "google-chrome@beta"
 # Jellyfin desktop client
 cask "jellyfin-media-player"
 # Open-source screen recorder built with web technology
@@ -194,6 +203,8 @@ cask "karabiner-elements"
 cask "kindle"
 # GPU-based terminal emulator
 cask "kitty"
+# An open source cross-platform alternative to AirDrop
+cask "localsend"
 # Adaptive brightness for external displays
 cask "lunar"
 # Play mechanical keyboard sounds as you type
@@ -203,7 +214,7 @@ cask "minecraft"
 # Web browser focused on privacy and on minimizing tracking and fingerprinting
 cask "mullvad-browser"
 # VPN client
-cask "mullvadvpn-beta"
+cask "mullvadvpn@beta"
 # Calendar for professionals and teams
 cask "notion-calendar"
 # Calculator and converter application
@@ -220,12 +231,10 @@ cask "rar"
 cask "raycast"
 # Tool to reverse the direction of scrolling
 cask "scroll-reverser"
-# Tool for sending personal documents to Kindles from Macs
-cask "send-to-kindle"
 # Screenshot measurement and annotation tool
 cask "shottr"
 # Team communication and collaboration software
-cask "slack-beta"
+cask "slack@beta"
 # Music streaming service
 cask "spotify"
 # Tool to display the local times of people in a team

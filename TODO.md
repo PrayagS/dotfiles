@@ -25,6 +25,8 @@ significantly.
 - Configure diagnostics.
 - https://github.com/rockerBOO/awesome-neovim#editing-support
 - https://github.com/rockerBOO/awesome-neovim#lsp
+- https://github.com/chrisgrieser/nvim-lsp-endhints
+- https://github.com/sontungexpt/better-diagnostic-virtual-text
 - folke/trouble.nvim
 - hedyhli/outline.nvim
 - https://github.com/hedyhli/outline.nvim#related-plugins
