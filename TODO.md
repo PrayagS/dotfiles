@@ -37,9 +37,9 @@ significantly.
 - ray-x/navigator.lua
 - Wansmer/treesj
 - cshuaimin/ssr.nvim
-- ggandor/leap-spooky.nvim // rasulomaroff/telepath.nvim // folke/flash.nvim
 - nvim-telescope/telescope-ui-select.nvim
 - Explore treesitter text objects or text objects in general
+- ~~ggandor/leap-spooky.nvim // rasulomaroff/telepath.nvim // folke/flash.nvim~~
 - ~~folke/todo-comments.nvim~~
 - ~~pwntester/octo.nvim~~
 - ~~fidget.nvim~~

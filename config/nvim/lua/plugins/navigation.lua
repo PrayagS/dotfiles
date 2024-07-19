@@ -29,6 +29,9 @@ return {
 	},
 	{
 		"ggandor/flit.nvim",
+		dependencies = {
+			"ggandor/leap.nvim",
+		},
 		lazy = false,
 		config = function()
 			require("flit").setup({
@@ -73,6 +76,43 @@ return {
 
 			-- See: https://github.com/chrisgrieser/nvim-spider#operator-pending-mode-the-case-of-cw
 			vim.keymap.set("n", "cw", "ce", { remap = true })
+		end,
+	},
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("flash").setup({
+				label = {
+					rainbow = { enabled = true },
+				},
+				modes = {
+					char = { enabled = false },
+					treesitter = {
+						label = {
+							style = "inline",
+						},
+					},
+				},
+			})
+
+			-- jump to treesitter node
+			vim.keymap.set({ "n", "o", "x" }, "<leader>jt", function()
+				require("flash").treesitter({
+					jump = {
+						pos = "start",
+					},
+				})
+			end)
+
+			-- select treesitter node
+			vim.keymap.set({ "n", "o", "x" }, "<leader>vt", function()
+				require("flash").treesitter({
+					jump = {
+						pos = "range",
+					},
+				})
+			end)
 		end,
 	},
 }
