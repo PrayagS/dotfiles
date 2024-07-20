@@ -5,14 +5,14 @@ vim.g.mapleader = " "
 
 -- "Best keybindings ever". Source: ThePrimeagen
 -- Move lines in visual mode
-set("v", "J", ":m '>+1<CR>gv=gv")
-set("v", "K", ":m '<-2<CR>gv=gv")
+-- set("v", "J", ":m '>+1<CR>gv=gv")
+-- set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Replace the word present at cursor
 set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Append next line to current one
-set("n", "J", "mzJ`z")
+-- set("n", "J", "mzJ`z")
 
 -- Keep cursor at the middle when scrolling buffers
 -- set("n", "<C-d>", "<C-d>zz")

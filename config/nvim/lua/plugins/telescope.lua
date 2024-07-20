@@ -7,6 +7,7 @@ return {
 			"nvim-telescope/telescope-live-grep-args.nvim",
 			"nvim-telescope/telescope-fzf-native.nvim",
 			"nvim-telescope/telescope-frecency.nvim",
+			"nvim-telescope/telescope-ui-select.nvim",
 		},
 		opts = {
 			defaults = {
@@ -46,6 +47,7 @@ return {
 			require("telescope").setup(opts)
 			require("telescope").load_extension("live_grep_args")
 			require("telescope").load_extension("frecency")
+			require("telescope").load_extension("ui-select")
 			-- require("telescope").load_extension("session-lens")
 
 			local builtin = require("telescope.builtin")
