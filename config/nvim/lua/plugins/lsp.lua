@@ -23,7 +23,8 @@ return {
 					},
 				},
 			},
-			{ "smjonas/inc-rename.nvim", opts = {} },
+			{ "smjonas/inc-rename.nvim", opts = { input_buffer_type = "dressing" } },
+			"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 		},
 		config = function()
 			-- configure lsp keymaps
@@ -56,7 +57,7 @@ return {
 					-- or a suggestion from your LSP for this to activate.
 					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 					-- Opens a popup that displays documentation about the word under your cursor
-					map("K", vim.lsp.buf.hover, "Hover Documentation")
+					map("<leader>k", vim.lsp.buf.hover, "Hover Documentation")
 					-- WARN: This is not Goto Definition, this is Goto Declaration.
 					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
@@ -151,7 +152,9 @@ return {
 			})
 
 			-- configure diagnostics
+			require("lsp_lines").setup()
 			vim.diagnostic.config({
+				virtual_text = false,
 				update_in_insert = true,
 				severity_sort = true,
 				float = {
