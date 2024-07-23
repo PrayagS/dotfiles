@@ -23,21 +23,16 @@ significantly.
 ## neovim
 
 - Configure diagnostics.
-- https://github.com/rockerBOO/awesome-neovim#editing-support
-- https://github.com/rockerBOO/awesome-neovim#lsp
 - https://github.com/chrisgrieser/nvim-lsp-endhints
-- https://github.com/sontungexpt/better-diagnostic-virtual-text
 - folke/trouble.nvim
-- hedyhli/outline.nvim
-- https://github.com/hedyhli/outline.nvim#related-plugins
 - configure diagnostics support in UI plugins like bufferline.
-- utilyre/barbecue.nvim
-- Bekaboo/dropbar.nvim
 - ray-x/lsp_signature.nvim / https://nvimdev.github.io/lspsaga/
 - ray-x/navigator.lua
 - Wansmer/treesj
 - cshuaimin/ssr.nvim
 - Explore treesitter text objects or text objects in general
+- ~~https://github.com/hedyhli/outline.nvim#related-plugins~~
+- ~~Bekaboo/dropbar.nvim~~
 - ~~ggandor/leap-spooky.nvim // rasulomaroff/telepath.nvim // folke/flash.nvim~~
 - ~~folke/todo-comments.nvim~~
 - ~~pwntester/octo.nvim~~

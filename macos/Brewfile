@@ -205,8 +205,6 @@ cask "kindle"
 cask "kitty"
 # An open source cross-platform alternative to AirDrop
 cask "localsend"
-# Adaptive brightness for external displays
-cask "lunar"
 # Play mechanical keyboard sounds as you type
 cask "mechvibes"
 # Sandbox construction video game
@@ -262,6 +260,7 @@ mas "Apple Configurator", id: 1037126344
 mas "Endel", id: 1346247457
 mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
+mas "Infuse", id: 1136220934
 mas "Numbers", id: 409203825
 mas "Shareful", id: 1522267256
 mas "UTC Time", id: 1538245904

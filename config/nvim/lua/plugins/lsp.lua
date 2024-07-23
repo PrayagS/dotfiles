@@ -209,4 +209,40 @@ return {
 			},
 		},
 	},
+	{
+		"rmagatti/goto-preview",
+		event = "VeryLazy",
+		config = true,
+	},
+	{
+		"Wansmer/symbol-usage.nvim",
+		event = "BufReadPre", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
+		config = function()
+			require("symbol-usage").setup({
+				references = { enabled = true, include_declaration = true },
+				definition = { enabled = true },
+				implementation = { enabled = true },
+			})
+		end,
+	},
+	{
+		"Bekaboo/dropbar.nvim",
+		config = true,
+	},
+	{
+		"stevearc/aerial.nvim",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("aerial").setup({
+				backends = { "lsp", "treesitter", "markdown", "asciidoc", "man" },
+				default_direction = "prefer_left",
+			})
+			-- You probably also want to set a keymap to toggle aerial
+			vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle left<CR>")
+			vim.keymap.set("n", "<leader>af", "<cmd>Telescope aerial<CR>")
+		end,
+	},
 }
