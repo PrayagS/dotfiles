@@ -306,4 +306,20 @@ return {
 		event = "VeryLazy",
 		opts = {},
 	},
+	{
+		"stevearc/dressing.nvim",
+		opts = {},
+	},
+	{
+		"rcarriga/nvim-notify",
+		lazy = false,
+		opts = {},
+		init = function()
+			local notify = require("notify")
+			notify.setup({
+				render = "compact",
+			})
+			vim.notify = notify
+		end,
+	},
 }
