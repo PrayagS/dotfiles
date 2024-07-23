@@ -6,6 +6,9 @@ return {
 		-- lazy = false,
 		event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
 		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-refactor",
+		},
 		opts = {
 			ensure_installed = {
 				"bash",
@@ -33,6 +36,10 @@ return {
 			highlight = { enable = true },
 			indent = { enable = true },
 			incremental_selection = { enable = true },
+			refactor = {
+				highlight_definitions = { enable = true },
+				highlight_current_scope = { enable = true },
+			},
 		},
 		config = function(_, opts)
 			require("nvim-treesitter.configs").setup(opts)
