@@ -96,19 +96,11 @@ return {
 			"SudaRead",
 		},
 	},
-	-- {
-	--     "m4xshen/hardtime.nvim",
-	--     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-	--     opts = {
-	--         max_count = 5,
-	--         allow_different_key = true,
-	--         restriction_mode = "hint",
-	--         resetting_keys = {
-	--             [">"] = {},
-	--             ["<"] = {},
-	--         },
-	--     },
-	-- },
+	{
+		"nmac427/guess-indent.nvim",
+		event = "BufRead",
+		config = true,
+	},
 	{
 		"max397574/better-escape.nvim",
 		event = "VeryLazy",
