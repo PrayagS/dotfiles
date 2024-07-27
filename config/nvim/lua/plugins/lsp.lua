@@ -146,6 +146,31 @@ return {
 						-- by the server configuration above. Useful when disabling
 						-- certain features of an LSP (for example, turning off formatting for tsserver)
 						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+						if server_name == "lua_ls" then
+							server.settings = {
+								Lua = {
+									diagnostics = {
+										globals = { "vim" },
+									},
+								},
+							}
+						end
+						if server_name == "gopls" then
+							server.settings = {
+								gopls = {
+									hints = {
+										assignVariableTypes = true,
+										compositeLiteralFields = true,
+										compositeLiteralTypes = true,
+										constantValues = true,
+										functionTypeParameters = true,
+										parameterNames = true,
+										rangeVariableTypes = true,
+									},
+									staticcheck = true,
+								},
+							}
+						end
 						require("lspconfig")[server_name].setup(server)
 					end,
 				},
@@ -155,7 +180,7 @@ return {
 			require("lsp_lines").setup()
 			vim.diagnostic.config({
 				virtual_text = false,
-				update_in_insert = true,
+				-- update_in_insert = true,
 				severity_sort = true,
 				float = {
 					source = "always",
