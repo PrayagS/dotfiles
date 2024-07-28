@@ -25,6 +25,39 @@ return {
 			},
 			{ "smjonas/inc-rename.nvim", opts = { input_buffer_type = "dressing" } },
 			"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+			{ "luckasRanarison/clear-action.nvim", opts = {} },
+			{
+				"aznhe21/actions-preview.nvim",
+				config = function()
+					require("actions-preview").setup({
+						diff = {
+							algorithm = "patience",
+							ctxlen = 5,
+						},
+						highlight_command = {
+							require("actions-preview.highlight").delta(
+								"delta --features=gruvbox-dark-code-actions-preview"
+							),
+						},
+						telescope = {
+							sorting_strategy = "ascending",
+							layout_strategy = "center",
+							layout_config = {
+								width = 0.4,
+								height = 0.4,
+								prompt_position = "bottom",
+							},
+						},
+					})
+
+					vim.keymap.set({ "n", "v" }, "<leader>ca", require("actions-preview").code_actions)
+				end,
+			},
+			{
+				"chrisgrieser/nvim-lsp-endhints",
+				enabled = false,
+				opts = {},
+			},
 		},
 		config = function()
 			-- configure lsp keymaps
@@ -55,7 +88,7 @@ return {
 					map("<leader>rn", ":IncRename ", "[R]e[n]ame")
 					-- Execute a code action, usually your cursor needs to be on top of an error
 					-- or a suggestion from your LSP for this to activate.
-					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+					-- map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 					-- Opens a popup that displays documentation about the word under your cursor
 					map("<leader>k", vim.lsp.buf.hover, "Hover Documentation")
 					-- WARN: This is not Goto Definition, this is Goto Declaration.
