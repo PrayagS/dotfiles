@@ -258,7 +258,20 @@ return {
 	},
 	{
 		"folke/trouble.nvim",
-		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		opts = {
+			focus = true,
+			modes = {
+				symbols = {
+					focus = true,
+					win = {
+						type = "split",
+						relative = "editor",
+						size = 0.25,
+						position = "left",
+					},
+				},
+			},
+		},
 		cmd = { "TroubleToggle", "Trouble" },
 		keys = {
 			{
@@ -273,13 +286,8 @@ return {
 			},
 			{
 				"<leader>cs",
-				"<cmd>Trouble symbols toggle focus=false<cr>",
+				"<cmd>Trouble symbols toggle<cr>",
 				desc = "Symbols (Trouble)",
-			},
-			{
-				"<leader>cl",
-				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-				desc = "LSP Definitions / references / ... (Trouble)",
 			},
 			{
 				"<leader>xL",
@@ -315,6 +323,7 @@ return {
 	},
 	{
 		"stevearc/aerial.nvim",
+		enabled = false,
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
 			"nvim-tree/nvim-web-devicons",

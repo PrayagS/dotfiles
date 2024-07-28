@@ -48,7 +48,7 @@ return {
 			require("telescope").load_extension("live_grep_args")
 			require("telescope").load_extension("frecency")
 			require("telescope").load_extension("ui-select")
-			require("telescope").load_extension("aerial")
+			-- require("telescope").load_extension("aerial")
 			require("telescope").load_extension("session-lens")
 
 			local builtin = require("telescope.builtin")
