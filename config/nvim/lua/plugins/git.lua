@@ -4,6 +4,7 @@ return {
 		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 		opts = {
 			current_line_blame = true,
+			culhl = true,
 			on_attach = function(bufnr)
 				-- TODO: Telescope keymaps for gitsigns. Refer get_actions() /
 				-- get_hunks()
