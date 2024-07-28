@@ -209,6 +209,24 @@ return {
 										rangeVariableTypes = true,
 									},
 									staticcheck = true,
+									gofumpt = true,
+									codelenses = {
+										gc_details = true,
+										generate = true,
+										regenerate_cgo = true,
+										test = true,
+										run_govulncheck = true,
+										tidy = true,
+										upgrade_dependency = true,
+										vendor = true,
+									},
+									usePlaceholders = true,
+									analyses = {
+										shadow = true,
+										unusedvariable = true,
+										useany = true,
+									},
+									vulncheck = "Imports",
 								},
 							}
 						end
