@@ -25,7 +25,17 @@ return {
 			},
 			{ "smjonas/inc-rename.nvim", opts = { input_buffer_type = "dressing" } },
 			"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-			{ "luckasRanarison/clear-action.nvim", opts = {} },
+			"ray-x/lsp_signature.nvim",
+			{
+				"luckasRanarison/clear-action.nvim",
+				opts = {
+					signs = {
+						position = "eol",
+						show_count = false,
+					},
+					popup = { enable = false },
+				},
+			},
 			{
 				"aznhe21/actions-preview.nvim",
 				config = function()
@@ -254,6 +264,8 @@ return {
 					},
 				},
 			})
+
+			require("lsp_signature").setup()
 		end,
 	},
 	{

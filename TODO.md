@@ -23,14 +23,13 @@ significantly.
 ## neovim
 
 - Configure diagnostics.
-- https://github.com/chrisgrieser/nvim-lsp-endhints
-- folke/trouble.nvim
 - configure diagnostics support in UI plugins like bufferline.
-- ray-x/lsp_signature.nvim / https://nvimdev.github.io/lspsaga/
 - ray-x/navigator.lua
 - Wansmer/treesj
 - cshuaimin/ssr.nvim
 - Explore treesitter text objects or text objects in general
+- ~~ray-x/lsp_signature.nvim~~
+- ~~folke/trouble.nvim~~
 - ~~https://github.com/hedyhli/outline.nvim#related-plugins~~
 - ~~Bekaboo/dropbar.nvim~~
 - ~~ggandor/leap-spooky.nvim // rasulomaroff/telepath.nvim // folke/flash.nvim~~
