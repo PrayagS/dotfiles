@@ -289,18 +289,26 @@ return {
 		end,
 	},
 	{
-		"chrisgrieser/nvim-rip-substitute",
-		cmd = "RipSubstitute",
-		keys = {
-			{
-				"<leader>fs",
-				function()
-					require("rip-substitute").sub()
-				end,
-				mode = { "n", "x" },
-				desc = "rip substitute",
-			},
-		},
+		"MagicDuck/grug-far.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("grug-far").setup({
+				extraRgArgs = "--smart-case --follow --hidden --threads=32 --context=3 --heading --line-number",
+				transient = true,
+			})
+
+			vim.keymap.set({ "n", "v" }, "<leader>rg", "<cmd>GrugFar<CR>")
+		end,
+	},
+	{
+		"cshuaimin/ssr.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("ssr").setup()
+			vim.keymap.set({ "n", "x" }, "<leader>sr", function()
+				require("ssr").open()
+			end)
+		end,
 	},
 	{
 		"folke/todo-comments.nvim",

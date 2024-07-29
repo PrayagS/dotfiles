@@ -1,8 +1,5 @@
 local set = vim.keymap.set
 
--- Set space as leader key
-vim.g.mapleader = " "
-
 -- "Best keybindings ever". Source: ThePrimeagen
 -- Move lines in visual mode
 -- set("v", "J", ":m '>+1<CR>gv=gv")

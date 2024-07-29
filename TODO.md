@@ -26,8 +26,8 @@ significantly.
 - configure diagnostics support in UI plugins like bufferline.
 - ray-x/navigator.lua
 - Wansmer/treesj
-- cshuaimin/ssr.nvim
 - Explore treesitter text objects or text objects in general
+- ~~cshuaimin/ssr.nvim~~
 - ~~ray-x/lsp_signature.nvim~~
 - ~~folke/trouble.nvim~~
 - ~~https://github.com/hedyhli/outline.nvim#related-plugins~~
