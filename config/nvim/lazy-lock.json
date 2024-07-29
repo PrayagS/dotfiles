@@ -67,6 +67,7 @@
   "refactoring.nvim": { "branch": "master", "commit": "c406fc5fb4d7ba5fce7b668637075fad6e75e9f8" },
   "smartcolumn.nvim": { "branch": "main", "commit": "cefb17be095ad5526030a21bb2a80553cae09127" },
   "ssr.nvim": { "branch": "main", "commit": "bb323ba621ac647b4ac5638b47666e3ef3c279e1" },
+  "statuscol.nvim": { "branch": "main", "commit": "d6f7f5437c5404d958b88bb73e0721b1c0e09223" },
   "suda.vim": { "branch": "master", "commit": "b97fab52f9cdeabe2bbb5eb98d82356899f30829" },
   "symbol-usage.nvim": { "branch": "main", "commit": "533846260d3d053aebbf224617cc5294c219a8b1" },
   "tabout.nvim": { "branch": "master", "commit": "3d7fbc7f5e91ef0f96b4d787c78ad9f8820de3ec" },
