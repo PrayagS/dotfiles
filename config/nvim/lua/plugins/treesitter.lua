@@ -50,4 +50,20 @@ return {
 		event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
 		opts = {},
 	},
+	{
+		"Wansmer/treesj",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		keys = { "<space>m", "<space>j", "<space>s" },
+		opts = {},
+	},
+	{
+		"ThePrimeagen/refactoring.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		config = function()
+			require("refactoring").setup()
+		end,
+	},
 }
