@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 vim.g.autoformat = true
 
 -- Basics
+opt.number = true
 opt.relativenumber = true
 opt.backspace = [[indent,eol,start]]
 opt.title = true
