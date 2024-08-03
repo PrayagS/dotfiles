@@ -1,6 +1,23 @@
 # ZDOTDIR
 export ZDOTDIR=${ZDOTDIR:-~/.config/zsh}
 
+# Path
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
+export PATH=/usr/local/texlive/2021/texmf-dist/scripts:$PATH
+export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.npm-global/bin:$PATH
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.krew/bin:$PATH"
+export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/.config/zsh/zinit/polaris/bin:$PATH"
+# export GOPATH="$HOME/dev/go"
+# export GOBIN="$GOPATH/bin"
+# export PATH="$GOBIN:$PATH"
+
 # Golang env vars
 export GOPATH="$HOME/dev/go"
 export GOBIN="$GOPATH/bin"
@@ -24,6 +41,7 @@ export HOMEBREW_BUNDLE_FILE_GLOBAL="$HOME/dev/dotfiles/macos/Brewfile"
 
 # Being a XDG Ninja
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export LESSHISTFILE="$XDG_DATA_HOME/less/history"
@@ -38,6 +56,8 @@ export REDISCLI_HISTFILE="$XDG_DATA_HOME/redis/rediscli_history"
 export SQLITE_HISTORY="$XDG_CACHE_HOME/sqlite_history"
 export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
 export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql_history"
+export KREW_ROOT="$XDG_DATA_HOME/krew"
+export PYTHON_HISTORY="$XDG_DATA_HOME/python/history"
 
 # Start skhd/yabai
 # if pgrep -x "yabai" >/dev/null

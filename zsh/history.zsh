@@ -1,6 +1,6 @@
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
-HISTFILE="$HOME/.zsh_history"
+HISTFILE="$XDG_STATE_HOME/zsh/history"
 
 # See zshmodules(1) for this killer function
 bindkey '^h' accept-and-infer-next-history
@@ -38,4 +38,3 @@ up-line-or-history-reread() {
 }
 zle -N up-line-or-history-reread
 bindkey '^[[A' up-line-or-history-reread
-
