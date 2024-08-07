@@ -17,3 +17,11 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		vim.api.nvim_win_set_cursor(0, { line, column })
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "cue" },
+	callback = function()
+		require("ufo").detach()
+		vim.o.foldenable = false
+	end,
+})

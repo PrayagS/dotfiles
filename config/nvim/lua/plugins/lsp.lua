@@ -102,7 +102,12 @@ return {
 					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
-					if client and client.server_capabilities.documentHighlightProvider then
+
+					if
+						client
+						and client.server_capabilities.documentHighlightProvider
+						and client.config.cmd[1] ~= "/opt/homebrew/bin/cuepls"
+					then
 						local highlight_augroup =
 							vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
 						vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -126,9 +131,20 @@ return {
 						})
 					end
 
+					if
+						client
+						and client.server_capabilities.inlayHintProvider
+						and vim.lsp.inlay_hint
+						and client.config.cmd[1] ~= "/opt/homebrew/bin/cuepls"
+					then
+						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 						map("<leader>th", function()
 							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 						end, "[T]oggle Inlay [H]ints")
+					end
+
+					if client and client.config.cmd[1] ~= "/opt/homebrew/bin/cuepls" then
+						require("lsp_signature").on_attach({}, event.buf)
 					end
 				end,
 			})
@@ -140,11 +156,25 @@ return {
 				vim.lsp.protocol.make_client_capabilities(),
 				cmp_lsp.default_capabilities()
 			)
+
+			local lspconfig = require("lspconfig")
+			local configs = require("lspconfig.configs")
+			local cuepls_capabilities = capabilities
+			configs.cuepls = {
+				default_config = {
+					cmd = { "cuepls" },
+					filetypes = { "cue" },
+					root_dir = require("lspconfig").util.root_pattern("cue.mod", "go.mod"),
+					settings = {},
+					capabilities = cuepls_capabilities,
+				},
+			}
+			lspconfig.cuepls.setup({})
+
 			capabilities.textDocument.foldingRange = {
 				dynamicRegistration = false,
 				lineFoldingOnly = true,
 			}
-
 			local servers = {
 				lua_ls = {},
 				gopls = {},
@@ -254,8 +284,6 @@ return {
 					},
 				},
 			})
-
-			require("lsp_signature").setup()
 		end,
 	},
 	{
