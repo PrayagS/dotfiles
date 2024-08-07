@@ -10,7 +10,6 @@ export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
 export PATH="$HOME/go/bin:$PATH"
-export PATH="$HOME/.krew/bin:$PATH"
 export PATH="$HOME/Library/Python/3.8/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.config/zsh/zinit/polaris/bin:$PATH"
@@ -57,7 +56,12 @@ export SQLITE_HISTORY="$XDG_CACHE_HOME/sqlite_history"
 export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
 export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql_history"
 export KREW_ROOT="$XDG_DATA_HOME/krew"
+export PATH="$KREW_ROOT/bin:$PATH"
 export PYTHON_HISTORY="$XDG_DATA_HOME/python/history"
+export USQL_CONFIG="$HOME/.config/usql/config.yaml"
+export USQL_HISTORY="$XDG_STATE_HOME/usql/history"
+export CUE_CACHE_DIR="$XDG_CACHE_HOME/cue"
+export CUE_CONFIG_DIR="$XDG_CONFIG_HOME/cue"
 
 # Start skhd/yabai
 # if pgrep -x "yabai" >/dev/null
