@@ -67,7 +67,7 @@ return {
 		"famiu/bufdelete.nvim",
 		keys = {
 			{
-				"<leader>bd",
+				"<leader>q",
 				function()
 					require("bufdelete").bufdelete()
 				end,
