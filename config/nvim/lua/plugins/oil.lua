@@ -1,5 +1,6 @@
 return {
 	"stevearc/oil.nvim",
+	lazy = false,
 	keys = {
 		{
 			"-",
@@ -11,7 +12,9 @@ return {
 	config = function()
 		require("oil").setup({
 			default_file_explorer = true,
-			experimental_watch_for_changes = true,
+			watch_for_changes = true,
+			delete_to_trash = true,
+			skip_confirm_for_simple_edits = true,
 			keymaps = {
 				["gl"] = function()
 					require("oil").set_columns({ "mtime", "size", "icon" })
@@ -29,5 +32,9 @@ return {
 				},
 			},
 		})
+
+		vim.keymap.set("n", "<leader>f", function()
+			require("oil").open_float()
+		end)
 	end,
 }
