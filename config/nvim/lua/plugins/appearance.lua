@@ -151,6 +151,46 @@ return {
 			themes["everforest"] = "everforest"
 			themes["catppuccin-mocha"] = "catppuccin"
 
+			local function get_attached_lsp_clients()
+				local buf_clients = vim.lsp.get_active_clients({ bufnr = 0 })
+				if #buf_clients == 0 then
+					return "LSP Inactive"
+				end
+				local buf_client_names = {}
+				for _, client in pairs(buf_clients) do
+					table.insert(buf_client_names, client.name)
+				end
+				local client_names_str = table.concat(buf_client_names, ", ")
+				if #client_names_str == 0 then
+					return ""
+				end
+				local language_servers = string.format("LSP: [%s]", client_names_str)
+				return language_servers
+			end
+
+			local get_attached_linters = function()
+				local linters = require("lint").get_running()
+				if #linters == 0 then
+					return ""
+				end
+				return string.format("Linters: [%s]", table.concat(linters, ", "))
+			end
+
+			local get_attached_formatters = function()
+				local formatters, using_lsp_formatter = require("conform").list_formatters_to_run(0)
+				local formatter_names = {}
+				for _, formatter in pairs(formatters) do
+					table.insert(formatter_names, formatter.name)
+				end
+				if using_lsp_formatter then
+					table.insert(formatter_names, "LSP")
+				end
+				if #formatter_names == 0 then
+					return ""
+				end
+				return string.format("Formatters: [%s]", table.concat(formatter_names, ", "))
+			end
+
 			require("lualine").setup({
 				options = {
 					icons_enabled = true,
@@ -190,18 +230,25 @@ return {
 							end,
 							always_visible = false,
 						},
-						"diagnostics",
+						{
+							"diagnostics",
+							sources = { "nvim_lsp", "nvim_diagnostic", "nvim_workspace_diagnostic" },
+						},
 					},
 					lualine_c = {
-						"%=",
 						{
 							"filename",
 							path = 1,
 						},
 					},
-					lualine_x = { "encoding", "fileformat", "filetype" },
+					lualine_x = { "encoding", "filetype" },
 					lualine_y = { "progress" },
-					lualine_z = { "location" },
+					lualine_z = {
+						get_attached_lsp_clients,
+						get_attached_linters,
+						get_attached_formatters,
+						"location",
+					},
 				},
 				inactive_sections = {
 					lualine_a = {},
