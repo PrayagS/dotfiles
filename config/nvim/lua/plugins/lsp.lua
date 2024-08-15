@@ -103,6 +103,10 @@ return {
 
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 
+					if client.name == "yamlls" then
+						client.server_capabilities.documentFormattingProvider = true
+					end
+
 					if
 						client
 						and client.server_capabilities.documentHighlightProvider
@@ -257,6 +261,20 @@ return {
 										useany = true,
 									},
 									vulncheck = "Imports",
+								},
+							}
+						end
+						if server_name == "yamlls" then
+							server.settings = {
+								yaml = {
+									format = {
+										enable = true,
+										singleQuote = true,
+										bracketSpacing = true,
+									},
+									validate = true,
+									hover = true,
+									completion = true,
 								},
 							}
 						end
