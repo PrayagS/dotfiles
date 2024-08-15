@@ -69,7 +69,7 @@ config.ui_key_cap_rendering = "UnixLong"
 
 config.unicode_version = 14
 
-config.scrollback_lines = 50000
+config.scrollback_lines = 1000000
 
 -- open scrollback buffer in vim
 -- Source: https://wezfurlong.org/wezterm/config/lua/wezterm/on.html#example-opening-whole-scrollback-in-vim
