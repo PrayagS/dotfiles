@@ -24,6 +24,7 @@ alias -g kssh="kitty +kitten ssh"
 alias -g oldbrew="/usr/local/bin/brew"
 alias -g lg="lazygit"
 alias -g wget="wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""
+# alias -g cdg="cd ./$(git rev-parse --show-cdup)"
 
 # Launch
 alias -g filebot="java -jar /home/prayag_s/Downloads/misc-stuff/filebot/FileBot.jar"
