@@ -340,7 +340,11 @@ return {
 		event = "VeryLazy",
 		config = function()
 			require("grug-far").setup({
-				extraRgArgs = "--smart-case --follow --hidden --threads=32 --context=3 --heading --line-number",
+				engines = {
+					ripgrep = {
+						extraRgArgs = "--smart-case --follow --hidden --threads=32 --context=3 --heading --line-number",
+					},
+				},
 				transient = true,
 			})
 
