@@ -57,7 +57,7 @@ config.automatically_reload_config = true
 config.cursor_blink_rate = 500
 
 -- config.font = wezterm.font("Iosevka Term")
-config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
+config.font = wezterm.font("VictorMono Nerd Font Mono")
 config.font_size = 15.0
 
 config.front_end = "WebGpu"
