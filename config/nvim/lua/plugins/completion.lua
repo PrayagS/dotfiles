@@ -10,6 +10,7 @@ return {
 		"hrsh7th/cmp-nvim-lua",
 		"onsails/lspkind.nvim",
 		"chrisgrieser/cmp_yanky",
+		"ray-x/cmp-treesitter",
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -61,6 +62,7 @@ return {
 			},
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
+				{ name = "treesitter" },
 				{ name = "nvim_lua" },
 				{ name = "path" },
 				{ name = "cmp_yanky" },

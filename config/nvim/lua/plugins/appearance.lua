@@ -125,7 +125,7 @@ return {
 					extra = true,
 				},
 				options = {
-					delay = 2,
+					delay = 4,
 					max_delta = {
 						time = 100,
 					},
@@ -411,5 +411,15 @@ return {
 
 			require("ufo").setup()
 		end,
+	},
+	{
+		"nvim-zh/colorful-winsep.nvim",
+		event = { "WinLeave" },
+		opts = {
+			hi = {
+				bg = "#1d2021",
+				fg = "#d4be98",
+			},
+		},
 	},
 }

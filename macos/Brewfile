@@ -111,6 +111,8 @@ brew "mysql"
 brew "nmap"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
+# Create, run, and share large language models (LLMs)
+brew "ollama", link: false
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # Convert PDFs to images
@@ -213,6 +215,8 @@ cask "flameshot"
 cask "gitify"
 # Web browser
 cask "google-chrome@beta"
+# Offline AI chat tool
+cask "jan"
 # Jellyfin desktop client
 cask "jellyfin-media-player"
 # Open-source screen recorder built with web technology
@@ -239,6 +243,8 @@ cask "notion-calendar"
 cask "numi"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Get up and running with large language models locally
+cask "ollama"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Home media player

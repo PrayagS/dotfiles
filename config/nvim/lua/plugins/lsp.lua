@@ -386,4 +386,13 @@ return {
 			vim.keymap.set("n", "<leader>af", "<cmd>Telescope aerial<CR>")
 		end,
 	},
+	{
+		"Zeioth/garbage-day.nvim",
+		dependencies = "neovim/nvim-lspconfig",
+		event = "VeryLazy",
+		opts = {
+			grace_period = 30 * 60,
+			notifications = true,
+		},
+	},
 }
