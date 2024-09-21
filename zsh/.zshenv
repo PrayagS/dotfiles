@@ -12,6 +12,7 @@ export PATH=$HOME/.npm-global/bin:$PATH
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/Library/Python/3.8/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="$HOME/.config/zsh/zinit/polaris/bin:$PATH"
 # export GOPATH="$HOME/dev/go"
 # export GOBIN="$GOPATH/bin"
