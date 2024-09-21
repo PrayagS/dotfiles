@@ -37,7 +37,7 @@
     vcs
     # =========================[ Line #2 ]=========================
     newline                 # \n
-    vpn_ip
+    # vpn_ip
     kubecontext
     aws
     prompt_char             # prompt symbol
