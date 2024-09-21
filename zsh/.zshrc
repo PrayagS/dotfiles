@@ -129,7 +129,7 @@ zinit lucid light-mode wait"0b" for \
       bindkey '^]' autosuggest-execute
       bindkey '^[[1;3C' autosuggest-accept" \
         zsh-users/zsh-autosuggestions \
-    atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay; autoload bashcompinit; bashcompinit" \
     atclone'(){local f;cd -q →*;for f (*~*.zwc){zcompile -Uz -- ${f}};}' \
     compile'.*fast*~*.zwc' \
     atpull'%atclone' \
