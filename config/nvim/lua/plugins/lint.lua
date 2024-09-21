@@ -15,7 +15,7 @@ return {
 
 		lint.linters_by_ft = {
 			jsonnet = { "jsonnet_lint" },
-			go = { "golangcilint" },
+			-- go = { "golangcilint" },
 			yaml = { "yamllint" },
 		}
 

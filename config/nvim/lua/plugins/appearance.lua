@@ -271,26 +271,17 @@ return {
 		name = "live-command",
 		event = "VeryLazy",
 		opts = {
-			defaults = {
-				enable_highlighting = true,
-				inline_highlighting = true,
-				hl_groups = {
-					insertion = "DiffAdd",
-					deletion = "DiffDelete",
-					change = "DiffChange",
-				},
+			enable_highlighting = true,
+			inline_highlighting = true,
+			hl_groups = {
+				insertion = "DiffAdd",
+				deletion = "DiffDelete",
+				change = "DiffChange",
 			},
 			commands = {
 				Norm = { cmd = "norm" },
 				G = { cmd = "g" },
 				D = { cmd = "d" },
-				Reg = {
-					cmd = "norm",
-					args = function(opts)
-						return (opts.count == -1 and "" or opts.count) .. "@" .. opts.args
-					end,
-					range = "",
-				},
 			},
 		},
 		config = function(_, opts)

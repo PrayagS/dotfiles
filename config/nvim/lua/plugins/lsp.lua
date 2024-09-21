@@ -148,7 +148,12 @@ return {
 					end
 
 					if client and client.config.cmd[1] ~= "/opt/homebrew/bin/cuepls" then
-						require("lsp_signature").on_attach({}, event.buf)
+						require("lsp_signature").on_attach({
+							bind = true,
+							handler_opts = {
+								border = "rounded",
+							},
+						}, event.buf)
 					end
 				end,
 			})

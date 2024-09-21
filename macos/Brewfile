@@ -6,7 +6,6 @@ tap "deviceinsight/packages"
 tap "felixkratz/formulae"
 tap "homebrew/aliases"
 tap "homebrew/bundle"
-tap "homebrew/cask-versions"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
@@ -53,6 +52,8 @@ brew "epubcheck"
 brew "exiftool"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
+# Package for scientific computing with Python
+brew "numpy"
 # Highest-quality GIF encoder based on pngquant
 brew "gifski"
 # Audit git repos for secrets
@@ -67,6 +68,8 @@ brew "go"
 brew "go-jsonnet"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# Colorize logfiles and command output
+brew "grc"
 # Like cURL, but for gRPC
 brew "grpcurl"
 # Post-modern modal text editor
@@ -111,8 +114,6 @@ brew "mysql"
 brew "nmap"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
-# Create, run, and share large language models (LLMs)
-brew "ollama", link: false
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # Convert PDFs to images
@@ -157,8 +158,6 @@ brew "tree"
 brew "ttyd"
 # Syntax-aware linter for prose
 brew "vale"
-# Secures, stores, and tightly controls access to secrets
-brew "vault"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # Internet file retriever
@@ -211,7 +210,7 @@ cask "discord@canary"
 cask "firefox@beta"
 # Screenshot software
 cask "flameshot"
-# GitHub Notifications on your menu bar
+# GitHub notifications on your menu bar
 cask "gitify"
 # Web browser
 cask "google-chrome@beta"
@@ -223,8 +222,6 @@ cask "jellyfin-media-player"
 cask "kap"
 # Keyboard customiser
 cask "karabiner-elements"
-# Interface for reading and syncing eBooks
-cask "kindle"
 # GPU-based terminal emulator
 cask "kitty"
 # An open source cross-platform alternative to AirDrop
@@ -243,8 +240,6 @@ cask "notion-calendar"
 cask "numi"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-# Get up and running with large language models locally
-cask "ollama"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Home media player
@@ -263,7 +258,7 @@ cask "shottr"
 cask "slack@beta"
 # Music streaming service
 cask "spotify"
-# Tool to display the local times of people in a team
+# Tool to display the local times of friends, teammates, cities or any time zone
 cask "there"
 # To-do list
 cask "todoist"
@@ -284,16 +279,24 @@ cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
-mas "Apple Configurator", id: 1037126344
 mas "Endel", id: 1346247457
 mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
-mas "Infuse", id: 1136220934
 mas "Numbers", id: 409203825
 mas "Shareful", id: 1522267256
 mas "UTC Time", id: 1538245904
+vscode "asvetliakov.vscode-neovim"
+vscode "eamodio.gitlens"
 vscode "github.copilot"
 vscode "github.copilot-chat"
+vscode "golang.go"
 vscode "grafana.vscode-jsonnet"
 vscode "hashicorp.terraform"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-vscode-remote.remote-containers"
 vscode "naumovs.color-highlight"
+vscode "sainnhe.gruvbox-material"
+vscode "vscodevim.vim"
