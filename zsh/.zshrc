@@ -103,7 +103,9 @@ zinit lucid light-mode wait"0a" for \
       zstyle ':fzf-tab:*' switch-group 'ctrl-h' 'ctrl-l'
       zstyle ':fzf-tab:*' fzf-flags --preview-window=right,70%,cycle" \
         Aloxaf/fzf-tab \
-    atload'export LESSOPEN="|${ZSH_HOME}/lessfilter %s"' \
+    atload"
+      export LESSOPEN='|${ZSH_HOME}/lessfilter %s'
+      zstyle ':fzf-tab:sources' config-directory ${ZSH_HOME}/fzf-tab-custom-sources" \
         Freed-Wu/fzf-tab-source
         # OMZP::git \
 
