@@ -45,6 +45,9 @@ return {
 			auto_save_enabled = true,
 			auto_restore_enabled = true,
 			auto_session_use_git_branch = true,
+			suppressed_dirs = {
+				"~/",
+			},
 			-- log_level = "debug",
 		},
 	},
