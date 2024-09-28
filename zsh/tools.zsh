@@ -29,7 +29,9 @@ zinit from"gh-r" lman for \
     sbin"**/mcfly -> mcfly" cantino/mcfly \
     sbin"**/procs -> procs" dalance/procs \
     sbin"promtool" prometheus/prometheus \
-    sbin"**/delta -> delta" dandavison/delta
+    sbin"**/delta -> delta" dandavison/delta \
+    sbin"**/gs -> gs" abhinav/git-spice \
+    sbin"**/git-absorb -> git-absorb" tummychow/git-absorb
     # sbin'**/helm' atclone'./**/helm completion zsh > _helm' atpull'%atclone' helm/helm
 
 

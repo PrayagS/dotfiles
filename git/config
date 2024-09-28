@@ -64,6 +64,9 @@
 [branch]
     sort = -committerdate
 
+[rebase]
+    updateRefs = true
+
 [push]
     default = current
 
