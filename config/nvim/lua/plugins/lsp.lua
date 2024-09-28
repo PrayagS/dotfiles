@@ -103,6 +103,11 @@ return {
 
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 
+					if client.name == "ruff" then
+						-- Disable hover in favor of Pyright
+						client.server_capabilities.hoverProvider = false
+					end
+
 					if client.name == "yamlls" then
 						client.server_capabilities.documentFormattingProvider = true
 					end
@@ -237,6 +242,17 @@ return {
 						},
 					},
 				},
+
+				ruff = {},
+
+				basedpyright = {
+					settings = {
+						basedpyright = {
+							disableOrganizeImports = true,
+						},
+					},
+				},
+
 				jsonnet_ls = {},
 
 				yamlls = {

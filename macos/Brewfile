@@ -135,8 +135,6 @@ brew "pypy3.10"
 brew "redis"
 # Diff filter highlighting which line parts have changed
 brew "riff"
-# Extremely fast Python linter, written in Rust
-brew "ruff"
 # Easy and Repeatable Kubernetes Development
 brew "skaffold"
 # Terminal based presentation tool
