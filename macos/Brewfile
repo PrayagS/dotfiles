@@ -13,6 +13,7 @@ tap "localsend/localsend"
 tap "peak/tap"
 tap "pyroscope-io/brew"
 tap "rcmdnk/file"
+tap "withgraphite/tap"
 tap "xo/xo"
 # GitOps Continuous Delivery for Kubernetes
 brew "argocd"
@@ -224,7 +225,7 @@ cask "kap"
 cask "karabiner-elements"
 # GPU-based terminal emulator
 cask "kitty"
-# An open source cross-platform alternative to AirDrop
+# Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Play mechanical keyboard sounds as you type
 cask "mechvibes"
@@ -293,6 +294,7 @@ vscode "golang.go"
 vscode "grafana.vscode-jsonnet"
 vscode "hashicorp.terraform"
 vscode "ms-azuretools.vscode-docker"
+vscode "ms-playwright.playwright"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
