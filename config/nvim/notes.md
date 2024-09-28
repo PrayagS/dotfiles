@@ -11,3 +11,9 @@
   CTRL-T    indent current line
   CTRL-D    un-indent current line
   ```
+- Ctrl-d in vim,
+  ```
+  1. search for text
+  2. `cgn` to change the highlighted text
+  3. dot repeat
+  ```
