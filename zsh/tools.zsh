@@ -74,12 +74,12 @@ zinit for \
     as'null' \
     id-as'magika' \
     pip'magika <- !magika -> magika' \
-  @zdharma-continuum/null
+  zdharma-continuum/null
 
 zinit for \
     light-mode \
     lucid \
     as'null' \
     id-as'uv' \
-    pip'uv' \
-  @zdharma-continuum/null
+    pip'uv <- !uv -> uv' \
+  zdharma-continuum/null
