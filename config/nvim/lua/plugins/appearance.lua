@@ -149,6 +149,10 @@ return {
 			themes["gruvbox-material"] = "gruvbox-material"
 			themes["sonokai"] = "sonokai"
 			themes["everforest"] = "everforest"
+			themes["newpaper"] = "newpaper"
+			themes["solarized"] = "solarized"
+			themes["vscode"] = "vscode"
+			themes["modus"] = "modus"
 			themes["catppuccin-mocha"] = "catppuccin"
 
 			local function get_attached_lsp_clients()

@@ -8,13 +8,19 @@ local config = wezterm.config_builder()
 
 -- For example, changing the color scheme:
 -- config.color_scheme = "Catppuccin Mocha"
--- config.color_scheme = "Everforest Dark (Gogh)"
 -- config.color_scheme = "Monokai Pro Ristretto (Gogh)"
 config.color_scheme = "GruvboxDarkHard"
+-- config.color_scheme = "GruvboxLight"
+-- config.color_scheme = "Sonokai (Gogh)"
+-- config.color_scheme = "Everforest Dark (Gogh)"
+-- config.color_scheme = "Papercolor Light (Gogh)"
+-- config.color_scheme = "Solarized Light (Gogh)"
+-- config.color_scheme = "Vs Code Light+ (Gogh)"
+-- config.color_scheme = "Modus-Operandi-Tinted"
 
 local colors = wezterm.color.get_builtin_schemes()[config.color_scheme]
 -- colors.background = "#1A1826" -- slightly darker background for catppuccin
--- wezterm.log_info(colors)
+wezterm.log_info(colors)
 config.colors = {
 	split = colors.foreground,
 	tab_bar = {
@@ -25,7 +31,8 @@ config.colors = {
 		},
 		inactive_tab = {
 			bg_color = colors.selection_bg,
-			fg_color = colors.foreground,
+			-- bg_color = colors.foreground,
+			fg_color = colors.background,
 		},
 		inactive_tab_hover = {
 			bg_color = colors.brights[8], -- lighter than colors.foreground

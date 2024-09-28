@@ -69,6 +69,56 @@ return {
 	-- 	end,
 	-- },
 	-- {
+	-- 	"yorik1984/newpaper.nvim",
+	-- 	config = function()
+	-- 		require("newpaper").setup({
+	-- 			style = "light",
+	-- 			lualine_style = "light",
+	-- 		})
+	-- 	end,
+	-- },
+	-- {
+	-- 	"maxmx03/solarized.nvim",
+	-- 	config = function()
+	-- 		require("solarized").setup({
+	-- 			transparent = { enabled = true },
+	-- 			variant = "winter",
+	-- 		})
+	-- 	end,
+	-- 	init = function()
+	-- 		vim.cmd("colorscheme solarized")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"Mofiqul/vscode.nvim",
+	-- 	config = function()
+	-- 		require("vscode").setup({
+	-- 			transparent = true,
+	-- 		})
+	-- 	end,
+	-- 	init = function()
+	-- 		vim.cmd("colorscheme vscode")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"miikanissi/modus-themes.nvim",
+	-- 	config = function()
+	-- 		require("modus-themes").setup({
+	-- 			variant = "tinted",
+	-- 			transparent = true,
+	-- 		})
+	-- 	end,
+	-- 	init = function()
+	-- 		vim.cmd("colorscheme modus")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"NTBBloodbath/doom-one.nvim",
+	-- 	init = function()
+	-- 		vim.cmd("colorscheme doom-one")
+	-- 	end,
+	-- },
+	-- {
 	-- 	"catppuccin/nvim",
 	-- 	name = "catppuccin",
 	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
