@@ -185,10 +185,74 @@ return {
 				lineFoldingOnly = true,
 			}
 			local servers = {
-				lua_ls = {},
-				gopls = {},
+
+				lua_ls = {
+					settings = {
+						Lua = {
+							completion = {
+								displayContext = 5,
+							},
+							diagnostics = {
+								globals = { "vim" },
+							},
+							hint = {
+								enable = true,
+								setType = true,
+							},
+						},
+					},
+				},
+
+				gopls = {
+					settings = {
+						gopls = {
+							hints = {
+								assignVariableTypes = true,
+								compositeLiteralFields = true,
+								compositeLiteralTypes = true,
+								constantValues = true,
+								functionTypeParameters = true,
+								parameterNames = true,
+								rangeVariableTypes = true,
+							},
+							staticcheck = true,
+							gofumpt = true,
+							codelenses = {
+								gc_details = true,
+								generate = true,
+								regenerate_cgo = true,
+								test = true,
+								run_govulncheck = true,
+								tidy = true,
+								upgrade_dependency = true,
+								vendor = true,
+							},
+							usePlaceholders = true,
+							analyses = {
+								shadow = true,
+								unusedvariable = true,
+								useany = true,
+							},
+							vulncheck = "Imports",
+						},
+					},
+				},
 				jsonnet_ls = {},
-				yamlls = {},
+
+				yamlls = {
+					settings = {
+						yaml = {
+							format = {
+								enable = true,
+								singleQuote = true,
+								bracketSpacing = true,
+							},
+							validate = true,
+							hover = true,
+							completion = true,
+						},
+					},
+				},
 			}
 
 			require("mason").setup()
@@ -219,70 +283,6 @@ return {
 						-- by the server configuration above. Useful when disabling
 						-- certain features of an LSP (for example, turning off formatting for tsserver)
 						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-						if server_name == "lua_ls" then
-							server.settings = {
-								Lua = {
-									completion = {
-										displayContext = 5,
-									},
-									diagnostics = {
-										globals = { "vim" },
-									},
-									hint = {
-										enable = true,
-										setType = true,
-									},
-								},
-							}
-						end
-						if server_name == "gopls" then
-							server.settings = {
-								gopls = {
-									hints = {
-										assignVariableTypes = true,
-										compositeLiteralFields = true,
-										compositeLiteralTypes = true,
-										constantValues = true,
-										functionTypeParameters = true,
-										parameterNames = true,
-										rangeVariableTypes = true,
-									},
-									staticcheck = true,
-									gofumpt = true,
-									codelenses = {
-										gc_details = true,
-										generate = true,
-										regenerate_cgo = true,
-										test = true,
-										run_govulncheck = true,
-										tidy = true,
-										upgrade_dependency = true,
-										vendor = true,
-									},
-									usePlaceholders = true,
-									analyses = {
-										shadow = true,
-										unusedvariable = true,
-										useany = true,
-									},
-									vulncheck = "Imports",
-								},
-							}
-						end
-						if server_name == "yamlls" then
-							server.settings = {
-								yaml = {
-									format = {
-										enable = true,
-										singleQuote = true,
-										bracketSpacing = true,
-									},
-									validate = true,
-									hover = true,
-									completion = true,
-								},
-							}
-						end
 						require("lspconfig")[server_name].setup(server)
 					end,
 				},
