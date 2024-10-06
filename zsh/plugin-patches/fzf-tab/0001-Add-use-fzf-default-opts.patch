@@ -1,0 +1,63 @@
+From 616fb6a575e24c39e43fad2b715459e0ea11cfae Mon Sep 17 00:00:00 2001
+From: PrayagS <prayagsavsani@gmail.com>
+Date: Sun, 6 Oct 2024 20:28:40 +0530
+Subject: [PATCH] Add `use-fzf-default-opts`
+
+Ref: https://github.com/Aloxaf/fzf-tab/issues/475
+
+https://github.com/Aloxaf/fzf-tab/commit/0b49f3e8a3fdb546636ff2157925d32e8936b415 introduces a change that makes the plugin ignore
+`FZF_DEFAULT_OPTS` by default.
+
+This commit adds a flag to disable this behavior.
+
+Signed-off-by: PrayagS <prayagsavsani@gmail.com>
+---
+ README.md    | 4 +++-
+ lib/-ftb-fzf | 8 +++++++-
+ 2 files changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/README.md b/README.md
+index e43e0f7..540e8ae 100644
+--- a/README.md
++++ b/README.md
+@@ -115,8 +115,10 @@ zstyle ':completion:*' menu no
+ # preview directory's content with eza when completing cd
+ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+ # custom fzf flags
+-# NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS
++# NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
+ zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
++# To make fzf-tab follow FZF_DEFAULT_OPTS
++zstyle ':fzf-tab:*' use-fzf-default-opts yes
+ # switch group using `<` and `>`
+ zstyle ':fzf-tab:*' switch-group '<' '>'
+ ```
+diff --git a/lib/-ftb-fzf b/lib/-ftb-fzf
+index 516d9fa..62f93f1 100755
+--- a/lib/-ftb-fzf
++++ b/lib/-ftb-fzf
+@@ -40,6 +40,7 @@ local ret=0
+ -ftb-zstyle -a switch-group switch_group || switch_group=(F1 F2)
+ -ftb-zstyle -s fzf-pad fzf_pad || fzf_pad=2
+ -ftb-zstyle -s fzf-min-height fzf_min_height || fzf_min_height=0
++-ftb-zstyle -b use-fzf-default-opts use_fzf_default_opts || use_fzf_default_opts="no"
+ 
+ -ftb-zstyle -a debug-command debug_command && {
+   ${(eX)debug_command} $fzf_flags
+@@ -81,7 +82,12 @@ fi
+ 
+ _ftb_query="${_ftb_query}$(command "$dd" bs=1G count=1 status=none iflag=nonblock < /dev/tty 2>/dev/null)" || true
+ 
+-FZF_DEFAULT_OPTS='' SHELL=$ZSH_NAME $fzf_command \
++local fzf_default_opts=''
++if [[ "$use_fzf_default_opts" == "yes" ]]; then
++  fzf_default_opts=$FZF_DEFAULT_OPTS
++fi
++
++FZF_DEFAULT_OPTS=$fzf_default_opts SHELL=$ZSH_NAME $fzf_command \
+   --ansi \
+   --bind=$binds \
+   --bind="${switch_group[1]}:reload($reload_command -1),${switch_group[2]}:reload($reload_command 1)" \
+-- 
+2.39.5 (Apple Git-154)
+

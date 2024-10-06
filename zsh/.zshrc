@@ -50,8 +50,8 @@ autoload -Uz _zinit
 zinit light-mode for \
     zdharma-continuum/zinit-annex-bin-gem-node \
     zdharma-continuum/zinit-annex-link-man \
-    zdharma-continuum/zinit-annex-rust
-    # zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust \
+    zdharma-continuum/zinit-annex-patch-dl
 
 ### End of Zinit's installer chunk
 
@@ -97,11 +97,12 @@ zinit lucid light-mode wait"0a" for \
         mollifier/cd-gitroot \
     compile'lib/*f*~*.zwc' \
     blockf \
+    patch"$ZSH_HOME/plugin-patches/fzf-tab/0001-Add-use-fzf-default-opts.patch" \
     atload"
       zstyle ':fzf-tab:*' fzf-pad 250
       zstyle ':fzf-tab:*' continuous-trigger ']'
-      zstyle ':fzf-tab:*' switch-group 'ctrl-h' 'ctrl-l'
-      zstyle ':fzf-tab:*' fzf-flags --preview-window=right,70%,cycle" \
+      zstyle ':fzf-tab:*' use-fzf-default-opts yes
+      zstyle ':fzf-tab:*' switch-group 'ctrl-h' 'ctrl-l'" \
         Aloxaf/fzf-tab \
     atload"
       export LESSOPEN='|${ZSH_HOME}/lessfilter %s'
