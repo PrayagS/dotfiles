@@ -97,7 +97,6 @@ zinit lucid light-mode wait"0a" for \
         mollifier/cd-gitroot \
     compile'lib/*f*~*.zwc' \
     blockf \
-    patch"$ZSH_HOME/plugin-patches/fzf-tab/0001-Add-use-fzf-default-opts.patch" \
     atload"
       zstyle ':fzf-tab:*' fzf-pad 250
       zstyle ':fzf-tab:*' continuous-trigger ']'
