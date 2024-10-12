@@ -282,6 +282,7 @@ return {
 				"stylua",
 				"goimports",
 				"golines",
+				"shfmt",
 			})
 			require("mason-tool-installer").setup({
 				ensure_installed = ensure_installed,
