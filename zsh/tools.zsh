@@ -5,9 +5,13 @@
 #      sbin"**/fzf"       junegunn/fzf \
 #      sbin"**/exa"       ogham/exa
 
+# Fetch latest version of ente cli. zinit's `ver` modifier for `gh-r` doesn't
+# support fuzzy matching.
+ente_cli_latest_version=$(curl -s -L -H "Accept: application/vnd.github+json" https://api.github.com/repos/ente-io/ente/releases | jq '[.[] | select(.tag_name | contains("cli"))] | .[0].tag_name')
+
 zinit from"gh-r" lman for \
     sbin"**/fzf" junegunn/fzf \
-    sbin"**/fd"  @sharkdp/fd \
+    sbin"**/fd" @sharkdp/fd \
     sbin"**/bat" @sharkdp/bat \
     sbin"**/glow" charmbracelet/glow \
     sbin"**/rg" BurntSushi/ripgrep \
@@ -31,9 +35,8 @@ zinit from"gh-r" lman for \
     sbin"promtool" prometheus/prometheus \
     sbin"**/delta -> delta" dandavison/delta \
     sbin"**/gs -> gs" abhinav/git-spice \
-    sbin"**/git-absorb -> git-absorb" tummychow/git-absorb
-    # sbin'**/helm' atclone'./**/helm completion zsh > _helm' atpull'%atclone' helm/helm
-
+    sbin"**/git-absorb -> git-absorb" tummychow/git-absorb \
+    sbin"ente" ver"$ente_cli_latest_version" ente-io/ente \
 
 zinit from"gh" as"null" for \
     sbin"bin/*" tj/git-extras \
@@ -52,7 +55,7 @@ zinit for \
     rustup \
     sbin="bin/*" \
     wait=1 \
-  zdharma-continuum/null
+    zdharma-continuum/null
 
 zinit for \
     light-mode \
@@ -60,7 +63,7 @@ zinit for \
     wait='[[ -v CARGO_HOME && -v RUSTUP_HOME ]]' \
     id-as'rust-eza' \
     cargo'!eza' \
-  zdharma-continuum/null
+    zdharma-continuum/null
 
 zinit for \
     light-mode \
@@ -68,7 +71,7 @@ zinit for \
     wait='[[ -v CARGO_HOME && -v RUSTUP_HOME ]]' \
     id-as'rust-csvlens' \
     cargo'!csvlens' \
-  zdharma-continuum/null
+    zdharma-continuum/null
 
 zinit for \
     light-mode \
@@ -76,7 +79,7 @@ zinit for \
     as'null' \
     id-as'magika' \
     pip'magika <- !magika -> magika' \
-  zdharma-continuum/null
+    zdharma-continuum/null
 
 zinit for \
     light-mode \
@@ -84,4 +87,4 @@ zinit for \
     as'null' \
     id-as'uv' \
     pip'uv <- !uv -> uv' \
-  zdharma-continuum/null
+    zdharma-continuum/null
