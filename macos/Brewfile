@@ -115,6 +115,8 @@ brew "mysql"
 brew "nmap"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
+# Manage multiple Node.js versions
+brew "nvm"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # Convert PDFs to images
@@ -205,6 +207,8 @@ cask "calibre"
 cask "discord"
 # Voice and text chat software
 cask "discord@canary"
+# Desktop client for Ente Auth
+cask "ente-auth"
 # Web browser
 cask "firefox@beta"
 # Screenshot software
@@ -241,6 +245,8 @@ cask "numi"
 cask "obsidian"
 # Replacement for Docker Desktop
 cask "orbstack"
+# Rhythm game
+cask "osu"
 # Home media player
 cask "plex"
 # Archive manager for data compression and backups
@@ -269,6 +275,8 @@ cask "visual-studio-code"
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
+# Wine wrapper built with SwiftUI
+cask "whisky"
 # Network protocol analyzer
 cask "wireshark"
 # View output from scripts in the menu bar
@@ -278,12 +286,19 @@ cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
+mas "Bleak Sword", id: 1462175845
+mas "Brawls", id: 1466965178
 mas "Endel", id: 1346247457
 mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
+mas "Grindstone", id: 1476307705
+mas "JapanRural", id: 1634749545
 mas "Numbers", id: 409203825
+mas "Outlanders", id: 1468558187
 mas "Shareful", id: 1522267256
+mas "SonicDreamTeam", id: 1609094795
 mas "UTC Time", id: 1538245904
+mas "Warped Kart Racers", id: 1539378079
 vscode "asvetliakov.vscode-neovim"
 vscode "eamodio.gitlens"
 vscode "github.copilot"
