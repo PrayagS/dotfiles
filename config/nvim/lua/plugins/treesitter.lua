@@ -48,7 +48,9 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
-		opts = {},
+		opts = {
+			multiwindow = true,
+		},
 	},
 	{
 		"Wansmer/treesj",
