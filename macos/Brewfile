@@ -199,8 +199,6 @@ cask "appcleaner"
 cask "arc"
 # Open-source KVM software
 cask "barrier"
-# Menu bar icon organiser
-cask "bartender"
 # E-books management software
 cask "calibre"
 # Voice and text chat software
@@ -221,6 +219,8 @@ cask "google-chrome@beta"
 cask "jan"
 # Jellyfin desktop client
 cask "jellyfin-media-player"
+# Menu bar manager
+cask "jordanbaird-ice"
 # Open-source screen recorder built with web technology
 cask "kap"
 # Keyboard customiser
