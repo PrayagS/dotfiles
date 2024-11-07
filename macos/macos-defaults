@@ -39,21 +39,3 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
 # Disable creation of .DS_Store files
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-
-# Amphetamine
-mas install 937984704
-
-# Endel
-mas install 1484348796
-
-# UTC Time
-mas install 1538245904
-
-# Gifski
-mas install 1351639930
-
-# Shareful
-mas install 1522267256
-
-# ColorSlurp
-mas install 1287239339
