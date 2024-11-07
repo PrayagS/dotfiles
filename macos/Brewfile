@@ -1,9 +1,9 @@
 tap "artginzburg/tap"
 tap "aws/tap"
 tap "buo/cask-upgrade"
-tap "cue-lang/tap"
 tap "deviceinsight/packages"
 tap "felixkratz/formulae"
+tap "hashicorp/tap"
 tap "homebrew/aliases"
 tap "homebrew/bundle"
 tap "homebrew/command-not-found"
@@ -11,30 +11,17 @@ tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "localsend/localsend"
 tap "peak/tap"
-tap "pyroscope-io/brew"
 tap "rcmdnk/file"
-tap "withgraphite/tap"
-tap "xo/xo"
-# GitOps Continuous Delivery for Kubernetes
-brew "argocd"
-# Argo CD plugin to retrieve secrets from Secret Management tools
-brew "argocd-vault-plugin"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Curl like simplicity to access AWS resources
 brew "awscurl"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
-# Secure and free password manager for all of your devices
-brew "bitwarden-cli"
-# Python code formatter
-brew "black"
 # Versatile and fast Unicode/ASCII/ANSI graphics renderer
 brew "chafa"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
-# Container runtimes on MacOS (and Linux) with minimal setup
-brew "colima"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Securely send things from one computer to another
@@ -73,8 +60,6 @@ brew "graphviz"
 brew "grc"
 # Like cURL, but for gRPC
 brew "grpcurl"
-# Post-modern modal text editor
-brew "helix"
 # Kubernetes package manager
 brew "helm"
 # HTTP load generator, ApacheBench (ab) replacement
@@ -87,12 +72,8 @@ brew "imagemagick"
 brew "isort"
 # Package manager for Jsonnet
 brew "jsonnet-bundler"
-# Kubernetes CLI To Manage Your Clusters In Style!
-brew "k9s"
 # VPN kill switch for macOS
 brew "killswitch"
-# Run local Kubernetes cluster in Docker
-brew "kind"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 # Template-free customization of Kubernetes YAML manifests
@@ -105,12 +86,10 @@ brew "lesspipe"
 brew "lf"
 # Command-line utility to interact with linkerd
 brew "linkerd"
+# Apple Silicon Monitor Top written in Golang
+brew "mactop"
 # Mac App Store command-line interface
 brew "mas"
-# MongoDB CLI enables you to manage your MongoDB in the Cloud
-brew "mongocli"
-# Open source relational database management system
-brew "mysql"
 # Port scanning utility for large networks
 brew "nmap"
 # Tiny, lightning fast, feature-packed file manager
@@ -125,8 +104,6 @@ brew "pdf2image"
 brew "pgcli"
 # Object-relational database system
 brew "postgresql@16"
-# Log agent for Loki
-brew "promtail"
 # Python version management
 brew "pyenv"
 # Pyenv plugin to manage virtualenv
@@ -137,14 +114,10 @@ brew "pypy3.10"
 brew "redis"
 # Diff filter highlighting which line parts have changed
 brew "riff"
-# Easy and Repeatable Kubernetes Development
-brew "skaffold"
 # Terminal based presentation tool
 brew "slides"
 # Version control system designed to be a better CVS
 brew "subversion"
-# Flexible, reusable and concise configuration for Kubernetes using Jsonnet
-brew "tanka"
 # Very fast implementation of tldr in Rust
 brew "tealdeer"
 # User interface to the TELNET protocol
@@ -163,32 +136,24 @@ brew "vale"
 brew "watch"
 # Internet file retriever
 brew "wget"
-# Pluggable terminal workspace, with terminal multiplexer as the base feature
-brew "zellij"
 # Permanent TouchID support for sudo
 brew "artginzburg/tap/sudo-touchid"
 # EC2 Instance Selector is a tool to filter EC2 instance types based on resource criteria
 brew "aws/tap/ec2-instance-selector"
-# CUE is an open source data constraint language which aims to simplify tasks involving defining and using data.
-brew "cue-lang/tap/cue"
 # A Commandline interface for Apache Kafka which provides useful features adapted from kubectl for Kubernetes.
 # Multiple kafka brokers can be configured in a config file and the active broker is also persisted within the config.
 # In addition kafkactl supports auto-completion for its commands as well as topic names.
 brew "deviceinsight/packages/kafkactl"
 # A window border system for macOS
 brew "felixkratz/formulae/borders"
-# Custom macOS statusbar with shell plugin, interaction and graph support
-brew "felixkratz/formulae/sketchybar"
+# Vault
+brew "hashicorp/tap/vault"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
 # Parallel S3 and local filesystem execution tool
 brew "peak/tap/s5cmd"
-# Open source continuous profiling software
-brew "pyroscope-io/brew/profilecli"
-# universal command-line SQL client interface
-brew "xo/xo/usql"
 # Command-line interface for 1Password
 cask "1password-cli"
 # Password manager
@@ -215,8 +180,6 @@ cask "flameshot"
 cask "gitify"
 # Web browser
 cask "google-chrome@beta"
-# Offline AI chat tool
-cask "jan"
 # Jellyfin desktop client
 cask "jellyfin-media-player"
 # Menu bar manager
@@ -229,8 +192,6 @@ cask "karabiner-elements"
 cask "kitty"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
-# Play mechanical keyboard sounds as you type
-cask "mechvibes"
 # Sandbox construction video game
 cask "minecraft"
 # Web browser focused on privacy and on minimizing tracking and fingerprinting
@@ -263,8 +224,8 @@ cask "shottr"
 cask "slack@beta"
 # Music streaming service
 cask "spotify"
-# Tool to display the local times of friends, teammates, cities or any time zone
-cask "there"
+# Video game digital distribution service
+cask "steam"
 # To-do list
 cask "todoist"
 # Web browser focusing on security
@@ -274,7 +235,7 @@ cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
-cask "wezterm"
+cask "wezterm@nightly"
 # Wine wrapper built with SwiftUI
 cask "whisky"
 # Network protocol analyzer
@@ -295,6 +256,7 @@ mas "Grindstone", id: 1476307705
 mas "JapanRural", id: 1634749545
 mas "Numbers", id: 409203825
 mas "Outlanders", id: 1468558187
+mas "Perplexity", id: 6714467650
 mas "Shareful", id: 1522267256
 mas "SonicDreamTeam", id: 1609094795
 mas "UTC Time", id: 1538245904

@@ -217,3 +217,17 @@ zinit light zdharma-continuum/zinit-crasis
 
 # pyenv virtualenv
 # eval "$(pyenv virtualenv-init -)"
+
+export AWS_CA_BUNDLE="/Users/prayagmatic/netskope-certs/netskope-cert-bundle.pem"
+
+export CURL_CA_BUNDLE="/Users/prayagmatic/netskope-certs/netskope-cert-bundle.pem"
+
+export SSL_CERT_FILE="/Users/prayagmatic/netskope-certs/netskope-cert-bundle.pem"
+
+export GIT_SSL_CAPATH="/Users/prayagmatic/netskope-certs/netskope-cert-bundle.pem"
+
+export REQUESTS_CA_BUNDLE="/Users/prayagmatic/netskope-certs/netskope-cert-bundle.pem"
+
+export NODE_EXTRA_CA_CERTS="/Users/prayagmatic/netskope-certs/netskope-cert-bundle.pem"
+
+export NODE_OPTIONS="--use-openssl-ca"
