@@ -13,8 +13,8 @@ zsh/.directory_history
 # zsh generated contents
 zsh/zinit/**
 !zsh/zinit/.gitkeep
-zsh/custom/**
-!zsh/custom/.gitkeep
+# zsh/custom/**
+# !zsh/custom/.gitkeep
 zsh/**.zwc
 
 # lazygit
