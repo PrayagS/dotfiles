@@ -29,15 +29,15 @@ config.colors = {
 			bg_color = colors.background,
 			fg_color = colors.foreground,
 		},
-		inactive_tab = {
-			bg_color = colors.selection_bg,
-			-- bg_color = colors.foreground,
-			fg_color = colors.background,
-		},
-		inactive_tab_hover = {
-			bg_color = colors.brights[8], -- lighter than colors.foreground
-			fg_color = colors.background,
-		},
+		-- inactive_tab = {
+		-- 	-- bg_color = colors.selection_bg,
+		-- 	bg_color = colors.foreground,
+		-- 	fg_color = colors.background,
+		-- },
+		-- inactive_tab_hover = {
+		-- 	bg_color = colors.brights[8], -- lighter than colors.foreground
+		-- 	fg_color = colors.background,
+		-- },
 	},
 }
 -- config.force_reverse_video_cursor = true
@@ -63,8 +63,9 @@ config.audible_bell = "SystemBeep"
 config.automatically_reload_config = true
 config.cursor_blink_rate = 500
 
-config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
+-- config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
 -- config.font = wezterm.font("VictorMono Nerd Font Mono")
+config.font = wezterm.font("Maple Mono")
 config.font_size = 15.0
 
 config.front_end = "WebGpu"
