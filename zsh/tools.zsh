@@ -51,7 +51,7 @@ zinit from"gh" as"null" for \
 zinit for \
     atload='
       [[ ! -f ${ZINIT[COMPLETIONS_DIR]}/_cargo ]] && zinit creinstall rust
-      export CARGO_HOME=\$PWD RUSTUP_HOME=$PWD/rustup' \
+      export CARGO_HOME=$ZSH_HOME/zinit/cargo RUSTUP_HOME=$ZSH_HOME/zinit/cargo/rustup' \
     as=null \
     id-as=rust \
     lucid \
