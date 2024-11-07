@@ -37,6 +37,10 @@ zinit from"gh-r" lman for \
     sbin"**/gs -> gs" abhinav/git-spice \
     sbin"**/git-absorb -> git-absorb" tummychow/git-absorb \
     sbin"ente" ver"$ente_cli_latest_version" ente-io/ente \
+    sbin"yq** -> yq" mikefarah/yq \
+    sbin"**/usql -> usql" xo/usql \
+    sbin"devpod* -> devpod" loft-sh/devpod
+# sbin'**/helm' atclone'./**/helm completion zsh > _helm' atpull'%atclone' helm/helm
 
 zinit from"gh" as"null" for \
     sbin"bin/*" tj/git-extras \
