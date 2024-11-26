@@ -46,6 +46,7 @@
     ~/.config/wezterm: config/wezterm
     ~/.config/yamllint: config/yamllint
     ~/.config/helm: config/helm
+    ~/.config/gh: config/gh
     ~/.config/aws/config: config/aws/config
 
 - shell:
