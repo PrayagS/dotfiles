@@ -44,6 +44,7 @@
     ~/.config/borders: config/borders
     ~/.config/ripgrep: config/ripgrep
     ~/.config/wezterm: config/wezterm
+    ~/.config/yamllint: config/yamllint
     ~/.config/aws/config: config/aws/config
 
 - shell:
