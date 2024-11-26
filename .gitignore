@@ -26,3 +26,6 @@ config/tmux/plugins
 
 # spicetify
 config/spicetify/Extracted
+
+# helm
+config/helm/repositories.lock
