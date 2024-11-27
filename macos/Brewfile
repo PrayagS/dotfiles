@@ -40,10 +40,14 @@ brew "epubcheck"
 brew "exiftool"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
+# GNU awk utility
+brew "gawk"
 # Highest-quality GIF encoder based on pngquant
 brew "gifski"
 # Audit git repos for secrets
 brew "gitleaks"
+# GNU implementation of time utility
+brew "gnu-time"
 # Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
@@ -74,6 +78,8 @@ brew "jsonnet-bundler"
 brew "killswitch"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
+# Package manager for kubectl plugins
+brew "krew"
 # Template-free customization of Kubernetes YAML manifests
 brew "kustomize"
 # Pager program similar to more
@@ -92,6 +98,8 @@ brew "mas"
 brew "nmap"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
+# Platform built on V8 to build network applications
+brew "node"
 # Package for scientific computing with Python
 brew "numpy"
 # Manage multiple Node.js versions
@@ -102,6 +110,8 @@ brew "p7zip"
 brew "pdf2image"
 # CLI for Postgres with auto-completion and syntax highlighting
 brew "pgcli"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # Object-relational database system
 brew "postgresql@16"
 # Python version management
@@ -136,6 +146,8 @@ brew "vale"
 brew "watch"
 # Internet file retriever
 brew "wget"
+# Automatic workarounds for problems in Wine
+brew "winetricks"
 # Permanent TouchID support for sudo
 brew "artginzburg/tap/sudo-touchid"
 # EC2 Instance Selector is a tool to filter EC2 instance types based on resource criteria
@@ -158,6 +170,8 @@ brew "peak/tap/s5cmd"
 cask "1password-cli"
 # Password manager
 cask "1password@beta"
+# Privacy-focused app for managing your finances
+cask "actual"
 # Application uninstaller
 cask "appcleaner"
 # Open-source KVM software
@@ -168,12 +182,8 @@ cask "calibre"
 cask "cloudflare-warp"
 # Voice and text chat software
 cask "discord"
-# Voice and text chat software
-cask "discord@canary"
 # Desktop client for Ente Auth
 cask "ente-auth"
-# Web browser
-cask "firefox@beta"
 # Screenshot software
 cask "flameshot"
 # GitHub notifications on your menu bar
@@ -188,6 +198,8 @@ cask "jordanbaird-ice"
 cask "kap"
 # Keyboard customiser
 cask "karabiner-elements"
+# Preview and audit Kindle eBooks
+cask "kindle-previewer"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Sandbox construction video game
@@ -200,10 +212,6 @@ cask "mullvadvpn@beta"
 cask "notion-calendar"
 # Calculator and converter application
 cask "numi"
-# Knowledge base that works on top of a local folder of plain text Markdown files
-cask "obsidian"
-# Replacement for Docker Desktop
-cask "orbstack"
 # Rhythm game
 cask "osu"
 # Home media player
@@ -228,14 +236,10 @@ cask "steam"
 cask "todoist"
 # Web browser focusing on security
 cask "tor-browser"
-# Open-source code editor
-cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm@nightly"
-# Wine wrapper built with SwiftUI
-cask "whisky"
 # Network protocol analyzer
 cask "wireshark"
 # View output from scripts in the menu bar
@@ -251,24 +255,9 @@ mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
+mas "Microsoft Excel", id: 462058435
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Perplexity", id: 6714467650
 mas "Shareful", id: 1522267256
 mas "UTC Time", id: 1538245904
-vscode "asvetliakov.vscode-neovim"
-vscode "eamodio.gitlens"
-vscode "github.copilot"
-vscode "github.copilot-chat"
-vscode "golang.go"
-vscode "grafana.vscode-jsonnet"
-vscode "hashicorp.terraform"
-vscode "ms-azuretools.vscode-docker"
-vscode "ms-playwright.playwright"
-vscode "ms-python.debugpy"
-vscode "ms-python.python"
-vscode "ms-python.vscode-pylance"
-vscode "ms-vscode-remote.remote-containers"
-vscode "naumovs.color-highlight"
-vscode "sainnhe.gruvbox-material"
-vscode "vscodevim.vim"

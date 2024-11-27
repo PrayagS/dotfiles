@@ -25,6 +25,7 @@ significantly.
 - Configure diagnostics.
 - configure diagnostics support in UI plugins like bufferline.
 - Explore treesitter text objects or text objects in general
+- Configure telescope-frecency to filter by workspace or a set of workspaces.
 - ~~Wansmer/treesj~~
 - ~~cshuaimin/ssr.nvim~~
 - ~~ray-x/lsp_signature.nvim~~
