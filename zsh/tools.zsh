@@ -13,6 +13,7 @@ zinit from"gh-r" lman for \
     sbin"**/fzf" junegunn/fzf \
     sbin"**/fd" @sharkdp/fd \
     sbin"**/bat" @sharkdp/bat \
+    sbin"**/hyperfine" @sharkdp/hyperfine \
     sbin"**/glow" charmbracelet/glow \
     sbin"**/rg" BurntSushi/ripgrep \
     sbin"**/rga" phiresky/ripgrep-all \
