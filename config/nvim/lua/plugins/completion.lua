@@ -11,6 +11,7 @@ return {
 		"onsails/lspkind.nvim",
 		"chrisgrieser/cmp_yanky",
 		"ray-x/cmp-treesitter",
+		"petertriho/cmp-git",
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -64,6 +65,7 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "treesitter" },
 				{ name = "nvim_lua" },
+				{ name = "git" },
 				{ name = "path" },
 				{ name = "cmp_yanky" },
 				{
@@ -85,6 +87,8 @@ return {
 				}),
 			},
 		})
+
+		require("cmp_git").setup()
 
 		cmp.setup.cmdline({ "/", "?" }, {
 			mapping = cmp.mapping.preset.cmdline(),
