@@ -188,7 +188,7 @@ zinit ice wait"5" lucid \
 zinit snippet https://github.com/atuinsh/atuin/blob/main/atuin.plugin.zsh
 
 # Install shell tools once compinit has been executed
-zinit ice wait"30" lucid
+zinit ice wait"10" lucid
 zinit snippet "${ZSH_HOME}/tools.zsh"
 
 # Set of plugins to load on demand
@@ -224,17 +224,3 @@ zinit light zdharma-continuum/zinit-crasis
 
 # pyenv virtualenv
 # eval "$(pyenv virtualenv-init -)"
-
-export AWS_CA_BUNDLE="/Users/prayagmatic/netskope-certs/netskope-cert-bundle.pem"
-
-export CURL_CA_BUNDLE="/Users/prayagmatic/netskope-certs/netskope-cert-bundle.pem"
-
-export SSL_CERT_FILE="/Users/prayagmatic/netskope-certs/netskope-cert-bundle.pem"
-
-export GIT_SSL_CAPATH="/Users/prayagmatic/netskope-certs/netskope-cert-bundle.pem"
-
-export REQUESTS_CA_BUNDLE="/Users/prayagmatic/netskope-certs/netskope-cert-bundle.pem"
-
-export NODE_EXTRA_CA_CERTS="/Users/prayagmatic/netskope-certs/netskope-cert-bundle.pem"
-
-export NODE_OPTIONS="--use-openssl-ca"
