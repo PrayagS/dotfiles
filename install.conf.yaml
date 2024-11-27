@@ -7,7 +7,7 @@
 
 - link:
     # ~/.dotfiles: ''
-    # ~/bin:
+    ~/bin:
     # ~/.local/share/fonts: fonts
     # ~/.xinitrc: .xinitrc
     # ~/.Xresources: .Xresources

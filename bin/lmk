@@ -1,0 +1,26 @@
+#!/bin/zsh
+##
+## Source: https://github.com/mattmc3/zephyr/blob/main/plugins/macos/functions/lmk
+##
+##? lmk - Have Siri let me know when a process is complete.
+##?
+##? Example:
+##?   sleep 2 && lmk
+##?   echo output | lmk
+##?   lmk 'Hello World'
+
+# Voice to be used for tts. Possible options can be listed using `say -v '?'`.
+# For more details, see say(1).
+VOICE='Zarvox'
+
+if (($#)); then
+  say -v "$VOICE" "$@"
+  return
+fi
+
+if [[ ! -t 0 ]]; then
+  say -v "$VOICE" "$(</dev/stdin)"
+  return
+fi
+
+say -v "$VOICE" 'The process has finished execution.'

@@ -1,0 +1,6 @@
+#!/bin/zsh
+##
+## Source: https://github.com/mattmc3/zephyr/blob/main/plugins/macos/functions/peek
+##
+##? peek - Take a quick look at a file using an appropriate viewer
+(($# > 0)) && qlmanage -p $* &>/dev/null &
