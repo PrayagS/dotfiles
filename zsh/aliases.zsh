@@ -10,10 +10,10 @@ alias -g airshare="sudo airshare"
 alias -g mkdir="mkdir -pv"
 alias -g mv="mv -i"
 alias -g cp="cp -ir"
-alias -g l="eza -la --color=always --color-scale=size --color-scale-mode=fixed --icons=always --group-directories-first --smart-group -o --no-permissions --git"
-alias -g ls="eza -a1 --color=always --icons=always --hyperlink --group-directories-first"
-alias -g lsg="eza -la --color=always --color-scale=size --color-scale-mode=fixed --icons=always --group-directories-first --smart-group -o --no-permissions --git --git-ignore"
-alias -g lt="eza -la --color=always --color-scale=size --color-scale-mode=fixed --icons=always --group-directories-first --smart-group -o --no-permissions --git -T"
+alias l="eza -la --color=always --color-scale=size --color-scale-mode=fixed --icons=always --group-directories-first --smart-group -o --no-permissions --git"
+alias ls="eza -a1 --color=always --icons=always --hyperlink --group-directories-first"
+alias lsg="eza -la --color=always --color-scale=size --color-scale-mode=fixed --icons=always --group-directories-first --smart-group -o --no-permissions --git --git-ignore"
+alias lt="eza -la --color=always --color-scale=size --color-scale-mode=fixed --icons=always --group-directories-first --smart-group -o --no-permissions --git -T"
 alias -g tcpdump="sudo tcpdump"
 alias -g k="kubectl"
 alias -g ks="kubectl --context=\"stage\""
@@ -53,8 +53,9 @@ alias -g findkeyname="xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { pri
 alias -g rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
 
 # Work
-alias -g prod-sgp="export AWS_PROFILE=prod AWS_REGION=ap-southeast-1;kubectl ctx prod-sgp"
-alias -g stage-ore="export AWS_PROFILE=stage AWS_REGION=us-west-2;kubectl ctx stage-ore"
+alias prod-sgp="export AWS_PROFILE=prod AWS_REGION=ap-southeast-1;kubectl ctx prod-sgp"
+alias stage-ore="export AWS_PROFILE=stage AWS_REGION=us-west-2;kubectl ctx stage-ore"
+alias blinkit-analytics="export AWS_PROFILE=blinkit_analytics AWS_REGION=ap-southeast-1;kubectl ctx eks-prod-apse1-analytics"
 ssm() {
     instance_id=$(kubectl describe node "$1" | grep "alpha.eksctl.io/instance-id" | awk -F '=' '{ print $2 }')
     aws ssm start-session --target "$instance_id"

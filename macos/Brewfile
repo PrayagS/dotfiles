@@ -1,4 +1,5 @@
 tap "artginzburg/tap"
+tap "arttor/tap"
 tap "aws/tap"
 tap "buo/cask-upgrade"
 tap "deviceinsight/packages"
@@ -150,6 +151,8 @@ brew "wget"
 brew "winetricks"
 # Permanent TouchID support for sudo
 brew "artginzburg/tap/sudo-touchid"
+# Creates Helm chart from Kubernetes yaml.
+brew "arttor/tap/helmify"
 # EC2 Instance Selector is a tool to filter EC2 instance types based on resource criteria
 brew "aws/tap/ec2-instance-selector"
 # A Commandline interface for Apache Kafka which provides useful features adapted from kubectl for Kubernetes.
@@ -216,6 +219,8 @@ cask "numi"
 cask "osu"
 # Home media player
 cask "plex"
+# VPN client focusing on security
+cask "protonvpn"
 # Archive manager for data compression and backups
 cask "rar"
 # Control your tools with a few keystrokes

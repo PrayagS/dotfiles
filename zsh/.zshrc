@@ -169,13 +169,13 @@ zinit lucid light-mode wait"2" for \
       export SHOW_AWS_PROMPT=false
       complete -C '/opt/homebrew/bin/aws_completer' aws" \
         OMZP::aws \
-    atload"
-      export KUBECTL_PATH=/opt/homebrew/bin/kubectl
-      export KUBECTL_SAFE_TIME=5" \
-        benjefferies/safe-kubectl \
     fdw/yazi-zoxide-zsh \
     ahmubashshir/zinsults \
     akash329d/zsh-alias-finder
+    # atload"
+    #   export KUBECTL_PATH=/opt/homebrew/bin/kubectl
+    #   export KUBECTL_SAFE_TIME=300" \
+    #     benjefferies/safe-kubectl \
 
 # Make sure atuin is installed before loading its zsh plugin
 zinit ice sbin"**/atuin" from"gh-r" bpick"*.gz" lman
