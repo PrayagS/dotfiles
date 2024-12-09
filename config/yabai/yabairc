@@ -50,6 +50,19 @@ yabai -m config left_padding                 8
 yabai -m config right_padding                8
 yabai -m config window_gap                   8
 
+function create_space {
+  space_exists=$(yabai -m query --spaces --space "$1")
+  if [ -z "$space_exists" ]; then
+    yabai -m space --create
+  fi
+
+  yabai -m space "$1"
+}
+
+for i in {1..8}; do
+    create_space "$i"
+done
+
 yabai -m rule --add label="Finder" app="^Finder$" title=".*" manage=off
 yabai -m rule --add label="System Preferences" app="^System Preferences$" title=".*" manage=off layer=above
 yabai -m rule --add label="Raycast" app="^Raycast$" title=".*" manage=off layer=above
@@ -67,8 +80,6 @@ yabai -m rule --add label="Gitify" app="Gitify" title=".*" manage=off layer=abov
 
 yabai -m signal --add app="Notion Calendar" event="window_focused" \
     action="CRON_WINDOW_ID=$(yabai -m query --windows | jq '.[] | select(.app == "Notion Calendar") | .id') | yabai -m window $CRON_WINDOW_ID --ratio abs:0.5 | yabai -m window $CRON_WINDOW_ID --swap west"
-# Clean up empty spaces with no windows on them.
-yabai -m signal --add event=space_changed action="sh ~/.config/yabai/clean_empty_spaces.sh"
 
 yabai -m rule --add app="WezTerm" space=^1
 # 2 and 3 is for firefox
@@ -80,6 +91,9 @@ yabai -m rule --add app="Obsidian" space=^6
 yabai -m rule --add app="(Notion Calendar|Todoist)" space=^7 manage=on
 yabai -m rule --add app="Discord" space=^8
 yabai -m rule --apply
+
+# Clean up empty spaces with no windows on them.
+yabai -m signal --add event=space_changed action="sh ~/.config/yabai/clean_empty_spaces.sh"
 
 echo "yabai configuration loaded.."
 # borders &
