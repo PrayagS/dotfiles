@@ -76,3 +76,8 @@ set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 -- better indenting
 set("v", "<", "<gv")
 set("v", ">", ">gv")
+
+set({ "", "!" }, "<Up>", "<Nop>", { noremap = true })
+set({ "", "!" }, "<Down>", "<Nop>", { noremap = true })
+set({ "", "!" }, "<Left>", "<Nop>", { noremap = true })
+set({ "", "!" }, "<Right>", "<Nop>", { noremap = true })

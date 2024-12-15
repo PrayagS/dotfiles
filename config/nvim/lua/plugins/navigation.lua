@@ -26,7 +26,7 @@ return {
 				require("leap.treesitter").select({ opts = { special_keys = sk } })
 			end)
 
-			require("leap.user").set_repeat_keys("<enter>", "<backspace", {
+			require("leap.user").set_repeat_keys("<enter>", "<backspace>", {
 				relative_directions = true,
 			})
 		end,
