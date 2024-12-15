@@ -9,43 +9,49 @@ return {
 			"nvim-telescope/telescope-frecency.nvim",
 			"nvim-telescope/telescope-ui-select.nvim",
 		},
-		opts = {
-			defaults = {
-				path_display = {
-					"smart",
+		config = function()
+			local lga_actions = require("telescope-live-grep-args.actions")
+			require("telescope").setup({
+				defaults = {
+					path_display = {
+						"smart",
+					},
+					dynamic_preview_title = true,
+					selection_caret = " ",
+					multi_icon = " ",
+					layout_config = {
+						prompt_position = "top",
+					},
+					sorting_strategy = "ascending",
 				},
-				dynamic_preview_title = true,
-				selection_caret = " ",
-				multi_icon = " ",
-				layout_config = {
-					prompt_position = "top",
+				pickers = {
+					grep_string = {
+						use_regex = true,
+					},
+					find_files = {
+						follow = true,
+						hidden = true,
+					},
 				},
-				sorting_strategy = "ascending",
-			},
-			pickers = {
-				grep_string = {
-					use_regex = true,
+				extensions = {
+					live_grep_args = {
+						auto_quoting = false,
+						mappings = { -- extend mappings
+							i = {
+								["<C-k>"] = lga_actions.quote_prompt(),
+								["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+							},
+						},
+					},
+					frecency = {
+						db_safe_mode = false,
+						db_validate_threshold = 100,
+						matcher = "fuzzy",
+						max_timestamps = 100,
+						preceding = "opened",
+					},
 				},
-				find_files = {
-					follow = true,
-					hidden = true,
-				},
-			},
-			extensions = {
-				live_grep_args = {
-					auto_quoting = false,
-				},
-				frecency = {
-					db_safe_mode = false,
-					db_validate_threshold = 100,
-					matcher = "fuzzy",
-					max_timestamps = 100,
-					preceding = "opened",
-				},
-			},
-		},
-		config = function(_, opts)
-			require("telescope").setup(opts)
+			})
 			require("telescope").load_extension("live_grep_args")
 			require("telescope").load_extension("frecency")
 			require("telescope").load_extension("ui-select")
