@@ -40,6 +40,7 @@ return {
 					db_validate_threshold = 100,
 					matcher = "fuzzy",
 					max_timestamps = 100,
+					preceding = "opened",
 				},
 			},
 		},
