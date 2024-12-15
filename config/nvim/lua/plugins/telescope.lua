@@ -61,47 +61,35 @@ return {
 
 			local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
 
+			local Path = require("plenary.path")
+			local get_open_files = function()
+				local open_files = {}
+				for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+					if vim.fn.buflisted(bufnr) == 1 then
+						table.insert(open_files, Path:new(vim.api.nvim_buf_get_name(bufnr)):make_relative(vim.uv.cwd()))
+					end
+				end
+				return open_files
+			end
+			local live_grep_open_files = function()
+				local open_file_list = get_open_files()
+				require("telescope").extensions.live_grep_args.live_grep_args({ search_dirs = open_file_list })
+			end
+
 			-- vim.keymap.set("n", "<leader>g", builtin.current_buffer_fuzzy_find, {})
 			vim.keymap.set(
 				"n",
 				"<leader>g",
-				"<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args({ grep_open_files = true })<CR>",
-				{}
-			)
-			vim.keymap.set(
-				"n",
-				"<leader>G",
 				"<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
 				{}
 			)
-			vim.keymap.set("n", "<leader>gw", live_grep_args_shortcuts.grep_word_under_cursor, {})
+			vim.keymap.set("n", "<leader>G", live_grep_open_files, {})
 
-			-- Source: https://github.com/nvim-telescope/telescope.nvim/issues/1923#issuecomment-1122642431
-			function vim.getVisualSelection()
-				vim.cmd('noau normal! "vy"')
-				local text = vim.fn.getreg("v")
-				vim.fn.setreg("v", {})
+			vim.keymap.set("n", "<leader>w", live_grep_args_shortcuts.grep_word_under_cursor, {})
+			vim.keymap.set("n", "<leader>W", live_grep_args_shortcuts.grep_word_under_cursor_current_buffer, {})
 
-				text = string.gsub(text, "\n", "")
-				if #text > 0 then
-					return text
-				else
-					return ""
-				end
-			end
-
-			-- This is until live_grep_args supports passing options to grep_visual_selection.
-			-- See https://github.com/nvim-telescope/telescope-live-grep-args.nvim/issues/78
-			vim.keymap.set("v", "<leader>g", function()
-				local text = vim.getVisualSelection()
-				builtin.current_buffer_fuzzy_find({ default_text = text })
-			end, {})
-			vim.keymap.set("v", "<leader>G", live_grep_args_shortcuts.grep_visual_selection, {})
-
-			-- vim.keymap.set("v", "<leader>G", function()
-			-- 	local text = vim.getVisualSelection()
-			-- 	builtin.live_grep({ default_text = text })
-			-- end, {})
+			vim.keymap.set("v", "<leader>g", live_grep_args_shortcuts.grep_visual_selection, {})
+			vim.keymap.set("v", "<leader>G", live_grep_args_shortcuts.grep_word_visual_selection_current_buffer, {})
 
 			vim.keymap.set("n", "<leader>ht", builtin.help_tags, {})
 			vim.keymap.set("n", "<leader>km", builtin.keymaps, {})
