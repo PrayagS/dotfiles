@@ -189,6 +189,8 @@ cask "discord"
 cask "ente-auth"
 # Screenshot software
 cask "flameshot"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
 # GitHub notifications on your menu bar
 cask "gitify"
 # Web browser
