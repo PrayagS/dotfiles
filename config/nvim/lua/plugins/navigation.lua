@@ -32,16 +32,6 @@ return {
 		end,
 	},
 	{
-		"echasnovski/mini.bracketed",
-		version = false,
-		event = "VeryLazy",
-		config = function()
-			require("mini.bracketed").setup({
-				yank = { suffix = "", options = {} },
-			})
-		end,
-	},
-	{
 		"ggandor/flit.nvim",
 		dependencies = {
 			"ggandor/leap.nvim",
@@ -127,28 +117,6 @@ return {
 					},
 				})
 			end)
-		end,
-	},
-	{
-		"echasnovski/mini.move",
-		version = false,
-		event = "VeryLazy",
-		config = function()
-			require("mini.move").setup({
-				mappings = {
-					-- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
-					left = "H",
-					right = "L",
-					down = "J",
-					up = "K",
-
-					-- Move current line in Normal mode
-					line_left = "H",
-					line_right = "L",
-					line_down = "J",
-					line_up = "K",
-				},
-			})
 		end,
 	},
 }

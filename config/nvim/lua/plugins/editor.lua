@@ -37,11 +37,11 @@ return {
 		},
 		opts = {},
 	},
-	{
-		"kylechui/nvim-surround",
-		event = "VeryLazy",
-		opts = {},
-	},
+	-- {
+	-- 	"kylechui/nvim-surround",
+	-- 	event = "VeryLazy",
+	-- 	opts = {},
+	-- },
 	{
 		"gbprod/yanky.nvim",
 		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
