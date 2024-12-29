@@ -46,7 +46,13 @@ return {
 		"gbprod/yanky.nvim",
 		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 		config = function()
-			require("yanky").setup()
+			require("yanky").setup({
+				picker = {
+					telescope = {
+						use_default_mappings = true,
+					},
+				},
+			})
 			local set = vim.keymap.set
 
 			-- Separate keymaps for normal and visual mode to restore
