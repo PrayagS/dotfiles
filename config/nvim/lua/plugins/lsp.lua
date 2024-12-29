@@ -6,26 +6,7 @@ return {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			{
-				"j-hui/fidget.nvim",
-				opts = {
-					progress = {
-						display = {
-							done_ttl = 30,
-						},
-					},
-					notification = {
-						override_vim_notify = true,
-						window = {
-							x_padding = 2,
-							y_padding = 1,
-							border = "solid",
-							align = "top",
-						},
-					},
-				},
-			},
-			{ "smjonas/inc-rename.nvim", opts = { input_buffer_type = "dressing" } },
+			{ "smjonas/inc-rename.nvim", enabled = false, opts = { input_buffer_type = "dressing" } },
 			"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 			"ray-x/lsp_signature.nvim",
 			-- {
@@ -45,40 +26,13 @@ return {
 				},
 			},
 			{
-				"aznhe21/actions-preview.nvim",
-				config = function()
-					require("actions-preview").setup({
-						diff = {
-							algorithm = "patience",
-							ctxlen = 5,
-						},
-						highlight_command = {
-							require("actions-preview.highlight").delta(
-								"delta --features=gruvbox-dark-code-actions-preview"
-							),
-						},
-						telescope = {
-							sorting_strategy = "ascending",
-							layout_strategy = "vertical",
-							layout_config = {
-								width = 0.8,
-								height = 0.9,
-								prompt_position = "top",
-								preview_cutoff = 20,
-								preview_height = function(_, _, max_lines)
-									return max_lines - 15
-								end,
-							},
-						},
-					})
-
-					vim.keymap.set({ "n", "v" }, "<leader>ca", require("actions-preview").code_actions)
-				end,
-			},
-			{
 				"chrisgrieser/nvim-lsp-endhints",
 				enabled = false,
 				opts = {},
+			},
+			{
+				"rmagatti/goto-preview",
+				config = true,
 			},
 		},
 		config = function()
@@ -379,11 +333,6 @@ return {
 		},
 	},
 	{
-		"rmagatti/goto-preview",
-		event = "VeryLazy",
-		config = true,
-	},
-	{
 		"Wansmer/symbol-usage.nvim",
 		event = "BufReadPre", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
 		config = function()
@@ -423,5 +372,40 @@ return {
 			grace_period = 30 * 60,
 			notifications = true,
 		},
+	},
+	{
+		"aznhe21/actions-preview.nvim",
+		keys = {
+			{
+				"<leader>ca",
+				"<cmd>lua require('actions-preview').code_actions)<cr>",
+				mode = { "n", "v" },
+				desc = "preview code actions",
+			},
+		},
+		config = function()
+			require("actions-preview").setup({
+				diff = {
+					algorithm = "patience",
+					ctxlen = 5,
+				},
+				highlight_command = {
+					require("actions-preview.highlight").delta("delta --features=gruvbox-dark-code-actions-preview"),
+				},
+				telescope = {
+					sorting_strategy = "ascending",
+					layout_strategy = "vertical",
+					layout_config = {
+						width = 0.8,
+						height = 0.9,
+						prompt_position = "top",
+						preview_cutoff = 20,
+						preview_height = function(_, _, max_lines)
+							return max_lines - 15
+						end,
+					},
+				},
+			})
+		end,
 	},
 }
