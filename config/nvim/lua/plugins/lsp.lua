@@ -15,10 +15,12 @@ return {
 						},
 					},
 					notification = {
+						override_vim_notify = true,
 						window = {
 							x_padding = 2,
 							y_padding = 1,
-							border = "single",
+							border = "solid",
+							align = "top",
 						},
 					},
 				},
