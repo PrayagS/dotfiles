@@ -7,10 +7,7 @@ return {
 			vim.o.timeoutlen = 100
 		end,
 		opts = {
-			layout = {
-				spacing = 2, -- spacing between columns
-				align = "center", -- align columns left, center or right
-			},
+			preset = "helix",
 		},
 	},
 	{
