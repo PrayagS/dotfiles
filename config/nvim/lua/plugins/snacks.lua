@@ -5,7 +5,7 @@ return {
 		lazy = false,
 		keys = {
 			{
-				"<leader>bd",
+				"<leader>q",
 				function()
 					Snacks.bufdelete()
 				end,
