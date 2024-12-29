@@ -50,10 +50,21 @@ opt.formatoptions = "jcroqlnt"
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
 opt.undofile = true
-opt.list = true
 
 local space = "·"
-opt.listchars:append({ tab = "» ", multispace = space, lead = space, trail = space, nbsp = space })
+
+opt.list = true
+opt.listchars = {
+	lead = "·",
+	trail = "•",
+	multispace = "∅",
+	nbsp = "‡",
+	tab = " » ",
+	precedes = "❮",
+	extends = "❯",
+	-- eol = "↵",
+	-- eol = "⤶",
+}
 
 opt.showmode = false
 opt.updatetime = 1000

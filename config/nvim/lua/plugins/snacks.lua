@@ -41,6 +41,21 @@ return {
 					easing = "inOutExpo",
 				},
 			},
+			indent = {
+				indent = {
+					char = "⎥",
+					blank = nil,
+				},
+				animate = {
+					style = "up_down",
+					duration = {
+						step = 10,
+						total = 250,
+					},
+					easing = "outExpo",
+				},
+				blank = nil,
+			},
 		},
 	},
 }

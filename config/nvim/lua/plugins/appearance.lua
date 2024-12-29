@@ -52,12 +52,12 @@ return {
 			})
 		end,
 	},
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		opts = {},
-		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
-	},
+	-- {
+	-- 	"lukas-reineke/indent-blankline.nvim",
+	-- 	main = "ibl",
+	-- 	opts = {},
+	-- 	event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+	-- },
 	-- {
 	-- 	"folke/zen-mode.nvim",
 	-- 	cmd = "ZenMode",
