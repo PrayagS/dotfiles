@@ -63,19 +63,19 @@ return {
 		priority = 1000,
 		opts = {},
 	},
-	{
-		"famiu/bufdelete.nvim",
-		keys = {
-			{
-				"<leader>q",
-				function()
-					require("bufdelete").bufdelete()
-				end,
-				mode = "n",
-				desc = "Delete buffer",
-			},
-		},
-	},
+	-- {
+	-- 	"famiu/bufdelete.nvim",
+	-- 	keys = {
+	-- 		{
+	-- 			"<leader>q",
+	-- 			function()
+	-- 				require("bufdelete").bufdelete()
+	-- 			end,
+	-- 			mode = "n",
+	-- 			desc = "Delete buffer",
+	-- 		},
+	-- 	},
+	-- },
 	{
 		"chrisgrieser/nvim-spider",
 		lazy = false,
