@@ -78,13 +78,18 @@ return {
 		config = function()
 			require("hlslens").setup()
 			local kopts = { noremap = false, silent = true }
-			-- Not setting n and N as they're being set by cinnamon
-			-- vim.api.nvim_set_keymap('n', 'n',
-			--     [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
-			--     kopts)
-			-- vim.api.nvim_set_keymap('n', 'N',
-			--     [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
-			--     kopts)
+			vim.api.nvim_set_keymap(
+				"n",
+				"n",
+				[[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+				kopts
+			)
+			vim.api.nvim_set_keymap(
+				"n",
+				"N",
+				[[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+				kopts
+			)
 			vim.api.nvim_set_keymap("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
 			vim.api.nvim_set_keymap("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 			vim.api.nvim_set_keymap("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
@@ -115,30 +120,30 @@ return {
 			},
 		},
 	},
-	{
-		"declancm/cinnamon.nvim",
-		version = false,
-		config = function()
-			require("cinnamon").setup({
-				keymaps = {
-					basic = true,
-					extra = true,
-				},
-				options = {
-					delay = 4,
-					max_delta = {
-						time = 100,
-					},
-					mode = "window",
-				},
-				-- DEPRECATED
-				-- extra_keymaps = true,
-				-- extended_keymaps = true,
-				-- hide_cursor = true,
-				-- default_delay = 4,
-			})
-		end,
-	},
+	-- {
+	-- 	"declancm/cinnamon.nvim",
+	-- 	version = false,
+	-- 	config = function()
+	-- 		require("cinnamon").setup({
+	-- 			keymaps = {
+	-- 				basic = true,
+	-- 				extra = false,
+	-- 			},
+	-- 			options = {
+	-- 				delay = 10,
+	-- 				max_delta = {
+	-- 					time = 500,
+	-- 				},
+	-- 				mode = "window",
+	-- 			},
+	-- 			-- DEPRECATED
+	-- 			-- extra_keymaps = true,
+	-- 			-- extended_keymaps = true,
+	-- 			-- hide_cursor = true,
+	-- 			-- default_delay = 4,
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
