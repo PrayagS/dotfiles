@@ -58,20 +58,13 @@ return {
 		opts = {},
 		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 	},
-	{
-		"folke/zen-mode.nvim",
-		cmd = "ZenMode",
-		config = function()
-			require("zen-mode").setup({
-				plugins = {
-					kitty = {
-						enabled = true,
-						font = "+4", -- font size increment
-					},
-				},
-			})
-		end,
-	},
+	-- {
+	-- 	"folke/zen-mode.nvim",
+	-- 	cmd = "ZenMode",
+	-- 	config = function()
+	-- 		require("zen-mode").setup({})
+	-- 	end,
+	-- },
 	{
 		"kevinhwang91/nvim-hlslens",
 		event = "VeryLazy",
