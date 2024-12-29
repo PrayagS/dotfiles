@@ -23,6 +23,7 @@ opt.inccommand = "split"
 -- Search
 opt.ignorecase = true
 opt.smartcase = true
+opt.infercase = true
 
 -- Indentation
 opt.expandtab = true
