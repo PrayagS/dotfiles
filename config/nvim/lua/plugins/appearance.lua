@@ -49,19 +49,13 @@ return {
 			})
 		end,
 	},
-	-- {
-	-- 	"lukas-reineke/indent-blankline.nvim",
-	-- 	main = "ibl",
-	-- 	opts = {},
-	-- 	event = { "BufReadPost", "BufNewFile", "BufWritePre" },
-	-- },
-	-- {
-	-- 	"folke/zen-mode.nvim",
-	-- 	cmd = "ZenMode",
-	-- 	config = function()
-	-- 		require("zen-mode").setup({})
-	-- 	end,
-	-- },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		enabled = false,
+		main = "ibl",
+		opts = {},
+		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+	},
 	{
 		"kevinhwang91/nvim-hlslens",
 		event = "VeryLazy",
@@ -97,43 +91,6 @@ return {
 		},
 	},
 	{ "m4xshen/smartcolumn.nvim", opts = {} },
-	{
-		"code-biscuits/nvim-biscuits",
-		keys = {
-			{
-				"<leader>bb",
-				function()
-					require("nvim-biscuits").BufferAttach()
-				end,
-				mode = "n",
-				desc = "Enable Biscuits",
-			},
-		},
-	},
-	-- {
-	-- 	"declancm/cinnamon.nvim",
-	-- 	version = false,
-	-- 	config = function()
-	-- 		require("cinnamon").setup({
-	-- 			keymaps = {
-	-- 				basic = true,
-	-- 				extra = false,
-	-- 			},
-	-- 			options = {
-	-- 				delay = 10,
-	-- 				max_delta = {
-	-- 					time = 500,
-	-- 				},
-	-- 				mode = "window",
-	-- 			},
-	-- 			-- DEPRECATED
-	-- 			-- extra_keymaps = true,
-	-- 			-- extended_keymaps = true,
-	-- 			-- hide_cursor = true,
-	-- 			-- default_delay = 4,
-	-- 		})
-	-- 	end,
-	-- },
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
@@ -268,7 +225,7 @@ return {
 	{
 		"smjonas/live-command.nvim",
 		name = "live-command",
-		event = "VeryLazy",
+		cmd = "Preview",
 		opts = {
 			enable_highlighting = true,
 			inline_highlighting = true,
@@ -313,21 +270,15 @@ return {
 		},
 	},
 	{
-		"xiyaowong/transparent.nvim",
-	},
-	{
-		"tris203/precognition.nvim",
-		event = "VeryLazy",
-		opts = {
-			startVisible = true,
-		},
-		config = function()
-			vim.api.nvim_set_keymap("n", "<leader>?", '<cmd>lua require("precognition").peek()<CR>', {})
-		end,
-	},
-	{
 		"MagicDuck/grug-far.nvim",
-		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>rg",
+				"<cmd>GrugFar<cr>",
+				mode = { "n", "v" },
+				desc = "GrugFar",
+			},
+		},
 		config = function()
 			require("grug-far").setup({
 				engines = {
@@ -337,41 +288,31 @@ return {
 				},
 				transient = true,
 			})
-
-			vim.keymap.set({ "n", "v" }, "<leader>rg", "<cmd>GrugFar<CR>")
 		end,
 	},
 	{
 		"cshuaimin/ssr.nvim",
-		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>sr",
+				"<cmd>lua require('ssr').open()<cr>",
+				mode = { "n", "x" },
+				desc = "structured search and replace (ssr)",
+			},
+		},
 		config = function()
 			require("ssr").setup()
-			vim.keymap.set({ "n", "x" }, "<leader>sr", function()
-				require("ssr").open()
-			end)
 		end,
 	},
 	{
 		"folke/todo-comments.nvim",
-		event = "VeryLazy",
+		cmd = { "TodoTelescope", "TodoQuickFix", "TodoLocList" },
 		opts = {},
 	},
 	{
 		"stevearc/dressing.nvim",
 		opts = {},
 	},
-	-- {
-	-- 	"rcarriga/nvim-notify",
-	-- 	lazy = false,
-	-- 	opts = {},
-	-- 	init = function()
-	-- 		local notify = require("notify")
-	-- 		notify.setup({
-	-- 			render = "compact",
-	-- 		})
-	-- 		vim.notify = notify
-	-- 	end,
-	-- },
 	{
 		"kevinhwang91/nvim-ufo",
 		lazy = false,

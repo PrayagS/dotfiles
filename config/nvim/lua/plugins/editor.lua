@@ -37,11 +37,6 @@ return {
 		},
 		opts = {},
 	},
-	-- {
-	-- 	"kylechui/nvim-surround",
-	-- 	event = "VeryLazy",
-	-- 	opts = {},
-	-- },
 	{
 		"gbprod/yanky.nvim",
 		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
@@ -106,40 +101,5 @@ return {
 		"nmac427/guess-indent.nvim",
 		event = "BufRead",
 		config = true,
-	},
-	{
-		"max397574/better-escape.nvim",
-		event = "VeryLazy",
-		opts = {
-			timeout = vim.o.timeoutlen,
-			mappings = {
-				i = {
-					j = {
-						-- These can all also be functions
-						k = "<Esc>",
-					},
-				},
-				c = {
-					j = {
-						k = "<Esc>",
-					},
-				},
-				t = {
-					j = {
-						k = "<Esc>",
-					},
-				},
-				v = {
-					j = {
-						k = "<Esc>",
-					},
-				},
-				s = {
-					j = {
-						k = "<Esc>",
-					},
-				},
-			},
-		},
 	},
 }

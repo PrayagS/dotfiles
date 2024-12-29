@@ -126,6 +126,7 @@ return {
 	},
 	{
 		"pwntester/octo.nvim",
+		enabled = false,
 		cmd = {
 			"Octo",
 		},
