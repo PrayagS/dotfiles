@@ -203,7 +203,7 @@ return {
 								displayContext = 5,
 							},
 							diagnostics = {
-								globals = { "vim" },
+								globals = { "vim", "Snacks" },
 							},
 							hint = {
 								enable = true,
