@@ -34,6 +34,8 @@ return {
 						follow = true,
 						hidden = true,
 					},
+					help_tags = { theme = "ivy" },
+					keymaps = { theme = "ivy" },
 				},
 				extensions = {
 					live_grep_args = {
@@ -44,6 +46,7 @@ return {
 								["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
 							},
 						},
+						theme = "ivy",
 					},
 					frecency = {
 						db_safe_mode = false,
