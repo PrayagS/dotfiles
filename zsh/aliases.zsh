@@ -24,6 +24,7 @@ alias -g kssh="kitty +kitten ssh"
 alias -g oldbrew="/usr/local/bin/brew"
 alias -g lg="lazygit"
 alias -g wget="wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""
+alias -g fd="fd --hidden --follow --hyperlink=auto"
 # alias -g cdg="cd ./$(git rev-parse --show-cdup)"
 
 # Launch
