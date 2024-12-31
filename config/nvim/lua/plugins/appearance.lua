@@ -356,6 +356,7 @@ return {
 	},
 	{
 		"j-hui/fidget.nvim",
+		enabled = false,
 		opts = {
 			progress = {
 				display = {
@@ -363,10 +364,8 @@ return {
 				},
 			},
 			notification = {
-				override_vim_notify = true,
+				override_vim_notify = false,
 				window = {
-					x_padding = 2,
-					y_padding = 1,
 					border = "solid",
 					align = "top",
 				},
