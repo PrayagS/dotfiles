@@ -5,7 +5,10 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-live-grep-args.nvim",
-			"nvim-telescope/telescope-fzf-native.nvim",
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				build = "make",
+			},
 			"nvim-telescope/telescope-frecency.nvim",
 			"nvim-telescope/telescope-ui-select.nvim",
 		},
@@ -50,10 +53,16 @@ return {
 						max_timestamps = 100,
 						preceding = "opened",
 					},
+					fzf = {
+						fuzzy = true,
+						override_generic_sorter = true,
+						override_file_sorter = true,
+					},
 				},
 			})
 			require("telescope").load_extension("live_grep_args")
 			require("telescope").load_extension("frecency")
+			require("telescope").load_extension("fzf")
 			require("telescope").load_extension("ui-select")
 			-- require("telescope").load_extension("aerial")
 			require("telescope").load_extension("session-lens")
