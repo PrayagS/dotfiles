@@ -102,4 +102,8 @@ return {
 		event = "BufRead",
 		config = true,
 	},
+	{
+		"junegunn/fzf",
+		build = "./install --bin",
+	},
 }
