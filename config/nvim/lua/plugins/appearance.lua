@@ -86,7 +86,8 @@ return {
 		opts = {
 			preview = {
 				show_scroll_bar = false,
-				winblend = 50,
+				border = "solid",
+				winblend = 0,
 			},
 		},
 	},
