@@ -14,8 +14,17 @@ return {
 		},
 		config = function()
 			local lga_actions = require("telescope-live-grep-args.actions")
+
+			-- Add additional rg args
+			local vimgrep_arguments = { unpack(require("telescope.config").values.vimgrep_arguments) }
+			table.insert(vimgrep_arguments, "--hidden")
+			table.insert(vimgrep_arguments, "--glob")
+			table.insert(vimgrep_arguments, "!**/.git/*")
+			table.insert(vimgrep_arguments, "--follow")
+
 			require("telescope").setup({
 				defaults = {
+					vimgrep_arguments = vimgrep_arguments,
 					path_display = {
 						"smart",
 					},
