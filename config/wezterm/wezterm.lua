@@ -46,28 +46,24 @@ config.colors = {
 		-- },
 	},
 }
--- config.force_reverse_video_cursor = true
 
-config.pane_focus_follows_mouse = true
 config.adjust_window_size_when_changing_font_size = false
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.93
 config.macos_window_background_blur = 30
-config.window_frame = {
-	font = wezterm.font("Iosevka Aile"),
-	font_size = 14.0,
-}
 config.window_padding = {
 	left = 0,
 	right = 0,
 	top = 10,
 	bottom = 0,
 }
+config.pane_focus_follows_mouse = true
 
-config.animation_fps = 120
-config.max_fps = 120
 config.audible_bell = "SystemBeep"
+
 config.automatically_reload_config = true
+config.unicode_version = 14
+
 config.cursor_blink_rate = 300
 config.cursor_blink_ease_in = "EaseOut"
 
@@ -77,21 +73,25 @@ config.check_for_updates_interval_seconds = 86400
 -- config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
 -- config.font = wezterm.font("VictorMono Nerd Font Mono")
 config.font = wezterm.font("Maple Mono")
-config.font_size = 15.0
+config.font_size = 14.0
+config.window_frame = {
+	font = wezterm.font("Iosevka Aile"),
+	font_size = 14.0,
+}
 
+config.animation_fps = 120
+config.max_fps = 120
 local available_gpus = wezterm.gui.enumerate_gpus()
 config.webgpu_preferred_adapter = available_gpus[1] -- Evaluates to the integrated GPU in case of macOS
 config.front_end = "WebGpu"
 
 config.show_new_tab_button_in_tab_bar = false
+-- config.show_close_tab_button_in_tabs = false
+config.show_tab_index_in_tab_bar = true
+config.switch_to_last_active_tab_when_closing_tab = true
 config.hide_tab_bar_if_only_one_tab = true
 
-config.ui_key_cap_rendering = "UnixLong"
-
-config.unicode_version = 14
-
 config.scrollback_lines = 1000000
-
 -- open scrollback buffer in vim
 -- Source: https://wezfurlong.org/wezterm/config/lua/wezterm/on.html#example-opening-whole-scrollback-in-vim
 local io = require("io")
@@ -105,9 +105,11 @@ wezterm.on("trigger-vim-with-scrollback", function(window, pane)
 	-- Create a temporary file to pass to vim
 	local name = os.tmpname()
 	local f = io.open(name, "w+")
-	f:write(text)
-	f:flush()
-	f:close()
+	if f ~= nil then
+		f:write(text)
+		f:flush()
+		f:close()
+	end
 
 	-- Open a new window running vim and tell it to open the file
 	window:perform_action(
@@ -127,6 +129,7 @@ wezterm.on("trigger-vim-with-scrollback", function(window, pane)
 	os.remove(name)
 end)
 
+config.ui_key_cap_rendering = "UnixLong"
 config.keys = {
 	{
 		key = "e",
@@ -241,15 +244,18 @@ config.keys = {
 -- 2. https://wezfurlong.org/wezterm/config/lua/window-events/format-tab-title.html
 -- 3. https://wezfurlong.org/wezterm/config/lua/PaneInformation.html
 -- 4. https://wezfurlong.org/wezterm/config/lua/wezterm.url/Url.html
+---@diagnostic disable-next-line: unused-local, redefined-local
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
 	local pane = tab.active_pane
 	-- wezterm.log_info(pane.user_vars.WEZTERM_PROG)
 	local title = pane.user_vars.WEZTERM_PROG or ""
 	if title == "" then
 		local url = pane.current_working_dir or ""
+		---@diagnostic disable-next-line: undefined-field
 		if url.file_path == "/Users/prayagmatic/" then
 			title = "~"
 		else
+			---@diagnostic disable-next-line: undefined-field
 			title = string.gsub(url.file_path, "/Users/prayagmatic/", "~/")
 		end
 	end
