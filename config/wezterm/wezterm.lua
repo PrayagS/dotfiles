@@ -181,7 +181,7 @@ config.keys = {
 	{ key = "p", mods = "LEADER", action = act.ActivateCommandPalette },
 	{ key = "y", mods = "LEADER", action = act.CopyTo("ClipboardAndPrimarySelection") },
 	{ key = "k", mods = "CTRL", action = act.ClearScrollback("ScrollbackOnly") },
-	{ key = "l", mods = "LEADER", action = act.ShowDebugOverlay },
+	{ key = "?", mods = "LEADER", action = act.ShowDebugOverlay },
 	{ key = "r", mods = "LEADER", action = act.ReloadConfiguration },
 
 	-- shell integration
