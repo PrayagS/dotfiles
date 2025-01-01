@@ -4,6 +4,12 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+-- Add logs with wezterm.log_info("hello")
+-- See logs from wezterm: CTRL+SHIFT+L
+--
+-- Update all plugins:
+-- wezterm.plugin.update_all()
+
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
