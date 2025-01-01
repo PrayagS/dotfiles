@@ -89,7 +89,26 @@ config.show_new_tab_button_in_tab_bar = false
 -- config.show_close_tab_button_in_tabs = false
 config.show_tab_index_in_tab_bar = true
 config.switch_to_last_active_tab_when_closing_tab = true
-config.hide_tab_bar_if_only_one_tab = true
+-- config.hide_tab_bar_if_only_one_tab = true
+
+local function get_cwd(tab)
+	local cwd = tab.active_pane and tab.active_pane.current_working_dir
+	return string.gsub(cwd.file_path, "/Users/prayagmatic", "~")
+end
+
+-- References:
+-- 1. https://github.com/wez/wezterm/blob/main/assets/shell-integration/wezterm.sh
+-- 2. https://wezfurlong.org/wezterm/config/lua/window-events/format-tab-title.html
+-- 3. https://wezfurlong.org/wezterm/config/lua/PaneInformation.html
+-- 4. https://wezfurlong.org/wezterm/config/lua/wezterm.url/Url.html
+---@diagnostic disable-next-line: unused-local, redefined-local
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+	local cmdline = tab.active_pane.user_vars.WEZTERM_PROG or ""
+	if cmdline == "" then
+		return string.format("%s: %s", tab.tab_index + 1, get_cwd(tab))
+	end
+	return string.format("%s: %s @ %s", tab.tab_index + 1, cmdline, get_cwd(tab))
+end)
 
 config.scrollback_lines = 1000000
 -- open scrollback buffer in vim
@@ -278,30 +297,6 @@ for i = 1, 8 do
 		action = act.ActivateTab(i - 1),
 	})
 end
-
--- Lua ftw
--- References:
--- 1. https://github.com/wez/wezterm/blob/main/assets/shell-integration/wezterm.sh
--- 2. https://wezfurlong.org/wezterm/config/lua/window-events/format-tab-title.html
--- 3. https://wezfurlong.org/wezterm/config/lua/PaneInformation.html
--- 4. https://wezfurlong.org/wezterm/config/lua/wezterm.url/Url.html
----@diagnostic disable-next-line: unused-local, redefined-local
-wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-	local pane = tab.active_pane
-	-- wezterm.log_info(pane.user_vars.WEZTERM_PROG)
-	local title = pane.user_vars.WEZTERM_PROG or ""
-	if title == "" then
-		local url = pane.current_working_dir or ""
-		---@diagnostic disable-next-line: undefined-field
-		if url.file_path == "/Users/prayagmatic/" then
-			title = "~"
-		else
-			---@diagnostic disable-next-line: undefined-field
-			title = string.gsub(url.file_path, "/Users/prayagmatic/", "~/")
-		end
-	end
-	return string.format("%s: %s", tab.tab_index + 1, title)
-end)
 
 -- and finally, return the configuration to wezterm
 return config
