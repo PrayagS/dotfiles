@@ -129,6 +129,21 @@ wezterm.on("trigger-vim-with-scrollback", function(window, pane)
 	os.remove(name)
 end)
 
+config.unix_domains = { { name = "unix" } }
+local home_directory = os.getenv("HOME") .. "/.config/wezterm/plugins"
+-- wezterm.log_info(home_directory .. "/wezterm-session-manager/session-manager")
+local workspace_switcher = wezterm.plugin.require(home_directory .. "/smart_workspace_switcher.wezterm")
+local session_manager = wezterm.plugin.require(home_directory .. "/wezterm-session-manager")
+wezterm.on("save_session", function(window)
+	session_manager.save_state(window)
+end)
+wezterm.on("load_session", function(window)
+	session_manager.load_state(window)
+end)
+wezterm.on("restore_session", function(window)
+	session_manager.restore_state(window)
+end)
+
 config.ui_key_cap_rendering = "UnixLong"
 -- https://wezfurlong.org/wezterm/config/keys.html?#leader-key
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
@@ -150,6 +165,17 @@ config.keys = {
 		action = act.EmitEvent("trigger-vim-with-scrollback"),
 	},
 
+	-- session/workspace management
+	{ key = "f", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY | WORKSPACES | DOMAINS" }) },
+	{
+		key = "s",
+		mods = "LEADER",
+		action = workspace_switcher.switch_workspace(),
+	},
+	{ key = "a", mods = "LEADER", action = act.AttachDomain("unix") },
+	{ key = "d", mods = "LEADER", action = act.DetachDomain("CurrentPaneDomain") },
+	{ key = "S", mods = "LEADER", action = wezterm.action({ EmitEvent = "save_session" }) },
+	{ key = "R", mods = "LEADER", action = wezterm.action({ EmitEvent = "restore_session" }) },
 
 	-- tabs
 	{ key = "t", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
