@@ -300,7 +300,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 			title = string.gsub(url.file_path, "/Users/prayagmatic/", "~/")
 		end
 	end
-	return string.format(" %s ", title)
+	return string.format("%s: %s", tab.tab_index + 1, title)
 end)
 
 -- and finally, return the configuration to wezterm
