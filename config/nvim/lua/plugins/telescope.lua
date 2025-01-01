@@ -34,6 +34,7 @@ return {
 					layout_config = {
 						prompt_position = "top",
 					},
+					sorting_strategy = "ascending",
 				},
 				pickers = {
 					grep_string = {
