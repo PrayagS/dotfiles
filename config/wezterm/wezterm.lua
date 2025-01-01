@@ -73,11 +73,14 @@ config.cursor_blink_ease_in = "EaseOut"
 
 config.check_for_updates = true
 config.check_for_updates_interval_seconds = 86400
+
 -- config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
 -- config.font = wezterm.font("VictorMono Nerd Font Mono")
 config.font = wezterm.font("Maple Mono")
 config.font_size = 15.0
 
+local available_gpus = wezterm.gui.enumerate_gpus()
+config.webgpu_preferred_adapter = available_gpus[1] -- Evaluates to the integrated GPU in case of macOS
 config.front_end = "WebGpu"
 
 config.show_new_tab_button_in_tab_bar = false
