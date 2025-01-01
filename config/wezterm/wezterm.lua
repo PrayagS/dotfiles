@@ -48,6 +48,7 @@ config.colors = {
 }
 -- config.force_reverse_video_cursor = true
 
+config.pane_focus_follows_mouse = true
 config.adjust_window_size_when_changing_font_size = false
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.93
