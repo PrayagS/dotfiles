@@ -148,11 +148,21 @@ wezterm.on("trigger-vim-with-scrollback", function(window, pane)
 	os.remove(name)
 end)
 
+local plugins_directory = os.getenv("HOME") .. "/.config/wezterm/plugins"
+local workspace_switcher = wezterm.plugin.require(plugins_directory .. "/smart_workspace_switcher.wezterm")
+config.status_update_interval = 30000
+---@diagnostic disable-next-line: unused-local
+wezterm.on("update-right-status", function(window, pane)
+	window:set_right_status(wezterm.format({
+		{ Foreground = { Color = colors.foreground } },
+		{ Text = "  Current workspace: " },
+		{ Text = window:active_workspace() },
+		{ Text = "  " },
+	}))
+end)
+
 config.unix_domains = { { name = "unix" } }
-local home_directory = os.getenv("HOME") .. "/.config/wezterm/plugins"
--- wezterm.log_info(home_directory .. "/wezterm-session-manager/session-manager")
-local workspace_switcher = wezterm.plugin.require(home_directory .. "/smart_workspace_switcher.wezterm")
-local session_manager = wezterm.plugin.require(home_directory .. "/wezterm-session-manager")
+local session_manager = wezterm.plugin.require(plugins_directory .. "/wezterm-session-manager")
 wezterm.on("save_session", function(window)
 	session_manager.save_state(window)
 end)
