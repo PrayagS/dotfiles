@@ -123,7 +123,7 @@ return {
 				},
 				modes = {
 					char = { enabled = true },
-					search = { enabled = true },
+					search = { enabled = false },
 					treesitter = {
 						label = {
 							style = "inline",
