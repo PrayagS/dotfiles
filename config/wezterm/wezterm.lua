@@ -68,7 +68,8 @@ config.animation_fps = 120
 config.max_fps = 120
 config.audible_bell = "SystemBeep"
 config.automatically_reload_config = true
-config.cursor_blink_rate = 500
+config.cursor_blink_rate = 300
+config.cursor_blink_ease_in = "EaseOut"
 
 -- config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
 -- config.font = wezterm.font("VictorMono Nerd Font Mono")
