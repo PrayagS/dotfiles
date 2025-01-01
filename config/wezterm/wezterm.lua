@@ -71,6 +71,8 @@ config.automatically_reload_config = true
 config.cursor_blink_rate = 300
 config.cursor_blink_ease_in = "EaseOut"
 
+config.check_for_updates = true
+config.check_for_updates_interval_seconds = 86400
 -- config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
 -- config.font = wezterm.font("VictorMono Nerd Font Mono")
 config.font = wezterm.font("Maple Mono")
