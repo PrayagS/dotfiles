@@ -130,104 +130,111 @@ wezterm.on("trigger-vim-with-scrollback", function(window, pane)
 end)
 
 config.ui_key_cap_rendering = "UnixLong"
+-- https://wezfurlong.org/wezterm/config/keys.html?#leader-key
+config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
+
+	{ key = "p", mods = "LEADER", action = act.ActivateCommandPalette },
+	{ key = "y", mods = "LEADER", action = act.CopyTo("ClipboardAndPrimarySelection") },
+	{ key = "k", mods = "CTRL", action = act.ClearScrollback("ScrollbackOnly") },
+	{ key = "l", mods = "LEADER", action = act.ShowDebugOverlay },
+	{ key = "r", mods = "LEADER", action = act.ReloadConfiguration },
+
+	-- shell integration
+	{ key = "P", mods = "LEADER", action = act.ScrollToPrompt(-1) },
+	{ key = "N", mods = "LEADER", action = act.ScrollToPrompt(1) },
+	{ key = "V", mods = "LEADER", action = act.SelectTextAtMouseCursor("SemanticZone") },
 	{
 		key = "e",
-		mods = "SUPER | CTRL",
+		mods = "LEADER",
 		action = act.EmitEvent("trigger-vim-with-scrollback"),
 	},
-}
 
-for i = 1, 9 do
-	table.insert(config.keys, {
-		key = tostring(i),
-		mods = "CTRL",
-		action = act.ActivateTab(i - 1),
-	})
-end
 
-config.keys = {
+	-- tabs
+	{ key = "t", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
 	{
 		key = "]",
-		mods = "SUPER | CTRL",
+		mods = "LEADER",
 		action = act.ActivateTabRelative(1),
 	},
 	{
 		key = "[",
-		mods = "SUPER | CTRL",
+		mods = "LEADER",
 		action = act.ActivateTabRelative(-1),
 	},
 	{
-		key = "]",
-		mods = "SUPER | SHIFT",
-		action = act.MoveTabRelative(1),
+		key = "w",
+		mods = "LEADER",
+		action = act.ShowTabNavigator,
 	},
-	{
-		key = "[",
-		mods = "SUPER | SHIFT",
-		action = act.MoveTabRelative(-1),
-	},
+
+	-- panes
 	{
 		key = "\\",
-		mods = "SUPER | CTRL",
-		action = act.SplitPane({
-			direction = "Right",
+		mods = "LEADER",
+		action = act.SplitHorizontal({
+			domain = "CurrentPaneDomain",
 		}),
 	},
 	{
-		key = "Enter",
-		mods = "SUPER | CTRL",
-		action = act.SplitPane({
-			direction = "Down",
+		key = "-",
+		mods = "LEADER",
+		action = act.SplitVertical({
+			domain = "CurrentPaneDomain",
 		}),
 	},
 	{
 		key = "l",
-		mods = "SUPER | CTRL",
+		mods = "LEADER",
 		action = act.ActivatePaneDirection("Right"),
 	},
 	{
 		key = "k",
-		mods = "SUPER | CTRL",
+		mods = "LEADER",
 		action = act.ActivatePaneDirection("Up"),
 	},
 	{
 		key = "j",
-		mods = "SUPER | CTRL",
+		mods = "LEADER",
 		action = act.ActivatePaneDirection("Down"),
 	},
 	{
 		key = "h",
-		mods = "SUPER | CTRL",
+		mods = "LEADER",
 		action = act.ActivatePaneDirection("Left"),
 	},
+	{ key = "o", mods = "LEADER", action = act.TogglePaneZoomState },
+	{ key = "T", mods = "LEADER", action = act.PaneSelect({ mode = "MoveToNewTab" }) },
+	{ key = "9", mods = "LEADER", action = act.PaneSelect({ mode = "Activate" }) },
+	{ key = "0", mods = "LEADER", action = act.PaneSelect({ mode = "SwapWithActive" }) },
 	{
-		key = "l",
-		mods = "SHIFT | SUPER | CTRL",
+		key = "L",
+		mods = "LEADER",
 		action = act.AdjustPaneSize({ "Right", 5 }),
 	},
 	{
-		key = "k",
-		mods = "SHIFT | SUPER | CTRL",
+		key = "K",
+		mods = "LEADER",
 		action = act.AdjustPaneSize({ "Up", 5 }),
 	},
 	{
-		key = "j",
-		mods = "SHIFT | SUPER | CTRL",
+		key = "Q",
+		mods = "LEADER",
+		action = act.CloseCurrentTab({ confirm = true }),
+	},
+	{
+		key = "J",
+		mods = "LEADER",
 		action = act.AdjustPaneSize({ "Down", 5 }),
 	},
 	{
-		key = "h",
-		mods = "SHIFT | SUPER | CTRL",
+		key = "H",
+		mods = "LEADER",
 		action = act.AdjustPaneSize({ "Left", 5 }),
 	},
-	{ key = "k", mods = "SUPER | SHIFT", action = act.ScrollToPrompt(-1) },
-	{ key = "j", mods = "SUPER | SHIFT", action = act.ScrollToPrompt(1) },
-	{
-		key = "e",
-		mods = "SUPER | CTRL",
-		action = act.EmitEvent("trigger-vim-with-scrollback"),
-	},
+
+	-- disable key bindings that conflict with vim
 	{ key = "P", mods = "CTRL", action = act.DisableDefaultAssignment },
 	{ key = "P", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
 	{ key = "p", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
@@ -235,8 +242,16 @@ config.keys = {
 	{ key = "j", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
 	{ key = "k", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
 	{ key = "l", mods = "SHIFT|CTRL", action = act.DisableDefaultAssignment },
-	{ key = "p", mods = "SUPER | CTRL", action = act.ShowLauncher },
 }
+
+-- ctrl - x for activating tab x
+for i = 1, 8 do
+	table.insert(config.keys, {
+		key = tostring(i),
+		mods = "CTRL",
+		action = act.ActivateTab(i - 1),
+	})
+end
 
 -- Lua ftw
 -- References:
