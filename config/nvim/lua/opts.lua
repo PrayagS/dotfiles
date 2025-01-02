@@ -55,15 +55,15 @@ local space = "·"
 
 opt.list = true
 opt.listchars = {
-	lead = "·",
-	trail = "•",
+	-- eol = "↵",
+	tab = "·┈",
 	multispace = "∅",
+	lead = "·",
+	leadmultispace = "·┈",
+	trail = "•",
 	nbsp = "‡",
-	tab = " » ",
 	precedes = "❮",
 	extends = "❯",
-	-- eol = "↵",
-	-- eol = "⤶",
 }
 
 opt.showmode = false
