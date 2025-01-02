@@ -104,10 +104,15 @@ end
 ---@diagnostic disable-next-line: unused-local, redefined-local
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
 	local cmdline = tab.active_pane.user_vars.WEZTERM_PROG or ""
+	local cwd = get_cwd(tab)
+
 	if cmdline == "" then
-		return string.format("%s: %s", tab.tab_index + 1, get_cwd(tab))
+		return string.format("%s: %s", tab.tab_index + 1, cwd)
+	elseif cwd == "~/" then
+		return string.format("%s: %s", tab.tab_index + 1, cmdline)
+	else
+		return string.format("%s: %s @ %s", tab.tab_index + 1, cmdline, get_cwd(tab))
 	end
-	return string.format("%s: %s @ %s", tab.tab_index + 1, cmdline, get_cwd(tab))
 end)
 
 config.scrollback_lines = 1000000
