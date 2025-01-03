@@ -126,8 +126,10 @@ zinit lucid light-mode wait"0b" for \
       ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c100,)"' \
     atload"
       _zsh_autosuggest_start
-      bindkey '^]' autosuggest-execute
-      bindkey '^[[1;3C' autosuggest-accept" \
+      bindkey -M viins '^]' autosuggest-execute
+      bindkey -M vicmd '^]' autosuggest-execute
+      # bindkey -M viins '^[[1;3C' autosuggest-accept
+      # bindkey -M vicmd '^[[1;3C' autosuggest-accept" \
         zsh-users/zsh-autosuggestions \
     atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay; autoload bashcompinit; bashcompinit" \
     atclone'(){local f;cd -q →*;for f (*~*.zwc){zcompile -Uz -- ${f}};}' \
