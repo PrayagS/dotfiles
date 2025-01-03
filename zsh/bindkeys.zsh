@@ -1,23 +1,43 @@
+# bindkey --help
+# -e -> emacs mode
+# -v -> vi insert mode
+# -a -> vi cmd mode
+# -M <keymap>
+# -l -> list all keymaps
+# More here: https://zsh.sourceforge.io/Doc/Release/Zsh-Line-Editor.html#Zle-Builtins
+
+# List of available widgets: https://zsh.sourceforge.io/Doc/Release/Zsh-Line-Editor.html#Standard-Widgets
+
+# start in insert mode
 bindkey -v
+
+# jj in insert mode is escape
 bindkey -M viins 'jj' vi-cmd-mode
 export KEYTIMEOUT=20
 
+# some standard vi key bindings
 bindkey -a 'u' undo
 bindkey -a '^R' redo
-bindkey '^?' backward-delete-char
-bindkey '^r' history-incremental-search-backward
 bindkey -a 'gg' beginning-of-buffer-or-history
 bindkey -a 'G' end-of-buffer-or-history
 bindkey -a 'j' vi-down-line-or-history
 bindkey -a 'k' vi-up-line-or-history
-bindkey '^[[1;5C' vi-forward-word
-bindkey '^[[1;5D' vi-backward-word
-bindkey -a '$' vi-beginning-of-line
-bindkey -a '^' vi-end-of-line
+bindkey -a '$' vi-end-of-line
+# bindkey -a '^' vi-beginning-of-line
+
+
+# bindkey '^?' backward-delete-char
+
+bindkey -M viins '^r' history-search-multi-word
+bindkey -M vicmd '^r' history-search-multi-word
+
+bindkey '^]' vi-forward-word
+bindkey '^[' vi-backward-word
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
+bindkey -M viins '^e' edit-command-line
+bindkey -M vicmd '^e' edit-command-line
 
 # Use vim keys in tab complete menu:
 zmodload zsh/complist
