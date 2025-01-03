@@ -62,6 +62,12 @@ zinit snippet "${ZSH_HOME}/aliases.zsh"
 zinit snippet "${ZSH_HOME}/functions.zsh"
 zinit snippet "${ZSH_HOME}/completion.zsh"
 
+# disable the arrow keys
+bindkey -s "^[[A" ""
+bindkey -s "^[[B" ""
+bindkey -s "^[[C" ""
+bindkey -s "^[[D" ""
+
 # Prompt
 PS1="READY >"
 zinit ice wait"!" lucid atload"source ${ZSH_HOME}/themes/.p10k.zsh; _p9k_precmd" nocd
