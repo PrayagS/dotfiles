@@ -202,6 +202,7 @@ wezterm.on("update-status", function(window, pane)
 end)
 
 config.unix_domains = { { name = "unix" } }
+config.default_domain = "unix"
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 resurrect.periodic_save({ interval_seconds = 15 * 60, save_workspaces = true, save_windows = true, save_tabs = true })
 -- Source: plugin README
