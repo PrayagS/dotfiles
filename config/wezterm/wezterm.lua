@@ -30,20 +30,19 @@ wezterm.log_info(colors)
 config.colors = {
 	split = colors.foreground,
 	tab_bar = {
-		background = colors.background,
+		background = colors.foreground,
 		active_tab = {
-			bg_color = colors.background,
-			fg_color = colors.foreground,
+			bg_color = colors.foreground,
+			fg_color = colors.background,
 		},
-		-- inactive_tab = {
-		-- 	-- bg_color = colors.selection_bg,
-		-- 	bg_color = colors.foreground,
-		-- 	fg_color = colors.background,
-		-- },
-		-- inactive_tab_hover = {
-		-- 	bg_color = colors.brights[8], -- lighter than colors.foreground
-		-- 	fg_color = colors.background,
-		-- },
+		inactive_tab = {
+			bg_color = colors.brights[1],
+			fg_color = "#3c3836",
+		},
+		inactive_tab_hover = {
+			bg_color = colors.ansi[8], -- lighter than colors.foreground
+			fg_color = "#3c3836",
+		},
 	},
 }
 
@@ -86,9 +85,11 @@ config.webgpu_preferred_adapter = available_gpus[1] -- Evaluates to the integrat
 config.front_end = "WebGpu"
 
 config.show_new_tab_button_in_tab_bar = false
--- config.show_close_tab_button_in_tabs = false
+config.show_close_tab_button_in_tabs = false
 config.show_tab_index_in_tab_bar = true
 config.switch_to_last_active_tab_when_closing_tab = true
+config.use_fancy_tab_bar = false
+config.tab_max_width = 500
 -- config.hide_tab_bar_if_only_one_tab = true
 
 local function get_cwd(tab)
@@ -106,13 +107,19 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	local cmdline = tab.active_pane.user_vars.WEZTERM_PROG or ""
 	local cwd = get_cwd(tab)
 
+	local tab_title = ""
 	if cmdline == "" then
-		return string.format("%s: %s", tab.tab_index + 1, cwd)
+		tab_title = string.format(" %s: %s ", tab.tab_index + 1, cwd)
 	elseif cwd == "~/" then
-		return string.format("%s: %s", tab.tab_index + 1, cmdline)
+		tab_title = string.format(" %s: %s ", tab.tab_index + 1, cmdline)
 	else
-		return string.format("%s: %s @ %s", tab.tab_index + 1, cmdline, get_cwd(tab))
+		tab_title = string.format(" %s: %s @ %s ", tab.tab_index + 1, cmdline, get_cwd(tab))
 	end
+
+	local cells = {}
+	table.insert(cells, { Attribute = { Intensity = "Bold" } })
+	table.insert(cells, { Text = tab_title })
+	return wezterm.format(cells)
 end)
 
 config.scrollback_lines = 1000000
@@ -156,13 +163,42 @@ end)
 local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 config.status_update_interval = 30000
 ---@diagnostic disable-next-line: unused-local
-wezterm.on("update-right-status", function(window, pane)
-	window:set_right_status(wezterm.format({
-		{ Foreground = { Color = colors.foreground } },
-		{ Text = "  Current workspace: " },
-		{ Text = window:active_workspace() },
-		{ Text = "  " },
-	}))
+wezterm.on("update-status", function(window, pane)
+	local left_cells = {
+		{ Background = { Color = colors.foreground } },
+	}
+	table.insert(left_cells, { Text = string.rep(" ", 2) })
+	--
+	local domain = wezterm.nerdfonts.oct_terminal
+		.. "  "
+		.. window:active_pane():get_domain_name()
+		.. " "
+		.. wezterm.nerdfonts.cod_chevron_right
+		.. " "
+	table.insert(left_cells, { Background = { Color = colors.foreground } })
+	table.insert(left_cells, { Foreground = { Color = colors.background } })
+	table.insert(left_cells, { Attribute = { Intensity = "Bold" } })
+	table.insert(left_cells, { Text = domain })
+	--
+	local workspace = " "
+		.. wezterm.nerdfonts.cod_window
+		.. "  "
+		.. window:active_workspace()
+		.. " "
+		.. wezterm.nerdfonts.cod_chevron_right
+		.. " "
+	table.insert(left_cells, { Background = { Color = colors.foreground } })
+	table.insert(left_cells, { Foreground = { Color = colors.background } })
+	table.insert(left_cells, { Attribute = { Intensity = "Bold" } })
+	table.insert(left_cells, { Text = workspace })
+
+	window:set_left_status(wezterm.format(left_cells))
+	-- window:set_right_status(wezterm.format({
+	-- { Foreground = { Color = colors.foreground } },
+	-- { Text = "  Current workspace hehe: " },
+	-- { Text = window:active_workspace() },
+	-- { Text = "  " },
+	-- }))
 end)
 
 config.unix_domains = { { name = "unix" } }
