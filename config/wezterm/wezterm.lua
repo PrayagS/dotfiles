@@ -167,16 +167,6 @@ wezterm.on("update-right-status", function(window, pane)
 end)
 
 config.unix_domains = { { name = "unix" } }
-local session_manager = wezterm.plugin.require(plugins_directory .. "/wezterm-session-manager")
-wezterm.on("save_session", function(window)
-	session_manager.save_state(window)
-end)
-wezterm.on("load_session", function(window)
-	session_manager.load_state(window)
-end)
-wezterm.on("restore_session", function(window)
-	session_manager.restore_state(window)
-end)
 
 config.ui_key_cap_rendering = "UnixLong"
 -- https://wezfurlong.org/wezterm/config/keys.html?#leader-key
@@ -208,8 +198,6 @@ config.keys = {
 	},
 	{ key = "a", mods = "LEADER", action = act.AttachDomain("unix") },
 	{ key = "d", mods = "LEADER", action = act.DetachDomain("CurrentPaneDomain") },
-	{ key = "S", mods = "LEADER", action = wezterm.action({ EmitEvent = "save_session" }) },
-	{ key = "R", mods = "LEADER", action = wezterm.action({ EmitEvent = "restore_session" }) },
 
 	-- tabs
 	{ key = "t", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
