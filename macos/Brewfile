@@ -73,6 +73,8 @@ brew "htop"
 brew "imagemagick"
 # Sort Python imports automatically
 brew "isort"
+# Command-line note taker
+brew "jrnl"
 # Package manager for Jsonnet
 brew "jsonnet-bundler"
 # VPN kill switch for macOS
