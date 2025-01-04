@@ -33,6 +33,8 @@ bindkey '^?' backward-delete-char
 
 bindkey -M viins '^r' history-search-multi-word
 bindkey -M vicmd '^r' history-search-multi-word
+bindkey -M viins '^p' up-history
+bindkey -M viins '^n' down-history
 
 # bindkey '^]' vi-forward-word
 # bindkey '^[' vi-backward-word
