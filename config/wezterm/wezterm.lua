@@ -153,8 +153,7 @@ wezterm.on("trigger-vim-with-scrollback", function(window, pane)
 	os.remove(name)
 end)
 
-local plugins_directory = os.getenv("HOME") .. "/.config/wezterm/plugins"
-local workspace_switcher = wezterm.plugin.require(plugins_directory .. "/smart_workspace_switcher.wezterm")
+local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 config.status_update_interval = 30000
 ---@diagnostic disable-next-line: unused-local
 wezterm.on("update-right-status", function(window, pane)
@@ -167,6 +166,29 @@ wezterm.on("update-right-status", function(window, pane)
 end)
 
 config.unix_domains = { { name = "unix" } }
+local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
+resurrect.periodic_save({ interval_seconds = 15 * 60, save_workspaces = true, save_windows = true, save_tabs = true })
+-- Source: plugin README
+-- loads the state whenever I create a new workspace
+---@diagnostic disable-next-line: unused-local
+wezterm.on("smart_workspace_switcher.workspace_switcher.created", function(window, path, label)
+	local workspace_state = resurrect.workspace_state
+
+	workspace_state.restore_workspace(resurrect.load_state(label, "workspace"), {
+		window = window,
+		relative = true,
+		restore_text = true,
+		on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+	})
+end)
+-- Saves the state whenever I select a workspace
+---@diagnostic disable-next-line: unused-local
+wezterm.on("smart_workspace_switcher.workspace_switcher.selected", function(window, path, label)
+	local workspace_state = resurrect.workspace_state
+	resurrect.save_state(workspace_state.get_workspace_state())
+end)
+-- resurrect on startup
+wezterm.on("gui-startup", resurrect.resurrect_on_gui_startup)
 
 config.ui_key_cap_rendering = "UnixLong"
 -- https://wezfurlong.org/wezterm/config/keys.html?#leader-key

@@ -11,6 +11,9 @@
 [includeIf "gitdir:~/dev/"]
     path = ~/dev/.gitconfig
 
+[includeIf "gitdir:~/Library/Application Support/wezterm/plugins/"]
+    path = ~/.config/wezterm/.gitconfig
+
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 
