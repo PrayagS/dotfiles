@@ -213,6 +213,8 @@ cask "minecraft"
 cask "mullvad-browser"
 # VPN client
 cask "mullvadvpn@beta"
+# Neovim Client
+cask "neovide"
 # Calendar for professionals and teams
 cask "notion-calendar"
 # Calculator and converter application
