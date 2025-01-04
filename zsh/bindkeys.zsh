@@ -15,6 +15,9 @@ bindkey -v
 bindkey -M viins 'jj' vi-cmd-mode
 export KEYTIMEOUT=20
 
+# i in visual mode is insert
+bindkey -M visual "i" vi-insert
+
 # some standard vi key bindings
 bindkey -a 'u' undo
 bindkey -a '^R' redo
@@ -26,13 +29,13 @@ bindkey -a '$' vi-end-of-line
 # bindkey -a '^' vi-beginning-of-line
 
 
-# bindkey '^?' backward-delete-char
+bindkey '^?' backward-delete-char
 
 bindkey -M viins '^r' history-search-multi-word
 bindkey -M vicmd '^r' history-search-multi-word
 
-bindkey '^]' vi-forward-word
-bindkey '^[' vi-backward-word
+# bindkey '^]' vi-forward-word
+# bindkey '^[' vi-backward-word
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
