@@ -69,9 +69,17 @@ config.cursor_blink_ease_in = "EaseOut"
 config.check_for_updates = true
 config.check_for_updates_interval_seconds = 86400
 
--- config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
--- config.font = wezterm.font("VictorMono Nerd Font Mono")
-config.font = wezterm.font("Maple Mono")
+config.font = wezterm.font_with_fallback({
+	"Maple Mono",
+	-- "IosevkaTerm Nerd Font Mono"
+	-- "VictorMono Nerd Font Mono"
+	"Sarasa Term CL",
+	"Sarasa Term HC",
+	"Sarasa Term J",
+	"Sarasa Term K",
+	"Sarasa Term SC",
+	"Sarasa Term TC",
+})
 config.font_size = 14.0
 config.window_frame = {
 	font = wezterm.font("Iosevka Aile"),
