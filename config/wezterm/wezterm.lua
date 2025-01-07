@@ -26,7 +26,7 @@ config.color_scheme = "GruvboxDarkHard"
 
 local colors = wezterm.color.get_builtin_schemes()[config.color_scheme]
 -- colors.background = "#1A1826" -- slightly darker background for catppuccin
-wezterm.log_info(colors)
+-- wezterm.log_info(colors)
 config.colors = {
 	split = colors.foreground,
 	tab_bar = {
@@ -97,12 +97,16 @@ config.show_close_tab_button_in_tabs = false
 config.show_tab_index_in_tab_bar = true
 config.switch_to_last_active_tab_when_closing_tab = true
 config.use_fancy_tab_bar = false
-config.tab_max_width = 500
+config.tab_max_width = 64
 -- config.hide_tab_bar_if_only_one_tab = true
 
 local function get_cwd(tab)
 	local cwd = tab.active_pane and tab.active_pane.current_working_dir
-	return string.gsub(cwd.file_path, "/Users/prayagmatic", "~")
+	if cwd.file_path == os.getenv("HOME") .. "/" then
+		return "~"
+	else
+		return string.gsub(cwd.file_path, "([/a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/", "%2")
+	end
 end
 
 -- References:
