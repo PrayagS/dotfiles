@@ -29,3 +29,6 @@ config/spicetify/Extracted
 
 # helm
 config/helm/repositories.lock
+
+# aws
+config/aws/config
