@@ -8,7 +8,7 @@ return {
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 			{ "smjonas/inc-rename.nvim", enabled = false, opts = { input_buffer_type = "dressing" } },
 			"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-			"ray-x/lsp_signature.nvim",
+			-- "ray-x/lsp_signature.nvim",
 			-- {
 			-- 	"luckasRanarison/clear-action.nvim",
 			-- 	opts = {
@@ -108,24 +108,24 @@ return {
 						end, "[T]oggle Inlay [H]ints")
 					end
 
-					if client and client.config.cmd[1] ~= "/opt/homebrew/bin/cuepls" then
-						require("lsp_signature").on_attach({
-							bind = true,
-							handler_opts = {
-								border = "rounded",
-							},
-						}, event.buf)
-					end
+					-- if client and client.config.cmd[1] ~= "/opt/homebrew/bin/cuepls" then
+					-- 	require("lsp_signature").on_attach({
+					-- 		bind = true,
+					-- 		handler_opts = {
+					-- 			border = "rounded",
+					-- 		},
+					-- 	}, event.buf)
+					-- end
 				end,
 			})
 
-			local cmp_lsp = require("cmp_nvim_lsp")
 			local capabilities = vim.tbl_deep_extend(
 				"force",
 				{},
 				vim.lsp.protocol.make_client_capabilities(),
-				cmp_lsp.default_capabilities()
+				require("blink.cmp").get_lsp_capabilities()
 			)
+			-- local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 			local lspconfig = require("lspconfig")
 			local configs = require("lspconfig.configs")
