@@ -122,7 +122,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	local tab_title = ""
 	if cmdline == "" then
 		tab_title = string.format(" %s: %s ", tab.tab_index + 1, cwd)
-	elseif cwd == "~/" then
+	elseif cwd == "~" then
 		tab_title = string.format(" %s: %s ", tab.tab_index + 1, cmdline)
 	else
 		tab_title = string.format(" %s: %s @ %s ", tab.tab_index + 1, cmdline, get_cwd(tab))
