@@ -6,6 +6,9 @@ return {
 			require("nvim-autopairs").setup({
 				enable_check_bracket_line = false,
 				ignored_next_char = "[%w%.]", -- will ignore alphanumeric and `.` symbol
+				map_c_w = true,
+				map_bs = false,
+				disable_in_visualblock = true,
 			})
 		end,
 	},
