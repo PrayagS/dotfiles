@@ -62,16 +62,6 @@
                     }
                 ]
             },
-            "devices": [
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 183,
-                        "vendor_id": 5426
-                    },
-                    "ignore": true
-                }
-            ],
             "fn_function_keys": [
                 {
                     "from": { "key_code": "f4" },
