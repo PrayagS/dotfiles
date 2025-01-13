@@ -250,10 +250,10 @@ config.keys = {
 	{ key = "?", mods = "LEADER", action = act.ShowDebugOverlay },
 	{ key = "r", mods = "LEADER", action = act.ReloadConfiguration },
 
-	-- shell integration
-	{ key = "P", mods = "LEADER", action = act.ScrollToPrompt(-1) },
-	{ key = "N", mods = "LEADER", action = act.ScrollToPrompt(1) },
-	{ key = "V", mods = "LEADER", action = act.SelectTextAtMouseCursor("SemanticZone") },
+	-- [TODO]: fix shell integration
+	-- { key = "P", mods = "LEADER", action = act.ScrollToPrompt(-1) },
+	-- { key = "N", mods = "LEADER", action = act.ScrollToPrompt(1) },
+	-- { key = "V", mods = "LEADER", action = act.SelectTextAtMouseCursor("SemanticZone") },
 	{
 		key = "e",
 		mods = "LEADER",
@@ -266,6 +266,21 @@ config.keys = {
 		key = "s",
 		mods = "LEADER",
 		action = workspace_switcher.switch_workspace(),
+	},
+	{
+		key = "n",
+		mods = "LEADER",
+		action = act.PromptInputLine({
+			description = wezterm.format({
+				{ Attribute = { Intensity = "Bold" } },
+				{ Text = "Enter name for new workspace" },
+			}),
+			action = wezterm.action_callback(function(window, pane, line)
+				if line then
+					window:perform_action(act.SwitchToWorkspace({ name = line }), pane)
+				end
+			end),
+		}),
 	},
 	{ key = "a", mods = "LEADER", action = act.AttachDomain("unix") },
 	{ key = "d", mods = "LEADER", action = act.DetachDomain("CurrentPaneDomain") },
