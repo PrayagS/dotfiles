@@ -90,14 +90,14 @@ return {
 			require("telescope").load_extension("session-lens")
 
 			local builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<C-p>", function()
+			vim.keymap.set("n", "<C-S-p>", function()
 				require("telescope").extensions.frecency.frecency({})
 			end)
 			vim.keymap.set("n", "<leader><leader>", function()
 				require("telescope").extensions.smart_open.smart_open()
 			end, { noremap = true, silent = true })
 			vim.keymap.set("n", "<leader>p", builtin.find_files, {})
-			vim.keymap.set("n", "<C-S-p>", builtin.git_files, {})
+			vim.keymap.set("n", "<C-p>", builtin.git_files, {})
 
 			local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
 
