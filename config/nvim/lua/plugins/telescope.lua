@@ -10,6 +10,8 @@ return {
 				build = "make",
 			},
 			"nvim-telescope/telescope-frecency.nvim",
+			"danielfalk/smart-open.nvim",
+			"kkharji/sqlite.lua",
 			"nvim-telescope/telescope-ui-select.nvim",
 		},
 		config = function()
@@ -61,9 +63,16 @@ return {
 					frecency = {
 						db_safe_mode = false,
 						db_validate_threshold = 100,
+						default_workspace = "CWD",
+						enable_prompt_mappings = true,
+						hide_current_buffer = true,
 						matcher = "fuzzy",
 						max_timestamps = 100,
 						preceding = "opened",
+					},
+					smart_open = {
+						cwd_only = true,
+						match_algorithm = "fzf",
 					},
 					fzf = {
 						fuzzy = true,
@@ -74,6 +83,7 @@ return {
 			})
 			require("telescope").load_extension("live_grep_args")
 			require("telescope").load_extension("frecency")
+			require("telescope").load_extension("smart_open")
 			require("telescope").load_extension("fzf")
 			require("telescope").load_extension("ui-select")
 			-- require("telescope").load_extension("aerial")
@@ -83,6 +93,9 @@ return {
 			vim.keymap.set("n", "<C-p>", function()
 				require("telescope").extensions.frecency.frecency({})
 			end)
+			vim.keymap.set("n", "<leader><leader>", function()
+				require("telescope").extensions.smart_open.smart_open()
+			end, { noremap = true, silent = true })
 			vim.keymap.set("n", "<leader>p", builtin.find_files, {})
 			vim.keymap.set("n", "<C-S-p>", builtin.git_files, {})
 
