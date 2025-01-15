@@ -1,5 +1,5 @@
---binary
 --column
+# --binary
 --follow
 --heading
 --hidden
@@ -8,5 +8,5 @@
 --max-columns-preview
 --pretty
 --smart-case
---text
 --trim
+# --text
