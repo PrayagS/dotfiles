@@ -100,12 +100,79 @@ config.use_fancy_tab_bar = false
 config.tab_max_width = 64
 -- config.hide_tab_bar_if_only_one_tab = true
 
+local function format_directory(path)
+	if not path then
+		return nil
+	end
+
+	-- Remove trailing slashes and split into parts
+	local parts = {}
+	for part in path:gmatch("[^/\\]+") do
+		table.insert(parts, part)
+	end
+
+	-- Check for /Users/prayagmatic/ pattern
+	if #parts >= 2 and parts[1] == "Users" and parts[2] == "prayagmatic" then
+		-- Remove Users/prayagmatic and replace with ~
+		table.remove(parts, 1)
+		table.remove(parts, 1)
+		-- Format remaining path
+		if #parts <= 2 then
+			return "~/" .. table.concat(parts, "/")
+		else
+			local formatted = { "~" }
+			for i = 1, #parts - 2 do
+				table.insert(formatted, parts[i]:sub(1, 1))
+			end
+			table.insert(formatted, parts[#parts - 1])
+			table.insert(formatted, parts[#parts])
+			return table.concat(formatted, "/")
+		end
+	end
+
+	-- Original formatting for other paths
+	if #parts <= 2 then
+		return table.concat(parts, "/")
+	else
+		local formatted = {}
+		for i = 1, #parts - 2 do
+			table.insert(formatted, parts[i]:sub(1, 1))
+		end
+		table.insert(formatted, parts[#parts - 1])
+		table.insert(formatted, parts[#parts])
+		return table.concat(formatted, "/")
+	end
+end
+
 local function get_cwd(tab)
 	local cwd = tab.active_pane and tab.active_pane.current_working_dir
 	if cwd.file_path == os.getenv("HOME") .. "/" then
 		return "~"
 	else
-		return string.gsub(cwd.file_path, "([/a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/", "%2")
+		-- return string.gsub(cwd.file_path, "([/a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/", "%2")
+		return format_directory(cwd.file_path)
+	end
+end
+
+local function format_tab_title(cmdline, path)
+	if #path == 0 then
+		if #cmdline <= config.tab_max_width then
+			return cmdline
+		else
+			return cmdline:sub(1, config.tab_max_width - 3) .. "..."
+		end
+	end
+
+	local combined = string.format("%s @ %s", cmdline, path)
+	if #combined <= config.tab_max_width then
+		return combined
+	else
+		local omission = "..."
+		local available_space = config.tab_max_width - #path - 3 - #omission -- 3 for " @ "
+		if available_space <= 0 then
+			return combined:sub(1, config.tab_max_width)
+		end
+		return string.format("%s... @ %s", cmdline:sub(1, available_space), path)
 	end
 end
 
@@ -123,9 +190,9 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	if cmdline == "" then
 		tab_title = string.format(" %s: %s ", tab.tab_index + 1, cwd)
 	elseif cwd == "~" then
-		tab_title = string.format(" %s: %s ", tab.tab_index + 1, cmdline)
+		tab_title = string.format(" %s: %s ", tab.tab_index + 1, format_tab_title(cmdline, ""))
 	else
-		tab_title = string.format(" %s: %s @ %s ", tab.tab_index + 1, cmdline, get_cwd(tab))
+		tab_title = string.format(" %s: %s ", tab.tab_index + 1, format_tab_title(cmdline, cwd))
 	end
 
 	local cells = {}
