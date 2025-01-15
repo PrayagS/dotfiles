@@ -1,12 +1,12 @@
---column
 # --binary
+# --column
 --follow
---heading
+# --heading
 --hidden
---line-number
---max-columns=80
---max-columns-preview
---pretty
+# --line-number
+# --max-columns=80
+# --max-columns-preview
+# --pretty
 --smart-case
---trim
 # --text
+# --trim
