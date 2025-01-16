@@ -154,23 +154,25 @@ local function get_cwd(tab)
 	end
 end
 
-local function format_tab_title(cmdline, path)
+local function format_tab_title(cmdline, path, tab)
+	local space_taken_by_tab_index = tab.tab_index + 1 + 3
+	local tab_title_max_width = config.tab_max_width - space_taken_by_tab_index
 	if #path == 0 then
 		if #cmdline <= config.tab_max_width then
 			return cmdline
 		else
-			return cmdline:sub(1, config.tab_max_width - 3) .. "..."
+			return cmdline:sub(1, tab_title_max_width - 4 - 3) .. "..."
 		end
 	end
 
 	local combined = string.format("%s @ %s", cmdline, path)
-	if #combined <= config.tab_max_width then
+	if #combined <= tab_title_max_width then
 		return combined
 	else
 		local omission = "..."
-		local available_space = config.tab_max_width - #path - 3 - #omission -- 3 for " @ "
+		local available_space = tab_title_max_width - #path - 3 - #omission -- 3 for " @ "
 		if available_space <= 0 then
-			return combined:sub(1, config.tab_max_width)
+			return combined:sub(1, tab_title_max_width)
 		end
 		return string.format("%s... @ %s", cmdline:sub(1, available_space), path)
 	end
@@ -190,9 +192,9 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	if cmdline == "" then
 		tab_title = string.format(" %s: %s ", tab.tab_index + 1, cwd)
 	elseif cwd == "~" then
-		tab_title = string.format(" %s: %s ", tab.tab_index + 1, format_tab_title(cmdline, ""))
+		tab_title = string.format(" %s: %s ", tab.tab_index + 1, format_tab_title(cmdline, "", tab))
 	else
-		tab_title = string.format(" %s: %s ", tab.tab_index + 1, format_tab_title(cmdline, cwd))
+		tab_title = string.format(" %s: %s ", tab.tab_index + 1, format_tab_title(cmdline, cwd, tab))
 	end
 
 	local cells = {}
