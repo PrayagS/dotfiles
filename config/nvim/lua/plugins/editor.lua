@@ -100,7 +100,7 @@ return {
 			set({ "n", "x" }, "=p", "<Plug>(YankyPutAfterFilter)")
 			set({ "n", "x" }, "=P", "<Plug>(YankyPutBeforeFilter)")
 
-			require("telescope").load_extension("yank_history")
+			-- require("telescope").load_extension("yank_history")
 		end,
 	},
 	{

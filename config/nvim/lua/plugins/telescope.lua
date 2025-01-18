@@ -1,7 +1,142 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
+		cmd = { "Telescope" },
+		keys = {
+			{
+				"<leader><leader>",
+				function()
+					require("telescope").extensions.smart_open.smart_open()
+				end,
+				desc = ":Telescope smart_open",
+			},
+			{
+				"<C-p>",
+				function()
+					require("telescope.builtin").git_files()
+				end,
+				desc = ":Telescope git_files",
+			},
+			{
+				"<C-S-p>",
+				function()
+					require("telescope").extensions.frecency.frecency()
+				end,
+				desc = ":Telescope frecency",
+			},
+			{
+				"<leader>p",
+				function()
+					require("telescope.builtin").find_files()
+				end,
+				desc = ":Telescope find_files",
+			},
+			{
+				"<leader>g",
+				function()
+					require("telescope").extensions.live_grep_args.live_grep_args()
+				end,
+				desc = ":Telescope live_grep_args",
+			},
+			{
+				"<leader>G",
+				desc = ":Telescope live_grep_args current buffer",
+			},
+			{
+				"<leader>w",
+				function()
+					require("telescope-live-grep-args.shortcuts").grep_word_under_cursor()
+				end,
+				desc = ":Telescope grep_word_under_cursor",
+			},
+			{
+				"<leader>W",
+				function()
+					require("telescope-live-grep-args.shortcuts").grep_word_under_cursor_current_buffer()
+				end,
+				desc = ":Telescope grep_word_under_cursor_current_buffer",
+			},
+			{
+				"<leader>g",
+				function()
+					require("telescope-live-grep-args.shortcuts").grep_visual_selection()
+				end,
+				mode = { "v" },
+				desc = ":Telescope grep_visual_selection",
+			},
+			{
+				"<leader>G",
+				function()
+					require("telescope-live-grep-args.shortcuts").grep_word_visual_selection_current_buffer()
+				end,
+				mode = { "v" },
+				desc = ":Telescope grep_word_visual_selection_current_buffer",
+			},
+			{
+				"<leader>ht",
+				function()
+					require("telescope.builtin").help_tags()
+				end,
+				desc = ":Telescope help_tags",
+			},
+			{
+				"<leader>km",
+				function()
+					require("telescope.builtin").keymaps()
+				end,
+				desc = ":Telescope keymaps",
+			},
+			{
+				"gd",
+				function()
+					require("telescope.builtin").lsp_definitions()
+				end,
+				desc = "[G]oto [D]efinition",
+			},
+			{
+				"gr",
+				function()
+					require("telescope.builtin").lsp_references()
+				end,
+				desc = "[G]oto [R]eferences",
+			},
+			{
+				"gI",
+				function()
+					require("telescope.builtin").lsp_implementations()
+				end,
+				desc = "[G]oto [I]mplementation",
+			},
+			{
+				"<leader>D",
+				function()
+					require("telescope.builtin").lsp_type_definitions()
+				end,
+				desc = "Type [D]efinition",
+			},
+			{
+				"<leader>ds",
+				function()
+					require("telescope.builtin").lsp_document_symbols()
+				end,
+				desc = "[D]ocument [S]ymbols",
+			},
+			{
+				"<leader>ws",
+				function()
+					require("telescope.builtin").lsp_dynamic_workspace_symbols()
+				end,
+				desc = "[W]orkspace [S]ymbols",
+			},
+			{
+				"<leader>yh",
+				function()
+					require("telescope").extensions.yank_history.yank_history()
+				end,
+				desc = ":Telescope yank_history",
+			},
+		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-live-grep-args.nvim",
@@ -88,18 +223,7 @@ return {
 			require("telescope").load_extension("ui-select")
 			-- require("telescope").load_extension("aerial")
 			require("telescope").load_extension("session-lens")
-
-			local builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<C-S-p>", function()
-				require("telescope").extensions.frecency.frecency({})
-			end)
-			vim.keymap.set("n", "<leader><leader>", function()
-				require("telescope").extensions.smart_open.smart_open()
-			end, { noremap = true, silent = true })
-			vim.keymap.set("n", "<leader>p", builtin.find_files, {})
-			vim.keymap.set("n", "<C-p>", builtin.git_files, {})
-
-			local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
+			require("telescope").load_extension("yank_history")
 
 			local Path = require("plenary.path")
 			local get_open_files = function()
@@ -117,22 +241,7 @@ return {
 			end
 
 			-- vim.keymap.set("n", "<leader>g", builtin.current_buffer_fuzzy_find, {})
-			vim.keymap.set(
-				"n",
-				"<leader>g",
-				"<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-				{}
-			)
 			vim.keymap.set("n", "<leader>G", live_grep_open_files, {})
-
-			vim.keymap.set("n", "<leader>w", live_grep_args_shortcuts.grep_word_under_cursor, {})
-			vim.keymap.set("n", "<leader>W", live_grep_args_shortcuts.grep_word_under_cursor_current_buffer, {})
-
-			vim.keymap.set("v", "<leader>g", live_grep_args_shortcuts.grep_visual_selection, {})
-			vim.keymap.set("v", "<leader>G", live_grep_args_shortcuts.grep_word_visual_selection_current_buffer, {})
-
-			vim.keymap.set("n", "<leader>ht", builtin.help_tags, {})
-			vim.keymap.set("n", "<leader>km", builtin.keymaps, {})
 		end,
 	},
 }

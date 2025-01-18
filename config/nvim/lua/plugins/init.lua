@@ -48,6 +48,9 @@ return {
 			suppressed_dirs = {
 				"~/",
 			},
+			session_lens = {
+				load_on_setup = false,
+			},
 			-- log_level = "debug",
 		},
 	},
