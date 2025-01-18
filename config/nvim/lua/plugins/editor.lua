@@ -63,9 +63,13 @@ return {
 	{
 		"gbprod/yanky.nvim",
 		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+		dependencies = {
+			{ "kkharji/sqlite.lua" },
+		},
 		config = function()
 			require("yanky").setup({
 				picker = {
+					ring = { storage = "sqlite" },
 					telescope = {
 						use_default_mappings = true,
 					},
