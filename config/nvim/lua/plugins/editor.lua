@@ -34,6 +34,7 @@ return {
 	},
 	{
 		"numToStr/Comment.nvim",
+		event = "VeryLazy",
 		dependencies = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
@@ -62,50 +63,110 @@ return {
 	},
 	{
 		"gbprod/yanky.nvim",
-		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 		dependencies = {
 			{ "kkharji/sqlite.lua" },
 		},
-		config = function()
-			require("yanky").setup({
-				picker = {
-					ring = { storage = "sqlite" },
-					telescope = {
-						use_default_mappings = true,
-					},
+		-- event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+		keys = {
+			{
+				"y",
+				"<Plug>(YankyYank)",
+				mode = { "n", "x" },
+				desc = "Yank text",
+			},
+			{
+				"p",
+				"<Plug>(YankyPutAfter)",
+				mode = { "n", "x" },
+				desc = "Put yanked text after cursor",
+			},
+			{
+				"P",
+				"<Plug>(YankyPutBefore)",
+				mode = { "n", "x" },
+				desc = "Put yanked text before cursor",
+			},
+			{
+				"gp",
+				"<Plug>(YankyGPutAfter)",
+				mode = { "n", "x" },
+				desc = "Put yanked text after selection",
+			},
+			{
+				"gP",
+				"<Plug>(YankyGPutBefore)",
+				mode = { "n", "x" },
+				desc = "Put yanked text before selection",
+			},
+			{
+				"[y",
+				"<Plug>(YankyPreviousEntry)",
+				desc = "Select previous entry through yank history",
+			},
+			{
+				"]y",
+				"<Plug>(YankyNextEntry)",
+				desc = "Select next entry through yank history",
+			},
+			{
+				"]p",
+				"<Plug>(YankyPutIndentAfterLinewise)",
+				desc = "Put indented after cursor (linewise)",
+			},
+			{
+				"[p",
+				"<Plug>(YankyPutIndentBeforeLinewise)",
+				desc = "Put indented before cursor (linewise)",
+			},
+			{
+				"]P",
+				"<Plug>(YankyPutIndentAfterLinewise)",
+				desc = "Put indented after cursor (linewise)",
+			},
+			{
+				"[P",
+				"<Plug>(YankyPutIndentBeforeLinewise)",
+				desc = "Put indented before cursor (linewise)",
+			},
+			{
+				">p",
+				"<Plug>(YankyPutIndentAfterShiftRight)",
+				desc = "Put and indent right",
+			},
+			{
+				"<p",
+				"<Plug>(YankyPutIndentAfterShiftLeft)",
+				desc = "Put and indent left",
+			},
+			{
+				">P",
+				"<Plug>(YankyPutIndentBeforeShiftRight)",
+				desc = "Put before and indent right",
+			},
+			{
+				"<P",
+				"<Plug>(YankyPutIndentBeforeShiftLeft)",
+				desc = "Put before and indent left",
+			},
+			{
+				"=p",
+				"<Plug>(YankyPutAfterFilter)",
+				desc = "Put after applying a filter",
+			},
+			{
+				"=P",
+				"<Plug>(YankyPutBeforeFilter)",
+				desc = "Put before applying a filter",
+			},
+		},
+		opts = {
+			picker = {
+				ring = { storage = "sqlite" },
+				telescope = {
+					use_default_mappings = true,
 				},
-			})
-			local set = vim.keymap.set
-
-			-- Separate keymaps for normal and visual mode to restore
-			-- original behavior of p and P in visual mode.
-			set({ "n" }, "p", "<Plug>(YankyPutAfter)")
-			set({ "n" }, "P", "<Plug>(YankyPutBefore)")
-
-			set({ "x" }, "P", "<Plug>(YankyPutAfter)")
-			set({ "x" }, "p", "<Plug>(YankyPutBefore)")
-
-			set({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)")
-			set({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
-
-			set("n", "[y", "<Plug>(YankyPreviousEntry)")
-			set("n", "]y", "<Plug>(YankyNextEntry)")
-
-			set({ "n", "x" }, "]p", "<Plug>(YankyPutIndentAfterLinewise)")
-			set({ "n", "x" }, "[p", "<Plug>(YankyPutIndentBeforeLinewise)")
-			set({ "n", "x" }, "]P", "<Plug>(YankyPutIndentAfterLinewise)")
-			set({ "n", "x" }, "[P", "<Plug>(YankyPutIndentBeforeLinewise)")
-
-			set("n", ">p", "<Plug>(YankyPutIndentAfterShiftRight)")
-			set("n", "<p", "<Plug>(YankyPutIndentAfterShiftLeft)")
-			set("n", ">P", "<Plug>(YankyPutIndentBeforeShiftRight)")
-			set("n", "<P", "<Plug>(YankyPutIndentBeforeShiftLeft)")
-
-			set({ "n", "x" }, "=p", "<Plug>(YankyPutAfterFilter)")
-			set({ "n", "x" }, "=P", "<Plug>(YankyPutBeforeFilter)")
-
-			-- require("telescope").load_extension("yank_history")
-		end,
+			},
+		},
 	},
 	{
 		"airblade/vim-rooter",
@@ -128,9 +189,5 @@ return {
 		"nmac427/guess-indent.nvim",
 		event = "BufRead",
 		config = true,
-	},
-	{
-		"junegunn/fzf",
-		build = "./install --bin",
 	},
 }

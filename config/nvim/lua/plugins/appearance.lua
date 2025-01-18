@@ -83,6 +83,9 @@ return {
 	{
 		"kevinhwang91/nvim-bqf",
 		ft = "qf",
+		dependencies = {
+			{ "junegunn/fzf", build = "./install --bin" },
+		},
 		opts = {
 			preview = {
 				show_scroll_bar = false,
@@ -126,26 +129,34 @@ return {
 			end
 
 			local get_attached_linters = function()
-				local linters = require("lint").get_running()
-				if #linters == 0 then
+				if vim.tbl_get(require("lazy.core.config"), "plugins", "nvim-lint", "_", "loaded") then
+					local linters = require("lint").get_running()
+					if #linters == 0 then
+						return ""
+					end
+					return string.format("Linters: [%s]", table.concat(linters, ", "))
+				else
 					return ""
 				end
-				return string.format("Linters: [%s]", table.concat(linters, ", "))
 			end
 
 			local get_attached_formatters = function()
-				local formatters, using_lsp_formatter = require("conform").list_formatters_to_run(0)
-				local formatter_names = {}
-				for _, formatter in pairs(formatters) do
-					table.insert(formatter_names, formatter.name)
-				end
-				if using_lsp_formatter then
-					table.insert(formatter_names, "LSP")
-				end
-				if #formatter_names == 0 then
+				if vim.tbl_get(require("lazy.core.config"), "plugins", "conform.nvim", "_", "loaded") then
+					local formatters, using_lsp_formatter = require("conform").list_formatters_to_run(0)
+					local formatter_names = {}
+					for _, formatter in pairs(formatters) do
+						table.insert(formatter_names, formatter.name)
+					end
+					if using_lsp_formatter then
+						table.insert(formatter_names, "LSP")
+					end
+					if #formatter_names == 0 then
+						return ""
+					end
+					return string.format("Formatters: [%s]", table.concat(formatter_names, ", "))
+				else
 					return ""
 				end
-				return string.format("Formatters: [%s]", table.concat(formatter_names, ", "))
 			end
 
 			require("lualine").setup({
@@ -312,11 +323,12 @@ return {
 	},
 	{
 		"stevearc/dressing.nvim",
+		event = "VeryLazy",
 		opts = {},
 	},
 	{
 		"kevinhwang91/nvim-ufo",
-		lazy = false,
+		event = "VeryLazy",
 		dependencies = {
 			"kevinhwang91/promise-async",
 			{

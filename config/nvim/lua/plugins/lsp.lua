@@ -31,8 +31,11 @@ return {
 				opts = {},
 			},
 			{
-				"rmagatti/goto-preview",
-				config = true,
+				"Zeioth/garbage-day.nvim",
+				opts = {
+					grace_period = 30 * 60,
+					notifications = true,
+				},
 			},
 		},
 		config = function()
@@ -335,6 +338,7 @@ return {
 	},
 	{
 		"Bekaboo/dropbar.nvim",
+		event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
 		config = true,
 	},
 	{
@@ -353,15 +357,6 @@ return {
 			vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle left<CR>")
 			vim.keymap.set("n", "<leader>af", "<cmd>Telescope aerial<CR>")
 		end,
-	},
-	{
-		"Zeioth/garbage-day.nvim",
-		dependencies = "neovim/nvim-lspconfig",
-		event = "VeryLazy",
-		opts = {
-			grace_period = 30 * 60,
-			notifications = true,
-		},
 	},
 	{
 		"aznhe21/actions-preview.nvim",
@@ -397,5 +392,53 @@ return {
 				},
 			})
 		end,
+	},
+	{
+		"rmagatti/goto-preview",
+		keys = {
+			{
+				"gpd",
+				function()
+					require("goto-preview").goto_preview_definition()
+				end,
+				desc = "",
+			},
+			{
+				"gpt",
+				function()
+					require("goto-preview").goto_preview_type_definition()
+				end,
+				desc = "",
+			},
+			{
+				"gpi",
+				function()
+					require("goto-preview").goto_preview_implementation()
+				end,
+				desc = "",
+			},
+			{
+				"gpD",
+				function()
+					require("goto-preview").goto_preview_declaration()
+				end,
+				desc = "",
+			},
+			{
+				"gP",
+				function()
+					require("goto-preview").close_all_win()
+				end,
+				desc = "",
+			},
+			{
+				"gpr",
+				function()
+					require("goto-preview").goto_preview_references()
+				end,
+				desc = "",
+			},
+		},
+		config = true,
 	},
 }
