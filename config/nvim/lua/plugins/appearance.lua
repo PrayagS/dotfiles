@@ -13,6 +13,7 @@ return {
 	{
 		"akinsho/bufferline.nvim",
 		event = "VeryLazy",
+		enabled = false,
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
@@ -173,9 +174,9 @@ return {
 					always_divide_middle = true,
 					globalstatus = true,
 					refresh = {
-						statusline = 1000,
-						tabline = 1000,
-						winbar = 1000,
+						statusline = 100,
+						tabline = 100,
+						winbar = 100,
 					},
 				},
 				sections = {
@@ -185,20 +186,6 @@ return {
 					lualine_b = {
 						"grapple",
 						"branch",
-						{
-							"diff",
-							source = function()
-								local gitsigns = vim.b.gitsigns_status_dict
-								if gitsigns then
-									return {
-										added = gitsigns.added,
-										modified = gitsigns.changed,
-										removed = gitsigns.removed,
-									}
-								end
-							end,
-							always_visible = false,
-						},
 						{
 							"diagnostics",
 							sources = { "nvim_lsp", "nvim_diagnostic", "nvim_workspace_diagnostic" },
@@ -219,6 +206,56 @@ return {
 						"location",
 					},
 				},
+				tabline = {
+					lualine_a = {
+						"grapple",
+						{
+							"diff",
+							source = function()
+								local gitsigns = vim.b.gitsigns_status_dict
+								if gitsigns then
+									return {
+										added = gitsigns.added,
+										modified = gitsigns.changed,
+										removed = gitsigns.removed,
+									}
+								end
+							end,
+							always_visible = false,
+						},
+					},
+					lualine_b = {
+						{
+							"buffers",
+							buffers_color = {
+								active = "lualine_a_replace",
+							},
+							symbols = {
+								alternate_file = "",
+							},
+						},
+					},
+					lualine_c = { "" },
+					lualine_x = {},
+					lualine_y = {},
+					lualine_z = { "tabs" },
+				},
+				-- winbar = {
+				-- 	lualine_a = {},
+				-- 	lualine_b = {},
+				-- 	lualine_c = { "filename" },
+				-- 	lualine_x = {},
+				-- 	lualine_y = {},
+				-- 	lualine_z = {},
+				-- },
+				-- inactive_winbar = {
+				-- 	lualine_a = {},
+				-- 	lualine_b = {},
+				-- 	lualine_c = { "filename" },
+				-- 	lualine_x = {},
+				-- 	lualine_y = {},
+				-- 	lualine_z = {},
+				-- },
 				inactive_sections = {
 					lualine_a = {},
 					lualine_b = {},
@@ -233,6 +270,17 @@ return {
 					"quickfix",
 				},
 			})
+
+			local modes = { "normal", "insert", "visual", "command", "replace" }
+			local diff_types = { "added", "modified", "removed" }
+
+			for _, mode in ipairs(modes) do
+				for _, diff_type in ipairs(diff_types) do
+					local hl_group = string.format("lualine_a_diff_%s_%s", diff_type, mode)
+					local link_group = string.format("lualine_a_diff_%s_inactive", diff_type)
+					vim.api.nvim_set_hl(0, hl_group, { link = link_group })
+				end
+			end
 		end,
 	},
 	{
@@ -406,12 +454,53 @@ return {
 		},
 		config = function()
 			require("incline").setup({
-				window = { margin = { vertical = 0, horizontal = 1 } },
 				render = function(props)
-					local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
-					local icon, color = require("nvim-web-devicons").get_icon_color(filename)
-					return { { icon, guifg = color }, { " " }, { filename } }
+					local fname = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+					local config = vim.fn["gruvbox_material#get_configuration"]()
+					local palette = vim.fn["gruvbox_material#get_palette"](
+						config.background,
+						config.foreground,
+						config.colors_override
+					)
+
+					if props.focused == true then
+						return {
+							{
+								fname,
+								guibg = palette.bg2[1],
+								guifg = palette.fg0[1],
+							},
+						}
+					else
+						return {
+							{
+								fname,
+								guibg = palette.aqua[1],
+								guifg = palette.bg4[1],
+							},
+						}
+					end
 				end,
+				window = {
+					margin = {
+						vertical = 0,
+						horizontal = 0,
+					},
+					padding = {
+						left = 0,
+						right = 0,
+					},
+					overlap = {
+						tabline = false,
+						winbar = false,
+						borders = true,
+						statusline = false,
+					},
+				},
+				hide = {
+					-- focused_win = true,
+					only_win = true,
+				},
 			})
 		end,
 	},
