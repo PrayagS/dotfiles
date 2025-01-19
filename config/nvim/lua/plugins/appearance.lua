@@ -384,4 +384,34 @@ return {
 			},
 		},
 	},
+	{
+		"sphamba/smear-cursor.nvim",
+		enabled = false,
+		event = "VeryLazy",
+		opts = {
+			hide_target_hack = true,
+			cursor_color = "none",
+		},
+	},
+	{
+		"b0o/incline.nvim",
+		event = "VeryLazy",
+		enabled = false, -- [TODO]: Make dropbar, treesitter-context, and incline work together or disable as needed.
+		keys = {
+			{ "<leader>I", '<Cmd>lua require"incline".toggle()<Cr>', desc = "Incline: Toggle" },
+		},
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("incline").setup({
+				window = { margin = { vertical = 0, horizontal = 1 } },
+				render = function(props)
+					local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+					local icon, color = require("nvim-web-devicons").get_icon_color(filename)
+					return { { icon, guifg = color }, { " " }, { filename } }
+				end,
+			})
+		end,
+	},
 }

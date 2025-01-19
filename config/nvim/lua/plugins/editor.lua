@@ -190,4 +190,139 @@ return {
 		event = "BufRead",
 		config = true,
 	},
+	{
+		"monaqa/dial.nvim",
+		keys = {
+			{
+				"<C-]>",
+				mode = { "n", "v" },
+			},
+			{
+				"<C-[>",
+				mode = { "n", "v" },
+			},
+			{
+				"g<C-]>",
+				mode = { "n", "v" },
+			},
+			{
+				"g<C-]>",
+				mode = { "n", "v" },
+			},
+		},
+		config = function()
+			vim.keymap.set("n", "<C-]>", function()
+				require("dial.map").manipulate("increment", "normal")
+			end)
+			vim.keymap.set("n", "<C-[>", function()
+				require("dial.map").manipulate("decrement", "normal")
+			end)
+			vim.keymap.set("n", "g<C-]>", function()
+				require("dial.map").manipulate("increment", "gnormal")
+			end)
+			vim.keymap.set("n", "g<C-[>", function()
+				require("dial.map").manipulate("decrement", "gnormal")
+			end)
+			vim.keymap.set("v", "<C-]>", function()
+				require("dial.map").manipulate("increment", "visual")
+			end)
+			vim.keymap.set("v", "<C-[>", function()
+				require("dial.map").manipulate("decrement", "visual")
+			end)
+			vim.keymap.set("v", "g<C-]>", function()
+				require("dial.map").manipulate("increment", "gvisual")
+			end)
+			vim.keymap.set("v", "g<C-[>", function()
+				require("dial.map").manipulate("decrement", "gvisual")
+			end)
+
+			local augend = require("dial.augend")
+
+			local ordinal_numbers = augend.constant.new({
+				elements = {
+					"first",
+					"second",
+					"third",
+					"fourth",
+					"fifth",
+					"sixth",
+					"seventh",
+					"eighth",
+					"ninth",
+					"tenth",
+				},
+				word = false,
+				cyclic = true,
+			})
+
+			local weekdays = augend.constant.new({
+				elements = {
+					"Monday",
+					"Tuesday",
+					"Wednesday",
+					"Thursday",
+					"Friday",
+					"Saturday",
+					"Sunday",
+				},
+				word = true,
+				cyclic = true,
+			})
+
+			local months = augend.constant.new({
+				elements = {
+					"January",
+					"February",
+					"March",
+					"April",
+					"May",
+					"June",
+					"July",
+					"August",
+					"September",
+					"October",
+					"November",
+					"December",
+				},
+				word = true,
+				cyclic = true,
+			})
+
+			local capitalized_boolean = augend.constant.new({
+				elements = {
+					"True",
+					"False",
+				},
+				word = true,
+				cyclic = true,
+			})
+
+			require("dial.config").augends:register_group({
+				default = {
+					augend.integer.alias.decimal,
+					augend.integer.alias.decimal_int,
+					augend.integer.alias.hex,
+					augend.integer.alias.octal,
+					augend.integer.alias.binary,
+					ordinal_numbers,
+
+					augend.date.alias["%Y/%m/%d"],
+					augend.date.alias["%d/%m/%Y"],
+					augend.date.alias["%d/%m/%y"],
+					augend.date.alias["%H:%M"],
+					augend.date.alias["%H:%M:%S"],
+					weekdays,
+					months,
+
+					augend.semver.alias.semver,
+
+					augend.constant.alias.bool,
+					capitalized_boolean,
+
+					augend.constant.alias.alpha,
+					augend.constant.alias.Alpha,
+				},
+			})
+		end,
+	},
 }
