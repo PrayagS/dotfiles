@@ -28,7 +28,6 @@ zinit from"gh-r" lman for \
     sbin"**/jqp* -> jqp" noahgorstein/jqp \
     sbin"**/nvim" neovim/neovim \
     sbin"**/viddy -> viddy" sachaos/viddy \
-    sbin"**/yazi -> yazi" sxyazi/yazi \
     sbin"**/dust -> dust" bootandy/dust \
     sbin"**/duf -> duf" muesli/duf \
     sbin"**/mcfly -> mcfly" cantino/mcfly \
@@ -68,6 +67,22 @@ zinit for \
     wait='[[ -v CARGO_HOME && -v RUSTUP_HOME ]]' \
     id-as'rust-eza' \
     cargo'!eza' \
+    zdharma-continuum/null
+
+zinit for \
+    light-mode \
+    lucid \
+    wait='[[ -v CARGO_HOME && -v RUSTUP_HOME ]]' \
+    id-as'rust-yazi-fm' \
+    cargo'!yazi-fm -> yazi' \
+    zdharma-continuum/null
+
+zinit for \
+    light-mode \
+    lucid \
+    wait='[[ -v CARGO_HOME && -v RUSTUP_HOME ]]' \
+    id-as'rust-yazi-cli' \
+    cargo'!yazi-cli -> ya' \
     zdharma-continuum/null
 
 zinit for \
