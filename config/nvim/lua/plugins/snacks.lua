@@ -61,6 +61,16 @@ return {
 					},
 					easing = "outExpo",
 				},
+				chunk = {
+					enabled = true,
+					char = {
+						corner_top = "┏",
+						corner_bottom = "┗",
+						horizontal = "╍",
+						vertical = "╏",
+						arrow = ">",
+					},
+				},
 				blank = nil,
 			},
 			notifier = {

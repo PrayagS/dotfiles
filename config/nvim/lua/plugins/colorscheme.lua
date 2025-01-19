@@ -24,7 +24,7 @@ return {
 					local set_hl = vim.fn["gruvbox_material#highlight"]
 
 					set_hl("IblScope", palette.green, palette.none)
-					set_hl("SnacksIndentScope", palette.green, palette.none)
+					set_hl("SnacksIndentScope", palette.yellow, palette.none)
 					vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" })
 					vim.api.nvim_set_hl(0, "LeapMatch", { link = "TSNote" })
 					vim.api.nvim_set_hl(0, "LeapLabelPrimary", { link = "TSNote" })
