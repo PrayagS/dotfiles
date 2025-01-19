@@ -183,6 +183,7 @@ return {
 						"mode",
 					},
 					lualine_b = {
+						"grapple",
 						"branch",
 						{
 							"diff",
