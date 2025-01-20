@@ -47,6 +47,7 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
+		-- enabled = false,
 		event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
 		opts = {
 			multiwindow = true,

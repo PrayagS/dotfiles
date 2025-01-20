@@ -101,16 +101,122 @@ return {
 		event = "VeryLazy",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			-- Maintain a map of lualine themes
-			local themes = {}
-			themes["gruvbox-material"] = "gruvbox-material"
-			themes["sonokai"] = "sonokai"
-			themes["everforest"] = "everforest"
-			themes["newpaper"] = "newpaper"
-			themes["solarized"] = "solarized"
-			themes["vscode"] = "vscode"
-			themes["modus"] = "modus"
-			themes["catppuccin-mocha"] = "catppuccin"
+			local config = vim.fn["gruvbox_material#get_configuration"]()
+			local palette =
+				vim.fn["gruvbox_material#get_palette"](config.background, config.foreground, config.colors_override)
+			--[[
+			{
+				aqua = { "#89b482", "108" },
+				bg0 = { "#1d2021", "234" },
+				bg0 = { "#282828", "235" },
+				bg1 = { "#282828", "235" },
+				bg2 = { "#3c3836", "237" },
+				bg3 = { "#3c3836", "237" },
+				bg4 = { "#504945", "239" },
+				bg_current_word = { "#32302f", "236" },
+				bg_diff_blue = { "#0d3138", "17" },
+				bg_diff_green = { "#32361a", "22" },
+				bg_diff_red = { "#3c1f1e", "52" },
+				bg_dim = { "#141617", "232" },
+				bg_green = { "#a9b665", "142" },
+				bg_red = { "#ea6962", "167" },
+				bg_statusline1 = { "#282828", "235" },
+				bg_statusline2 = { "#32302f", "235" },
+				bg_statusline3 = { "#504945", "239" },
+				bg_visual_blue = { "#2e3b3b", "17" },
+				bg_visual_green = { "#333e34", "22" },
+				bg_visual_red = { "#442e2d", "52" },
+				bg_visual_yellow = { "#473c29", "94" },
+				bg_yellow = { "#d8a657", "214" },
+				blue = { "#7daea3", "109" },
+				fg0 = { "#d4be98", "223" },
+				fg1 = { "#ddc7a1", "223" },
+				green = { "#a9b665", "142" },
+				grey0 = { "#7c6f64", "243" },
+				grey1 = { "#928374", "245" },
+				grey2 = { "#a89984", "246" },
+				none = { "NONE", "NONE" },
+				orange = { "#e78a4e", "208" },
+				purple = { "#d3869b", "175" },
+				red = { "#ea6962", "167" },
+				yellow = { "#d8a657", "214" }
+			}
+
+			-- default theme
+			normal = {
+				a = {bg = palette.grey2[1], fg = palette.bg0[1], gui = 'bold'},
+				a = {bg = palette.bg_statusline3[1], fg = palette.fg1[1]},
+				a = {bg = palette.bg_statusline1[1], fg = palette.fg1[1]}
+			},
+			insert = {
+				a = {bg = palette.bg_green[1], fg = palette.bg0[1], gui = 'bold'},
+				a = {bg = palette.bg_statusline3[1], fg = palette.fg1[1]},
+				a = {bg = palette.bg_statusline1[1], fg = palette.fg1[1]}
+			},
+			visual = {
+				a = {bg = palette.bg_red[1], fg = palette.bg0[1], gui = 'bold'},
+				a = {bg = palette.bg_statusline3[1], fg = palette.fg1[1]},
+				a = {bg = palette.bg_statusline1[1], fg = palette.fg1[1]}
+			},
+			replace = {
+				a = {bg = palette.bg_yellow[1], fg = palette.bg0[1], gui = 'bold'},
+				a = {bg = palette.bg_statusline3[1], fg = palette.fg1[1]},
+				a = {bg = palette.bg_statusline1[1], fg = palette.fg1[1]}
+			},
+			command = {
+				a = {bg = palette.blue[1], fg = palette.bg0[1], gui = 'bold'},
+				a = {bg = palette.bg_statusline3[1], fg = palette.fg1[1]},
+				a = {bg = palette.bg_statusline1[1], fg = palette.fg1[1]}
+			},
+			terminal = {
+				a = {bg = palette.purple[1], fg = palette.bg0[1], gui = 'bold'},
+				a = {bg = palette.bg_statusline3[1], fg = palette.fg1[1]},
+				a = {bg = palette.bg_statusline1[1], fg = palette.fg1[1]}
+			},
+			inactive = {
+				a = {bg = palette.bg_statusline1[1], fg = palette.grey2[1]},
+				a = {bg = palette.bg_statusline1[1], fg = palette.grey2[1]},
+				a = {bg = palette.bg_statusline1[1], fg = palette.grey2[1]}
+			}
+			--]]
+
+			local updated_gruvbox_material_lualine_theme = {
+				normal = {
+					a = { bg = palette.bg_statusline2[1], fg = palette.fg1[1], gui = "bold" },
+					b = { bg = palette.bg_statusline3[1], fg = palette.fg1[1] },
+					c = { bg = palette.bg_statusline2[1], fg = palette.fg1[1], gui = "bold" },
+				},
+				insert = {
+					a = { bg = palette.bg_green[1], fg = palette.bg0[1], gui = "bold" },
+					b = { bg = palette.bg_statusline3[1], fg = palette.fg1[1] },
+					c = { bg = palette.bg_statusline1[1], fg = palette.fg1[1] },
+				},
+				visual = {
+					a = { bg = palette.bg_yellow[1], fg = palette.bg0[1], gui = "bold" },
+					b = { bg = palette.bg_statusline3[1], fg = palette.fg1[1] },
+					c = { bg = palette.bg_statusline1[1], fg = palette.fg1[1] },
+				},
+				replace = {
+					a = { bg = palette.bg_yellow[1], fg = palette.bg0[1], gui = "bold" },
+					b = { bg = palette.bg_statusline3[1], fg = palette.fg1[1] },
+					c = { bg = palette.bg_statusline1[1], fg = palette.fg1[1] },
+				},
+				command = {
+					a = { bg = palette.blue[1], fg = palette.bg0[1], gui = "bold" },
+					b = { bg = palette.bg_statusline3[1], fg = palette.fg1[1] },
+					c = { bg = palette.bg_statusline1[1], fg = palette.fg1[1] },
+				},
+				terminal = {
+					a = { bg = palette.purple[1], fg = palette.bg0[1], gui = "bold" },
+					b = { bg = palette.bg_statusline3[1], fg = palette.fg1[1] },
+					c = { bg = palette.bg_statusline1[1], fg = palette.fg1[1] },
+				},
+				inactive = {
+					a = { bg = palette.bg_statusline1[1], fg = palette.grey2[1] },
+					b = { bg = palette.bg_statusline1[1], fg = palette.grey2[1] },
+					c = { bg = palette.bg_statusline1[1], fg = palette.grey2[1] },
+				},
+			}
 
 			local function get_attached_lsp_clients()
 				local buf_clients = vim.lsp.get_active_clients({ bufnr = 0 })
@@ -160,10 +266,49 @@ return {
 				end
 			end
 
+			local diagnostic_icons = {
+				["ERROR"] = " ",
+				["WARN"] = " ",
+				["HINT"] = " ",
+				["INFO"] = " ",
+			}
+			local function get_current_buffer_errors()
+				local count = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity["ERROR"] })
+				if count > 0 then
+					return string.format("%s%s", diagnostic_icons["ERROR"], count)
+				else
+					return ""
+				end
+			end
+			local function get_current_buffer_warnings()
+				local count = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity["WARN"] })
+				if count > 0 then
+					return string.format("%s%s", diagnostic_icons["WARN"], count)
+				else
+					return ""
+				end
+			end
+			local function get_current_buffer_hints()
+				local count = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity["HINT"] })
+				if count > 0 then
+					return string.format("%s%s", diagnostic_icons["HINT"], count)
+				else
+					return ""
+				end
+			end
+			local function get_current_buffer_infotips()
+				local count = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity["INFO"] })
+				if count > 0 then
+					return string.format("%s%s", diagnostic_icons["INFO"], count)
+				else
+					return ""
+				end
+			end
+
 			require("lualine").setup({
 				options = {
 					icons_enabled = true,
-					theme = themes[vim.cmd("silent colorscheme")] or "auto",
+					theme = updated_gruvbox_material_lualine_theme,
 					component_separators = "",
 					section_separators = "",
 					disabled_filetypes = {
@@ -184,7 +329,6 @@ return {
 						"mode",
 					},
 					lualine_b = {
-						"grapple",
 						"branch",
 						{
 							"diagnostics",
@@ -192,13 +336,14 @@ return {
 						},
 					},
 					lualine_c = {
+						"%=",
 						{
 							"filename",
 							path = 1,
 						},
 					},
-					lualine_x = { "encoding", "filetype" },
-					lualine_y = { "progress" },
+					lualine_x = {},
+					lualine_y = { "encoding", "filetype", "progress" },
 					lualine_z = {
 						get_attached_lsp_clients,
 						get_attached_linters,
@@ -207,8 +352,76 @@ return {
 					},
 				},
 				tabline = {
-					lualine_a = {
-						"grapple",
+					lualine_a = {},
+					lualine_b = {
+						{
+							"buffers",
+							buffers_color = {
+								active = "lualine_a_replace",
+							},
+							symbols = {
+								alternate_file = "",
+							},
+						},
+					},
+					lualine_c = { "" },
+					lualine_x = {},
+					lualine_y = {},
+					lualine_z = {
+						{
+							"tabs",
+							tabs_color = {
+								active = "lualine_a_replace",
+							},
+						},
+					},
+				},
+				winbar = {
+					lualine_a = {},
+					lualine_b = {},
+					lualine_c = {},
+					lualine_x = { "grapple" },
+					lualine_y = {
+						{
+							get_current_buffer_infotips,
+							padding = {
+								left = 1,
+								right = 0,
+							},
+							color = {
+								fg = string.format("%06x", vim.api.nvim_get_hl(0, { name = "DiagnosticInfo" }).fg),
+							},
+						},
+						{
+							get_current_buffer_hints,
+							padding = {
+								left = 1,
+								right = 0,
+							},
+							color = {
+								fg = string.format("%06x", vim.api.nvim_get_hl(0, { name = "DiagnosticHint" }).fg),
+							},
+						},
+						{
+							get_current_buffer_warnings,
+							padding = {
+								left = 1,
+								right = 0,
+							},
+							color = {
+								fg = string.format("%06x", vim.api.nvim_get_hl(0, { name = "DiagnosticWarn" }).fg),
+							},
+						},
+						{
+							get_current_buffer_errors,
+							padding = {
+								left = 1,
+								right = 0,
+							},
+							color = {
+								fg = string.format("%06x", vim.api.nvim_get_hl(0, { name = "DiagnosticError" }).fg),
+							},
+						},
 						{
 							"diff",
 							source = function()
@@ -224,38 +437,63 @@ return {
 							always_visible = false,
 						},
 					},
-					lualine_b = {
+					lualine_z = { "filename" },
+				},
+				inactive_winbar = {
+					lualine_a = {},
+					lualine_b = {},
+					lualine_c = {},
+					lualine_x = { "grapple" },
+					lualine_y = {
 						{
-							"buffers",
-							buffers_color = {
-								active = "lualine_a_replace",
+							get_current_buffer_infotips,
+							padding = {
+								left = 1,
+								right = 0,
 							},
-							symbols = {
-								alternate_file = "",
+							color = "DiagnosticInfo",
+						},
+						{
+							get_current_buffer_hints,
+							padding = {
+								left = 1,
+								right = 0,
 							},
+							color = "DiagnosticHint",
+						},
+						{
+							get_current_buffer_warnings,
+							padding = {
+								left = 1,
+								right = 0,
+							},
+							color = "DiagnosticWarn",
+						},
+						{
+							get_current_buffer_errors,
+							padding = {
+								left = 1,
+								right = 0,
+							},
+							color = "DiagnosticError",
+						},
+						{
+							"diff",
+							source = function()
+								local gitsigns = vim.b.gitsigns_status_dict
+								if gitsigns then
+									return {
+										added = gitsigns.added,
+										modified = gitsigns.changed,
+										removed = gitsigns.removed,
+									}
+								end
+							end,
+							always_visible = false,
 						},
 					},
-					lualine_c = { "" },
-					lualine_x = {},
-					lualine_y = {},
-					lualine_z = { "tabs" },
+					lualine_z = { "filename" },
 				},
-				-- winbar = {
-				-- 	lualine_a = {},
-				-- 	lualine_b = {},
-				-- 	lualine_c = { "filename" },
-				-- 	lualine_x = {},
-				-- 	lualine_y = {},
-				-- 	lualine_z = {},
-				-- },
-				-- inactive_winbar = {
-				-- 	lualine_a = {},
-				-- 	lualine_b = {},
-				-- 	lualine_c = { "filename" },
-				-- 	lualine_x = {},
-				-- 	lualine_y = {},
-				-- 	lualine_z = {},
-				-- },
 				inactive_sections = {
 					lualine_a = {},
 					lualine_b = {},
@@ -270,6 +508,8 @@ return {
 					"quickfix",
 				},
 			})
+			if 1 then
+			end
 
 			local modes = { "normal", "insert", "visual", "command", "replace" }
 			local diff_types = { "added", "modified", "removed" }
@@ -443,63 +683,14 @@ return {
 		},
 	},
 	{
-		"b0o/incline.nvim",
+		"echasnovski/mini.hipatterns",
+		version = false,
 		event = "VeryLazy",
-		enabled = false, -- [TODO]: Make dropbar, treesitter-context, and incline work together or disable as needed.
-		keys = {
-			{ "<leader>I", '<Cmd>lua require"incline".toggle()<Cr>', desc = "Incline: Toggle" },
-		},
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
 		config = function()
-			require("incline").setup({
-				render = function(props)
-					local fname = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
-					local config = vim.fn["gruvbox_material#get_configuration"]()
-					local palette = vim.fn["gruvbox_material#get_palette"](
-						config.background,
-						config.foreground,
-						config.colors_override
-					)
-
-					if props.focused == true then
-						return {
-							{
-								fname,
-								guibg = palette.bg2[1],
-								guifg = palette.fg0[1],
-							},
-						}
-					else
-						return {
-							{
-								fname,
-								guibg = palette.aqua[1],
-								guifg = palette.bg4[1],
-							},
-						}
-					end
-				end,
-				window = {
-					margin = {
-						vertical = 0,
-						horizontal = 0,
-					},
-					padding = {
-						left = 0,
-						right = 0,
-					},
-					overlap = {
-						tabline = false,
-						winbar = false,
-						borders = true,
-						statusline = false,
-					},
-				},
-				hide = {
-					-- focused_win = true,
-					only_win = true,
+			local hipatterns = require("mini.hipatterns")
+			hipatterns.setup({
+				highlighters = {
+					hex_color = hipatterns.gen_highlighter.hex_color(),
 				},
 			})
 		end,
