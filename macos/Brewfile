@@ -97,6 +97,8 @@ brew "linkerd"
 brew "mactop"
 # Mac App Store command-line interface
 brew "mas"
+# CLI for MySQL with auto-completion and syntax highlighting
+brew "mycli"
 # Port scanning utility for large networks
 brew "nmap"
 # Tiny, lightning fast, feature-packed file manager
