@@ -33,8 +33,8 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>f", function()
-			require("oil").open_float()
-		end)
+		-- vim.keymap.set("n", "<leader>f", function()
+		-- 	require("oil").open_float()
+		-- end)
 	end,
 }
