@@ -314,6 +314,7 @@ config.leader = { key = "Tab", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
 
 	{ key = "p", mods = "LEADER", action = act.ActivateCommandPalette },
+	{ key = "x", mods = "LEADER", action = act.ActivateCopyMode },
 	{ key = "y", mods = "LEADER", action = act.CopyTo("ClipboardAndPrimarySelection") },
 	{ key = "k", mods = "CTRL", action = act.ClearScrollback("ScrollbackOnly") },
 	{ key = "?", mods = "LEADER", action = act.ShowDebugOverlay },
