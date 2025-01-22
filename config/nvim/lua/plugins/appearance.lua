@@ -380,48 +380,46 @@ return {
 					lualine_a = {},
 					lualine_b = {},
 					lualine_c = {},
-					lualine_x = { "grapple" },
-					lualine_y = {
+					lualine_x = {
+						{
+							"grapple",
+							padding = { left = 1, right = 0 },
+							separator = { left = "", right = "" },
+						},
 						{
 							get_current_buffer_infotips,
-							padding = {
-								left = 1,
-								right = 0,
-							},
 							color = {
 								fg = string.format("%06x", vim.api.nvim_get_hl(0, { name = "DiagnosticInfo" }).fg),
 							},
+							separator = { left = "", right = "" },
+							padding = { left = 1, right = 0 },
 						},
 						{
 							get_current_buffer_hints,
-							padding = {
-								left = 1,
-								right = 0,
-							},
 							color = {
 								fg = string.format("%06x", vim.api.nvim_get_hl(0, { name = "DiagnosticHint" }).fg),
 							},
+							separator = { left = "", right = "" },
+							padding = { left = 1, right = 0 },
 						},
 						{
 							get_current_buffer_warnings,
-							padding = {
-								left = 1,
-								right = 0,
-							},
 							color = {
 								fg = string.format("%06x", vim.api.nvim_get_hl(0, { name = "DiagnosticWarn" }).fg),
 							},
+							separator = { left = "", right = "" },
+							padding = { left = 1, right = 0 },
 						},
 						{
 							get_current_buffer_errors,
-							padding = {
-								left = 1,
-								right = 0,
-							},
 							color = {
 								fg = string.format("%06x", vim.api.nvim_get_hl(0, { name = "DiagnosticError" }).fg),
 							},
+							separator = { left = "", right = "" },
+							padding = { left = 1, right = 0 },
 						},
+					},
+					lualine_y = {
 						{
 							"diff",
 							source = function()
@@ -435,6 +433,12 @@ return {
 								end
 							end,
 							always_visible = false,
+							-- padding = {
+							-- 	left = 0,
+							-- 	right = 1,
+							-- },
+							separator = { left = "", right = "" },
+							padding = { left = 1, right = 0 },
 						},
 					},
 					lualine_z = { "filename" },
@@ -443,40 +447,46 @@ return {
 					lualine_a = {},
 					lualine_b = {},
 					lualine_c = {},
-					lualine_x = { "grapple" },
-					lualine_y = {
+					lualine_x = {
+						{
+							"grapple",
+							padding = { left = 1, right = 0 },
+							separator = { left = "", right = "" },
+						},
 						{
 							get_current_buffer_infotips,
-							padding = {
-								left = 1,
-								right = 0,
+							color = {
+								fg = string.format("%06x", vim.api.nvim_get_hl(0, { name = "DiagnosticInfo" }).fg),
 							},
-							color = "DiagnosticInfo",
+							separator = { left = "", right = "" },
+							padding = { left = 1, right = 0 },
 						},
 						{
 							get_current_buffer_hints,
-							padding = {
-								left = 1,
-								right = 0,
+							color = {
+								fg = string.format("%06x", vim.api.nvim_get_hl(0, { name = "DiagnosticHint" }).fg),
 							},
-							color = "DiagnosticHint",
+							separator = { left = "", right = "" },
+							padding = { left = 1, right = 0 },
 						},
 						{
 							get_current_buffer_warnings,
-							padding = {
-								left = 1,
-								right = 0,
+							color = {
+								fg = string.format("%06x", vim.api.nvim_get_hl(0, { name = "DiagnosticWarn" }).fg),
 							},
-							color = "DiagnosticWarn",
+							separator = { left = "", right = "" },
+							padding = { left = 1, right = 0 },
 						},
 						{
 							get_current_buffer_errors,
-							padding = {
-								left = 1,
-								right = 0,
+							color = {
+								fg = string.format("%06x", vim.api.nvim_get_hl(0, { name = "DiagnosticError" }).fg),
 							},
-							color = "DiagnosticError",
+							separator = { left = "", right = "" },
+							padding = { left = 1, right = 0 },
 						},
+					},
+					lualine_y = {
 						{
 							"diff",
 							source = function()
@@ -490,6 +500,12 @@ return {
 								end
 							end,
 							always_visible = false,
+							-- padding = {
+							-- 	left = 0,
+							-- 	right = 1,
+							-- },
+							padding = { left = 1, right = 0 },
+							separator = { left = "", right = "" },
 						},
 					},
 					lualine_z = { "filename" },
