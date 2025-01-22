@@ -310,7 +310,7 @@ wezterm.on("gui-startup", resurrect.resurrect_on_gui_startup)
 
 config.ui_key_cap_rendering = "UnixLong"
 -- https://wezfurlong.org/wezterm/config/keys.html?#leader-key
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = { key = "Tab", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
 
 	{ key = "p", mods = "LEADER", action = act.ActivateCommandPalette },
