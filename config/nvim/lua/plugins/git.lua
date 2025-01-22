@@ -13,49 +13,63 @@ return {
 				vim.api.nvim_buf_set_keymap(
 					bufnr,
 					"n",
-					"<leader>gS",
+					"<leader>hS",
 					'<cmd>lua require("gitsigns").stage_buffer()<CR>',
 					{}
 				)
 				vim.api.nvim_buf_set_keymap(
 					bufnr,
 					"n",
-					"<leader>gs",
-					'<cmd>lua require("gitsigns").stage_hunk()<CR>',
+					"<leader>hs",
+					'<cmd>lua require("gitsigns").stage_hunk()<cr>',
 					{}
 				)
 				vim.api.nvim_buf_set_keymap(
 					bufnr,
-					"v",
-					"<leader>gs",
+					"n",
+					"<leader>hu",
+					'<cmd>lua require("gitsigns").undo_stage_hunk()<cr>',
+					{}
+				)
+				vim.api.nvim_buf_set_keymap(
+					bufnr,
+					"x",
+					"<leader>hu",
+					'<cmd>lua require("gitsigns").undo_stage_hunk({ vim.fn.line("."), vim.fn.line("v") })<CR>',
+					{}
+				)
+				vim.api.nvim_buf_set_keymap(
+					bufnr,
+					"x",
+					"<leader>hs",
 					'<cmd>lua require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") })<CR>',
 					{}
 				)
 				vim.api.nvim_buf_set_keymap(
 					bufnr,
 					"n",
-					"<leader>gR",
+					"<leader>hR",
 					'<cmd>lua require("gitsigns").reset_buffer()<CR>',
 					{}
 				)
 				vim.api.nvim_buf_set_keymap(
 					bufnr,
 					"n",
-					"<leader>gr",
+					"<leader>hr",
 					'<cmd>lua require("gitsigns").reset_hunk()<CR>',
 					{}
 				)
 				vim.api.nvim_buf_set_keymap(
 					bufnr,
-					"v",
-					"<leader>gr",
+					"x",
+					"<leader>hr",
 					'<cmd>lua require("gitsigns").reset_hunk({ vim.fn.line("."), vim.fn.line("v") })<CR>',
 					{}
 				)
 				vim.api.nvim_buf_set_keymap(
 					bufnr,
 					"n",
-					"<leader>gp",
+					"<leader>hp",
 					'<cmd>lua require("gitsigns").preview_hunk_inline()<CR>',
 					{}
 				)
