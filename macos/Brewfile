@@ -223,6 +223,8 @@ cask "neovide"
 cask "notion-calendar"
 # Calculator and converter application
 cask "numi"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Rhythm game
 cask "osu"
 # Home media player
