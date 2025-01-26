@@ -13,6 +13,8 @@ tap "koekeishiya/formulae"
 tap "localsend/localsend"
 tap "peak/tap"
 tap "rcmdnk/file"
+# CLI tool for AWS Athena service
+brew "athenacli"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Curl like simplicity to access AWS resources
@@ -71,6 +73,8 @@ brew "hey"
 brew "htop"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# Terminal Client for Redis with AutoCompletion and Syntax Highlighting
+brew "iredis"
 # Sort Python imports automatically
 brew "isort"
 # Command-line note taker
