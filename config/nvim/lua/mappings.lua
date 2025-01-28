@@ -51,16 +51,16 @@ set("n", "Q", "<nop>")
 -- set({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 -- Move to windows using the <ctrl> hjkl keys
-set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
-set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
-set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
-set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
+-- set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
+-- set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
+-- set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
+-- set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 
 -- Resize window using <ctrl> arrow keys
-set("n", "<C-S-k>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-set("n", "<C-S-j>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-set("n", "<C-S-h>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-set("n", "<C-S-l>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+-- set("n", "<C-S-k>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+-- set("n", "<C-S-j>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+-- set("n", "<C-S-h>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+-- set("n", "<C-S-l>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- Clear search with <esc>
 set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })

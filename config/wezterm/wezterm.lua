@@ -316,7 +316,6 @@ config.keys = {
 	{ key = "p", mods = "LEADER", action = act.ActivateCommandPalette },
 	{ key = "x", mods = "LEADER", action = act.ActivateCopyMode },
 	{ key = "y", mods = "LEADER", action = act.CopyTo("ClipboardAndPrimarySelection") },
-	{ key = "k", mods = "CTRL", action = act.ClearScrollback("ScrollbackOnly") },
 	{ key = "?", mods = "LEADER", action = act.ShowDebugOverlay },
 	{ key = "r", mods = "LEADER", action = act.ReloadConfiguration },
 
@@ -413,29 +412,17 @@ config.keys = {
 	{ key = "9", mods = "LEADER", action = act.PaneSelect({ mode = "Activate" }) },
 	{ key = "0", mods = "LEADER", action = act.PaneSelect({ mode = "SwapWithActive" }) },
 	{
-		key = "L",
-		mods = "LEADER",
-		action = act.AdjustPaneSize({ "Right", 5 }),
-	},
-	{
-		key = "K",
-		mods = "LEADER",
-		action = act.AdjustPaneSize({ "Up", 5 }),
-	},
-	{
 		key = "Q",
 		mods = "LEADER",
 		action = act.CloseCurrentTab({ confirm = true }),
 	},
 	{
-		key = "J",
+		key = "l",
 		mods = "LEADER",
-		action = act.AdjustPaneSize({ "Down", 5 }),
-	},
-	{
-		key = "H",
-		mods = "LEADER",
-		action = act.AdjustPaneSize({ "Left", 5 }),
+		action = act.Multiple({
+			act.ClearScrollback("ScrollbackAndViewport"),
+			act.SendKey({ key = "L", mods = "CTRL" }),
+		}),
 	},
 
 	-- disable key bindings that conflict with vim
@@ -456,6 +443,15 @@ for i = 1, 8 do
 		action = act.ActivateTab(i - 1),
 	})
 end
+
+-- smart splits
+local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
+smart_splits.apply_to_config(config, {
+	modifiers = {
+		move = "CTRL",
+		resize = "CTRL | SHIFT",
+	},
+})
 
 -- and finally, return the configuration to wezterm
 return config
