@@ -101,6 +101,8 @@ brew "linkerd"
 brew "mactop"
 # Mac App Store command-line interface
 brew "mas"
+# Media player based on MPlayer and mplayer2
+brew "mpv"
 # CLI for MySQL with auto-completion and syntax highlighting
 brew "mycli"
 # Port scanning utility for large networks
@@ -153,6 +155,8 @@ brew "ttyd"
 brew "vale"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
+# Command-line streaming torrent client
+brew "webtorrent-cli"
 # Internet file retriever
 brew "wget"
 # Automatic workarounds for problems in Wine
@@ -203,6 +207,10 @@ cask "ghostty"
 cask "gitify"
 # Web browser
 cask "google-chrome@beta"
+# Free and open-source media player
+cask "iina"
+# Offline AI chat tool
+cask "jan"
 # Jellyfin desktop client
 cask "jellyfin-media-player"
 # Menu bar manager
@@ -213,6 +221,8 @@ cask "kap"
 cask "karabiner-elements"
 # Preview and audit Kindle eBooks
 cask "kindle-previewer"
+# Discover, download, and run local LLMs
+cask "lm-studio"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Sandbox construction video game
@@ -227,6 +237,8 @@ cask "neovide"
 cask "notion-calendar"
 # Calculator and converter application
 cask "numi"
+# Get up and running with large language models locally
+cask "ollama"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Rhythm game

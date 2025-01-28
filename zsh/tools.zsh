@@ -108,3 +108,6 @@ zinit for \
     id-as'uv' \
     pip'uv <- !uv -> uv' \
     zdharma-continuum/null
+
+zinit from"gh-r" lman for \
+    sbin"ani-cli" pystardust/ani-cli
