@@ -113,6 +113,8 @@ return {
 		build = "cargo build --release",
 		dependencies = {
 			"mikavilpas/blink-ripgrep.nvim",
+			"Kaiser-Yang/blink-cmp-git",
+			"ribru17/blink-cmp-spell",
 		},
 		-- version = "*",
 		opts = {
@@ -138,7 +140,7 @@ return {
 				nerd_font_variant = "mono",
 			},
 			sources = {
-				default = { "lsp", "path", "buffer", "ripgrep" },
+				default = { "lsp", "path", "buffer", "spell", "ripgrep", "git" },
 				providers = {
 					lsp = {
 						name = "LSP",
@@ -147,6 +149,13 @@ return {
 					},
 					path = {
 						opts = { show_hidden_files_by_default = true },
+					},
+					spell = {
+						name = "Spell",
+						module = "blink-cmp-spell",
+						opts = {
+							max_entries = 10,
+						},
 					},
 					ripgrep = {
 						module = "blink-ripgrep",
@@ -160,6 +169,24 @@ return {
 							future_features = { kill_previous_searches = true },
 						},
 					},
+					git = {
+						module = "blink-cmp-git",
+						name = "Git",
+					},
+				},
+			},
+			fuzzy = {
+				sorts = {
+					function(a, b)
+						local sort = require("blink.cmp.fuzzy.sort")
+						if a.source_id == "spell" and b.source_id == "spell" then
+							return sort.label(a, b)
+						end
+					end,
+					-- This is the normal default order, which we fall back to
+					"score",
+					"kind",
+					"label",
 				},
 			},
 		},

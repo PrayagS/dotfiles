@@ -3,6 +3,8 @@
   "actions-preview.nvim": { "branch": "master", "commit": "9f52a01c374318e91337697ebed51c6fae57f8a4" },
   "aerial.nvim": { "branch": "master", "commit": "e75a3df2c20b3a98c786f5e61587d74a7a6b61d6" },
   "auto-session": { "branch": "main", "commit": "41ac59e5f400b3f4f9b11e478ccf6e077de5f6c7" },
+  "blink-cmp-git": { "branch": "master", "commit": "7c6cfa3d427f50a6eae5c38628b31b8675bab05d" },
+  "blink-cmp-spell": { "branch": "master", "commit": "416d8ca1bce6d5d16be47c4cee88d9326bf13ca5" },
   "blink-ripgrep.nvim": { "branch": "main", "commit": "519ac7894113f6a7b517b157c26e31fbd58a0de5" },
   "blink.cmp": { "branch": "main", "commit": "7f3d9828ebc0e42d0f41cb873e9b019a57e5bd72" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
