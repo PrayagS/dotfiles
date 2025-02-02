@@ -76,68 +76,51 @@
 # A REFERENCE ONLY, WHEN MAKING YOUR OWN CONFIGURATION..          #
 # ############################################################### #
 
-# open terminal, blazingly fast compared to iTerm/Hyper
-hyper - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
-
-# Google Chrome
-# hyper - w : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --profile-directory="Default"
-# hyper - z : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --profile-directory="Profile 4"
-# hyper - b : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --profile-directory="Profile 5"
-# hyper - n : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --incognito
-
-# Mozilla Firefox
-hyper - w : "/Applications/Firefox.app/Contents/MacOS/firefox" --new-window 'ext+container:name=Personal&url=mail.google.com&pinned=true'
-hyper - z : "/Applications/Firefox.app/Contents/MacOS/firefox" --new-window 'ext+container:name=Zomato&url=mail.google.com&pinned=true'
-hyper - b : "/Applications/Firefox.app/Contents/MacOS/firefox" --new-window 'ext+container:name=Blinkit&url=mail.google.com&pinned=true'
-hyper - n : "/Applications/Firefox.app/Contents/MacOS/firefox" --private-window
-
-hyper - p : code
-
 # focus spaces
-# lcmd - 1 : yabai -m space --focus 1 || yabai -m space --create && yabai -m space --focus 1
-# lcmd - 2 : yabai -m space --focus 2 || yabai -m space --create && yabai -m space --focus 2
-# lcmd - 3 : yabai -m space --focus 3 || yabai -m space --create && yabai -m space --focus 3
-# lcmd - 4 : yabai -m space --focus 4 || yabai -m space --create && yabai -m space --focus 4
-# lcmd - 5 : yabai -m space --focus 5 || yabai -m space --create && yabai -m space --focus 5
-# lcmd - 6 : yabai -m space --focus 6 || yabai -m space --create && yabai -m space --focus 6
-# lcmd - 7 : yabai -m space --focus 7 || yabai -m space --create && yabai -m space --focus 7
-# lcmd - 8 : yabai -m space --focus 8 || yabai -m space --create && yabai -m space --focus 8
-# lcmd - 9 : yabai -m space --focus 9 || yabai -m space --create && yabai -m space --focus 9
-# lcmd - 0 : yabai -m space --focus 10 || yabai -m space --create && yabai -m space --focus 10
-lcmd - 1 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[0]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 1"; fi
-lcmd - 2 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[1]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 2"; fi
-lcmd - 3 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[2]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 3"; fi
-lcmd - 4 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[3]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 4"; fi
-lcmd - 5 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[4]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 5"; fi
-lcmd - 6 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[5]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 6"; fi
-lcmd - 7 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[6]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 7"; fi
-lcmd - 8 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[7]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 8"; fi
-lcmd - 9 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[8]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 9"; fi
-lcmd - 0 : yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[9]'); if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 0"; fi
+lcmd - 1 : ~/.config/yabai/focus_space.sh -m space --focus 1; \
+             if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 1"; fi
+lcmd - 2 : ~/.config/yabai/focus_space.sh -m space --focus 2; \
+             if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 2"; fi
+lcmd - 3 : ~/.config/yabai/focus_space.sh -m space --focus 3; \
+             if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 3"; fi
+lcmd - 4 : ~/.config/yabai/focus_space.sh -m space --focus 4; \
+             if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 4"; fi
+lcmd - 5 : ~/.config/yabai/focus_space.sh -m space --focus 5; \
+             if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 5"; fi
+lcmd - 6 : ~/.config/yabai/focus_space.sh -m space --focus 6; \
+             if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 6"; fi
+lcmd - 7 : ~/.config/yabai/focus_space.sh -m space --focus 7; \
+             if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 7"; fi
+lcmd - 8 : ~/.config/yabai/focus_space.sh -m space --focus 8; \
+             if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 8"; fi
+lcmd - 9 : ~/.config/yabai/focus_space.sh -m space --focus 9; \
+             if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 9"; fi
+lcmd - 0 : ~/.config/yabai/focus_space.sh -m space --focus 10; \
+             if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 0"; fi
 
 # move windows to space
-lalt - 1 : yabai -m window --space 1
-lalt - 2 : yabai -m window --space 2
-lalt - 3 : yabai -m window --space 3
-lalt - 4 : yabai -m window --space 4
-lalt - 5 : yabai -m window --space 5
-lalt - 6 : yabai -m window --space 6
-lalt - 7 : yabai -m window --space 7
-lalt - 8 : yabai -m window --space 8
-lalt - 9 : yabai -m window --space 9
-lalt - 0 : yabai -m window --space 10
+lalt - 1 : ~/.config/yabai/focus_space.sh -m window --move 1
+lalt - 2 : ~/.config/yabai/focus_space.sh -m window --move 2
+lalt - 3 : ~/.config/yabai/focus_space.sh -m window --move 3
+lalt - 4 : ~/.config/yabai/focus_space.sh -m window --move 4
+lalt - 5 : ~/.config/yabai/focus_space.sh -m window --move 5
+lalt - 6 : ~/.config/yabai/focus_space.sh -m window --move 6
+lalt - 7 : ~/.config/yabai/focus_space.sh -m window --move 7
+lalt - 8 : ~/.config/yabai/focus_space.sh -m window --move 8
+lalt - 9 : ~/.config/yabai/focus_space.sh -m window --move 9
+lalt - 0 : ~/.config/yabai/focus_space.sh -m window --move 10
 
 # move windows to space and focus the space
-shift + lalt - 1 : yabai -m window --space 1; yabai -m space --focus 1
-shift + lalt - 2 : yabai -m window --space 2; yabai -m space --focus 2
-shift + lalt - 3 : yabai -m window --space 3; yabai -m space --focus 3
-shift + lalt - 4 : yabai -m window --space 4; yabai -m space --focus 4
-shift + lalt - 5 : yabai -m window --space 5; yabai -m space --focus 5
-shift + lalt - 6 : yabai -m window --space 6; yabai -m space --focus 6
-shift + lalt - 7 : yabai -m window --space 7; yabai -m space --focus 7
-shift + lalt - 8 : yabai -m window --space 8; yabai -m space --focus 8
-shift + lalt - 9 : yabai -m window --space 9; yabai -m space --focus 9
-shift + lalt - 0 : yabai -m window --space 10; yabai -m space --focus 10
+shift + lalt - 1 : ~/.config/yabai/focus_space.sh -m window --move 1 --focus
+shift + lalt - 2 : ~/.config/yabai/focus_space.sh -m window --move 2 --focus
+shift + lalt - 3 : ~/.config/yabai/focus_space.sh -m window --move 3 --focus
+shift + lalt - 4 : ~/.config/yabai/focus_space.sh -m window --move 4 --focus
+shift + lalt - 5 : ~/.config/yabai/focus_space.sh -m window --move 5 --focus
+shift + lalt - 6 : ~/.config/yabai/focus_space.sh -m window --move 6 --focus
+shift + lalt - 7 : ~/.config/yabai/focus_space.sh -m window --move 7 --focus
+shift + lalt - 8 : ~/.config/yabai/focus_space.sh -m window --move 8 --focus
+shift + lalt - 9 : ~/.config/yabai/focus_space.sh -m window --move 9 --focus
+shift + lalt - 0 : ~/.config/yabai/focus_space.sh -m window --move 10 --focus
 
 # focus recent space
 lcmd - tab : yabai -m space --focus recent
@@ -212,41 +195,15 @@ lalt - q : yabai -m window --close
 lalt - o : yabai -m space --create; yabai -m space --focus last
 lalt + shift - o : yabai -m space --create; yabai -m window --space last; yabai -m space --focus last
 # lalt - ,
-# lalt - 0x2B : yabai -m space --focus prev
-lalt - 0x2B : ~/.config/yabai/space_cycle_prev.sh; skhd -k "ctrl - ,"
-lalt + lctrl - 0x2B : ~/.config/yabai/create_space.sh left; skhd -k "ctrl - ,"
+lalt - 0x2B : ~/.config/yabai/focus_space.sh -m space --focus left
 # lalt - .
-# lalt - 0x2F : yabai -m space --focus next
-lalt - 0x2F : ~/.config/yabai/space_cycle_next.sh; skhd -k "ctrl - ."
-lalt + lctrl - 0x2F : ~/.config/yabai/create_space.sh right; skhd -k "ctrl - ."
-lalt + shift - 0x2B : yabai -m window --space prev; yabai -m space --focus prev
-lalt + shift - 0x2F : yabai -m window --space next; yabai -m space --focus next
+lalt - 0x2F : ~/.config/yabai/focus_space.sh -m space --focus right
+# lalt + shift - 0x2F : yabai -m window --space next; yabai -m space --focus next
+lalt + shift - 0x2B : ~/.config/yabai/focus_space.sh -m window --move left
+lalt + shift - 0x2F : ~/.config/yabai/focus_space.sh -m window --move right
+lalt + ctrl - 0x2B : ~/.config/yabai/focus_space.sh -m window --move left  --focus
+lalt + ctrl - 0x2F : ~/.config/yabai/focus_space.sh -m window --move right --focus
 lalt + lcmd - 0x2B : yabai -m window --display prev; yabai -m display --focus prev
 lalt + lcmd - 0x2F : yabai -m window --display next; yabai -m display --focus next
 
-# create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
-# shift + lcmd - n : yabai -m space --create && \
-#                   index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
-#                   yabai -m window --space "${index}" && \
-#                   yabai -m space --focus "${index}"
-
-# send window to desktop and follow focus
-# shift + lcmd - z : yabai -m window --space next; yabai -m space --focus next
-# shift + lcmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
-
-# focus monitor
-# ctrl + alt - z  : yabai -m display --focus prev
-# ctrl + alt - 3  : yabai -m display --focus 3
-
-# send window to monitor and follow focus
-# ctrl + lcmd - c  : yabai -m window --display next; yabai -m display --focus next
-# ctrl + lcmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
-
-# increase window size
-# shift + alt - a : yabai -m window --resize left:-20:0
-# shift + alt - w : yabai -m window --resize top:0:-20
-
-# decrease window size
-# shift + lcmd - s : yabai -m window --resize bottom:0:-20
-# shift + lcmd - w : yabai -m window --resize top:0:20
-
+# TODO: Extend ~/.config/yabai/focus_space.sh to support displays

@@ -13,6 +13,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # global settings
 yabai -m config mouse_follows_focus          on
+yabai -m config debug_output          on
 yabai -m config focus_follows_mouse          autofocus
 yabai -m config window_origin_display        default
 yabai -m config window_placement             second_child
@@ -93,7 +94,7 @@ yabai -m rule --add app="Discord" space=^8
 yabai -m rule --apply
 
 # Clean up empty spaces with no windows on them.
-yabai -m signal --add event=space_changed action="sh ~/.config/yabai/clean_empty_spaces.sh"
+# yabai -m signal --add event=space_changed action="sh ~/.config/yabai/clean_empty_spaces.sh"
 
 echo "yabai configuration loaded.."
 # borders &
