@@ -135,6 +135,8 @@ brew "pypy3.10"
 brew "redis"
 # Diff filter highlighting which line parts have changed
 brew "riff"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
 # Terminal based presentation tool
 brew "slides"
 # Version control system designed to be a better CVS
@@ -261,6 +263,8 @@ cask "shottr"
 cask "slack@beta"
 # Music streaming service
 cask "spotify"
+# System monitor for the menu bar
+cask "stats"
 # Video game digital distribution service
 cask "steam"
 # To-do list
