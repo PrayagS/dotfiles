@@ -140,7 +140,7 @@ return {
 				nerd_font_variant = "mono",
 			},
 			sources = {
-				default = { "lsp", "path", "buffer", "spell", "ripgrep", "git" },
+				default = { "lsp", "path", "buffer", "omni", "spell", "ripgrep", "git" },
 				providers = {
 					lsp = {
 						name = "LSP",
