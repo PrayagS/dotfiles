@@ -51,8 +51,6 @@ opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
 opt.undofile = true
 
-local space = "·"
-
 opt.list = true
 opt.listchars = {
 	-- eol = "↵",
@@ -65,6 +63,8 @@ opt.listchars = {
 	precedes = "❮",
 	extends = "❯",
 }
+
+opt.diffopt = "internal,filler,closeoff,indent-heuristic,linematch:60,algorithm:histogram"
 
 opt.showmode = false
 opt.updatetime = 1000
