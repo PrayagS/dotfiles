@@ -140,7 +140,10 @@ return {
 				nerd_font_variant = "mono",
 			},
 			sources = {
-				default = { "lsp", "path", "buffer", "omni", "spell", "ripgrep", "git" },
+				default = { "lsp", "path", "buffer", "omni", "spell", "ripgrep" },
+				per_filetype = {
+					gitcommit = { "git" },
+				},
 				providers = {
 					lsp = {
 						name = "LSP",
@@ -172,6 +175,14 @@ return {
 					git = {
 						module = "blink-cmp-git",
 						name = "Git",
+						opts = {
+							kind_icons = {
+								Commit = "",
+								Mention = "",
+								PR = "",
+								Issue = "",
+							},
+						},
 					},
 				},
 			},
