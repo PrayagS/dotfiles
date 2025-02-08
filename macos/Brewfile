@@ -13,6 +13,10 @@ tap "koekeishiya/formulae"
 tap "localsend/localsend"
 tap "peak/tap"
 tap "rcmdnk/file"
+# Package for scientific computing with Python
+brew "numpy"
+# AI pair programming in your terminal
+brew "aider"
 # CLI tool for AWS Athena service
 brew "athenacli"
 # Official Amazon AWS command-line interface
@@ -111,8 +115,6 @@ brew "nmap"
 brew "nnn"
 # Platform built on V8 to build network applications
 brew "node"
-# Package for scientific computing with Python
-brew "numpy"
 # Manage multiple Node.js versions
 brew "nvm"
 # 7-Zip (high compression file archiver) implementation
