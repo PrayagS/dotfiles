@@ -32,3 +32,4 @@ config/helm/repositories.lock
 
 # aws
 config/aws/config
+.aider*
