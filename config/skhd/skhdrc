@@ -77,25 +77,25 @@
 # ############################################################### #
 
 # focus spaces
-lcmd - 1 : ~/.config/yabai/focus_space.sh -m space --focus 1; \
+lcmd - 1 : ~/.config/yabai/focus_space.sh -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[0]'); \
              if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 1"; fi
-lcmd - 2 : ~/.config/yabai/focus_space.sh -m space --focus 2; \
+lcmd - 2 : ~/.config/yabai/focus_space.sh -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[1]'); \
              if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 2"; fi
-lcmd - 3 : ~/.config/yabai/focus_space.sh -m space --focus 3; \
+lcmd - 3 : ~/.config/yabai/focus_space.sh -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[2]'); \
              if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 3"; fi
-lcmd - 4 : ~/.config/yabai/focus_space.sh -m space --focus 4; \
+lcmd - 4 : ~/.config/yabai/focus_space.sh -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[3]'); \
              if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 4"; fi
-lcmd - 5 : ~/.config/yabai/focus_space.sh -m space --focus 5; \
+lcmd - 5 : ~/.config/yabai/focus_space.sh -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[4]'); \
              if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 5"; fi
-lcmd - 6 : ~/.config/yabai/focus_space.sh -m space --focus 6; \
+lcmd - 6 : ~/.config/yabai/focus_space.sh -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[5]'); \
              if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 6"; fi
-lcmd - 7 : ~/.config/yabai/focus_space.sh -m space --focus 7; \
+lcmd - 7 : ~/.config/yabai/focus_space.sh -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[6]'); \
              if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 7"; fi
-lcmd - 8 : ~/.config/yabai/focus_space.sh -m space --focus 8; \
+lcmd - 8 : ~/.config/yabai/focus_space.sh -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[7]'); \
              if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 8"; fi
-lcmd - 9 : ~/.config/yabai/focus_space.sh -m space --focus 9; \
+lcmd - 9 : ~/.config/yabai/focus_space.sh -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[8]'); \
              if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 9"; fi
-lcmd - 0 : ~/.config/yabai/focus_space.sh -m space --focus 10; \
+lcmd - 0 : ~/.config/yabai/focus_space.sh -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[9]'); \
              if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 0"; fi
 
 # move windows to space
