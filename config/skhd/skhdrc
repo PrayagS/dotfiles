@@ -99,28 +99,28 @@ lcmd - 0 : ~/.config/yabai/focus_space.sh -m space --focus $(yabai -m query --di
              if [[ "$?" -ne "0" ]]; then skhd -k "ctrl - 0"; fi
 
 # move windows to space
-lalt - 1 : ~/.config/yabai/focus_space.sh -m window --move 1
-lalt - 2 : ~/.config/yabai/focus_space.sh -m window --move 2
-lalt - 3 : ~/.config/yabai/focus_space.sh -m window --move 3
-lalt - 4 : ~/.config/yabai/focus_space.sh -m window --move 4
-lalt - 5 : ~/.config/yabai/focus_space.sh -m window --move 5
-lalt - 6 : ~/.config/yabai/focus_space.sh -m window --move 6
-lalt - 7 : ~/.config/yabai/focus_space.sh -m window --move 7
-lalt - 8 : ~/.config/yabai/focus_space.sh -m window --move 8
-lalt - 9 : ~/.config/yabai/focus_space.sh -m window --move 9
-lalt - 0 : ~/.config/yabai/focus_space.sh -m window --move 10
+lalt - 1 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[0]')
+lalt - 2 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[1]')
+lalt - 3 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[2]')
+lalt - 4 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[3]')
+lalt - 5 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[4]')
+lalt - 6 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[5]')
+lalt - 7 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[6]')
+lalt - 8 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[7]')
+lalt - 9 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[8]')
+lalt - 0 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[9]')
 
 # move windows to space and focus the space
-shift + lalt - 1 : ~/.config/yabai/focus_space.sh -m window --move 1 --focus
-shift + lalt - 2 : ~/.config/yabai/focus_space.sh -m window --move 2 --focus
-shift + lalt - 3 : ~/.config/yabai/focus_space.sh -m window --move 3 --focus
-shift + lalt - 4 : ~/.config/yabai/focus_space.sh -m window --move 4 --focus
-shift + lalt - 5 : ~/.config/yabai/focus_space.sh -m window --move 5 --focus
-shift + lalt - 6 : ~/.config/yabai/focus_space.sh -m window --move 6 --focus
-shift + lalt - 7 : ~/.config/yabai/focus_space.sh -m window --move 7 --focus
-shift + lalt - 8 : ~/.config/yabai/focus_space.sh -m window --move 8 --focus
-shift + lalt - 9 : ~/.config/yabai/focus_space.sh -m window --move 9 --focus
-shift + lalt - 0 : ~/.config/yabai/focus_space.sh -m window --move 10 --focus
+shift + lalt - 1 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[0]') --focus
+shift + lalt - 2 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[1]') --focus
+shift + lalt - 3 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[2]') --focus
+shift + lalt - 4 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[3]') --focus
+shift + lalt - 5 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[4]') --focus
+shift + lalt - 6 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[5]') --focus
+shift + lalt - 7 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[6]') --focus
+shift + lalt - 8 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[7]') --focus
+shift + lalt - 9 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[8]') --focus
+shift + lalt - 0 : ~/.config/yabai/focus_space.sh -m window --move $(yabai -m query --displays --display | jq -r '.spaces[9]') --focus
 
 # focus recent space
 lcmd - tab : yabai -m space --focus recent
