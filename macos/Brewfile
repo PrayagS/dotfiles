@@ -85,6 +85,8 @@ brew "isort"
 brew "jrnl"
 # Package manager for Jsonnet
 brew "jsonnet-bundler"
+# Generic command-line non-JVM Apache Kafka producer and consumer
+brew "kcat"
 # VPN kill switch for macOS
 brew "killswitch"
 # Kubernetes command-line interface
@@ -125,6 +127,8 @@ brew "pdf2image"
 brew "pgcli"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
+# Fast, disk space efficient package manager
+brew "pnpm"
 # Object-relational database system
 brew "postgresql@16"
 # Python version management
@@ -197,6 +201,8 @@ cask "appcleaner"
 cask "barrier"
 # E-books management software
 cask "calibre"
+# Anthropic's official Claude AI desktop app
+cask "claude"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
 # Voice and text chat software
