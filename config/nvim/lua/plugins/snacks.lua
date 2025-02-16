@@ -77,6 +77,16 @@ return {
 				enabled = true,
 				style = "compact",
 			},
+			picker = {
+				matcher = {
+					cwd_bonus = true,
+					frecency = true,
+				},
+				ui_select = true,
+				debug = {
+					scores = true,
+				},
+			},
 		},
 		init = function()
 			-- LSP progress
