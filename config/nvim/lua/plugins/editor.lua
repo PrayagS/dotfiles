@@ -162,9 +162,9 @@ return {
 		opts = {
 			picker = {
 				ring = { storage = "sqlite" },
-				telescope = {
-					use_default_mappings = true,
-				},
+				-- telescope = {
+				-- 	use_default_mappings = true,
+				-- },
 			},
 		},
 	},

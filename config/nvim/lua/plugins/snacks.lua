@@ -32,6 +32,205 @@ return {
 				end,
 				desc = "Notification History",
 			},
+			{
+				"<leader>,",
+				function()
+					Snacks.picker.buffers({
+						layout = {
+							preset = "vscode",
+							layout = {
+								row = 3,
+								border = "rounded",
+							},
+						},
+					})
+				end,
+			},
+			{
+				"<leader>:",
+				function()
+					Snacks.picker.command_history({
+						layout = {
+							preset = "vscode",
+							layout = {
+								row = 3,
+								border = "rounded",
+							},
+						},
+					})
+				end,
+			},
+			{
+				"<leader>sc",
+				function()
+					Snacks.picker.commands({
+						layout = {
+							preset = "vscode",
+							layout = {
+								row = 3,
+								border = "rounded",
+							},
+						},
+					})
+				end,
+				desc = "Commands",
+			},
+			{
+				"<leader>sd",
+				function()
+					Snacks.picker.diagnostics({
+						layout = { preset = "ivy" },
+					})
+				end,
+				desc = "Diagnostics",
+			},
+			{
+				"<leader>sD",
+				function()
+					Snacks.picker.diagnostics_buffer({
+						layout = { preset = "ivy_split" },
+					})
+				end,
+				desc = "Buffer Diagnostics",
+			},
+			{
+				"<leader>ff",
+				function()
+					Snacks.picker.files({
+						hidden = true,
+						follow = true,
+						live = true,
+					})
+				end,
+				desc = "Find Files",
+			},
+			{
+				"<C-p>",
+				function()
+					Snacks.picker.git_files()
+				end,
+				desc = "Find Git Files",
+			},
+			{
+				"<leader>/",
+				function()
+					Snacks.picker.grep()
+				end,
+				desc = "Grep",
+			},
+			{
+				"<leader>sw",
+				function()
+					Snacks.picker.grep_word({ live = true })
+				end,
+				desc = "Visual selection or word",
+				mode = { "n", "x" },
+			},
+			{
+				"<leader>sb",
+				function()
+					Snacks.picker.grep_buffers()
+				end,
+				desc = "Grep Open Buffers",
+			},
+			{
+				"<leader>sB",
+				function()
+					Snacks.picker.grep_word({ buffers = true, live = true })
+				end,
+				desc = "Visual selection or word",
+				mode = { "n", "x" },
+			},
+			{
+				"<leader>hh",
+				function()
+					Snacks.picker.help({
+						layout = { preset = "ivy" },
+					})
+				end,
+				desc = "Help Pages",
+			},
+			{
+				"<leader>kk",
+				function()
+					Snacks.picker.keymaps({
+						layout = { preset = "ivy" },
+					})
+				end,
+				desc = "Keymaps",
+			},
+			{
+				"gd",
+				function()
+					Snacks.picker.lsp_definitions()
+				end,
+				desc = "Goto Definition",
+			},
+			{
+				"gD",
+				function()
+					Snacks.picker.lsp_declarations()
+				end,
+				desc = "Goto Declaration",
+			},
+			{
+				"gI",
+				function()
+					Snacks.picker.lsp_implementations()
+				end,
+				desc = "Goto Implementation",
+			},
+			{
+				"gr",
+				function()
+					Snacks.picker.lsp_references()
+				end,
+				nowait = true,
+				desc = "References",
+			},
+			{
+				"gy",
+				function()
+					Snacks.picker.lsp_type_definitions()
+				end,
+				desc = "Goto T[y]pe Definition",
+			},
+			{
+				"<leader>ss",
+				function()
+					Snacks.picker.lsp_symbols()
+				end,
+				desc = "LSP Symbols",
+			},
+			{
+				"<leader>sS",
+				function()
+					Snacks.picker.lsp_workspace_symbols()
+				end,
+				desc = "LSP Workspace Symbols",
+			},
+			{
+				"<leader>s/",
+				function()
+					Snacks.picker.search_history({
+						layout = {
+							preset = "vscode",
+							layout = {
+								row = 3,
+								border = "rounded",
+							},
+						},
+					})
+				end,
+				desc = "Search History",
+			},
+			{
+				"<leader><space>",
+				function()
+					Snacks.picker.smart()
+				end,
+				desc = "Smart Find Files",
+			},
 		},
 		opts = {
 			animate = {
@@ -83,9 +282,6 @@ return {
 					frecency = true,
 				},
 				ui_select = true,
-				debug = {
-					scores = true,
-				},
 			},
 		},
 		init = function()
