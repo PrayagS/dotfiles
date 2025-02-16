@@ -420,7 +420,7 @@ config.keys = {
 		key = "l",
 		mods = "LEADER",
 		action = act.Multiple({
-			act.ClearScrollback("ScrollbackAndViewport"),
+			-- act.ClearScrollback("ScrollbackAndViewport"),
 			act.SendKey({ key = "L", mods = "CTRL" }),
 		}),
 	},
