@@ -283,6 +283,9 @@ return {
 				},
 				ui_select = true,
 			},
+			input = {
+				enabled = true,
+			},
 		},
 		init = function()
 			-- LSP progress
