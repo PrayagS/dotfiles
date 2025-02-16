@@ -623,8 +623,18 @@ return {
 	},
 	{
 		"folke/todo-comments.nvim",
-		cmd = { "TodoTelescope", "TodoQuickFix", "TodoLocList" },
-		opts = {},
+		-- cmd = { "TodoTelescope", "TodoQuickFix", "TodoLocList" },
+		keys = {
+			{
+				"<leader>st",
+				function()
+					Snacks.picker.todo_comments()
+				end,
+			},
+		},
+		opts = {
+			keywords = { "FIX", "FIXME" },
+		},
 	},
 	{
 		"stevearc/dressing.nvim",
