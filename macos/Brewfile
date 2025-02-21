@@ -93,6 +93,8 @@ brew "killswitch"
 brew "kubernetes-cli"
 # Package manager for kubectl plugins
 brew "krew"
+# API Traffic Analyzer providing real-time visibility into Kubernetes network
+brew "kubeshark"
 # Template-free customization of Kubernetes YAML manifests
 brew "kustomize"
 # Pager program similar to more
@@ -306,3 +308,26 @@ mas "Pages", id: 409201541
 mas "Perplexity", id: 6714467650
 mas "Shareful", id: 1522267256
 mas "UTC Time", id: 1538245904
+vscode "antfu.icons-carbon"
+vscode "asvetliakov.vscode-neovim"
+vscode "cdonohue.quill-icons"
+vscode "eamodio.gitlens"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "golang.go"
+vscode "grafana.vscode-jsonnet"
+vscode "hashicorp.terraform"
+vscode "jdinhlife.gruvbox"
+vscode "joaopalmeiro.icons-octicons"
+vscode "jonathanharty.gruvbox-material-icon-theme"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-vscode-remote.remote-containers"
+vscode "naumovs.color-highlight"
+vscode "rooveterinaryinc.roo-cline"
+vscode "sainnhe.gruvbox-material"
+vscode "saoudrizwan.claude-dev"
+vscode "sumneko.lua"
+vscode "tomphilbin.gruvbox-themes"
+vscode "vscodevim.vim"
