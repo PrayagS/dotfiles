@@ -524,8 +524,6 @@ return {
 					"quickfix",
 				},
 			})
-			if 1 then
-			end
 
 			local modes = { "normal", "insert", "visual", "command", "replace" }
 			local diff_types = { "added", "modified", "removed" }

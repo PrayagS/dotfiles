@@ -115,6 +115,7 @@ return {
 			"mikavilpas/blink-ripgrep.nvim",
 			"Kaiser-Yang/blink-cmp-git",
 			"ribru17/blink-cmp-spell",
+			"disrupted/blink-cmp-conventional-commits",
 		},
 		-- version = "*",
 		opts = {
@@ -142,7 +143,7 @@ return {
 			sources = {
 				default = { "lsp", "path", "buffer", "omni", "spell", "ripgrep" },
 				per_filetype = {
-					gitcommit = { "git" },
+					gitcommit = { "buffer", "git", "conventional_commits" },
 				},
 				providers = {
 					lsp = {
@@ -183,6 +184,10 @@ return {
 								Issue = "",
 							},
 						},
+					},
+					conventional_commits = {
+						name = "Conventional Commits",
+						module = "blink-cmp-conventional-commits",
 					},
 				},
 			},
