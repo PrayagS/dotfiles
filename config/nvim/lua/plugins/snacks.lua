@@ -282,6 +282,12 @@ return {
 					frecency = true,
 				},
 				ui_select = true,
+				formatters = {
+					file = {
+						filename_first = true,
+						truncate = 72,
+					},
+				},
 			},
 			input = {
 				enabled = true,
