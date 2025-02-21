@@ -146,6 +146,9 @@ return {
 					gitcommit = { "buffer", "git", "conventional_commits" },
 				},
 				providers = {
+					buffer = {
+						opts = { get_bufnrs = vim.api.nvim_list_bufs },
+					},
 					lsp = {
 						name = "LSP",
 						module = "blink.cmp.sources.lsp",
