@@ -11,6 +11,7 @@ tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "localsend/localsend"
+tap "nikolaeu/numi"
 tap "peak/tap"
 tap "rcmdnk/file"
 # Package for scientific computing with Python
@@ -51,6 +52,8 @@ brew "findutils"
 brew "gawk"
 # Highest-quality GIF encoder based on pngquant
 brew "gifski"
+# High-velocity, monorepo-scale workflow for Git
+brew "git-branchless"
 # Audit git repos for secrets
 brew "gitleaks"
 # GNU implementation of time utility
@@ -189,6 +192,8 @@ brew "hashicorp/tap/vault"
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
+# Smart calculator
+brew "nikolaeu/numi/numi-cli"
 # Parallel S3 and local filesystem execution tool
 brew "peak/tap/s5cmd"
 # Command-line interface for 1Password
