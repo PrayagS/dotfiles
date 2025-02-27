@@ -145,14 +145,16 @@ return {
 				per_filetype = {
 					gitcommit = { "buffer", "git", "conventional_commits" },
 				},
-				min_keyword_length = function(ctx)
-					-- only applies when typing a command, doesn't apply to arguments
-					if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then
-						return 3
-					end
-					return 0
-				end,
 				providers = {
+					cmdline = {
+						min_keyword_length = function(ctx)
+							-- only applies when typing a command, doesn't apply to arguments
+							if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then
+								return 3
+							end
+							return 0
+						end,
+					},
 					buffer = {
 						opts = { get_bufnrs = vim.api.nvim_list_bufs },
 					},
@@ -214,6 +216,17 @@ return {
 					"kind",
 					"label",
 				},
+			},
+			cmdline = {
+				enabled = true,
+				completion = {
+					menu = {
+						auto_show = true,
+					},
+				},
+			},
+			signature = {
+				enabled = true,
 			},
 		},
 	},
