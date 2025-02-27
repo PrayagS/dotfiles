@@ -14,10 +14,6 @@ tap "localsend/localsend"
 tap "nikolaeu/numi"
 tap "peak/tap"
 tap "rcmdnk/file"
-# Package for scientific computing with Python
-brew "numpy"
-# AI pair programming in your terminal
-brew "aider"
 # CLI tool for AWS Athena service
 brew "athenacli"
 # Official Amazon AWS command-line interface
@@ -122,6 +118,8 @@ brew "nmap"
 brew "nnn"
 # Platform built on V8 to build network applications
 brew "node"
+# Package for scientific computing with Python
+brew "numpy"
 # Manage multiple Node.js versions
 brew "nvm"
 # 7-Zip (high compression file archiver) implementation
@@ -320,6 +318,7 @@ vscode "eamodio.gitlens"
 vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "golang.go"
+vscode "google.geminicodeassist"
 vscode "grafana.vscode-jsonnet"
 vscode "hashicorp.terraform"
 vscode "jdinhlife.gruvbox"
