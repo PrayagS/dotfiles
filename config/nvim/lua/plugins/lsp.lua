@@ -396,6 +396,10 @@ return {
 				highlight_command = {
 					require("actions-preview.highlight").delta("delta --features=gruvbox-dark-code-actions-preview"),
 				},
+				backend = { "snacks", "telescope", "nui" },
+				snacks = {
+					layout = { preset = "default" },
+				},
 				telescope = {
 					sorting_strategy = "ascending",
 					layout_strategy = "vertical",
