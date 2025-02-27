@@ -285,14 +285,19 @@ end)
 config.unix_domains = { { name = "unix" } }
 config.default_domain = "unix"
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
-resurrect.periodic_save({ interval_seconds = 15 * 60, save_workspaces = true, save_windows = true, save_tabs = true })
+resurrect.state_manager.periodic_save({
+	interval_seconds = 15 * 60,
+	save_workspaces = true,
+	save_windows = true,
+	save_tabs = true,
+})
 -- Source: plugin README
 -- loads the state whenever I create a new workspace
 ---@diagnostic disable-next-line: unused-local
 wezterm.on("smart_workspace_switcher.workspace_switcher.created", function(window, path, label)
 	local workspace_state = resurrect.workspace_state
 
-	workspace_state.restore_workspace(resurrect.load_state(label, "workspace"), {
+	workspace_state.restore_workspace(resurrect.state_manager.load_state(label, "workspace"), {
 		window = window,
 		relative = true,
 		restore_text = true,
@@ -303,10 +308,10 @@ end)
 ---@diagnostic disable-next-line: unused-local
 wezterm.on("smart_workspace_switcher.workspace_switcher.selected", function(window, path, label)
 	local workspace_state = resurrect.workspace_state
-	resurrect.save_state(workspace_state.get_workspace_state())
+	resurrect.state_manager.save_state(workspace_state.get_workspace_state())
 end)
 -- resurrect on startup
-wezterm.on("gui-startup", resurrect.resurrect_on_gui_startup)
+wezterm.on("gui-startup", resurrect.state_manager.resurrect_on_gui_startup)
 
 config.ui_key_cap_rendering = "UnixLong"
 -- https://wezfurlong.org/wezterm/config/keys.html?#leader-key
