@@ -1,6 +1,5 @@
 [user]
 name = "PrayagS"
-email = "prayag.savsani@blinkit.com"
 
 [ui]
 paginate = "never"
@@ -8,6 +7,11 @@ default-command = "log"
 
 [git]
 auto-local-bookmark = true
+sign-on-push = true
+
+[signing]
+backend = "ssh"
+key = "~/.ssh/id_ed25519.pub"
 
 [templates]
 draft_commit_description = '''
