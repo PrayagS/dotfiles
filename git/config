@@ -38,7 +38,7 @@
     conflictstyle = zdiff3
 
 [diff]
-    colorMoved = default
+    colorMoved = plain
     algorithm = histogram
 
 [commit]
@@ -52,6 +52,7 @@
     defaultBranch = main
 
 [commit]
+    verbose = true
     gpgSign = true
     signOff = true
 
@@ -69,9 +70,21 @@
 
 [rebase]
     updateRefs = true
+    autoStash = true
+    autoSquash = true
+
+[rerere]
+    enabled = true
+    autoupdate = true
 
 [push]
-    default = current
+    autoSetupRemote = true
+    followTags = true
+
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
 
 [grep]
     lineNumber = true
@@ -80,7 +93,7 @@
     submoduleSummary = true
 
 [help]
-    autocorrect = 10
+    autocorrect = prompt
 
 [pretty]
     lc  =  format:%C(auto)%h%C(reset) %C(white)-%C(reset) %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(white)⤷%C(reset) %s %C(248)- %aN <%aE>%C(reset)%n
@@ -95,3 +108,5 @@
 [credential "https://gist.github.com"]
 	helper =
 	helper = !/Users/prayagmatic/.config/zsh/zinit/plugins/cli---cli/gh_2.54.0_macOS_arm64/bin/gh auth git-credential
+[tag]
+	sort = version:refname
