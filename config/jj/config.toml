@@ -1,5 +1,5 @@
 [user]
-name = "Prayag Savsani"
+name = "PrayagS"
 email = "prayag.savsani@blinkit.com"
 
 [ui]
@@ -13,9 +13,11 @@ auto-local-bookmark = true
 draft_commit_description = '''
 concat(
   description,
+  "\n\n",
+  "Signed-off-by: " ++ author.name() ++ " <" ++ author.email() ++ ">",
   surround(
     "\nJJ: This commit contains the following changes:\n", "",
-    indent("JJ:     ", diff.stat(72)),
+    indent("JJ:     ", diff.summary()),
   ),
   "\nJJ: ignore-rest\n",
   diff.git(),
