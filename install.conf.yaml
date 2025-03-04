@@ -49,6 +49,7 @@
     ~/.config/gh: config/gh
     ~/.config/aws/config: config/aws/config
     ~/.config/mycli: config/mycli
+    ~/Library/Application Support/jj/config.toml: config/jj/config.toml
 
 - shell:
   # - [git submodule update --init --recursive --remote --force, Installing submodules]
