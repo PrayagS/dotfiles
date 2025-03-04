@@ -12,7 +12,7 @@
 bindkey -v
 
 # jj in insert mode is escape
-bindkey -M viins 'jj' vi-cmd-mode
+# bindkey -M viins 'jj' vi-cmd-mode
 export KEYTIMEOUT=20
 
 # i in visual mode is insert
