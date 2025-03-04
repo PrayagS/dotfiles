@@ -74,16 +74,12 @@
             ],
             "fn_function_keys": [
                 {
-                    "from": { "key_code": "f3" },
-                    "to": [{ "key_code": "caps_lock" }]
-                },
-                {
                     "from": { "key_code": "f4" },
                     "to": [{ "apple_vendor_keyboard_key_code": "launchpad" }]
                 },
                 {
                     "from": { "key_code": "f5" },
-                    "to": [{ "key_code": "right_command" }]
+                    "to": [{ "key_code": "caps_lock" }]
                 },
                 {
                     "from": { "key_code": "f6" },
