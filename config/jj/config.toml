@@ -18,8 +18,10 @@ key = "~/.ssh/id_ed25519.pub"
 draft_commit_description = '''
 concat(
   description,
-  "\n\n",
-  "Signed-off-by: " ++ author.name() ++ " <" ++ author.email() ++ ">",
+  if(
+    !description.contains("Signed-off-by: " ++ author.name()),
+    "\n\nSigned-off-by: " ++ author.name() ++ " <" ++ author.email() ++ ">\n",
+  ),
   surround(
     "\nJJ: This commit contains the following changes:\n", "",
     indent("JJ:     ", diff.summary()),
