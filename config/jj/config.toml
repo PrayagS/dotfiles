@@ -15,6 +15,9 @@ behavior = "own"
 backend = "ssh"
 key = "~/.ssh/id_ed25519.pub"
 
+[snapshot]
+max-new-file-size = 52428800
+
 [templates]
 draft_commit_description = '''
 concat(
