@@ -6,8 +6,8 @@ paginate = "never"
 default-command = "log"
 
 [git]
-auto-local-bookmark = true
 sign-on-push = true
+# auto-local-bookmark = true
 
 [signing]
 backend = "ssh"
