@@ -40,7 +40,8 @@ zinit from"gh-r" lman for \
     sbin"yq** -> yq" mikefarah/yq \
     sbin"**/usql -> usql" xo/usql \
     sbin"devpod* -> devpod" loft-sh/devpod \
-    sbin"**/jj  -> jj" jj-vcs/jj
+    sbin"**/jj  -> jj" jj-vcs/jj \
+    sbin"**/jjui* -> jjui" idursun/jjui
 # sbin'**/helm' atclone'./**/helm completion zsh > _helm' atpull'%atclone' helm/helm
 
 zinit from"gh" as"null" for \
