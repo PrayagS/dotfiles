@@ -41,6 +41,8 @@ return {
 	-- Issue with lazy: https://github.com/rmagatti/auto-session/issues/223
 	{
 		"rmagatti/auto-session",
+		enabled = not vim.g.started_by_jj_split,
+		lazy = not vim.g.started_by_jj_split,
 		opts = {
 			auto_save_enabled = true,
 			auto_restore_enabled = true,

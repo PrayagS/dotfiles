@@ -148,4 +148,9 @@ return {
 			enable_builtin = true,
 		},
 	},
+	{
+		"julienvincent/hunk.nvim",
+		cmd = { "DiffEditor" },
+		opts = {},
+	},
 }

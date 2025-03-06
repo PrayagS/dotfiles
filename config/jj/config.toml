@@ -4,6 +4,7 @@ name = "PrayagS"
 [ui]
 paginate = "never"
 default-command = "log"
+diff-editor = [ "nvim", "-c", "let g:started_by_jj_split = v:true", "-c", "DiffEditor $left $right $output" ]
 
 [git]
 # auto-local-bookmark = true
