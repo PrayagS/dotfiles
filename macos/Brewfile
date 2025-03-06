@@ -1,18 +1,12 @@
 tap "artginzburg/tap"
-tap "arttor/tap"
 tap "aws/tap"
 tap "buo/cask-upgrade"
-tap "deviceinsight/packages"
 tap "felixkratz/formulae"
-tap "hashicorp/tap"
-tap "homebrew/aliases"
 tap "homebrew/bundle"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
-tap "localsend/localsend"
 tap "nikolaeu/numi"
-tap "peak/tap"
 tap "rcmdnk/file"
 # CLI tool for AWS Athena service
 brew "athenacli"
@@ -70,8 +64,8 @@ brew "grc"
 brew "grpcurl"
 # Kubernetes package manager
 brew "helm"
-# HTTP load generator, ApacheBench (ab) replacement
-brew "hey"
+# Create Helm chart from Kubernetes yaml
+brew "helmify"
 # Improved top (interactive process viewer)
 brew "htop"
 # Tools and libraries to manipulate images in many formats
@@ -84,6 +78,8 @@ brew "isort"
 brew "jrnl"
 # Package manager for Jsonnet
 brew "jsonnet-bundler"
+# CLI for managing Apache Kafka
+brew "kafkactl"
 # Generic command-line non-JVM Apache Kafka producer and consumer
 brew "kcat"
 # VPN kill switch for macOS
@@ -122,6 +118,10 @@ brew "node"
 brew "numpy"
 # Manage multiple Node.js versions
 brew "nvm"
+# HTTP load generator, inspired by rakyll/hey with tui animation
+brew "oha"
+# Provides a software solution to manage, store, and distribute sensitive data
+brew "openbao"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # Convert PDFs to images
@@ -144,6 +144,8 @@ brew "pypy3.10"
 brew "redis"
 # Diff filter highlighting which line parts have changed
 brew "riff"
+# Parallel S3 and local filesystem execution tool
+brew "s5cmd"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Terminal based presentation tool
@@ -174,26 +176,16 @@ brew "wget"
 brew "winetricks"
 # Permanent TouchID support for sudo
 brew "artginzburg/tap/sudo-touchid"
-# Creates Helm chart from Kubernetes yaml.
-brew "arttor/tap/helmify"
 # EC2 Instance Selector is a tool to filter EC2 instance types based on resource criteria
 brew "aws/tap/ec2-instance-selector"
-# A Commandline interface for Apache Kafka which provides useful features adapted from kubectl for Kubernetes.
-# Multiple kafka brokers can be configured in a config file and the active broker is also persisted within the config.
-# In addition kafkactl supports auto-completion for its commands as well as topic names.
-brew "deviceinsight/packages/kafkactl"
 # A window border system for macOS
 brew "felixkratz/formulae/borders"
-# Vault
-brew "hashicorp/tap/vault"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
 # Smart calculator
 brew "nikolaeu/numi/numi-cli"
-# Parallel S3 and local filesystem execution tool
-brew "peak/tap/s5cmd"
 # Command-line interface for 1Password
 cask "1password-cli"
 # Password manager
