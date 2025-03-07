@@ -59,6 +59,9 @@
 [gpg]
     format = ssh
 
+[gpg.ssh]
+    allowedSignersFile = ~/.ssh/allowed_signers
+
 [color]
     ui     = true
     diff   = true
