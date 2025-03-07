@@ -1,9 +1,20 @@
 [user]
 name = "PrayagS"
 
+[[--scope]]
+--when.repositories = ["~/dev"]
+[--scope.user]
+email = "prayagsavsani@gmail.com"
+
+[[--scope]]
+--when.repositories = ["~/work"]
+[--scope.user]
+email = "prayag.savsani@blinkit.com"
+
 [ui]
 paginate = "never"
 default-command = "log"
+diff-instructions = false
 diff-editor = [ "nvim", "-c", "let g:started_by_jj_split = v:true", "-c", "DiffEditor $left $right $output" ]
 
 [git]
