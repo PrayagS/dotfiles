@@ -35,7 +35,7 @@ export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
 export EDITOR="nvim"
 # export PAGER="less"
 export PAGER="moar"
-export MOAR="-statusbar=bold -style=catppuccin-mocha -wrap"
+export MOAR="-quit-if-one-screen -statusbar=bold -style=gruvbox -wrap"
 export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/ripgreprc"
 export TERMINAL="alacritty"
 export BROWSER="google-chrome-stable"
