@@ -12,10 +12,22 @@ email = "prayagsavsani@gmail.com"
 email = "prayag.savsani@blinkit.com"
 
 [ui]
-paginate = "never"
 default-command = "log"
 diff-instructions = false
 diff-editor = [ "nvim", "-c", "let g:started_by_jj_split = v:true", "-c", "DiffEditor $left $right $output" ]
+
+[[--scope]]
+--when.commands = ["status"]
+[--scope.ui]
+paginate = "never"
+
+[[--scope]]
+--when.commands = ["diff", "show"]
+[--scope.ui]
+pager = "delta"
+
+[ui.diff]
+format = "git"
 
 [git]
 # auto-local-bookmark = true

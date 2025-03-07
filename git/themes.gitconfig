@@ -5,7 +5,7 @@
     dark = true
     syntax-theme = gruvbox-dark
     hyperlinks = true
-    file-style = "#f2e5bc" bold
+    file-style = "#f2e5bc" bold box
     file-added-label = [+]
     file-copied-label = [==]
     file-modified-label = [*]
