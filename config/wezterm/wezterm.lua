@@ -422,8 +422,8 @@ config.keys = {
 		action = act.CloseCurrentTab({ confirm = true }),
 	},
 	{
-		key = "l",
-		mods = "LEADER",
+		key = ";",
+		mods = "CTRL",
 		action = act.Multiple({
 			-- act.ClearScrollback("ScrollbackAndViewport"),
 			act.SendKey({ key = "L", mods = "CTRL" }),
