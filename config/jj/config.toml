@@ -14,7 +14,7 @@ email = "prayag.savsani@blinkit.com"
 [ui]
 default-command = "log"
 diff-instructions = false
-diff-editor = [ "nvim", "-c", "let g:started_by_jj_split = v:true", "-c", "DiffEditor $left $right $output" ]
+diff-editor = [ "nvim", "--cmd", "let g:auto_session_enabled = v:false", "-c", "DiffEditor $left $right $output" ]
 
 [[--scope]]
 --when.commands = ["status"]
