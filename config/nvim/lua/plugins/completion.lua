@@ -132,7 +132,7 @@ return {
 				documentation = {
 					auto_show = true,
 				},
-				-- ghost_text = { enabled = true },
+				ghost_text = { enabled = true },
 			},
 			keymap = {
 				preset = "default",

@@ -28,6 +28,7 @@ return {
 					vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" })
 					vim.api.nvim_set_hl(0, "LeapMatch", { link = "TSNote" })
 					vim.api.nvim_set_hl(0, "LeapLabelPrimary", { link = "TSNote" })
+					vim.api.nvim_set_hl(0, "BlinkCmpGhostText", { link = "Grey" })
 				end,
 			})
 
