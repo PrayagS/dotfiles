@@ -224,6 +224,9 @@ zinit snippet "${ZSH_HOME}/custom/_rg"
 zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)helm*]} ]]' lucid as"completion" atload"helm completion zsh >| ${ZSH_HOME}/custom/_helm"
 zinit snippet "${ZSH_HOME}/custom/_helm"
 
+zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)jj*]} ]]' lucid as"completion" atload"COMPLETE=zsh jj >| ${ZSH_HOME}/custom/_jj"
+zinit snippet "${ZSH_HOME}/custom/_jj"
+
 zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]' lucid
 zinit light zdharma-continuum/zui
 
