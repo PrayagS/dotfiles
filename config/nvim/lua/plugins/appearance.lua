@@ -521,7 +521,9 @@ return {
 				},
 				extensions = {
 					"lazy",
-					"nvim-tree",
+					"mason",
+					"oil",
+					"trouble",
 					"quickfix",
 				},
 			})
