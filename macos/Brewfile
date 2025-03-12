@@ -295,8 +295,6 @@ cask "scroll-reverser"
 cask "shottr"
 # Team communication and collaboration software
 cask "slack@beta"
-# Open source cross-platform file explorer
-cask "spacedrive"
 # Music streaming service
 cask "spotify"
 # System monitor for the menu bar
@@ -313,6 +311,8 @@ cask "tor-browser"
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm@nightly"
+# Agentic IDE powered by AI Flow paradigm
+cask "windsurf"
 # Network protocol analyzer
 cask "wireshark"
 # Multiplayer code editor
@@ -343,6 +343,8 @@ mas "Xcode", id: 497799835
 vscode "antfu.icons-carbon"
 vscode "asvetliakov.vscode-neovim"
 vscode "cdonohue.quill-icons"
+vscode "charliermarsh.ruff"
+vscode "codeium.codeium"
 vscode "continue.continue"
 vscode "datadog.datadog-vscode"
 vscode "dorianmassoulier.repomix-runner"
