@@ -17,6 +17,14 @@ diff-instructions = false
 diff-editor = [ "nvim", "--cmd", "let g:auto_session_enabled = v:false", "-c", "DiffEditor $left $right $output" ]
 show-cryptographic-signatures = true
 
+[merge-tools.diffconflicts]
+program = "nvim"
+merge-args = [
+    "-c", "let g:jj_diffconflicts_marker_length=$marker_length",
+    "-c", "JJDiffConflicts!", "$output", "$base", "$left", "$right",
+]
+merge-tool-edits-conflict-markers = true
+
 [[--scope]]
 --when.commands = ["status"]
 [--scope.ui]

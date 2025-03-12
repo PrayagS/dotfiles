@@ -156,4 +156,8 @@ return {
 		cmd = { "DiffEditor" },
 		opts = {},
 	},
+	{
+		"rafikdraoui/jj-diffconflicts",
+		cmd = { "JJDiffConflicts" },
+	},
 }
