@@ -8,6 +8,7 @@ tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "nikolaeu/numi"
 tap "rcmdnk/file"
+tap "rien7/apps"
 # CLI tool for AWS Athena service
 brew "athenacli"
 # Official Amazon AWS command-line interface
@@ -40,6 +41,8 @@ brew "exiftool"
 brew "findutils"
 # GNU awk utility
 brew "gawk"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
 # Highest-quality GIF encoder based on pngquant
 brew "gifski"
 # High-velocity, monorepo-scale workflow for Git
@@ -196,6 +199,8 @@ cask "1password-cli"
 cask "1password@beta"
 # Privacy-focused app for managing your finances
 cask "actual"
+# Application to indicate the aerospace workspace
+cask "aeroindicator"
 # Application uninstaller
 cask "appcleaner"
 # Open-source KVM software
@@ -212,14 +217,14 @@ cask "discord"
 cask "ente-auth"
 # Screenshot software
 cask "flameshot"
-# Privacy-focused Firefox-based browser
-cask "floorp"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # GitHub notifications on your menu bar
 cask "gitify"
 # Web browser
 cask "google-chrome@beta"
+# Open-source video transcoder
+cask "handbrake"
 # Free and open-source media player
 cask "iina"
 # Jellyfin desktop client
@@ -280,8 +285,6 @@ cask "todoist"
 cask "tor-browser"
 # Multimedia player
 cask "vlc"
-# Web browser
-cask "waterfox"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm@nightly"
 # Network protocol analyzer
@@ -318,6 +321,8 @@ vscode "jdinhlife.gruvbox"
 vscode "jjk.jjk"
 vscode "joaopalmeiro.icons-octicons"
 vscode "jonathanharty.gruvbox-material-icon-theme"
+vscode "mechatroner.rainbow-csv"
+vscode "ms-python.black-formatter"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
