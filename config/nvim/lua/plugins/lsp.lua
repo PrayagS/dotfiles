@@ -7,7 +7,6 @@ return {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			{ "smjonas/inc-rename.nvim", enabled = false, opts = { input_buffer_type = "dressing" } },
 			-- "ray-x/lsp_signature.nvim",
 			-- {
 			-- 	"luckasRanarison/clear-action.nvim",
@@ -46,7 +45,7 @@ return {
 					local map = function(keys, func, desc)
 						vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
-					map("<leader>rn", ":IncRename ", "[R]e[n]ame")
+					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 					map("<leader>k", vim.lsp.buf.hover, "Hover Documentation")
 					-- map("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
 					-- map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
