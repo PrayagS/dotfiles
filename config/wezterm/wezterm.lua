@@ -320,6 +320,23 @@ config.keys = {
 
 	{ key = "p", mods = "LEADER", action = act.ActivateCommandPalette },
 	{ key = "x", mods = "LEADER", action = act.ActivateCopyMode },
+	{
+		key = " ",
+		mods = "LEADER",
+		-- Source: https://wezterm.org/config/lua/keyassignment/QuickSelectArgs.html
+		action = wezterm.action.QuickSelectArgs({
+			label = "open url",
+			patterns = {
+				"https?://\\S+",
+			},
+			skip_action_on_paste = true,
+			action = wezterm.action_callback(function(window, pane)
+				local url = window:get_selection_text_for_pane(pane)
+				-- wezterm.log_info("opening: " .. url)
+				wezterm.open_with(url)
+			end),
+		}),
+	},
 	{ key = "y", mods = "LEADER", action = act.CopyTo("ClipboardAndPrimarySelection") },
 	{ key = "?", mods = "LEADER", action = act.ShowDebugOverlay },
 	{ key = "r", mods = "LEADER", action = act.ReloadConfiguration },
