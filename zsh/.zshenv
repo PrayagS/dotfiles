@@ -70,6 +70,7 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 export MYCLI_HISTFILE="$XDG_STATE_HOME/mycli/mycli_history"
+export PIPX_HOME="$XDG_DATA_HOME/pipx"
 
 # Start skhd/yabai
 # if pgrep -x "yabai" >/dev/null
