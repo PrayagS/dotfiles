@@ -164,6 +164,10 @@ brew "tmux"
 brew "tree"
 # Command-line tool for sharing terminal over the web
 brew "ttyd"
+# Markup-based typesetting system
+brew "typst"
+# Beautiful and reliable typst code formatter
+brew "typstyle"
 # Syntax-aware linter for prose
 brew "vale"
 # Executes a program periodically, showing output fullscreen

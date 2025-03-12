@@ -29,6 +29,7 @@ return {
 				"python",
 				"rust",
 				"terraform",
+				"typst",
 				"yaml",
 				"vimdoc",
 			},

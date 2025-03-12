@@ -210,6 +210,13 @@ return {
 
 				jsonnet_ls = {},
 
+				tinymist = {
+					settings = {
+						exportPdf = "onSave",
+						formatterMode = "typstyle",
+					},
+				},
+
 				yamlls = {
 					settings = {
 						yaml = {
