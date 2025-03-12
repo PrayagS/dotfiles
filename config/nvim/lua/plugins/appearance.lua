@@ -345,7 +345,8 @@ return {
 					lualine_x = {},
 					lualine_y = { "encoding", "filetype", "progress" },
 					lualine_z = {
-						get_attached_lsp_clients,
+						"lsp_status",
+						-- get_attached_lsp_clients,
 						get_attached_linters,
 						get_attached_formatters,
 						"location",
