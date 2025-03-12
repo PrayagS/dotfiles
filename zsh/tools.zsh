@@ -36,7 +36,9 @@ zinit from"gh-r" lman for \
     sbin"**/usql -> usql" xo/usql \
     sbin"devpod* -> devpod" loft-sh/devpod \
     sbin"**/jj  -> jj" jj-vcs/jj \
-    sbin"**/jjui* -> jjui" idursun/jjui
+    sbin"**/jjui* -> jjui" idursun/jjui \
+    sbin"code2prompt* -> code2prompt" mufeedvh/code2prompt \
+    sbin"fabric* -> fabric" danielmiessler/fabric
 # sbin'**/helm' atclone'./**/helm completion zsh > _helm' atpull'%atclone' helm/helm
 
 zinit from"gh" as"null" for \

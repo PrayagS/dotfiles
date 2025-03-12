@@ -25,6 +25,8 @@ brew "clang-format"
 brew "coreutils"
 # Securely send things from one computer to another
 brew "croc"
+# Secure runtime for JavaScript and TypeScript
+brew "deno"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
 # Docker CLI plugin for extended build capabilities with BuildKit
@@ -39,6 +41,8 @@ brew "epubcheck"
 brew "exiftool"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
+# Package manager and build system for Fortran
+brew "fpm"
 # GNU awk utility
 brew "gawk"
 # Interpreter for PostScript and PDF
@@ -149,6 +153,8 @@ brew "pyenv-virtualenv"
 brew "pypy3.10"
 # Persistent key-value database, with built-in net interface
 brew "redis"
+# Pack repository contents into a single AI-friendly file
+brew "repomix"
 # Diff filter highlighting which line parts have changed
 brew "riff"
 # Parallel S3 and local filesystem execution tool
@@ -187,6 +193,8 @@ brew "web-ext"
 brew "webtorrent-cli"
 # Internet file retriever
 brew "wget"
+# Library to create, extract, and modify Windows Imaging files
+brew "wimlib"
 # Automatic workarounds for problems in Wine
 brew "winetricks"
 # Permanent TouchID support for sudo
@@ -211,6 +219,8 @@ cask "actual"
 cask "aeroindicator"
 # Application uninstaller
 cask "appcleaner"
+# Tool to flash OS images to SD cards & USB drives
+cask "balenaetcher"
 # Open-source KVM software
 cask "barrier"
 # E-books management software
@@ -247,6 +257,8 @@ cask "karabiner-elements"
 cask "kindle-previewer"
 # Discover, download, and run local LLMs
 cask "lm-studio"
+# Extensible two-pane file manager
+cask "marta"
 # Sandbox construction video game
 cask "minecraft"
 # Web browser focused on privacy and on minimizing tracking and fingerprinting
@@ -263,6 +275,8 @@ cask "notion-calendar"
 cask "numi"
 # Replacement for Docker Desktop
 cask "orbstack"
+# WebKit based web browser
+cask "orion"
 # Rhythm game
 cask "osu"
 # Home media player
@@ -281,6 +295,8 @@ cask "scroll-reverser"
 cask "shottr"
 # Team communication and collaboration software
 cask "slack@beta"
+# Open source cross-platform file explorer
+cask "spacedrive"
 # Music streaming service
 cask "spotify"
 # System monitor for the menu bar
@@ -304,20 +320,21 @@ cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
-mas "Balatro+", id: 6502451661
+mas "Balatro", id: 6502451661
 mas "BloonsTD6+", id: 1584423325
 mas "Endel", id: 1346247457
 mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
 mas "iMovie", id: 408981434
-mas "JapanRural", id: 1634749545
+mas "JapaneseLife", id: 1634749545
 mas "Keynote", id: 409183694
 mas "Microsoft Excel", id: 462058435
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Perplexity", id: 6714467650
 mas "Sasquatch", id: 1465346522
+mas "Save to Reader", id: 1640236961
 mas "Shareful", id: 1522267256
 mas "Taiko no Tatsujin Pop Tap Beat", id: 1463360242
 mas "UTC Time", id: 1538245904
@@ -326,7 +343,9 @@ mas "Xcode", id: 497799835
 vscode "antfu.icons-carbon"
 vscode "asvetliakov.vscode-neovim"
 vscode "cdonohue.quill-icons"
+vscode "continue.continue"
 vscode "datadog.datadog-vscode"
+vscode "dorianmassoulier.repomix-runner"
 vscode "eamodio.gitlens"
 vscode "github.copilot"
 vscode "github.copilot-chat"
