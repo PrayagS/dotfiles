@@ -162,6 +162,7 @@ return {
 						name = "LSP",
 						module = "blink.cmp.sources.lsp",
 						score_offset = 1, -- boost lsp completions
+						fallbacks = {},
 					},
 					path = {
 						opts = { show_hidden_files_by_default = true },
