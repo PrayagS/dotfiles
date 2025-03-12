@@ -51,6 +51,8 @@ return {
 			session_lens = {
 				load_on_setup = false,
 			},
+			-- purge sessions that are not accessed in the last 30 days
+			purge_after_minutes = 43200,
 			-- log_level = "debug",
 		},
 	},
