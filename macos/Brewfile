@@ -71,6 +71,8 @@ brew "helm"
 brew "helmify"
 # Improved top (interactive process viewer)
 brew "htop"
+# Client library for huggingface.co hub
+brew "huggingface-cli"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Terminal Client for Redis with AutoCompletion and Syntax Highlighting
@@ -131,6 +133,8 @@ brew "p7zip"
 brew "pdf2image"
 # CLI for Postgres with auto-completion and syntax highlighting
 brew "pgcli"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
 # Fast, disk space efficient package manager
@@ -175,6 +179,8 @@ brew "typstyle"
 brew "vale"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
+# Command-line tool to help build, run, and test web extensions
+brew "web-ext"
 # Command-line streaming torrent client
 brew "webtorrent-cli"
 # Internet file retriever
@@ -247,6 +253,8 @@ cask "mullvad-browser"
 cask "mullvadvpn@beta"
 # Neovim Client
 cask "neovide"
+# Free and open-source RSS reader
+cask "netnewswire@beta"
 # Calendar for professionals and teams
 cask "notion-calendar"
 # Calculator and converter application
@@ -294,18 +302,25 @@ cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
+mas "Balatro+", id: 6502451661
+mas "BloonsTD6+", id: 1584423325
 mas "Endel", id: 1346247457
 mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
 mas "iMovie", id: 408981434
+mas "JapanRural", id: 1634749545
 mas "Keynote", id: 409183694
 mas "Microsoft Excel", id: 462058435
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Perplexity", id: 6714467650
+mas "Sasquatch", id: 1465346522
 mas "Shareful", id: 1522267256
+mas "Taiko no Tatsujin Pop Tap Beat", id: 1463360242
 mas "UTC Time", id: 1538245904
+mas "Wylde Flowers", id: 1458605549
+mas "Xcode", id: 497799835
 vscode "antfu.icons-carbon"
 vscode "asvetliakov.vscode-neovim"
 vscode "cdonohue.quill-icons"
