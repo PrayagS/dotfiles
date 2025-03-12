@@ -352,7 +352,38 @@ config.keys = {
 	},
 
 	-- session/workspace management
-	{ key = "f", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY | WORKSPACES | DOMAINS" }) },
+	{ key = "F", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY | WORKSPACES | DOMAINS" }) },
+	{
+		key = "f",
+		mods = "LEADER",
+		action = wezterm.action_callback(function(win, pane)
+			---@diagnostic disable-next-line: unused-local
+			resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
+				local type = string.match(id, "^([^/]+)") -- match before '/'
+				id = string.match(id, "([^/]+)$") -- match after '/'
+				id = string.match(id, "(.+)%..+$") -- remove file extention
+				local opts = {
+					close_open_tabs = true,
+					window = pane:window(),
+					relative = true,
+					restore_text = true,
+					on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+				}
+				if type == "workspace" then
+					local state = resurrect.state_manager.load_state(id, "workspace")
+					-- create new workspace with previous name
+					-- Source: https://github.com/MLFlexer/resurrect.wezterm/issues/73#issuecomment-2572924018
+					win:perform_action(
+						wezterm.action.SwitchToWorkspace({
+							name = state.workspace,
+						}),
+						pane
+					)
+					resurrect.workspace_state.restore_workspace(state, opts)
+				end
+			end, { ignore_tabs = true, ignore_windows = true })
+		end),
+	},
 	{
 		key = "s",
 		mods = "LEADER",
