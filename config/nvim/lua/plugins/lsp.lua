@@ -7,7 +7,6 @@ return {
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 			{ "smjonas/inc-rename.nvim", enabled = false, opts = { input_buffer_type = "dressing" } },
-			"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 			-- "ray-x/lsp_signature.nvim",
 			-- {
 			-- 	"luckasRanarison/clear-action.nvim",
@@ -268,9 +267,9 @@ return {
 			})
 
 			-- configure diagnostics
-			require("lsp_lines").setup()
 			vim.diagnostic.config({
-				virtual_text = false,
+				virtual_text = true,
+				virtual_lines = true,
 				-- update_in_insert = true,
 				severity_sort = true,
 				float = {
