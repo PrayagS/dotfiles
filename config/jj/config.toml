@@ -15,6 +15,7 @@ email = "prayag.savsani@blinkit.com"
 default-command = "log"
 diff-instructions = false
 diff-editor = [ "nvim", "--cmd", "let g:auto_session_enabled = v:false", "-c", "DiffEditor $left $right $output" ]
+show-cryptographic-signatures = true
 
 [[--scope]]
 --when.commands = ["status"]
@@ -31,7 +32,7 @@ format = "git"
 
 [git]
 # auto-local-bookmark = true
-# sign-on-push = true
+sign-on-push = true
 
 [signing]
 behavior = "own"
