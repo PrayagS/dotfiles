@@ -97,13 +97,13 @@ zinit for \
     pip'magika <- !magika -> magika' \
     zdharma-continuum/null
 
-zinit for \
-    light-mode \
-    lucid \
-    as'null' \
-    id-as'uv' \
-    pip'uv <- !uv -> uv' \
-    zdharma-continuum/null
+# zinit for \
+#     light-mode \
+#     lucid \
+#     as'null' \
+#     id-as'uv' \
+#     pip'uv <- !uv -> uv' \
+#     zdharma-continuum/null
 
 zinit from"gh-r" lman for \
     sbin"ani-cli" pystardust/ani-cli

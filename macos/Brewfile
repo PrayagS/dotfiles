@@ -175,6 +175,8 @@ brew "ttyd"
 brew "typst"
 # Beautiful and reliable typst code formatter
 brew "typstyle"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # Syntax-aware linter for prose
 brew "vale"
 # Executes a program periodically, showing output fullscreen
