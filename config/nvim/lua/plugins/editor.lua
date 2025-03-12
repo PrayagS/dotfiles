@@ -65,6 +65,7 @@ return {
 		"gbprod/yanky.nvim",
 		dependencies = {
 			{ "kkharji/sqlite.lua" },
+			{ "folke/snacks.nvim" },
 		},
 		-- event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 		keys = {
@@ -157,6 +158,14 @@ return {
 				"=P",
 				"<Plug>(YankyPutBeforeFilter)",
 				desc = "Put before applying a filter",
+			},
+			{
+				"<leader>p",
+				function()
+					Snacks.picker.yanky()
+				end,
+				mode = { "n", "x" },
+				desc = "Open Yank History",
 			},
 		},
 		opts = {
