@@ -66,6 +66,15 @@ opt.listchars = {
 
 opt.diffopt = "internal,filler,closeoff,indent-heuristic,linematch:60,algorithm:histogram"
 
+-- folding
+opt.foldenable = true
+opt.foldlevel = 99
+opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldtext = ""
+opt.foldcolumn = "0"
+opt.fillchars:append({ fold = " " })
+
 opt.showmode = false
 opt.updatetime = 1000
 opt.laststatus = 3

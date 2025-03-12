@@ -90,6 +90,11 @@ return {
 						end, "[T]oggle Inlay [H]ints")
 					end
 
+					if client and client:supports_method("textDocument/foldingRange") then
+						local win = vim.api.nvim_get_current_win()
+						vim.wo[win][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
+					end
+
 					if client and client.name == "ruff" then
 						-- Disable hover in favor of Pyright
 						client.server_capabilities.hoverProvider = false
@@ -128,10 +133,10 @@ return {
 				require("blink.cmp").get_lsp_capabilities()
 			)
 
-			capabilities.textDocument.foldingRange = {
-				dynamicRegistration = false,
-				lineFoldingOnly = true,
-			}
+			-- capabilities.textDocument.foldingRange = {
+			-- 	dynamicRegistration = false,
+			-- 	lineFoldingOnly = true,
+			-- }
 			local servers = {
 
 				lua_ls = {
