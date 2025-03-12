@@ -40,9 +40,7 @@ return {
 	-- inside nvim.
 	-- Issue with lazy: https://github.com/rmagatti/auto-session/issues/223
 	{
-		-- "rmagatti/auto-session",
-		"cameronr/auto-session",
-		branch = "restore-error-handler",
+		"rmagatti/auto-session",
 		opts = {
 			auto_save_enabled = true,
 			auto_restore_enabled = true,
