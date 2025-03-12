@@ -1,3 +1,4 @@
+-- TODO: https://gpanders.com/blog/whats-new-in-neovim-0-11/#simpler-lsp-setup-and-configuration
 return {
 	{
 		"neovim/nvim-lspconfig",

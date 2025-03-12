@@ -40,7 +40,6 @@ zinit from"gh-r" lman for \
 # sbin'**/helm' atclone'./**/helm completion zsh > _helm' atpull'%atclone' helm/helm
 
 zinit from"gh" as"null" for \
-    sbin"bin/*" tj/git-extras \
     sbin"**/git-now" iwata/git-now \
     sbin"**/xdg-ninja.sh" b3nj5m1n/xdg-ninja
 
