@@ -108,8 +108,16 @@ return {
 
 			-- configure diagnostics
 			vim.diagnostic.config({
-				-- virtual_text = true,
-				virtual_lines = true,
+				virtual_text = {
+					severity = {
+						max = vim.diagnostic.severity.WARN,
+					},
+				},
+				virtual_lines = {
+					severity = {
+						min = vim.diagnostic.severity.ERROR,
+					},
+				},
 				-- update_in_insert = true,
 				severity_sort = true,
 				float = {
