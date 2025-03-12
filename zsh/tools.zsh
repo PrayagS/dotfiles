@@ -5,10 +5,6 @@
 #      sbin"**/fzf"       junegunn/fzf \
 #      sbin"**/exa"       ogham/exa
 
-# Fetch latest version of ente cli. zinit's `ver` modifier for `gh-r` doesn't
-# support fuzzy matching.
-ente_cli_latest_version=$(curl -s -L -H "Accept: application/vnd.github+json" https://api.github.com/repos/ente-io/ente/releases | jq '[.[] | select(.tag_name | contains("cli"))] | .[0].tag_name')
-
 zinit from"gh-r" lman for \
     sbin"**/fzf" junegunn/fzf \
     sbin"**/fd" @sharkdp/fd \
@@ -36,7 +32,6 @@ zinit from"gh-r" lman for \
     sbin"**/delta -> delta" dandavison/delta \
     sbin"**/gs -> gs" abhinav/git-spice \
     sbin"**/git-absorb -> git-absorb" tummychow/git-absorb \
-    sbin"ente" ver"$ente_cli_latest_version" ente-io/ente \
     sbin"yq** -> yq" mikefarah/yq \
     sbin"**/usql -> usql" xo/usql \
     sbin"devpod* -> devpod" loft-sh/devpod \
