@@ -206,8 +206,6 @@ cask "calibre"
 cask "claude"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
-# Write, edit, and chat about your code with AI
-cask "cursor"
 # Voice and text chat software
 cask "discord"
 # Desktop client for Ente Auth
@@ -218,16 +216,12 @@ cask "flameshot"
 cask "floorp"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Git client for simultaneous branches on top of your existing workflow
-cask "gitbutler"
 # GitHub notifications on your menu bar
 cask "gitify"
 # Web browser
 cask "google-chrome@beta"
 # Free and open-source media player
 cask "iina"
-# Offline AI chat tool
-cask "jan"
 # Jellyfin desktop client
 cask "jellyfin-media-player"
 # Menu bar manager
@@ -240,8 +234,6 @@ cask "karabiner-elements"
 cask "kindle-previewer"
 # Discover, download, and run local LLMs
 cask "lm-studio"
-# Open-source cross-platform alternative to AirDrop
-cask "localsend"
 # Sandbox construction video game
 cask "minecraft"
 # Web browser focused on privacy and on minimizing tracking and fingerprinting
@@ -254,8 +246,6 @@ cask "neovide"
 cask "notion-calendar"
 # Calculator and converter application
 cask "numi"
-# Get up and running with large language models locally
-cask "ollama"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Rhythm game
@@ -294,12 +284,8 @@ cask "vlc"
 cask "waterfox"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm@nightly"
-# Agentic IDE powered by AI Flow paradigm
-cask "windsurf"
 # Network protocol analyzer
 cask "wireshark"
-# View output from scripts in the menu bar
-cask "xbar"
 # Multiplayer code editor
 cask "zed"
 # Video communication and virtual meeting platform
