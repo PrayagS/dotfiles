@@ -109,6 +109,8 @@ brew "lesspipe"
 brew "lf"
 # Command-line utility to interact with linkerd
 brew "linkerd"
+# LLM inference in C/C++
+brew "llama.cpp"
 # Apple Silicon Monitor Top written in Golang
 brew "mactop"
 # Mac App Store command-line interface
@@ -349,6 +351,7 @@ vscode "continue.continue"
 vscode "datadog.datadog-vscode"
 vscode "dorianmassoulier.repomix-runner"
 vscode "eamodio.gitlens"
+vscode "ggml-org.llama-vscode"
 vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "golang.go"
