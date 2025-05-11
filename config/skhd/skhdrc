@@ -146,16 +146,16 @@ lalt + shift - k : yabai -m window --swap north
 lalt + shift - l : yabai -m window --swap east
 
 # move managed window
-meh - h : yabai -m window --stack west
-meh - l : yabai -m window --stack east
-meh - j : yabai -m window --stack south
-meh - k : yabai -m window --stack north
+# meh - h : yabai -m window --stack west
+# meh - l : yabai -m window --stack east
+# meh - j : yabai -m window --stack south
+# meh - k : yabai -m window --stack north
 
 # unstack + split
-meh + cmd - h : yabai-stack west
-meh + cmd - l : yabai-stack east
-meh + cmd - j : yabai-stack south
-meh + cmd - k : yabai-stack north
+# meh + cmd - h : yabai-stack west
+# meh + cmd - l : yabai-stack east
+# meh + cmd - j : yabai-stack south
+# meh + cmd - k : yabai-stack north
 
 # warp window
 lalt + cmd - h : yabai -m window --warp west
