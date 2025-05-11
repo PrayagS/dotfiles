@@ -56,7 +56,7 @@ brew "gnupg"
 brew "go"
 # Colorize logfiles and command output
 brew "grc"
-# Tools and libraries to manipulate images in many formats
+# Tools and libraries to manipulate images in select formats
 brew "imagemagick"
 # Sort Python imports automatically
 brew "isort"
