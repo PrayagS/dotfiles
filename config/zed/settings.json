@@ -23,7 +23,7 @@
   "gutter": {
     "min_line_number_digits": 4
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "show_signature_help_after_edits": true,
   "agent_buffer_font_size": 14.0,
   "confirm_quit": true,
@@ -70,8 +70,8 @@
   "agent": {
     "default_profile": "write",
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4-thinking"
+      "provider": "copilot_chat",
+      "model": "gpt-4.1"
     },
     "stream_edits": true,
     "notify_when_agent_waiting": "all_screens",
