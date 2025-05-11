@@ -31,6 +31,7 @@ return {
 				"typst",
 				"yaml",
 				"vimdoc",
+				"vrl",
 			}
 
 			require("nvim-treesitter").install(ensure_installed)
