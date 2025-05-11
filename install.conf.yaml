@@ -36,6 +36,8 @@
     ~/.config/karabiner: config/karabiner
     # ~/.config/picom.conf: config/picom.conf
     ~/.config/tmux/tmux.conf: config/tmux/tmux.conf
+    ~/.config/tmux/themes: config/tmux/themes
+    ~/.config/tmux/apply-theme: config/tmux/apply-theme
     ~/.config/atuin: config/atuin
     ~/.config/bat: config/bat
     ~/.config/lazygit: config/lazygit

@@ -1,0 +1,141 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+mode="${1:-auto}"
+session="${2:-}"
+
+if [[ -z "$session" ]]; then
+  session="$(tmux display-message -p '#{session_id}' 2>/dev/null || true)"
+fi
+
+if [[ -z "$session" ]]; then
+  exit 0
+fi
+
+session_name="$(tmux display-message -p -t "$session" '#{session_name}' 2>/dev/null || true)"
+if [[ -z "$session_name" ]]; then
+  exit 0
+fi
+
+case "$mode" in
+  auto)
+    if [[ "$session_name" == *zed/* ]]; then
+      theme="melange-dark"
+    else
+      theme="gruvbox-material"
+    fi
+    ;;
+  current)
+    theme="$(tmux show-option -qv -t "$session" @tmux_theme 2>/dev/null || true)"
+    [[ -n "$theme" ]] || theme="gruvbox-material"
+    ;;
+  gruvbox|gruvbox-material)
+    theme="gruvbox-material"
+    ;;
+  melange|melange-dark)
+    theme="melange-dark"
+    ;;
+  *)
+    echo "unknown theme: $mode" >&2
+    exit 1
+    ;;
+esac
+
+set_session() {
+  tmux set-option -q -t "$session" "$@"
+}
+
+set_window() {
+  local window
+  tmux list-windows -t "$session" -F '#{window_id}' | while IFS= read -r window; do
+    tmux set-window-option -q -t "$window" "$@"
+  done
+}
+
+unset_window() {
+  local window
+  tmux list-windows -t "$session" -F '#{window_id}' | while IFS= read -r window; do
+    tmux set-window-option -q -u -t "$window" "$@" 2>/dev/null || true
+  done
+}
+
+case "$theme" in
+  melange-dark)
+    set_session @tmux_theme "melange-dark"
+    set_session status-position top
+    set_session status on
+    set_session status-justify left
+    set_session status-style "bg=#292522,fg=#C1A78E"
+    set_session status-left-length 100
+    set_session status-left "#{?client_prefix,#[bg=#D47766],#[bg=#89B3B6]}#[fg=#292522,bold] #S #[bg=#292522] "
+    set_session status-right-length 400
+    set_session status-right "#{?#{m:*zed/*,#{session_name}},,#[align=absolute-right]#[bg=#292522] #[bg=#34302C#,fg=#C1A78E#,bold] #(~/.config/tmux/shorten-path '#{pane_current_path}') }"
+    set_session window-status-format "#[fg=#C1A78E,bg=#34302C] #I:#W "
+    set_session window-status-current-format "#[bg=#EBC06D,fg=#292522,bold] #I:#W "
+    set_session window-status-style "fg=#C1A78E,bg=#34302C"
+    set_session window-status-current-style "fg=#292522,bg=#EBC06D,bold"
+    set_session window-status-activity-style "fg=#C1A78E,bg=#34302C"
+    set_session window-status-bell-style "fg=#C1A78E,bg=#34302C"
+    set_session window-status-last-style "fg=#C1A78E,bg=#34302C"
+    set_session window-status-separator ""
+    set_session message-style "bg=#EBC06D,fg=#292522,bold"
+    set_session message-command-style "bg=#CF9BC2,fg=#292522,bold"
+    set_window window-status-format "#[fg=#C1A78E,bg=#34302C] #I:#W "
+    set_window window-status-current-format "#[bg=#EBC06D,fg=#292522,bold] #I:#W "
+    set_window window-status-style "fg=#C1A78E,bg=#34302C"
+    set_window window-status-current-style "fg=#292522,bg=#EBC06D,bold"
+    set_window window-status-activity-style "fg=#C1A78E,bg=#34302C"
+    set_window window-status-bell-style "fg=#C1A78E,bg=#34302C"
+    set_window window-status-last-style "fg=#C1A78E,bg=#34302C"
+    set_window window-status-separator ""
+    set_window popup-border-lines heavy
+    set_window popup-style "bg=#292522,fg=#C1A78E"
+    set_window popup-border-style "fg=#89B3B6"
+    set_window pane-border-style "fg=#867462"
+    set_window pane-active-border-style "fg=#89B3B6"
+    set_window pane-border-status top
+    set_window pane-border-indicators both
+    set_window pane-border-lines simple
+    set_window pane-border-format ""
+    set_window mode-style "bg=#A3A9CE,fg=#292522,bold"
+    ;;
+  gruvbox-material)
+    set_session @tmux_theme "gruvbox-material"
+    set_session status-position top
+    set_session status on
+    set_session status-justify left
+    set_session status-style "bg=#ebdbb2,fg=#1d2021"
+    set_session status-left-length 100
+    set_session status-left "#{?client_prefix,#[bg=#d3869b],#[bg=#d8a657]}#[fg=#282828,bold] #S #[bg=#282828] "
+    set_session status-right-length 400
+    set_session status-right "#{?#{m:*zed/*,#{session_name}},,#[align=absolute-right]#[bg=#282828] #[bg=#d8a657#,fg=#282828#,bold] #(~/.config/tmux/shorten-path '#{pane_current_path}') }"
+    set_session window-status-format "#[fg=#3c3836,bg=#928374] #I:#W "
+    set_session window-status-current-format "#[bg=#ebdbb2,fg=#1d2021,bold] #I:#W "
+    set_session window-status-style "fg=#3c3836,bg=#928374"
+    set_session window-status-current-style "fg=#1d2021,bg=#ebdbb2,bold"
+    set_session window-status-activity-style "fg=#3c3836,bg=#928374"
+    set_session window-status-bell-style "fg=#3c3836,bg=#928374"
+    set_session window-status-last-style "fg=#3c3836,bg=#928374"
+    set_session window-status-separator ""
+    set_session message-style "bg=#282828,fg=#ebdbb2"
+    set_session message-command-style "bg=#282828,fg=#ebdbb2"
+    set_window window-status-format "#[fg=#3c3836,bg=#928374] #I:#W "
+    set_window window-status-current-format "#[bg=#ebdbb2,fg=#1d2021,bold] #I:#W "
+    set_window window-status-style "fg=#3c3836,bg=#928374"
+    set_window window-status-current-style "fg=#1d2021,bg=#ebdbb2,bold"
+    set_window window-status-activity-style "fg=#3c3836,bg=#928374"
+    set_window window-status-bell-style "fg=#3c3836,bg=#928374"
+    set_window window-status-last-style "fg=#3c3836,bg=#928374"
+    set_window window-status-separator ""
+    set_window popup-border-lines heavy
+    set_window popup-style "bg=#282828,fg=#ebdbb2"
+    set_window popup-border-style "fg=#ebdbb2"
+    set_window pane-border-style "fg=#282828"
+    set_window pane-active-border-style "fg=#ebdbb2"
+    set_window pane-border-status top
+    set_window pane-border-indicators both
+    set_window pane-border-lines simple
+    set_window pane-border-format ""
+    set_window mode-style "bg=#d8a657,fg=#1d2021,bold"
+    ;;
+esac
