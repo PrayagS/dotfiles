@@ -89,3 +89,15 @@ concat(
 )
 '''
 git_push_bookmark = '"prayagmatic/jj-push-" ++ change_id.short()'
+
+[jj-vine]
+forge = "github"
+remoteName = "origin"
+defaultBranch = "master"
+
+[jj-vine.description]
+enabled = true
+initialSingleRevision = "fullMessage"
+
+[jj-vine.github]
+host = "https://api.github.com"
