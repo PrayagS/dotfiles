@@ -79,8 +79,8 @@ export ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c100,)"
 bindkey -M viins '^]' autosuggest-execute
 bindkey -M vicmd '^]' autosuggest-execute
 
-export FAST_HIGHLIGHT_STYLES[comment]='fg=yellow,bold'
-export FAST_HIGHLIGHT_STYLES[global]='fg=green,bold'
+# export FAST_HIGHLIGHT_STYLES[comment]='fg=yellow,bold'
+# export FAST_HIGHLIGHT_STYLES[global]='fg=green,bold'
 zle_highlight=('paste:none')
 
 bindkey -M viins '^r' atuin-search-viins
@@ -88,6 +88,8 @@ bindkey -M vicmd '^r' atuin-search-vicmd
 bindkey '^[e' _atuin_search_widget
 
 export CD_LS_COMMAND="l"
+
+eval "$(zsh-patina activate)"
 
 export ZSH_EVALCACHE_DIR="${ZSH_CACHE_DIR}/evalcache"
 _evalcache zoxide init zsh

@@ -27,7 +27,7 @@ atuinsh/atuin
 
 # zdharma-continuum/history-search-multi-word
 zsh-users/zsh-autosuggestions
-zdharma-continuum/fast-syntax-highlighting
+# zdharma-continuum/fast-syntax-highlighting
 
 hlissner/zsh-autopair
 akash329d/zsh-alias-finder
