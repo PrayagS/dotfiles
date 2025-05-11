@@ -70,7 +70,6 @@ export PAGER="moor"
 export MOOR="-quit-if-one-screen -statusbar=bold -style=gruvbox -wrap"
 export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/ripgreprc"
 export TERMINAL="alacritty"
-export BROWSER="google-chrome-stable"
 export LOLCOMMITS_DEVICE=/dev/video0
 export HOMEBREW_BUNDLE_FILE_GLOBAL="$HOME/dev/dotfiles/macos/Brewfile"
 
