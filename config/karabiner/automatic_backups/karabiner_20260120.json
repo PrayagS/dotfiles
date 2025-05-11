@@ -106,14 +106,6 @@
                             "to": [{ "mouse_key": { "vertical_wheel": 32 } }]
                         }
                     ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 9760,
-                        "vendor_id": 6645
-                    },
-                    "manipulate_caps_lock_led": false
                 }
             ],
             "fn_function_keys": [
