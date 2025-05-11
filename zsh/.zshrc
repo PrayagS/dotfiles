@@ -70,6 +70,8 @@ bindkey -s "^[[D" ""
 
 # Prompt
 PS1="READY >"
+# required by the jj prompt function in p10k
+zinit light mafredri/zsh-async
 zinit ice wait"!" lucid atload"source ${ZSH_HOME}/themes/.p10k.zsh; _p9k_precmd" nocd
 zinit light romkatv/powerlevel10k
 
