@@ -70,24 +70,6 @@
                         "vendor_id": 5426
                     },
                     "ignore": true
-                },
-                {
-                    "identifiers": {
-                        "is_pointing_device": true,
-                        "product_id": 182,
-                        "vendor_id": 5426
-                    },
-                    "ignore": false,
-                    "simple_modifications": [
-                        {
-                            "from": { "pointing_button": "button4" },
-                            "to": [{ "mouse_key": { "vertical_wheel": -32 } }]
-                        },
-                        {
-                            "from": { "pointing_button": "button5" },
-                            "to": [{ "mouse_key": { "vertical_wheel": 32 } }]
-                        }
-                    ]
                 }
             ],
             "fn_function_keys": [
