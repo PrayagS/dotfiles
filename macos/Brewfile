@@ -87,6 +87,8 @@ brew "isort"
 brew "jrnl"
 # Package manager for Jsonnet
 brew "jsonnet-bundler"
+# Handy way to save and run project-specific commands
+brew "just"
 # CLI for managing Apache Kafka
 brew "kafkactl"
 # Generic command-line non-JVM Apache Kafka producer and consumer
@@ -135,6 +137,8 @@ brew "oha"
 brew "openbao"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
 # Convert PDFs to images
 brew "pdf2image"
 # CLI for Postgres with auto-completion and syntax highlighting
@@ -189,6 +193,8 @@ brew "uv"
 brew "vale"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
+# Convert HTML to PDF
+brew "weasyprint"
 # Command-line tool to help build, run, and test web extensions
 brew "web-ext"
 # Command-line streaming torrent client
@@ -266,7 +272,7 @@ cask "minecraft"
 # Web browser focused on privacy and on minimizing tracking and fingerprinting
 cask "mullvad-browser"
 # VPN client
-cask "mullvadvpn@beta"
+cask "mullvad-vpn@beta"
 # Neovim Client
 cask "neovide"
 # Free and open-source RSS reader
