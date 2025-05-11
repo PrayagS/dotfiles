@@ -1,7 +1,7 @@
 # .zsh_plugins.txt - comments begin with "#"
 
 mattmc3/ez-compinit
-getantidote/use-omz
+# getantidote/use-omz
 
 mafredri/zsh-async
 romkatv/powerlevel10k
