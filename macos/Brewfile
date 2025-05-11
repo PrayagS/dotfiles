@@ -21,6 +21,8 @@ brew "bash"
 brew "chafa"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
+# Cross-platform make
+brew "cmake"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Securely send things from one computer to another
@@ -301,6 +303,8 @@ cask "rustdesk"
 cask "scroll-reverser"
 # Screenshot measurement and annotation tool
 cask "shottr"
+# Instant messaging application focusing on security
+cask "signal@beta"
 # Team communication and collaboration software
 cask "slack@beta"
 # Music streaming service
