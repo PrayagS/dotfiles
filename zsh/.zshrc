@@ -40,6 +40,8 @@ zstyle ':fzf-tab:*' use-fzf-default-opts yes
 zstyle ':fzf-tab:*' switch-group 'ctrl-h' 'ctrl-l'
 export LESSOPEN="|${ZSH_CONFIG_DIR}/lessfilter %s"
 zstyle ':fzf-tab:sources' config-directory ${ZSH_HOME}/fzf-tab-custom-sources
+# disable preview for command options
+zstyle ':fzf-tab:complete:*:options' fzf-preview
 
 zstyle :history-search-multi-word page-size 20
 zstyle :history-search-multi-word highlight-color 'fg=#b8bb26,bold'
