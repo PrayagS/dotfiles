@@ -27,9 +27,10 @@ sync_frequency = "0"
 ## which search mode to use
 ## possible values: prefix, fulltext, fuzzy
 search_mode = "fuzzy"
-keymap_mode = "vim-normal"
+keymap_mode = "vim-insert"
 
 invert = true
+inline_height = 20
 
 history_filter = [
     "^ls$",
