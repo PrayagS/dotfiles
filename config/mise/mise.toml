@@ -20,3 +20,4 @@ cmake = "3.31.9"
 python = "3.13.7"
 tilt = "latest"
 "github:open-telemetry/opentelemetry-collector-releases"= { version = "latest", asset_pattern = "otelcol-contrib_*_darwin_arm64.tar.gz" }
+age = "latest"
