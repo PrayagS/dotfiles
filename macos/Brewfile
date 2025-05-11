@@ -1,16 +1,12 @@
-tap "alexstrnik/browserino"
-tap "asmvik/formulae"
-tap "buo/cask-upgrade"
-tap "fluffypony/yojam"
-tap "homebrew-zathura/zathura"
+tap "asmvik/formulae", trusted: true
+tap "buo/cask-upgrade", trusted: true
+tap "homebrew-zathura/zathura", trusted: true
 tap "homebrew/bundle"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
-tap "koekeishiya/formulae"
-tap "muxy-app/tap"
-tap "pakerwreah/calendr"
-tap "steipete/tap"
-tap "typewhisper/tap"
+tap "koekeishiya/formulae", trusted: true
+tap "muxy-app/tap", trusted: true
+tap "pakerwreah/calendr", trusted: true
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Language server for beancount files
@@ -34,7 +30,7 @@ brew "curl"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
 # Pack, ship and run any application as a lightweight container
-brew "docker"
+brew "docker", link: false
 # Docker CLI plugin for extended build capabilities with BuildKit
 brew "docker-buildx"
 # Isolated development environments using Docker
@@ -185,8 +181,6 @@ brew "homebrew-zathura/zathura/zathura"
 brew "homebrew-zathura/zathura/zathura-pdf-mupdf"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
-# Lightning-fast macOS screenshots & AI vision analysis
-brew "steipete/tap/peekaboo"
 # Password manager
 cask "1password@beta"
 # Agent orchestration platform
@@ -195,8 +189,6 @@ cask "antigravity"
 cask "appcleaner"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
-# Open-source KVM software
-cask "barrier"
 # Menu bar calendar
 cask "calendr"
 # E-books management software
