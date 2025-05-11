@@ -55,6 +55,8 @@ zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
 # Ensure the .zsh_plugins.txt file exists so you can add plugins.
 [[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
 
+export ATUIN_NOBIND='true'
+
 # Lazy-load antidote from its functions directory.
 fpath=(${ZSH_CONFIG_DIR}/.antidote/functions $fpath)
 autoload -Uz antidote
@@ -79,7 +81,6 @@ export FAST_HIGHLIGHT_STYLES[comment]='fg=yellow,bold'
 export FAST_HIGHLIGHT_STYLES[global]='fg=green,bold'
 zle_highlight=('paste:none')
 
-export ATUIN_NOBIND='true'
 bindkey '^[e' _atuin_search_widget
 
 export CD_LS_COMMAND="l"
