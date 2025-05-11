@@ -30,7 +30,7 @@
 "revset completion selected" = { bg = "#504945", fg = "#ddc7a1" }
 
 "revisions" = { fg = "#ddc7a1" }
-"revisions selected" = { bg = "#2a2827"}
+"revisions selected" = { bg = "#3c3836"}
 "revisions dimmed" = { fg = "#5a524c" }
 "revisions details selected" = { bg = "#504945" }
 "oplog selected" = { bold = true }
@@ -51,7 +51,7 @@
 "help border" = { fg = "#3c3836" }
 "help dimmed" = { fg = "#7c6f64" }
 
-"preview" = { fg = "#ddc7a1" }
+"preview" = { fg = "#ddc7a1", bg = "#202020" }
 
 "confirmation" = { bg = "#282828" }
 "confirmation text" = { fg = "#7daea3", bold = true }
