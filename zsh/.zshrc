@@ -125,6 +125,7 @@ zinit lucid light-mode wait"0b" for \
         zstyle :plugin:history-search-multi-word active 'bg=#504945'
         zstyle :plugin:history-search-multi-word clear-on-cancel 'yes'
       " \
+    patch"$ZSH_HOME/plugin-patches/history-search-multi-word/0001-key-bindings.patch" \
         zdharma-continuum/history-search-multi-word \
     atinit'
       ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50

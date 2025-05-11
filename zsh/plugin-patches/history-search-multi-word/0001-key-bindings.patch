@@ -1,0 +1,46 @@
+diff --git a/history-search-multi-word b/history-search-multi-word
+index 7dcd99c..36eda76 100644
+--- a/history-search-multi-word
++++ b/history-search-multi-word
+@@ -173,7 +173,7 @@ if (( ${+functions[_hsmw_main]} == 0 )); then
+     # Colorify
+     #
+ 
+-    local preamble=$'\n'"Ctrl-K – context, Ctrl-J – bump. Entry #$__hsmw_hcw_index of $max_index"$'\n'
++    local preamble=$'\n'"Ctrl-O – context, Ctrl-J – bump. Entry #$__hsmw_hcw_index of $max_index"$'\n'
+     integer offset=${#preamble}+${#BUFFER}
+     POSTDISPLAY="$preamble$text"
+ 
+@@ -342,7 +342,7 @@ if [[ "$__hsmw_hcw_call_count" -eq "1" ]]; then
+ 
+   # Context binding
+   zle -N -- hsmw-context-main
+-  bindkey -M hsmw '^K' hsmw-context-main
++  bindkey -M hsmw '^O' hsmw-context-main
+ 
+   # Needed for Fedora 23, zsh-5.1.1
+   # The self-insert widget is overloaded below
+diff --git a/hsmw-context-main b/hsmw-context-main
+index b73c896..150714e 100644
+--- a/hsmw-context-main
++++ b/hsmw-context-main
+@@ -49,8 +49,8 @@ if [[ "$WIDGET" = "hsmw-context-main" ]]; then
+   fi
+   zle -N _hsmw_ctx_down
+   zle -N _hsmw_ctx_up
+-  bindkey -M hsmw '^N' "_hsmw_ctx_down"
+-  bindkey -M hsmw '^P' "_hsmw_ctx_up"
++  # bindkey -M hsmw '^N' "_hsmw_ctx_down"
++  # bindkey -M hsmw '^P' "_hsmw_ctx_up"
+ fi
+ _hsmw_ctx_main() {
+   # The repeat will make the matching work on a fresh heap arena
+@@ -117,7 +117,7 @@ _hsmw_ctx_main() {
+   #
+   # Colorify
+   #
+-  local preamble=$'\n'"Showing context of history entry. Ctrl-K to return to search."
++  local preamble=$'\n'"Showing context of history entry. Ctrl-O to return to search."
+   local preamble2=$'\n'"Ctrl-N/P: next/previous occurence. Occurence #$(( __hsmw_ctx_which + 1 )) of ${#__hsmw_ctx_found}"
+   preamble2=${(r:${#preamble}:: :)preamble2}$'\n'
+   preamble+=$preamble2
