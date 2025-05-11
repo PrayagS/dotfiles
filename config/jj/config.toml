@@ -46,8 +46,9 @@ paginate = "never"
 pager = "delta"
 
 [git]
-# auto-local-bookmark = true
 sign-on-push = true
+fetch = '["origin", "glob:upstream*"]'
+abandon-unreachable-commits = true
 
 [signing]
 behavior = "own"
