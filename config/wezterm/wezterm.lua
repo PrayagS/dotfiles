@@ -59,6 +59,7 @@ config.window_padding = {
 config.pane_focus_follows_mouse = true
 
 config.audible_bell = "SystemBeep"
+config.notification_handling = "AlwaysShow"
 
 config.automatically_reload_config = true
 config.unicode_version = 14
