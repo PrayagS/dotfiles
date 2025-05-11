@@ -4,16 +4,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "available_since": "12.3.0",
-                        "description": "Change control + mouse motion to scroll wheel (rev 1)",
-                        "manipulators": [
-                            {
-                                "from": { "modifiers": { "mandatory": ["control"] } },
-                                "type": "mouse_motion_to_scroll"
-                            }
-                        ]
-                    },
-                    {
                         "description": "shift+caps_lock+[...keys] -> hyper+[...keys]; caps_lock+[...keys] -> control+[..keys]; caps_lock -> escape",
                         "manipulators": [
                             {
@@ -62,8 +52,6 @@
                         "vendor_id": 5426
                     },
                     "ignore": false,
-                    "mouse_discard_horizontal_wheel": true,
-                    "mouse_discard_vertical_wheel": true,
                     "simple_modifications": [
                         {
                             "from": { "pointing_button": "button4" },
