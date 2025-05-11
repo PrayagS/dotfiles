@@ -1,21 +1,17 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
----
 gui:
   theme:
     # Border color of focused window
     activeBorderColor:
       - "#f9f5d7"
       - bold
-
     # Border color of non-focused windows
     inactiveBorderColor:
       - "#a89984"
-
     # Border color of focused window when searching in that window
     searchingActiveBorderColor:
       - "#f9f5d7"
       - bold
-
     # Color of keybindings help text in the bottom line
     # optionsTextColor:
     #   - blue
@@ -25,29 +21,23 @@ gui:
     selectedLineBgColor:
       - "#3c3836"
       - bold
-
     # Foreground color of copied commit
     cherryPickedCommitFgColor:
       - "#fb4934"
       - bold
-
     # Background color of copied commit
     cherryPickedCommitBgColor:
       - "#1d2021"
-
     # Foreground color of marked base commit (for rebase)
     markedBaseCommitFgColor:
       - "#fb4934"
       - bold
-
     # Background color of marked base commit (for rebase)
     markedBaseCommitBgColor:
       - "#1d2021"
-
     # Color for file with unstaged changes
     unstagedChangesColor:
       - "#fb4934"
-
     # Default text color
     defaultFgColor:
       - default
@@ -68,7 +58,8 @@ git:
     signOff: true
   skipHookPrefix: ""
   branchLogCmd: 'git log --color=always --stat --graph --date=human --pretty=lc {{branchName}} --'
-  allBranchesLogCmd: 'git log --color=always --graph --date=human --pretty=lc --all'
+  allBranchesLogCmds:
+    - git log --color=always --graph --date=human --pretty=lc --all
 os:
   edit: "nvim {{filename}}"
   editAtLine: "nvim +{{line}} {{filename}}"
@@ -100,8 +91,7 @@ customCommands:
         title: "Which PR do you want to check out?"
         key: "PullRequestNumber"
         command: >-
-          gh pr list --json number,title,headRefName,updatedAt
-          --template '{{`{{range .}}{{printf "#%v: %s - %s (%s)\\n" .number .title .headRefName (timeago .updatedAt)}}{{end}}`}}'
+          gh pr list --json number,title,headRefName,updatedAt --template '{{`{{range .}}{{printf "#%v: %s - %s (%s)\\n" .number .title .headRefName (timeago .updatedAt)}}{{end}}`}}'
         filter: '#(?P<number>[0-9]+): (?P<title>.+) - (?P<ref_name>[^ ]+).*'
         valueFormat: '{{.number}}'
         labelFormat: '{{"#" | black | bold}}{{.number | white | bold}} {{.title | yellow | bold}}{{" [" | black | bold}}{{.ref_name | green}}{{"]" | black | bold}}'
