@@ -119,6 +119,7 @@ return {
 	},
 	{
 		"sindrets/diffview.nvim",
+		enabled = false,
 		opts = {},
 		cmd = {
 			"DiffviewOpen",
@@ -132,6 +133,7 @@ return {
 	},
 	{
 		"kdheepak/lazygit.nvim",
+		enabled = false,
 		cmd = {
 			"LazyGit",
 			"LazyGitConfig",
