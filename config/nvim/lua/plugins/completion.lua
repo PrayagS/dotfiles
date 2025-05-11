@@ -1,14 +1,12 @@
 return {
 	{
 		"saghen/blink.cmp",
+		branch = "v1",
 		event = { "InsertEnter", "CmdlineEnter" },
 		build = "cargo build --release",
 		dependencies = {
 			{ "mikavilpas/blink-ripgrep.nvim", version = "*" },
 			"Kaiser-Yang/blink-cmp-git",
-			"ribru17/blink-cmp-spell",
-			"disrupted/blink-cmp-conventional-commits",
-			"junkblocker/blink-cmp-wezterm",
 			{ "nvim-mini/mini.icons", version = false },
 		},
 		-- version = "*",
@@ -102,12 +100,11 @@ return {
 					"path",
 					"buffer",
 					"omni",
-					"spell",
 					"ripgrep",
 				},
 				per_filetype = {
-					gitcommit = { "conventional_commits", "git", "buffer", "path" },
-					jjdescription = { "conventional_commits", "git", "buffer", "path" },
+					gitcommit = { "git", "buffer", "path" },
+					jjdescription = { "git", "buffer", "path" },
 				},
 				providers = {
 					minuet = {
@@ -140,13 +137,6 @@ return {
 					path = {
 						opts = { show_hidden_files_by_default = true },
 					},
-					spell = {
-						name = "Spell",
-						module = "blink-cmp-spell",
-						opts = {
-							max_entries = 10,
-						},
-					},
 					ripgrep = {
 						module = "blink-ripgrep",
 						name = "Ripgrep",
@@ -173,20 +163,6 @@ return {
 								PR = "",
 								Issue = "",
 							},
-						},
-					},
-					conventional_commits = {
-						name = "Conventional Commits",
-						module = "blink-cmp-conventional-commits",
-					},
-					wezterm = {
-						module = "blink-cmp-wezterm",
-						name = "wezterm",
-						opts = {
-							all_panes = true,
-							capture_history = false,
-							-- triggered_only = false,
-							-- trigger_chars = { "." },
 						},
 					},
 				},

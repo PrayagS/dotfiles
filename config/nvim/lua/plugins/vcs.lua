@@ -118,50 +118,6 @@ return {
 		},
 	},
 	{
-		"sindrets/diffview.nvim",
-		enabled = false,
-		opts = {},
-		cmd = {
-			"DiffviewOpen",
-			"DiffviewClose",
-			"DiffviewToggleFiles",
-			"DiffviewFocusFiles",
-			"DiffviewRefresh",
-			"DiffviewFileHistory",
-			"DiffviewLog",
-		},
-	},
-	{
-		"kdheepak/lazygit.nvim",
-		enabled = false,
-		cmd = {
-			"LazyGit",
-			"LazyGitConfig",
-			"LazyGitCurrentFile",
-			"LazyGitFilter",
-			"LazyGitFilterCurrentFile",
-		},
-		-- optional for floating window border decoration
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		-- setting the keybinding for LazyGit with 'keys' is recommended in
-		-- order to load the plugin when the command is run for the first time
-		keys = {
-			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-		},
-	},
-	{
-		"pwntester/octo.nvim",
-		enabled = false,
-		cmd = {
-			"Octo",
-		},
-		opts = {
-			enable_builtin = true,
-		},
-	},
-	{
 		"julienvincent/hunk.nvim",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
@@ -172,5 +128,45 @@ return {
 	{
 		"rafikdraoui/jj-diffconflicts",
 		cmd = { "JJDiffConflicts" },
+	},
+	{
+		"esmuellert/codediff.nvim",
+		cmd = "CodeDiff",
+		opts = {
+			explorer = {
+				view_mode = "tree",
+				position = "bottom",
+			},
+		},
+	},
+	{
+		"georgeguimaraes/review.nvim",
+		dependencies = {
+			"esmuellert/codediff.nvim",
+			"MunifTanjim/nui.nvim",
+		},
+		cmd = "Review",
+		opts = {
+			comment_types = {
+				note = { key = "n", name = "Note", icon = "📝", hl = "ReviewNote" },
+				suggestion = { key = "s", name = "Suggestion", icon = "💡", hl = "ReviewSuggestion" },
+				issue = { key = "i", name = "Issue", icon = "⚠️", hl = "ReviewIssue" },
+				praise = { key = "p", name = "Praise", icon = "✨", hl = "ReviewPraise" },
+			},
+			keymaps = {
+				add_note = "<leader>dn",
+				add_suggestion = "<leader>ds",
+				add_issue = "<leader>di",
+				add_praise = "<leader>dp",
+				delete_comment = "<leader>D",
+				edit_comment = "<leader>de",
+				next_comment = "]n",
+				prev_comment = "[n",
+				toggle_file_panel = "f",
+			},
+			codediff = {
+				readonly = true,
+			},
+		},
 	},
 }

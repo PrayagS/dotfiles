@@ -43,8 +43,8 @@ opt.path:append("**")
 opt.mouse:append("a")
 
 -- spellcheck
-opt.spell = true
-opt.spelllang = "en_us"
+opt.spell = false
+-- opt.spelllang = "en_us"
 
 opt.autowrite = true -- Enable auto write
 opt.completeopt = "menu,menuone,noselect"

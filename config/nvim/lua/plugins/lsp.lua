@@ -4,19 +4,8 @@ return {
 		event = { "BufReadPre", "BufNewFile", "BufWritePre" },
 		dependencies = {
 			{
-				"kosayoda/nvim-lightbulb",
-				opts = {
-					autocmd = { enabled = true },
-					number = { enabled = true },
-				},
-			},
-			{
-				"chrisgrieser/nvim-lsp-endhints",
-				enabled = false,
-				opts = {},
-			},
-			{
 				"Zeioth/garbage-day.nvim",
+				version = "v1.3.1",
 				opts = {
 					grace_period = 30 * 60,
 					notifications = true,
@@ -194,46 +183,6 @@ return {
 		end,
 	},
 	{
-		"Bekaboo/dropbar.nvim",
-		enabled = false,
-		event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
-		dependencies = {
-			"nvim-telescope/telescope-fzf-native.nvim",
-		},
-		opts = {
-			bar = {
-				sources = function(buf, _)
-					local sources = require("dropbar.sources")
-					local utils = require("dropbar.utils")
-					if vim.bo[buf].ft == "markdown" then
-						return { sources.markdown }
-					end
-					if vim.bo[buf].buftype == "terminal" then
-						return { sources.terminal }
-					end
-					return { utils.source.fallback({ sources.lsp, sources.treesitter }) }
-				end,
-			},
-		},
-	},
-	{
-		"stevearc/aerial.nvim",
-		enabled = false,
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
-			require("aerial").setup({
-				backends = { "lsp", "treesitter", "markdown", "asciidoc", "man" },
-				default_direction = "prefer_left",
-			})
-			-- You probably also want to set a keymap to toggle aerial
-			vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle left<CR>")
-			vim.keymap.set("n", "<leader>af", "<cmd>Telescope aerial<CR>")
-		end,
-	},
-	{
 		"rachartier/tiny-code-action.nvim",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim" },
@@ -253,47 +202,6 @@ return {
 				opts = { layout = { preset = "dropdown" } },
 			},
 		},
-	},
-	{
-		"aznhe21/actions-preview.nvim",
-		enabled = false,
-		keys = {
-			{
-				"<leader>ca",
-				function()
-					require("actions-preview").code_actions()
-				end,
-				desc = "preview code actions",
-			},
-		},
-		config = function()
-			require("actions-preview").setup({
-				diff = {
-					algorithm = "patience",
-					ctxlen = 5,
-				},
-				highlight_command = {
-					require("actions-preview.highlight").delta("delta --features=gruvbox-dark-code-actions-preview"),
-				},
-				backend = { "snacks", "telescope", "nui" },
-				snacks = {
-					layout = { preset = "dropdown" },
-				},
-				telescope = {
-					sorting_strategy = "ascending",
-					layout_strategy = "vertical",
-					layout_config = {
-						width = 0.8,
-						height = 0.9,
-						prompt_position = "top",
-						preview_cutoff = 20,
-						preview_height = function(_, _, max_lines)
-							return max_lines - 15
-						end,
-					},
-				},
-			})
-		end,
 	},
 	{
 		"rmagatti/goto-preview",

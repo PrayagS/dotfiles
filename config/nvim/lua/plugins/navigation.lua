@@ -1,54 +1,5 @@
 return {
 	{
-		"ggandor/leap.nvim",
-		enabled = false,
-		lazy = false,
-		opts = {},
-		config = function()
-			vim.keymap.set("n", "s", "<Plug>(leap)")
-			vim.keymap.set("n", "S", "<Plug>(leap-from-window)")
-			vim.keymap.set({ "x", "o" }, "s", "<Plug>(leap-forward)")
-			vim.keymap.set({ "x", "o" }, "S", "<Plug>(leap-backward)")
-			vim.keymap.set({ "n", "o" }, "gs", function()
-				require("leap.remote").action()
-			end)
-			-- Source: leap.nvim README
-			vim.keymap.set({ "n", "x", "o" }, "ga", function()
-				local sk = vim.deepcopy(require("leap").opts.special_keys)
-				-- If you just want to overwrite the keys, and only use a/A:
-				sk.next_target = "a"
-				sk.prev_target = "A"
-				-- If you want to add them as extra keys, keep in mind that the items
-				-- in `special_keys` can be both strings or tables (the shortest
-				-- workaround might be the below one):
-				sk.next_target = vim.fn.flatten(vim.list_extend({ "a" }, { sk.next_target }))
-				sk.prev_target = vim.fn.flatten(vim.list_extend({ "A" }, { sk.prev_target }))
-
-				require("leap.treesitter").select({ opts = { special_keys = sk } })
-			end)
-
-			require("leap.user").set_repeat_keys("<enter>", "<backspace>", {
-				relative_directions = true,
-			})
-		end,
-	},
-	{
-		"ggandor/flit.nvim",
-		enabled = false,
-		dependencies = {
-			"ggandor/leap.nvim",
-		},
-		lazy = false,
-		config = function()
-			require("flit").setup({
-				keys = { f = "f", F = "F", t = "t", T = "T" },
-				labeled_modes = "v",
-				multiline = true,
-				opts = {},
-			})
-		end,
-	},
-	{
 		"abecodes/tabout.nvim",
 		lazy = false,
 		opts = {},

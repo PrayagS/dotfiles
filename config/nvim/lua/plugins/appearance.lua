@@ -11,53 +11,6 @@ return {
 		},
 	},
 	{
-		"akinsho/bufferline.nvim",
-		event = "VeryLazy",
-		enabled = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		opts = {
-			options = {
-				diagnostics = "nvim_lsp",
-				max_name_length = 50,
-				show_buffer_close_icons = false,
-				show_close_icon = false,
-				always_show_bufferline = false,
-				separator_style = "thick",
-				offsets = {
-					{
-						filetype = "NvimTree",
-						text = "Explorer",
-						text_align = "center",
-						separator = true,
-						offset_separator = true,
-						-- highlight = "Directory",
-						-- padding = "200",
-					},
-				},
-			},
-		},
-		-- Separate function to load as we require catppuccin to configure highlights
-		config = function(_, opts)
-			-- Maintain a map of highlights from different themes
-			-- local highlights_from_theme = {}
-			-- highlights_from_theme["catppuccin-mocha"] = require("catppuccin.groups.integrations.bufferline").get()
-
-			require("bufferline").setup({
-				options = opts.options,
-				-- highlights = highlights_from_theme[vim.cmd("silent colorscheme")] or {},
-			})
-		end,
-	},
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		enabled = false,
-		main = "ibl",
-		opts = {},
-		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
-	},
-	{
 		"kevinhwang91/nvim-hlslens",
 		event = "VeryLazy",
 		config = function()
@@ -546,17 +499,6 @@ return {
 		end,
 	},
 	{
-		"jiriks74/presence.nvim",
-		enabled = false,
-		name = "presence",
-		event = "UIEnter",
-		opts = {
-			neovim_image_text = "The One True Text Editor",
-			debounce_timeout = 60,
-			-- enable_line_number = true,
-		},
-	},
-	{
 		"yamatsum/nvim-cursorline",
 		event = "VeryLazy",
 		opts = {
@@ -621,12 +563,6 @@ return {
 		},
 	},
 	{
-		"stevearc/dressing.nvim",
-		enabled = false,
-		event = "VeryLazy",
-		opts = {},
-	},
-	{
 		"nvim-zh/colorful-winsep.nvim",
 		event = { "WinLeave" },
 		opts = {
@@ -634,33 +570,6 @@ return {
 				bg = "#1d2021",
 				fg = "#d4be98",
 			},
-		},
-	},
-	{
-		"j-hui/fidget.nvim",
-		enabled = false,
-		opts = {
-			progress = {
-				display = {
-					done_ttl = 30,
-				},
-			},
-			notification = {
-				override_vim_notify = false,
-				window = {
-					border = "solid",
-					align = "top",
-				},
-			},
-		},
-	},
-	{
-		"sphamba/smear-cursor.nvim",
-		enabled = false,
-		event = "VeryLazy",
-		opts = {
-			hide_target_hack = true,
-			cursor_color = "none",
 		},
 	},
 	{

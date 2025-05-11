@@ -8,5 +8,5 @@ if vim.g.neovide then
 	vim.g.neovide_cursor_trail_size = 0.1
 	vim.g.neovide_cursor_smooth_blink = true
 
-	vim.o.guifont = "Maple Mono:h14"
+	vim.o.guifont = "Maple Mono NF:h14"
 end
