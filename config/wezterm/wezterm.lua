@@ -304,6 +304,7 @@ wezterm.on("smart_workspace_switcher.workspace_switcher.created", function(windo
 		window = window,
 		relative = true,
 		restore_text = true,
+		resize_window = false,
 		on_pane_restore = resurrect.tab_state.default_on_pane_restore,
 	})
 end)
@@ -407,6 +408,7 @@ config.keys = {
 						window = get_current_mux_window(wezterm.mux.get_active_workspace()),
 						relative = true,
 						restore_text = true,
+						resize_window = false,
 						on_pane_restore = resurrect.tab_state.default_on_pane_restore,
 					}
 					resurrect.workspace_state.restore_workspace(state, opts)
