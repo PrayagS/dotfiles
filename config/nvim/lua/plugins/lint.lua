@@ -13,22 +13,10 @@ return {
 			parser = require("lint.parser").from_errorformat("%f:%l:%c-%k %m"),
 		}
 
-		local gitlint = lint.linters.gitlint
-		gitlint.args = {
-			"--contrib",
-			"contrib-title-conventional-commits,contrib-body-requires-signed-off-by",
-			"--staged",
-			"--msg-filename",
-			function()
-				return vim.api.nvim_buf_get_name(0)
-			end,
-		}
-
 		lint.linters_by_ft = {
 			jsonnet = { "jsonnet_lint" },
 			-- go = { "golangcilint" },
 			yaml = { "yamllint" },
-			gitcommit = { "gitlint" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
