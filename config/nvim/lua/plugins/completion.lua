@@ -195,11 +195,15 @@ return {
 						name = "Ripgrep",
 						opts = {
 							prefix_min_len = 5,
-							search_casing = "--smart-case",
-							additional_rg_options = {
-								"--follow --hidden --no-binary",
+							backend = {
+								use = "ripgrep",
+								ripgrep = {
+									search_casing = "--smart-case",
+									additional_rg_options = {
+										"--follow --hidden --nno-binary,",
+									},
+								},
 							},
-							future_features = { kill_previous_searches = true },
 						},
 					},
 					git = {

@@ -7,7 +7,7 @@
   "blink-cmp-git": { "branch": "master", "commit": "226b269a50b5ece2ed95933b8d62f103f5d6a05d" },
   "blink-cmp-spell": { "branch": "master", "commit": "2bd0e0d5e7735c047e72b6918a0458f3e8fadaba" },
   "blink-cmp-wezterm": { "branch": "main", "commit": "e974ab62f13737cbce070a1edec86f3008881f1b" },
-  "blink-ripgrep.nvim": { "branch": "main", "commit": "0fa6bdfbb03d09f25dafee84afb4c2e6c1d0437c" },
+  "blink-ripgrep.nvim": { "branch": "main", "commit": "9e3368ff16b995f1676d6b37c455a97a85498ab2" },
   "blink.cmp": { "branch": "main", "commit": "a999ddca2f629faf8a554a8fff904931935a7b1c" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "claudecode.nvim": { "branch": "main", "commit": "ac2baef386d8078ef2a0aaa98580d25ec178f40a" },
