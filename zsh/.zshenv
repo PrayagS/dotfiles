@@ -106,7 +106,6 @@ export PIPX_HOME="$XDG_DATA_HOME/pipx"
 export VENCORD_USER_DATA_DIR="$XDG_DATA_HOME/vencord"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-export CODEX_HOME="$XDG_CONFIG_HOME/codex"
 export KREW_ROOT="$XDG_DATA_HOME/krew"
 export PARALLEL_HOME="$XDG_CONFIG_HOME/parallel"
 
