@@ -94,6 +94,7 @@ return {
 			sources = {
 				default = {
 					"lsp",
+					"minuet",
 					"path",
 					"buffer",
 					"omni",
@@ -123,6 +124,15 @@ return {
 					},
 					path = {
 						opts = { show_hidden_files_by_default = true },
+					},
+					minuet = {
+						name = "minuet",
+						module = "minuet.blink",
+						async = true,
+						-- Should match minuet.config.request_timeout * 1000,
+						-- since minuet.config.request_timeout is in seconds
+						timeout_ms = 3000,
+						-- score_offset = 50, -- Gives minuet higher priority among suggestions
 					},
 				},
 			},
