@@ -93,6 +93,7 @@ zinit from"gh-r" lman for \
 
 # First set of plugins
 zinit lucid light-mode wait"0a" for \
+        OMZP::mise \
         OMZL::git.zsh \
         OMZL::clipboard.zsh \
         https://github.com/wez/wezterm/blob/main/assets/shell-integration/wezterm.sh \
@@ -178,7 +179,6 @@ zinit lucid light-mode wait"2" for \
       export SHOW_AWS_PROMPT=false
       complete -C '/opt/homebrew/bin/aws_completer' aws" \
         OMZP::aws \
-    OMZP::mise \
     fdw/yazi-zoxide-zsh \
     ahmubashshir/zinsults \
     akash329d/zsh-alias-finder
