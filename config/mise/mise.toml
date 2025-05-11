@@ -130,3 +130,5 @@ pitchfork = "latest"
 difftastic = "latest"
 tfenv = "latest"
 "npm:@opencode-ai/cli" = { version = "next", bun_args = "--trust" }
+"github:benja/ask" = "latest"
+"go:github.com/mattmc3/histdb" = "latest"

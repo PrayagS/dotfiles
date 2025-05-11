@@ -30,6 +30,8 @@ source "${ZSH_CONFIG_DIR}/aliases.zsh"
 source "${ZSH_CONFIG_DIR}/functions.zsh"
 source "${ZSH_CONFIG_DIR}/completion.zsh"
 
+source <(histdb init zsh)
+
 zstyle ':plugin:ez-compinit' 'use-cache' 'yes'
 
 export GLOBALIAS_FILTER_VALUES=("l" "ls" "less" "z" "fd" "sudo" "mkdir" "cp" "mv")
