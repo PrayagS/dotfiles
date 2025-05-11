@@ -22,6 +22,8 @@ brew "awscurl"
 brew "bash"
 # Powerful, enterprise-ready, open source web server with automatic HTTPS
 brew "caddy"
+# Cloudformation templates to Terraform HCL converter
+brew "cf2tf"
 # Versatile and fast Unicode/ASCII/ANSI graphics renderer
 brew "chafa"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
@@ -132,6 +134,12 @@ brew "llama.cpp"
 brew "mactop"
 # Mac App Store command-line interface
 brew "mas"
+# Java-based project management
+brew "maven"
+# Platform built on V8 to build network applications
+brew "node"
+# MongoDB Shell to connect, configure, query, and work with your MongoDB database
+brew "mongosh"
 # Media player based on MPlayer and mplayer2
 brew "mpv"
 # CLI for MySQL with auto-completion and syntax highlighting
@@ -140,8 +148,6 @@ brew "mycli"
 brew "nmap"
 # Tiny, lightning fast, feature-packed file manager
 brew "nnn"
-# Platform built on V8 to build network applications
-brew "node"
 # Package for scientific computing with Python
 brew "numpy"
 # Manage multiple Node.js versions
@@ -288,8 +294,12 @@ cask "kap"
 cask "karabiner-elements"
 # Preview and audit Kindle eBooks
 cask "kindle-previewer"
+# Music services manager
+cask "lastfm"
 # Discover, download, and run local LLMs
 cask "lm-studio"
+# File system integration
+cask "macfuse"
 # Extensible two-pane file manager
 cask "marta"
 # Sandbox construction video game
