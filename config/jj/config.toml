@@ -14,7 +14,7 @@ email = "prayag.savsani@blinkit.com"
 [ui]
 default-command = "log"
 diff-instructions = false
-diff-formatter = ":git"
+diff-formatter = "delta"
 diff-editor = [ "nvim", "--cmd", "let g:auto_session_enabled = v:false", "-c", "DiffEditor $left $right $output" ]
 show-cryptographic-signatures = true
 
