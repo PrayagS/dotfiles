@@ -51,7 +51,7 @@
     ~/.config/aws/config: config/aws/config
     ~/.config/mycli: config/mycli
     ~/.config/jj/config.toml: config/jj/config.toml
-    ~/.config/jjui/config.toml: config/jjui/config.toml
+    ~/.config/jjui: config/jjui
     ~/.config/zed/settings.json: config/zed/settings.json
     ~/.config/zed/keymap.json: config/zed/keymap.json
     ~/.claude/CLAUDE.md: config/claude/CLAUDE.md
