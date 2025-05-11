@@ -1,3 +1,4 @@
+tap "asmvik/formulae"
 tap "buo/cask-upgrade"
 tap "homebrew-zathura/zathura"
 tap "homebrew/bundle"
@@ -161,14 +162,14 @@ brew "wget"
 brew "wimlib"
 # Automatic workarounds for problems in Wine
 brew "winetricks"
+# A tiling window manager for macOS based on binary space partitioning.
+brew "asmvik/formulae/yabai", args: ["HEAD"]
 # PDF viewer
 brew "homebrew-zathura/zathura/zathura"
 # MuPDF backend plugin for zathura
 brew "homebrew-zathura/zathura/zathura-pdf-mupdf"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
-# A tiling window manager for macOS based on binary space partitioning.
-brew "koekeishiya/formulae/yabai"
 # Command-line interface for 1Password
 cask "1password-cli"
 # Password manager
@@ -189,6 +190,8 @@ cask "calibre"
 cask "claude"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
+# Ghostty-based terminal with vertical tabs and notifications for AI coding agents
+cask "cmux"
 # Server and cloud storage browser
 cask "cyberduck"
 # Voice and text chat software
@@ -219,10 +222,6 @@ cask "jordanbaird-ice"
 cask "kap"
 # Keyboard customiser
 cask "karabiner-elements"
-# Menu bar app for running local LLMs
-cask "llamabarn"
-# Discover, download, and run local LLMs
-cask "lm-studio"
 # Extensible two-pane file manager
 cask "marta"
 # Sandbox construction video game
@@ -299,8 +298,11 @@ go "github.com/planetscale/vtprotobuf/cmd/protoc-gen-go-vtproto"
 go "github.com/favadi/protoc-go-inject-tag"
 go "github.com/stormcat24/protodep"
 go "github.com/frapposelli/wwhrd"
+cargo "jj-spr"
+cargo "vdev"
 uv "-"
 uv "aider-chat", with: ["pip"]
 uv "fastanime[standard]"
+uv "greprip"
 uv "llm"
 uv "vibes"
