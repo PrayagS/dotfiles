@@ -519,6 +519,11 @@ config.keys = {
 		-- }),
 		action = act.SendKey({ key = "L", mods = "CTRL" }),
 	},
+	{
+		key = "Enter",
+		mods = "SHIFT",
+		action = wezterm.action({ SendString = "\n" }),
+	},
 
 	-- disable key bindings that conflict with vim
 	{ key = "P", mods = "CTRL", action = act.DisableDefaultAssignment },
