@@ -73,35 +73,19 @@ return {
 	-- 	end,
 	-- },
 	-- {
-	-- 	"yorik1984/newpaper.nvim",
-	-- 	config = function()
-	-- 		require("newpaper").setup({
-	-- 			style = "light",
-	-- 			lualine_style = "light",
-	-- 		})
-	-- 	end,
-	-- },
-	-- {
 	-- 	"maxmx03/solarized.nvim",
 	-- 	config = function()
 	-- 		require("solarized").setup({
-	-- 			transparent = { enabled = true },
-	-- 			variant = "winter",
+	-- 			error_lens = {
+	-- 				text = true,
+	-- 				symbol = true,
+	-- 			},
 	-- 		})
 	-- 	end,
 	-- 	init = function()
+	-- 		vim.o.termguicolors = true
+	-- 		vim.o.background = "light"
 	-- 		vim.cmd("colorscheme solarized")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"Mofiqul/vscode.nvim",
-	-- 	config = function()
-	-- 		require("vscode").setup({
-	-- 			transparent = true,
-	-- 		})
-	-- 	end,
-	-- 	init = function()
-	-- 		vim.cmd("colorscheme vscode")
 	-- 	end,
 	-- },
 	-- {
@@ -109,17 +93,13 @@ return {
 	-- 	config = function()
 	-- 		require("modus-themes").setup({
 	-- 			variant = "tinted",
-	-- 			transparent = true,
+	-- 			-- transparent = true,
 	-- 		})
 	-- 	end,
 	-- 	init = function()
+	-- 		vim.o.termguicolors = true
+	-- 		vim.o.background = "light"
 	-- 		vim.cmd("colorscheme modus")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"NTBBloodbath/doom-one.nvim",
-	-- 	init = function()
-	-- 		vim.cmd("colorscheme doom-one")
 	-- 	end,
 	-- },
 	-- {

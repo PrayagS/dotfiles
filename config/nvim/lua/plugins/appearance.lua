@@ -218,23 +218,6 @@ return {
 				},
 			}
 
-			local function get_attached_lsp_clients()
-				local buf_clients = vim.lsp.get_active_clients({ bufnr = 0 })
-				if #buf_clients == 0 then
-					return "LSP Inactive"
-				end
-				local buf_client_names = {}
-				for _, client in pairs(buf_clients) do
-					table.insert(buf_client_names, client.name)
-				end
-				local client_names_str = table.concat(buf_client_names, ", ")
-				if #client_names_str == 0 then
-					return ""
-				end
-				local language_servers = string.format("LSP: [%s]", client_names_str)
-				return language_servers
-			end
-
 			local get_attached_linters = function()
 				if vim.tbl_get(require("lazy.core.config"), "plugins", "nvim-lint", "_", "loaded") then
 					local linters = require("lint").get_running()
@@ -329,7 +312,7 @@ return {
 						"mode",
 					},
 					lualine_b = {
-						"branch",
+						-- "branch",
 						{
 							"diagnostics",
 							sources = { "nvim_lsp", "nvim_diagnostic", "nvim_workspace_diagnostic" },
