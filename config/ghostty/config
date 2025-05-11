@@ -49,7 +49,7 @@ app-notifications = clipboard-copy,config-reload
 macos-window-buttons = hidden
 macos-titlebar-style = tabs
 macos-window-shadow = false
-macos-option-as-alt = true
+macos-option-as-alt = right
 macos-icon = chalkboard
 
 term = xterm-256color
