@@ -109,3 +109,12 @@ repositories:
   password: ""
   url: https://helm.vector.dev
   username: ""
+- caFile: ""
+  certFile: ""
+  insecure_skip_tls_verify: false
+  keyFile: ""
+  name: victoriametrics
+  pass_credentials_all: false
+  password: ""
+  url: https://victoriametrics.github.io/helm-charts/
+  username: ""
