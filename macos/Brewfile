@@ -9,6 +9,7 @@ tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "muxy-app/tap"
 tap "pakerwreah/calendr"
+tap "steipete/tap"
 tap "typewhisper/tap"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
@@ -182,6 +183,8 @@ brew "homebrew-zathura/zathura/zathura"
 brew "homebrew-zathura/zathura/zathura-pdf-mupdf"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
+# Lightning-fast macOS screenshots & AI vision analysis
+brew "steipete/tap/peekaboo"
 # Password manager
 cask "1password@beta"
 # AI Coding Agent IDE
@@ -223,6 +226,8 @@ cask "ghostty"
 # Git client for simultaneous branches on top of your existing workflow
 cask "gitbutler"
 # Web browser
+cask "google-chrome"
+# Web browser
 cask "google-chrome@beta"
 # Open-source video transcoder
 cask "handbrake-app"
@@ -230,6 +235,8 @@ cask "handbrake-app"
 cask "handy"
 # UI for Kubernetes
 cask "headlamp"
+# Chromium-based web browser
+cask "helium-browser"
 # Free and open-source media player
 cask "iina"
 # Jellyfin desktop client
@@ -291,7 +298,7 @@ cask "yaak"
 # Open links in whatever browser, app, or profile you need - whatever yo jam is
 cask "fluffypony/yojam/yojam"
 # Multiplayer code editor
-cask "zed"
+cask "zed@preview"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
@@ -334,3 +341,4 @@ uv "fastanime[standard]"
 uv "greprip"
 uv "llm"
 uv "vibes"
+npm "typescript"
