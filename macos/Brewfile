@@ -36,6 +36,8 @@ brew "claude-squad"
 brew "cmake"
 # Console Matrix
 brew "cmatrix"
+# OpenAI's coding agent that runs in your terminal
+brew "codex"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Securely send things from one computer to another
@@ -138,6 +140,8 @@ brew "mactop"
 brew "mas"
 # Java-based project management
 brew "maven"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Platform built on V8 to build network applications
 brew "node"
 # MongoDB Shell to connect, configure, query, and work with your MongoDB database
@@ -290,8 +294,6 @@ cask "gitify"
 cask "google-chrome@beta"
 # Light, Electron-based Wrapper around GraphiQL
 cask "graphiql"
-# Open-source video transcoder
-cask "handbrake-app"
 # Free and open-source media player
 cask "iina"
 # Jellyfin desktop client
@@ -314,10 +316,6 @@ cask "marta"
 cask "minecraft"
 # Web browser focused on privacy and on minimizing tracking and fingerprinting
 cask "mullvad-browser"
-# VPN client
-cask "mullvad-vpn@beta"
-# Neovim Client
-cask "neovide-app"
 # Free and open-source RSS reader
 cask "netnewswire@beta"
 # Calendar for professionals and teams
@@ -348,16 +346,12 @@ cask "spotify"
 cask "stats"
 # Video game digital distribution service
 cask "steam"
-# To-do list
-cask "todoist-app"
 # Web browser focusing on security
 cask "tor-browser"
 # Multimedia player
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm@nightly"
-# Network protocol analyzer
-cask "wireshark-app"
 # REST, GraphQL and gRPC client
 cask "yaak"
 # Multiplayer code editor
