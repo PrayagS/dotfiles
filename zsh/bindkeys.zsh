@@ -101,3 +101,9 @@ function vbe-sudo-command-line() {
 }
 zle -N vbe-sudo-command-line
 bindkey "\eS" vbe-sudo-command-line
+
+# disable the arrow keys
+bindkey -s "^[[A" ""
+bindkey -s "^[[B" ""
+bindkey -s "^[[C" ""
+bindkey -s "^[[D" ""

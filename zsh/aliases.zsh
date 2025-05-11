@@ -25,7 +25,7 @@ alias lg="lazygit"
 alias jjs="jj && jj st"
 alias wget="wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""
 alias fd="fd --hidden --follow --regex --full-path"
-# alias -g cdg="cd ./$(git rev-parse --show-cdup)"
+alias cdg="cd-gitroot"
 
 # Launch
 alias -g filebot="java -jar /home/prayag_s/Downloads/misc-stuff/filebot/FileBot.jar"

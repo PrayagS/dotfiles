@@ -1,0 +1,45 @@
+# .zsh_plugins.txt - comments begin with "#"
+
+mattmc3/ez-compinit
+getantidote/use-omz
+
+mafredri/zsh-async
+romkatv/powerlevel10k
+
+ohmyzsh/ohmyzsh path:plugins/mise
+ohmyzsh/ohmyzsh path:lib/git.zsh
+ohmyzsh/ohmyzsh path:lib/clipboard.zsh
+ohmyzsh/ohmyzsh path:plugins/globalias
+ohmyzsh/ohmyzsh path:plugins/extract
+
+mollifier/cd-gitroot
+mollifier/cd-gitroot kind:fpath path:_cd-gitroot
+
+Aloxaf/fzf-tab
+Freed-Wu/fzf-tab-source
+
+ael-code/zsh-colored-man-pages
+
+zdharma-continuum/history-search-multi-word
+zsh-users/zsh-autosuggestions
+zdharma-continuum/fast-syntax-highlighting
+
+hlissner/zsh-autopair
+akash329d/zsh-alias-finder
+ChrisPenner/copy-pasta
+zshzoo/cd-ls
+toku-sa-n/zsh-dot-up
+
+qoomon/zsh-lazyload
+mroth/evalcache
+
+atuinsh/atuin path:atuin.plugin.zsh
+
+ArielTM/zsh-claude-code-shell
+
+b3nj5m1n/xdg-ninja kind:path
+
+zsh-users/zsh-completions kind:fpath path:src
+zchee/zsh-completions kind:fpath path:src
+
+# vim: set filetype=properties :

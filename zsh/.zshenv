@@ -25,6 +25,18 @@ export GOARCH="arm64"
 export GO111MODULE="on"
 
 # Defaults
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+    --color=bg:#1b1b1b
+    --color=preview-bg:#1b1b1b
+    --color=hl+:#fb4934
+    --color=gutter:#1b1b1b
+    --color=pointer:#f9f5d7,marker:#f9f5d7
+    --color=info:#ebdbb2,spinner:#f9f5d7
+    --color=query:#ebdbb2,prompt:#ebdbb2
+    --color=border:#ebdbb2
+    --border="rounded" --prompt="> "
+    --marker="" --pointer="->" --layout="reverse"
+'
 export KUBECONFIG="$HOME/.kubeconfig"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
