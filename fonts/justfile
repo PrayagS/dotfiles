@@ -32,3 +32,19 @@ update-iosevka:
         -d 'Iosevka' 'PkgTTF-Unhinted-IosevkaTerm-{{IOSEVKA_RELEASE_VERSION}}.zip' \
         'IosevkaTerm-Bold.ttf' 'IosevkaTerm-BoldItalic.ttf' 'IosevkaTerm-Italic.ttf' 'IosevkaTerm-Regular.ttf'
     rm -rf *.zip
+
+SARASA_RELEASE_VERSION := ```
+    gh release list \
+        --repo 'be5invis/Sarasa-Gothic' \
+        --json 'isLatest,tagName' \
+        --jq '.[] | select(.isLatest == true) | .tagName' \
+        | cut -d'v' -f2
+```
+update-sarasa:
+    echo "{{SARASA_RELEASE_VERSION}}"
+    wget --quiet --show-progress \
+        'https://github.com/be5invis/Sarasa-Gothic/releases/download/v{{SARASA_RELEASE_VERSION}}/SarasaMono-TTF-Unhinted-{{SARASA_RELEASE_VERSION}}.7z' \
+        'https://github.com/be5invis/Sarasa-Gothic/releases/download/v{{SARASA_RELEASE_VERSION}}/SarasaTerm-TTF-Unhinted-{{SARASA_RELEASE_VERSION}}.7z'
+    7z e 'SarasaMono-TTF-Unhinted-{{SARASA_RELEASE_VERSION}}.7z' -o'SarasaMono' 'SarasaMonoJ-Bold.ttf' 'SarasaMonoJ-BoldItalic.ttf' 'SarasaMonoJ-Italic.ttf' 'SarasaMonoJ-Regular.ttf'
+    7z e 'SarasaTerm-TTF-Unhinted-{{SARASA_RELEASE_VERSION}}.7z' -o'SarasaTerm' 'SarasaTermJ-Bold.ttf' 'SarasaTermJ-BoldItalic.ttf' 'SarasaTermJ-Italic.ttf' 'SarasaTermJ-Regular.ttf'
+    rm -rf *.7z

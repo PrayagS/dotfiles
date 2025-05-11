@@ -74,12 +74,7 @@ config.font = wezterm.font_with_fallback({
 	"Maple Mono NF",
 	-- "IosevkaTerm Nerd Font Mono"
 	-- "VictorMono Nerd Font Mono"
-	"Sarasa Term CL",
-	"Sarasa Term HC",
 	"Sarasa Term J",
-	"Sarasa Term K",
-	"Sarasa Term SC",
-	"Sarasa Term TC",
 })
 config.font_size = 14.0
 config.window_frame = {
