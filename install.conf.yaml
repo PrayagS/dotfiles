@@ -35,8 +35,7 @@
     ~/.config/alacritty: config/alacritty
     ~/.config/karabiner: config/karabiner
     # ~/.config/picom.conf: config/picom.conf
-    ~/.tmux.conf: config/tmux/tmux.conf
-    # ~/.config/tmux: config/tmux
+    ~/.config/tmux/tmux.conf: config/tmux/tmux.conf
     ~/.config/atuin: config/atuin
     ~/.config/bat: config/bat
     ~/.config/lazygit: config/lazygit
