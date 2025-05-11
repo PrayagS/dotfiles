@@ -15,17 +15,7 @@ return {
 		opts = {
 			cmp = { enable_auto_complete = false },
 			blink = { enable_auto_complete = true },
-			virtualtext = {
-				auto_trigger_ft = { "*" },
-				keymap = {
-					accept = "<A-A>",
-					accept_line = "<A-a>",
-					prev = "<C-p>",
-					next = "<C-n>",
-					dismiss = "<C-e>",
-				},
-			},
-			provider = "codestral",
+			provider = "gemini",
 			-- notify = "debug",
 			provider_options = {
 				codestral = {
@@ -35,14 +25,14 @@ return {
 					stream = true,
 				},
 				gemini = {
-					model = "gemini-2.5-flash-lite-preview-06-17",
+					model = "gemini-2.5-flash-lite",
 					api_key = "MINUET_GEMINI_API_KEY",
 					stream = true,
 					optional = {
+						-- Ref: https://ai.google.dev/api/generate-content#v1beta.GenerationConfig
 						generationConfig = {
-							thinkingConfig = {
-								thinkingBudget = 0,
-							},
+							temperature = 0.0,
+							topP = 0.9,
 						},
 					},
 				},
