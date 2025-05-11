@@ -62,19 +62,8 @@
                         "product_id": 182,
                         "vendor_id": 5426
                     },
-                    "ignore": false,
                     "mouse_discard_horizontal_wheel": true,
-                    "mouse_discard_vertical_wheel": true,
-                    "simple_modifications": [
-                        {
-                            "from": { "pointing_button": "button4" },
-                            "to": [{ "mouse_key": { "vertical_wheel": -32 } }]
-                        },
-                        {
-                            "from": { "pointing_button": "button5" },
-                            "to": [{ "mouse_key": { "vertical_wheel": 32 } }]
-                        }
-                    ]
+                    "mouse_discard_vertical_wheel": true
                 },
                 {
                     "identifiers": {
@@ -83,16 +72,7 @@
                         "vendor_id": 5426
                     },
                     "ignore": false,
-                    "simple_modifications": [
-                        {
-                            "from": { "pointing_button": "button4" },
-                            "to": [{ "mouse_key": { "vertical_wheel": -32 } }]
-                        },
-                        {
-                            "from": { "pointing_button": "button5" },
-                            "to": [{ "mouse_key": { "vertical_wheel": 32 } }]
-                        }
-                    ]
+                    "ignore_vendor_events": true
                 },
                 {
                     "identifiers": {
@@ -109,6 +89,15 @@
                         "vendor_id": 2007
                     },
                     "ignore": false,
+                    "manipulate_caps_lock_led": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 182,
+                        "vendor_id": 5426
+                    },
+                    "ignore": true,
                     "manipulate_caps_lock_led": false
                 }
             ],
