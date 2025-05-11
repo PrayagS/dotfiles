@@ -34,13 +34,25 @@ scope = "revisions"
 desc = "merge PR"
 
 [[actions]]
-name = "open PR"
+name = "create PR"
 lua = '''
 jj_interactive("util", "exec", "--", "jjui-gh-pr.sh", context.change_id())
 '''
 
 [[bindings]]
-action = "open PR"
+action = "create PR"
 seq = ["x", "p"]
+scope = "revisions"
+desc = "create PR"
+
+[[actions]]
+name = "open PR"
+lua = '''
+jj_interactive("util", "exec", "--", "jjui-gh-pr-open.sh", context.change_id())
+'''
+
+[[bindings]]
+action = "open PR"
+seq = ["x", "o"]
 scope = "revisions"
 desc = "open PR"
