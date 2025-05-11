@@ -15,7 +15,7 @@ email = "prayag.savsani@blinkit.com"
 default-command = "log"
 diff-instructions = false
 diff-formatter = "delta"
-diff-editor = [ "nvim", "--cmd", "let g:auto_session_enabled = v:false", "-c", "DiffEditor $left $right $output" ]
+diff-editor = "hunk-nvim"
 show-cryptographic-signatures = true
 
 [merge-tools.diffconflicts]
@@ -25,6 +25,15 @@ merge-args = [
     "-c", "JJDiffConflicts!", "$output", "$base", "$left", "$right",
 ]
 merge-tool-edits-conflict-markers = true
+
+[merge-tools.hunk-nvim]
+program = "nvim"
+edit-args = [
+  "--cmd",
+  "let g:auto_session_enabled = v:false",
+  "-c",
+  "DiffEditor $left $right $output"
+]
 
 [[--scope]]
 --when.commands = ["status"]
