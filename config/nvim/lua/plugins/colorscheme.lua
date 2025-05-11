@@ -9,6 +9,7 @@ return {
 			vim.g.gruvbox_material_transparent_background = 1
 			vim.g.gruvbox_material_ui_contrast = "high"
 			vim.g.gruvbox_material_diagnostic_virtual_text = "highlighted"
+			vim.g.gruvbox_material_current_word = "high contrast background"
 
 			--  Override highlight groups
 			vim.api.nvim_create_autocmd("ColorScheme", {
