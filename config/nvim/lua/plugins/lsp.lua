@@ -231,6 +231,8 @@ return {
 				},
 			})
 
+			vim.lsp.enable("rust_analyzer")
+
 			require("mason").setup()
 
 			local ensure_installed = {}
