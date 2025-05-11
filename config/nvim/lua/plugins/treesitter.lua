@@ -17,6 +17,7 @@ return {
 				"go",
 				"gomod",
 				"gotmpl",
+				"helm",
 				"json",
 				"jsonnet",
 				"just",

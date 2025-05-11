@@ -221,6 +221,16 @@ return {
 				},
 			})
 
+			vim.lsp.config("helm_ls", {
+				settings = {
+					["helm-ls"] = {
+						yamlls = {
+							enabled = false,
+						},
+					},
+				},
+			})
+
 			require("mason").setup()
 
 			local ensure_installed = {}
