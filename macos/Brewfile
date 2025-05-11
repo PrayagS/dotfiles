@@ -1,4 +1,5 @@
 tap "artginzburg/tap"
+tap "atlassian/acli"
 tap "aws/tap"
 tap "buo/cask-upgrade"
 tap "felixkratz/formulae"
@@ -7,8 +8,10 @@ tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "nikolaeu/numi"
+tap "oven-sh/bun"
 tap "rcmdnk/file"
 tap "rien7/apps"
+tap "sst/tap"
 # CLI tool for AWS Athena service
 brew "athenacli"
 # Official Amazon AWS command-line interface
@@ -21,6 +24,8 @@ brew "bash"
 brew "chafa"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
+# Manage multiple AI agents like Claude Code, Aider and Codex in your terminal
+brew "claude-squad"
 # Cross-platform make
 brew "cmake"
 # Console Matrix
@@ -215,6 +220,8 @@ brew "wimlib"
 brew "winetricks"
 # Permanent TouchID support for sudo
 brew "artginzburg/tap/sudo-touchid"
+# Software to interact with Atlassian Cloud from the terminal
+brew "atlassian/acli/acli"
 # EC2 Instance Selector is a tool to filter EC2 instance types based on resource criteria
 brew "aws/tap/ec2-instance-selector"
 # A window border system for macOS
@@ -225,6 +232,10 @@ brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 # Smart calculator
 brew "nikolaeu/numi/numi-cli"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
+# The AI coding agent built for the terminal.
+brew "sst/tap/opencode"
 # Command-line interface for 1Password
 cask "1password-cli"
 # Password manager
@@ -262,7 +273,7 @@ cask "gitify"
 # Web browser
 cask "google-chrome@beta"
 # Open-source video transcoder
-cask "handbrake"
+cask "handbrake-app"
 # Free and open-source media player
 cask "iina"
 # Jellyfin desktop client
@@ -286,7 +297,7 @@ cask "mullvad-browser"
 # VPN client
 cask "mullvad-vpn@beta"
 # Neovim Client
-cask "neovide"
+cask "neovide-app"
 # Free and open-source RSS reader
 cask "netnewswire@beta"
 # Calendar for professionals and teams
@@ -322,7 +333,7 @@ cask "steam"
 # Dictation tool including LLM reformatting
 cask "superwhisper"
 # To-do list
-cask "todoist"
+cask "todoist-app"
 # Web browser focusing on security
 cask "tor-browser"
 # Multimedia player
@@ -332,14 +343,13 @@ cask "wezterm@nightly"
 # Agentic IDE powered by AI Flow paradigm
 cask "windsurf"
 # Network protocol analyzer
-cask "wireshark"
+cask "wireshark-app"
 # Multiplayer code editor
 cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "Balatro", id: 6502451661
-mas "BloonsTD6+", id: 1584423325
 mas "Endel", id: 1346247457
 mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
@@ -347,7 +357,6 @@ mas "Grila", id: 6444335028
 mas "iMovie", id: 408981434
 mas "JapaneseLife", id: 1634749545
 mas "Keynote", id: 409183694
-mas "Microsoft Excel", id: 462058435
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Perplexity", id: 6714467650
@@ -356,7 +365,6 @@ mas "Save to Reader", id: 1640236961
 mas "Shareful", id: 1522267256
 mas "Taiko no Tatsujin Pop Tap Beat", id: 1463360242
 mas "UTC Time", id: 1538245904
-mas "Wylde Flowers", id: 1458605549
 mas "Xcode", id: 497799835
 vscode "antfu.icons-carbon"
 vscode "asvetliakov.vscode-neovim"
