@@ -13,7 +13,7 @@
 "status title" = { bold = true, fg = "#282828", bg = "magenta" }
 
 [preview]
-show_at_start = true
+show_at_start = false
 width_percentage = 55
 
 [custom_commands]
