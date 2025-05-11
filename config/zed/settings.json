@@ -7,85 +7,110 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "double_click_in_multibuffer": "open",
+  "which_key": {
+    "enabled": true,
+  },
+  "project_panel": {
+    "bold_folder_labels": true,
+  },
+  "git": {
+    "inline_blame": {
+      "show_commit_summary": true,
+      "delay_ms": 100,
+    },
+  },
+  "audio": {
+    "experimental.auto_microphone_volume": true,
+    "experimental.rodio_audio": true,
+  },
+  "calls": {
+    "share_on_join": true,
+    "mute_on_join": true,
+  },
   "title_bar": {
     "show_menus": false,
-    "show_branch_icon": true
+    "show_branch_icon": true,
   },
   "search": {
-    "regex": true
+    "center_on_match": true,
+    "regex": true,
   },
   "lsp_document_colors": "inlay",
   "indent_guides": {
     "background_coloring": "disabled",
-    "coloring": "fixed"
+    "coloring": "fixed",
   },
   "tab_size": 2,
   "gutter": {
-    "min_line_number_digits": 4
+    "min_line_number_digits": 4,
   },
   "relative_line_numbers": "enabled",
   "show_signature_help_after_edits": true,
   "agent_buffer_font_size": 14.0,
   "confirm_quit": true,
   "terminal": {
+    "copy_on_select": true,
+    "option_as_meta": true,
     "toolbar": {
-      "breadcrumbs": false
-    }
+      "breadcrumbs": false,
+    },
   },
   "experimental.theme_overrides": {
     "syntax": {
       "comment": { "font_style": "normal" },
       "comment.doc": { "font_style": "normal" },
       "keyword": { "font_style": "normal" },
-      "predictive": { "font_style": "normal" }
-    }
+      "predictive": { "font_style": "normal" },
+    },
   },
   "languages": {
     "YAML": {
-      "formatter": "language_server"
-    }
+      "formatter": "language_server",
+    },
   },
   "lsp": {
     "yaml-language-server": {
       "settings": {
         "yaml": {
           "format": {
-            "singleQuote": true
-          }
-        }
-      }
-    }
+            "singleQuote": true,
+          },
+        },
+      },
+    },
   },
   "edit_predictions": {
+    "provider": "zed",
     "disabled_globs": [],
     "mode": "eager",
     "copilot": {
       "proxy": null,
-      "proxy_no_verify": null
-    }
+      "proxy_no_verify": null,
+    },
   },
   "scrollbar": {
-    "show": "never"
+    "show": "never",
   },
   "agent": {
     "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4.1"
+      "model": "gpt-4.1",
     },
     "stream_edits": true,
     "notify_when_agent_waiting": "all_screens",
-    "play_sound_when_agent_done": true
+    "play_sound_when_agent_done": true,
   },
   "show_edit_predictions": true,
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
   "vim_mode": true,
   "vim": {
+    "cursor_shape": {
+      "insert": "bar",
+    },
     "toggle_relative_line_numbers": true,
     "use_smartcase_find": true,
-    "use_system_clipboard": "on_yank"
+    "use_system_clipboard": "on_yank",
   },
   "ui_font_size": 15,
   "buffer_font_size": 14,
@@ -95,28 +120,23 @@
   "use_smartcase_search": true,
   "inlay_hints": {
     "enabled": false,
-    "show_background": true
+    "show_background": true,
   },
   "tabs": {
     "git_status": true,
-    "show_diagnostics": "all"
+    "show_diagnostics": "all",
   },
   "diagnostics": {
     "include_warnings": true,
     "inline": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   // Below portion will almost always be out of date on git
   "icon_theme": "Zed (Default)",
   "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Melange Dark"
+    "mode": "light",
+    "light": "Modus Operandi Tinted",
+    "dark": "Gruvbox Material",
   },
-  "language_models": {
-    "openai": {
-      "api_url": "http://10.100.1.108:8080/v1"
-    }
-  }
 }
