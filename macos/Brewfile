@@ -134,6 +134,10 @@ brew "pnpm"
 brew "poetry"
 # Object-relational database system
 brew "postgresql@16"
+# Go support for Google's protocol buffers
+brew "protoc-gen-go"
+# Protoc plugin that generates code for gRPC-Go clients
+brew "protoc-gen-go-grpc"
 # CLI companion with 200+ commands across 33+ Datadog products
 brew "pup"
 # Python version management
@@ -273,6 +277,7 @@ cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "Balatro", id: 6502451661
 mas "bIRC", id: 6770527619
+mas "BombSquad", id: 416482767
 mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
 mas "Numbers", id: 409203825
@@ -292,7 +297,8 @@ go "github.com/vektra/mockery/v2"
 go "github.com/golang/mock/mockgen"
 go "github.com/goware/modvendor"
 go "github.com/tinylib/msgp"
-go "github.com/golang/protobuf/protoc-gen-go"
+go "google.golang.org/protobuf/cmd/protoc-gen-go"
+go "google.golang.org/grpc/cmd/protoc-gen-go-grpc"
 go "github.com/planetscale/vtprotobuf/cmd/protoc-gen-go-vtproto"
 go "github.com/favadi/protoc-go-inject-tag"
 go "github.com/stormcat24/protodep"
