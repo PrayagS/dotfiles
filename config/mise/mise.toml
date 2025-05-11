@@ -6,22 +6,20 @@ jobs = 24
 idiomatic_version_file_enable_tools = ["rust"]
 disable_backends = ["asdf"]
 python.uv_venv_auto = true
+npm.package_manager = "bun"
 
 [tools]
 claude-code = "latest"
 "github:vectordotdev/vector" = "latest"
-"npm:@openai/codex" = "latest"
 python = "3.14.3"
 "github:open-telemetry/opentelemetry-collector-releases"= { version = "latest", asset_pattern = "otelcol-contrib_*_darwin_arm64.tar.gz" }
 age = "latest"
 "github:zippoxer/recall" = "latest"
-"npm:@cometix/ccline" = "latest"
 istioctl = "latest"
 lua-language-server = "latest"
 "go:golang.org/x/tools/gopls" = "latest"
 ruff = "latest"
 tinymist = "latest"
-"npm:yaml-language-server" = "latest"
 helm-ls = "latest"
 golangci-lint = "latest"
 yamllint = "latest"
@@ -90,8 +88,10 @@ cargo-binstall = "latest"
 redis = "latest"
 "http:fzf-tmux" = { version = "0415fa8", url = "https://raw.githubusercontent.com/junegunn/fzf/9725eac314551072538c06ef914a0e7bedf19018/bin/fzf-tmux" }
 "github:kavehtehrani/cloudflare-speed-cli" = "latest"
-"npm:pixelhq" = "latest"
 "github:backnotprop/plannotator" = "latest"
 "cargo:jj-vine" = "latest"
 ast-grep = "latest"
 amp = "latest"
+"npm:@openai/codex" = "latest"
+"npm:yaml-language-server" = "latest"
+"npm:pixelhq" = "latest"
