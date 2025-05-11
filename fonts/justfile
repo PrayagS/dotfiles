@@ -31,3 +31,4 @@ update-iosevka:
     unzip -o \
         -d 'Iosevka' 'PkgTTF-Unhinted-IosevkaTerm-{{IOSEVKA_RELEASE_VERSION}}.zip' \
         'IosevkaTerm-Bold.ttf' 'IosevkaTerm-BoldItalic.ttf' 'IosevkaTerm-Italic.ttf' 'IosevkaTerm-Regular.ttf'
+    rm -rf *.zip
