@@ -9,14 +9,8 @@ tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "nikolaeu/numi"
 tap "oven-sh/bun"
-# GitOps Continuous Delivery for Kubernetes
-brew "argocd"
-# CLI tool for AWS Athena service
-brew "athenacli"
 # Official Amazon AWS command-line interface
 brew "awscli"
-# Curl like simplicity to access AWS resources
-brew "awscurl"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Language server for beancount files
@@ -99,8 +93,6 @@ brew "imagemagick"
 brew "iredis"
 # Sort Python imports automatically
 brew "isort"
-# Istio configuration command-line utility
-brew "istioctl"
 # Command-line note taker
 brew "jrnl"
 # Package manager for Jsonnet
@@ -159,8 +151,6 @@ brew "numpy"
 brew "nvm"
 # HTTP load generator, inspired by rakyll/hey with tui animation
 brew "oha"
-# Provides a software solution to manage, store, and distribute sensitive data
-brew "openbao"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # Swiss-army knife of markup format conversion
@@ -191,10 +181,10 @@ brew "pyenv-virtualenv"
 brew "pypy3.10"
 # Persistent key-value database, with built-in net interface
 brew "redis"
-# Pack repository contents into a single AI-friendly file
-brew "repomix"
 # Diff filter highlighting which line parts have changed
 brew "riff"
+# Utility that provides fast incremental file transfer
+brew "rsync"
 # Rust toolchain installer
 brew "rustup"
 # Parallel S3 and local filesystem execution tool
@@ -239,8 +229,6 @@ brew "watch"
 brew "weasyprint"
 # Command-line tool to help build, run, and test web extensions
 brew "web-ext"
-# Command-line streaming torrent client
-brew "webtorrent-cli"
 # Internet file retriever
 brew "wget"
 # Library to create, extract, and modify Windows Imaging files
@@ -253,8 +241,6 @@ brew "artginzburg/tap/sudo-touchid"
 brew "aws/tap/ec2-instance-selector"
 # A window border system for macOS
 brew "felixkratz/formulae/borders"
-# Vault
-brew "hashicorp/tap/vault"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
@@ -321,8 +307,6 @@ cask "marta"
 cask "minecraft"
 # Web browser focused on privacy and on minimizing tracking and fingerprinting
 cask "mullvad-browser"
-# Free and open-source RSS reader
-cask "netnewswire@beta"
 # Calendar for professionals and teams
 cask "notion-calendar"
 # Calculator and converter application
@@ -365,19 +349,20 @@ cask "zed"
 cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "Balatro", id: 6502451661
+mas "Cult Of The Lamb", id: 1639580858
 mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
 mas "JapaneseLife", id: 1634749545
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "PowerWash Simulator", id: 6477445344
 mas "rcmd", id: 1596283165
 mas "Sasquatch", id: 1465346522
 mas "Save to Reader", id: 1640236961
 mas "Shareful", id: 1522267256
 mas "UTC Time", id: 1538245904
 mas "Xcode", id: 497799835
-vscode "openai.chatgpt"
 go "github.com/wadey/gocovmerge"
 go "github.com/golangci/golangci-lint/cmd/golangci-lint"
 go "github.com/uber-go/gopatch"
