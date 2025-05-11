@@ -33,6 +33,8 @@ bindkey '^?' backward-delete-char
 
 bindkey -M viins '^r' history-search-multi-word
 bindkey -M vicmd '^r' history-search-multi-word
+bindkey -M vicmd "q" push-line
+bindkey -M viins "^d" push-line
 bindkey -M viins '^p' up-history
 bindkey -M viins '^n' down-history
 
