@@ -82,9 +82,6 @@ yabai -m rule --add label="Crossover Apps" app=".*exe$" title=".*" manage=off su
 yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
 yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
 
-yabai -m signal --add app="Notion Calendar" event="window_focused" \
-    action="CRON_WINDOW_ID=$(yabai -m query --windows | jq '.[] | select(.app == "Notion Calendar") | .id') | yabai -m window $CRON_WINDOW_ID --ratio abs:0.66 | yabai -m window $CRON_WINDOW_ID --swap east"
-
 create_space 1
 yabai -m rule --add app="Ghostty" space=1
 
@@ -102,7 +99,7 @@ create_space 6
 yabai -m rule --add app="Obsidian" space=6
 
 create_space 7
-yabai -m rule --add app="(Notion Calendar|Todoist)" space=7 manage=on
+yabai -m rule --add app="Todoist" space=7 manage=on
 
 create_space 8
 yabai -m rule --add app="Discord" space=8
@@ -115,7 +112,6 @@ open -a Slack
 open -a Music
 open -a Obsidian
 open -a Todoist
-open -a "Notion Calendar"
 open -a Discord
 
 # Clean up empty spaces with no windows on them.
