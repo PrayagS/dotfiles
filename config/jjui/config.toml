@@ -1,5 +1,6 @@
 [ui]
 theme = "base16-gruvbox-material-dark-hard"
+flash_message_display_seconds = 2
 
 [preview]
 show_at_start = false
