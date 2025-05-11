@@ -16,6 +16,9 @@
       "proxy_no_verify": null
     }
   },
+  "scrollbar": {
+    "show": "never"
+  },
   "language_models": {
     "google": {
       "available_models": [
@@ -71,7 +74,8 @@
   "vim": {
     "toggle_relative_line_numbers": true,
     "use_multiline_find": true,
-    "use_smartcase_find": true
+    "use_smartcase_find": true,
+    "use_system_clipboard": "on_yank"
   },
   "ui_font_size": 15,
   "buffer_font_size": 14,
