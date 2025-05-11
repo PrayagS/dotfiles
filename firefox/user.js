@@ -10,7 +10,7 @@
 /****************************************************************************
  * Betterfox                                                                *
  * "Ad meliora"                                                             *
- * version: 146                                                             *
+ * version: 149                                                             *
  * url: https://github.com/yokoffing/Betterfox                              *
 ****************************************************************************/
 
@@ -101,7 +101,11 @@ user_pref("network.dns.disablePrefetch", true);
 user_pref("network.dns.disablePrefetchFromHTTPS", true);
 user_pref("browser.urlbar.speculativeConnect.enabled", false);
 user_pref("browser.places.speculativeConnect.enabled", false);
-user_pref("network.prefetch-next", false);
+user_pref("network.prefetch-next", true);
+user_pref("network.early-hints.enabled", true);
+user_pref("network.early-hints.preconnect.enabled", true);
+user_pref("network.predictor.enabled", true);
+user_pref("network.predictor.enable-prefetch", true);
 
 /** EXPERIMENTAL ***/
 user_pref("layout.css.grid-template-masonry-value.enabled", true);
@@ -266,8 +270,14 @@ user_pref("layout.word_select.eat_space_to_next_word", false);
 /** AI ***/
 user_pref("browser.ml.enable", false);
 user_pref("browser.ml.chat.enabled", false);
+user_pref("browser.ml.chat.menu", false);
 user_pref("browser.ml.linkPreview.enabled", false);
 user_pref("browser.tabs.groups.smart.enabled", false);
+user_pref("browser.ai.control.default", "blocked");
+user_pref("browser.ai.control.translations", "blocked");
+user_pref("browser.ai.control.pdfjsAltText", "blocked");
+user_pref("browser.ai.control.smartTabGroups", "blocked");
+user_pref("browser.ai.control.linkPreviewKeyPoints", "blocked");
 
 /****************************************************************************
  * START: MY OVERRIDES                                                      *
