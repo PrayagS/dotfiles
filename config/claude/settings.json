@@ -3,8 +3,10 @@
   "env": {
     "AWS_PROFILE": "prod",
     "AWS_REGION": "ap-southeast-1",
-    "DISABLE_AUTOUPDATER": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "0",
+    "DISABLE_INTERLEAVED_THINKING": "0",
+    "DISABLE_AUTOUPDATER": "1",
     "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1",
     "ENABLE_TOOL_SEARCH": "true",
     "USE_BUILTIN_RIPGREP": "0"
@@ -38,11 +40,16 @@
       "Bash(git diff:*)",
       "Bash(git tag:*)",
       "Bash(jj status:*)",
-      "Bash(jj describe:*)"
+      "Bash(jj describe:*)",
+      "Bash(jj git fetch:*)",
+      "Bash(jj config list:*)",
+      "Bash(jj bookmark track:*)",
+      "Bash(jj help:*)",
+      "Bash(jj diff:*)",
+      "Bash(yamllint:*)"
     ],
-    "defaultMode": "plan"
+    "defaultMode": "acceptEdits"
   },
-  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -170,13 +177,26 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "bunx -y ccstatusline@latest",
+    "command": "ccstatusline",
     "padding": 0
   },
   "enabledPlugins": {
+    "ast-grep@ast-grep-marketplace": true,
     "gopls-lsp@claude-plugins-official": true,
+    "plannotator@plannotator": true,
     "workmux-status@workmux": true,
-    "plannotator@plannotator": true
+    "lua-lsp@claude-plugins-official": true
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": true,
+    "network": {
+      "allowedDomains": [],
+      "allowAllUnixSockets": true,
+      "allowLocalBinding": true
+    },
+    "excludedCommands": []
   },
   "spinnerTipsEnabled": false,
   "promptSuggestionEnabled": false
