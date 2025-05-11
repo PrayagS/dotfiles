@@ -112,7 +112,7 @@ return {
 		event = { "InsertEnter", "CmdlineEnter" },
 		build = "cargo build --release",
 		dependencies = {
-			"mikavilpas/blink-ripgrep.nvim",
+			{ "mikavilpas/blink-ripgrep.nvim", version = "*" },
 			"Kaiser-Yang/blink-cmp-git",
 			"ribru17/blink-cmp-spell",
 			"disrupted/blink-cmp-conventional-commits",
