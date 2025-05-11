@@ -34,10 +34,10 @@ previous_tab = "prefix+p"
 next_tab = "prefix+n"
 close_tab = ["prefix+q", "prefix+ampersand"]
 
-focus_pane_left = "prefix+h"
-focus_pane_down = "prefix+j"
-focus_pane_up = "prefix+k"
-focus_pane_right = "prefix+l"
+focus_pane_left = ""
+focus_pane_down = ""
+focus_pane_up = ""
+focus_pane_right = ""
 swap_pane_up = "prefix+comma"
 swap_pane_down = "prefix+."
 
@@ -50,7 +50,7 @@ zoom = "prefix+z"
 sidebar_width = 24
 sidebar_min_width = 24
 sidebar_max_width = 36
-sidebar_start_collapsed = true
+sidebar_start_collapsed = false
 mouse_capture = true
 copy_on_select = true
 confirm_close = false
@@ -90,6 +90,12 @@ pane_history = true
 switch_ascii_input_source_in_prefix = true
 kitty_graphics = true
 allow_nested = false
+
+[[keys.command]]
+key = "prefix+l"
+type = "shell"
+command = "herdr pane send-keys \"$HERDR_ACTIVE_PANE_ID\" ctrl+l"
+description = "clear screen"
 
 [[keys.command]]
 key = "prefix+e"
