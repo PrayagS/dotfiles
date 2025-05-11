@@ -20,6 +20,8 @@ brew "awscli"
 brew "awscurl"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Powerful, enterprise-ready, open source web server with automatic HTTPS
+brew "caddy"
 # Versatile and fast Unicode/ASCII/ANSI graphics renderer
 brew "chafa"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
@@ -306,8 +308,6 @@ cask "notion-calendar"
 cask "numi"
 # Replacement for Docker Desktop
 cask "orbstack"
-# WebKit based web browser
-cask "orion"
 # Rhythm game
 cask "osu"
 # VPN client focusing on security
@@ -330,8 +330,6 @@ cask "spotify"
 cask "stats"
 # Video game digital distribution service
 cask "steam"
-# Dictation tool including LLM reformatting
-cask "superwhisper"
 # To-do list
 cask "todoist-app"
 # Web browser focusing on security
@@ -340,8 +338,6 @@ cask "tor-browser"
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm@nightly"
-# Agentic IDE powered by AI Flow paradigm
-cask "windsurf"
 # Network protocol analyzer
 cask "wireshark-app"
 # Multiplayer code editor
@@ -350,7 +346,6 @@ cask "zed"
 cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "Balatro", id: 6502451661
-mas "Endel", id: 1346247457
 mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
@@ -363,7 +358,6 @@ mas "Perplexity", id: 6714467650
 mas "Sasquatch", id: 1465346522
 mas "Save to Reader", id: 1640236961
 mas "Shareful", id: 1522267256
-mas "Taiko no Tatsujin Pop Tap Beat", id: 1463360242
 mas "UTC Time", id: 1538245904
 mas "Xcode", id: 497799835
 vscode "antfu.icons-carbon"
