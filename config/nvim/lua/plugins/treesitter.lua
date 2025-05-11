@@ -24,6 +24,7 @@ return {
 				"gotmpl",
 				"json",
 				"jsonnet",
+				"just",
 				"lua",
 				"markdown",
 				"promql",
