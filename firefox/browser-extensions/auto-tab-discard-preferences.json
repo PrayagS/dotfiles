@@ -3,7 +3,10 @@
     "last-update": 1731007497064,
     "tmp_disable": 0,
     "whitelist": [
-      "mail.google.com"
+      "mail.google.com",
+      "chat.seedpool.org",
+      "redditmod.katong.usbx.me",
+      "people.eternal.com"
     ]
   },
   "localStorage": {}

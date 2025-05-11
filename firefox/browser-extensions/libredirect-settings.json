@@ -2,17 +2,19 @@
   "youtube": {
     "enabled": false,
     "redirectType": "main_frame",
-    "frontend": "invidious",
+    "frontend": "piped",
     "embedFrontend": "invidious",
     "unsupportedUrls": "bypass",
     "redirectOnlyInIncognito": false
   },
-  "invidious": [],
+  "invidious": [
+    "https://inv-ygg.nadeko.net"
+  ],
   "materialious": [
     "https://app.materialio.us"
   ],
   "piped": [
-    "https://pipedapi-libre.kavin.rocks"
+    "https://piped.private.coffee"
   ],
   "pipedMaterial": [
     "https://piped-material.xn--17b.net"
@@ -135,7 +137,8 @@
     "unsupportedUrls": "bypass",
     "instance": "public",
     "redirectOnlyInIncognito": false,
-    "redirectType": "main_frame"
+    "redirectType": "main_frame",
+    "embedFrontend": "kittygram"
   },
   "proxigram": [
     "https://ig.opnxng.com",
@@ -253,23 +256,24 @@
     "https://intellectual.insprill.net"
   ],
   "medium": {
-    "frontend": "small",
+    "frontend": "scribe",
     "enabled": false,
     "unsupportedUrls": "bypass",
     "redirectOnlyInIncognito": false,
     "redirectType": "main_frame"
   },
   "scribe": [
-    "https://scribe.rip"
+    "https://scribe.rawbit.ninja"
   ],
   "libMedium": [
-    "https://libmedium.batsense.net"
+    "https://libmedium.batsense.net",
+    "https://medium.hostux.net"
   ],
   "small": [
     "https://small.bloat.cat"
   ],
   "quora": {
-    "enabled": true,
+    "enabled": false,
     "unsupportedUrls": "bypass",
     "frontend": "quetre",
     "instance": "public",
@@ -598,5 +602,17 @@
   "cryptPad": [
     "https://cryptpad.org"
   ],
-  "version": "3.2.0"
+  "ytifyMusic": [
+    "https://ytify.pp.ua"
+  ],
+  "skylib": [
+    "https://skylib.coffee"
+  ],
+  "kittygram": [
+    "https://kittygram.irelephant.net/"
+  ],
+  "phantom": [
+    "https://phantom.kuuro.net"
+  ],
+  "version": "3.3.0"
 }
