@@ -3,6 +3,8 @@
 mattmc3/ez-compinit
 # getantidote/use-omz
 
+/opt/homebrew/share/zsh/site-functions kind:fpath
+
 mafredri/zsh-async
 romkatv/powerlevel10k
 
