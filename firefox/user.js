@@ -10,7 +10,7 @@
 /****************************************************************************
  * Betterfox                                                                *
  * "Ad meliora"                                                             *
- * version: 142                                                             *
+ * version: 144                                                             *
  * url: https://github.com/yokoffing/Betterfox                              *
 ****************************************************************************/
 
@@ -21,28 +21,71 @@
 user_pref("content.notify.interval", 100000);
 
 /** GFX ***/
-user_pref("gfx.canvas.accelerated.cache-size", 512);
-user_pref("gfx.content.skia-font-cache-size", 20);
+
+// PREF: GPU-accelerated Canvas2D
+// Uses Accelerated Canvas2D for hardware acceleration of Canvas2D.
+// This provides a consistent acceleration architecture across all platforms
+// by utilizing WebGL instead of relying upon Direct2D.
+// [WARNING] May cause issues on some Windows machines using integrated GPUs [2] [3]
+// Add to your overrides if you have a dedicated GPU.
+// [NOTE] Higher values will use more memory.
+// [1] https://bugzilla.mozilla.org/show_bug.cgi?id=1741501
+// [2] https://github.com/yokoffing/Betterfox/issues/153
+// [3] https://github.com/yokoffing/Betterfox/issues/198
+//user_pref("gfx.canvas.accelerated", true); // [DEFAULT FF133+]
+user_pref("gfx.canvas.accelerated.cache-items", 32768); // [default=8192 FF135+]; Chrome=4096
+user_pref("gfx.canvas.accelerated.cache-size", 4096); // default=256; Chrome=512
+
+// PREF: WebGL
+user_pref("webgl.max-size", 16384); // default=1024
+
+// PREF: Font rendering cache in Skia (32MB)
+// Increases font cache size to improve performance on text-heavy websites.
+// Especially beneficial for sites with many font faces or complex typography.
+// [1] https://bugzilla.mozilla.org/show_bug.cgi?id=1239151#c2
+user_pref("gfx.content.skia-font-cache-size", 32); // 32 MB; default=5; Chrome=20
 
 /** DISK CACHE ***/
-user_pref("browser.cache.disk.enable", false);
+user_pref("browser.cache.disk.enable", true);
+
+// PREF: disk cache size
+// [1] https://bugzilla.mozilla.org/buglist.cgi?bug_id=913808,968106,968101
+// [2] https://rockridge.hatenablog.com/entry/2014/09/15/165501
+// [3] https://www.reddit.com/r/firefox/comments/17oqhw3/firefox_and_ssd_disk_consumption/
+user_pref("browser.cache.disk.smart_size.enabled", false); // force a fixed max cache size on disk
+user_pref("browser.cache.disk.capacity", 512000); // default=256000; size of disk cache; 1024000=1GB, 2048000=2GB
+user_pref("browser.cache.disk.max_entry_size", 51200); // DEFAULT (50 MB); maximum size of an object in disk cache
+
+// PREF: cache memory pool
+// Cache v2 provides a memory pool that stores metadata (such as response headers)
+// for recently read cache entries [1]. It is managed by a cache thread, and caches with
+// metadata in the pool appear to be reused immediately.
+// [1] https://bugzilla.mozilla.org/buglist.cgi?bug_id=986179
+user_pref("browser.cache.disk.metadata_memory_limit", 16384); // default=250 (0.25 MB); limit of recent metadata we keep in memory for faster access
+
+user_pref("network.http.rcwn.enabled", true);
 
 /** MEMORY CACHE ***/
+user_pref("browser.cache.memory.capacity", 131072); // 128 MB RAM cache; alt=65536 (65 MB RAM cache); default=32768
+user_pref("browser.cache.memory.max_entry_size", 20480); // 20 MB max entry; default=5120 (5 MB)
 user_pref("browser.sessionhistory.max_total_viewers", 4);
 
 /** MEDIA CACHE ***/
-user_pref("media.memory_cache_max_size", 65536);
-user_pref("media.cache_readahead_limit", 7200);
-user_pref("media.cache_resume_threshold", 3600);
+user_pref("media.memory_cache_max_size", 262144);
+user_pref("media.memory_caches_combined_limit_kb", 1048576);
+user_pref("media.cache_readahead_limit", 600);
+user_pref("media.cache_resume_threshold", 300);
 
 /** IMAGE CACHE ***/
-user_pref("image.mem.decode_bytes_at_a_time", 32768);
+user_pref("image.cache.size", 10485760);
+user_pref("image.mem.decode_bytes_at_a_time", 65536);
 
 /** NETWORK ***/
 user_pref("network.http.max-connections", 1800);
 user_pref("network.http.max-persistent-connections-per-server", 10);
 user_pref("network.http.max-urgent-start-excessive-connections-per-host", 5);
 user_pref("network.http.pacing.requests.enabled", false);
+user_pref("network.dnsCacheEntries", 10000);
 user_pref("network.dnsCacheExpiration", 3600);
 user_pref("network.ssl_tokens_cache_capacity", 10240);
 
@@ -64,7 +107,6 @@ user_pref("layout.css.grid-template-masonry-value.enabled", true);
 /** TRACKING PROTECTION ***/
 user_pref("browser.contentblocking.category", "strict");
 user_pref("privacy.trackingprotection.allow_list.baseline.enabled", true);
-user_pref("privacy.trackingprotection.allow_list.convenience.enabled", true);
 user_pref("privacy.antitracking.isolateContentScriptResources", true);
 user_pref("urlclassifier.trackingSkipURLs", "*.reddit.com, *.twitter.com, *.twimg.com, *.tiktok.com");
 user_pref("urlclassifier.features.socialtracking.skipURLs", "*.instagram.com, *.twitter.com, *.twimg.com");
@@ -75,7 +117,6 @@ user_pref("privacy.globalprivacycontrol.enabled", true);
 
 /** OCSP & CERTS / HPKP ***/
 user_pref("security.OCSP.enabled", 0);
-user_pref("security.pki.crlite_mode", 2);
 user_pref("security.csp.reporting.enabled", false);
 
 /** SSL / TLS ***/
