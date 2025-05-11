@@ -68,6 +68,7 @@ yabai -m rule --add label="Finder" app="^Finder$" title=".*" manage=off
 yabai -m rule --add label="Marta" app="^Marta$" title=".*" manage=off
 yabai -m rule --add label="System Settings" app="^System Settings$" title=".*" manage=off
 yabai -m rule --add label="Raycast" app="^Raycast$" title=".*" manage=off sub-layer=above
+yabai -m rule --add label="flameshot" app="^flameshot$" title="" manage=off sub-layer=above
 yabai -m rule --add label="Shottr" app="^Shottr$" title=".*" manage=off
 yabai -m rule --add label="App Store" app="^App Store$" manage=off
 yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off sub-layer=above
