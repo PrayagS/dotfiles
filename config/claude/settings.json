@@ -1,18 +1,109 @@
 {
-  "respectGitignore": true,
-  "env": {
-    "AWS_PROFILE": "prod",
-    "AWS_REGION": "ap-southeast-1",
-    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
-    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "0",
-    "DISABLE_INTERLEAVED_THINKING": "0",
-    "DISABLE_AUTOUPDATER": "1",
-    "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1",
-    "ENABLE_TOOL_SEARCH": "true",
-    "USE_BUILTIN_RIPGREP": "0"
+  "alwaysThinkingEnabled" : true,
+  "autoDreamEnabled" : true,
+  "effortLevel" : "high",
+  "enabledPlugins" : {
+    "gopls-lsp@claude-plugins-official" : true,
+    "honcho@honcho" : true,
+    "lua-lsp@claude-plugins-official" : true,
+    "plannotator@plannotator" : true,
+    "skill-creator@claude-plugins-official" : true
   },
-  "permissions": {
-    "allow": [
+  "env" : {
+    "AWS_PROFILE" : "prod",
+    "AWS_REGION" : "ap-southeast-1",
+    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING" : "1",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC" : "1",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS" : "1",
+    "DISABLE_AUTOUPDATER" : "1",
+    "DISABLE_INTERLEAVED_THINKING" : "0",
+    "DISABLE_NON_ESSENTIAL_MODEL_CALLS" : "1",
+    "ENABLE_LSP_TOOL" : "1",
+    "ENABLE_TOOL_SEARCH" : "true",
+    "HONCHO_API_KEY" : "hch-v3-qnkognghbb12ahodg7skn95evo6tz6ypj0rlz73gvadl8sy0690yq8eulux2bfnt",
+    "HONCHO_PEER_NAME" : "prayagmatic",
+    "TMPPREFIX" : "\/tmp\/claude\/zsh",
+    "USE_BUILTIN_RIPGREP" : "0"
+  },
+  "extraKnownMarketplaces" : {
+    "honcho" : {
+      "source" : {
+        "repo" : "plastic-labs\/claude-honcho",
+        "source" : "github"
+      }
+    }
+  },
+  "feedbackSurveyRate" : 1,
+  "hooks" : {
+    "Notification" : [
+      {
+        "hooks" : [
+          {
+            "command" : "[ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && [ -n \"${SUPACODE_WORKTREE_ID:-}\" ] && [ -n \"${SUPACODE_TAB_ID:-}\" ] && [ -n \"${SUPACODE_SURFACE_ID:-}\" ] && { printf '%s claude\\n' \"$SUPACODE_WORKTREE_ID $SUPACODE_TAB_ID $SUPACODE_SURFACE_ID\"; cat; } | \/usr\/bin\/nc -U -w1 \"$SUPACODE_SOCKET_PATH\" 2>\/dev\/null || true",
+            "timeout" : 10,
+            "type" : "command"
+          }
+        ],
+        "matcher" : ""
+      }
+    ],
+    "PostToolUseFailure" : [
+      {
+        "hooks" : [
+          {
+            "command" : "[ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && [ -n \"${SUPACODE_WORKTREE_ID:-}\" ] && [ -n \"${SUPACODE_TAB_ID:-}\" ] && [ -n \"${SUPACODE_SURFACE_ID:-}\" ] && echo \"$SUPACODE_WORKTREE_ID $SUPACODE_TAB_ID $SUPACODE_SURFACE_ID 0\" | \/usr\/bin\/nc -U -w1 \"$SUPACODE_SOCKET_PATH\" 2>\/dev\/null || true",
+            "timeout" : 5,
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "SessionEnd" : [
+      {
+        "hooks" : [
+          {
+            "command" : "[ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && [ -n \"${SUPACODE_WORKTREE_ID:-}\" ] && [ -n \"${SUPACODE_TAB_ID:-}\" ] && [ -n \"${SUPACODE_SURFACE_ID:-}\" ] && echo \"$SUPACODE_WORKTREE_ID $SUPACODE_TAB_ID $SUPACODE_SURFACE_ID 0\" | \/usr\/bin\/nc -U -w1 \"$SUPACODE_SOCKET_PATH\" 2>\/dev\/null || true",
+            "timeout" : 1,
+            "type" : "command"
+          }
+        ],
+        "matcher" : ""
+      }
+    ],
+    "Stop" : [
+      {
+        "hooks" : [
+          {
+            "command" : "[ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && [ -n \"${SUPACODE_WORKTREE_ID:-}\" ] && [ -n \"${SUPACODE_TAB_ID:-}\" ] && [ -n \"${SUPACODE_SURFACE_ID:-}\" ] && echo \"$SUPACODE_WORKTREE_ID $SUPACODE_TAB_ID $SUPACODE_SURFACE_ID 0\" | \/usr\/bin\/nc -U -w1 \"$SUPACODE_SOCKET_PATH\" 2>\/dev\/null || true",
+            "timeout" : 10,
+            "type" : "command"
+          }
+        ]
+      },
+      {
+        "hooks" : [
+          {
+            "command" : "[ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && [ -n \"${SUPACODE_WORKTREE_ID:-}\" ] && [ -n \"${SUPACODE_TAB_ID:-}\" ] && [ -n \"${SUPACODE_SURFACE_ID:-}\" ] && { printf '%s claude\\n' \"$SUPACODE_WORKTREE_ID $SUPACODE_TAB_ID $SUPACODE_SURFACE_ID\"; cat; } | \/usr\/bin\/nc -U -w1 \"$SUPACODE_SOCKET_PATH\" 2>\/dev\/null || true",
+            "timeout" : 10,
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit" : [
+      {
+        "hooks" : [
+          {
+            "command" : "[ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && [ -n \"${SUPACODE_WORKTREE_ID:-}\" ] && [ -n \"${SUPACODE_TAB_ID:-}\" ] && [ -n \"${SUPACODE_SURFACE_ID:-}\" ] && echo \"$SUPACODE_WORKTREE_ID $SUPACODE_TAB_ID $SUPACODE_SURFACE_ID 1\" | \/usr\/bin\/nc -U -w1 \"$SUPACODE_SOCKET_PATH\" 2>\/dev\/null || true",
+            "timeout" : 10,
+            "type" : "command"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions" : {
+    "allow" : [
       "Skill(yaml-reader)",
       "Bash(yq:*)",
       "WebFetch(domain:istio.io)",
@@ -48,156 +139,33 @@
       "Bash(jj diff:*)",
       "Bash(yamllint:*)"
     ],
-    "defaultMode": "acceptEdits"
+    "defaultMode" : "acceptEdits"
   },
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 ~/.claude/hooks/claude-island-state.py"
-          }
-        ]
-      }
+  "promptSuggestionEnabled" : false,
+  "respectGitignore" : true,
+  "sandbox" : {
+    "allowUnsandboxedCommands" : true,
+    "autoAllowBashIfSandboxed" : true,
+    "enabled" : true,
+    "excludedCommands" : [
+
     ],
-    "PermissionRequest": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 ~/.claude/hooks/claude-island-state.py",
-            "timeout": 86400
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 ~/.claude/hooks/claude-island-state.py"
-          }
-        ]
-      }
-    ],
-    "PreCompact": [
-      {
-        "matcher": "auto",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 ~/.claude/hooks/claude-island-state.py"
-          },
-          {
-            "type": "command",
-            "command": "beans prime"
-          }
-        ]
-      },
-      {
-        "matcher": "manual",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 ~/.claude/hooks/claude-island-state.py"
-          }
-        ]
-      }
-    ],
-    "PreToolUse": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 ~/.claude/hooks/claude-island-state.py"
-          }
-        ]
-      }
-    ],
-    "SessionEnd": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 ~/.claude/hooks/claude-island-state.py"
-          }
-        ]
-      }
-    ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 ~/.claude/hooks/claude-island-state.py"
-          },
-          {
-            "type": "command",
-            "command": "beans prime"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 ~/.claude/hooks/claude-island-state.py"
-          }
-        ]
-      }
-    ],
-    "SubagentStop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 ~/.claude/hooks/claude-island-state.py"
-          }
-        ]
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 ~/.claude/hooks/claude-island-state.py"
-          }
-        ]
-      }
-    ]
+    "network" : {
+      "allowAllUnixSockets" : true,
+      "allowLocalBinding" : true,
+      "allowedDomains" : [
+
+      ]
+    }
   },
-  "statusLine": {
-    "type": "command",
-    "command": "ccstatusline",
-    "padding": 0
+  "showClearContextOnPlanAccept" : true,
+  "showThinkingSummaries" : true,
+  "skipDangerousModePermissionPrompt" : true,
+  "spinnerTipsEnabled" : false,
+  "statusLine" : {
+    "command" : "ccstatusline",
+    "padding" : 0,
+    "type" : "command"
   },
-  "enabledPlugins": {
-    "ast-grep@ast-grep-marketplace": true,
-    "gopls-lsp@claude-plugins-official": true,
-    "plannotator@plannotator": true,
-    "workmux-status@workmux": true,
-    "lua-lsp@claude-plugins-official": true
-  },
-  "sandbox": {
-    "enabled": true,
-    "autoAllowBashIfSandboxed": true,
-    "allowUnsandboxedCommands": true,
-    "network": {
-      "allowedDomains": [],
-      "allowAllUnixSockets": true,
-      "allowLocalBinding": true
-    },
-    "excludedCommands": []
-  },
-  "spinnerTipsEnabled": false,
-  "promptSuggestionEnabled": false
+  "teammateMode" : "tmux"
 }
