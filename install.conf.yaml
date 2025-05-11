@@ -54,6 +54,7 @@
     ~/.config/jjui/config.toml: config/jjui/config.toml
     ~/.config/zed/settings.json: config/zed/settings.json
     ~/.config/zed/keymap.json: config/zed/keymap.json
+    ~/.claude/CLAUDE.md: config/claude/CLAUDE.md
 
 - shell:
     # - [git submodule update --init --recursive --remote --force, Installing submodules]

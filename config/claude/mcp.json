@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "code2prompt": {
+      "type": "stdio",
+      "command": "/Users/prayagmatic/.local/share/pyenv/versions/3.13.2/envs/code2prompt-mcp/bin/python",
+      "args": [
+        "/Users/prayagmatic/dev/mcp/code2prompt-mcp/src/code2prompt_mcp/main.py"
+      ],
+      "env": {}
+    },
+    "context7": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "env": {}
+    },
+    "repomix": {
+      "type": "stdio",
+      "command": "repomix",
+      "args": [
+        "--mcp"
+      ],
+      "env": {}
+    }
+  }
+}
