@@ -54,7 +54,7 @@ zstyle ':completion:*' rehash true
 zstyle ':completion:*:descriptions' format '[%d]'
 
 # Enable LSCOLORS in completion menu
-export LS_COLORS="$(~/.local/share/mise/shims/vivid generate gruvbox-dark-hard)"
+export LS_COLORS="$(~/.local/share/mise/shims/vivid generate gruvbox-dark-soft)"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 
