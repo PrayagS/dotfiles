@@ -241,6 +241,8 @@ cask "cloudflare-warp"
 cask "discord"
 # Desktop client for Ente Auth
 cask "ente-auth"
+# Web browser
+cask "firefox@beta"
 # Screenshot software
 cask "flameshot"
 # Terminal emulator that uses platform-native UI and GPU acceleration
