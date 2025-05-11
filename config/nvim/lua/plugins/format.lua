@@ -16,6 +16,7 @@ return {
 			lua = { "stylua" },
 			go = { "golines" },
 			cue = { "cue_fmt" },
+			typescript = { "biome-check" },
 			zsh = { "shfmt" },
 		},
 		format_on_save = {
