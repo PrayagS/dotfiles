@@ -4,7 +4,7 @@ tap "homebrew-zathura/zathura", trusted: true
 tap "homebrew/bundle"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
-tap "koekeishiya/formulae", trusted: true
+tap "koekeishiya/formulae", "https://github.com/asmvik/homebrew-formulae.git"
 tap "muxy-app/tap", trusted: true
 tap "pakerwreah/calendr", trusted: true
 # Bourne-Again SHell, a UNIX command interpreter
@@ -30,7 +30,7 @@ brew "curl"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
 # Pack, ship and run any application as a lightweight container
-brew "docker", link: false
+brew "docker"
 # Docker CLI plugin for extended build capabilities with BuildKit
 brew "docker-buildx"
 # Isolated development environments using Docker
@@ -133,7 +133,7 @@ brew "pnpm"
 brew "poetry"
 # Object-relational database system
 brew "postgresql@16"
-# Parse HTML at the command-line
+# CLI companion with 200+ commands across 33+ Datadog products
 brew "pup"
 # Python version management
 brew "pyenv"
@@ -176,11 +176,9 @@ brew "winetricks"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "asmvik/formulae/yabai", args: ["HEAD"]
 # PDF viewer
-brew "homebrew-zathura/zathura/zathura"
+brew "homebrew-zathura/zathura/zathura", args: ["with-synctex"]
 # MuPDF backend plugin for zathura
 brew "homebrew-zathura/zathura/zathura-pdf-mupdf"
-# Simple hotkey-daemon for macOS.
-brew "koekeishiya/formulae/skhd"
 # Password manager
 cask "1password@beta"
 # Agent orchestration platform
@@ -227,8 +225,6 @@ cask "handbrake-app"
 cask "handy"
 # UI for Kubernetes
 cask "headlamp"
-# Chromium-based web browser
-cask "helium-browser"
 # Free and open-source media player
 cask "iina"
 # Jellyfin desktop client
@@ -245,10 +241,10 @@ cask "lm-studio"
 cask "marta"
 # Sandbox construction video game
 cask "minecraft"
-# Terminal multiplexer for macOS
-cask "muxy-app/tap/muxy"
 # Neovim Client
 cask "neovide-app"
+# Free and open-source RSS reader
+cask "netnewswire@beta"
 # Calculator and converter application
 cask "numi"
 # Knowledge base that works on top of a local folder of plain text Markdown files
@@ -296,9 +292,8 @@ mas "Balatro", id: 6502451661
 mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
 mas "JapaneseLife", id: 1634749545
-mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
+mas "Pointerly", id: 6736710502
 mas "rcmd", id: 1596283165
 mas "Sasquatch", id: 1465346522
 mas "Save to Reader", id: 1640236961
