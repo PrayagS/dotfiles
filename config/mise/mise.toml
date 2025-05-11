@@ -8,8 +8,6 @@ disable_backends = ["asdf"]
 python.uv_venv_auto = true
 
 [tools]
-"cargo:csvlens" = "latest"
-"cargo:eza" = "latest"
 claude-code = "latest"
 "github:vectordotdev/vector" = "latest"
 "npm:@openai/codex" = "latest"
@@ -86,3 +84,6 @@ grpcurl = "latest"
 "http:fzf-tmux" = { version = "e74b9de", url = "https://raw.githubusercontent.com/junegunn/fzf/refs/heads/master/bin/fzf-tmux" }
 tilt = "latest"
 vivid = "latest"
+cargo-binstall = "latest"
+"cargo:eza" = "latest"
+"cargo:csvlens" = "latest"
