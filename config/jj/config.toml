@@ -61,7 +61,7 @@ key = "~/.ssh/id_ed25519.pub"
 
 [snapshot]
 max-new-file-size = 52428800
-auto-track = '~prefix-glob:".beans" | ~file:".netrc"'
+auto-track = '~prefix-glob:".beans" | ~file:".netrc" | ~file:".beans.yml"'
 
 [aliases]
 tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
@@ -69,10 +69,16 @@ tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
 [templates]
 draft_commit_description = '''
 concat(
-  description,
   if(
-    !description.contains("Signed-off-by: " ++ author.name()),
-    "\n\nSigned-off-by: " ++ author.name() ++ " <" ++ author.email() ++ ">\n",
+    description.contains("Signed-off-by: " ++ author.name()),
+    description,
+    if(
+      description.contains("Co-authored-by:") || description.contains("Co-Authored-By:"),
+      description
+        .replace("Co-authored-by:", "Signed-off-by: " ++ author.name() ++ " <" ++ author.email() ++ ">\nCo-authored-by:")
+        .replace("Co-Authored-By:", "Signed-off-by: " ++ author.name() ++ " <" ++ author.email() ++ ">\nCo-Authored-By:"),
+      description ++ "\nSigned-off-by: " ++ author.name() ++ " <" ++ author.email() ++ ">\n",
+    ),
   ),
   surround(
     "\nJJ: This commit contains the following changes:\n", "",
