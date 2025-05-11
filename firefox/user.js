@@ -10,7 +10,7 @@
 /****************************************************************************
  * Betterfox                                                                *
  * "Ad meliora"                                                             *
- * version: 144                                                             *
+ * version: 146                                                             *
  * url: https://github.com/yokoffing/Betterfox                              *
 ****************************************************************************/
 
@@ -21,6 +21,12 @@
 user_pref("content.notify.interval", 100000);
 
 /** GFX ***/
+
+// PREF: Webrender layer compositor
+// [1] https://bugzilla.mozilla.org/show_bug.cgi?id=1945683
+// [2] https://www.reddit.com/r/firefox/comments/1p58qre/firefox_is_getting_ready_to_make_youtube_fast/
+// [3] https://www.ghacks.net/2025/11/24/these-two-tweaks-should-improve-firefoxs-performance-on-youtube-significantly/
+user_pref("gfx.webrender.layer-compositor", true);
 
 // PREF: GPU-accelerated Canvas2D
 // Uses Accelerated Canvas2D for hardware acceleration of Canvas2D.
@@ -96,7 +102,6 @@ user_pref("network.dns.disablePrefetchFromHTTPS", true);
 user_pref("browser.urlbar.speculativeConnect.enabled", false);
 user_pref("browser.places.speculativeConnect.enabled", false);
 user_pref("network.prefetch-next", false);
-user_pref("network.predictor.enabled", false);
 
 /** EXPERIMENTAL ***/
 user_pref("layout.css.grid-template-masonry-value.enabled", true);
@@ -106,12 +111,10 @@ user_pref("layout.css.grid-template-masonry-value.enabled", true);
 ****************************************************************************/
 /** TRACKING PROTECTION ***/
 user_pref("browser.contentblocking.category", "strict");
-user_pref("privacy.trackingprotection.allow_list.baseline.enabled", true);
 user_pref("privacy.antitracking.isolateContentScriptResources", true);
-user_pref("urlclassifier.trackingSkipURLs", "*.reddit.com, *.twitter.com, *.twimg.com, *.tiktok.com");
-user_pref("urlclassifier.features.socialtracking.skipURLs", "*.instagram.com, *.twitter.com, *.twimg.com");
+user_pref("urlclassifier.trackingSkipURLs", "*://*.reddit.com/*,*://*.twitter.com/*,*://*.twimg.com/*,*://*.tiktok.com/*");
+user_pref("urlclassifier.features.socialtracking.skipURLs", "*://*.twitter.com/*,*://*.twimg.com/*,*://*.instagram.com/*");
 user_pref("browser.download.start_downloads_in_tmp_dir", true);
-user_pref("browser.helperApps.deleteTempFileOnExit", true);
 user_pref("browser.uitour.enabled", false);
 user_pref("privacy.globalprivacycontrol.enabled", true);
 
@@ -200,11 +203,14 @@ user_pref("app.normandy.api_url", "");
 user_pref("breakpad.reportURL", "");
 user_pref("browser.tabs.crashReporting.sendReport", false);
 
+/** HTTPS-ONLY MODE ***/
+user_pref("dom.security.https_only_mode", true);
+user_pref("dom.security.https_only_mode_error_page_user_suggestions", true);
+
 /****************************************************************************
  * SECTION: PESKYFOX                                                        *
 ****************************************************************************/
 /** MOZILLA UI ***/
-user_pref("browser.privatebrowsing.vpnpromourl", "");
 user_pref("extensions.getAddons.showPane", false);
 user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
 user_pref("browser.discovery.enabled", false);
@@ -213,6 +219,7 @@ user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", fa
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
 user_pref("browser.preferences.moreFromMozilla", false);
 user_pref("browser.aboutConfig.showWarning", false);
+user_pref("browser.startup.homepage_override.mstone", "ignore");
 user_pref("browser.aboutwelcome.enabled", false);
 user_pref("browser.profiles.enabled", true);
 
@@ -228,7 +235,7 @@ user_pref("cookiebanners.service.mode.privateBrowsing", 1);
 /** FULLSCREEN NOTICE ***/
 user_pref("full-screen-api.transition-duration.enter", "0 0");
 user_pref("full-screen-api.transition-duration.leave", "0 0");
-user_pref("full-screen-api.warning.timeout", 0);
+user_pref("full-screen-api.warning.timeout", 1250);
 
 /** URL BAR ***/
 user_pref("browser.urlbar.suggest.calculator", true);
