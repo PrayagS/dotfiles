@@ -116,6 +116,12 @@ return {
 		opts = {},
 	},
 	{
+		"nvim-mini/mini.trailspace",
+		version = false,
+		lazy = false,
+		opts = {},
+	},
+	{
 		"nvim-mini/mini.cursorword",
 		version = false,
 		opts = {},
