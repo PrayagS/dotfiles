@@ -54,6 +54,9 @@
     ~/.config/zed/settings.json: config/zed/settings.json
     ~/.config/zed/keymap.json: config/zed/keymap.json
     ~/.claude/CLAUDE.md: config/claude/CLAUDE.md
+    ~/.claude/skills: config/claude/skills
+    ~/.claude/scripts: config/claude/scripts
+    ~/.claude/settings.json: config/claude/settings.json
     ~/.config/mise: config/mise
     ~/.config/ghostty: config/ghostty
 
