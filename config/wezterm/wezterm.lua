@@ -47,7 +47,7 @@ config.colors = {
 }
 
 config.adjust_window_size_when_changing_font_size = false
-config.window_decorations = "RESIZE"
+config.window_decorations = "MACOS_FORCE_DISABLE_SHADOW | RESIZE"
 config.window_background_opacity = 0.93
 config.macos_window_background_blur = 30
 config.window_padding = {
