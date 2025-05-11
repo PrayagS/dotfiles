@@ -115,6 +115,8 @@ brew "less"
 brew "lesspipe"
 # Terminal file manager
 brew "lf"
+# Sophisticated file transfer program
+brew "lftp"
 # Command-line utility to interact with linkerd
 brew "linkerd"
 # LLM inference in C/C++
@@ -243,6 +245,8 @@ cask "calibre"
 cask "claude"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
+# Server and cloud storage browser
+cask "cyberduck"
 # Voice and text chat software
 cask "discord"
 # Desktop client for Ente Auth
@@ -307,8 +311,6 @@ cask "rustdesk"
 cask "scroll-reverser"
 # Screenshot measurement and annotation tool
 cask "shottr"
-# Instant messaging application focusing on security
-cask "signal@beta"
 # Team communication and collaboration software
 cask "slack@beta"
 # Music streaming service
