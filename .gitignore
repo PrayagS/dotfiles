@@ -17,6 +17,7 @@ zsh/zinit/**
 # zsh/custom/**
 # !zsh/custom/.gitkeep
 zsh/**.zwc
+archive/zsh/zinit/zinit
 
 # lazygit
 config/lazygit/**

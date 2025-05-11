@@ -20,6 +20,29 @@ That said, zinit hasn't given me any problems since I started using it and it's
 probably a good idea to stay put unless the newer managers innovate
 significantly.
 
+#### As of Jan 2025
+
+Finally bit the bullet and migrated from zinit to [antidote](https://antidote.sh).
+
+Reasons,
+- Completions not loading consistently.
+- Simplifying tool management using mise
+- Overall config has also became very simple now that we're not using ice modifiers from zinit. The only modifier I'd miss is the patch modifier. Though antidote has support for pre- and post-install scripts.
+
+Shell startup time after migration is the same.
+
+Alternatives considered,
+- [znap](https://github.com/marlonrichert/zsh-snap)
+  - Lot of the features didn't stand out to me. Faster eval is cool which I
+  have replicated using plugins.
+- [zimfw](https://github.com/zimfw/zimfw)
+  - Probably the fastest out of the bunch since the author spent time optimizing
+  it based on zsh-bench results. Actively maintained as well. antidote just felt
+  more simpler IMO while still giving the same benchmark results.
+
+I have moved all zinit configuration to an [archive folder](archive/zsh/zinit)
+for anyone's reference.
+
 ## neovim
 
 - Configure diagnostics.
