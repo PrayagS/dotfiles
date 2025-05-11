@@ -7,3 +7,4 @@ width_percentage = 55
 
 [custom_commands]
 "open PR" = { args = [ "util", "exec", "--", "jjui-gh-pr.sh", "$change_id" ], show = "interactive", key = ["p"] }
+"merge PR" = { args = [ "util", "exec", "--", "jjui-gh-pr-merge.sh", "$change_id" ], show = "interactive", key = ["m"] }
