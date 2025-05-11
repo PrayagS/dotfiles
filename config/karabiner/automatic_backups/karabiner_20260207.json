@@ -33,6 +33,24 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "fn+[...keys] -> meh+[...keys]; right_option -> fn",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
