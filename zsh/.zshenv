@@ -17,6 +17,7 @@ export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 export PATH="$HOME/.claude/local:$PATH"
 export PATH="$HOME/.local/share/cargo/bin:$PATH"
+export PATH="$HOME/.bun/bin:$PATH"
 
 # Golang env vars
 export GOPATH="$HOME/dev/go"
@@ -40,7 +41,8 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 '
 export KUBECONFIG="$HOME/.kubeconfig"
 export QT_QPA_PLATFORMTHEME="qt5ct"
-export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
+# export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
+export JAVA_HOME="/opt/homebrew/Cellar/openjdk/25.0.2/libexec/openjdk.jdk/Contents/Home"
 export EDITOR="nvim"
 # export PAGER="less"
 export PAGER="moor"
