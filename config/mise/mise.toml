@@ -50,7 +50,6 @@ kustomize = "latest"
 krew = "latest"
 "github:ente-io/ente" = { version = "latest", version_prefix = "cli-" }
 "github:joshmedeski/sesh" = "latest"
-"http:fzf-tmux" = { version = "latest", url = "https://raw.githubusercontent.com/junegunn/fzf/refs/heads/master/bin/fzf-tmux" }
 "github:ivaaaan/smug" = "latest"
 zoxide = "latest"
 atuin = "latest"
@@ -79,3 +78,8 @@ jj = "latest"
 "github:grafana/loki" = { version = "latest", asset_pattern = "logcli-darwin-arm64.zip", bin = "logcli" }
 magika = "latest"
 "github:bschaatsbergen/cidr" = "latest"
+websocat = "latest"
+grpcurl = "latest"
+"github:eduardofuncao/pam" = "latest"
+"github:DeprecatedLuar/better-curl-saul" = "latest"
+"http:fzf-tmux" = { version = "latest", url = "https://raw.githubusercontent.com/junegunn/fzf/refs/heads/master/bin/fzf-tmux" }
