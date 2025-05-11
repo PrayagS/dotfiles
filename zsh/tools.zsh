@@ -38,7 +38,6 @@ zinit from"gh-r" lman for \
     sbin"**/jj  -> jj" jj-vcs/jj \
     sbin"**/jjui* -> jjui" idursun/jjui \
     sbin"code2prompt* -> code2prompt" mufeedvh/code2prompt \
-    sbin"fabric* -> fabric" danielmiessler/fabric \
     sbin"logcli* -> logcli" grafana/loki
 # sbin'**/helm' atclone'./**/helm completion zsh > _helm' atpull'%atclone' helm/helm
 
