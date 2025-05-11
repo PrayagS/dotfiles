@@ -147,11 +147,13 @@ end
 
 local function get_cwd(tab)
 	local cwd = tab.active_pane and tab.active_pane.current_working_dir
-	if cwd.file_path == os.getenv("HOME") .. "/" then
-		return "~"
-	else
-		-- return string.gsub(cwd.file_path, "([/a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/", "%2")
-		return format_directory(cwd.file_path)
+	if cwd then
+		if cwd.file_path == os.getenv("HOME") .. "/" then
+			return "~"
+		else
+			-- return string.gsub(cwd.file_path, "([/a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/", "%2")
+			return format_directory(cwd.file_path)
+		end
 	end
 end
 
