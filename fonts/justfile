@@ -8,6 +8,7 @@ update-maple-mono:
         -d 'MapleMono-NF' 'MapleMono-NF.zip' \
         'MapleMono-NF-Bold.ttf' 'MapleMono-NF-BoldItalic.ttf' 'MapleMono-NF-Italic.ttf' 'MapleMono-NF-Regular.ttf'
     rm 'MapleMono-NF.zip'
+    cp MapleMono-NF/*.ttf ~/Library/Fonts/
 
 IOSEVKA_RELEASE_VERSION := ```
     gh release list \
@@ -16,8 +17,16 @@ IOSEVKA_RELEASE_VERSION := ```
         --jq '.[] | select(.isLatest == true) | .tagName' \
         | cut -d'v' -f2
 ```
+NERD_FONTS_RELEASE_VERSION := ```
+    gh release list \
+        --repo 'ryanoasis/nerd-fonts' \
+        --json 'isLatest,tagName' \
+        --jq '.[] | select(.isLatest == true) | .tagName' \
+        | cut -d'v' -f2
+```
 update-iosevka:
     echo "{{IOSEVKA_RELEASE_VERSION}}"
+    echo "{{NERD_FONTS_RELEASE_VERSION}}"
     wget --quiet --show-progress \
         'https://github.com/be5invis/Iosevka/releases/download/v{{IOSEVKA_RELEASE_VERSION}}/PkgTTF-Unhinted-Iosevka-{{IOSEVKA_RELEASE_VERSION}}.zip' \
         'https://github.com/be5invis/Iosevka/releases/download/v{{IOSEVKA_RELEASE_VERSION}}/PkgTTF-Unhinted-IosevkaAile-{{IOSEVKA_RELEASE_VERSION}}.zip' \
@@ -31,7 +40,19 @@ update-iosevka:
     unzip -o \
         -d 'Iosevka' 'PkgTTF-Unhinted-IosevkaTerm-{{IOSEVKA_RELEASE_VERSION}}.zip' \
         'IosevkaTerm-Bold.ttf' 'IosevkaTerm-BoldItalic.ttf' 'IosevkaTerm-Italic.ttf' 'IosevkaTerm-Regular.ttf'
+    wget --quiet --show-progress \
+        'https://github.com/ryanoasis/nerd-fonts/raw/v{{NERD_FONTS_RELEASE_VERSION}}/patched-fonts/IosevkaTerm/IosevkaTermNerdFontMono-Bold.ttf' \
+        'https://github.com/ryanoasis/nerd-fonts/raw/v{{NERD_FONTS_RELEASE_VERSION}}/patched-fonts/IosevkaTerm/IosevkaTermNerdFontMono-BoldItalic.ttf' \
+        'https://github.com/ryanoasis/nerd-fonts/raw/v{{NERD_FONTS_RELEASE_VERSION}}/patched-fonts/IosevkaTerm/IosevkaTermNerdFontMono-Italic.ttf' \
+        'https://github.com/ryanoasis/nerd-fonts/raw/v{{NERD_FONTS_RELEASE_VERSION}}/patched-fonts/IosevkaTerm/IosevkaTermNerdFontMono-Regular.ttf'
+    mv -f \
+        IosevkaTermNerdFontMono-Bold.ttf \
+        IosevkaTermNerdFontMono-BoldItalic.ttf \
+        IosevkaTermNerdFontMono-Italic.ttf \
+        IosevkaTermNerdFontMono-Regular.ttf \
+        Iosevka/
     rm -rf *.zip
+    cp Iosevka/*.ttf ~/Library/Fonts/
 
 SARASA_RELEASE_VERSION := ```
     gh release list \
@@ -48,3 +69,4 @@ update-sarasa:
     7z e 'SarasaMono-TTF-Unhinted-{{SARASA_RELEASE_VERSION}}.7z' -o'SarasaMono' 'SarasaMonoJ-Bold.ttf' 'SarasaMonoJ-BoldItalic.ttf' 'SarasaMonoJ-Italic.ttf' 'SarasaMonoJ-Regular.ttf'
     7z e 'SarasaTerm-TTF-Unhinted-{{SARASA_RELEASE_VERSION}}.7z' -o'SarasaTerm' 'SarasaTermJ-Bold.ttf' 'SarasaTermJ-BoldItalic.ttf' 'SarasaTermJ-Italic.ttf' 'SarasaTermJ-Regular.ttf'
     rm -rf *.7z
+    cp SarasaMono/*.ttf SarasaTerm/*.ttf ~/Library/Fonts/
