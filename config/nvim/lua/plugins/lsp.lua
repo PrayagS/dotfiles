@@ -191,10 +191,10 @@ return {
 				},
 			})
 
-			vim.lsp.config("basedpyright", {
-				settings = {
-					basedpyright = {
-						disableOrganizeImports = true,
+			vim.lsp.config("ruff", {
+				init_options = {
+					settings = {
+						lineLength = 80,
 					},
 				},
 			})
