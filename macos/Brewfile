@@ -2,12 +2,15 @@ tap "artginzburg/tap"
 tap "aws/tap"
 tap "buo/cask-upgrade"
 tap "felixkratz/formulae"
+tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "nikolaeu/numi"
 tap "oven-sh/bun"
+# GitOps Continuous Delivery for Kubernetes
+brew "argocd"
 # CLI tool for AWS Athena service
 brew "athenacli"
 # Official Amazon AWS command-line interface
@@ -28,6 +31,8 @@ brew "chafa"
 brew "clang-format"
 # Manage multiple AI agents like Claude Code, Aider and Codex in your terminal
 brew "claude-squad"
+# C implementation of GitHub Flavored Markdown
+brew "cmark-gfm"
 # Console Matrix
 brew "cmatrix"
 # GNU File, Shell, and Text utilities
@@ -94,6 +99,8 @@ brew "imagemagick"
 brew "iredis"
 # Sort Python imports automatically
 brew "isort"
+# Istio configuration command-line utility
+brew "istioctl"
 # Command-line note taker
 brew "jrnl"
 # Package manager for Jsonnet
@@ -134,7 +141,7 @@ brew "mas"
 brew "maven"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
-# Platform built on V8 to build network applications
+# Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # MongoDB Shell to connect, configure, query, and work with your MongoDB database
 brew "mongosh"
@@ -174,6 +181,8 @@ brew "poetry"
 brew "postgresql@16"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
+# Parse HTML at the command-line
+brew "pup"
 # Python version management
 brew "pyenv"
 # Pyenv plugin to manage virtualenv
@@ -194,6 +203,8 @@ brew "s5cmd"
 brew "shellcheck"
 # Terminal based presentation tool
 brew "slides"
+# SOcket CAT: netcat on steroids
+brew "socat"
 # Command-line interface for https://speedtest.net bandwidth tests
 brew "speedtest-cli"
 # Version control system designed to be a better CVS
@@ -236,14 +247,14 @@ brew "wget"
 brew "wimlib"
 # Automatic workarounds for problems in Wine
 brew "winetricks"
-# Programming language designed for robustness, optimality, and clarity
-brew "zig@0.14"
 # Permanent TouchID support for sudo
 brew "artginzburg/tap/sudo-touchid"
 # EC2 Instance Selector is a tool to filter EC2 instance types based on resource criteria
 brew "aws/tap/ec2-instance-selector"
 # A window border system for macOS
 brew "felixkratz/formulae/borders"
+# Vault
+brew "hashicorp/tap/vault"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
@@ -256,8 +267,6 @@ brew "oven-sh/bun/bun"
 cask "1password-cli"
 # Password manager
 cask "1password@beta"
-# Privacy-focused app for managing your finances
-cask "actual"
 # Application uninstaller
 cask "appcleaner"
 # Tool to flash OS images to SD cards & USB drives
@@ -266,6 +275,8 @@ cask "balenaetcher"
 cask "barrier"
 # E-books management software
 cask "calibre"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Free app that makes your Internet safer
@@ -282,12 +293,12 @@ cask "firefox@beta"
 cask "flameshot"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# GitHub notifications on your menu bar
-cask "gitify"
 # Web browser
 cask "google-chrome@beta"
 # Light, Electron-based Wrapper around GraphiQL
 cask "graphiql"
+# Desktop automation application
+cask "hammerspoon"
 # Free and open-source media player
 cask "iina"
 # Jellyfin desktop client
@@ -300,8 +311,8 @@ cask "kap"
 cask "karabiner-elements"
 # Preview and audit Kindle eBooks
 cask "kindle-previewer"
-# Music services manager
-cask "lastfm"
+# Menu bar app for running local LLMs
+cask "llamabarn"
 # Discover, download, and run local LLMs
 cask "lm-studio"
 # Extensible two-pane file manager
@@ -334,8 +345,6 @@ cask "scroll-reverser"
 cask "shottr"
 # Team communication and collaboration software
 cask "slack@beta"
-# Music streaming service
-cask "spotify"
 # System monitor for the menu bar
 cask "stats"
 # Video game digital distribution service
@@ -356,17 +365,32 @@ cask "zed"
 cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "Balatro", id: 6502451661
-mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
-mas "iMovie", id: 408981434
 mas "JapaneseLife", id: 1634749545
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "rcmd", id: 1596283165
 mas "Sasquatch", id: 1465346522
 mas "Save to Reader", id: 1640236961
 mas "Shareful", id: 1522267256
 mas "UTC Time", id: 1538245904
 mas "Xcode", id: 497799835
 vscode "openai.chatgpt"
+go "github.com/wadey/gocovmerge"
+go "github.com/golangci/golangci-lint/cmd/golangci-lint"
+go "github.com/uber-go/gopatch"
+go "golang.org/x/tools/gopls"
+go "github.com/cweill/gotests/gotests"
+go "gotest.tools/gotestsum"
+go "github.com/go-enry/go-license-detector/v4/cmd/license-detector"
+go "github.com/vektra/mockery/v2"
+go "github.com/golang/mock/mockgen"
+go "github.com/goware/modvendor"
+go "github.com/tinylib/msgp"
+go "github.com/golang/protobuf/protoc-gen-go"
+go "github.com/planetscale/vtprotobuf/cmd/protoc-gen-go-vtproto"
+go "github.com/favadi/protoc-go-inject-tag"
+go "github.com/stormcat24/protodep"
+go "github.com/frapposelli/wwhrd"
