@@ -10,6 +10,21 @@ return {
 		end,
 	},
 	{
+		"nvim-mini/mini.indentscope",
+		version = false,
+		event = "VeryLazy",
+		init = function()
+			vim.g.miniindentscope_disable = true
+		end,
+		opts = {
+			mappings = {
+				-- Textobjects
+				object_scope = "ii",
+				object_scope_with_border = "ai",
+			},
+		},
+	},
+	{
 		"nvim-mini/mini.ai",
 		version = false,
 		event = "VeryLazy",

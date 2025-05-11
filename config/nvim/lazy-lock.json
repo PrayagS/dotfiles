@@ -43,6 +43,7 @@
   "mini.bracketed": { "branch": "main", "commit": "0ea3cb6478e5fdeca33b53fd08683eb2e622f6ce" },
   "mini.files": { "branch": "main", "commit": "51db5ded1b7ac4dd8ca4c22c66f156dac5309304" },
   "mini.hipatterns": { "branch": "main", "commit": "5629d5fba132b4ab0b3f0039549308421f65ff45" },
+  "mini.indentscope": { "branch": "main", "commit": "e9fa0714fc753e1e737940577904e553ee340903" },
   "mini.move": { "branch": "main", "commit": "f33406ae7d95b931c6a0d3ba11e50983fe800afb" },
   "mini.surround": { "branch": "main", "commit": "444e155147e2b5159dd28a65f9736254c16cb817" },
   "minuet-ai.nvim": { "branch": "main", "commit": "3fb81e155c4c0c86416427cf1e63d608a6303dca" },
