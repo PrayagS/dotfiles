@@ -33,6 +33,20 @@ return {
 				desc = "Notification History",
 			},
 			{
+				"<leader>sp",
+				function()
+					Snacks.picker.pickers({
+						layout = {
+							preset = "vscode",
+							layout = {
+								row = 3,
+								border = "rounded",
+							},
+						},
+					})
+				end,
+			},
+			{
 				"<leader>,",
 				function()
 					Snacks.picker.buffers({
