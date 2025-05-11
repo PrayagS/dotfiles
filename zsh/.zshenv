@@ -77,6 +77,9 @@ export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 # source secrets
 source "$ZDOTDIR/.zshenv-secrets"
 
+# source org-wide .zshrc
+source "$HOME/.zshrc"
+
 # Start skhd/yabai
 # if pgrep -x "yabai" >/dev/null
 # then
