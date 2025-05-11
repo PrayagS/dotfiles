@@ -116,6 +116,7 @@ return {
 			"Kaiser-Yang/blink-cmp-git",
 			"ribru17/blink-cmp-spell",
 			"disrupted/blink-cmp-conventional-commits",
+			"junkblocker/blink-cmp-wezterm",
 		},
 		-- version = "*",
 		opts = {
@@ -142,7 +143,16 @@ return {
 				nerd_font_variant = "mono",
 			},
 			sources = {
-				default = { "lsp", "minuet", "path", "buffer", "omni", "spell", "ripgrep" },
+				default = {
+					"lsp",
+					"minuet",
+					"path",
+					"buffer",
+					"wezterm",
+					"omni",
+					"spell",
+					"ripgrep",
+				},
 				per_filetype = {
 					gitcommit = { "conventional_commits", "git", "buffer", "path" },
 					jjdescription = { "conventional_commits", "git", "buffer", "path" },
@@ -212,6 +222,16 @@ return {
 					conventional_commits = {
 						name = "Conventional Commits",
 						module = "blink-cmp-conventional-commits",
+					},
+					wezterm = {
+						module = "blink-cmp-wezterm",
+						name = "wezterm",
+						opts = {
+							all_panes = true,
+							capture_history = true,
+							-- triggered_only = false,
+							-- trigger_chars = { "." },
+						},
 					},
 				},
 			},
