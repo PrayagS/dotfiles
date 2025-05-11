@@ -1,0 +1,137 @@
+onboarding = false
+
+[theme]
+name = "gruvbox"
+
+[terminal]
+default_shell = "/bin/zsh"
+shell_mode = "auto"
+new_cwd = "follow"
+
+[keys]
+# Keep tmux muscle memory while using Herdr's explicit prefix syntax.
+prefix = "ctrl+a"
+detach = "prefix+d"
+reload_config = "prefix+r"
+resize_mode = "prefix+shift+r"
+
+# Workspaces and Git worktrees.
+settings = ""
+workspace_picker = "prefix+w"
+goto = "prefix+g"
+new_workspace = "prefix+shift+n"
+rename_workspace = "prefix+shift+w"
+close_workspace = "prefix+shift+d"
+previous_workspace = "prefix+alt+p"
+next_workspace = "prefix+alt+n"
+switch_workspace = "prefix+shift+1..9"
+new_worktree = "prefix+shift+g"
+open_worktree = "prefix+alt+o"
+remove_worktree = "prefix+alt+x"
+
+new_tab = "prefix+c"
+previous_tab = "prefix+p"
+next_tab = "prefix+n"
+close_tab = ["prefix+q", "prefix+ampersand"]
+
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+swap_pane_up = "prefix+comma"
+swap_pane_down = "prefix+."
+
+split_vertical = "prefix+|"
+split_horizontal = "prefix+minus"
+close_pane = "prefix+x"
+zoom = "prefix+z"
+
+[ui]
+sidebar_width = 24
+sidebar_min_width = 24
+sidebar_max_width = 36
+sidebar_start_collapsed = true
+mouse_capture = true
+copy_on_select = true
+confirm_close = false
+show_agent_labels_on_pane_borders = true
+accent = "cyan"
+pane_gaps = false
+prompt_new_tab_name = true
+prompt_new_workspace_name = true
+agent_panel_sort = "spaces"
+
+[ui.sidebar.spaces]
+row_gap = 1
+rows = [["state_icon", "workspace"], ["$jj_bookmark"]]
+
+[ui.toast]
+delivery = "terminal"
+delay_seconds = 0
+
+[ui.toast.herdr]
+position = "top-right"
+
+[ui.toast.clipboard]
+position = "bottom-center"
+
+[ui.sound]
+enabled = true
+
+[session]
+resume_agents_on_restore = true
+
+[advanced]
+# Scrollback limit is byte-based.
+scrollback_limit_bytes = 52428800
+
+[experimental]
+pane_history = true
+switch_ascii_input_source_in_prefix = true
+kitty_graphics = true
+allow_nested = false
+
+[[keys.command]]
+key = "prefix+e"
+type = "plugin_action"
+command = "com.elliotekj.herdr-easymotion.pane"
+description = "select pane"
+
+[[keys.command]]
+key = "prefix+shift+s"
+type = "plugin_action"
+command = "herdr-navigator.open"
+description = "jump to anything"
+
+[[keys.command]]
+key = "prefix+s"
+type = "plugin_action"
+command = "sessionizer.pick"
+description = "fuzzy-switch workspace"
+
+[[keys.command]]
+key = "prefix+a"
+type = "plugin_action"
+command = "sessionizer.agents"
+description = "jump to an agent"
+
+# [[keys.command]]
+# key = "prefix+["
+# type = "shell"
+# command = "herdr plugin pane open --plugin copy-search --entrypoint copy"
+
+[[keys.command]]
+key = "prefix+/"
+type = "shell"
+command = "herdr plugin pane open --plugin copy-search --entrypoint search"
+
+[[keys.command]]
+key = "prefix+tab"
+type = "shell"
+command = "herdr plugin pane open --plugin copy-search --entrypoint extract"
+
+[ui.sidebar.agents]
+rows = [
+  ["state_icon", "workspace", { token = "terminal_title", bold = true, dim = false, fg = "#ebdbb2" }],
+  ["state_text", "agent"],
+]

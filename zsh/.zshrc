@@ -94,6 +94,7 @@ eval "$(zsh-patina activate)"
 export ZSH_EVALCACHE_DIR="${ZSH_CACHE_DIR}/evalcache"
 _evalcache zoxide init zsh
 _evalcache atuin init zsh --disable-up-arrow
+_evalcache pitchfork activate zsh
 
 _lazy_load beans "beans completion zsh"
 _lazy_load jj "COMPLETE=zsh jj"
@@ -101,3 +102,4 @@ _lazy_load gh "gh completion -s zsh"
 _lazy_load rg "rg --generate complete-zsh"
 _lazy_load helm "helm completion zsh"
 _lazy_load workmux "workmux completions zsh"
+_lazy_load herdr "herdr completion zsh"
