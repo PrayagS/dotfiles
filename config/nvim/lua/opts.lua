@@ -27,9 +27,9 @@ opt.infercase = true
 
 -- Indentation
 opt.expandtab = true
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
 opt.shiftround = true -- Round indent
 opt.smartindent = true -- Insert indents automatically
 opt.termguicolors = true -- True color support

@@ -144,7 +144,6 @@ return {
 					"minuet",
 					"path",
 					"buffer",
-					-- "wezterm",
 					"omni",
 					"spell",
 					"ripgrep",
