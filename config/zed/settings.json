@@ -7,78 +7,319 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "base_keymap": "VSCode",
+  "cli_default_open_behavior": "existing_window",
+  "language_models": {
+    // "bedrock": {
+    //   "authentication_method": "named_profile",
+    //   "region": "ap-southeast-1",
+    //   "profile": "prod",
+    // },
+  },
+  "agent_servers": {
+    "pi-acp": {
+      "type": "registry"
+    },
+    "pi": {
+      "type": "custom",
+      "command": "node",
+      "args": ["/Users/prayagmatic/dev/pi-extensions/pi-acp/dist/index.js"],
+      "env": {}
+    },
+    "opencode": {
+      "type": "registry"
+    },
+    "gemini": {
+      "type": "registry"
+    },
+    "factory-droid": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    },
+    "amp-acp": {
+      "type": "registry"
+    }
+  },
+  "toolbar": {
+    "code_actions": true
+  },
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+  "diff_view_style": "unified",
+  "proxy": "",
+  "current_line_highlight": "all",
+  "multi_cursor_modifier": "cmd_or_ctrl",
+  "buffer_line_height": {
+    "custom": 1.350000023841858
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "when_closing_with_no_tabs": "platform_default",
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "show_count_badge": false,
+    "tree_view": true,
+    "dock": "right"
+  },
   "double_click_in_multibuffer": "open",
   "which_key": {
-    "enabled": true,
+    "enabled": true
   },
   "project_panel": {
-    "bold_folder_labels": true,
+    "dock": "right",
+    "bold_folder_labels": true
   },
   "git": {
     "inline_blame": {
       "show_commit_summary": true,
-      "delay_ms": 100,
-    },
+      "delay_ms": 100
+    }
   },
   "audio": {
     "experimental.auto_microphone_volume": true,
-    "experimental.rodio_audio": true,
+    "experimental.rodio_audio": true
   },
   "calls": {
     "share_on_join": true,
-    "mute_on_join": true,
+    "mute_on_join": true
   },
   "title_bar": {
-    "show_menus": false,
-    "show_branch_icon": true,
+    "show_branch_status_icon": true,
+    "show_menus": false
   },
   "search": {
     "center_on_match": true,
-    "regex": true,
+    "regex": true
   },
   "lsp_document_colors": "inlay",
   "indent_guides": {
     "background_coloring": "disabled",
-    "coloring": "fixed",
+    "coloring": "fixed"
   },
   "tab_size": 2,
   "gutter": {
-    "min_line_number_digits": 4,
+    "min_line_number_digits": 2
   },
   "relative_line_numbers": "enabled",
   "show_signature_help_after_edits": true,
-  "agent_buffer_font_size": 14.0,
+  "agent_buffer_font_size": 12.0,
   "confirm_quit": true,
   "terminal": {
+    "font_size": 13.0,
+    "minimum_contrast": 0,
     "copy_on_select": true,
     "option_as_meta": true,
     "toolbar": {
-      "breadcrumbs": false,
-    },
+      "breadcrumbs": false
+    }
   },
+  // One Dark Two terminal colors
+  // "experimental.theme_overrides": {
+  //   "terminal.background": "#21252bff",
+  //   "terminal.foreground": "#e6e6e6ff",
+  //   "terminal.bright_foreground": "#e6e6e6ff",
+  //   "terminal.dim_foreground": "#4a505aff",
+  //   "terminal.ansi.black": "#1d1f23ff",
+  //   "terminal.ansi.bright_black": "#4a505aff",
+  //   "terminal.ansi.dim_black": "#1d1f23ff",
+  //   "terminal.ansi.red": "#e27881ff",
+  //   "terminal.ansi.bright_red": "#e68991ff",
+  //   "terminal.ansi.dim_red": "#e27881ff",
+  //   "terminal.ansi.green": "#98c379ff",
+  //   "terminal.ansi.bright_green": "#a8cc8eff",
+  //   "terminal.ansi.dim_green": "#98c379ff",
+  //   "terminal.ansi.yellow": "#eac786ff",
+  //   "terminal.ansi.bright_yellow": "#edcf97ff",
+  //   "terminal.ansi.dim_yellow": "#eac786ff",
+  //   "terminal.ansi.blue": "#71b9f4ff",
+  //   "terminal.ansi.bright_blue": "#8dc7f6ff",
+  //   "terminal.ansi.dim_blue": "#71b9f4ff",
+  //   "terminal.ansi.magenta": "#c88bdaff",
+  //   "terminal.ansi.bright_magenta": "#d3a2e2ff",
+  //   "terminal.ansi.dim_magenta": "#c88bdaff",
+  //   "terminal.ansi.cyan": "#62bac6ff",
+  //   "terminal.ansi.bright_cyan": "#78c4ceff",
+  //   "terminal.ansi.dim_cyan": "#62bac6ff",
+  //   "terminal.ansi.white": "#c9ccd3ff",
+  //   "terminal.ansi.bright_white": "#e6e6e6ff",
+  //   "terminal.ansi.dim_white": "#4a505aff",
+  //   "syntax": {
+  //     "comment": { "font_style": "normal" },
+  //     "comment.doc": { "font_style": "normal" },
+  //     "keyword": { "font_style": "normal" },
+  //     "predictive": { "font_style": "normal" }
+  //   }
+  // },
+  // Monokai Pro Ristretto terminal colors
   "experimental.theme_overrides": {
+    "terminal.background": "#2c2525ff",
+    "terminal.foreground": "#fff1f3ff",
+    "terminal.bright_foreground": "#fff1f3ff",
+    "terminal.dim_foreground": "#72696aff",
+    "terminal.ansi.black": "#2c2525ff",
+    "terminal.ansi.bright_black": "#72696aff",
+    "terminal.ansi.dim_black": "#2c2525ff",
+    "terminal.ansi.red": "#fd6883ff",
+    "terminal.ansi.bright_red": "#fd6883ff",
+    "terminal.ansi.dim_red": "#fd6883ff",
+    "terminal.ansi.green": "#adda78ff",
+    "terminal.ansi.bright_green": "#adda78ff",
+    "terminal.ansi.dim_green": "#adda78ff",
+    "terminal.ansi.yellow": "#f9cc6cff",
+    "terminal.ansi.bright_yellow": "#f9cc6cff",
+    "terminal.ansi.dim_yellow": "#f9cc6cff",
+    "terminal.ansi.blue": "#f38d70ff",
+    "terminal.ansi.bright_blue": "#f38d70ff",
+    "terminal.ansi.dim_blue": "#f38d70ff",
+    "terminal.ansi.magenta": "#a8a9ebff",
+    "terminal.ansi.bright_magenta": "#a8a9ebff",
+    "terminal.ansi.dim_magenta": "#a8a9ebff",
+    "terminal.ansi.cyan": "#85daccff",
+    "terminal.ansi.bright_cyan": "#85daccff",
+    "terminal.ansi.dim_cyan": "#85daccff",
+    "terminal.ansi.white": "#fff1f3ff",
+    "terminal.ansi.bright_white": "#fff1f3ff",
+    "terminal.ansi.dim_white": "#72696aff",
     "syntax": {
       "comment": { "font_style": "normal" },
       "comment.doc": { "font_style": "normal" },
       "keyword": { "font_style": "normal" },
-      "predictive": { "font_style": "normal" },
-    },
+      "predictive": { "font_style": "normal" }
+    }
   },
+  // Gruvbox Dark terminal colors
+  // "experimental.theme_overrides": {
+  //   "terminal.background": "#1d2021ff",
+  //   "terminal.foreground": "#ebdbb2ff",
+  //   "terminal.bright_foreground": "#ebdbb2ff",
+  //   "terminal.dim_foreground": "#928374ff",
+  //   "terminal.ansi.black": "#1d2021ff",
+  //   "terminal.ansi.bright_black": "#928374ff",
+  //   "terminal.ansi.dim_black": "#3c3836ff",
+  //   "terminal.ansi.red": "#cc241dff",
+  //   "terminal.ansi.bright_red": "#fb4934ff",
+  //   "terminal.ansi.dim_red": "#9d0006ff",
+  //   "terminal.ansi.green": "#98971aff",
+  //   "terminal.ansi.bright_green": "#b8bb26ff",
+  //   "terminal.ansi.dim_green": "#79740eff",
+  //   "terminal.ansi.yellow": "#d79921ff",
+  //   "terminal.ansi.bright_yellow": "#fabd2fff",
+  //   "terminal.ansi.dim_yellow": "#b57614ff",
+  //   "terminal.ansi.blue": "#458588ff",
+  //   "terminal.ansi.bright_blue": "#83a598ff",
+  //   "terminal.ansi.dim_blue": "#076678ff",
+  //   "terminal.ansi.magenta": "#b16286ff",
+  //   "terminal.ansi.bright_magenta": "#d3869bff",
+  //   "terminal.ansi.dim_magenta": "#8f3f71ff",
+  //   "terminal.ansi.cyan": "#689d6aff",
+  //   "terminal.ansi.bright_cyan": "#8ec07cff",
+  //   "terminal.ansi.dim_cyan": "#427b58ff",
+  //   "terminal.ansi.white": "#a89984ff",
+  //   "terminal.ansi.bright_white": "#ebdbb2ff",
+  //   "terminal.ansi.dim_white": "#928374ff",
+  //   "syntax": {
+  //     "comment": { "font_style": "normal" },
+  //     "comment.doc": { "font_style": "normal" },
+  //     "keyword": { "font_style": "normal" },
+  //     "predictive": { "font_style": "normal" },
+  //   },
+  // },
+  // Modus Operandi Tinted terminal colors
+  // "experimental.theme_overrides": {
+  //   "terminal.background": "#fbf7f0ff",
+  //   "terminal.foreground": "#000000ff",
+  //   "terminal.bright_foreground": "#000000ff",
+  //   "terminal.dim_foreground": "#595959ff",
+  //   "terminal.ansi.black": "#000000ff",
+  //   "terminal.ansi.bright_black": "#595959ff",
+  //   "terminal.ansi.dim_black": "#595959ff",
+  //   "terminal.ansi.red": "#a60000ff",
+  //   "terminal.ansi.bright_red": "#972500ff",
+  //   "terminal.ansi.dim_red": "#a60000ff",
+  //   "terminal.ansi.green": "#006800ff",
+  //   "terminal.ansi.bright_green": "#00663fff",
+  //   "terminal.ansi.dim_green": "#006800ff",
+  //   "terminal.ansi.yellow": "#6f5500ff",
+  //   "terminal.ansi.bright_yellow": "#884900ff",
+  //   "terminal.ansi.dim_yellow": "#6f5500ff",
+  //   "terminal.ansi.blue": "#0031a9ff",
+  //   "terminal.ansi.bright_blue": "#3548cfff",
+  //   "terminal.ansi.dim_blue": "#0031a9ff",
+  //   "terminal.ansi.magenta": "#721045ff",
+  //   "terminal.ansi.bright_magenta": "#531ab6ff",
+  //   "terminal.ansi.dim_magenta": "#721045ff",
+  //   "terminal.ansi.cyan": "#005e8bff",
+  //   "terminal.ansi.bright_cyan": "#005f5fff",
+  //   "terminal.ansi.dim_cyan": "#005e8bff",
+  //   "terminal.ansi.white": "#a6a6a6ff",
+  //   "terminal.ansi.bright_white": "#595959ff",
+  //   "terminal.ansi.dim_white": "#a6a6a6ff",
+  //   "syntax": {
+  //     "comment": { "font_style": "normal" },
+  //     "comment.doc": { "font_style": "normal" },
+  //     "keyword": { "font_style": "normal" },
+  //     "predictive": { "font_style": "normal" }
+  //   }
+  // },
+  // Gruvbox Light Soft terminal colors
+  // "experimental.theme_overrides": {
+  //   "terminal.background": "#f2e5bcff",
+  //   "terminal.foreground": "#3c3836ff",
+  //   "terminal.bright_foreground": "#3c3836ff",
+  //   "terminal.dim_foreground": "#928374ff",
+  //   "terminal.ansi.black": "#fbf1c7ff",
+  //   "terminal.ansi.bright_black": "#928374ff",
+  //   "terminal.ansi.dim_black": "#d5c4a1ff",
+  //   "terminal.ansi.red": "#cc241dff",
+  //   "terminal.ansi.bright_red": "#9d0006ff",
+  //   "terminal.ansi.dim_red": "#cc241dff",
+  //   "terminal.ansi.green": "#98971aff",
+  //   "terminal.ansi.bright_green": "#79740eff",
+  //   "terminal.ansi.dim_green": "#98971aff",
+  //   "terminal.ansi.yellow": "#d79921ff",
+  //   "terminal.ansi.bright_yellow": "#b57614ff",
+  //   "terminal.ansi.dim_yellow": "#d79921ff",
+  //   "terminal.ansi.blue": "#458588ff",
+  //   "terminal.ansi.bright_blue": "#076678ff",
+  //   "terminal.ansi.dim_blue": "#458588ff",
+  //   "terminal.ansi.magenta": "#b16286ff",
+  //   "terminal.ansi.bright_magenta": "#8f3f71ff",
+  //   "terminal.ansi.dim_magenta": "#b16286ff",
+  //   "terminal.ansi.cyan": "#689d6aff",
+  //   "terminal.ansi.bright_cyan": "#427b58ff",
+  //   "terminal.ansi.dim_cyan": "#689d6aff",
+  //   "terminal.ansi.white": "#7c6f64ff",
+  //   "terminal.ansi.bright_white": "#3c3836ff",
+  //   "terminal.ansi.dim_white": "#928374ff",
+  //   "syntax": {
+  //     "comment": { "font_style": "normal" },
+  //     "comment.doc": { "font_style": "normal" },
+  //     "keyword": { "font_style": "normal" },
+  //     "predictive": { "font_style": "normal" }
+  //   }
+  // },
   "languages": {
     "YAML": {
-      "formatter": "language_server",
-    },
+      "formatter": "language_server"
+    }
   },
   "lsp": {
     "yaml-language-server": {
       "settings": {
         "yaml": {
           "format": {
-            "singleQuote": true,
-          },
-        },
-      },
-    },
+            "singleQuote": true
+          }
+        }
+      }
+    }
   },
   "edit_predictions": {
     "provider": "zed",
@@ -86,57 +327,68 @@
     "mode": "eager",
     "copilot": {
       "proxy": null,
-      "proxy_no_verify": null,
-    },
+      "proxy_no_verify": null
+    }
   },
   "scrollbar": {
-    "show": "never",
+    "show": "never"
   },
   "agent": {
+    "limit_content_width": true,
+    "flexible": true,
+    "use_modifier_to_send": false,
+    "thinking_display": "preview",
+    "sidebar_side": "left",
+    "dock": "left",
     "default_profile": "write",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4.1",
+      "enable_thinking": true,
+      "provider": "amazon-bedrock",
+      "model": "claude-haiku-4-5"
     },
     "stream_edits": true,
     "notify_when_agent_waiting": "all_screens",
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": "always"
   },
   "show_edit_predictions": true,
   "vim_mode": true,
   "vim": {
     "cursor_shape": {
-      "insert": "bar",
+      "insert": "bar"
     },
     "toggle_relative_line_numbers": true,
     "use_smartcase_find": true,
-    "use_system_clipboard": "on_yank",
+    "use_system_clipboard": "on_yank"
   },
-  "ui_font_size": 15,
-  "buffer_font_size": 14,
-  "agent_ui_font_size": 16,
+  "ui_font_size": 14.0,
+  "buffer_font_size": 13.0,
+  "agent_ui_font_size": 16.0,
   "buffer_font_family": "Maple Mono NF",
   "ui_font_family": "Iosevka Aile",
   "use_smartcase_search": true,
   "inlay_hints": {
     "enabled": false,
-    "show_background": true,
+    "show_background": true
   },
   "tabs": {
     "git_status": true,
-    "show_diagnostics": "all",
+    "show_diagnostics": "all"
   },
   "diagnostics": {
     "include_warnings": true,
     "inline": {
-      "enabled": true,
-    },
+      "enabled": true
+    }
   },
   // Below portion will almost always be out of date on git
-  "icon_theme": "Zed (Default)",
-  "theme": {
-    "mode": "light",
-    "light": "Modus Operandi Tinted",
-    "dark": "Gruvbox Material",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
   },
+  "theme": {
+    "mode": "dark",
+    "light": "Gruvbox Light Soft",
+    "dark": "Zedokai Darker (Filter Ristretto)"
+  }
 }

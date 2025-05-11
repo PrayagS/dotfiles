@@ -91,7 +91,46 @@
       "alt-tab": "editor::AcceptEditPrediction",
       "tab": "editor::Tab",
       "ctrl-y": "editor::AcceptEditPrediction",
-      "ctrl-cmd-right": "editor::AcceptPartialEditPrediction"
+      "ctrl-cmd-right": "editor::AcceptNextWordEditPrediction"
+    }
+  },
+  {
+    "context": "Terminal",
+    "unbind": {
+      "cmd-k": "terminal::Clear"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-l": [
+        "terminal::SendKeystroke",
+        "ctrl-l"
+      ]
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-k": "terminal::ScrollLineUp"
+    }
+  },
+  {
+    "context": "Terminal",
+    "unbind": {
+      "shift-up": "terminal::ScrollLineUp"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-j": "terminal::ScrollLineDown"
+    }
+  },
+  {
+    "context": "Terminal",
+    "unbind": {
+      "shift-down": "terminal::ScrollLineDown"
     }
   }
 ]
