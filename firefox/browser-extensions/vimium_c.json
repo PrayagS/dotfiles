@@ -1,0 +1,39 @@
+{
+	"name": "Vimium C",
+	"@time": "6/16/2025, 1:47:42 AM",
+	"time": 1750018662529,
+	"environment": {
+		"extension": "2.12.3",
+		"platform": "mac",
+		"firefox": 140
+	},
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://mail.google.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https?://smashkarts.io/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://read.readwise.io/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://excalidraw.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://skribbl.io/"
+		}
+	],
+	"keyLayout": 2,
+	"keyMappings": [
+		"#!no-check",
+		"unmap <c-e>",
+		""
+	],
+	"vimSync": true
+}
