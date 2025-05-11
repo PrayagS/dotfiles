@@ -281,8 +281,6 @@ cask "orbstack"
 cask "orion"
 # Rhythm game
 cask "osu"
-# Home media player
-cask "plex"
 # VPN client focusing on security
 cask "protonvpn"
 # Archive manager for data compression and backups
