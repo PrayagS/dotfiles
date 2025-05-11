@@ -135,10 +135,6 @@ return {
 				},
 				ghost_text = { enabled = true },
 			},
-			keymap = {
-				preset = "default",
-				["<A-y>"] = require("minuet").make_blink_map(),
-			},
 			appearance = {
 				nerd_font_variant = "mono",
 			},
@@ -148,7 +144,7 @@ return {
 					"minuet",
 					"path",
 					"buffer",
-					"wezterm",
+					-- "wezterm",
 					"omni",
 					"spell",
 					"ripgrep",
@@ -228,7 +224,7 @@ return {
 						name = "wezterm",
 						opts = {
 							all_panes = true,
-							capture_history = true,
+							capture_history = false,
 							-- triggered_only = false,
 							-- trigger_chars = { "." },
 						},
