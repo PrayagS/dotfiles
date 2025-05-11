@@ -170,6 +170,8 @@ brew "pipx"
 brew "pkgconf"
 # Fast, disk space efficient package manager
 brew "pnpm"
+# Python package management tool
+brew "poetry"
 # Object-relational database system
 brew "postgresql@16"
 # Python version management
@@ -280,6 +282,8 @@ cask "ghostty"
 cask "gitify"
 # Web browser
 cask "google-chrome@beta"
+# Light, Electron-based Wrapper around GraphiQL
+cask "graphiql"
 # Open-source video transcoder
 cask "handbrake-app"
 # Free and open-source media player
@@ -298,8 +302,6 @@ cask "kindle-previewer"
 cask "lastfm"
 # Discover, download, and run local LLMs
 cask "lm-studio"
-# File system integration
-cask "macfuse"
 # Extensible two-pane file manager
 cask "marta"
 # Sandbox construction video game
@@ -370,39 +372,3 @@ mas "Save to Reader", id: 1640236961
 mas "Shareful", id: 1522267256
 mas "UTC Time", id: 1538245904
 mas "Xcode", id: 497799835
-vscode "antfu.icons-carbon"
-vscode "asvetliakov.vscode-neovim"
-vscode "cdonohue.quill-icons"
-vscode "charliermarsh.ruff"
-vscode "codeium.codeium"
-vscode "continue.continue"
-vscode "datadog.datadog-vscode"
-vscode "dorianmassoulier.repomix-runner"
-vscode "eamodio.gitlens"
-vscode "ggml-org.llama-vscode"
-vscode "github.copilot"
-vscode "github.copilot-chat"
-vscode "golang.go"
-vscode "google.geminicodeassist"
-vscode "grafana.vscode-jsonnet"
-vscode "hashicorp.terraform"
-vscode "jdinhlife.gruvbox"
-vscode "jjk.jjk"
-vscode "joaopalmeiro.icons-octicons"
-vscode "jonathanharty.gruvbox-material-icon-theme"
-vscode "mechatroner.rainbow-csv"
-vscode "ms-azuretools.vscode-containers"
-vscode "ms-python.black-formatter"
-vscode "ms-python.debugpy"
-vscode "ms-python.python"
-vscode "ms-python.vscode-pylance"
-vscode "ms-vscode-remote.remote-containers"
-vscode "ms-vscode.makefile-tools"
-vscode "naumovs.color-highlight"
-vscode "rooveterinaryinc.roo-cline"
-vscode "sainnhe.gruvbox-material"
-vscode "saoudrizwan.claude-dev"
-vscode "sumneko.lua"
-vscode "supermaven.supermaven"
-vscode "tomphilbin.gruvbox-themes"
-vscode "vscodevim.vim"
