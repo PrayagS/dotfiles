@@ -29,6 +29,8 @@ brew "container"
 brew "coreutils"
 # Securely send things from one computer to another
 brew "croc"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
 # Pack, ship and run any application as a lightweight container
@@ -187,7 +189,7 @@ brew "koekeishiya/formulae/skhd"
 brew "steipete/tap/peekaboo"
 # Password manager
 cask "1password@beta"
-# AI Coding Agent IDE
+# Agent orchestration platform
 cask "antigravity"
 # Application uninstaller
 cask "appcleaner"
@@ -195,8 +197,6 @@ cask "appcleaner"
 cask "balenaetcher"
 # Open-source KVM software
 cask "barrier"
-# Browserino is a tiny browser selector for MacOS written in SwiftUI
-cask "alexstrnik/browserino/browserino"
 # Menu bar calendar
 cask "calendr"
 # E-books management software
@@ -295,15 +295,12 @@ cask "vlc"
 cask "wezterm@nightly"
 # REST, GraphQL and gRPC client
 cask "yaak"
-# Open links in whatever browser, app, or profile you need - whatever yo jam is
-cask "fluffypony/yojam/yojam"
 # Multiplayer code editor
 cask "zed@preview"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "Balatro", id: 6502451661
-mas "Cult Of The Lamb", id: 1639580858
 mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
 mas "JapaneseLife", id: 1634749545
@@ -315,7 +312,6 @@ mas "Sasquatch", id: 1465346522
 mas "Save to Reader", id: 1640236961
 mas "Shareful", id: 1522267256
 mas "UTC Time", id: 1538245904
-mas "Xcode", id: 497799835
 go "github.com/wadey/gocovmerge"
 go "github.com/golangci/golangci-lint/cmd/golangci-lint"
 go "github.com/uber-go/gopatch"
