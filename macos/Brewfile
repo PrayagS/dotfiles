@@ -20,6 +20,8 @@ brew "awscli"
 brew "awscurl"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Language server for beancount files
+brew "beancount-language-server"
 # Powerful, enterprise-ready, open source web server with automatic HTTPS
 brew "caddy"
 # Cloudformation templates to Terraform HCL converter
@@ -192,6 +194,8 @@ brew "s5cmd"
 brew "shellcheck"
 # Terminal based presentation tool
 brew "slides"
+# Command-line interface for https://speedtest.net bandwidth tests
+brew "speedtest-cli"
 # Version control system designed to be a better CVS
 brew "subversion"
 # Very fast implementation of tldr in Rust
@@ -228,6 +232,8 @@ brew "wget"
 brew "wimlib"
 # Automatic workarounds for problems in Wine
 brew "winetricks"
+# Programming language designed for robustness, optimality, and clarity
+brew "zig@0.14"
 # Permanent TouchID support for sudo
 brew "artginzburg/tap/sudo-touchid"
 # Software to interact with Atlassian Cloud from the terminal
@@ -274,7 +280,7 @@ cask "discord"
 cask "ente-auth"
 # Web browser
 cask "firefox@beta"
-# Screenshot software
+# Screenshot software with built-in annotation tools
 cask "flameshot"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
@@ -352,6 +358,8 @@ cask "vlc"
 cask "wezterm@nightly"
 # Network protocol analyzer
 cask "wireshark-app"
+# REST, GraphQL and gRPC client
+cask "yaak"
 # Multiplayer code editor
 cask "zed"
 # Video communication and virtual meeting platform
