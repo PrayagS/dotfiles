@@ -1,12 +1,8 @@
--- TODO: https://gpanders.com/blog/whats-new-in-neovim-0-11/#simpler-lsp-setup-and-configuration
 return {
 	{
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile", "BufWritePre" },
 		dependencies = {
-			"mason-org/mason.nvim",
-			"mason-org/mason-lspconfig.nvim",
-			"WhoIsSethDaniel/mason-tool-installer.nvim",
 			{
 				"kosayoda/nvim-lightbulb",
 				opts = {
@@ -137,142 +133,6 @@ return {
 						[vim.diagnostic.severity.HINT] = " ",
 						[vim.diagnostic.severity.INFO] = " ",
 					},
-				},
-			})
-
-			vim.lsp.config("lua_ls", {
-				settings = {
-					Lua = {
-						workspace = {
-							library = {
-								vim.env.VIMRUNTIME,
-							},
-						},
-						completion = {
-							displayContext = 5,
-						},
-						diagnostics = {
-							globals = { "vim", "Snacks" },
-						},
-						hint = {
-							enable = true,
-							setType = true,
-						},
-						codeLens = { enable = true },
-					},
-				},
-			})
-
-			vim.lsp.config("gopls", {
-				settings = {
-					gopls = {
-						hints = {
-							assignVariableTypes = true,
-							compositeLiteralFields = true,
-							compositeLiteralTypes = true,
-							constantValues = true,
-							functionTypeParameters = true,
-							parameterNames = true,
-							rangeVariableTypes = true,
-						},
-						staticcheck = true,
-						gofumpt = true,
-						codelenses = {
-							gc_details = true,
-							generate = true,
-							regenerate_cgo = true,
-							test = true,
-							run_govulncheck = true,
-							tidy = true,
-							upgrade_dependency = true,
-							vendor = true,
-						},
-						usePlaceholders = true,
-						analyses = {
-							shadow = true,
-							unusedvariable = true,
-							useany = true,
-						},
-						vulncheck = "Imports",
-					},
-				},
-			})
-
-			vim.lsp.config("ruff", {
-				init_options = {
-					settings = {
-						lineLength = 80,
-					},
-				},
-			})
-
-			vim.lsp.config("tinymist", {
-				settings = {
-					exportPdf = "onSave",
-					formatterMode = "typstyle",
-				},
-			})
-
-			vim.lsp.config("yamlls", {
-				settings = {
-					yaml = {
-						format = {
-							enable = true,
-							singleQuote = true,
-							bracketSpacing = true,
-						},
-						validate = true,
-						hover = true,
-						completion = true,
-					},
-				},
-			})
-
-			vim.lsp.config("helm_ls", {
-				settings = {
-					["helm-ls"] = {
-						yamlls = {
-							enabled = false,
-						},
-					},
-				},
-			})
-
-			vim.lsp.enable("rust_analyzer")
-
-			require("mason").setup()
-
-			local ensure_installed = {}
-			vim.list_extend(ensure_installed, {
-				"golangci-lint",
-				"yamllint",
-			})
-			vim.list_extend(ensure_installed, {
-				"stylua",
-				"goimports",
-				"golines",
-				"shfmt",
-			})
-			require("mason-tool-installer").setup({
-				ensure_installed = ensure_installed,
-				run_on_start = true,
-				-- debounce_hours = 24,
-				integrations = {
-					["mason-lspconfig"] = true,
-				},
-			})
-			require("mason-lspconfig").setup({
-				ensure_installed = {},
-				automatic_installation = false,
-				automatic_enable = {
-					"lua_ls",
-					"gopls",
-					"ruff",
-					"ty",
-					"tinymist",
-					"yamlls",
-					"helm_ls",
-					"rust_analyzer",
 				},
 			})
 		end,
