@@ -83,3 +83,4 @@ set({ "", "!" }, "<Left>", "<Nop>", { noremap = true })
 set({ "", "!" }, "<Right>", "<Nop>", { noremap = true })
 
 set("t", "<C-[>", "<C-\\><C-n>")
+set("t", "<leader>q", "<cmd>bd!<cr>")
