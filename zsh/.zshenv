@@ -17,9 +17,7 @@ export PATH="$HOME/.config/zsh/zinit/polaris/bin:$PATH"
 export PATH="$HOME/.config/zsh/zinit/cargo/bin:$PATH"
 export PATH="$HOME/.config/zsh/zinit/plugins/uv/venv/bin:$PATH"
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
-# export GOPATH="$HOME/dev/go"
-# export GOBIN="$GOPATH/bin"
-# export PATH="$GOBIN:$PATH"
+export PATH="$HOME/.claude/local:$PATH"
 
 # Golang env vars
 export GOPATH="$HOME/dev/go"
