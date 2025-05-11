@@ -11,7 +11,7 @@ python.uv_venv_auto = true
 claude-code = "latest"
 "github:vectordotdev/vector" = "latest"
 "npm:@openai/codex" = "latest"
-python = "3.14.2"
+python = "3.14.3"
 "github:open-telemetry/opentelemetry-collector-releases"= { version = "latest", asset_pattern = "otelcol-contrib_*_darwin_arm64.tar.gz" }
 age = "latest"
 "github:zippoxer/recall" = "latest"
@@ -45,7 +45,7 @@ kafkactl = "latest"
 kubectl = "latest"
 kustomize = "latest"
 krew = "latest"
-"github:ente-io/ente" = { version = "latest", version_prefix = "cli-" }
+"github:ente-io/ente" = { version = "v0.2.3", version_prefix = "cli-" }
 "github:joshmedeski/sesh" = "latest"
 "github:ivaaaan/smug" = "latest"
 zoxide = "latest"
@@ -81,9 +81,14 @@ grpcurl = "latest"
 "github:eduardofuncao/pam" = "latest"
 "github:DeprecatedLuar/better-curl-saul" = "latest"
 "github:aaronriekenberg/rust-parallel" = "latest"
-"http:fzf-tmux" = { version = "e74b9de", url = "https://raw.githubusercontent.com/junegunn/fzf/refs/heads/master/bin/fzf-tmux" }
 tilt = "latest"
 cargo-binstall = "latest"
 "cargo:https://github.com/sharkdp/vivid" = "latest"
 "cargo:eza" = "latest"
 "cargo:csvlens" = "latest"
+"github:raine/workmux" = "latest"
+redis = "latest"
+"http:fzf-tmux" = { version = "0415fa8", url = "https://raw.githubusercontent.com/junegunn/fzf/9725eac314551072538c06ef914a0e7bedf19018/bin/fzf-tmux" }
+"github:kavehtehrani/cloudflare-speed-cli" = "latest"
+"github:backnotprop/plannotator" = "latest"
+"cargo:jj-vine" = "latest"
