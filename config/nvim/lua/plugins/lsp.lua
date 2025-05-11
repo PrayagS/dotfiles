@@ -257,7 +257,16 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {},
 				automatic_installation = false,
-				automatic_enable = true,
+				automatic_enable = {
+					"lua_ls",
+					"gopls",
+					"ruff",
+					"ty",
+					"tinymist",
+					"yamlls",
+					"helm_ls",
+					"rust_analyzer",
+				},
 			})
 		end,
 	},
