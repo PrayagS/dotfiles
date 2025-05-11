@@ -6,6 +6,7 @@ tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "pakerwreah/calendr"
+tap "typewhisper/tap"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Language server for beancount files
@@ -18,6 +19,8 @@ brew "chafa"
 brew "clang-format"
 # C implementation of GitHub Flavored Markdown
 brew "cmark-gfm"
+# Create and run Linux containers using lightweight virtual machines
+brew "container"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Securely send things from one computer to another
@@ -132,6 +135,8 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 # Implementation of Python 3 in Python
 brew "pypy3.10"
+# Generic machine emulator and virtualizer
+brew "qemu"
 # Diff filter highlighting which line parts have changed
 brew "riff"
 # Utility that provides fast incremental file transfer
@@ -186,12 +191,16 @@ cask "barrier"
 cask "calendr"
 # E-books management software
 cask "calibre"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
 # Ghostty-based terminal with vertical tabs and notifications for AI coding agents
 cask "cmux"
+# OpenAI's Codex desktop app for managing coding agents
+cask "codex-app"
 # Server and cloud storage browser
 cask "cyberduck"
 # Voice and text chat software
@@ -206,6 +215,8 @@ cask "firefox@beta"
 cask "flameshot"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Git client for simultaneous branches on top of your existing workflow
+cask "gitbutler"
 # Web browser
 cask "google-chrome@beta"
 # Open-source video transcoder
@@ -216,12 +227,12 @@ cask "headlamp"
 cask "iina"
 # Jellyfin desktop client
 cask "jellyfin-media-player"
-# Menu bar manager
-cask "jordanbaird-ice"
 # Open-source screen recorder built with web technology
 cask "kap"
 # Keyboard customiser
 cask "karabiner-elements"
+# Discover, download, and run local LLMs
+cask "lm-studio"
 # Extensible two-pane file manager
 cask "marta"
 # Sandbox construction video game
@@ -254,8 +265,14 @@ cask "slack@beta"
 cask "stats"
 # Video game digital distribution service
 cask "steam"
+# Native terminal coding agents command center
+cask "supacode"
+# Terminal for orchestrating agents
+cask "superset"
 # To-do list
 cask "todoist-app"
+# Speech-to-text and AI text processing for macOS
+cask "typewhisper/tap/typewhisper"
 # Multimedia player
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
