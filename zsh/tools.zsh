@@ -15,7 +15,7 @@ zinit from"gh-r" lman for \
     sbin"**/rga" phiresky/ripgrep-all \
     sbin"**/vhs" charmbracelet/vhs \
     sbin"**/carbonyl" fathyb/carbonyl \
-    sbin"**/moar* -> moar" walles/moar \
+    sbin"**/moor* -> moor" walles/moor \
     sbin"**/lazygit" atload'alias -g lg=lazygit' jesseduffield/lazygit \
     sbin'**/gh' atclone'./**/gh completion --shell zsh > _gh' atpull'%atclone' cli/cli \
     sbin'pint* -> pint' cloudflare/pint \
