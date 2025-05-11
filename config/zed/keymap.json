@@ -24,14 +24,16 @@
   {
     "context": "Editor && !menu && VimControl && (vim_mode == normal || vim_mode == visual)",
     "bindings": {
-      "space b": "workspace::ToggleLeftDock",
+      "space l": "workspace::ToggleLeftDock",
+      "space r": "workspace::ToggleRightDock",
       "space f": "project_panel::ToggleFocus",
       "space o": "outline::Toggle",
       "space shift-o": "outline_panel::ToggleFocus",
       "space ,": "tab_switcher::ToggleAll",
       "space space": "file_finder::Toggle",
       "space /": "pane::DeploySearch",
-      "space t": "project_symbols::Toggle"
+      "space t": "project_symbols::Toggle",
+      "space ?": "agent::ToggleFocus"
     }
   },
   {
