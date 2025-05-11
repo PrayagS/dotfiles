@@ -86,7 +86,7 @@ yabai -m signal --add app="Notion Calendar" event="window_focused" \
     action="CRON_WINDOW_ID=$(yabai -m query --windows | jq '.[] | select(.app == "Notion Calendar") | .id') | yabai -m window $CRON_WINDOW_ID --ratio abs:0.66 | yabai -m window $CRON_WINDOW_ID --swap east"
 
 create_space 1
-yabai -m rule --add app="WezTerm" space=1
+yabai -m rule --add app="Ghostty" space=1
 
 # 2 and 3 is for firefox
 create_space 2
@@ -97,7 +97,6 @@ yabai -m rule --add app="Slack" space=4
 
 create_space 5
 yabai -m rule --add app="Music" space=5
-# yabai -m rule --add app="Spotify" space=5
 
 create_space 6
 yabai -m rule --add app="Obsidian" space=6
@@ -110,7 +109,7 @@ yabai -m rule --add app="Discord" space=8
 
 yabai -m rule --apply
 
-open -a WezTerm
+open -a Ghostty
 open -a Firefox
 open -a Slack
 open -a Music
