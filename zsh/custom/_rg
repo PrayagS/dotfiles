@@ -469,6 +469,7 @@ _rg_types() {
 (( $+functions[_rg_hyperlink_format_aliases] )) ||
 _rg_hyperlink_format_aliases() {
   _describe -t format-aliases 'hyperlink format alias' '(
+    cursor:"Cursor scheme (cursor://)"
     default:"RFC 8089 scheme (file://) (platform-aware)"
     file:"RFC 8089 scheme (file://) with host"
     grep+:"grep+ scheme (grep+://)"
