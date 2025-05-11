@@ -73,6 +73,9 @@ export MYCLI_HISTFILE="$XDG_STATE_HOME/mycli/mycli_history"
 export PIPX_HOME="$XDG_DATA_HOME/pipx"
 export VENCORD_USER_DATA_DIR="$XDG_DATA_HOME/vencord"
 
+# source secrets
+source "$ZDOTDIR/.zshenv-secrets"
+
 # Start skhd/yabai
 # if pgrep -x "yabai" >/dev/null
 # then

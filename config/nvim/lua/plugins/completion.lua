@@ -136,16 +136,26 @@ return {
 			},
 			keymap = {
 				preset = "default",
+				["<A-y>"] = require("minuet").make_blink_map(),
 			},
 			appearance = {
 				nerd_font_variant = "mono",
 			},
 			sources = {
-				default = { "lsp", "path", "buffer", "omni", "spell", "ripgrep" },
+				default = { "lsp", "minuet", "path", "buffer", "omni", "spell", "ripgrep" },
 				per_filetype = {
 					gitcommit = { "buffer", "git", "conventional_commits" },
 				},
 				providers = {
+					minuet = {
+						name = "minuet",
+						module = "minuet.blink",
+						async = true,
+						-- Should match minuet.config.request_timeout * 1000,
+						-- since minuet.config.request_timeout is in seconds
+						timeout_ms = 3000,
+						score_offset = 50, -- Gives minuet higher priority among suggestions
+					},
 					cmdline = {
 						min_keyword_length = function(ctx)
 							-- only applies when typing a command, doesn't apply to arguments

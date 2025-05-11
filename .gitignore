@@ -9,6 +9,7 @@ zsh/.zcompdump
 # zsh history
 zsh/.zsh_history
 zsh/.directory_history
+zsh/.zshenv-secrets
 
 # zsh generated contents
 zsh/zinit/**

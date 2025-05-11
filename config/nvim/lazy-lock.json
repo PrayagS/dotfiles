@@ -43,6 +43,7 @@
   "mini.hipatterns": { "branch": "main", "commit": "e5083df391171dc9d8172645606f8496d9443374" },
   "mini.move": { "branch": "main", "commit": "4fe4a855fee53c66b0f3255a4b54ddc2ae6b308c" },
   "mini.surround": { "branch": "main", "commit": "5aab42fcdcf31fa010f012771eda5631c077840a" },
+  "minuet-ai.nvim": { "branch": "main", "commit": "6fb0424d07398b3c06840eb31c1b8589a245ff53" },
   "nui.nvim": { "branch": "main", "commit": "f535005e6ad1016383f24e39559833759453564e" },
   "nvim-autopairs": { "branch": "master", "commit": "4d74e75913832866aa7de35e4202463ddf6efd1b" },
   "nvim-bqf": { "branch": "main", "commit": "e20417d5e589e03eaaaadc4687904528500608be" },
