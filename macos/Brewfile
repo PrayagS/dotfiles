@@ -1,4 +1,3 @@
-tap "artginzburg/tap"
 tap "buo/cask-upgrade"
 tap "homebrew/bundle"
 tap "homebrew/command-not-found"
@@ -92,6 +91,8 @@ brew "numpy"
 brew "oha"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
+# PAM module for reattaching to the user's GUI (Aqua) session
+brew "pam-reattach"
 # Convert PDFs to images
 brew "pdf2image"
 # Execute binaries from Python packages in isolated environments
@@ -144,8 +145,6 @@ brew "wget"
 brew "wimlib"
 # Automatic workarounds for problems in Wine
 brew "winetricks"
-# Permanent TouchID support for sudo
-brew "artginzburg/tap/sudo-touchid"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
