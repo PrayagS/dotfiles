@@ -39,3 +39,11 @@ config/aws/config
 
 # Misc
 .bash_profile
+
+# firefox
+# these directories contain files loaded by fx-autoconfig and
+# userscripts like firefox-second-sidebar
+firefox/chrome/JS
+firefox/chrome/CSS
+firefox/chrome/utils
+firefox/chrome/resources
