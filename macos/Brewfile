@@ -1,34 +1,21 @@
 tap "artginzburg/tap"
-tap "aws/tap"
 tap "buo/cask-upgrade"
-tap "felixkratz/formulae"
-tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
-tap "nikolaeu/numi"
-tap "oven-sh/bun"
-# Official Amazon AWS command-line interface
-brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Language server for beancount files
 brew "beancount-language-server"
-# Powerful, enterprise-ready, open source web server with automatic HTTPS
-brew "caddy"
 # Cloudformation templates to Terraform HCL converter
 brew "cf2tf"
 # Versatile and fast Unicode/ASCII/ANSI graphics renderer
 brew "chafa"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
-# Manage multiple AI agents like Claude Code, Aider and Codex in your terminal
-brew "claude-squad"
 # C implementation of GitHub Flavored Markdown
 brew "cmark-gfm"
-# Console Matrix
-brew "cmatrix"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Securely send things from one computer to another
@@ -43,8 +30,6 @@ brew "docker-buildx"
 brew "docker-compose"
 # Platform keystore credential helper for Docker
 brew "docker-credential-helper"
-# Utility for exporting data from Ente and decrypt the export from Ente Auth
-brew "ente-cli"
 # Validate EPUB files, version 2.0 and later
 brew "epubcheck"
 # Perl lib for reading and writing EXIF metadata
@@ -59,106 +44,56 @@ brew "gawk"
 brew "ghostscript"
 # Highest-quality GIF encoder based on pngquant
 brew "gifski"
-# High-velocity, monorepo-scale workflow for Git
-brew "git-branchless"
-# Audit git repos for secrets
-brew "gitleaks"
 # GNU implementation of time utility
 brew "gnu-time"
 # Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
-# GNU Pretty Good Privacy (PGP) package
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Go implementation of configuration language for defining JSON data
-brew "go-jsonnet"
-# Graph visualization software from AT&T and Bell Labs
-brew "graphviz"
 # Colorize logfiles and command output
 brew "grc"
-# Like cURL, but for gRPC
-brew "grpcurl"
-# Kubernetes package manager
-brew "helm"
-# Create Helm chart from Kubernetes yaml
-brew "helmify"
-# Improved top (interactive process viewer)
-brew "htop"
-# Client library for huggingface.co hub
-brew "huggingface-cli"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
-# Terminal Client for Redis with AutoCompletion and Syntax Highlighting
-brew "iredis"
 # Sort Python imports automatically
 brew "isort"
 # Command-line note taker
 brew "jrnl"
-# Package manager for Jsonnet
-brew "jsonnet-bundler"
-# Handy way to save and run project-specific commands
-brew "just"
-# CLI for managing Apache Kafka
-brew "kafkactl"
 # Generic command-line non-JVM Apache Kafka producer and consumer
 brew "kcat"
 # VPN kill switch for macOS
 brew "killswitch"
-# Kubernetes command-line interface
-brew "kubernetes-cli"
-# Package manager for kubectl plugins
-brew "krew"
-# API Traffic Analyzer providing real-time visibility into Kubernetes network
-brew "kubeshark"
-# Template-free customization of Kubernetes YAML manifests
-brew "kustomize"
 # Pager program similar to more
 brew "less"
 # Input filter for the pager less
 brew "lesspipe"
-# Terminal file manager
-brew "lf"
 # Sophisticated file transfer program
 brew "lftp"
+# C library of Git core methods that is re-entrant and linkable
+brew "libgit2"
 # Command-line utility to interact with linkerd
 brew "linkerd"
 # LLM inference in C/C++
 brew "llama.cpp"
-# Apple Silicon Monitor Top written in Golang
+# Apple Silicon Monitor Top written in Go Lang
 brew "mactop"
 # Mac App Store command-line interface
 brew "mas"
-# Java-based project management
-brew "maven"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
-# MongoDB Shell to connect, configure, query, and work with your MongoDB database
-brew "mongosh"
-# Media player based on MPlayer and mplayer2
-brew "mpv"
-# CLI for MySQL with auto-completion and syntax highlighting
-brew "mycli"
 # Port scanning utility for large networks
 brew "nmap"
-# Tiny, lightning fast, feature-packed file manager
-brew "nnn"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
 # Package for scientific computing with Python
 brew "numpy"
-# Manage multiple Node.js versions
-brew "nvm"
 # HTTP load generator, inspired by rakyll/hey with tui animation
 brew "oha"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
-# Swiss-army knife of markup format conversion
-brew "pandoc"
 # Convert PDFs to images
 brew "pdf2image"
-# CLI for Postgres with auto-completion and syntax highlighting
-brew "pgcli"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Package compiler and linker metadata toolkit
@@ -179,56 +114,28 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 # Implementation of Python 3 in Python
 brew "pypy3.10"
-# Persistent key-value database, with built-in net interface
-brew "redis"
 # Diff filter highlighting which line parts have changed
 brew "riff"
 # Utility that provides fast incremental file transfer
 brew "rsync"
 # Rust toolchain installer
 brew "rustup"
-# Parallel S3 and local filesystem execution tool
-brew "s5cmd"
-# Static analysis and lint tool, for (ba)sh scripts
-brew "shellcheck"
-# Terminal based presentation tool
-brew "slides"
 # SOcket CAT: netcat on steroids
 brew "socat"
-# Command-line interface for https://speedtest.net bandwidth tests
-brew "speedtest-cli"
 # Version control system designed to be a better CVS
 brew "subversion"
-# Very fast implementation of tldr in Rust
-brew "tealdeer"
 # User interface to the TELNET protocol
 brew "telnet"
-# Terraform version manager inspired by rbenv
-brew "tfenv"
-# Terminal multiplexer
-brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
-# Incremental parsing library
-brew "tree-sitter"
-# Parser generator tool
-brew "tree-sitter-cli"
 # Command-line tool for sharing terminal over the web
 brew "ttyd"
-# Markup-based typesetting system
-brew "typst"
-# Beautiful and reliable typst code formatter
-brew "typstyle"
-# Extremely fast Python package installer and resolver, written in Rust
-brew "uv"
 # Syntax-aware linter for prose
 brew "vale"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # Convert HTML to PDF
 brew "weasyprint"
-# Command-line tool to help build, run, and test web extensions
-brew "web-ext"
 # Internet file retriever
 brew "wget"
 # Library to create, extract, and modify Windows Imaging files
@@ -237,18 +144,10 @@ brew "wimlib"
 brew "winetricks"
 # Permanent TouchID support for sudo
 brew "artginzburg/tap/sudo-touchid"
-# EC2 Instance Selector is a tool to filter EC2 instance types based on resource criteria
-brew "aws/tap/ec2-instance-selector"
-# A window border system for macOS
-brew "felixkratz/formulae/borders"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
-# Smart calculator
-brew "nikolaeu/numi/numi-cli"
-# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun"
 # Command-line interface for 1Password
 cask "1password-cli"
 # Password manager
@@ -281,10 +180,6 @@ cask "flameshot"
 cask "ghostty"
 # Web browser
 cask "google-chrome@beta"
-# Light, Electron-based Wrapper around GraphiQL
-cask "graphiql"
-# Desktop automation application
-cask "hammerspoon"
 # Free and open-source media player
 cask "iina"
 # Jellyfin desktop client
@@ -305,12 +200,14 @@ cask "lm-studio"
 cask "marta"
 # Sandbox construction video game
 cask "minecraft"
-# Web browser focused on privacy and on minimizing tracking and fingerprinting
-cask "mullvad-browser"
+# Neovim Client
+cask "neovide-app"
 # Calendar for professionals and teams
 cask "notion-calendar"
 # Calculator and converter application
 cask "numi"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Rhythm game
@@ -335,8 +232,6 @@ cask "stats"
 cask "steam"
 # To-do list
 cask "todoist-app"
-# Web browser focusing on security
-cask "tor-browser"
 # Multimedia player
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
