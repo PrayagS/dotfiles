@@ -1,10 +1,8 @@
 {
-  // "fileSuggestion": {
-  //   "type": "command",
-  //   "command": "~/.claude/file-picker.sh"
-  // },
   "respectGitignore": true,
   "env": {
+    "AWS_PROFILE": "prod",
+    "AWS_REGION": "ap-southeast-1",
     "DISABLE_AUTOUPDATER": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1",
@@ -44,7 +42,7 @@
     ],
     "defaultMode": "plan"
   },
-  "model": "sonnet",
+  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -181,6 +179,5 @@
     "plannotator@plannotator": true
   },
   "spinnerTipsEnabled": false,
-  "alwaysThinkingEnabled": true,
   "promptSuggestionEnabled": false
 }
