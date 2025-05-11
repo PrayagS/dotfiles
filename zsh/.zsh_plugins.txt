@@ -30,7 +30,6 @@ zdharma-continuum/fast-syntax-highlighting
 hlissner/zsh-autopair
 akash329d/zsh-alias-finder
 ChrisPenner/copy-pasta
-zshzoo/cd-ls
 toku-sa-n/zsh-dot-up
 
 # lazy load commands, eg. running `source foo` for command `bar`
@@ -39,10 +38,6 @@ qoomon/zsh-lazyload
 goarano/zsh-lazy-load
 # cache any eval output and source it
 mroth/evalcache
-
-atuinsh/atuin path:atuin.plugin.zsh
-
-ArielTM/zsh-claude-code-shell
 
 b3nj5m1n/xdg-ninja kind:path
 
