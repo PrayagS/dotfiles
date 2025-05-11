@@ -5,7 +5,6 @@ return {
 		dependencies = {
 			{
 				"Zeioth/garbage-day.nvim",
-				version = "v1.3.1",
 				opts = {
 					grace_period = 30 * 60,
 					notifications = true,
