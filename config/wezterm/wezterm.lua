@@ -289,7 +289,7 @@ end)
 config.default_domain = "local"
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 resurrect.state_manager.periodic_save({
-	interval_seconds = 15 * 60,
+	interval_seconds = 2 * 60,
 	save_workspaces = true,
 	save_windows = true,
 	save_tabs = true,
@@ -312,6 +312,10 @@ end)
 wezterm.on("smart_workspace_switcher.workspace_switcher.selected", function(window, path, label)
 	local workspace_state = resurrect.workspace_state
 	resurrect.state_manager.save_state(workspace_state.get_workspace_state())
+	resurrect.state_manager.write_current_state(label, "workspace")
+end)
+wezterm.on("smart_workspace_switcher.workspace_switcher.chosen", function(window, path, label)
+	resurrect.state_manager.write_current_state(label, "workspace")
 end)
 -- resurrect on startup
 wezterm.on("gui-startup", resurrect.state_manager.resurrect_on_gui_startup)
@@ -320,7 +324,6 @@ config.ui_key_cap_rendering = "UnixLong"
 -- https://wezfurlong.org/wezterm/config/keys.html?#leader-key
 config.leader = { key = "Tab", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
-
 	{ key = "p", mods = "LEADER", action = act.ActivateCommandPalette },
 	{ key = "x", mods = "LEADER", action = act.ActivateCopyMode },
 	{
@@ -387,6 +390,16 @@ config.keys = {
 					resurrect.workspace_state.restore_workspace(state, opts)
 				end
 			end, { ignore_tabs = true, ignore_windows = true })
+		end),
+	},
+	{
+		key = "S",
+		mods = "LEADER",
+		action = wezterm.action_callback(function(win, pane)
+			resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state())
+			resurrect.window_state.save_window_action()
+			resurrect.tab_state.save_tab_action()
+			resurrect.state_manager.write_current_state(wezterm.mux.get_active_workspace(), "workspace")
 		end),
 	},
 	{
