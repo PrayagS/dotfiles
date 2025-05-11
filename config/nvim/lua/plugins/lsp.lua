@@ -152,6 +152,7 @@ return {
 							enable = true,
 							setType = true,
 						},
+						codeLens = { enable = true },
 					},
 				},
 			})
