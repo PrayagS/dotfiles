@@ -1,0 +1,16 @@
+YTTapToSeek_enabled: 1
+castConfirm_enabled: 1
+disableAutoplaySection_enabled: 1
+disablePullToFull_enabled: 1
+disableTryNewFeaturesSection_enabled: 1
+hideCastButton_enabled: 1
+hideSponsorBlockButton_enabled: 1
+playerGesturesHapticFeedback_enabled: 1
+playerGestures_enabled: 1
+RYD-EXACT-LIKE-NUMBER: 1
+RYD-EXACT-NUMBER: 1
+YTVideoOverlay-YouQuality-Enabled: 1
+PiPActivationMethodKey: 0
+PiPActivationMethod2Key: 1
+EnableVP9: 1
+AllVP9: 1
