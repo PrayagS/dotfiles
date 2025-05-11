@@ -10,6 +10,7 @@
   "blink-ripgrep.nvim": { "branch": "main", "commit": "0fa6bdfbb03d09f25dafee84afb4c2e6c1d0437c" },
   "blink.cmp": { "branch": "main", "commit": "f6ca10fe15579775fd8c02e2d3cc74eaa9824f5e" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
+  "claudecode.nvim": { "branch": "main", "commit": "3e2601f1ac0eb61231ee6c6a7f9e8be82420f371" },
   "colorful-winsep.nvim": { "branch": "alpha", "commit": "0070484536ea55ec64a8453d41e3badace04a61a" },
   "conform.nvim": { "branch": "master", "commit": "b4aab989db276993ea5dcb78872be494ce546521" },
   "dial.nvim": { "branch": "master", "commit": "f0404ec1f83a03f2c3457e60087c6331d1cbb83f" },

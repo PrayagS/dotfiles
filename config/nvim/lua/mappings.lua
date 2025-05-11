@@ -81,3 +81,5 @@ set({ "", "!" }, "<Up>", "<Nop>", { noremap = true })
 set({ "", "!" }, "<Down>", "<Nop>", { noremap = true })
 set({ "", "!" }, "<Left>", "<Nop>", { noremap = true })
 set({ "", "!" }, "<Right>", "<Nop>", { noremap = true })
+
+set("t", "<C-[>", "<C-\\><C-n>")
