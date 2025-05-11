@@ -32,9 +32,9 @@ return {
 						mode = mode or "n"
 						vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
+
 					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 					map("<leader>k", vim.lsp.buf.hover, "Hover Documentation")
-
 					map("<leader>ca", function()
 						require("tiny-code-action").code_action({})
 					end, "Code action", { "n", "x" })
@@ -141,6 +141,16 @@ return {
 					},
 				},
 			})
+
+			local fetch_lsp_servers_from_config = function()
+				local servers = {}
+				for server in vim.fs.dir(vim.fn.stdpath("config") .. "/after/lsp/") do
+					local server_name = server:gsub("%.lua$", "")
+					table.insert(servers, server_name)
+				end
+				return servers
+			end
+			vim.lsp.enable(fetch_lsp_servers_from_config())
 		end,
 	},
 	{
