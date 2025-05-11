@@ -42,13 +42,16 @@ return {
 	{
 		"rmagatti/auto-session",
 		opts = {
-			auto_save_enabled = true,
-			auto_restore_enabled = true,
-			auto_session_use_git_branch = true,
+			auto_save = true,
+			auto_restore = true,
+			git_use_branch_name = true,
+			git_auto_restore_on_branch_change = true,
 			suppressed_dirs = {
 				"~/",
 			},
+			show_auto_restore_notif = true,
 			session_lens = {
+				picker = "snacks",
 				load_on_setup = false,
 			},
 			-- purge sessions that are not accessed in the last 30 days
