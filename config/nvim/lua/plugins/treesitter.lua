@@ -2,6 +2,7 @@ return {
 	-- TODO: nvim-treesitter/nvim-treesitter-textobjects
 	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = "master",
 		build = ":TSUpdate",
 		-- lazy = false,
 		event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
