@@ -10,6 +10,7 @@ export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
 export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/dev/go/bin:$PATH"
 export PATH="$HOME/Library/Python/3.8/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
