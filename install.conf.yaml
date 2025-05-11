@@ -54,5 +54,11 @@
     ~/.config/jjui/config.toml: config/jjui/config.toml
 
 - shell:
-  # - [git submodule update --init --recursive --remote --force, Installing submodules]
-  # - [fc-cache -rf, Update font list]
+    # - [git submodule update --init --recursive --remote --force, Installing submodules]
+    # - [fc-cache -rf, Update font list]
+    - description: Update default firefox profile
+      command: |
+        export FIREFOX_DEFAULT_PROFILE_PATH="$HOME/Library/Application Support/Firefox/Profiles/$(bin/get-default-firefox-profile.sh)"
+        ln -s ~/dev/dotfiles/firefox/chrome "$FIREFOX_DEFAULT_PROFILE_PATH/chrome"
+        ln -s ~/dev/dotfiles/firefox/user.js "$FIREFOX_DEFAULT_PROFILE_PATH/user.js"
+      stderr: true

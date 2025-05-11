@@ -1,0 +1,6 @@
+
+
+/* Hide the extension name at the top of the sidebar */
+.sidebar-panel-header {
+  display: none !important;
+}
