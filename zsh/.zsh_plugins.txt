@@ -30,7 +30,11 @@ ChrisPenner/copy-pasta
 zshzoo/cd-ls
 toku-sa-n/zsh-dot-up
 
+# lazy load commands, eg. running `source foo` for command `bar`
 qoomon/zsh-lazyload
+# lazy load completions, eg. running `foo completion zsh` for command `foo`
+goarano/zsh-lazy-load
+# cache any eval output and source it
 mroth/evalcache
 
 atuinsh/atuin path:atuin.plugin.zsh
