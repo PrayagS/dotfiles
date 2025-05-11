@@ -103,13 +103,13 @@ create_space 7
 yabai -m rule --add app="ChatGPT" space=7
 
 create_space 8
-yabai -m rule --add app="Obsidian" space=8
+yabai -m rule --add app="Codex" space=8
 
 create_space 9
-yabai -m rule --add app="Music" space=9
+yabai -m rule --add app="Obsidian" space=9
 
 create_space 10
-yabai -m rule --add app="Helium" space=10
+yabai -m rule --add app="Music" space=10
 
 create_space 11
 yabai -m rule --add app="Discord" space=11
@@ -117,14 +117,14 @@ yabai -m rule --add app="Discord" space=11
 yabai -m rule --apply
 
 open -a Ghostty
-open -a Firefox
+open -a Foxfire
 open -a Slack
 open -a Google\ Chrome
 open -a Zed\ Preview
 open -a ChatGPT
+open -a Codex
 open -a Obsidian
 open -a Music
-open -a Helium
 open -a Discord
 
 # Clean up empty spaces with no windows on them.
