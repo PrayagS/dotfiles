@@ -52,6 +52,7 @@ abandon-unreachable-commits = true
 
 [remotes.origin]
 auto-track-bookmarks = "glob:prayagmatic/*"
+auto-track-created-bookmarks = "*"
 
 [signing]
 behavior = "own"
