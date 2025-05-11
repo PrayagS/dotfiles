@@ -1,10 +1,13 @@
+tap "alexstrnik/browserino"
 tap "asmvik/formulae"
 tap "buo/cask-upgrade"
+tap "fluffypony/yojam"
 tap "homebrew-zathura/zathura"
 tap "homebrew/bundle"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
+tap "muxy-app/tap"
 tap "pakerwreah/calendr"
 tap "typewhisper/tap"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -39,8 +42,12 @@ brew "docker-credential-helper"
 brew "openjdk"
 # Validate EPUB files, version 2.0 and later
 brew "epubcheck"
+# Speech synthesizer that supports more than hundred languages and accents
+brew "espeak-ng"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # Package manager and build system for Fortran
@@ -175,8 +182,6 @@ brew "homebrew-zathura/zathura/zathura"
 brew "homebrew-zathura/zathura/zathura-pdf-mupdf"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
-# Command-line interface for 1Password
-cask "1password-cli"
 # Password manager
 cask "1password@beta"
 # AI Coding Agent IDE
@@ -187,6 +192,8 @@ cask "appcleaner"
 cask "balenaetcher"
 # Open-source KVM software
 cask "barrier"
+# Browserino is a tiny browser selector for MacOS written in SwiftUI
+cask "alexstrnik/browserino/browserino"
 # Menu bar calendar
 cask "calendr"
 # E-books management software
@@ -197,8 +204,6 @@ cask "chatgpt"
 cask "claude"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
-# Ghostty-based terminal with vertical tabs and notifications for AI coding agents
-cask "cmux"
 # OpenAI's Codex desktop app for managing coding agents
 cask "codex-app"
 # Server and cloud storage browser
@@ -221,6 +226,8 @@ cask "gitbutler"
 cask "google-chrome@beta"
 # Open-source video transcoder
 cask "handbrake-app"
+# Speech to text application
+cask "handy"
 # UI for Kubernetes
 cask "headlamp"
 # Free and open-source media player
@@ -231,18 +238,24 @@ cask "jellyfin-media-player"
 cask "kap"
 # Keyboard customiser
 cask "karabiner-elements"
+# Voice-to-text transcription and paste tool
+cask "kitlangton-hex"
 # Discover, download, and run local LLMs
 cask "lm-studio"
 # Extensible two-pane file manager
 cask "marta"
 # Sandbox construction video game
 cask "minecraft"
+# Terminal multiplexer for macOS
+cask "muxy-app/tap/muxy"
 # Neovim Client
 cask "neovide-app"
 # Calculator and converter application
 cask "numi"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# AI usage tracker for Cursor, Claude Code, Codex, Copilot and more
+cask "openusage"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Rhythm game
@@ -267,18 +280,16 @@ cask "stats"
 cask "steam"
 # Native terminal coding agents command center
 cask "supacode"
-# Terminal for orchestrating agents
-cask "superset"
 # To-do list
 cask "todoist-app"
-# Speech-to-text and AI text processing for macOS
-cask "typewhisper/tap/typewhisper"
 # Multimedia player
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm@nightly"
 # REST, GraphQL and gRPC client
 cask "yaak"
+# Open links in whatever browser, app, or profile you need - whatever yo jam is
+cask "fluffypony/yojam/yojam"
 # Multiplayer code editor
 cask "zed"
 # Video communication and virtual meeting platform
@@ -292,7 +303,6 @@ mas "JapaneseLife", id: 1634749545
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "PowerWash Simulator", id: 6477445344
 mas "rcmd", id: 1596283165
 mas "Sasquatch", id: 1465346522
 mas "Save to Reader", id: 1640236961
@@ -315,6 +325,7 @@ go "github.com/planetscale/vtprotobuf/cmd/protoc-gen-go-vtproto"
 go "github.com/favadi/protoc-go-inject-tag"
 go "github.com/stormcat24/protodep"
 go "github.com/frapposelli/wwhrd"
+cargo "alleycat"
 cargo "jj-spr"
 cargo "vdev"
 uv "-"
