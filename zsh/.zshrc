@@ -183,7 +183,9 @@ zinit lucid light-mode wait"2" for \
         OMZP::aws \
     fdw/yazi-zoxide-zsh \
     ahmubashshir/zinsults \
-    akash329d/zsh-alias-finder
+    akash329d/zsh-alias-finder \
+    patch"$ZSH_HOME/plugin-patches/bd/0001-rename-to-rd.patch" \
+        Tarrasch/zsh-bd
     # atload"
     #   export KUBECTL_PATH=/opt/homebrew/bin/kubectl
     #   export KUBECTL_SAFE_TIME=300" \
@@ -204,9 +206,6 @@ zinit ice wait"10" lucid
 zinit snippet "${ZSH_HOME}/tools.zsh"
 
 # Set of plugins to load on demand
-zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)bd*]} ]]' lucid
-zinit light Tarrasch/zsh-bd
-
 zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)copy*]} ]]' lucid
 zinit light ChrisPenner/copy-pasta
 

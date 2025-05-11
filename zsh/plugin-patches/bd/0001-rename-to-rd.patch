@@ -1,0 +1,36 @@
+diff --git a/bd.zsh b/bd.zsh
+index b8655b7..dbe68af 100644
+--- a/bd.zsh
++++ b/bd.zsh
+@@ -1,5 +1,5 @@
+ # shellcheck shell=bash
+-bd () {
++rd () {
+   (($#<1)) && {
+     printf -- 'usage: %s <name-of-any-parent-directory>\n' "${0}"
+     printf -- '       %s <number-of-folders>\n' "${0}"
+@@ -58,7 +58,7 @@ bd () {
+   return 1
+ }
+ 
+-_bd () {
++_rd () {
+   # Get parents (in reverse order)
+   local localMatcherList
+   local -a parents=(${(ps:/:)"${PWD}"})
+@@ -87,7 +87,7 @@ _bd () {
+     compadd -M "${localMatcherList}" "$@" -- "${parentsReverse[@]}"
+ }
+ 
+-compdef _bd bd
++compdef _rd rd
+ 
+ () {
+   local -a colors
+@@ -103,5 +103,5 @@ compdef _bd bd
+     return
+   fi
+ 
+-  zstyle ':completion:*:*:bd:*:directories' list-colors "=*=${dir_color}"
++  zstyle ':completion:*:*:rd:*:directories' list-colors "=*=${dir_color}"
+ }
