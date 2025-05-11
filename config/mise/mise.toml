@@ -78,3 +78,4 @@ jjui = "latest"
 jj = "latest"
 "github:grafana/loki" = { version = "latest", asset_pattern = "logcli-darwin-arm64.zip", bin = "logcli" }
 magika = "latest"
+"github:bschaatsbergen/cidr" = "latest"
