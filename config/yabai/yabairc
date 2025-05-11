@@ -77,7 +77,8 @@ yabai -m rule --add label="Gitify" app="^Gitify$" title=".*" sticky=on sub-layer
 yabai -m rule --add label="Numi" app="^Numi$" title=".*" manage=off sub-layer=above
 yabai -m rule --add label="Ente Auth" app="^Ente Auth$" title=".*" manage=off sub-layer=above
 yabai -m rule --add label="Kap" app="^Kap$" title=".*" manage=off sub-layer=above
-# yabai -m rule --add label="Kitty blur" app="kitty" border=on
+yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
+yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
 
 yabai -m signal --add app="Notion Calendar" event="window_focused" \
     action="CRON_WINDOW_ID=$(yabai -m query --windows | jq '.[] | select(.app == "Notion Calendar") | .id') | yabai -m window $CRON_WINDOW_ID --ratio abs:0.66 | yabai -m window $CRON_WINDOW_ID --swap east"
