@@ -5,8 +5,10 @@ gpg_verify = true
 jobs = 24
 idiomatic_version_file_enable_tools = ["rust"]
 disable_backends = ["asdf"]
+python.uv_venv_auto = true
 
 [tools]
+"cargo:csvlens" = "latest"
 "cargo:eza" = "latest"
 claude-code = "latest"
 cmake = "3.31.9"
