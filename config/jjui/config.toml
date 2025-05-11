@@ -1,1 +1,31 @@
-ui.highlight_dark = "#473c29"
+[ui]
+highlight_dark = "#473c29"
+  [ui.colors]
+    [ui.colors."details selected"]
+      bg = ""
+    [ui.colors.target_marker]
+      fg = "#282828"
+      bg = "#ea6962"
+      bold = true
+      italic = true
+    [ui.colors.source_marker]
+      fg = "#282828"
+      bg = "#a9b665"
+      bold = true
+      italic = true
+    [ui.colors."menu selected"]
+      fg = "#d8a657"
+    [ui.colors."status title"]
+      fg = "#282828"
+      bg = "magenta"
+      bold = true
+      italic = false
+      underline = false
+      strikethrough = false
+      reverse = false
+
+[preview]
+show_at_start = true
+
+[custom_commands]
+"open PR" = { args = [ "util", "exec", "--", "jjui-gh-pr.sh", "$change_id" ], show = "interactive" }
