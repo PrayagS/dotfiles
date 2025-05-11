@@ -4,6 +4,8 @@
 [delta "gruvbox-dark"]
     dark = true
     syntax-theme = gruvbox-dark
+    wrap-max-lines = unlimited
+    max-line-length = 80
     hyperlinks = true
     file-style = "#f2e5bc" bold box
     file-added-label = [+]

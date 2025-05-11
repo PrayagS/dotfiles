@@ -14,7 +14,9 @@ email = "prayag.savsani@blinkit.com"
 [ui]
 default-command = "log"
 diff-instructions = false
-diff-formatter = "delta"
+# diff-formatter = "delta"
+# diff-formatter = ["delta", "--width", "$COLUMNS", "$left", "$right"]
+diff-formatter = ["difft", "--color=always", "--override=*.yaml:text", "$left", "$right"]
 diff-editor = "hunk-nvim"
 show-cryptographic-signatures = true
 
@@ -97,7 +99,9 @@ defaultBranch = "master"
 
 [jj-vine.description]
 enabled = true
-initialSingleRevision = "fullMessage"
+sync = true
+singleRevision = "fullMessage"
+multipleRevisions = "commitListFirstLine"
 
 [jj-vine.github]
 host = "https://api.github.com"
