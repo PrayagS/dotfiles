@@ -172,10 +172,10 @@ return {
 			require("smart-splits").setup({
 				cursor_follows_swapped_bufs = true,
 			})
-			vim.keymap.set("n", "<C-S-h>", require("smart-splits").resize_left)
-			vim.keymap.set("n", "<C-S-j>", require("smart-splits").resize_down)
-			vim.keymap.set("n", "<C-S-k>", require("smart-splits").resize_up)
-			vim.keymap.set("n", "<C-S-l>", require("smart-splits").resize_right)
+			vim.keymap.set("n", "<leader>H", require("smart-splits").resize_left)
+			vim.keymap.set("n", "<leader>J", require("smart-splits").resize_down)
+			vim.keymap.set("n", "<leader>K", require("smart-splits").resize_up)
+			vim.keymap.set("n", "<leader>L", require("smart-splits").resize_right)
 			-- moving between splits
 			vim.keymap.set("n", "<C-h>", require("smart-splits").move_cursor_left)
 			vim.keymap.set("n", "<C-j>", require("smart-splits").move_cursor_down)
