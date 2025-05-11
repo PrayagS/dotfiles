@@ -86,7 +86,7 @@ return {
 				desc = "Open at the current file",
 			},
 			{
-				"<leader>f",
+				"<leader>F",
 				":lua MiniFiles.open(nil, false)<cr>",
 				desc = "Open the file manager in nvim's working directory",
 			},

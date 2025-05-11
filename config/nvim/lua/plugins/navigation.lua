@@ -141,4 +141,50 @@ return {
 			vim.keymap.set("n", "<leader>sl", require("smart-splits").swap_buf_right)
 		end,
 	},
+	{
+		"dmtrKovalenko/fff.nvim",
+		build = function()
+			require("fff.download").download_or_build_binary()
+		end,
+		opts = {
+			preview = {
+				line_numbers = true,
+			},
+		},
+		lazy = false,
+		keys = {
+			{
+				"<leader>f",
+				function()
+					require("fff").find_files()
+				end,
+				desc = "FFFind files",
+			},
+			{
+				"<leader>fg",
+				function()
+					require("fff").live_grep()
+				end,
+				desc = "LiFFFe grep",
+			},
+			{
+				"<leader>fz",
+				function()
+					require("fff").live_grep({
+						grep = {
+							modes = { "fuzzy", "plain" },
+						},
+					})
+				end,
+				desc = "Live fffuzy grep",
+			},
+			{
+				"<leader>fc",
+				function()
+					require("fff").live_grep({ query = vim.fn.expand("<cword>") })
+				end,
+				desc = "Search current word",
+			},
+		},
+	},
 }
