@@ -10,3 +10,4 @@
 --smart-case
 # --text
 # --trim
+--ignore-file=/Users/prayagmatic/.config/ripgrep/ignore
