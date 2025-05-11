@@ -124,8 +124,6 @@ brew "pypy3.10"
 brew "riff"
 # Utility that provides fast incremental file transfer
 brew "rsync"
-# Rust toolchain installer
-brew "rustup"
 # SOcket CAT: netcat on steroids
 brew "socat"
 # Version control system designed to be a better CVS
@@ -162,6 +160,8 @@ brew "koekeishiya/formulae/yabai"
 cask "1password-cli"
 # Password manager
 cask "1password@beta"
+# AI Coding Agent IDE
+cask "antigravity"
 # Application uninstaller
 cask "appcleaner"
 # Tool to flash OS images to SD cards & USB drives
@@ -174,6 +174,8 @@ cask "calibre"
 cask "chatgpt"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
+# OpenAI's Codex desktop app for managing coding agents
+cask "codex-app"
 # Server and cloud storage browser
 cask "cyberduck"
 # Voice and text chat software
