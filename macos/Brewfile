@@ -44,6 +44,8 @@ brew "gawk"
 brew "ghostscript"
 # Highest-quality GIF encoder based on pngquant
 brew "gifski"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
 # GNU implementation of time utility
 brew "gnu-time"
 # Passphrase entry dialog utilizing the Assuan protocol
@@ -168,8 +170,6 @@ cask "barrier"
 cask "calibre"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
-# Anthropic's official Claude AI desktop app
-cask "claude"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
 # Server and cloud storage browser
@@ -186,6 +186,8 @@ cask "flameshot"
 cask "ghostty"
 # Web browser
 cask "google-chrome@beta"
+# Open-source video transcoder
+cask "handbrake-app"
 # Free and open-source media player
 cask "iina"
 # Jellyfin desktop client
