@@ -372,8 +372,9 @@ return {
 		keys = {
 			{
 				"<leader>ca",
-				"<cmd>lua require('actions-preview').code_actions)<cr>",
-				mode = { "n", "v" },
+				function()
+					require("actions-preview").code_actions()
+				end,
 				desc = "preview code actions",
 			},
 		},
@@ -388,7 +389,7 @@ return {
 				},
 				backend = { "snacks", "telescope", "nui" },
 				snacks = {
-					layout = { preset = "default" },
+					layout = { preset = "dropdown" },
 				},
 				telescope = {
 					sorting_strategy = "ascending",
