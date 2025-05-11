@@ -82,4 +82,4 @@ websocat = "latest"
 grpcurl = "latest"
 "github:eduardofuncao/pam" = "latest"
 "github:DeprecatedLuar/better-curl-saul" = "latest"
-"http:fzf-tmux" = { version = "latest", url = "https://raw.githubusercontent.com/junegunn/fzf/refs/heads/master/bin/fzf-tmux" }
+"http:fzf-tmux" = { version = "e74b9de", url = "https://raw.githubusercontent.com/junegunn/fzf/refs/heads/master/bin/fzf-tmux" }
