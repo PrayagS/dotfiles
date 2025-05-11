@@ -1,4 +1,5 @@
 [preview]
+  position = "bottom"
   show_at_start = false
   width_percentage = 55
 
