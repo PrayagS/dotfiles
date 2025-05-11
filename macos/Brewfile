@@ -23,6 +23,8 @@ brew "chafa"
 brew "clang-format"
 # Cross-platform make
 brew "cmake"
+# Console Matrix
+brew "cmatrix"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Securely send things from one computer to another
@@ -37,6 +39,8 @@ brew "docker-buildx"
 brew "docker-compose"
 # Platform keystore credential helper for Docker
 brew "docker-credential-helper"
+# Utility for exporting data from Ente and decrypt the export from Ente Auth
+brew "ente-cli"
 # Validate EPUB files, version 2.0 and later
 brew "epubcheck"
 # Perl lib for reading and writing EXIF metadata
