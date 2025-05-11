@@ -144,7 +144,8 @@ return {
 			sources = {
 				default = { "lsp", "minuet", "path", "buffer", "omni", "spell", "ripgrep" },
 				per_filetype = {
-					gitcommit = { "buffer", "git", "conventional_commits" },
+					gitcommit = { "conventional_commits", "git", "buffer", "path" },
+					jjdescription = { "conventional_commits", "git", "buffer", "path" },
 				},
 				providers = {
 					minuet = {
@@ -212,20 +213,6 @@ return {
 						name = "Conventional Commits",
 						module = "blink-cmp-conventional-commits",
 					},
-				},
-			},
-			fuzzy = {
-				sorts = {
-					function(a, b)
-						local sort = require("blink.cmp.fuzzy.sort")
-						if a.source_id == "spell" and b.source_id == "spell" then
-							return sort.label(a, b)
-						end
-					end,
-					-- This is the normal default order, which we fall back to
-					"score",
-					"kind",
-					"label",
 				},
 			},
 			cmdline = {
