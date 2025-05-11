@@ -49,7 +49,9 @@ pager = "delta"
 sign-on-push = true
 fetch = ["origin", "glob:upstream*"]
 abandon-unreachable-commits = true
-push-new-bookmarks = true
+
+[remotes.origin]
+auto-track-bookmarks = "glob:prayagmatic/*"
 
 [signing]
 behavior = "own"
@@ -75,3 +77,5 @@ concat(
   diff.git(),
 )
 '''
+git_push_bookmark = '"prayagmatic/jj-push-" ++ change_id.short()'
+
