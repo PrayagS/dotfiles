@@ -129,9 +129,11 @@ return {
 						treesitter = { "lsp" },
 						columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "source_name" } },
 					},
+					border = "bold",
 				},
 				documentation = {
 					auto_show = true,
+					window = { border = "bold" },
 				},
 				ghost_text = { enabled = true },
 			},
@@ -244,6 +246,7 @@ return {
 			},
 			signature = {
 				enabled = true,
+				window = { border = "bold" },
 			},
 		},
 	},
