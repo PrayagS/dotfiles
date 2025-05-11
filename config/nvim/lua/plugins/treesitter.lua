@@ -2,16 +2,11 @@ return {
 	-- TODO: nvim-treesitter/nvim-treesitter-textobjects
 	{
 		"nvim-treesitter/nvim-treesitter",
-		branch = "master",
+		branch = "main",
 		build = ":TSUpdate",
-		-- lazy = false,
-		event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
-		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-refactor",
-		},
-		opts = {
-			ensure_installed = {
+		lazy = false,
+		config = function()
+			local ensure_installed = {
 				"bash",
 				"c",
 				"cpp",
@@ -34,18 +29,18 @@ return {
 				"typst",
 				"yaml",
 				"vimdoc",
-			},
-			sync_install = false,
-			highlight = { enable = true },
-			indent = { enable = true },
-			incremental_selection = { enable = true },
-			refactor = {
-				highlight_definitions = { enable = true },
-				-- highlight_current_scope = { enable = true },
-			},
-		},
-		config = function(_, opts)
-			require("nvim-treesitter.configs").setup(opts)
+			}
+
+			require("nvim-treesitter").install(ensure_installed)
+
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = ensure_installed,
+				callback = function()
+					vim.treesitter.start()
+					vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+					vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+				end,
+			})
 		end,
 	},
 	{
