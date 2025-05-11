@@ -13,6 +13,11 @@ return {
 		},
 		-- version = "*",
 		opts = {
+			keymap = {
+				preset = "default",
+				["<Tab>"] = { "fallback" },
+				["<S-Tab>"] = { "fallback" },
+			},
 			completion = {
 				keyword = {
 					range = "full",

@@ -50,7 +50,7 @@ return {
 	},
 	{
 		"abecodes/tabout.nvim",
-		event = "InsertCharPre", -- Set the event to 'InsertCharPre' for better compatibility
+		lazy = false,
 		opts = {},
 	},
 	{
