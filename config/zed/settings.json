@@ -7,6 +7,26 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "title_bar": {
+    "show_menus": false,
+    "show_branch_icon": true
+  },
+  "search": {
+    "regex": true
+  },
+  "lsp_document_colors": "inlay",
+  "indent_guides": {
+    "background_coloring": "disabled",
+    "coloring": "fixed"
+  },
+  "tab_size": 2,
+  "gutter": {
+    "min_line_number_digits": 4
+  },
+  "relative_line_numbers": true,
+  "show_signature_help_after_edits": true,
+  "agent_buffer_font_size": 14.0,
+  "confirm_quit": true,
   "terminal": {
     "toolbar": {
       "breadcrumbs": false
@@ -50,8 +70,8 @@
   "agent": {
     "default_profile": "write",
     "default_model": {
-      "provider": "openai",
-      "model": "gemma-3n-e4b-it"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-thinking"
     },
     "stream_edits": true,
     "notify_when_agent_waiting": "all_screens",
@@ -69,12 +89,12 @@
   },
   "ui_font_size": 15,
   "buffer_font_size": 14,
-  "agent_font_size": 16,
+  "agent_ui_font_size": 16,
   "buffer_font_family": "Maple Mono",
   "ui_font_family": "Iosevka Aile",
   "use_smartcase_search": true,
   "inlay_hints": {
-    "enabled": true,
+    "enabled": false,
     "show_background": true
   },
   "tabs": {
@@ -92,26 +112,11 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Modus Operandi Tinted"
+    "dark": "Melange Dark"
   },
   "language_models": {
-    // "openai": {
-    //   "api_url": "https://api.groq.com/openai/v1",
-    //   "available_models": [
-    //     {
-    //       "name": "moonshotai/kimi-k2-instruct",
-    //       "max_tokens": 16384
-    //     }
-    //   ]
-    // }
     "openai": {
-      "api_url": "http://10.100.12.87:1234/v1",
-      "available_models": [
-        {
-          "name": "gemma-3n-e4b-it",
-          "max_tokens": 2048
-        }
-      ]
+      "api_url": "http://10.100.1.108:8080/v1"
     }
   }
 }
