@@ -17,6 +17,7 @@ setopt globdots
 
 # Enable completion menu
 # zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' menu no
 
 # case insensitive (all), partial-word and substring completion
 if [[ "$CASE_SENSITIVE" = true ]]; then
