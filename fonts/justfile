@@ -1,0 +1,33 @@
+
+default:
+    @just --list
+
+update-maple-mono:
+    wget --quiet --show-progress 'https://github.com/subframe7536/maple-font/releases/latest/download/MapleMono-TTF.zip'
+    unzip -o \
+        -d 'MapleMono-TTF' 'MapleMono-TTF.zip' \
+        'MapleMono-Bold.ttf' 'MapleMono-BoldItalic.ttf' 'MapleMono-Italic.ttf' 'MapleMono-Regular.ttf'
+    rm 'MapleMono-TTF.zip'
+
+IOSEVKA_RELEASE_VERSION := ```
+    gh release list \
+        --repo 'be5invis/Iosevka' \
+        --json 'isLatest,tagName' \
+        --jq '.[] | select(.isLatest == true) | .tagName' \
+        | cut -d'v' -f2
+```
+update-iosevka:
+    echo "{{IOSEVKA_RELEASE_VERSION}}"
+    wget --quiet --show-progress \
+        'https://github.com/be5invis/Iosevka/releases/download/v{{IOSEVKA_RELEASE_VERSION}}/PkgTTF-Unhinted-Iosevka-{{IOSEVKA_RELEASE_VERSION}}.zip' \
+        'https://github.com/be5invis/Iosevka/releases/download/v{{IOSEVKA_RELEASE_VERSION}}/PkgTTF-Unhinted-IosevkaAile-{{IOSEVKA_RELEASE_VERSION}}.zip' \
+        'https://github.com/be5invis/Iosevka/releases/download/v{{IOSEVKA_RELEASE_VERSION}}/PkgTTF-Unhinted-IosevkaTerm-{{IOSEVKA_RELEASE_VERSION}}.zip'
+    unzip -o \
+        -d 'Iosevka' 'PkgTTF-Unhinted-Iosevka-{{IOSEVKA_RELEASE_VERSION}}.zip' \
+        'Iosevka-Bold.ttf' 'Iosevka-BoldItalic.ttf' 'Iosevka-Italic.ttf' 'Iosevka-Regular.ttf'
+    unzip -o \
+        -d 'Iosevka' 'PkgTTF-Unhinted-IosevkaAile-{{IOSEVKA_RELEASE_VERSION}}.zip' \
+        'IosevkaAile-Bold.ttf' 'IosevkaAile-BoldItalic.ttf' 'IosevkaAile-Italic.ttf' 'IosevkaAile-Regular.ttf'
+    unzip -o \
+        -d 'Iosevka' 'PkgTTF-Unhinted-IosevkaTerm-{{IOSEVKA_RELEASE_VERSION}}.zip' \
+        'IosevkaTerm-Bold.ttf' 'IosevkaTerm-BoldItalic.ttf' 'IosevkaTerm-Italic.ttf' 'IosevkaTerm-Regular.ttf'
