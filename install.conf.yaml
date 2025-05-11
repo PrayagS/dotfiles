@@ -56,6 +56,7 @@
     ~/.config/zed/keymap.json: config/zed/keymap.json
     ~/.claude/CLAUDE.md: config/claude/CLAUDE.md
     ~/.config/mise: config/mise
+    ~/.config/ghostty: config/ghostty
 
 - shell:
     # - [git submodule update --init --recursive --remote --force, Installing submodules]

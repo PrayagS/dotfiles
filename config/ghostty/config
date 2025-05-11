@@ -1,0 +1,113 @@
+font-family = 'Maple Mono'
+font-size = 14
+font-thicken = true
+
+alpha-blending = native
+background-blur = true
+background-opacity = 0.95
+split-divider-color = #ebdbb2
+
+# window-decoration = none
+window-title-font-family = Iosevka Aile
+window-subtitle = working-directory
+window-save-state = always
+
+# theme = Gruvbox Material Dark
+# theme = Gruvbox Dark
+# theme = Gruvbox Material
+theme = Gruvbox Dark Hard
+
+selection-clear-on-typing = false
+selection-clear-on-copy = true
+cursor-click-to-move = true
+mouse-hide-while-typing = true
+clipboard-trim-trailing-spaces = true
+copy-on-select = clipboard
+
+scrollback-limit = 536870912
+
+link-url = true
+link-previews = true
+
+resize-overlay = always
+resize-overlay-duration = 2s
+
+focus-follows-mouse = true
+
+undo-timeout = 15m
+
+quick-terminal-size = 25%
+quick-terminal-screen = mouse
+
+shell-integration = zsh
+shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo
+
+bell-features = system,attention,border,title
+
+app-notifications = clipboard-copy,config-reload
+
+macos-window-buttons = hidden
+macos-titlebar-style = tabs
+macos-window-shadow = false
+macos-option-as-alt = true
+macos-icon = chalkboard
+
+term = xterm-256color
+
+keybind = super+equal=increase_font_size:1
+keybind = super+-=decrease_font_size:1
+keybind = super+shift+equal=reset_font_size
+
+keybind = super+k=clear_screen
+
+keybind = super+shift+k=jump_to_prompt:-1
+keybind = super+shift+j=jump_to_prompt:1
+
+keybind = super+shift+e=write_screen_file:open
+# keybind = super+shift+e=write_selection_file:open
+
+keybind = ctrl+s>t=new_tab
+keybind = ctrl+s>[=previous_tab
+keybind = ctrl+s>]=next_tab
+keybind = ctrl+s>1=goto_tab:1
+keybind = ctrl+s>2=goto_tab:2
+keybind = ctrl+s>3=goto_tab:3
+keybind = ctrl+s>4=goto_tab:4
+keybind = ctrl+s>5=goto_tab:5
+keybind = ctrl+s>6=goto_tab:6
+keybind = ctrl+s>7=goto_tab:7
+keybind = ctrl+s>8=goto_tab:8
+keybind = ctrl+s>9=goto_tab:9
+keybind = ctrl+s>period=move_tab:1
+keybind = ctrl+s>comma=move_tab:-1
+
+keybind = ctrl+s>-=new_split:down
+keybind = ctrl+s>shift+-=new_split:up
+keybind = ctrl+s>\=new_split:right
+keybind = ctrl+s>shift+\=new_split:left
+keybind = ctrl+s>l=goto_split:right
+keybind = ctrl+s>h=goto_split:left
+keybind = ctrl+s>k=goto_split:up
+keybind = ctrl+s>j=goto_split:down
+keybind = ctrl+s>o=toggle_split_zoom
+keybind = super+shift+l=resize_split:right,30
+keybind = super+shift+h=resize_split:left,30
+keybind = super+shift+k=resize_split:up,30
+keybind = super+shift+j=resize_split:down,30
+keybind = super+shift+0=equalize_splits
+
+keybind = super+w=close_surface
+keybind = super+shift+w=close_window
+
+keybind = global:cmd+backquote=toggle_quick_terminal
+
+keybind = super+shift+,=reload_config
+keybind = super+,=open_config
+
+keybind = super+shift+z=redo
+keybind = super+shift+t=undo
+keybind = super+z=undo
+
+keybind = super+shift+p=toggle_command_palette
+
+keybind = shift+enter=text:\x1b\r
