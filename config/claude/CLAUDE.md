@@ -9,26 +9,18 @@ When you seem stuck or overly complex, I'll redirect you - my guidance helps you
 ### GAINING CONTEXT OF THE WHOLE CODEBASE
 
 Instead of reading a small set of files for each new thread, do the following instead,
-* Always read the file called `repomix-output.xml` or `code2prompt-output.xml`. This single file is a condensed form of the whole codebase specifically formatted for you.
-* If you don't find this file in the project, prompt me to provide it.
+* Always list all files at the project root to find a file called `repomix-output.xml` or `code2prompt-output.xml`. Read this file immediately. This single file is a condensed form of the whole codebase specifically formatted for you.
 
 ### USE LANGUAGE SERVER MCP TOOLS
 *Leverage LSP capabilities aggressively* for better results:
 
-In every project, you will find a MCP initialized for language server capabilities. It usually has the following tools available,
-- definition: Read the source code definition of a symbol (function, type, constant, etc.) from the codebase.
-- diagnostics: Get diagnostic information for a specific file from the language server.
-- references: Find all usages and references of a symbol throughout the
-codebase. Returns a list of all files and locations where the symbol appears.
-- rename_symbol: Rename a symbol (variable, function, class, etc.) at the specified position and update all references throughout the codebase.
+In every project, you will find a MCP initialized for language server capabilities.
 
-Here are your instructions on how to leverage them,
-* Always use `definition` instead of directly reading a file or using grep to search for a symbol.
+Here are your instructions on how to leverage those MCP tools,
+* Always use `definition` instead of directly reading a file or using grep to search for a symbol and its definition.
+* Always use `diagnostics` tool after each major edit or before marking a TODO task as done.
 * Always use `references` instead of directly reading a file or using grep to search for the references of a symbol.
-* Always use `diagnostics` tool after each major edit to a file.
 * Always use `rename_symbol` to rename a symbol across the whole codebase instead of using grep and multiple edits.
-
-**REMINDER**: If you're not able to find these tools upon initialization, prompt me to configure them.
 
 ### USE MULTIPLE AGENTS!
 *Leverage subagents aggressively* for better results:
