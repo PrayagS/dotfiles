@@ -7,5 +7,6 @@ show_at_start = false
 width_percentage = 55
 
 [custom_commands]
+"copy bookmark" = { args = [ "util", "exec", "--", "jjui-copy-bookmark.sh", "$change_id" ], key = ["y"] }
 "open PR" = { args = [ "util", "exec", "--", "jjui-gh-pr.sh", "$change_id" ], show = "interactive", key = ["p"] }
 "merge PR" = { args = [ "util", "exec", "--", "jjui-gh-pr-merge.sh", "$change_id" ], show = "interactive", key = ["m"] }
