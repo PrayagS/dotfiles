@@ -39,3 +39,7 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
 # Disable creation of .DS_Store files
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+
+# https://github.com/zed-industries/zed/issues/33182
+# Some macOS 26 bug that causes lag when OTP input is triggered
+defaults write -g NSAutoFillHeuristicControllerEnabled -bool false
