@@ -28,11 +28,17 @@ return {
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 				callback = function(event)
-					local map = function(keys, func, desc)
-						vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+					local map = function(keys, func, desc, mode)
+						mode = mode or "n"
+						vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
 					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 					map("<leader>k", vim.lsp.buf.hover, "Hover Documentation")
+
+					map("<leader>ca", function()
+						require("tiny-code-action").code_action({})
+					end, "Code action", { "n", "x" })
+					map("<leader>cA", vim.lsp.buf.code_action, "Code action", { "n", "x" })
 
 					local function client_supports_method(client, method, bufnr)
 						if vim.fn.has("nvim-0.11") == 1 then
@@ -234,7 +240,29 @@ return {
 		end,
 	},
 	{
+		"rachartier/tiny-code-action.nvim",
+		dependencies = {
+			{ "nvim-lua/plenary.nvim" },
+		},
+		event = "LspAttach",
+		opts = {
+			backend = "delta",
+			backend_opts = {
+				delta = {
+					args = {
+						"--features=gruvbox-dark-code-actions-preview",
+					},
+				},
+			},
+			picker = {
+				"snacks",
+				opts = { layout = { preset = "dropdown" } },
+			},
+		},
+	},
+	{
 		"aznhe21/actions-preview.nvim",
+		enabled = false,
 		keys = {
 			{
 				"<leader>ca",
