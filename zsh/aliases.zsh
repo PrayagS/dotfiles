@@ -25,7 +25,7 @@ alias -g oldbrew="/usr/local/bin/brew"
 alias -g lg="lazygit"
 alias jjs="jj && jj st"
 alias -g wget="wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""
-alias -g fd="fd --hidden --follow --hyperlink=auto"
+alias -g fd="fd --hidden --follow"
 # alias -g cdg="cd ./$(git rev-parse --show-cdup)"
 
 # Launch
