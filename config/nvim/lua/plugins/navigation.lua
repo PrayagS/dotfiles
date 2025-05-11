@@ -106,7 +106,7 @@ return {
 				desc = "Treesitter Search",
 			},
 			{
-				"<c-s>",
+				"<c-f>",
 				mode = { "c" },
 				function()
 					require("flash").toggle()

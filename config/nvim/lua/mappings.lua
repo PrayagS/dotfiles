@@ -70,9 +70,6 @@ set("i", ",", ",<c-g>u")
 set("i", ".", ".<c-g>u")
 set("i", ";", ";<c-g>u")
 
--- save file
-set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
-
 -- better indenting
 set("v", "<", "<gv")
 set("v", ">", ">gv")

@@ -188,45 +188,45 @@ return {
 		enabled = true,
 		keys = {
 			{
-				"<C-a>",
+				"<C-,>",
 				mode = { "n", "v" },
 			},
 			{
-				"<C-x>",
+				"<C-.>",
 				mode = { "n", "v" },
 			},
 			{
-				"g<C-a>",
+				"g<C-,>",
 				mode = { "n", "v" },
 			},
 			{
-				"g<C-x>",
+				"g<C-.>",
 				mode = { "n", "v" },
 			},
 		},
 		config = function()
-			vim.keymap.set("n", "<C-a>", function()
+			vim.keymap.set("n", "<C-,>", function()
 				require("dial.map").manipulate("increment", "normal")
 			end)
-			vim.keymap.set("n", "<C-x>", function()
+			vim.keymap.set("n", "<C-.>", function()
 				require("dial.map").manipulate("decrement", "normal")
 			end)
-			vim.keymap.set("n", "g<C-a>", function()
+			vim.keymap.set("n", "g<C-,>", function()
 				require("dial.map").manipulate("increment", "gnormal")
 			end)
-			vim.keymap.set("n", "g<C-x>", function()
+			vim.keymap.set("n", "g<C-.>", function()
 				require("dial.map").manipulate("decrement", "gnormal")
 			end)
-			vim.keymap.set("v", "<C-a>", function()
+			vim.keymap.set("v", "<C-,>", function()
 				require("dial.map").manipulate("increment", "visual")
 			end)
-			vim.keymap.set("v", "<C-x>", function()
+			vim.keymap.set("v", "<C-.>", function()
 				require("dial.map").manipulate("decrement", "visual")
 			end)
-			vim.keymap.set("v", "g<C-a>", function()
+			vim.keymap.set("v", "g<C-,>", function()
 				require("dial.map").manipulate("increment", "gvisual")
 			end)
-			vim.keymap.set("v", "g<C-x>", function()
+			vim.keymap.set("v", "g<C-.>", function()
 				require("dial.map").manipulate("decrement", "gvisual")
 			end)
 
