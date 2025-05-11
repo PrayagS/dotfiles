@@ -92,6 +92,7 @@ _evalcache zoxide init zsh
 
 _lazy_load beans "beans completion zsh"
 _lazy_load jj "COMPLETE=zsh jj"
-_lazy_load gh "gh completion zsh"
+_lazy_load gh "gh completion -s zsh"
 _lazy_load rg "rg --generate complete-zsh"
 _lazy_load helm "helm completion zsh"
+_lazy_load workmux "workmux completions zsh"
