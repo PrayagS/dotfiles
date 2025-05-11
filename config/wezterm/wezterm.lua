@@ -320,6 +320,18 @@ end)
 -- resurrect on startup
 wezterm.on("gui-startup", resurrect.state_manager.resurrect_on_gui_startup)
 
+---Source: https://github.com/MLFlexer/resurrect.wezterm/issues/73#issuecomment-2798742234
+---@param workspace string
+---@return MuxWindow
+local function get_current_mux_window(workspace)
+	for _, mux_win in ipairs(wezterm.mux.all_windows()) do
+		if mux_win:get_workspace() == workspace then
+			return mux_win
+		end
+	end
+	error("Could not find a workspace with the name: " .. workspace)
+end
+
 config.ui_key_cap_rendering = "UnixLong"
 -- https://wezfurlong.org/wezterm/config/keys.html?#leader-key
 config.leader = { key = "Tab", mods = "CTRL", timeout_milliseconds = 1000 }
@@ -370,16 +382,19 @@ config.keys = {
 				local type = string.match(id, "^([^/]+)") -- match before '/'
 				id = string.match(id, "([^/]+)$") -- match after '/'
 				id = string.match(id, "(.+)%..+$") -- remove file extention
-				local opts = {
-					close_open_tabs = true,
-					window = pane:window(),
-					relative = true,
-					restore_text = true,
-					on_pane_restore = resurrect.tab_state.default_on_pane_restore,
-				}
 				if type == "workspace" then
+					-- What's happening here,
+					-- 1. Select the workspace to switch to from the switcher
+					-- 2. Load the selected workspace's state
 					local state = resurrect.state_manager.load_state(id, "workspace")
-					-- create new workspace with previous name
+					-- 3. create new workspace with previous name. This is because the
+					-- plugin author's intended flow is to restore the selected
+					-- workspace's state into the currently running workspace.
+					--
+					-- What I want is to load the selected workspace while also switching
+					-- to that workspace. To achieve that behavior, we create a new
+					-- workspace with the same name and then restore the state.
+					--
 					-- Source: https://github.com/MLFlexer/resurrect.wezterm/issues/73#issuecomment-2572924018
 					win:perform_action(
 						wezterm.action.SwitchToWorkspace({
@@ -387,6 +402,13 @@ config.keys = {
 						}),
 						pane
 					)
+					local opts = {
+						close_open_tabs = true,
+						window = get_current_mux_window(wezterm.mux.get_active_workspace()),
+						relative = true,
+						restore_text = true,
+						on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+					}
 					resurrect.workspace_state.restore_workspace(state, opts)
 				end
 			end, { ignore_tabs = true, ignore_windows = true })
