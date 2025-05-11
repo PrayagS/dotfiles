@@ -42,6 +42,10 @@ opt.path:append("**")
 -- Avoid copying line numbers when using mouse
 opt.mouse:append("a")
 
+-- spellcheck
+opt.spell = true
+opt.spelllang = "en_us"
+
 opt.autowrite = true -- Enable auto write
 opt.completeopt = "menu,menuone,noselect"
 opt.confirm = true

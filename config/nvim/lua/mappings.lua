@@ -70,6 +70,9 @@ set("i", ",", ",<c-g>u")
 set("i", ".", ".<c-g>u")
 set("i", ";", ";<c-g>u")
 
+-- fix misspelled words
+set("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u")
+
 -- better indenting
 set("v", "<", "<gv")
 set("v", ">", ">gv")
