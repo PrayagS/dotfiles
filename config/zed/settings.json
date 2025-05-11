@@ -8,6 +8,22 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "icon_theme": "Zed (Default)",
+  "languages": {
+    "YAML": {
+      "formatter": "language_server"
+    }
+  },
+  "lsp": {
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "format": {
+            "singleQuote": true
+          }
+        }
+      }
+    }
+  },
   "edit_predictions": {
     "disabled_globs": [],
     "mode": "eager",
