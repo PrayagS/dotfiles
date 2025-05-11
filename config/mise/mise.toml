@@ -90,5 +90,8 @@ cargo-binstall = "latest"
 redis = "latest"
 "http:fzf-tmux" = { version = "0415fa8", url = "https://raw.githubusercontent.com/junegunn/fzf/9725eac314551072538c06ef914a0e7bedf19018/bin/fzf-tmux" }
 "github:kavehtehrani/cloudflare-speed-cli" = "latest"
+"npm:pixelhq" = "latest"
 "github:backnotprop/plannotator" = "latest"
 "cargo:jj-vine" = "latest"
+ast-grep = "latest"
+amp = "latest"
