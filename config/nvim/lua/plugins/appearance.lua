@@ -1,17 +1,5 @@
 return {
 	{
-		"folke/which-key.nvim",
-		enabled = false,
-		event = "VeryLazy",
-		init = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 100
-		end,
-		opts = {
-			preset = "helix",
-		},
-	},
-	{
 		"kevinhwang91/nvim-hlslens",
 		event = "VeryLazy",
 		config = function()
@@ -477,28 +465,28 @@ return {
 			end
 		end,
 	},
-	{
-		"smjonas/live-command.nvim",
-		name = "live-command",
-		cmd = "Preview",
-		opts = {
-			enable_highlighting = true,
-			inline_highlighting = true,
-			hl_groups = {
-				insertion = "DiffAdd",
-				deletion = "DiffDelete",
-				change = "DiffChange",
-			},
-			commands = {
-				Norm = { cmd = "norm" },
-				G = { cmd = "g" },
-				D = { cmd = "d" },
-			},
-		},
-		config = function(_, opts)
-			require("live-command").setup(opts)
-		end,
-	},
+	-- {
+	-- 	"smjonas/live-command.nvim",
+	-- 	name = "live-command",
+	-- 	cmd = "Preview",
+	-- 	opts = {
+	-- 		enable_highlighting = true,
+	-- 		inline_highlighting = true,
+	-- 		hl_groups = {
+	-- 			insertion = "DiffAdd",
+	-- 			deletion = "DiffDelete",
+	-- 			change = "DiffChange",
+	-- 		},
+	-- 		commands = {
+	-- 			Norm = { cmd = "norm" },
+	-- 			G = { cmd = "g" },
+	-- 			D = { cmd = "d" },
+	-- 		},
+	-- 	},
+	-- 	config = function(_, opts)
+	-- 		require("live-command").setup(opts)
+	-- 	end,
+	-- },
 	{
 		"yamatsum/nvim-cursorline",
 		event = "VeryLazy",
@@ -513,41 +501,41 @@ return {
 			},
 		},
 	},
-	{
-		"MagicDuck/grug-far.nvim",
-		keys = {
-			{
-				"<leader>rg",
-				"<cmd>GrugFar<cr>",
-				mode = { "n", "v" },
-				desc = "GrugFar",
-			},
-		},
-		config = function()
-			require("grug-far").setup({
-				engines = {
-					ripgrep = {
-						extraRgArgs = "--smart-case --follow --hidden --threads=32 --context=3 --heading --line-number",
-					},
-				},
-				transient = true,
-			})
-		end,
-	},
-	{
-		"cshuaimin/ssr.nvim",
-		keys = {
-			{
-				"<leader>sr",
-				"<cmd>lua require('ssr').open()<cr>",
-				mode = { "n", "x" },
-				desc = "structured search and replace (ssr)",
-			},
-		},
-		config = function()
-			require("ssr").setup()
-		end,
-	},
+	-- {
+	-- 	"MagicDuck/grug-far.nvim",
+	-- 	keys = {
+	-- 		{
+	-- 			"<leader>rg",
+	-- 			"<cmd>GrugFar<cr>",
+	-- 			mode = { "n", "v" },
+	-- 			desc = "GrugFar",
+	-- 		},
+	-- 	},
+	-- 	config = function()
+	-- 		require("grug-far").setup({
+	-- 			engines = {
+	-- 				ripgrep = {
+	-- 					extraRgArgs = "--smart-case --follow --hidden --threads=32 --context=3 --heading --line-number",
+	-- 				},
+	-- 			},
+	-- 			transient = true,
+	-- 		})
+	-- 	end,
+	-- },
+	-- {
+	-- 	"cshuaimin/ssr.nvim",
+	-- 	keys = {
+	-- 		{
+	-- 			"<leader>sr",
+	-- 			"<cmd>lua require('ssr').open()<cr>",
+	-- 			mode = { "n", "x" },
+	-- 			desc = "structured search and replace (ssr)",
+	-- 		},
+	-- 	},
+	-- 	config = function()
+	-- 		require("ssr").setup()
+	-- 	end,
+	-- },
 	{
 		"folke/todo-comments.nvim",
 		-- cmd = { "TodoTelescope", "TodoQuickFix", "TodoLocList" },

@@ -185,7 +185,6 @@ return {
 	},
 	{
 		"monaqa/dial.nvim",
-		enabled = true,
 		keys = {
 			{
 				"<C-a>",

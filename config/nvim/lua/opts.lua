@@ -84,3 +84,5 @@ opt.updatetime = 1000
 opt.laststatus = 3
 opt.signcolumn = "auto:9"
 opt.sessionoptions = "buffers,curdir,folds,help,localoptions,tabpages,winsize,winpos"
+
+opt.wrap = false

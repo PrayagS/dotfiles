@@ -1,0 +1,324 @@
+#!/usr/bin/env bash
+# jj-vine-land — land stacked jj-vine PRs one at a time.
+#
+# Usage:
+#   jj-vine-land [--dry-run|-n] [--status] [<revset>] [-- <extra gh pr merge args...>]
+
+set -euo pipefail
+
+# ── Colors ────────────────────────────────────────────────────────────────────
+bold=$'\e[1m'
+dim=$'\e[2m'
+reset=$'\e[0m'
+cyan=$'\e[36m'
+green=$'\e[32m'
+yellow=$'\e[33m'
+red=$'\e[31m'
+
+info()    { echo "${cyan}${bold}==>${reset} $*"; }
+success() { echo "${green}${bold}✓${reset}  $*"; }
+step()    { echo "${yellow}${bold}→${reset}  $*"; }
+error()   { echo "${red}${bold}✗${reset}  $*" >&2; }
+divider() { echo "${dim}────────────────────────────────────────${reset}"; }
+
+# ── Spinner runner ─────────────────────────────────────────────────────────────
+frames='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
+
+# run <plain_label> <cmd...>
+# Runs cmd in background with a spinner. Clears line on success.
+# On failure: prints captured output to stderr and exits.
+run() {
+  local label="$1"; shift
+  local tmp rc i=0
+  tmp=$(mktemp)
+
+  "$@" >"$tmp" 2>&1 &
+  local pid=$!
+
+  while kill -0 "$pid" 2>/dev/null; do
+    printf "\r${yellow}${bold}%s${reset}  %s" "${frames:$((i % ${#frames})):1}" "$label"
+    (( i++ )) || true
+    sleep 0.08
+  done
+
+  rc=0; wait "$pid" || rc=$?
+  printf "\r\033[K"
+
+  if [[ $rc -ne 0 ]]; then
+    error "$label"
+    cat "$tmp" >&2
+    rm -f "$tmp"
+    exit 1
+  fi
+
+  rm -f "$tmp"
+}
+
+# ── Helpers ────────────────────────────────────────────────────────────────────
+die() { error "$*"; exit 1; }
+
+count_lines() { sed '/^$/d' | wc -l | tr -d ' '; }
+
+bookmark_for() {
+  jj log --no-graph -r "$1" -T 'local_bookmarks.map(|b| b.name()).join("\n")'
+}
+
+pr_field() {
+  gh pr view -R "$repo" "$1" --json "$2" --jq ".${2}"
+}
+
+merge_pr() {
+  local repo="$1"
+  local number="$2"
+  shift 2
+  local tmp rc=0
+  tmp=$(mktemp)
+
+  gh pr merge -R "$repo" "$@" "$number" >"$tmp" 2>&1 || rc=$?
+  if [[ $rc -ne 0 ]]; then
+    local state
+    state=$(gh pr view -R "$repo" "$number" --json state --jq .state 2>/dev/null || true)
+    if [[ "$state" == "MERGED" ]]; then
+      info "gh reported a post-merge cleanup error; PR #$number is merged, continuing"
+      rm -f "$tmp"
+      return 0
+    fi
+
+    cat "$tmp" >&2
+    rm -f "$tmp"
+    return "$rc"
+  fi
+
+  rm -f "$tmp"
+}
+
+delete_remote_branch() {
+  local repo="$1"
+  local branch="$2"
+  local tmp rc=0
+  tmp=$(mktemp)
+
+  gh api -X DELETE "repos/$repo/git/refs/heads/$branch" >"$tmp" 2>&1 || rc=$?
+  if [[ $rc -ne 0 ]]; then
+    if grep -qiE 'Reference does not exist|Not Found' "$tmp"; then
+      rm -f "$tmp"
+      return 0
+    fi
+
+    cat "$tmp" >&2
+    rm -f "$tmp"
+    return "$rc"
+  fi
+
+  rm -f "$tmp"
+}
+
+show_stack() {
+  jj log --no-graph --reversed -r "$1" \
+    -T 'change_id.short() ++ "  " ++ local_bookmarks.map(|b| b.name()).join(",") ++ "  " ++ description.first_line() ++ "\n"'
+}
+
+show_remaining_prs() {
+  local revs="$1"
+
+  echo ""
+  divider
+  info "Remaining PRs"
+  if [[ -z "$revs" ]]; then
+    echo "None"
+    divider
+    return
+  fi
+
+  while IFS= read -r rev; do
+    [[ -z "$rev" ]] && continue
+    local bookmark
+    bookmark=$(bookmark_for "$rev" | sed '/^$/d' | head -1)
+    if [[ -z "$bookmark" ]]; then
+      echo "${rev:0:12}  no bookmark"
+      continue
+    fi
+
+    gh pr view -R "$repo" "$bookmark" \
+      --json number,title,url,headRefName,baseRefName,state,isDraft,mergeable \
+      --jq '"#\(.number) \(.url) - \(.title)"'
+  done <<< "$revs"
+  divider
+}
+
+show_status() {
+  local revs="$1"
+  local printed=false
+
+  info "Remaining PRs"
+  while IFS= read -r rev; do
+    [[ -z "$rev" ]] && continue
+    local bookmark
+    bookmark=$(bookmark_for "$rev" | sed '/^$/d' | head -1)
+    [[ -z "$bookmark" ]] && continue
+
+    local pr
+    pr=$(gh pr view -R "$repo" "$bookmark" --json state,url --jq 'select(.state == "OPEN") | .url')
+    if [[ -n "$pr" ]]; then
+      echo "$pr"
+      printed=true
+    fi
+  done <<< "$revs"
+
+  $printed || echo "None"
+}
+
+usage() {
+  echo "Usage:"
+  echo "  jj-vine-land [--dry-run|-n] [--status] [<revset>] [-- <extra gh pr merge args...>]"
+  echo ""
+  echo "Examples:"
+  echo "  jj-vine-land"
+  echo "  jj-vine-land --status"
+  echo "  jj-vine-land -n -- --subject 'custom squash title'"
+}
+
+dry_run=false
+status=false
+separator_seen=false
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --dry-run|-n) dry_run=true; shift ;;
+    --status) status=true; shift ;;
+    --help|-h) usage; exit 0 ;;
+    --) separator_seen=true; shift; break ;;
+    -*) die "Unknown option: $1" ;;
+    *) break ;;
+  esac
+done
+
+revset="trunk()..@-"
+if ! $separator_seen && [[ $# -gt 0 ]]; then
+  revset="$1"
+  shift
+fi
+[[ "${1:-}" == "--" ]] && shift
+
+for arg in "$@"; do
+  case "$arg" in
+    --delete-branch|-d)
+      die "Do not pass $arg. jj-vine-land deletes merged branches only after remaining PRs are retargeted."
+      ;;
+  esac
+done
+
+merge_args=(--squash --admin)
+merge_args+=("$@")
+repo_url=$(jj git remote list | awk '$1 == "origin" { print $2; exit }')
+[[ -z "$repo_url" ]] && die "No origin Git remote found"
+repo=$(gh repo view "$repo_url" --json nameWithOwner --jq .nameWithOwner)
+
+revs=$(jj log --no-graph --reversed -r "$revset" -T 'change_id ++ "\n"')
+[[ -z "$revs" ]] && die "No revisions matched revset: ${bold}$revset${reset}"
+
+if $status; then
+  show_status "$revs"
+  exit 0
+fi
+
+total=$(echo "$revs" | count_lines)
+$dry_run && echo "${yellow}${bold}DRY RUN${reset} — no changes will be made"
+
+divider
+info "Stack has ${bold}$total${reset} PR(s); landing next from ${bold}$revset${reset}"
+show_stack "$revset"
+divider
+
+current=$(echo "$revs" | sed -n '1p')
+rest=$(echo "$revs" | sed '1d')
+current_short="${current:0:12}"
+
+bookmarks=$(bookmark_for "$current" | sed '/^$/d')
+bookmark_count=$(echo "$bookmarks" | count_lines)
+[[ "$bookmark_count" -eq 0 ]] && die "$current_short has no local bookmark. Create/sync PRs with: jj-vine-submit-stack '$revset'"
+if [[ "$bookmark_count" -gt 1 ]]; then
+  error "$current_short has multiple local bookmarks; keep one before landing:"
+  echo "$bookmarks" >&2
+  exit 1
+fi
+
+bookmark="$bookmarks"
+pr_url=$(pr_field "$bookmark" url)
+pr_number=$(pr_field "$bookmark" number)
+pr_state=$(pr_field "$bookmark" state)
+pr_title=$(pr_field "$bookmark" title)
+pr_head=$(pr_field "$bookmark" headRefName)
+[[ "$pr_state" == "OPEN" || "$pr_state" == "MERGED" ]] || die "PR #$pr_number for $bookmark is $pr_state, not OPEN or MERGED: $pr_url"
+
+echo ""
+divider
+info "Landing ${bold}#$pr_number${reset} from ${bold}$bookmark${reset}"
+echo "${dim}$pr_title${reset}"
+echo "${dim}$pr_url${reset}"
+divider
+
+if $dry_run; then
+  if [[ "$pr_state" == "MERGED" ]]; then
+    step "skip merge; PR #$pr_number is already merged"
+  else
+    step "gh pr merge ${merge_args[*]} $pr_url"
+  fi
+  step "jj git fetch --tracked"
+else
+  if [[ "$pr_state" == "MERGED" ]]; then
+    info "PR ${bold}#$pr_number${reset} is already merged; continuing cleanup"
+  else
+    run "merging #$pr_number ..." merge_pr "$repo" "$pr_number" "${merge_args[@]}"
+    success "Merged ${bold}#$pr_number${reset}"
+  fi
+
+  echo ""
+  run "fetching latest tracked bookmarks..." jj git fetch --tracked
+  success "Fetched latest"
+fi
+
+if [[ -n "$rest" ]]; then
+  next=$(echo "$rest" | sed -n '1p')
+  rest_revset="$next::@-"
+  rest_count=$(echo "$rest" | count_lines)
+
+  echo ""
+  if $dry_run; then
+    step "jj rebase -s ${next:0:12} -d trunk()"
+    step "jj-vine-submit-stack '$rest_revset'"
+  else
+    run "rebasing remaining stack onto trunk..." jj rebase -s "$next" -d 'trunk()'
+    success "Rebased ${bold}$rest_count${reset} remaining change(s)"
+
+    echo ""
+    run "syncing remaining PR stack..." jj-vine-submit-stack "$rest_revset"
+    success "Synced remaining PR stack"
+  fi
+fi
+
+echo ""
+if $dry_run; then
+  step "delete remote branch $pr_head"
+  step "jj git fetch --tracked"
+  step "jj abandon $current_short"
+else
+  run "deleting merged branch $pr_head ..." delete_remote_branch "$repo" "$pr_head"
+  success "Deleted merged branch ${bold}$pr_head${reset}"
+
+  echo ""
+  run "fetching deleted branch state..." jj git fetch --tracked
+  success "Fetched latest"
+
+  echo ""
+  if jj log --no-graph -r "$current" -T 'change_id' >/dev/null 2>&1; then
+    run "abandoning landed change $current_short ..." jj abandon "$current"
+    success "Abandoned ${bold}$current_short${reset}"
+  else
+    info "Landed change ${bold}$current_short${reset} is already gone locally"
+  fi
+fi
+
+echo ""
+success "Landed ${bold}1${reset} PR."
+show_remaining_prs "$rest"

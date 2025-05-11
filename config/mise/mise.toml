@@ -132,3 +132,7 @@ tfenv = "latest"
 "npm:@opencode-ai/cli" = { version = "next", bun_args = "--trust" }
 "github:benja/ask" = "latest"
 "go:github.com/mattmc3/histdb" = "latest"
+"github:entireio/entire-graph" = "latest"
+"github:entireio/cli" = "latest"
+"github:EzraCerpac/jj-waltz" = "latest"
+"npm:mcp-remote" = "latest"

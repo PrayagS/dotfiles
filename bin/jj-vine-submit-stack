@@ -1,0 +1,181 @@
+#!/usr/bin/env bash
+# jj-vine-submit-stack — submit a jj-vine stack after pushing all bookmarks.
+#
+# Usage:
+#   jj-vine-submit-stack [--dry-run|-n] [<revset>] [-- <extra jj-vine submit args...>]
+
+set -euo pipefail
+
+bold=$'\e[1m'
+dim=$'\e[2m'
+reset=$'\e[0m'
+cyan=$'\e[36m'
+green=$'\e[32m'
+yellow=$'\e[33m'
+red=$'\e[31m'
+
+info()    { echo "${cyan}${bold}==>${reset} $*"; }
+success() { echo "${green}${bold}✓${reset}  $*"; }
+step()    { echo "${yellow}${bold}→${reset}  $*"; }
+error()   { echo "${red}${bold}✗${reset}  $*" >&2; }
+divider() { echo "${dim}────────────────────────────────────────${reset}"; }
+die()     { error "$*"; exit 1; }
+
+frames='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
+
+run() {
+  local label="$1"; shift
+  local tmp rc i=0
+  tmp=$(mktemp)
+
+  "$@" >"$tmp" 2>&1 &
+  local pid=$!
+
+  while kill -0 "$pid" 2>/dev/null; do
+    printf "\r${yellow}${bold}%s${reset}  %s" "${frames:$((i % ${#frames})):1}" "$label"
+    (( i++ )) || true
+    sleep 0.08
+  done
+
+  rc=0; wait "$pid" || rc=$?
+  printf "\r\033[K"
+
+  if [[ $rc -ne 0 ]]; then
+    error "$label"
+    cat "$tmp" >&2
+    rm -f "$tmp"
+    exit 1
+  fi
+
+  rm -f "$tmp"
+}
+
+count_lines() { sed '/^$/d' | wc -l | tr -d ' '; }
+
+shell_join() {
+  printf '%q ' "$@"
+}
+
+bookmarks_for() {
+  jj log --no-graph -r "$1" -T 'local_bookmarks.map(|b| b.name()).join("\n")'
+}
+
+show_stack() {
+  jj log --no-graph --reversed -r "$1" \
+    -T 'change_id.short() ++ "  " ++ local_bookmarks.map(|b| b.name()).join(",") ++ "  " ++ description.first_line() ++ "\n"'
+}
+
+push_revs_parallel() {
+  local revs="$1"
+  local pids=()
+  local tmps=()
+  local labels=()
+  local failed=false
+
+  while IFS= read -r rev; do
+    [[ -z "$rev" ]] && continue
+    local short="${rev:0:12}"
+    local bookmarks
+    bookmarks=$(bookmarks_for "$rev" | sed '/^$/d')
+
+    local tmp
+    tmp=$(mktemp)
+    tmps+=("$tmp")
+
+    if [[ -z "$bookmarks" ]]; then
+      labels+=("created and pushed generated bookmark for $short")
+      jj git push -c "$rev" >"$tmp" 2>&1 &
+    else
+      labels+=("pushed bookmark(s) for $short")
+      jj git push -r "$rev" >"$tmp" 2>&1 &
+    fi
+
+    pids+=($!)
+  done <<< "$revs"
+
+  for i in "${!pids[@]}"; do
+    if wait "${pids[$i]}"; then
+      success "${labels[$i]}"
+    else
+      failed=true
+      error "${labels[$i]}"
+      cat "${tmps[$i]}" >&2
+    fi
+    rm -f "${tmps[$i]}"
+  done
+
+  if $failed; then
+    exit 1
+  fi
+}
+
+usage() {
+  echo "Usage:"
+  echo "  jj-vine-submit-stack [--dry-run|-n] [<revset>] [-- <extra jj-vine submit args...>]"
+  echo ""
+  echo "Examples:"
+  echo "  jj-vine-submit-stack"
+  echo "  jj-vine-submit-stack 'trunk()..@-'"
+  echo "  jj-vine-submit-stack -n -- --show-plan"
+}
+
+dry_run=false
+separator_seen=false
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --dry-run|-n) dry_run=true; shift ;;
+    --help|-h) usage; exit 0 ;;
+    --) separator_seen=true; shift; break ;;
+    -*) die "Unknown option: $1" ;;
+    *) break ;;
+  esac
+done
+
+revset="trunk()..@-"
+if ! $separator_seen && [[ $# -gt 0 ]]; then
+  revset="$1"
+  shift
+fi
+[[ "${1:-}" == "--" ]] && shift
+submit_args=("$@")
+
+revs=$(jj log --no-graph --reversed -r "$revset" -T 'change_id ++ "\n"')
+[[ -z "$revs" ]] && die "No revisions matched revset: ${bold}$revset${reset}"
+
+total=$(echo "$revs" | count_lines)
+$dry_run && echo "${yellow}${bold}DRY RUN${reset} — no changes will be made"
+
+divider
+info "Submitting stack: ${bold}$total${reset} revision(s) from ${bold}$revset${reset}"
+show_stack "$revset"
+divider
+
+if $dry_run; then
+  while IFS= read -r rev; do
+    [[ -z "$rev" ]] && continue
+    short="${rev:0:12}"
+    bookmarks=$(bookmarks_for "$rev" | sed '/^$/d')
+
+    if [[ -z "$bookmarks" ]]; then
+      step "jj git push --dry-run -c $short"
+    else
+      step "jj git push --dry-run -r $short"
+    fi
+  done <<< "$revs"
+else
+  echo ""
+  info "Pushing bookmarks in parallel"
+  push_revs_parallel "$revs"
+  success "Finished pushing all bookmarks"
+fi
+
+echo ""
+submit_cmd=(jj-vine submit -r "$revset" ${submit_args[@]+"${submit_args[@]}"})
+if $dry_run; then
+  step "$(shell_join "${submit_cmd[@]}")"
+else
+  info "Running $(shell_join "${submit_cmd[@]}")"
+  "${submit_cmd[@]}"
+  success "Submitted PR stack"
+fi

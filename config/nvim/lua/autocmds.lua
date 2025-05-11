@@ -3,9 +3,12 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	callback = function()
 		-- delete trailing whitespace
 		-- vim.cmd([[:keepjumps keeppatterns %s/\s\+$//e]])
-		MiniTrailspace.trim()
-		-- delete trailing empty lined
-		MiniTrailspace.trim_last_lines()
+		-- Guarded so this file also works when plugins are disabled (debugging)
+		if rawget(_G, "MiniTrailspace") then
+			MiniTrailspace.trim()
+			-- delete trailing empty lined
+			MiniTrailspace.trim_last_lines()
+		end
 		-- vim.cmd([[:keepjumps keeppatterns silent! 0;/^\%(\n*.\)\@!/,$d_]])
 	end,
 })

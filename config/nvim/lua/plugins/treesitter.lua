@@ -55,21 +55,21 @@ return {
 			multiwindow = true,
 		},
 	},
-	{
-		"Wansmer/treesj",
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		keys = { "<space>m", "<space>j", "<space>s" },
-		opts = {},
-	},
-	{
-		"ThePrimeagen/refactoring.nvim",
-		cmd = "Refactoring",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-		},
-		config = function()
-			require("refactoring").setup()
-		end,
-	},
+	-- {
+	-- 	"Wansmer/treesj",
+	-- 	dependencies = { "nvim-treesitter/nvim-treesitter" },
+	-- 	keys = { "<space>m", "<space>j", "<space>s" },
+	-- 	opts = {},
+	-- },
+	-- {
+	-- 	"ThePrimeagen/refactoring.nvim",
+	-- 	cmd = "Refactoring",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 	},
+	-- 	config = function()
+	-- 		require("refactoring").setup()
+	-- 	end,
+	-- },
 }

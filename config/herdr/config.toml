@@ -3,6 +3,7 @@ onboarding = false
 [theme]
 name = "gruvbox"
 
+auto_switch = false
 [terminal]
 default_shell = "/bin/zsh"
 shell_mode = "auto"
@@ -86,7 +87,7 @@ resume_agents_on_restore = true
 scrollback_limit_bytes = 52428800
 
 [experimental]
-pane_history = true
+pane_history = false
 switch_ascii_input_source_in_prefix = true
 kitty_graphics = true
 allow_nested = false
@@ -165,3 +166,21 @@ key = "ctrl+l"
 type = "plugin_action"
 command = "smart-splits.nvim.right"
 description = "navigate right (vim/herdr)"
+
+[[keys.command]]
+key = "prefix+ctrl+s"
+type = "plugin_action"
+command = "ntindle.herdr-resurrect.save"
+description = "resurrect: save"
+
+[[keys.command]]
+key = "prefix+ctrl+r"
+type = "plugin_action"
+command = "ntindle.herdr-resurrect.restore"
+description = "resurrect: restore"
+
+[[keys.command]]
+key = "super+k"
+type = "plugin_action"
+command = "vjeantet.palette.open"
+description = "Command palette"

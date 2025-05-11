@@ -170,17 +170,17 @@ return {
 			},
 		},
 	},
-	{
-		"Wansmer/symbol-usage.nvim",
-		event = "BufReadPre", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
-		config = function()
-			require("symbol-usage").setup({
-				references = { enabled = true, include_declaration = true },
-				definition = { enabled = true },
-				implementation = { enabled = true },
-			})
-		end,
-	},
+	-- {
+	-- 	"Wansmer/symbol-usage.nvim",
+	-- 	event = "BufReadPre", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
+	-- 	config = function()
+	-- 		require("symbol-usage").setup({
+	-- 			references = { enabled = true, include_declaration = true },
+	-- 			definition = { enabled = true },
+	-- 			implementation = { enabled = true },
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"rachartier/tiny-code-action.nvim",
 		dependencies = {
@@ -202,52 +202,52 @@ return {
 			},
 		},
 	},
-	{
-		"rmagatti/goto-preview",
-		keys = {
-			{
-				"gpd",
-				function()
-					require("goto-preview").goto_preview_definition()
-				end,
-				desc = "",
-			},
-			{
-				"gpt",
-				function()
-					require("goto-preview").goto_preview_type_definition()
-				end,
-				desc = "",
-			},
-			{
-				"gpi",
-				function()
-					require("goto-preview").goto_preview_implementation()
-				end,
-				desc = "",
-			},
-			{
-				"gpD",
-				function()
-					require("goto-preview").goto_preview_declaration()
-				end,
-				desc = "",
-			},
-			{
-				"gP",
-				function()
-					require("goto-preview").close_all_win()
-				end,
-				desc = "",
-			},
-			{
-				"gpr",
-				function()
-					require("goto-preview").goto_preview_references()
-				end,
-				desc = "",
-			},
-		},
-		config = true,
-	},
+	-- {
+	-- 	"rmagatti/goto-preview",
+	-- 	keys = {
+	-- 		{
+	-- 			"gpd",
+	-- 			function()
+	-- 				require("goto-preview").goto_preview_definition()
+	-- 			end,
+	-- 			desc = "",
+	-- 		},
+	-- 		{
+	-- 			"gpt",
+	-- 			function()
+	-- 				require("goto-preview").goto_preview_type_definition()
+	-- 			end,
+	-- 			desc = "",
+	-- 		},
+	-- 		{
+	-- 			"gpi",
+	-- 			function()
+	-- 				require("goto-preview").goto_preview_implementation()
+	-- 			end,
+	-- 			desc = "",
+	-- 		},
+	-- 		{
+	-- 			"gpD",
+	-- 			function()
+	-- 				require("goto-preview").goto_preview_declaration()
+	-- 			end,
+	-- 			desc = "",
+	-- 		},
+	-- 		{
+	-- 			"gP",
+	-- 			function()
+	-- 				require("goto-preview").close_all_win()
+	-- 			end,
+	-- 			desc = "",
+	-- 		},
+	-- 		{
+	-- 			"gpr",
+	-- 			function()
+	-- 				require("goto-preview").goto_preview_references()
+	-- 			end,
+	-- 			desc = "",
+	-- 		},
+	-- 	},
+	-- 	config = true,
+	-- },
 }

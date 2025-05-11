@@ -136,51 +136,51 @@ return {
 		"rafikdraoui/jj-diffconflicts",
 		cmd = { "JJDiffConflicts" },
 	},
-	{
-		"esmuellert/codediff.nvim",
-		cmd = "CodeDiff",
-		opts = {
-			diff = {
-				layout = "inline",
-				jump_to_first_change = false,
-			},
-			explorer = {
-				view_mode = "tree",
-				position = "bottom",
-				auto_refresh = false,
-				initial_focus = "modified",
-				focus_on_select = false,
-			},
-		},
-	},
-	{
-		"georgeguimaraes/review.nvim",
-		dependencies = {
-			"esmuellert/codediff.nvim",
-			"MunifTanjim/nui.nvim",
-		},
-		cmd = "Review",
-		opts = {
-			comment_types = {
-				note = { key = "n", name = "Note", icon = "📝", hl = "ReviewNote" },
-				suggestion = { key = "s", name = "Suggestion", icon = "💡", hl = "ReviewSuggestion" },
-				issue = { key = "i", name = "Issue", icon = "⚠️", hl = "ReviewIssue" },
-				praise = { key = "p", name = "Praise", icon = "✨", hl = "ReviewPraise" },
-			},
-			keymaps = {
-				add_note = "<leader>dn",
-				add_suggestion = "<leader>ds",
-				add_issue = "<leader>di",
-				add_praise = "<leader>dp",
-				delete_comment = "<leader>D",
-				edit_comment = "<leader>de",
-				next_comment = "]n",
-				prev_comment = "[n",
-				toggle_file_panel = "f",
-			},
-			codediff = {
-				readonly = true,
-			},
-		},
-	},
+	-- {
+	-- 	"esmuellert/codediff.nvim",
+	-- 	cmd = "CodeDiff",
+	-- 	opts = {
+	-- 		diff = {
+	-- 			layout = "inline",
+	-- 			jump_to_first_change = false,
+	-- 		},
+	-- 		explorer = {
+	-- 			view_mode = "tree",
+	-- 			position = "bottom",
+	-- 			auto_refresh = false,
+	-- 			initial_focus = "modified",
+	-- 			focus_on_select = false,
+	-- 		},
+	-- 	},
+	-- },
+	-- {
+	-- 	"georgeguimaraes/review.nvim",
+	-- 	dependencies = {
+	-- 		"esmuellert/codediff.nvim",
+	-- 		"MunifTanjim/nui.nvim",
+	-- 	},
+	-- 	cmd = "Review",
+	-- 	opts = {
+	-- 		comment_types = {
+	-- 			note = { key = "n", name = "Note", icon = "📝", hl = "ReviewNote" },
+	-- 			suggestion = { key = "s", name = "Suggestion", icon = "💡", hl = "ReviewSuggestion" },
+	-- 			issue = { key = "i", name = "Issue", icon = "⚠️", hl = "ReviewIssue" },
+	-- 			praise = { key = "p", name = "Praise", icon = "✨", hl = "ReviewPraise" },
+	-- 		},
+	-- 		keymaps = {
+	-- 			add_note = "<leader>dn",
+	-- 			add_suggestion = "<leader>ds",
+	-- 			add_issue = "<leader>di",
+	-- 			add_praise = "<leader>dp",
+	-- 			delete_comment = "<leader>D",
+	-- 			edit_comment = "<leader>de",
+	-- 			next_comment = "]n",
+	-- 			prev_comment = "[n",
+	-- 			toggle_file_panel = "f",
+	-- 		},
+	-- 		codediff = {
+	-- 			readonly = true,
+	-- 		},
+	-- 	},
+	-- },
 }

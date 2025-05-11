@@ -10,7 +10,7 @@
     "context": "Workspace",
     "bindings": {
       // "shift shift": "file_finder::Toggle"
-    }
+    },
   },
   {
     "context": "Dock",
@@ -18,25 +18,26 @@
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown"
-    }
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
   },
   {
     "context": "Editor && !menu && VimControl && (vim_mode == normal || vim_mode == visual)",
     "bindings": {
-      "space l": "workspace::ToggleLeftDock",
-      "space r": "workspace::ToggleRightDock",
-      "space f": "project_panel::ToggleFocus",
-      "space o": "outline::Toggle",
-      "space shift-o": "outline_panel::ToggleFocus",
-      "space ,": "tab_switcher::ToggleAll",
-      "space space": "file_finder::Toggle",
-      "space /": "pane::DeploySearch",
-      "space t": "project_symbols::Toggle",
-      "space ?": "agent::ToggleFocus",
+      "ctrl-z l": "workspace::ToggleLeftDock",
+      "ctrl-z r": "workspace::ToggleRightDock",
+      "ctrl-z f": "project_panel::ToggleFocus",
+      "ctrl-z o": "outline::Toggle",
+      "ctrl-z shift-o": "outline_panel::ToggleFocus",
+      "ctrl-z ,": "tab_switcher::ToggleAll",
+      "ctrl-z space": "file_finder::Toggle",
+      "ctrl-z /": "pane::DeploySearch",
+      "ctrl-z t": "project_symbols::Toggle",
+      "ctrl-z a": "agent::Toggle",
+      "ctrl-z shift-n": "multi_workspace::NewThread",
       "shift-k": "editor::MoveLineUp",
-      "shift-j": "editor::MoveLineDown"
-    }
+      "shift-j": "editor::MoveLineDown",
+    },
   },
   {
     "context": "Editor",
@@ -49,8 +50,8 @@
       "ctrl-shift-h": "vim::ResizePaneLeft",
       "ctrl-shift-l": "vim::ResizePaneRight",
       "ctrl-shift-j": "vim::ResizePaneDown",
-      "ctrl-shift-k": "vim::ResizePaneUp"
-    }
+      "ctrl-shift-k": "vim::ResizePaneUp",
+    },
   },
   {
     "context": "VimControl && !menu && vim_mode != operator",
@@ -58,15 +59,15 @@
       "w": "vim::NextSubwordStart",
       "b": "vim::PreviousSubwordStart",
       "e": "vim::NextSubwordEnd",
-      "g e": "vim::PreviousSubwordEnd"
-    }
+      "g e": "vim::PreviousSubwordEnd",
+    },
   },
   {
     "context": "vim_mode == normal || vim_mode == visual",
     "bindings": {
       "s": "vim::PushSneak",
-      "shift-s": "vim::PushSneakBackward"
-    }
+      "shift-s": "vim::PushSneakBackward",
+    },
   },
   {
     "context": "(VimControl && !menu) || ProjectPanel || OutlinePanel",
@@ -74,16 +75,16 @@
       "up": null,
       "down": null,
       "left": null,
-      "right": null
-    }
+      "right": null,
+    },
   },
   {
     "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
     "bindings": {
       // mini.ai plugin behavior
       "q": "vim::MiniQuotes",
-      "b": "vim::MiniBrackets"
-    }
+      "b": "vim::MiniBrackets",
+    },
   },
   {
     "context": "Editor && edit_prediction",
@@ -91,46 +92,163 @@
       "alt-tab": "editor::AcceptEditPrediction",
       "tab": "editor::Tab",
       "ctrl-y": "editor::AcceptEditPrediction",
-      "ctrl-cmd-right": "editor::AcceptNextWordEditPrediction"
-    }
+      "ctrl-cmd-right": "editor::AcceptNextWordEditPrediction",
+    },
   },
   {
     "context": "Terminal",
     "unbind": {
-      "cmd-k": "terminal::Clear"
-    }
+      "cmd-k": "terminal::Clear",
+    },
   },
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-l": [
-        "terminal::SendKeystroke",
-        "ctrl-l"
-      ]
-    }
+      "ctrl-l": ["terminal::SendKeystroke", "ctrl-l"],
+    },
   },
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-k": "terminal::ScrollLineUp"
-    }
+      "ctrl-shift-k": "terminal::ScrollLineUp",
+    },
   },
   {
     "context": "Terminal",
     "unbind": {
-      "shift-up": "terminal::ScrollLineUp"
-    }
+      "shift-up": "terminal::ScrollLineUp",
+    },
   },
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-j": "terminal::ScrollLineDown"
-    }
+      "ctrl-shift-j": "terminal::ScrollLineDown",
+    },
   },
   {
     "context": "Terminal",
     "unbind": {
-      "shift-down": "terminal::ScrollLineDown"
+      "shift-down": "terminal::ScrollLineDown",
+    },
+  },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "bindings": {
+      "ctrl-z shift-a": "editor::ToggleCodeActions",
+    },
+  },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "unbind": {
+      "ctrl-z a": "editor::ToggleCodeActions",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-z a": "agent::Toggle",
+    },
+  },
+  {
+    "context": "!AcpThread > Editor && mode == full",
+    "unbind": {
+      "shift-enter": "editor::ExpandExcerpts",
+    },
+  },
+  {
+    "context": "!AcpThread > Editor && mode == full",
+    "bindings": {
+      "shift-enter": "editor::ExpandExcerpts",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "g space": "editor::OpenExcerptsSplit",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "ctrl-w g space": "editor::OpenExcerptsSplit",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-w g space": "editor::OpenExcerpts",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "g space": "editor::OpenExcerpts",
+    },
+  },
+  {
+    "bindings": {
+      "ctrl-z n": "agent::NewTerminalThread",
+    },
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      "cmd-}": "pane::ActivateNextItem",
+    },
+  },
+  {
+    "context": "SettingsWindow",
+    "unbind": {
+      "cmd-}": "settings_editor::FocusNextFile",
+    },
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      "cmd-{": "pane::ActivatePreviousItem",
+    },
+  },
+  {
+    "context": "SettingsWindow",
+    "unbind": {
+      "cmd-{": "settings_editor::FocusPreviousFile",
+    },
+  },
+  {
+    "bindings": {
+      "cmd-}": "workspace::ActivateNextWindow",
+    },
+  },
+  {
+    "bindings": {
+      "cmd-{": "workspace::ActivatePreviousWindow",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-z w": "workspace::NewWindow",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "cmd-shift-n": "workspace::NewWindow",
+    },
+  },
+  {
+    "bindings": {
+      "ctrl-z shift-n": "multi_workspace::NewThread",
+    },
+  },
+  {
+    "bindings": {
+      "ctrl-z z": "workspace::FocusCenterPane"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-z shift-z": "workspace::NewCenterTerminal"
     }
   }
 ]

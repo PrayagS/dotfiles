@@ -146,8 +146,6 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 # Implementation of Python 3 in Python
 brew "pypy3.10"
-# Generic machine emulator and virtualizer
-brew "qemu"
 # Diff filter highlighting which line parts have changed
 brew "riff"
 # Utility that provides fast incremental file transfer
@@ -216,6 +214,8 @@ cask "flameshot"
 cask "ghostty"
 # Web browser
 cask "google-chrome"
+# AI teammates that work across your apps and tools
+cask "grok-bot"
 # Free and open-source media player
 cask "iina"
 # Jellyfin desktop client
@@ -262,8 +262,6 @@ cask "slack@beta"
 cask "stats"
 # Video game digital distribution service
 cask "steam"
-# Native terminal coding agents command center
-cask "supacode"
 # To-do list
 cask "todoist-app"
 # Multimedia player

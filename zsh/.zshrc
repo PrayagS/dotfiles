@@ -61,6 +61,7 @@ zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
 
 export ATUIN_NOBIND='true'
 export YSU_MESSAGE_POSITION='after'
+export YSU_IGNORED_ALIASES=("k")
 
 # Lazy-load antidote from its functions directory.
 fpath=(${ZSH_CONFIG_DIR}/.antidote/functions $fpath)
@@ -106,3 +107,5 @@ _lazy_load rg "rg --generate complete-zsh"
 _lazy_load helm "helm completion zsh"
 _lazy_load workmux "workmux completions zsh"
 _lazy_load herdr "herdr completion zsh"
+
+eval "$(jw shell init zsh)"
