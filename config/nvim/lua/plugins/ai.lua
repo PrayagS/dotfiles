@@ -17,9 +17,21 @@ return {
 					dismiss = "<A-e>",
 				},
 			},
-			provider = "openai_fim_compatible",
+			provider = "openai_compatible",
 			-- notify = "debug",
 			provider_options = {
+				openai_compatible = {
+					api_key = "MINUET_AI_OPENCODE_GO_API_KEY",
+					end_point = "https://opencode.ai/zen/go/v1/chat/completions",
+					model = "deepseek-v4-flash",
+					name = "Opencode",
+					optional = {
+						max_tokens = 56,
+						top_p = 0.9,
+						-- disable thinking to avoid first token latency
+						thinking = { type = "disabled" },
+					},
+				},
 				openai_fim_compatible = {
 					api_key = "MINUET_AI_NVIM_DEEPSEEK_API_KEY",
 					name = "deepseek",

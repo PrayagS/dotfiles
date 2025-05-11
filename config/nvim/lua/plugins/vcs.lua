@@ -84,6 +84,13 @@ return {
 					{}
 				)
 				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>hd", '<cmd>lua require("gitsigns").diffthis()<CR>', {})
+				vim.api.nvim_buf_set_keymap(
+					bufnr,
+					"n",
+					"<leader>hb",
+					'<cmd>lua require("gitsigns").blame_line({ full = true })<CR>',
+					{}
+				)
 			end,
 		},
 	},
@@ -133,9 +140,16 @@ return {
 		"esmuellert/codediff.nvim",
 		cmd = "CodeDiff",
 		opts = {
+			diff = {
+				layout = "inline",
+				jump_to_first_change = false,
+			},
 			explorer = {
 				view_mode = "tree",
 				position = "bottom",
+				auto_refresh = false,
+				initial_focus = "modified",
+				focus_on_select = false,
 			},
 		},
 	},

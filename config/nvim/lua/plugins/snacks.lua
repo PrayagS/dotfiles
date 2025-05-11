@@ -247,6 +247,11 @@ return {
 			},
 		},
 		opts = {
+			toggle = {
+				map = vim.keymap.set,
+				which_key = false,
+				notify = true,
+			},
 			animate = {
 				fps = "120",
 			},
@@ -315,6 +320,17 @@ return {
 			},
 		},
 		init = function()
+			vim.api.nvim_create_autocmd("User", {
+				pattern = "VeryLazy",
+				callback = function()
+					-- Toggle mappings under <leader>u
+					Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
+					Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
+					Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>ur")
+					Snacks.toggle.line_number():map("<leader>ul")
+					Snacks.toggle.diagnostics():map("<leader>uD")
+				end,
+			})
 			-- LSP progress
 			---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
 			local progress = vim.defaulttable()
