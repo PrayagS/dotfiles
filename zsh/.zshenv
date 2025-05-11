@@ -72,6 +72,9 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 export MYCLI_HISTFILE="$XDG_STATE_HOME/mycli/mycli_history"
 export PIPX_HOME="$XDG_DATA_HOME/pipx"
 export VENCORD_USER_DATA_DIR="$XDG_DATA_HOME/vencord"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
 
 # source secrets
 source "$ZDOTDIR/.zshenv-secrets"
