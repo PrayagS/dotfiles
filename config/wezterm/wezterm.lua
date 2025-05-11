@@ -503,10 +503,11 @@ config.keys = {
 	{
 		key = ";",
 		mods = "CTRL",
-		action = act.Multiple({
-			-- act.ClearScrollback("ScrollbackAndViewport"),
-			act.SendKey({ key = "L", mods = "CTRL" }),
-		}),
+		-- action = act.Multiple({
+		-- 	-- act.ClearScrollback("ScrollbackAndViewport"),
+		-- 	act.SendKey({ key = "L", mods = "CTRL" }),
+		-- }),
+		action = act.SendKey({ key = "L", mods = "CTRL" }),
 	},
 
 	-- disable key bindings that conflict with vim
