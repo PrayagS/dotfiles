@@ -4,8 +4,8 @@ return {
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 		dependencies = {
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
+			"mason-org/mason.nvim",
+			"mason-org/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 			{
 				"kosayoda/nvim-lightbulb",
@@ -134,114 +134,96 @@ return {
 				},
 			})
 
-			local capabilities = vim.tbl_deep_extend(
-				"force",
-				{},
-				vim.lsp.protocol.make_client_capabilities(),
-				require("blink.cmp").get_lsp_capabilities()
-			)
-
-			-- capabilities.textDocument.foldingRange = {
-			-- 	dynamicRegistration = false,
-			-- 	lineFoldingOnly = true,
-			-- }
-			local servers = {
-
-				lua_ls = {
-					settings = {
-						Lua = {
-							workspace = {
-								library = {
-									vim.env.VIMRUNTIME,
-								},
+			vim.lsp.config("lua_ls", {
+				settings = {
+					Lua = {
+						workspace = {
+							library = {
+								vim.env.VIMRUNTIME,
 							},
-							completion = {
-								displayContext = 5,
-							},
-							diagnostics = {
-								globals = { "vim", "Snacks" },
-							},
-							hint = {
-								enable = true,
-								setType = true,
-							},
+						},
+						completion = {
+							displayContext = 5,
+						},
+						diagnostics = {
+							globals = { "vim", "Snacks" },
+						},
+						hint = {
+							enable = true,
+							setType = true,
 						},
 					},
 				},
+			})
 
-				gopls = {
-					settings = {
-						gopls = {
-							hints = {
-								assignVariableTypes = true,
-								compositeLiteralFields = true,
-								compositeLiteralTypes = true,
-								constantValues = true,
-								functionTypeParameters = true,
-								parameterNames = true,
-								rangeVariableTypes = true,
-							},
-							staticcheck = true,
-							gofumpt = true,
-							codelenses = {
-								gc_details = true,
-								generate = true,
-								regenerate_cgo = true,
-								test = true,
-								run_govulncheck = true,
-								tidy = true,
-								upgrade_dependency = true,
-								vendor = true,
-							},
-							usePlaceholders = true,
-							analyses = {
-								shadow = true,
-								unusedvariable = true,
-								useany = true,
-							},
-							vulncheck = "Imports",
+			vim.lsp.config("gopls", {
+				settings = {
+					gopls = {
+						hints = {
+							assignVariableTypes = true,
+							compositeLiteralFields = true,
+							compositeLiteralTypes = true,
+							constantValues = true,
+							functionTypeParameters = true,
+							parameterNames = true,
+							rangeVariableTypes = true,
 						},
-					},
-				},
-
-				ruff = {},
-
-				basedpyright = {
-					settings = {
-						basedpyright = {
-							disableOrganizeImports = true,
+						staticcheck = true,
+						gofumpt = true,
+						codelenses = {
+							gc_details = true,
+							generate = true,
+							regenerate_cgo = true,
+							test = true,
+							run_govulncheck = true,
+							tidy = true,
+							upgrade_dependency = true,
+							vendor = true,
 						},
-					},
-				},
-
-				jsonnet_ls = {},
-
-				tinymist = {
-					settings = {
-						exportPdf = "onSave",
-						formatterMode = "typstyle",
-					},
-				},
-
-				yamlls = {
-					settings = {
-						yaml = {
-							format = {
-								enable = true,
-								singleQuote = true,
-								bracketSpacing = true,
-							},
-							validate = true,
-							hover = true,
-							completion = true,
+						usePlaceholders = true,
+						analyses = {
+							shadow = true,
+							unusedvariable = true,
+							useany = true,
 						},
+						vulncheck = "Imports",
 					},
 				},
-			}
+			})
+
+			vim.lsp.config("basedpyright", {
+				settings = {
+					basedpyright = {
+						disableOrganizeImports = true,
+					},
+				},
+			})
+
+			vim.lsp.config("tinymist", {
+				settings = {
+					exportPdf = "onSave",
+					formatterMode = "typstyle",
+				},
+			})
+
+			vim.lsp.config("yamlls", {
+				settings = {
+					yaml = {
+						format = {
+							enable = true,
+							singleQuote = true,
+							bracketSpacing = true,
+						},
+						validate = true,
+						hover = true,
+						completion = true,
+					},
+				},
+			})
 
 			require("mason").setup()
 
-			local ensure_installed = vim.tbl_keys(servers or {})
+			local ensure_installed = {}
 			vim.list_extend(ensure_installed, {
 				"golangci-lint",
 				"yamllint",
@@ -262,16 +244,8 @@ return {
 			})
 			require("mason-lspconfig").setup({
 				ensure_installed = {},
-				handlers = {
-					function(server_name)
-						local server = servers[server_name] or {}
-						-- This handles overriding only values explicitly passed
-						-- by the server configuration above. Useful when disabling
-						-- certain features of an LSP (for example, turning off formatting for tsserver)
-						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-						require("lspconfig")[server_name].setup(server)
-					end,
-				},
+				automatic_installation = false,
+				automatic_enable = true,
 			})
 		end,
 	},
