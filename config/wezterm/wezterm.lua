@@ -385,6 +385,20 @@ config.keys = {
 		end),
 	},
 	{
+		key = "d",
+		mods = "LEADER",
+		action = wezterm.action_callback(function(win, pane)
+			resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id)
+				resurrect.state_manager.delete_state(id)
+			end, {
+				title = "Delete State",
+				description = "Select State to Delete and press Enter = accept, Esc = cancel, / = filter",
+				fuzzy_description = "Search State to Delete: ",
+				is_fuzzy = true,
+			})
+		end),
+	},
+	{
 		key = "s",
 		mods = "LEADER",
 		action = workspace_switcher.switch_workspace(),
@@ -422,7 +436,7 @@ config.keys = {
 		}),
 	},
 	{ key = "a", mods = "LEADER", action = act.AttachDomain("unix") },
-	{ key = "d", mods = "LEADER", action = act.DetachDomain("CurrentPaneDomain") },
+	{ key = "q", mods = "LEADER", action = act.DetachDomain("CurrentPaneDomain") },
 
 	-- tabs
 	{ key = "t", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
