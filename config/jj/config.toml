@@ -49,6 +49,7 @@ pager = "delta"
 sign-on-push = true
 fetch = ["origin", "glob:upstream*"]
 abandon-unreachable-commits = true
+push-new-bookmarks = true
 
 [signing]
 behavior = "own"
