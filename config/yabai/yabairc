@@ -110,7 +110,6 @@ open -a WezTerm
 open -a Firefox
 open -a Slack
 open -a Music
-# open -a Spotify
 open -a Obsidian
 open -a Todoist
 open -a "Notion Calendar"
