@@ -1,8 +1,6 @@
 {
   "auto-session": { "branch": "main", "commit": "62437532b38495551410b3f377bcf4aaac574ebe" },
-  "blink-cmp-git": { "branch": "master", "commit": "10783593af764424018a95e75df6ad5a8b66fe07" },
   "blink.cmp": { "branch": "v1", "commit": "78336bc89ee5365633bcf754d93df01678b5c08f" },
-  "blink-ripgrep.nvim": { "branch": "main", "commit": "68ba39ed06b2ac4a15c77427eb4ce53fae11a534" },
   "codediff.nvim": { "branch": "main", "commit": "832f1ecc5f8b15a44cf7537e31d3266d657775b1" },
   "colorful-winsep.nvim": { "branch": "main", "commit": "84432d9966fafaa08dd9040c98b0011045d8e964" },
   "conform.nvim": { "branch": "master", "commit": "086a40dc7ed8242c03be9f47fbcee68699cc2395" },

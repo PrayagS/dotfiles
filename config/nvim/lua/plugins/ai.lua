@@ -1,6 +1,7 @@
 return {
 	{
 		"milanglacier/minuet-ai.nvim",
+		enabled = false,
 		event = "VeryLazy",
 		opts = {
 			cmp = { enable_auto_complete = false },

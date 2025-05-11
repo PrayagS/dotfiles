@@ -5,8 +5,6 @@ return {
 		event = { "InsertEnter", "CmdlineEnter" },
 		build = "cargo build --release",
 		dependencies = {
-			{ "mikavilpas/blink-ripgrep.nvim", version = "*" },
-			"Kaiser-Yang/blink-cmp-git",
 			{ "nvim-mini/mini.icons", version = false },
 		},
 		-- version = "*",
@@ -96,26 +94,15 @@ return {
 			sources = {
 				default = {
 					"lsp",
-					"minuet",
 					"path",
 					"buffer",
 					"omni",
-					"ripgrep",
 				},
 				per_filetype = {
-					gitcommit = { "git", "buffer", "path" },
-					jjdescription = { "git", "buffer", "path" },
+					gitcommit = { "buffer", "path" },
+					jjdescription = { "buffer", "path" },
 				},
 				providers = {
-					minuet = {
-						name = "minuet",
-						module = "minuet.blink",
-						async = true,
-						-- Should match minuet.config.request_timeout * 1000,
-						-- since minuet.config.request_timeout is in seconds
-						timeout_ms = 3000,
-						-- score_offset = 50, -- Gives minuet higher priority among suggestions
-					},
 					cmdline = {
 						min_keyword_length = function(ctx)
 							-- only applies when typing a command, doesn't apply to arguments
@@ -136,34 +123,6 @@ return {
 					},
 					path = {
 						opts = { show_hidden_files_by_default = true },
-					},
-					ripgrep = {
-						module = "blink-ripgrep",
-						name = "Ripgrep",
-						opts = {
-							prefix_min_len = 5,
-							backend = {
-								use = "ripgrep",
-								ripgrep = {
-									search_casing = "--smart-case",
-									additional_rg_options = {
-										"--follow --hidden --nno-binary,",
-									},
-								},
-							},
-						},
-					},
-					git = {
-						module = "blink-cmp-git",
-						name = "Git",
-						opts = {
-							kind_icons = {
-								Commit = "",
-								Mention = "",
-								PR = "",
-								Issue = "",
-							},
-						},
 					},
 				},
 			},
