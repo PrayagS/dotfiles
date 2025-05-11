@@ -91,6 +91,7 @@ _evalcache zoxide init zsh
 _lazy_load mise "mise completion zsh"
 _lazy_load bd "bd completion zsh"
 _lazy_load jj "COMPLETE=zsh jj"
+_lazy_load gh "gh completion zsh"
 _lazy_load docker "docker completion zsh"
 _lazy_load rg "rg --generate complete-zsh"
 _lazy_load helm "helm completion zsh"
