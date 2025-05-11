@@ -1,0 +1,572 @@
+{
+  "audioFx": {
+    "pitch": 0,
+    "volume": 1,
+    "delay": 0,
+    "eq": {
+      "enabled": false,
+      "factor": 1,
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "circleWidget": false,
+  "circleWidgetIcon": true,
+  "darkTheme": true,
+  "enabled": true,
+  "firstUse": 1731007482735,
+  "freshKeybinds": false,
+  "gptWebsiteCounter": 4,
+  "hideBadge": false,
+  "hideIndicator": false,
+  "keybinds": [
+    {
+      "id": "115135230",
+      "command": "speed",
+      "enabled": true,
+      "greedy": true,
+      "key": {
+        "ctrlKey": false,
+        "altKey": false,
+        "shiftKey": true,
+        "metaKey": false,
+        "code": "Comma"
+      },
+      "adjustMode": 2,
+      "valueNumber": -0.25,
+      "trigger": 0,
+      "spacing": 0
+    },
+    {
+      "id": "2582190961",
+      "command": "speed",
+      "enabled": true,
+      "greedy": true,
+      "key": {
+        "ctrlKey": false,
+        "altKey": false,
+        "shiftKey": false,
+        "metaKey": false,
+        "code": "Equal"
+      },
+      "valueNumber": 1
+    },
+    {
+      "id": "8144987338",
+      "command": "speed",
+      "enabled": true,
+      "greedy": true,
+      "key": {
+        "ctrlKey": false,
+        "altKey": false,
+        "shiftKey": true,
+        "metaKey": false,
+        "code": "Period"
+      },
+      "adjustMode": 2,
+      "valueNumber": 0.25,
+      "spacing": 1
+    },
+    {
+      "id": "3993466715",
+      "command": "pin",
+      "enabled": true,
+      "greedy": true,
+      "valueState": "toggle",
+      "key": "KeyQ"
+    },
+    {
+      "id": "1736174365",
+      "command": "state",
+      "enabled": true,
+      "greedy": true,
+      "valueState": "toggle",
+      "key": {
+        "code": "KeyQ",
+        "shiftKey": true
+      },
+      "spacing": 2
+    },
+    {
+      "id": "9517098332",
+      "adjustMode": 2,
+      "command": "seek",
+      "enabled": true,
+      "greedy": true,
+      "valueNumber": -5,
+      "key": "KeyZ"
+    },
+    {
+      "id": "1517114774",
+      "adjustMode": 2,
+      "command": "seek",
+      "enabled": true,
+      "greedy": true,
+      "valueNumber": 10,
+      "key": "KeyX",
+      "spacing": 1
+    },
+    {
+      "id": "9071245573",
+      "adjustMode": 2,
+      "command": "seek",
+      "enabled": true,
+      "greedy": true,
+      "valueNumber": -1,
+      "key": {
+        "shiftKey": true,
+        "code": "KeyZ"
+      },
+      "duration": 2
+    },
+    {
+      "id": "5915167716",
+      "adjustMode": 2,
+      "command": "seek",
+      "enabled": true,
+      "greedy": true,
+      "valueNumber": 1,
+      "key": {
+        "shiftKey": true,
+        "code": "KeyX"
+      },
+      "duration": 2,
+      "spacing": 1
+    },
+    {
+      "id": "8731324051",
+      "command": "fullscreen",
+      "enabled": true,
+      "greedy": true,
+      "key": {
+        "shiftKey": true,
+        "code": "KeyF"
+      },
+      "direct": true
+    },
+    {
+      "id": "9619598678",
+      "adjustMode": 4,
+      "command": "seek",
+      "enabled": true,
+      "greedy": true,
+      "valueNumber": 10,
+      "key": {
+        "code": "Backquote"
+      },
+      "duration": 3,
+      "spacing": 1
+    },
+    {
+      "id": "5629634011",
+      "command": "setMark",
+      "enabled": true,
+      "greedy": true,
+      "valueString": "mark1",
+      "key": {
+        "shiftKey": true,
+        "code": "KeyW"
+      }
+    },
+    {
+      "id": "3642096080",
+      "command": "seekMark",
+      "enabled": true,
+      "greedy": true,
+      "valueString": "mark1",
+      "key": "KeyW"
+    },
+    {
+      "id": "1047651981",
+      "command": "drawPage",
+      "enabled": true,
+      "greedy": true,
+      "trigger": 2,
+      "contextLabel": "draw on page"
+    },
+    {
+      "id": "3917203157",
+      "command": "cinema",
+      "enabled": true,
+      "greedy": true,
+      "valueState": "toggle",
+      "trigger": 2,
+      "contextLabel": "darken background"
+    },
+    {
+      "id": "6076102093",
+      "command": "fxFilter",
+      "filterOption": "invert",
+      "enabled": true,
+      "greedy": true,
+      "filterTarget": "both",
+      "adjustMode": 3,
+      "trigger": 2,
+      "contextLabel": "fx :: invert page",
+      "valueCycle": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "403171646",
+      "command": "fxFilter",
+      "filterOption": "grayscale",
+      "enabled": true,
+      "greedy": true,
+      "filterTarget": "backdrop",
+      "adjustMode": 4,
+      "trigger": 2,
+      "contextLabel": "fx :: grayscale page",
+      "valueItcMin": 0,
+      "valueItcMax": 1
+    },
+    {
+      "id": "5504720975",
+      "command": "fxFilter",
+      "filterOption": "brightness",
+      "enabled": true,
+      "greedy": true,
+      "filterTarget": "element",
+      "adjustMode": 4,
+      "trigger": 2,
+      "contextLabel": "fx :: video brightness",
+      "valueItcMin": 0.5,
+      "valueItcMax": 2
+    },
+    {
+      "id": "6580139056",
+      "command": "fxFilter",
+      "filterOption": "contrast",
+      "enabled": true,
+      "greedy": true,
+      "filterTarget": "element",
+      "adjustMode": 4,
+      "trigger": 2,
+      "contextLabel": "fx :: video contrast",
+      "valueItcMin": 0.75,
+      "valueItcMax": 1.25
+    },
+    {
+      "id": "2821082331",
+      "command": "fxReset",
+      "enabled": true,
+      "greedy": true,
+      "filterTarget": "both",
+      "trigger": 2,
+      "contextLabel": "fx :: reset"
+    }
+  ],
+  "keybindsUrlCondition": {
+    "block": true,
+    "parts": [
+      {
+        "id": "6622493613",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://docs.google.com",
+        "valueContains": "https://docs.google.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "1983193584",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://play.geforcenow.com",
+        "valueContains": "https://play.geforcenow.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "3807366678",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://www.xbox.com",
+        "valueContains": "https://www.xbox.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "6001805507",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://docs.qq.com",
+        "valueContains": "https://docs.qq.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "8739107043",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://www.playstation.com",
+        "valueContains": "https://www.playstation.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "6564519649",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://excalidraw.com",
+        "valueContains": "https://excalidraw.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "5815515411",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://www.photopea.com",
+        "valueContains": "https://www.photopea.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "7434278984",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://www.canva.com",
+        "valueContains": "https://www.canva.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "2600264352",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "http://luna.amazon.com",
+        "valueContains": "http://luna.amazon.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "7991813301",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://ys.mihoyo.com",
+        "valueContains": "https://ys.mihoyo.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "3836070640",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://chatgpt.com",
+        "valueContains": "https://chatgpt.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "4276937687",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://claude.ai",
+        "valueContains": "https://claude.ai",
+        "valueRegex": ""
+      },
+      {
+        "id": "2681097050",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://gemini.google.com",
+        "valueContains": "https://gemini.google.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "4570996645",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://www.deepseek.com",
+        "valueContains": "https://www.deepseek.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "8972927749",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://www.youtube.com/playables",
+        "valueContains": "https://www.youtube.com/playables",
+        "valueRegex": ""
+      },
+      {
+        "id": "6787366168",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://luna.amazon.com",
+        "valueContains": "https://luna.amazon.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "1845563068",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://www.4399.com",
+        "valueContains": "https://www.4399.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "4678137394",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://www.7k7k.com",
+        "valueContains": "https://www.7k7k.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "8340930927",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://poki.com",
+        "valueContains": "https://poki.com",
+        "valueRegex": ""
+      },
+      {
+        "id": "7596559817",
+        "type": "STARTS_WITH",
+        "valueStartsWith": "https://now.gg",
+        "valueContains": "https://now.gg",
+        "valueRegex": ""
+      }
+    ]
+  },
+  "language": "en",
+  "lastSpeed": 0.75,
+  "latestViaShortcut": false,
+  "rules": [
+    {
+      "id": "2152474669",
+      "enabled": true,
+      "type": "SPEED",
+      "overrideSpeed": 1.5,
+      "overrideJs": "// code here\n",
+      "condition": {
+        "parts": [
+          {
+            "type": "STARTS_WITH",
+            "valueContains": "example.com",
+            "valueStartsWith": "https://www.youtube.com",
+            "valueRegex": "example\\.com",
+            "id": "6736289739"
+          }
+        ]
+      },
+      "strictness": 4,
+      "label": "YT",
+      "spacing": 0
+    },
+    {
+      "id": "5522695061",
+      "enabled": true,
+      "type": "OFF",
+      "overrideSpeed": 1,
+      "overrideJs": "// code here\n",
+      "condition": {
+        "parts": [
+          {
+            "type": "STARTS_WITH",
+            "valueContains": "example.com",
+            "valueStartsWith": "https://www.twitch.tv",
+            "valueRegex": "example\\.com",
+            "id": "2338856108"
+          }
+        ]
+      },
+      "label": "Twitch",
+      "spacing": 2
+    },
+    {
+      "id": "2788265885",
+      "enabled": true,
+      "type": "OFF",
+      "overrideSpeed": 1,
+      "overrideJs": "// code here\n",
+      "condition": {
+        "parts": [
+          {
+            "type": "STARTS_WITH",
+            "valueContains": "example.com",
+            "valueStartsWith": "https://www.netflix.com",
+            "valueRegex": "example\\.com",
+            "id": "9955215928"
+          }
+        ]
+      },
+      "label": "Netflix"
+    },
+    {
+      "id": "5911936273",
+      "enabled": true,
+      "type": "OFF",
+      "overrideSpeed": 1,
+      "overrideJs": "// code here\n",
+      "label": "SoundCloud",
+      "condition": {
+        "parts": [
+          {
+            "type": "STARTS_WITH",
+            "valueContains": "example.com",
+            "valueStartsWith": "https://soundcloud.com",
+            "valueRegex": "example\\.com",
+            "id": "8735811444"
+          }
+        ]
+      },
+      "spacing": 1
+    },
+    {
+      "id": "7553804966",
+      "enabled": true,
+      "type": "OFF",
+      "overrideSpeed": 1,
+      "overrideJs": "// code here\n",
+      "condition": {
+        "parts": [
+          {
+            "type": "STARTS_WITH",
+            "valueContains": "example.com",
+            "valueStartsWith": "https://mail.google.com",
+            "valueRegex": "example\\.com",
+            "id": "4159863699"
+          }
+        ],
+        "block": false
+      },
+      "label": "Gmail"
+    },
+    {
+      "id": "1033637701",
+      "enabled": true,
+      "type": "OFF",
+      "overrideSpeed": 1,
+      "overrideJs": "// code here\n",
+      "condition": {
+        "parts": [
+          {
+            "type": "STARTS_WITH",
+            "valueContains": "example.com",
+            "valueStartsWith": "https://beta.music.apple.com",
+            "valueRegex": "example\\.com",
+            "id": "2977318051"
+          },
+          {
+            "type": "STARTS_WITH",
+            "valueContains": "example.com",
+            "valueStartsWith": "https://music.apple.com",
+            "valueRegex": "example\\.com",
+            "id": "968591816"
+          }
+        ]
+      },
+      "label": "Apple Music"
+    }
+  ],
+  "speed": 1,
+  "speedChangeCounter": 22,
+  "version": 12,
+  "websitesAddedToUrlConditionsExclusion": [
+    "starts_https://docs.google.com",
+    "starts_https://play.geforcenow.com",
+    "starts_https://www.xbox.com",
+    "starts_https://docs.qq.com",
+    "starts_https://www.playstation.com",
+    "starts_https://excalidraw.com",
+    "starts_https://www.photopea.com",
+    "starts_https://www.canva.com",
+    "starts_http://luna.amazon.com",
+    "starts_https://ys.mihoyo.com",
+    "starts_https://chatgpt.com",
+    "starts_https://claude.ai",
+    "starts_https://gemini.google.com",
+    "starts_https://www.deepseek.com",
+    "starts_https://www.youtube.com/playables",
+    "contains_game",
+    "starts_https://luna.amazon.com",
+    "starts_https://www.4399.com",
+    "starts_https://www.7k7k.com",
+    "starts_https://poki.com",
+    "starts_https://now.gg"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "chrome.storage.local": {
+    "last-update": 1731007497064,
+    "tmp_disable": 0,
+    "whitelist": [
+      "mail.google.com"
+    ]
+  },
+  "localStorage": {}
+}

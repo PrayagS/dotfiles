@@ -1,0 +1,14 @@
+[
+  {
+    "containerName": "Blinkit",
+    "action": "open",
+    "urlPattern": "/github\\.com.*grofers.*/",
+    "highPriority": false
+  },
+  {
+    "containerName": "Blinkit",
+    "action": "open",
+    "urlPattern": "/github\\.com.*(z|Z)omato.*/",
+    "highPriority": false
+  }
+]
