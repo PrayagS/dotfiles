@@ -85,3 +85,4 @@ grpcurl = "latest"
 "github:aaronriekenberg/rust-parallel" = "latest"
 "http:fzf-tmux" = { version = "e74b9de", url = "https://raw.githubusercontent.com/junegunn/fzf/refs/heads/master/bin/fzf-tmux" }
 tilt = "latest"
+vivid = "latest"
