@@ -12,7 +12,7 @@ sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # global settings
-yabai -m config mouse_follows_focus          on
+yabai -m config mouse_follows_focus          off
 yabai -m config debug_output          on
 yabai -m config focus_follows_mouse          autofocus
 yabai -m config window_origin_display        default
@@ -77,6 +77,7 @@ yabai -m rule --add label="Gitify" app="^Gitify$" title=".*" sticky=on sub-layer
 yabai -m rule --add label="Numi" app="^Numi$" title=".*" manage=off sub-layer=above
 yabai -m rule --add label="Ente Auth" app="^Ente Auth$" title=".*" manage=off sub-layer=above
 yabai -m rule --add label="Kap" app="^Kap$" title=".*" manage=off sub-layer=above
+yabai -m rule --add label="glimpse" app="^glimpse$" title=".*" manage=off sub-layer=above
 yabai -m rule --add label="zathura" app="^zathura$" title=".*" manage=on
 yabai -m rule --add label="Crossover Apps" app=".*exe$" title=".*" manage=off sub-layer=above
 yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
@@ -93,25 +94,37 @@ create_space 4
 yabai -m rule --add app="Slack" space=4
 
 create_space 5
-yabai -m rule --add app="Music" space=5
+yabai -m rule --add app="Google Chrome" space=5
 
 create_space 6
-yabai -m rule --add app="Obsidian" space=6
+yabai -m rule --add app="Zed Preview" space=6
 
 create_space 7
-yabai -m rule --add app="Todoist" space=7 manage=on
+yabai -m rule --add app="ChatGPT" space=7
 
 create_space 8
-yabai -m rule --add app="Discord" space=8
+yabai -m rule --add app="Obsidian" space=8
+
+create_space 9
+yabai -m rule --add app="Music" space=9
+
+create_space 10
+yabai -m rule --add app="Helium" space=10
+
+create_space 11
+yabai -m rule --add app="Discord" space=11
 
 yabai -m rule --apply
 
 open -a Ghostty
 open -a Firefox
 open -a Slack
-open -a Music
+open -a Google\ Chrome
+open -a Zed\ Preview
+open -a ChatGPT
 open -a Obsidian
-open -a Todoist
+open -a Music
+open -a Helium
 open -a Discord
 
 # Clean up empty spaces with no windows on them.
