@@ -95,6 +95,12 @@ return {
 						vim.wo[win][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
 					end
 
+					-- Enable on type formatting if it exists
+					-- https://www.reddit.com/r/neovim/comments/1n59kir/neovim_now_supports_lsp_ontype_formatting/
+					if vim.lsp.on_type_formatting then
+						vim.lsp.on_type_formatting.enable(true, { client_id = event.data.client_id })
+					end
+
 					if client and client.name == "ruff" then
 						-- Disable hover in favor of Pyright
 						client.server_capabilities.hoverProvider = false
