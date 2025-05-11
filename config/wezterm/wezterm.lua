@@ -339,7 +339,7 @@ config.keys = {
 	},
 	{ key = "y", mods = "LEADER", action = act.CopyTo("ClipboardAndPrimarySelection") },
 	{ key = "?", mods = "LEADER", action = act.ShowDebugOverlay },
-	{ key = "r", mods = "LEADER", action = act.ReloadConfiguration },
+	{ key = "R", mods = "LEADER", action = act.ReloadConfiguration },
 
 	-- [TODO]: fix shell integration
 	-- { key = "P", mods = "LEADER", action = act.ScrollToPrompt(-1) },
@@ -400,6 +400,23 @@ config.keys = {
 			action = wezterm.action_callback(function(window, pane, line)
 				if line then
 					window:perform_action(act.SwitchToWorkspace({ name = line }), pane)
+				end
+			end),
+		}),
+	},
+	{
+		key = "r",
+		mods = "LEADER",
+		action = act.PromptInputLine({
+			description = wezterm.format({
+				{ Attribute = { Intensity = "Bold" } },
+				{ Text = "Enter new name for workspace" },
+			}),
+			---@diagnostic disable-next-line: unused-local
+			action = wezterm.action_callback(function(window, pane, line)
+				if line then
+					wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), line)
+					resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state())
 				end
 			end),
 		}),
