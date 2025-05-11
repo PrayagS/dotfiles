@@ -47,7 +47,7 @@ pager = "delta"
 
 [git]
 sign-on-push = true
-fetch = '["origin", "glob:upstream*"]'
+fetch = ["origin", "glob:upstream*"]
 abandon-unreachable-commits = true
 
 [signing]
