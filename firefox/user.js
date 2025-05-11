@@ -104,8 +104,6 @@ user_pref("browser.places.speculativeConnect.enabled", false);
 user_pref("network.prefetch-next", true);
 user_pref("network.early-hints.enabled", true);
 user_pref("network.early-hints.preconnect.enabled", true);
-user_pref("network.predictor.enabled", true);
-user_pref("network.predictor.enable-prefetch", true);
 
 /** EXPERIMENTAL ***/
 user_pref("layout.css.grid-template-masonry-value.enabled", true);
@@ -210,6 +208,11 @@ user_pref("browser.tabs.crashReporting.sendReport", false);
 /** HTTPS-ONLY MODE ***/
 user_pref("dom.security.https_only_mode", true);
 user_pref("dom.security.https_only_mode_error_page_user_suggestions", true);
+
+// PREF: disable JIT optimization
+// This removes most of the attack surface while keeping JIT compilation.
+user_pref("javascript.options.ion", false);
+user_pref("javascript.options.wasm_optimizingjit", false);
 
 /****************************************************************************
  * SECTION: PESKYFOX                                                        *
