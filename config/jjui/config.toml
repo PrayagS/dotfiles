@@ -17,4 +17,4 @@ show_at_start = true
 width_percentage = 55
 
 [custom_commands]
-"open PR" = { args = [ "util", "exec", "--", "jjui-gh-pr.sh", "$change_id" ], show = "interactive" }
+"open PR" = { args = [ "util", "exec", "--", "jjui-gh-pr.sh", "$change_id" ], show = "interactive", key = ["p"] }
