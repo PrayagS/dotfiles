@@ -43,10 +43,10 @@ zstyle ':fzf-tab:sources' config-directory ${ZSH_HOME}/fzf-tab-custom-sources
 # disable preview for command options
 zstyle ':fzf-tab:complete:*:options' fzf-preview
 
-zstyle :history-search-multi-word page-size 20
-zstyle :history-search-multi-word highlight-color 'fg=#b8bb26,bold'
-zstyle :plugin:history-search-multi-word active 'bg=#504945'
-zstyle :plugin:history-search-multi-word clear-on-cancel 'yes'
+# zstyle :history-search-multi-word page-size 20
+# zstyle :history-search-multi-word highlight-color 'fg=#b8bb26,bold'
+# zstyle :plugin:history-search-multi-word active 'bg=#504945'
+# zstyle :plugin:history-search-multi-word clear-on-cancel 'yes'
 
 zstyle ':antidote:bundle' use-friendly-names 'yes'
 zstyle ':antidote:*' zcompile 'yes'
@@ -83,12 +83,15 @@ export FAST_HIGHLIGHT_STYLES[comment]='fg=yellow,bold'
 export FAST_HIGHLIGHT_STYLES[global]='fg=green,bold'
 zle_highlight=('paste:none')
 
+bindkey -M viins '^r' atuin-search-viins
+bindkey -M vicmd '^r' atuin-search-vicmd
 bindkey '^[e' _atuin_search_widget
 
 export CD_LS_COMMAND="l"
 
 export ZSH_EVALCACHE_DIR="${ZSH_CACHE_DIR}/evalcache"
 _evalcache zoxide init zsh
+_evalcache atuin init zsh --disable-up-arrow
 
 _lazy_load beans "beans completion zsh"
 _lazy_load jj "COMPLETE=zsh jj"

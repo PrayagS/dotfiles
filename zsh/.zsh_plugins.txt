@@ -23,7 +23,9 @@ Freed-Wu/fzf-tab-source
 
 ael-code/zsh-colored-man-pages
 
-zdharma-continuum/history-search-multi-word
+atuinsh/atuin
+
+# zdharma-continuum/history-search-multi-word
 zsh-users/zsh-autosuggestions
 zdharma-continuum/fast-syntax-highlighting
 
