@@ -22,12 +22,14 @@ zstyle ':completion:*' menu no
 # case insensitive (all), partial-word and substring completion
 if [[ "$CASE_SENSITIVE" = true ]]; then
   zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
+  setopt case_glob
 else
   if [[ "$HYPHEN_INSENSITIVE" = true ]]; then
     zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
   else
     zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
   fi
+  unsetopt case_glob
 fi
 unset CASE_SENSITIVE HYPHEN_INSENSITIVE
 
