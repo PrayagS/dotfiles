@@ -23,6 +23,7 @@ return {
 				"just",
 				"lua",
 				"markdown",
+				"markdown_inline",
 				"promql",
 				"python",
 				"rust",

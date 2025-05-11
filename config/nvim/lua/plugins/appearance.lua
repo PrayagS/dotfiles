@@ -680,4 +680,15 @@ return {
 			cursor_color = "none",
 		},
 	},
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		opts = {
+			heading = {
+				icons = {},
+				position = "inline",
+			},
+			quote = { repeat_linebreak = true },
+			pipe_table = { preset = "heavy" },
+		},
+	},
 }
