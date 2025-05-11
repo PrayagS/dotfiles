@@ -1,4 +1,4 @@
-vim.lsp.config("helm_ls", {
+return {
 	settings = {
 		["helm-ls"] = {
 			yamlls = {
@@ -6,5 +6,4 @@ vim.lsp.config("helm_ls", {
 			},
 		},
 	},
-})
-vim.lsp.enable("helm_ls")
+}

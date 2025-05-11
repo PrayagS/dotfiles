@@ -1,7 +1,6 @@
-vim.lsp.config("tinymist", {
+return {
 	settings = {
 		exportPdf = "onSave",
 		formatterMode = "typstyle",
 	},
-})
-vim.lsp.enable("tinymist")
+}

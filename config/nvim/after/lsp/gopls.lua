@@ -1,4 +1,4 @@
-vim.lsp.config("gopls", {
+return {
 	settings = {
 		gopls = {
 			hints = {
@@ -31,5 +31,4 @@ vim.lsp.config("gopls", {
 			vulncheck = "Imports",
 		},
 	},
-})
-vim.lsp.enable("gopls")
+}
