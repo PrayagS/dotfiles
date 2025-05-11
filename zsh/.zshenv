@@ -18,6 +18,7 @@ export PATH="$HOME/.config/zsh/zinit/cargo/bin:$PATH"
 export PATH="$HOME/.config/zsh/zinit/plugins/uv/venv/bin:$PATH"
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 export PATH="$HOME/.claude/local:$PATH"
+export PATH="$HOME/.local/share/cargo/bin:$PATH"
 
 # Golang env vars
 export GOPATH="$HOME/dev/go"
@@ -72,7 +73,6 @@ export PIPX_HOME="$XDG_DATA_HOME/pipx"
 export VENCORD_USER_DATA_DIR="$XDG_DATA_HOME/vencord"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
 
 # source secrets
 source "$ZDOTDIR/.zshenv-secrets"

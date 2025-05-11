@@ -45,52 +45,6 @@ zinit from"gh" as"null" for \
     sbin"**/git-now" iwata/git-now \
     sbin"**/xdg-ninja.sh" b3nj5m1n/xdg-ninja
 
-# Install Rust and make it available globally
-zinit for \
-    atload='
-      [[ ! -f ${ZINIT[COMPLETIONS_DIR]}/_cargo ]] && zinit creinstall rust
-      export CARGO_HOME=$ZSH_HOME/zinit/cargo RUSTUP_HOME=$ZSH_HOME/zinit/cargo/rustup' \
-    as=null \
-    id-as=rust \
-    lucid \
-    light-mode \
-    rustup \
-    sbin="bin/*" \
-    wait=1 \
-    zdharma-continuum/null
-
-zinit for \
-    light-mode \
-    lucid \
-    wait='[[ -v CARGO_HOME && -v RUSTUP_HOME ]]' \
-    id-as'rust-eza' \
-    cargo'!eza' \
-    zdharma-continuum/null
-
-zinit for \
-    light-mode \
-    lucid \
-    wait='[[ -v CARGO_HOME && -v RUSTUP_HOME ]]' \
-    id-as'rust-yazi-fm' \
-    cargo'!yazi-fm -> yazi' \
-    zdharma-continuum/null
-
-zinit for \
-    light-mode \
-    lucid \
-    wait='[[ -v CARGO_HOME && -v RUSTUP_HOME ]]' \
-    id-as'rust-yazi-cli' \
-    cargo'!yazi-cli -> ya' \
-    zdharma-continuum/null
-
-zinit for \
-    light-mode \
-    lucid \
-    wait='[[ -v CARGO_HOME && -v RUSTUP_HOME ]]' \
-    id-as'rust-csvlens' \
-    cargo'!csvlens' \
-    zdharma-continuum/null
-
 zinit for \
     light-mode \
     lucid \
