@@ -4,6 +4,7 @@ tap "homebrew/bundle"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
+tap "pakerwreah/calendr"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Language server for beancount files
@@ -30,6 +31,8 @@ brew "docker-buildx"
 brew "docker-compose"
 # Platform keystore credential helper for Docker
 brew "docker-credential-helper"
+# Development kit for the Java programming language
+brew "openjdk"
 # Validate EPUB files, version 2.0 and later
 brew "epubcheck"
 # Perl lib for reading and writing EXIF metadata
@@ -88,6 +91,10 @@ brew "mas"
 brew "mise"
 # Deep clean and optimize your Mac
 brew "mole"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
+# Remote terminal application
+brew "mosh"
 # Port scanning utility for large networks
 brew "nmap"
 # Open-source, cross-platform JavaScript runtime environment
@@ -100,8 +107,12 @@ brew "oha"
 brew "p7zip"
 # PAM module for reattaching to the user's GUI (Aqua) session
 brew "pam-reattach"
+# Shell command parallelization utility
+brew "parallel"
 # Convert PDFs to images
 brew "pdf2image"
+# CLI for Postgres with auto-completion and syntax highlighting
+brew "pgcli"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Package compiler and linker metadata toolkit
@@ -112,8 +123,6 @@ brew "pnpm"
 brew "poetry"
 # Object-relational database system
 brew "postgresql@16"
-# Protocol buffers (Google's data interchange format)
-brew "protobuf"
 # Parse HTML at the command-line
 brew "pup"
 # Python version management
@@ -172,22 +181,22 @@ cask "appcleaner"
 cask "balenaetcher"
 # Open-source KVM software
 cask "barrier"
+# Menu bar calendar
+cask "calendr"
 # E-books management software
 cask "calibre"
-# OpenAI's official ChatGPT desktop app
-cask "chatgpt"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
-# OpenAI's Codex desktop app for managing coding agents
-cask "codex-app"
 # Server and cloud storage browser
 cask "cyberduck"
 # Voice and text chat software
 cask "discord"
 # Desktop client for Ente Auth
 cask "ente-auth"
+# Per-application volume mixer, equalizer, and audio router
+cask "finetune"
 # Web browser
 cask "firefox@beta"
 # Screenshot software with built-in annotation tools
@@ -210,8 +219,6 @@ cask "jordanbaird-ice"
 cask "kap"
 # Keyboard customiser
 cask "karabiner-elements"
-# Preview and audit Kindle eBooks
-cask "kindle-previewer"
 # Menu bar app for running local LLMs
 cask "llamabarn"
 # Discover, download, and run local LLMs
@@ -292,3 +299,8 @@ go "github.com/planetscale/vtprotobuf/cmd/protoc-gen-go-vtproto"
 go "github.com/favadi/protoc-go-inject-tag"
 go "github.com/stormcat24/protodep"
 go "github.com/frapposelli/wwhrd"
+uv "-"
+uv "aider-chat", with: ["pip"]
+uv "fastanime[standard]"
+uv "llm"
+uv "vibes"
