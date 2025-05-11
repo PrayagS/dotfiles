@@ -46,4 +46,6 @@ b3nj5m1n/xdg-ninja kind:path
 zsh-users/zsh-completions kind:fpath path:src
 zchee/zsh-completions kind:fpath path:src
 
+MichaelAquilina/zsh-you-should-use
+
 # vim: set filetype=properties :

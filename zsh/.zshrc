@@ -58,6 +58,7 @@ zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
 [[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
 
 export ATUIN_NOBIND='true'
+export YSU_MESSAGE_POSITION='after'
 
 # Lazy-load antidote from its functions directory.
 fpath=(${ZSH_CONFIG_DIR}/.antidote/functions $fpath)
