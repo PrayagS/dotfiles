@@ -1,5 +1,4 @@
 tap "artginzburg/tap"
-tap "atlassian/acli"
 tap "aws/tap"
 tap "buo/cask-upgrade"
 tap "felixkratz/formulae"
@@ -9,9 +8,6 @@ tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "nikolaeu/numi"
 tap "oven-sh/bun"
-tap "rcmdnk/file"
-tap "rien7/apps"
-tap "sst/tap"
 # CLI tool for AWS Athena service
 brew "athenacli"
 # Official Amazon AWS command-line interface
@@ -32,12 +28,8 @@ brew "chafa"
 brew "clang-format"
 # Manage multiple AI agents like Claude Code, Aider and Codex in your terminal
 brew "claude-squad"
-# Cross-platform make
-brew "cmake"
 # Console Matrix
 brew "cmatrix"
-# OpenAI's coding agent that runs in your terminal
-brew "codex"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Securely send things from one computer to another
@@ -180,6 +172,8 @@ brew "pnpm"
 brew "poetry"
 # Object-relational database system
 brew "postgresql@16"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
 # Python version management
 brew "pyenv"
 # Pyenv plugin to manage virtualenv
@@ -192,6 +186,8 @@ brew "redis"
 brew "repomix"
 # Diff filter highlighting which line parts have changed
 brew "riff"
+# Rust toolchain installer
+brew "rustup"
 # Parallel S3 and local filesystem execution tool
 brew "s5cmd"
 # Static analysis and lint tool, for (ba)sh scripts
@@ -212,6 +208,10 @@ brew "tfenv"
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Incremental parsing library
+brew "tree-sitter"
+# Parser generator tool
+brew "tree-sitter-cli"
 # Command-line tool for sharing terminal over the web
 brew "ttyd"
 # Markup-based typesetting system
@@ -240,8 +240,6 @@ brew "winetricks"
 brew "zig@0.14"
 # Permanent TouchID support for sudo
 brew "artginzburg/tap/sudo-touchid"
-# Software to interact with Atlassian Cloud from the terminal
-brew "atlassian/acli/acli"
 # EC2 Instance Selector is a tool to filter EC2 instance types based on resource criteria
 brew "aws/tap/ec2-instance-selector"
 # A window border system for macOS
@@ -254,16 +252,12 @@ brew "koekeishiya/formulae/yabai"
 brew "nikolaeu/numi/numi-cli"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
-# The AI coding agent built for the terminal.
-brew "sst/tap/opencode"
 # Command-line interface for 1Password
 cask "1password-cli"
 # Password manager
 cask "1password@beta"
 # Privacy-focused app for managing your finances
 cask "actual"
-# Application to indicate the aerospace workspace
-cask "aeroindicator"
 # Application uninstaller
 cask "appcleaner"
 # Tool to flash OS images to SD cards & USB drives
@@ -346,6 +340,8 @@ cask "spotify"
 cask "stats"
 # Video game digital distribution service
 cask "steam"
+# To-do list
+cask "todoist-app"
 # Web browser focusing on security
 cask "tor-browser"
 # Multimedia player
@@ -368,9 +364,9 @@ mas "JapaneseLife", id: 1634749545
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Perplexity", id: 6714467650
 mas "Sasquatch", id: 1465346522
 mas "Save to Reader", id: 1640236961
 mas "Shareful", id: 1522267256
 mas "UTC Time", id: 1538245904
 mas "Xcode", id: 497799835
+vscode "openai.chatgpt"
