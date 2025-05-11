@@ -58,6 +58,6 @@ alias prod-sgp="export AWS_PROFILE=prod AWS_REGION=ap-southeast-1"
 alias stage-ore="export AWS_PROFILE=stage AWS_REGION=us-west-2"
 alias blinkit-analytics="export AWS_PROFILE=blinkit_analytics AWS_REGION=ap-southeast-1"
 ssm() {
-    instance_id=$(kubectl get node "$1" -oyaml | yq '.spec.providerID' node.yaml | cut -d "/" -f 5)
+    instance_id=$(kubectl get node "$1" -oyaml | yq -e '.spec.providerID' | cut -d "/" -f 5)
     aws ssm start-session --target "$instance_id"
 }
