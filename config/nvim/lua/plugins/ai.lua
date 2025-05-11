@@ -25,7 +25,7 @@ return {
 					dismiss = "<C-e>",
 				},
 			},
-			provider = "codestral",
+			provider = "gemini",
 			-- notify = "debug",
 			provider_options = {
 				codestral = {
@@ -35,7 +35,7 @@ return {
 					stream = true,
 				},
 				gemini = {
-					model = "gemini-2.5-flash-preview-04-17",
+					model = "gemini-2.5-flash-preview-05-20",
 					api_key = "MINUET_GEMINI_API_KEY",
 					stream = true,
 					optional = {
