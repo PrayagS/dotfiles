@@ -78,6 +78,7 @@ yabai -m rule --add label="Numi" app="^Numi$" title=".*" manage=off sub-layer=ab
 yabai -m rule --add label="Ente Auth" app="^Ente Auth$" title=".*" manage=off sub-layer=above
 yabai -m rule --add label="Kap" app="^Kap$" title=".*" manage=off sub-layer=above
 yabai -m rule --add label="zathura" app="^zathura$" title=".*" manage=on
+yabai -m rule --add label="Crossover Apps" app=".*exe$" title=".*" manage=off sub-layer=above
 yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
 yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
 
