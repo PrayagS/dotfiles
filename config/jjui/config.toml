@@ -1,15 +1,46 @@
+[preview]
+  show_at_start = false
+  width_percentage = 55
+
 [revisions]
-revset = "present(@) | ancestors(immutable_heads().., 7) | present(trunk())"
+  revset = "present(@) | ancestors(immutable_heads().., 7) | present(trunk())"
 
 [ui]
-theme = "base16-gruvbox-material-dark-hard"
-flash_message_display_seconds = 2
+  flash_message_display_seconds = 2
+  theme = "base16-gruvbox-material-dark-hard"
 
-[preview]
-show_at_start = false
-width_percentage = 55
+[[actions]]
+name = "copy bookmark"
+lua = '''
+jj("util", "exec", "--", "jjui-copy-bookmark.sh", context.change_id())
+'''
 
-[custom_commands]
-"copy bookmark" = { args = [ "util", "exec", "--", "jjui-copy-bookmark.sh", "$change_id" ], key = ["y"] }
-"open PR" = { args = [ "util", "exec", "--", "jjui-gh-pr.sh", "$change_id" ], show = "interactive", key = ["p"] }
-"merge PR" = { args = [ "util", "exec", "--", "jjui-gh-pr-merge.sh", "$change_id" ], show = "interactive", key = ["m"] }
+[[bindings]]
+action = "copy bookmark"
+seq = ["x", "y"]
+scope = "revisions"
+desc = "copy bookmark"
+
+[[actions]]
+name = "merge PR"
+lua = '''
+jj_interactive("util", "exec", "--", "jjui-gh-pr-merge.sh", context.change_id())
+'''
+
+[[bindings]]
+action = "merge PR"
+seq = ["x", "m"]
+scope = "revisions"
+desc = "merge PR"
+
+[[actions]]
+name = "open PR"
+lua = '''
+jj_interactive("util", "exec", "--", "jjui-gh-pr.sh", context.change_id())
+'''
+
+[[bindings]]
+action = "open PR"
+seq = ["x", "p"]
+scope = "revisions"
+desc = "open PR"
