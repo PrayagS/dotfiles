@@ -17,7 +17,30 @@
       "Bash(yq:*)",
       "WebFetch(domain:istio.io)",
       "Bash(kubectl get:*)",
-      "Bash(beans:*)"
+      "Bash(beans:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(date:*)",
+      "Bash(echo:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(wc:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(sort:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(find:*)",
+      "Bash(tr:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git status:*)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git tag:*)",
+      "Bash(jj status:*)",
+      "Bash(jj describe:*)"
     ],
     "defaultMode": "plan"
   },
@@ -153,7 +176,9 @@
     "padding": 0
   },
   "enabledPlugins": {
-    "gopls-lsp@claude-plugins-official": true
+    "gopls-lsp@claude-plugins-official": true,
+    "workmux-status@workmux": true,
+    "plannotator@plannotator": true
   },
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": true,
