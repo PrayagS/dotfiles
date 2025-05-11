@@ -56,6 +56,8 @@ brew "gnupg"
 brew "go"
 # Colorize logfiles and command output
 brew "grc"
+# HTTP load generator, ApacheBench (ab) replacement
+brew "hey"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
 # Sort Python imports automatically
@@ -130,6 +132,8 @@ brew "socat"
 brew "subversion"
 # User interface to the TELNET protocol
 brew "telnet"
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -172,6 +176,8 @@ cask "barrier"
 cask "calibre"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
+# Anthropic's official Claude AI desktop app
+cask "claude"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
 # OpenAI's Codex desktop app for managing coding agents
@@ -192,6 +198,8 @@ cask "ghostty"
 cask "google-chrome@beta"
 # Open-source video transcoder
 cask "handbrake-app"
+# UI for Kubernetes
+cask "headlamp"
 # Free and open-source media player
 cask "iina"
 # Jellyfin desktop client
@@ -214,8 +222,6 @@ cask "marta"
 cask "minecraft"
 # Neovim Client
 cask "neovide-app"
-# Calendar for professionals and teams
-cask "notion-calendar"
 # Calculator and converter application
 cask "numi"
 # Knowledge base that works on top of a local folder of plain text Markdown files
