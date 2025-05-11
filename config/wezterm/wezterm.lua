@@ -342,12 +342,14 @@ config.keys = {
 	},
 	{ key = "y", mods = "LEADER", action = act.CopyTo("ClipboardAndPrimarySelection") },
 	{ key = "?", mods = "LEADER", action = act.ShowDebugOverlay },
-	{ key = "R", mods = "LEADER", action = act.ReloadConfiguration },
+	{ key = ",", mods = "LEADER", action = act.ReloadConfiguration },
 
 	-- [TODO]: fix shell integration
 	-- { key = "P", mods = "LEADER", action = act.ScrollToPrompt(-1) },
 	-- { key = "N", mods = "LEADER", action = act.ScrollToPrompt(1) },
 	-- { key = "V", mods = "LEADER", action = act.SelectTextAtMouseCursor("SemanticZone") },
+	{ key = "u", mods = "LEADER", action = act.ScrollByPage(-0.5) },
+	{ key = "d", mods = "LEADER", action = act.ScrollByPage(0.5) },
 	{
 		key = "e",
 		mods = "LEADER",
@@ -388,7 +390,7 @@ config.keys = {
 		end),
 	},
 	{
-		key = "d",
+		key = "D",
 		mods = "LEADER",
 		action = wezterm.action_callback(function(win, pane)
 			resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id)
@@ -422,7 +424,7 @@ config.keys = {
 		}),
 	},
 	{
-		key = "r",
+		key = "R",
 		mods = "LEADER",
 		action = act.PromptInputLine({
 			description = wezterm.format({
@@ -494,10 +496,15 @@ config.keys = {
 		mods = "LEADER",
 		action = act.ActivatePaneDirection("Left"),
 	},
+	{
+		key = "r",
+		mods = "LEADER",
+		action = act.RotatePanes("CounterClockwise"),
+	},
 	{ key = "o", mods = "LEADER", action = act.TogglePaneZoomState },
 	{ key = "T", mods = "LEADER", action = act.PaneSelect({ mode = "MoveToNewTab" }) },
 	{ key = "9", mods = "LEADER", action = act.PaneSelect({ mode = "Activate" }) },
-	{ key = "0", mods = "LEADER", action = act.PaneSelect({ mode = "SwapWithActive" }) },
+	{ key = "0", mods = "LEADER", action = act.PaneSelect({ mode = "SwapWithActiveKeepFocus" }) },
 	{
 		key = "Q",
 		mods = "LEADER",
