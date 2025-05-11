@@ -1,0 +1,134 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "icon_theme": "Zed (Default)",
+  "edit_predictions": {
+    "disabled_globs": [],
+    "mode": "eager",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    }
+  },
+  "language_models": {
+    "google": {
+      "available_models": [
+        {
+          "name": "gemini-2.5-pro-preview-06-05",
+          "display_name": "Gemini 2.5 Pro Preview (06/05)",
+          "max_tokens": 1000000,
+          "mode": {
+            "type": "thinking",
+            "budget_tokens": 32768
+          }
+        },
+        {
+          "name": "gemini-2.5-flash-preview-05-20",
+          "display_name": "Gemini 2.5 Flash Preview (05/20): Thinking",
+          "max_tokens": 1000000,
+          "mode": {
+            "type": "thinking",
+            "budget_tokens": 32768
+          }
+        }
+      ]
+    },
+    "openai": {
+      "api_url": "https://api.cerebras.ai/v1",
+      "available_models": [
+        {
+          "name": "qwen-3-32b",
+          "display_name": "Qwen 3 32B",
+          "max_tokens": 32768
+        }
+      ],
+      "version": "1",
+      "stream_edits": false
+    }
+  },
+  "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-2.5-pro-preview-06-05"
+    },
+    "version": "2",
+    "stream_edits": true,
+    "notify_when_agent_waiting": "all_screens",
+    "play_sound_when_agent_done": true
+  },
+  "show_edit_predictions": true,
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "vim_mode": true,
+  "vim": {
+    "toggle_relative_line_numbers": true,
+    "use_multiline_find": true,
+    "use_smartcase_find": true
+  },
+  "ui_font_size": 15,
+  "buffer_font_size": 14,
+  "agent_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Melange Dark"
+  },
+
+  "buffer_font_family": "Maple Mono",
+  "ui_font_family": "Iosevka Aile",
+  "use_smartcase_search": true,
+  // "inlay_hints": {
+  //   "enabled": true,
+  //   "show_background": true
+  // },
+  "tabs": {
+    "git_status": true,
+    "show_diagnostics": "all"
+  },
+  "diagnostics": {
+    "include_warnings": true,
+    "inline": {
+      "enabled": true
+    }
+  },
+  "show_user_picture": false,
+  "context_servers": {
+    "vectorcode": {
+      "command": {
+        "path": "vectorcode-mcp-server",
+        "args": []
+      },
+      "settings": {}
+    },
+    "repomix": {
+      "command": {
+        "path": "repomix",
+        "args": [
+          "--compress",
+          "--output-show-line-numbers",
+          "--remove-empty-lines",
+          "--verbose",
+          "--mcp"
+        ]
+      },
+      "settings": {}
+    },
+    "code2prompt": {
+      "command": {
+        "path": "/Users/prayagmatic/.local/share/pyenv/versions/3.13.2/envs/code2prompt-mcp/bin/python",
+        "args": [
+          "/Users/prayagmatic/dev/mcp/code2prompt-mcp/src/code2prompt_mcp/main.py"
+        ]
+      },
+      "settings": {}
+    }
+  }
+}

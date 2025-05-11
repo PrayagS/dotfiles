@@ -52,6 +52,8 @@
     ~/.config/mycli: config/mycli
     ~/.config/jj/config.toml: config/jj/config.toml
     ~/.config/jjui/config.toml: config/jjui/config.toml
+    ~/.config/zed/settings.json: config/zed/settings.json
+    ~/.config/zed/keymap.json: config/zed/keymap.json
 
 - shell:
     # - [git submodule update --init --recursive --remote --force, Installing submodules]
