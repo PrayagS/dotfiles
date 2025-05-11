@@ -1,32 +1,20 @@
-[ui]
-highlight_dark = "#473c29"
-  [ui.colors]
-    [ui.colors."details selected"]
-      bg = ""
-    [ui.colors.target_marker]
-      fg = "#282828"
-      bg = "#ea6962"
-      bold = true
-      italic = true
-    [ui.colors.source_marker]
-      fg = "#282828"
-      bg = "#a9b665"
-      bold = true
-      italic = true
-    [ui.colors."menu selected"]
-      fg = "magenta"
-      bg = ""
-    [ui.colors."status title"]
-      fg = "#282828"
-      bg = "magenta"
-      bold = true
-      italic = false
-      underline = false
-      strikethrough = false
-      reverse = false
+[ui.colors]
+"selected" = { bold = true, bg = "#3c3836" }
+"revset text" = { bold = true, bg = "#3c3836" }
+"revset title" = { bg = "#3c3836" }
+"revset selected" = { bold = true, bg = "#504945", fg = "#d4be98" }
+"revset matched" = { bold = true, bg = "#504945", fg = "#d4be98" }
+"revisions details selected" = { bg = "" }
+"git menu selected" = { bg = "", fg = "magenta" }
+"custom_commands menu selected" = { bg = "", fg = "magenta" }
+"source_marker" = { bold = true, italic = true, fg = "#282828", bg = "#a9b665" }
+"target_marker" = { bold = true, italic = true, fg = "#282828", bg = "#ea6962" }
+"status" = { bg = "#282828" }
+"status title" = { bold = true, fg = "#282828", bg = "magenta" }
 
 [preview]
 show_at_start = true
+width_percentage = 55
 
 [custom_commands]
 "open PR" = { args = [ "util", "exec", "--", "jjui-gh-pr.sh", "$change_id" ], show = "interactive" }
