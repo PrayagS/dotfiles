@@ -90,7 +90,7 @@
   "ui_font_size": 15,
   "buffer_font_size": 14,
   "agent_ui_font_size": 16,
-  "buffer_font_family": "Maple Mono",
+  "buffer_font_family": "Maple Mono NF",
   "ui_font_family": "Iosevka Aile",
   "use_smartcase_search": true,
   "inlay_hints": {

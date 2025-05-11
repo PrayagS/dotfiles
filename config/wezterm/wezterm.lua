@@ -71,7 +71,7 @@ config.check_for_updates = true
 config.check_for_updates_interval_seconds = 86400
 
 config.font = wezterm.font_with_fallback({
-	"Maple Mono",
+	"Maple Mono NF",
 	-- "IosevkaTerm Nerd Font Mono"
 	-- "VictorMono Nerd Font Mono"
 	"Sarasa Term CL",

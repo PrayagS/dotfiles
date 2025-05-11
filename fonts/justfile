@@ -3,11 +3,11 @@ default:
     @just --list
 
 update-maple-mono:
-    wget --quiet --show-progress 'https://github.com/subframe7536/maple-font/releases/latest/download/MapleMono-TTF.zip'
+    wget --quiet --show-progress 'https://github.com/subframe7536/maple-font/releases/latest/download/MapleMono-NF.zip'
     unzip -o \
-        -d 'MapleMono-TTF' 'MapleMono-TTF.zip' \
-        'MapleMono-Bold.ttf' 'MapleMono-BoldItalic.ttf' 'MapleMono-Italic.ttf' 'MapleMono-Regular.ttf'
-    rm 'MapleMono-TTF.zip'
+        -d 'MapleMono-NF' 'MapleMono-NF.zip' \
+        'MapleMono-NF-Bold.ttf' 'MapleMono-NF-BoldItalic.ttf' 'MapleMono-NF-Italic.ttf' 'MapleMono-NF-Regular.ttf'
+    rm 'MapleMono-NF.zip'
 
 IOSEVKA_RELEASE_VERSION := ```
     gh release list \
