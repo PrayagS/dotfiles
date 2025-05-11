@@ -49,3 +49,6 @@ kubectl = "latest"
 kustomize = "latest"
 krew = "latest"
 "github:ente-io/ente" = { version = "latest", version_prefix = "cli-" }
+"github:joshmedeski/sesh" = "latest"
+"http:fzf-tmux" = { version = "latest", url = "https://raw.githubusercontent.com/junegunn/fzf/refs/heads/master/bin/fzf-tmux" }
+"github:ivaaaan/smug" = "latest"
