@@ -1,3 +1,6 @@
+[revisions]
+revset = "present(@) | ancestors(immutable_heads().., 7) | present(trunk())"
+
 [ui]
 theme = "base16-gruvbox-material-dark-hard"
 flash_message_display_seconds = 2
