@@ -40,11 +40,3 @@ vim.api.nvim_create_autocmd({ "CmdLineEnter" }, {
 		})
 	end,
 })
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "cue" },
-	callback = function()
-		require("ufo").detach()
-		vim.o.foldenable = false
-	end,
-})
