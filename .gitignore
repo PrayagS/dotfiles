@@ -33,4 +33,9 @@ config/helm/repositories.lock
 
 # aws
 config/aws/config
+
+# AI tools
 .aider*
+
+# Misc
+.bash_profile
