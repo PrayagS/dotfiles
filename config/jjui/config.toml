@@ -14,7 +14,8 @@ highlight_dark = "#473c29"
       bold = true
       italic = true
     [ui.colors."menu selected"]
-      fg = "#d8a657"
+      fg = "magenta"
+      bg = ""
     [ui.colors."status title"]
       fg = "#282828"
       bg = "magenta"
