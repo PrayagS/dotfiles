@@ -33,7 +33,9 @@
       "space space": "file_finder::Toggle",
       "space /": "pane::DeploySearch",
       "space t": "project_symbols::Toggle",
-      "space ?": "agent::ToggleFocus"
+      "space ?": "agent::ToggleFocus",
+      "shift-k": "editor::MoveLineUp",
+      "shift-j": "editor::MoveLineDown"
     }
   },
   {
@@ -44,8 +46,6 @@
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-j": "workspace::ActivatePaneDown",
-      "shift-k": "editor::MoveLineUp",
-      "shift-j": "editor::MoveLineDown",
       "ctrl-shift-h": "vim::ResizePaneLeft",
       "ctrl-shift-l": "vim::ResizePaneRight",
       "ctrl-shift-j": "vim::ResizePaneDown",
@@ -75,6 +75,23 @@
       "down": null,
       "left": null,
       "right": null
+    }
+  },
+  {
+    "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+    "bindings": {
+      // mini.ai plugin behavior
+      "q": "vim::MiniQuotes",
+      "b": "vim::MiniBrackets"
+    }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "alt-tab": "editor::AcceptEditPrediction",
+      "tab": "editor::Tab",
+      "ctrl-y": "editor::AcceptEditPrediction",
+      "ctrl-cmd-right": "editor::AcceptPartialEditPrediction"
     }
   }
 ]
