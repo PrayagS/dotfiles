@@ -13,9 +13,66 @@
     }
   },
   {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "Editor && !menu && VimControl && (vim_mode == normal || vim_mode == visual)",
+    "bindings": {
+      "space b": "workspace::ToggleLeftDock",
+      "space f": "project_panel::ToggleFocus",
+      "space o": "outline::Toggle",
+      "space shift-o": "outline_panel::ToggleFocus",
+      "space ,": "tab_switcher::ToggleAll",
+      "space space": "file_finder::Toggle",
+      "space /": "pane::DeploySearch",
+      "space t": "project_symbols::Toggle"
+    }
+  },
+  {
     "context": "Editor",
     "bindings": {
       // "j k": ["workspace::SendKeystrokes", "escape"]
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "shift-k": "editor::MoveLineUp",
+      "shift-j": "editor::MoveLineDown",
+      "ctrl-shift-h": "vim::ResizePaneLeft",
+      "ctrl-shift-l": "vim::ResizePaneRight",
+      "ctrl-shift-j": "vim::ResizePaneDown",
+      "ctrl-shift-k": "vim::ResizePaneUp"
+    }
+  },
+  {
+    "context": "VimControl && !menu && vim_mode != operator",
+    "bindings": {
+      "w": "vim::NextSubwordStart",
+      "b": "vim::PreviousSubwordStart",
+      "e": "vim::NextSubwordEnd",
+      "g e": "vim::PreviousSubwordEnd"
+    }
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "s": "vim::PushSneak",
+      "shift-s": "vim::PushSneakBackward"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || ProjectPanel || OutlinePanel",
+    "bindings": {
+      "up": null,
+      "down": null,
+      "left": null,
+      "right": null
     }
   }
 ]
