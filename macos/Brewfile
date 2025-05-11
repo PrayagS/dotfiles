@@ -1,4 +1,5 @@
 tap "buo/cask-upgrade"
+tap "homebrew-zathura/zathura"
 tap "homebrew/bundle"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
@@ -145,6 +146,10 @@ brew "wget"
 brew "wimlib"
 # Automatic workarounds for problems in Wine
 brew "winetricks"
+# PDF viewer
+brew "homebrew-zathura/zathura/zathura"
+# MuPDF backend plugin for zathura
+brew "homebrew-zathura/zathura/zathura-pdf-mupdf"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.

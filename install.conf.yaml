@@ -31,7 +31,7 @@
     # ~/.config/spicetify: config/spicetify
     # ~/.config/sxhkd: config/sxhkd
     # ~/.config/sxiv: config/sxiv
-    # ~/.config/zathura: config/zathura
+    ~/.config/zathura: config/zathura
     ~/.config/alacritty: config/alacritty
     ~/.config/karabiner: config/karabiner
     # ~/.config/picom.conf: config/picom.conf
