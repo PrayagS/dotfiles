@@ -92,7 +92,8 @@ create_space 4
 yabai -m rule --add app="Slack" space=4
 
 create_space 5
-yabai -m rule --add app="Spotify" space=5
+yabai -m rule --add app="Music" space=5
+# yabai -m rule --add app="Spotify" space=5
 
 create_space 6
 yabai -m rule --add app="Obsidian" space=6
@@ -108,7 +109,8 @@ yabai -m rule --apply
 open -a WezTerm
 open -a Firefox
 open -a Slack
-open -a Spotify
+open -a Music
+# open -a Spotify
 open -a Obsidian
 open -a Todoist
 open -a "Notion Calendar"
