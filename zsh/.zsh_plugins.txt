@@ -11,6 +11,7 @@ ohmyzsh/ohmyzsh path:lib/git.zsh
 ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 ohmyzsh/ohmyzsh path:plugins/globalias
 ohmyzsh/ohmyzsh path:plugins/extract
+ohmyzsh/ohmyzsh path:plugins/aws
 
 mollifier/cd-gitroot
 mollifier/cd-gitroot kind:fpath path:_cd-gitroot
