@@ -5,6 +5,16 @@ return {
 		opts = {
 			current_line_blame = true,
 			culhl = true,
+			numhl = true,
+			linehl = false,
+			-- word_diff = true,
+			diff_opts = {
+				algorithm = "histogram",
+				internal = true,
+				indent_heuristic = true,
+				linematch = 60,
+				vertical = true,
+			},
 			on_attach = function(bufnr)
 				-- TODO: Telescope keymaps for gitsigns. Refer get_actions() /
 				-- get_hunks()
@@ -73,6 +83,7 @@ return {
 					'<cmd>lua require("gitsigns").preview_hunk_inline()<CR>',
 					{}
 				)
+				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>hd", '<cmd>lua require("gitsigns").diffthis()<CR>', {})
 			end,
 		},
 	},
