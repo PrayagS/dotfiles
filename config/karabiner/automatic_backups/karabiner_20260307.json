@@ -100,15 +100,6 @@
                         "vendor_id": 6645
                     },
                     "manipulate_caps_lock_led": false
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "vendor_id": 2007
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false
                 }
             ],
             "fn_function_keys": [
