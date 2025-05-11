@@ -142,6 +142,21 @@ return {
 				},
 			})
 
+			-- lsp capabilities
+			local capabilities = {
+				textDocument = {
+					foldingRange = {
+						dynamicRegistration = false,
+						lineFoldingOnly = true,
+					},
+				},
+			}
+
+			capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+			vim.lsp.config("*", {
+				capabilities = capabilities,
+			})
+
 			local fetch_lsp_servers_from_config = function()
 				local servers = {}
 				for server in vim.fs.dir(vim.fn.stdpath("config") .. "/after/lsp/") do
