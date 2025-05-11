@@ -1,0 +1,10 @@
+[settings]
+cache_prune_age = "7d"
+experimental = true
+gpg_verify = true
+jobs = 24
+
+[tools]
+claude-code = "latest"
+"npm:cchistory" = "latest"
+python = "3.13.7"

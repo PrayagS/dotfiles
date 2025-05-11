@@ -178,6 +178,7 @@ zinit lucid light-mode wait"2" for \
       export SHOW_AWS_PROMPT=false
       complete -C '/opt/homebrew/bin/aws_completer' aws" \
         OMZP::aws \
+    OMZP::mise \
     fdw/yazi-zoxide-zsh \
     ahmubashshir/zinsults \
     akash329d/zsh-alias-finder
