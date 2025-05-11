@@ -226,7 +226,7 @@ zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)helm*]} ]]' lucid as"completion" atload
 zinit snippet "${ZSH_HOME}/custom/_helm"
 
 autoload compinit; compinit;
-source <(jj util completion zsh)
+source <(COMPLETE=zsh jj)
 
 zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]' lucid
 zinit light zdharma-continuum/zui
