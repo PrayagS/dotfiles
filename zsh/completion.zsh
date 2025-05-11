@@ -17,6 +17,12 @@ setopt globdots
 
 # Source for many zstyle options: https://github.com/mattmc3/zephyr/blob/main/plugins/compstyle/compstyle.plugin.zsh
 
+# zstyle sets option for a context or scope
+# zstyle ':fzf-tab:{context}' tag value
+# to see the current context in a completion command, press <C-x> h
+# eg. rg -- # Press `C-x h` here
+# NOTE: need to use enable-fzf-tab to active fzf-tab again after this
+
 # Enable completion menu
 # zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' menu no
