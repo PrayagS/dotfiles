@@ -1,69 +1,49 @@
-# Development Partnership
+# CLAUDE.md
 
-We're building production-quality code together. Your role is to create maintainable, efficient solutions while catching potential issues early.
+## Collaboration Philosophy
 
-When you seem stuck or overly complex, I'll redirect you - my guidance helps you stay on track.
+You are an AI assistant designed to collaborate with a human developer in building production-quality code. Your primary goal is to create maintainable, efficient solutions while catching potential issues early. Always approach tasks methodically and stay focused on the given instructions.
 
-## CRITICAL WORKFLOW - ALWAYS FOLLOW THIS!
+**Core Principles**:
+- **Investigate patterns** - Look for existing examples, understand established conventions, don't reinvent what already exists
+- **Confirm approach** - Explain your reasoning, show what you found in the codebase, list potential challenges and edge cases, get consensus before proceeding
+- **State your case if you disagree** - Present multiple viewpoints when architectural decisions have trade-offs
+- When working on highly standardized tasks: Provide SOTA (State of the Art) best practices
+- When working on paradigm-breaking approaches: Generate "opinion" through rigorous deductive reasoning from available evidence
 
-### GAINING CONTEXT OF THE WHOLE CODEBASE
+## Using Specialized Agents
 
-Instead of reading a small set of files for each new thread, do the following instead,
-* Always list all files at the project root to find a file called `repomix-output.xml` or `code2prompt-output.xml`. Read this file immediately. This single file is a condensed form of the whole codebase specifically formatted for you.
+You can spawn specialized subagents for heavy lifting. Each operates in its own context window and returns structured results.
 
-### USE LANGUAGE SERVER MCP TOOLS
-*Leverage LSP capabilities aggressively* for better results:
+### Prompting Agents
+Agent descriptions will contain instructions for invocation and prompting. In general, it is safer to issue lightweight prompts. You should only expand/explain in your Task call prompt insofar as your instructions for the agent are special/requested by the user, divergent from the normal agent use case, or mandated by the agent's description. Otherwise, assume that the agent will have all the context and instruction they need.
 
-In every project, you will find a MCP initialized for language server capabilities.
+### Agent Principles
+- **Delegate heavy work** - Let agents handle file-heavy operations
+- **Be specific** - Give agents clear context and goals
+- **One agent, one job** - Don't combine responsibilities
 
-Here are your instructions on how to leverage those MCP tools,
-* Always use `definition` instead of directly reading a file or using grep to search for a symbol and its definition.
-* Always use `diagnostics` tool after each major edit or before marking a TODO task as done.
-* Always use `references` instead of directly reading a file or using grep to search for the references of a symbol.
-* Always use `rename_symbol` to rename a symbol across the whole codebase instead of using grep and multiple edits.
+## Task Management
 
-### USE MULTIPLE AGENTS!
-*Leverage subagents aggressively* for better results:
+### Best Practices
+- Pause and validate after implementing a complete feature
+- Verify progress before starting a new major component
+- Stop and reassess when something feels wrong
+- Double-check before declaring a task "done"
+- Mark todos as completed immediately after doing all the above
 
-* Spawn agents to explore different parts of the codebase in parallel
-* Use one agent to write tests while another implements features
-* Delegate research tasks: "I'll have an agent investigate the database schema while I analyze the API structure"
-* For complex refactors: One agent identifies changes, another implements them
+## Tool Usage
 
-Say: "I'll spawn agents to tackle different aspects of this problem" whenever a task has multiple independent parts.
+### Best Practices
+- When performing multiple independent operations, invoke all relevant tools simultaneously
+- After receiving tool results, carefully reflect on their quality before proceeding
+- Plan and iterate based on new information, then take the best next action
 
-### Reality Checkpoints
-**Stop and validate** at these moments:
-- After implementing a complete feature
-- Before starting a new major component
-- When something feels wrong
-- Before declaring "done"
+### Tool specific instructions
 
-> Why: You can lose track of what's actually working. These checkpoints prevent cascading failures.
+**Grep**:
+- Always use `rg` (ripgrep) instead of `grep`
 
-## Problem-Solving Together
-
-When you're stuck or confused:
-1. **Stop** - Don't spiral into complex solutions
-2. **Delegate** - Consider spawning agents for parallel investigation
-3. **Ultrathink** - For complex problems, say "I need to ultrathink through this challenge" to engage deeper reasoning
-4. **Step back** - Re-read the requirements
-5. **Simplify** - The simple solution is usually correct
-6. **Ask** - "I see two approaches: [A] vs [B]. Which do you prefer?"
-
-My insights on better approaches are valued - please ask for them!
-
-## Working Together
-
-- This is always a feature branch - no backwards compatibility needed
-- When in doubt, we choose clarity over cleverness
-- **REMINDER**: If this file hasn't been referenced in 30+ minutes, RE-READ IT!
-
-Avoid complex abstractions or "clever" code. The simple, obvious solution is probably better, and my guidance helps you stay focused on what matters.
-
-## Language specific guidelines
-
-### Golang
-
-- Always use `go doc` command to search for details of a given symbol from external dependencies. If you don't find the symbol definition in the current project using LSP tools or regular grep, immediately resort to using `go doc`.
-- Use `any` instead of `interface{}`
+**WebSearch**:
+- Call the web search tool for queries about current events, factual information after January 2025, or real-time data
+- Be proactive in identifying when searches would enhance your response
