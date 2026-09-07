@@ -10,7 +10,7 @@
 /****************************************************************************
  * Betterfox                                                                *
  * "Ad meliora"                                                             *
- * version: 149                                                             *
+ * version: 154                                                             *
  * url: https://github.com/yokoffing/Betterfox                              *
 ****************************************************************************/
 
@@ -26,7 +26,7 @@ user_pref("content.notify.interval", 100000);
 // [1] https://bugzilla.mozilla.org/show_bug.cgi?id=1945683
 // [2] https://www.reddit.com/r/firefox/comments/1p58qre/firefox_is_getting_ready_to_make_youtube_fast/
 // [3] https://www.ghacks.net/2025/11/24/these-two-tweaks-should-improve-firefoxs-performance-on-youtube-significantly/
-user_pref("gfx.webrender.layer-compositor", true);
+//user_pref("gfx.webrender.layer-compositor", true); // [DEFAULT FF152]
 
 // PREF: GPU-accelerated Canvas2D
 // Uses Accelerated Canvas2D for hardware acceleration of Canvas2D.
@@ -74,7 +74,7 @@ user_pref("network.http.rcwn.enabled", true);
 /** MEMORY CACHE ***/
 user_pref("browser.cache.memory.capacity", 131072); // 128 MB RAM cache; alt=65536 (65 MB RAM cache); default=32768
 user_pref("browser.cache.memory.max_entry_size", 20480); // 20 MB max entry; default=5120 (5 MB)
-user_pref("browser.sessionhistory.max_total_viewers", 4);
+//user_pref("browser.sessionhistory.max_total_viewers", -1); // DEFAULT
 
 /** MEDIA CACHE ***/
 user_pref("media.memory_cache_max_size", 262144);
@@ -112,7 +112,7 @@ user_pref("network.early-hints.preconnect.enabled", true);
 /** EXPERIMENTAL ***/
 user_pref("layout.css.grid-template-masonry-value.enabled", true);
 
-user_pref("javascript.options.baselinejit.threshold", 50); // default=100
+//user_pref("javascript.options.baselinejit.threshold", 50); // default=100
 
 /****************************************************************************
  * SECTION: SECUREFOX                                                       *
@@ -170,7 +170,7 @@ user_pref("extensions.enabledScopes", 5);
 user_pref("network.http.referer.XOriginTrimmingPolicy", 2);
 
 /** CONTAINERS ***/
-user_pref("privacy.userContext.ui.enabled", true);
+//user_pref("privacy.userContext.ui.enabled", true); [DEFAULT FF153+]
 
 /** SAFE BROWSING ***/
 user_pref("browser.safebrowsing.downloads.remote.enabled", false);
@@ -299,8 +299,6 @@ user_pref("gfx.webrender.all", true); // enables WR + additional features
 user_pref("gfx.webrender.precache-shaders", true); // longer initial startup time
 user_pref("gfx.webrender.compositor", true); // DEFAULT WINDOWS macOS
 user_pref("gfx.webrender.compositor.force-enabled", true); // enforce
-
-user_pref("network.dnsCacheEntries", 1200); // default=400
 
 user_pref("network.trr.mode", 2); // DEFAULT
 user_pref("network.trr.max-fails", 5); // default=15
