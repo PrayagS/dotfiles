@@ -187,7 +187,7 @@ lalt - f         : yabai -m window --toggle zoom-fullscreen
 shift + lalt - f : yabai -m window --toggle native-fullscreen
 shift + lalt - space : yabai -m window --toggle float
 
-lalt - t : yabai -m window --toggle split
+lalt + shift - t : yabai -m window --toggle split
 
 lalt - b : yabai -m config layout bsp
 lalt - s : yabai -m config layout stack
