@@ -107,5 +107,7 @@ _lazy_load rg "rg --generate complete-zsh"
 _lazy_load helm "helm completion zsh"
 _lazy_load workmux "workmux completions zsh"
 _lazy_load herdr "herdr completion zsh"
+_lazy_load amp "amp completions zsh"
+_lazy_load aube "aube completion zsh"
 
 eval "$(jw shell init zsh)"
