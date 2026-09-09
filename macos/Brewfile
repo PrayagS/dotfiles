@@ -4,7 +4,7 @@ tap "homebrew-zathura/zathura", trusted: true
 tap "homebrew/bundle"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
-tap "koekeishiya/formulae", "https://github.com/asmvik/homebrew-formulae.git"
+tap "jackielii/tap"
 tap "pakerwreah/calendr", trusted: true
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
@@ -16,6 +16,8 @@ brew "cf2tf"
 brew "chafa"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
 # C implementation of GitHub Flavored Markdown
 brew "cmark-gfm"
 # Create and run Linux containers using lightweight virtual machines
@@ -140,6 +142,8 @@ brew "protoc-gen-go"
 brew "protoc-gen-go-grpc"
 # CLI companion with 200+ commands across 33+ Datadog products
 brew "pup"
+# Monitor data's progress through a pipe
+brew "pv"
 # Python version management
 brew "pyenv"
 # Pyenv plugin to manage virtualenv
@@ -150,6 +154,8 @@ brew "pypy3.10"
 brew "riff"
 # Utility that provides fast incremental file transfer
 brew "rsync"
+# 7-Zip is a file archiver with a high compression ratio
+brew "sevenzip"
 # SOcket CAT: netcat on steroids
 brew "socat"
 # Version control system designed to be a better CVS
@@ -182,6 +188,8 @@ brew "asmvik/formulae/yabai", args: ["HEAD"]
 brew "homebrew-zathura/zathura/zathura", args: ["with-synctex"]
 # MuPDF backend plugin for zathura
 brew "homebrew-zathura/zathura/zathura-pdf-mupdf"
+# Command-line helper for the 1Password password manager
+cask "1password-cli@beta"
 # Password manager
 cask "1password@beta"
 # Application uninstaller
@@ -198,6 +206,8 @@ cask "chatgpt"
 cask "claude"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
+# Menu bar app for tracking agentic coding limits and usage
+cask "codexbar"
 # Server and cloud storage browser
 cask "cyberduck"
 # Voice and text chat software
@@ -216,6 +226,8 @@ cask "ghostty"
 cask "google-chrome"
 # AI teammates that work across your apps and tools
 cask "grok-bot"
+# Chromium-based web browser
+cask "helium-browser"
 # Free and open-source media player
 cask "iina"
 # Jellyfin desktop client
@@ -226,8 +238,6 @@ cask "kap"
 cask "karabiner-elements"
 # Customise mouse behavior
 cask "linearmouse"
-# Discover, download, and run local LLMs
-cask "lm-studio"
 # Extensible two-pane file manager
 cask "marta"
 # Sandbox construction video game
@@ -254,8 +264,12 @@ cask "raycast"
 cask "rustdesk"
 # Tool to reverse the direction of scrolling
 cask "scroll-reverser"
+# 7-Zip derivative GUI
+cask "shichizip"
 # Screenshot measurement and annotation tool
 cask "shottr"
+# Simple hotkey daemon written in Zig
+cask "jackielii/tap/skhd-zig", trusted: true
 # Team communication and collaboration software
 cask "slack@beta"
 # System monitor for the menu bar
@@ -272,18 +286,22 @@ cask "yaak"
 cask "zed@preview"
 # Video communication and virtual meeting platform
 cask "zoom"
+mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "Balatro", id: 6502451661
 mas "bIRC", id: 6770527619
 mas "BombSquad", id: 416482767
 mas "Gifski", id: 1351639930
 mas "Grila", id: 6444335028
+mas "Hush", id: 1544743900
+mas "Kagi for Safari", id: 1622835804
 mas "Numbers", id: 409203825
 mas "rcmd", id: 1596283165
-mas "Sasquatch", id: 1465346522
 mas "Save to Reader", id: 1640236961
 mas "Shareful", id: 1522267256
+mas "uBlock Origin Lite", id: 6745342698
 mas "UTC Time", id: 1538245904
+mas "Vimari", id: 1480933944
 go "github.com/wadey/gocovmerge"
 go "github.com/golangci/golangci-lint/cmd/golangci-lint"
 go "github.com/uber-go/gopatch"
@@ -304,7 +322,6 @@ go "github.com/frapposelli/wwhrd"
 cargo "alleycat"
 cargo "jj-spr"
 cargo "vdev"
-uv "-"
 uv "aider-chat", with: ["pip"]
 uv "fastanime[standard]"
 uv "greprip", source: "git+https://github.com/kaofelix/greprip"
