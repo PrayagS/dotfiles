@@ -99,6 +99,15 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 183,
+                        "vendor_id": 5426
+                    },
+                    "ignore": true
                 }
             ],
             "fn_function_keys": [
