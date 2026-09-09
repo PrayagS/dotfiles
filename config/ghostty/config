@@ -15,6 +15,7 @@ window-save-state = always
 # theme = Gruvbox Material Dark
 # theme = Gruvbox Dark
 # theme = Gruvbox Material
+# theme = Gruvbox Light
 theme = Gruvbox Dark Hard
 
 selection-clear-on-typing = false
@@ -109,6 +110,8 @@ keybind = super+shift+t=undo
 keybind = super+z=undo
 
 keybind = super+shift+p=toggle_command_palette
+
+keybind = super+enter=unbind
 
 # keybind = shift+enter=text:\x1b\r
 # keybind = shift+enter=text:\n
