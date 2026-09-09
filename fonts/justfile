@@ -30,6 +30,7 @@ update-iosevka:
     wget --quiet --show-progress \
         'https://github.com/be5invis/Iosevka/releases/download/v{{IOSEVKA_RELEASE_VERSION}}/PkgTTF-Unhinted-Iosevka-{{IOSEVKA_RELEASE_VERSION}}.zip' \
         'https://github.com/be5invis/Iosevka/releases/download/v{{IOSEVKA_RELEASE_VERSION}}/PkgTTF-Unhinted-IosevkaAile-{{IOSEVKA_RELEASE_VERSION}}.zip' \
+        'https://github.com/be5invis/Iosevka/releases/download/v{{IOSEVKA_RELEASE_VERSION}}/PkgTTF-Unhinted-IosevkaEtoile-{{IOSEVKA_RELEASE_VERSION}}.zip' \
         'https://github.com/be5invis/Iosevka/releases/download/v{{IOSEVKA_RELEASE_VERSION}}/PkgTTF-Unhinted-IosevkaTerm-{{IOSEVKA_RELEASE_VERSION}}.zip'
     unzip -o \
         -d 'Iosevka' 'PkgTTF-Unhinted-Iosevka-{{IOSEVKA_RELEASE_VERSION}}.zip' \
@@ -37,6 +38,9 @@ update-iosevka:
     unzip -o \
         -d 'Iosevka' 'PkgTTF-Unhinted-IosevkaAile-{{IOSEVKA_RELEASE_VERSION}}.zip' \
         'IosevkaAile-Bold.ttf' 'IosevkaAile-BoldItalic.ttf' 'IosevkaAile-Italic.ttf' 'IosevkaAile-Regular.ttf'
+    unzip -o \
+        -d 'Iosevka' 'PkgTTF-Unhinted-IosevkaEtoile-{{IOSEVKA_RELEASE_VERSION}}.zip' \
+        'IosevkaEtoile-Bold.ttf' 'IosevkaEtoile-BoldItalic.ttf' 'IosevkaEtoile-Italic.ttf' 'IosevkaEtoile-Regular.ttf'
     unzip -o \
         -d 'Iosevka' 'PkgTTF-Unhinted-IosevkaTerm-{{IOSEVKA_RELEASE_VERSION}}.zip' \
         'IosevkaTerm-Bold.ttf' 'IosevkaTerm-BoldItalic.ttf' 'IosevkaTerm-Italic.ttf' 'IosevkaTerm-Regular.ttf'
